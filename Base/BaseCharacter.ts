@@ -1,5 +1,13 @@
 export abstract class BaseCharacter {
     
+    // Traits
+    level: number;
+    AC: number;
+    initiative: number;
+    proficiencyBonus: number;
+    hpMax: number;
+    passivePerception: number;
+
     // Base Abiility Scores 
     strength: BaseAbility;
     dexterity: BaseAbility;
@@ -7,6 +15,9 @@ export abstract class BaseCharacter {
     intelligence: BaseAbility;
     wisdom: BaseAbility;
     charisma: BaseAbility;
+
+    // Items
+    inventory: Inventory;
 
     // Skill Check Modifiers
     skills: {[key: string]: Skill} = {
@@ -29,8 +40,6 @@ export abstract class BaseCharacter {
         "stealth": {ability: this.dexterity, modifier: this.dexterity.modifier}, //--> f(dex), + proficiency (Class Dependent);
         "survival": {ability: this.wisdom, modifier: this.wisdom.modifier}  //--> f(dex), + proficiency (Class Dependent);
     }
-
-    inventory: Inventory;
 
 }
 
