@@ -301,6 +301,6 @@
         "damage": "--",
         "damageType": "--",
         "weight": "3lb",
-        "properties": ["A Large or smaller creature hit by a net is restrained until freed. A creature can use its action to make a DC10 Strength Check to free itself or another creature within its reach on a success. Dealing 5 slashinig damage to the next (AC 10) also frees the creature without harming it, ending the effect and destroying the net. When you use an action, bonus action, or reaction to attack with a net, you can only make one attack regardless of the number of attacks you can normally make.", "Thrown", "Range 5ft / 15ft Disadvantage"]
+        "properties": ["A Large or smaller creature hit by a net is restrained until freed. A creature can use its action to make a DC10 Strength Check to free itself or another creature within its reach on a success. Dealing 5 slashing damage to the next (AC 10) also frees the creature without harming it, ending the effect and destroying the net. When you use an action, bonus action, or reaction to attack with a net, you can only make one attack regardless of the number of attacks you can normally make.", "Thrown", "Range 5ft / 15ft Disadvantage"]
     }
 }

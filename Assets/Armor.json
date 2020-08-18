@@ -1,0 +1,106 @@
+{
+    "Padded": {
+        "armorType": "Light",
+        "cost": "5gp",
+        "AC": "11 + Dex modifier",
+        "strengthPrequisite": 0,
+        "stealthDisadvantage": true,
+        "weight": "8lb"
+    },
+    "Leather": {
+        "armorType": "Light",
+        "cost": "10gp",
+        "AC": "11 + Dex modifier",
+        "strengthPrequisite": 0,
+        "stealthDisadvantage": false,
+        "weight": "10lb"
+    },
+    "Studded Leather": {
+        "armorType": "Light",
+        "cost": "45gp",
+        "AC": "12 + Dex modifier",
+        "strengthPrequisite": 0,
+        "stealthDisadvantage": false,
+        "weight": "13lb"
+    },
+    "Hide": {
+        "armorType": "Medium",
+        "cost": "10",
+        "AC": "12 + Dex modifier (max 2)",
+        "strengthPrequisite": 0,
+        "stealthDisadvantage": false,
+        "weight": "12lb"
+    },
+    "Chain Shirt": {
+        "armorType": "Medium",
+        "cost": "50gp",
+        "AC": "13 + Dex modifier (max 2)",
+        "strengthPrequisite": 0,
+        "stealthDisadvantage": false,
+        "weight": "20lb"
+    },
+    "Scale Mail": {
+        "armorType": "Medium",
+        "cost": "50gp",
+        "AC": "14 + Dex modifier (max 2)",
+        "strengthPrequisite": 0,
+        "stealthDisadvantage": true,
+        "weight": "45lb"
+    },
+    "Breastplate": {
+        "armorType": "Medium",
+        "cost": "400gp",
+        "AC": "14 + Dex modifier (max 2)",
+        "strengthPrequisite": 0,
+        "stealthDisadvantage": false,
+        "weight": "20"
+    },
+    "Half Plate": {
+        "armorType": "Medium",
+        "cost": "750gp",
+        "AC": "15 + Dex modifier (max 2)",
+        "strengthPrequisite": 0,
+        "stealthDisadvantage": true,
+        "weight": "40lb"
+    },
+    "Ring Mail": {
+        "armorType": "Heavy",
+        "cost": "30gp",
+        "AC": "14",
+        "strengthPrequisite": 0,
+        "stealthDisadvantage": true,
+        "weight": "40lb"
+    },
+    "Chain Mail": {
+        "armorType": "Heavy",
+        "cost": "75gp",
+        "AC": "16",
+        "strengthPrequisite": 13,
+        "stealthDisadvantage": true,
+        "weight": "55lb"
+    },
+    "Splint": {
+        "armorType": "Heavy",
+        "cost": "200gp",
+        "AC": "17",
+        "strengthPrequisite": 15,
+        "stealthDisadvantage": true,
+        "weight": "60lb"
+    },
+    "Plate": {
+        "armorType": "Heavy",
+        "cost": "1500gp",
+        "AC": "18",
+        "strengthPrequisite": 15,
+        "stealthDisadvantage": true,
+        "weight": "65"
+    },
+    "Shield": {
+        "armorType": "Shield",
+        "cost": "10gp",
+        "AC": "+2",
+        "strengthPrequisite": 0,
+        "stealthDisadvantage": false,
+        "weight": "6lb"
+    }
+}
