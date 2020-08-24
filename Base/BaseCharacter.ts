@@ -58,20 +58,25 @@ export abstract class BaseCharacter {
     charisma: BaseAbility;
 
     // Adventuring Gear, Weapons, Armor
-    inventory: Inventory;
+    inventory: Inventory = {
+        weapons: [],
+        armor: [],
+        toolKits: [],
+        items: []
+    };
 
     // Skill Check Modifiers
     skills: {[key: string]: Skill};
 
     // Traits (Class Features, Racial Traits, Feats)
-    traits: {
-        armorProficiencies: string[],
-        weaponProficiencies: string[],
-        toolProficiencies: string[],
-        languages: string[],
-        features: Trait[],
-        resources: ResourceTrait[]   
-    }
+    traits: { armorProficiencies: string[], weaponProficiencies: string[], toolProficiencies: string[], languages: Trait[], features: Trait[], resources: ResourceTrait[] } = {
+        armorProficiencies: [], 
+        weaponProficiencies: [], 
+        toolProficiencies: [], 
+        languages: [], 
+        features: [], 
+        resources: []
+    };
 
 }
 
@@ -82,7 +87,12 @@ class BaseAbility {
     constructor(score: number) {
         this.score = score;
         this.modifier = Math.floor((this.score - 10) / 2);
-    }    
+    }
+    
+    update(bonus: number) {
+        this.score += bonus;
+        this.modifier = Math.floor((this.score - 10) / 2);
+    }
 }
 
 interface Skill {

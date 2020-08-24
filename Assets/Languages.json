@@ -1,0 +1,17 @@
+{
+    "Common": {"title": "Common", "description": "The language of the realm - spoken by all races."},
+    "Dwarvish": {"title": "Dwarvish", "description": "The language of the Dwarves."},
+    "Elvish": {"title": "Elvish", "description": "The language of the Elves."},
+    "Giant": {"title": "Giant", "description": "The language of the Ogres and Giants."},
+    "Gnomish": {"title": "Gnomish", "description": "The language of the Gnomes."},
+    "Goblin": {"title": "Goblin", "description": "The language of the Goblins."},
+    "Halfling": {"title": "Halfling", "description": "The language of the Halflings."},
+    "Orc": {"title": "Orc", "description": "The language of the Orc."},
+    "Abyssal": {"title": "Abyssal", "description": "The language of the Demons (Chaotic Evil)."},
+    "Celestial": {"title": "Celestial", "description": "The language of the Celestials."},
+    "Draconic": {"title": "Draconic", "description": "The language of the Dragons and Dragonborn."},
+    "Deep Speech": {"title": "Deep Speech", "description": "The language of the Far Realms."},
+    "Primordial": {"title": "Primordial", "description": "The language of the Elementals."},
+    "Sylvan": {"title": "Sylvan", "description": "The language of the Fey."},
+    "Undercommon": {"title": "Undercommon", "description": "The language of the Underworld."}
+}

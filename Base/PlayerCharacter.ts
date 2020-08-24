@@ -13,8 +13,5 @@ export class PlayerCharacter extends BaseCharacter {
     }
 }
 
-const player = new PlayerCharacter(14, 15, 8, 9, 10, 17);
-console.log(player);
-
 
 
