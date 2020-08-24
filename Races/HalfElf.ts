@@ -5,7 +5,8 @@ import * as languages from "../Assets/Languages.json";
 
 export class HalfElf extends Race {
     constructor(language: string, abilityScores: string[], proficiencies: string[]) {
-        super("180 years",  // Average Lifespan
+        super(
+            "180 years",  // Average Lifespan
             30,  // Speed (Movement)
             "Medium", // Size
             [languages["Common"], languages[language]],  // Languages

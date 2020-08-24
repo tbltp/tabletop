@@ -5,7 +5,8 @@ import * as languages from "../Assets/Languages.json";
 
 abstract class Halfling extends Race {
     constructor() {
-        super("150 years",  // Average Lifespan
+        super(
+            "150 years",  // Average Lifespan
             25,  // Speed (Movement)
             "Small", // Size
             [languages["Common"], languages["Halfling"]],  // Languages

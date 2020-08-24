@@ -5,7 +5,8 @@ import * as languages from "../Assets/Languages.json";
 
 abstract class Elf extends Race {
     constructor() {
-        super("750 years",  // Average Lifespan
+        super(
+            "750 years",  // Average Lifespan
             30,  // Speed (Movement)
             "Medium", // Size
             [languages["Common"], languages["Elvish"]],  // Languages

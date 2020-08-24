@@ -5,7 +5,8 @@ import * as languages from "../Assets/Languages.json";
 
 abstract class Gnome extends Race {
     constructor() {
-        super("425 years",  // Average Lifespan
+        super(
+            "425 years",  // Average Lifespan
             25,  // Speed (Movement)
             "Small", // Size
             [languages["Common"], languages["Gnomish"]],  // Languages

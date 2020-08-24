@@ -3,11 +3,11 @@ import { PlayerCharacter } from '../Base/PlayerCharacter';
 import * as traits from "../Assets/RacialTraits.json";
 import * as languages from "../Assets/Languages.json";
 import * as feats from "../Assets/Feats.json";
-import { Trait } from '../Base/Interfaces';
 
 abstract class Human extends Race {
     constructor(language: string) {
-        super("100 years",  // Average Lifespan
+        super(
+            "100 years",  // Average Lifespan
             30,  // Speed (Movement)
             "Medium", // Size
             [languages["Common"], languages[language]],  // Languages

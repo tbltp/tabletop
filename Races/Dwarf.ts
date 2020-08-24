@@ -5,7 +5,8 @@ import * as languages from "../Assets/Languages.json";
 
 abstract class Dwarf extends Race {
     constructor(toolProficiency: string) {
-        super("350 years",  // Average Lifespan
+        super(
+            "350 years",  // Average Lifespan
             25,  // Speed (Movement)
             "Medium", // Size
             [languages["Common"], languages["Dwarvish"]],  // Languages

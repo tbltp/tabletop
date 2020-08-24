@@ -5,7 +5,8 @@ import * as languages from "../Assets/Languages.json";
 
 export class HalfOrc extends Race {
     constructor() {
-        super("75 years",  // Average Lifespan
+        super(
+            "75 years",  // Average Lifespan
             30,  // Speed (Movement)
             "Medium", // Size
             [languages["Common"], languages["Orc"]],  // Languages

@@ -5,7 +5,8 @@ import * as languages from "../Assets/Languages.json";
 
 export class Tiefling extends Race {
     constructor() {
-        super("100 years",  // Average Lifespan
+        super(
+            "100 years",  // Average Lifespan
             30,  // Speed (Movement)
             "Medium", // Size
             [languages["Common"], languages["Infernal"]],  // Languages
