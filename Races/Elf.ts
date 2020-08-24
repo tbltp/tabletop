@@ -35,7 +35,7 @@ export class HighElf extends Elf {
     }
 
     proficiencies(pc: PlayerCharacter): void {
-        // TODO: RESTRUCTURE + FIGURE OUT SKILLS - PROFICIENCY IN PERCEPTION
+        pc.skills["Perception"].proficient = true;
     }
 }
 
@@ -57,7 +57,7 @@ export class WoodElf extends Elf {
     }
 
     proficiencies(pc: PlayerCharacter): void {
-        // TODO: RESTRUCTURE + FIGURE OUT SKILLS - PROFICIENCY IN PERCEPTION
+        pc.skills["Perception"].proficient = true;
     }
 }
 
@@ -80,6 +80,6 @@ export class DarkElf extends Elf {
     }
 
     proficiencies(pc: PlayerCharacter): void {
-        // TODO: RESTRUCTURE + FIGURE OUT SKILLS - PROFICIENCY IN PERCEPTION
+        pc.skills["Perception"].proficient = true;
     }
 }

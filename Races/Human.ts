@@ -46,7 +46,7 @@ export class VariantHuman extends Human {
             {"title": "Extra Language", "description": `You can speak, read, and write one extra language of your chotce. - ${language}`},
             {"title": "Proficiency", "description": `You gain proficiency in a skill of your choice . - ${proficiency}`}
         );
-        
+
         this.chosenAbilityScores = abilityScores;
         this.chosenProficiency = proficiency;
     }
@@ -61,7 +61,6 @@ export class VariantHuman extends Human {
     }
 
     proficiencies(pc: PlayerCharacter): void {
-       // TODO: RESTRUCTURE + FIGURE OUT SKILLS - PROFICIENCY IN [this.chosenProficiency]
-        return;
+        pc.skills[this.chosenProficiency].proficient = true;
     }
 }

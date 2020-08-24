@@ -22,7 +22,6 @@ export class HalfOrc extends Race {
     }
 
     proficiencies(pc: PlayerCharacter): void {
-        // TODO: RESTRUCTURE + FIGURE OUT SKILLS - PROFICIENCY IN INTIMIDATION
-        return;
+        pc.skills["Intimidation"].proficient = true;
     }
 }
