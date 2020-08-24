@@ -35,3 +35,8 @@ export class Dragonborn extends Race {
         return;
     }
 }
+
+let a = new PlayerCharacter(10, 10, 10, 10, 10, 10);
+let b = new Dragonborn("White");
+b.apply(a);
+console.log(a.skills);
