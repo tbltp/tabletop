@@ -1,5 +1,6 @@
 import { Trait } from '../Base/Interfaces';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
+import { FunctionDeclaration } from 'typescript';
 
 export abstract class Race {
     
@@ -22,6 +23,8 @@ export abstract class Race {
     weaponProficiencies: string[];
     armorProficiencies: string[];
     toolProficiencies: string[];
+    
+    abstract abilitiesAtLevels: {[key: number]: FunctionDeclaration };
 
     abstract abilityIncrease(PlayerCharacter): void;
 
