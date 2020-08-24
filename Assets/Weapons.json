@@ -1,0 +1,306 @@
+{
+    "Club": {
+        "weaponType": "Simple Melee",
+        "cost": "1sp",
+        "damage": "1d4",
+        "damageType": "Bludgeoning",
+        "weight": "2lb",
+        "properties": ["Light"]
+    },
+    "Dagger": {
+        "weaponType": "Simple Melee",
+        "cost": "2gp",
+        "damage": "1d4",
+        "damageType": "Piercing",
+        "weight": "1lb",
+        "properties": ["Finesse", "Light", "Thrown", "Range 20ft / 60ft Disadvantage"]
+    },
+    "Greatclub": {
+        "weaponType": "Simple Melee",
+        "cost": "2sp",
+        "damage": "1d8",
+        "damageType": "Bludgeoning",
+        "weight": "10lb",
+        "properties": ["Two-Handed"]
+    },
+    "Handaxe": {
+        "weaponType": "Simple Melee",
+        "cost": "5gp",
+        "damage": "1d6",
+        "damageType": "Slashing",
+        "weight": "2lb",
+        "properties": ["Light", "Thrown", "Range 20ft / 60ft Disadvantage"]
+    },
+    "Javelin": {
+        "weaponType": "Simple Melee",
+        "cost": "5sp",
+        "damage": "1d6",
+        "damageType": "Piercing",
+        "weight": "2lb",
+        "properties": ["Thrown", "Range 30ft / 120ft Disadvantage"]
+    },
+    "Light Hammer": {
+        "weaponType": "Simple Melee",
+        "cost": "2gp",
+        "damage": "1d4",
+        "damageType": "Bludgeoning",
+        "weight": "2lb",
+        "properties": ["Light", "Thrown", "Range 20ft / 60ft Disadvantage"]
+    },
+    "Mace": {
+        "weaponType": "Simple Melee",
+        "cost": "5gp",
+        "damage": "1d6",
+        "damageType": "Bludgeoning",
+        "weight": "4lb",
+        "properties": []
+    },
+    "Quarterstaff": {
+        "weaponType": "Simple Melee",
+        "cost": "2sp",
+        "damage": "1d6",
+        "damageType": "Bludgeoning",
+        "weight": "4lb",
+        "properties": ["Versatile", "1d8 damage if two-hand wielded."]
+    },
+    "Sickle": {
+        "weaponType": "Simple Melee",
+        "cost": "1gp",
+        "damage": "1d4",
+        "damageType": "Slashing",
+        "weight": "2lb",
+        "properties": ["Light"]
+    },
+    "Spear": {
+        "weaponType": "Simple Melee",
+        "cost": "1gp",
+        "damage": "1d6",
+        "damageType": "Piercing",
+        "weight": "3lb",
+        "properties": ["Thrown", "Range 20ft / 60ft Disadvantage", "Versatile", "1d8 damage if two-hand wielded."]
+    },
+    "Unarmed Strke": {
+        "weaponType": "Simple Melee",
+        "cost": "--",
+        "damage": "1",
+        "damageType": "Bludgeoning",
+        "weight": "--",
+        "properties": []
+    },
+    "Crossbow, light": {
+        "weaponType": "Simple Ranged",
+        "cost": "25gp",
+        "damage": "1d8",
+        "damageType": "Piercing",
+        "weight": "5lb",
+        "properties": ["Ammunition", "Range 80ft / 320 ft Disadvantage", "Loading", "Two-Handed"]
+    },
+    "Dart": {
+        "weaponType": "Simple Ranged",
+        "cost": "5cp",
+        "damage": "1d4",
+        "damageType": "Piercing",
+        "weight": "1/4lb",
+        "properties": ["Finesse", "Thrown", "Range 20ft / 60ft Disadvantage"]
+    },
+    "Shortbow": {
+        "weaponType": "Simple Ranged",
+        "cost": "25gp",
+        "damage": "1d6",
+        "damageType": "Piercing",
+        "weight": "2lb",
+        "properties": ["Ammunition", "Range 80ft / 320 ft Disadvantage", "Two-Handed"]
+    },
+    "Sling": {
+        "weaponType": "Simple Ranged",
+        "cost": "1sp",
+        "damage": "1d4",
+        "damageType": "Bludgeoning",
+        "weight": "--",
+        "properties": ["Ammunition", "Range 30ft / 120 ft Disadvantage"]
+    },
+    "Battleaxe": {
+        "weaponType": "Martial Melee",
+        "cost": "10gp",
+        "damage": "1d8",
+        "damageType": "Slashing",
+        "weight": "4lb",
+        "properties": ["Versatile", "1d10 damage if two-hand wielded."]
+    },
+    "Flail": {
+        "weaponType": "Martial Melee",
+        "cost": "10gp",
+        "damage": "1d8",
+        "damageType": "Bludgeoning",
+        "weight": "2lb",
+        "properties": []
+    },
+    "Glaive": {
+        "weaponType": "Martial Melee",
+        "cost": "20gp",
+        "damage": "1d10",
+        "damageType": "Slashing",
+        "weight": "6lb",
+        "properties": ["Heavy", "Reach", "Two-Handed"]
+    },
+    "Greataxe": {
+        "weaponType": "Martial Melee",
+        "cost": "30gp",
+        "damage": "1d12",
+        "damageType": "Slashing",
+        "weight": "7lb",
+        "properties": ["Heavy", "Two-Handed"]
+    },
+    "Greatsword": {
+        "weaponType": "Martial Melee",
+        "cost": "50gp",
+        "damage": "2d6",
+        "damageType": "Slashing",
+        "weight": "6lb",
+        "properties": ["Heavy", "Two-Handed"] 
+    },
+    "Halberd": {
+        "weaponType": "Martial Melee",
+        "cost": "20gp",
+        "damage": "1d10",
+        "damageType": "Slashing",
+        "weight": "6lb",
+        "properties": ["Heavy", "Reach", "Two-Handed"]
+    },
+    "Lance": {
+        "weaponType": "Martial Melee",
+        "cost": "10gp",
+        "damage": "1d12",
+        "damageType": "Piercing",
+        "weight": "6lb",
+        "properties": ["Reach", "Disadvantage within 5ft", "Two-Handed (when not mounted.)"]
+    },
+    "Longsword": {
+        "weaponType": "Martial Melee",
+        "cost": "15gp",
+        "damage": "1d8",
+        "damageType": "Slashing",
+        "weight": "3lb",
+        "properties": ["Versatile", "1d10 damage if two-hand wielded."]
+    },
+    "Maul": {
+        "weaponType": "Martial Melee",
+        "cost": "10gp",
+        "damage": "2d6",
+        "damageType": "Bludgeoning",
+        "weight": "10lb",
+        "properties":["Heavy", "Two-Handed"]
+    },
+    "Morningstar": {
+        "weaponType": "Martial Melee",
+        "cost": "15gp",
+        "damage": "1d8",
+        "damageType": "Piercing",
+        "weight": "4lb",
+        "properties": []
+    },
+    "Pike": {
+        "weaponType": "Martial Melee",
+        "cost": "5gp",
+        "damage": "1d10",
+        "damageType": "Piercing",
+        "weight": "18lb",
+        "properties": ["Heavy", "Reach", "Two-Handed"]
+    },
+    "Rapier": {
+        "weaponType": "Martial Melee",
+        "cost": "25gp",
+        "damage": "1d8",
+        "damageType": "Piercing",
+        "weight": "2lb",
+        "properties": ["Finesse"]
+    },
+    "Scimitar": {
+        "weaponType": "Martial Melee",
+        "cost": "25gp",
+        "damage": "1d6",
+        "damageType": "Slashing",
+        "weight": "3lb",
+        "properties": ["Finesse", "Light"]
+    },
+    "Shortsword": {
+        "weaponType": "Martial Melee",
+        "cost": "10gp",
+        "damage": "1d6",
+        "damageType": "Piercing",
+        "weight": "2lb",
+        "properties": ["Finesse", "Light"]
+    },
+    "Trident": {
+        "weaponType": "Martial Melee",
+        "cost": "5gp",
+        "damage": "1d6",
+        "damageType": "Piercing",
+        "weight": "4lb",
+        "properties": ["Thrown", "Range 20ft / 60ft Disadvantage", "Versatile", "1d8 damage if two-hand wielded."]
+    },
+    "War Pick": {
+        "weaponType": "Martial Melee",
+        "cost": "5gp",
+        "damage": "1d8",
+        "damageType": "Piercing",
+        "weight": "2lb",
+        "properties": []
+    },
+    "Warhammer": {
+        "weaponType": "Martial Melee",
+        "cost": "15gp",
+        "damage": "1d8",
+        "damageType": "Bludgeoning",
+        "weight": "2lb",
+        "properties": ["Versatile", "1d10 damage if two-hand wielded."]
+    },
+    "Whip": {
+        "weaponType": "Martial Melee",
+        "cost": "2gp",
+        "damage": "1d4",
+        "damageType": "Slashing",
+        "weight": "3lb",
+        "properties": ["Finesse", "Reach"]
+    },
+    "Blowgun": {
+        "weaponType": "Martial Ranged",
+        "cost": "10gp",
+        "damage": "1",
+        "damageType": "Piercing",
+        "weight": "1lb",
+        "properties": ["Ammunition", "Range 25ft / 100 ft Disadvantage", "Loading"]
+    },
+    "Crossbow, hand": {
+        "weaponType": "Martial Ranged",
+        "cost": "75gp",
+        "damage": "1d6",
+        "damageType": "Piercing",
+        "weight": "3lb",
+        "properties": ["Ammunition", "Range 30ft / 120 ft Disadvantage", "Light", "Loading"]
+    },
+    "Crowssbow, heavy": {
+        "weaponType": "Martial Ranged",
+        "cost": "50gp",
+        "damage": "1d10",
+        "damageType": "Piercing",
+        "weight": "18lb",
+        "properties": ["Ammunition", "Range 100ft / 400 ft Disadvantage", "Heavy", "Loading", "Two-Handed"]
+    },
+    "Longbow": {
+        "weaponType": "Martial Ranged",
+        "cost": "50gp",
+        "damage": "1d8",
+        "damageType": "Piercing",
+        "weight": "2lb",
+        "properties": ["Ammunition", "Range 150ft / 600 ft Disadvantage", "Heavy", "Two-Handed"]
+    },
+    "Net": {
+        "weaponType": "Martial Ranged",
+        "cost": "1gp",
+        "damage": "--",
+        "damageType": "--",
+        "weight": "3lb",
+        "properties": ["A Large or smaller creature hit by a net is restrained until freed. A creature can use its action to make a DC10 Strength Check to free itself or another creature within its reach on a success. Dealing 5 slashing damage to the next (AC 10) also frees the creature without harming it, ending the effect and destroying the net. When you use an action, bonus action, or reaction to attack with a net, you can only make one attack regardless of the number of attacks you can normally make.", "Thrown", "Range 5ft / 15ft Disadvantage"]
+    }
+}
