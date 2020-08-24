@@ -1,4 +1,4 @@
-import {Inventory, Trait, ResourceTrait} from './Interfaces';
+import {Inventory, Trait, ResourceTrait, Spell} from './Interfaces';
 
 export abstract class BaseCharacter {
     
@@ -18,6 +18,9 @@ export abstract class BaseCharacter {
         this.proficiencyBonus = Math.floor((this.totalLevel + 7) / 4);
         this.passivePerception = 10 + this.abilityScores["wisdom"].modifier;
         
+
+
+
 
         this.skills = {
             "Acrobatics": this.abilityScores["dexterity"].skills["Acrobatics"], //--> f(dex), + proficiency (Class Dependent);
@@ -79,6 +82,21 @@ export abstract class BaseCharacter {
         languages: [], 
         features: [], 
         resources: []
+    };
+
+
+    // Known Spells 
+    spells: { 
+        0: Spell[],
+        1: Spell[],
+        2: Spell[],
+        3: Spell[],
+        4: Spell[],
+        5: Spell[],
+        6: Spell[],
+        7: Spell[],
+        8: Spell[],
+        9: Spell[]
     };
 
 }

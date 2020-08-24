@@ -40,11 +40,47 @@ export interface ToolKit {
 }
 
 export interface Trait {
+    /**Spell slots are just special traits with no additional properties */
     readonly title: string;
     readonly description: string;
 }
 
 export interface ResourceTrait extends Trait {
     resourceMax: number;
-    resourceCount: number;
+}
+
+
+export interface Spell {
+    readonly name: string;
+    readonly description: string;
+    readonly school: SpellSchool;
+    readonly castTime: string;
+    readonly range: string;
+    readonly concentration: boolean;
+    readonly duration: string;
+    readonly components: SpellComponent[];
+    readonly material: string
+    readonly minimumLevel: number;
+}
+
+
+
+export enum SpellComponent {
+    V = "Verbal",
+    S = "Somatic",
+    M = "Material",
+    F = "Focus",
+    DF = "Divine Focus",
+    XP = "XP Cost"
+}
+
+export enum SpellSchool {
+    Abj = "Abjuration",
+    Conj = "Conjuration",
+    Div = "Divination",
+    Ench = "Enchantment",
+    Evo = "Evocation",
+    Ill = "Illusion",
+    Nec = "Necromancy",
+    Tran = "Transmutation"
 }

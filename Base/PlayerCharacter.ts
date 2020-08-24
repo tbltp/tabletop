@@ -11,6 +11,7 @@ export class PlayerCharacter extends BaseCharacter {
         cha: number) {
         super(str,dex,con,int,wis,cha);
     }
+    
 }
 
 
