@@ -55,5 +55,7 @@ export abstract class Race {
         this.addWeaponProficiencies(pc);
         this.addArmorProficiencies(pc);
         this.addToolProficiencies(pc);
+        pc.speed = this.speed;
+        pc.size = this.size;
     }
 }

@@ -5,14 +5,14 @@ import * as languages from "../Assets/Languages.json";
 
 abstract class Dwarf extends Race {
     constructor(toolProficiency: string) {
-        super("350 years", // Average Lifespan
-            25, // Speed (Movement)
+        super("350 years",  // Average Lifespan
+            25,  // Speed (Movement)
             "Medium", // Size
-            [languages["Common"], languages["Dwarvish"]], // Languages
-            [traits["Darkvision"], traits["Dwarven Resilience"], traits["Stonecunning"]],
-            ["Battleaxe", "Handaxe", "Light Hammer", "Warhammer"],
-            [],
-            [toolProficiency]
+            [languages["Common"], languages["Dwarvish"]],  // Languages
+            [traits["Darkvision"], traits["Dwarven Resilience"], traits["Stonecunning"]],  // Racial Traits
+            ["Battleaxe", "Handaxe", "Light Hammer", "Warhammer"],  // Weapon Proficiencies
+            [],  // Armor Proficiencies
+            [toolProficiency]  // Tool Proficiences
         );
     }
 }

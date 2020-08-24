@@ -48,6 +48,7 @@ export abstract class BaseCharacter {
     hpMax: number;
     passivePerception: number;
     speed: number;
+    size: string;
 
     // Base Ability Scores 
     strength: BaseAbility;
