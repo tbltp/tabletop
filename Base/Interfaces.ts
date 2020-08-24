@@ -60,27 +60,27 @@ export interface Spell {
     readonly duration: string;
     readonly components: SpellComponent[];
     readonly material: string
-    readonly minimumLevel: number;
+    readonly minimumLevel: string;
 }
 
 
 
 export enum SpellComponent {
-    V = "Verbal",
-    S = "Somatic",
-    M = "Material",
-    F = "Focus",
-    DF = "Divine Focus",
-    XP = "XP Cost"
+    V = "verbal",
+    S = "somatic",
+    M = "material",
+    F = "focus",
+    DF = "divine focus",
+    XP = "xp cost"
 }
 
 export enum SpellSchool {
-    Abj = "Abjuration",
-    Conj = "Conjuration",
-    Div = "Divination",
-    Ench = "Enchantment",
-    Evo = "Evocation",
-    Ill = "Illusion",
-    Nec = "Necromancy",
-    Tran = "Transmutation"
+    Abj = "abjuration",
+    Conj = "conjuration",
+    Div = "divination",
+    Ench = "enchantment",
+    Evo = "evocation",
+    Ill = "illusion",
+    Nec = "necromancy",
+    Tran = "transmutation"
 }

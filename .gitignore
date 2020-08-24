@@ -1,2 +1,4 @@
 node_modules/
+*lock.json
+*.py
 .vscode
