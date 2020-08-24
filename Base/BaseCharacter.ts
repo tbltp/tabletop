@@ -18,10 +18,6 @@ export abstract class BaseCharacter {
         this.proficiencyBonus = Math.floor((this.totalLevel + 7) / 4);
         this.passivePerception = 10 + this.abilityScores["wisdom"].modifier;
         
-
-
-
-
         this.skills = {
             "Acrobatics": this.abilityScores["dexterity"].skills["Acrobatics"], //--> f(dex), + proficiency (Class Dependent);
             "Animal Handling": this.abilityScores["wisdom"].skills["Animal Handling"], //--> f(wis), + proficiency (Class Dependent);
@@ -86,17 +82,17 @@ export abstract class BaseCharacter {
 
 
     // Known Spells 
-    spells: { 
-        0: Spell[],
-        1: Spell[],
-        2: Spell[],
-        3: Spell[],
-        4: Spell[],
-        5: Spell[],
-        6: Spell[],
-        7: Spell[],
-        8: Spell[],
-        9: Spell[]
+    spells: { "0": {}[], "1": {}[], "2": {}[], "3": Spell[], "4": Spell[], "5": Spell[], "6": Spell[], "7": Spell[], "8": Spell[], "9": Spell[]} = {
+        "0": [],
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [],
+        "7": [],
+        "8": [],
+        "9": []
     };
 
 }

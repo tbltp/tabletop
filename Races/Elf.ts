@@ -2,6 +2,7 @@ import { Race } from './Race';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import * as traits from "../Assets/RacialTraits.json";
 import * as languages from "../Assets/Languages.json";
+import * as Spells from "../Assets/Spells.json";
 
 abstract class Elf extends Race {
     constructor() {
@@ -27,10 +28,15 @@ export class HighElf extends Elf {
         );
         this.weaponProficiencies.push("Longsword", "Shortsword", "Shortbow", "Longbow");
         this.languages.push(languages[language]);
-        // TODO: FIGURE OUT HOW TO REPRESENT SPELL LISTS IN BASECHARACTER - GAINS ONE WIZARD CANTRIP (INT)
+        this.cantrip = cantrip;
     }
 
-    abilitiesAtLevels = {}
+    cantrip: string;
+    abilitiesAtLevels = {
+        "1": this.level1
+    }
+
+    level1(pc: PlayerCharacter){ pc.spells["0"].push(Spells[this.cantrip])}
 
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.dexterity.update(2);
@@ -79,7 +85,17 @@ export class DarkElf extends Elf {
         // TODO: FIGURE OUT HOW TO REPRESENT SPELL LISTS IN BASECHARACTER - GAINS DANCING LIGHTS LVL 1, FAERIE FIRE LVL 3, DARKNESS LVL 5 (CHA)
     }
     
-    abilitiesAtLevels = {}
+    abilitiesAtLevels = {
+        "1": this.level1,
+        "3": this.level3,
+        "5": this.level5
+    }
+
+    level1(pc: PlayerCharacter) { pc.spells["0"].push(Spells["DANCING LIGHTS"]); }
+
+    level3(pc: PlayerCharacter) { pc.spells["1"].push(Spells["FAERIE FIRE"]); }
+
+    level5(pc: PlayerCharacter) { pc.spells["2"].push(Spells["DARKNESS"]); }
 
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.dexterity.update(2);

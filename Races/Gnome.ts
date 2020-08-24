@@ -2,6 +2,7 @@ import { Race } from './Race';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import * as traits from "../Assets/RacialTraits.json";
 import * as languages from "../Assets/Languages.json";
+import * as Spells from "../Assets/Spells.json";
 
 abstract class Gnome extends Race {
     constructor() {
@@ -22,11 +23,13 @@ export class ForestGnome extends Gnome {
     constructor() {
         super();
         this.traits.push(traits["Natural Illusionist"], traits["Speak With Small Beasts"]);
-        // TODO: FIGURE OUT HOW TO REPRESENT SPELL LISTS IN BASECHARACTER - NATURAL ILLUSIONIST SPELLS
-
     }
     
-    abilitiesAtLevels = {}
+    abilitiesAtLevels = {
+        "1": this.level1
+    }
+
+    level1(pc: PlayerCharacter){ pc.spells["0"].push(Spells["MINOR ILLUSION"]); }
 
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.intelligence.update(2);

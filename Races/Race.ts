@@ -1,6 +1,5 @@
 import { Trait } from '../Base/Interfaces';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
-import { FunctionDeclaration } from 'typescript';
 
 export abstract class Race {
     
@@ -24,7 +23,7 @@ export abstract class Race {
     armorProficiencies: string[];
     toolProficiencies: string[];
     
-    abstract abilitiesAtLevels: {[key: number]: FunctionDeclaration };
+    abstract abilitiesAtLevels: {[key: string]: (pc: PlayerCharacter) => void; };
 
     abstract abilityIncrease(PlayerCharacter): void;
 
@@ -60,5 +59,7 @@ export abstract class Race {
         this.addToolProficiencies(pc);
         pc.speed = this.speed;
         pc.size = this.size;
+
+        if(Object.keys(this.abilitiesAtLevels).indexOf("1") != -1) { this.abilitiesAtLevels["1"](pc); }
     }
 }

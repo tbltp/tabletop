@@ -2,6 +2,7 @@ import { Race } from './Race';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import * as traits from "../Assets/RacialTraits.json";
 import * as languages from "../Assets/Languages.json";
+import * as Spells from "../Assets/Spells.json";
 
 export class Tiefling extends Race {
     constructor() {
@@ -18,7 +19,17 @@ export class Tiefling extends Race {
         // TODO: FIGURE OUT HOW TO REPRESENT SPELL LISTS IN BASECHARACTER - INFERNAL LEGACY SPELLS
     }
 
-    abilitiesAtLevels = {}
+    abilitiesAtLevels = {
+        "1": this.level1,
+        "3": this.level3,
+        "5": this.level5
+    }
+
+    level1(pc: PlayerCharacter) { pc.spells["0"].push(Spells["THAUMATURGY"]); }
+
+    level3(pc: PlayerCharacter) { pc.spells["1"].push(Spells["HELLISH REBUKE"]); }
+
+    level5(pc: PlayerCharacter) { pc.spells["2"].push(Spells["DARKNESS"]); }
 
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.charisma.update(2);
@@ -29,3 +40,8 @@ export class Tiefling extends Race {
         return;
     }
 }
+
+let a = new PlayerCharacter(10, 10, 10, 10, 10, 10);
+let b = new Tiefling();
+b.apply(a);
+console.log(a.spells);
