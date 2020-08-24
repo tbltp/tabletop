@@ -17,14 +17,15 @@ abstract class Human extends Race {
             []  // Tool Proficiences
         );
     }
+
+    abilitiesAtLevels = {}
+
 }
 
 export class BaseHuman extends Human {
     constructor(language: string) {
         super(language);
     }
-
-    abilitiesAtLevels = {}
 
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.strength.update(1);
@@ -53,7 +54,6 @@ export class VariantHuman extends Human {
         this.chosenProficiency = proficiency;
     }
  
-    abilitiesAtLevels = {};
     chosenAbilityScores: string[];
     chosenProficiency: string;
 

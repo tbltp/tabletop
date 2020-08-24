@@ -40,8 +40,3 @@ export class Tiefling extends Race {
         return;
     }
 }
-
-let a = new PlayerCharacter(10, 10, 10, 10, 10, 10);
-let b = new Tiefling();
-b.apply(a);
-console.log(a.spells);

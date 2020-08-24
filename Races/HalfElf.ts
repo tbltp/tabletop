@@ -38,15 +38,3 @@ export class HalfElf extends Race {
         pc.skills[this.chosenProficiencies[1]].proficient = true;
     }
 }
-
-let a = new PlayerCharacter(11, 11, 11, 11, 11, 11);
-console.log("BASE: ", a);
-console.log(
-    "SKILLS: ", 
-    a.abilityScores["strength"].skills,
-    a.abilityScores["dexterity"].skills,
-    a.abilityScores["constitution"].skills,
-    a.abilityScores["intelligence"].skills,
-    a.abilityScores["wisdom"].skills,
-    a.abilityScores["charisma"].skills
-);

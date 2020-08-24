@@ -16,6 +16,9 @@ abstract class Halfling extends Race {
             []  // Tool Proficiences
         );
     }
+
+    abilitiesAtLevels = {}
+
 }
 
 export class Lightfoot extends Halfling {
@@ -24,8 +27,6 @@ export class Lightfoot extends Halfling {
         this.traits.push(traits["Naturally Stealthy"]);
     }
  
-    abilitiesAtLevels = {}
-
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.dexterity.update(2);
         pc.abilityScores.charisma.update(1);
@@ -41,8 +42,6 @@ export class Stout extends Halfling {
         super();
         this.traits.push(traits["Stout Resilience"]);
     }
-
-    abilitiesAtLevels = {}
 
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.dexterity.update(2);

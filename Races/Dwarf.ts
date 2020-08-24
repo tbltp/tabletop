@@ -16,6 +16,9 @@ abstract class Dwarf extends Race {
             [toolProficiency]  // Tool Proficiences
         );
     }
+    
+    abilitiesAtLevels = {}
+
 }
 
 export class HillDwarf extends Dwarf {
@@ -23,7 +26,6 @@ export class HillDwarf extends Dwarf {
         super(toolProficiency);
     }
 
-    abilitiesAtLevels = {}
     
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.constitution.update(2);
@@ -42,8 +44,6 @@ export class MountainDwarf extends Dwarf {
         this.armorProficiencies.push("Light", "Medium");
     }
     
-    abilitiesAtLevels = {}
-
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.strength.update(2);
         pc.abilityScores.constitution.update(2);
