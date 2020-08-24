@@ -82,7 +82,7 @@ export abstract class BaseCharacter {
 
 
     // Known Spells 
-    spells: { "0": {}[], "1": {}[], "2": {}[], "3": Spell[], "4": Spell[], "5": Spell[], "6": Spell[], "7": Spell[], "8": Spell[], "9": Spell[]} = {
+    spells: { "0": Spell[], "1": Spell[], "2": Spell[], "3": Spell[], "4": Spell[], "5": Spell[], "6": Spell[], "7": Spell[], "8": Spell[], "9": Spell[]} = {
         "0": [],
         "1": [],
         "2": [],
