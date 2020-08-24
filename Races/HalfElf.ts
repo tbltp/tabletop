@@ -23,6 +23,7 @@ export class HalfElf extends Race {
         );
     };
 
+    abilitiesAtLevels = {};
     chosenAbilityScores: string[];
     chosenProficiencies: string[];
 

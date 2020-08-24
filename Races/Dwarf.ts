@@ -23,6 +23,8 @@ export class HillDwarf extends Dwarf {
         super(toolProficiency);
     }
 
+    abilitiesAtLevels = {}
+    
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.constitution.update(2);
         pc.abilityScores.wisdom.update(1);
@@ -39,6 +41,8 @@ export class MountainDwarf extends Dwarf {
         this.traits.push(traits["Dwarven Toughness"]);
         this.armorProficiencies.push("Light", "Medium");
     }
+    
+    abilitiesAtLevels = {}
 
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.strength.update(2);

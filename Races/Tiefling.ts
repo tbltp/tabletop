@@ -18,6 +18,8 @@ export class Tiefling extends Race {
         // TODO: FIGURE OUT HOW TO REPRESENT SPELL LISTS IN BASECHARACTER - INFERNAL LEGACY SPELLS
     }
 
+    abilitiesAtLevels = {}
+
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.charisma.update(2);
         pc.abilityScores.intelligence.update(1);

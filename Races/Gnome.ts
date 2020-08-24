@@ -25,6 +25,8 @@ export class ForestGnome extends Gnome {
         // TODO: FIGURE OUT HOW TO REPRESENT SPELL LISTS IN BASECHARACTER - NATURAL ILLUSIONIST SPELLS
 
     }
+    
+    abilitiesAtLevels = {}
 
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.intelligence.update(2);
@@ -42,6 +44,8 @@ export class MountainGnome extends Gnome {
         this.traits.push(traits["Artificer's Lore"], traits["Tinker"]);
         this.toolProficiencies.push("Tinker's tools")
     }
+ 
+    abilitiesAtLevels = {}
 
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.intelligence.update(2);

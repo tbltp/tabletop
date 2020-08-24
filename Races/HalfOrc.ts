@@ -17,6 +17,8 @@ export class HalfOrc extends Race {
         );
     }
 
+    abilitiesAtLevels = {}
+
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.strength.update(2);
         pc.abilityScores.constitution.update(1);

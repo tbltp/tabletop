@@ -23,6 +23,8 @@ export class Lightfoot extends Halfling {
         super();
         this.traits.push(traits["Naturally Stealthy"]);
     }
+ 
+    abilitiesAtLevels = {}
 
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.dexterity.update(2);
@@ -34,11 +36,13 @@ export class Lightfoot extends Halfling {
     }
 }
 
-export class MountainDwarf extends Halfling {
+export class Stout extends Halfling {
     constructor() {
         super();
         this.traits.push(traits["Stout Resilience"]);
     }
+
+    abilitiesAtLevels = {}
 
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.dexterity.update(2);

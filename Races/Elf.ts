@@ -30,6 +30,8 @@ export class HighElf extends Elf {
         // TODO: FIGURE OUT HOW TO REPRESENT SPELL LISTS IN BASECHARACTER - GAINS ONE WIZARD CANTRIP (INT)
     }
 
+    abilitiesAtLevels = {}
+
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.dexterity.update(2);
         pc.abilityScores.intelligence.update(1);
@@ -51,6 +53,8 @@ export class WoodElf extends Elf {
         this.languages.push(languages[language]);
         this.weaponProficiencies.push("Longsword", "Shortsword", "Shortbow", "Longbow");
      }
+
+     abilitiesAtLevels = {}
 
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.dexterity.update(2);
@@ -74,6 +78,8 @@ export class DarkElf extends Elf {
         this.weaponProficiencies.push("Rapier", "Shortsword", "Crossbow, hand");
         // TODO: FIGURE OUT HOW TO REPRESENT SPELL LISTS IN BASECHARACTER - GAINS DANCING LIGHTS LVL 1, FAERIE FIRE LVL 3, DARKNESS LVL 5 (CHA)
     }
+    
+    abilitiesAtLevels = {}
 
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.dexterity.update(2);
