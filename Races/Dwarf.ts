@@ -23,8 +23,8 @@ export class HillDwarf extends Dwarf {
     }
 
     abilityIncrease(pc: PlayerCharacter): void {
-        pc.constitution.update(2);
-        pc.wisdom.update(1);
+        pc.abilityScores.constitution.update(2);
+        pc.abilityScores.wisdom.update(1);
     }
 
     proficiencies(pc: PlayerCharacter): void {
@@ -40,8 +40,8 @@ export class MountainDwarf extends Dwarf {
     }
 
     abilityIncrease(pc: PlayerCharacter): void {
-        pc.strength.update(2);
-        pc.constitution.update(2);
+        pc.abilityScores.strength.update(2);
+        pc.abilityScores.constitution.update(2);
     }
 
     proficiencies(pc: PlayerCharacter): void {

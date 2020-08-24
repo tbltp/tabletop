@@ -3,19 +3,19 @@ import {Inventory, Trait, ResourceTrait} from './Interfaces';
 export abstract class BaseCharacter {
     
     constructor(str: number, dex: number, con: number, int: number, wis: number, cha: number) {
-        this.strength = new BaseAbility(str);
-        this.dexterity = new BaseAbility(dex);
-        this.constitution = new BaseAbility(con);
-        this.intelligence = new BaseAbility(int);
-        this.wisdom = new BaseAbility(wis);
-        this.charisma = new BaseAbility(cha);
+        this.abilityScores.strength = new BaseAbility(str);
+        this.abilityScores.dexterity = new BaseAbility(dex);
+        this.abilityScores.constitution = new BaseAbility(con);
+        this.abilityScores.intelligence = new BaseAbility(int);
+        this.abilityScores.wisdom = new BaseAbility(wis);
+        this.abilityScores.charisma = new BaseAbility(cha);
 
         
-        this.initiativeBonus = this.dexterity.modifier;
-        this.baseArmorClass = 10 + this.dexterity.modifier;
-        this.hpMax = 8 + this.constitution.modifier;
+        this.initiativeBonus = this.abilityScores.dexterity.modifier;
+        this.baseArmorClass = 10 + this.abilityScores.dexterity.modifier;
+        this.hpMax = 8 + this.abilityScores.constitution.modifier;
         this.proficiencyBonus = Math.floor((this.totalLevel + 7) / 4);
-        this.passivePerception = 10 + this.wisdom.modifier;
+        this.passivePerception = 10 + this.abilityScores.wisdom.modifier;
         
 
         this.skills = {
@@ -50,14 +50,15 @@ export abstract class BaseCharacter {
     speed: number;
     size: string;
 
-    // Base Ability Scores 
-    strength: BaseAbility;
-    dexterity: BaseAbility;
-    constitution: BaseAbility;
-    intelligence: BaseAbility;
-    wisdom: BaseAbility;
-    charisma: BaseAbility;
-
+    // Base Ability Scores
+    abilityScores: { 
+        strength: BaseAbility;
+        dexterity: BaseAbility;
+        constitution: BaseAbility;
+        intelligence: BaseAbility;
+        wisdom: BaseAbility;
+        charisma: BaseAbility;
+    }
     // Adventuring Gear, Weapons, Armor
     inventory: Inventory = {
         weapons: [],
