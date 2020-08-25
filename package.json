@@ -1,0 +1,21 @@
+{
+  "name": "tabletop",
+  "version": "1.0.0",
+  "description": "",
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alimohamad/tabletop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alimohamad/tabletop/issues"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.2"
+  }
+}

@@ -40,11 +40,26 @@ export interface ToolKit {
 }
 
 export interface Trait {
+    /**Spell slots are just special traits with no additional properties */
     readonly title: string;
     readonly description: string;
 }
 
 export interface ResourceTrait extends Trait {
     resourceMax: number;
-    resourceCount: number;
 }
+
+
+export interface Spell {
+    readonly name: string;
+    readonly description: string;
+    readonly school: string;
+    readonly castTime: string;
+    readonly range: string;
+    readonly concentration: boolean;
+    readonly duration: string;
+    readonly components: string[];
+    readonly material: string
+    readonly minimumLevel: string;
+}
+

@@ -11,10 +11,8 @@ export class PlayerCharacter extends BaseCharacter {
         cha: number) {
         super(str,dex,con,int,wis,cha);
     }
+    
 }
-
-const player = new PlayerCharacter(14, 15, 8, 9, 10, 17);
-console.log(player);
 
 
 
