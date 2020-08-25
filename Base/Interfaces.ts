@@ -53,34 +53,13 @@ export interface ResourceTrait extends Trait {
 export interface Spell {
     readonly name: string;
     readonly description: string;
-    readonly school: SpellSchool;
+    readonly school: string;
     readonly castTime: string;
     readonly range: string;
     readonly concentration: boolean;
     readonly duration: string;
-    readonly components: SpellComponent[];
+    readonly components: string[];
     readonly material: string
     readonly minimumLevel: string;
 }
 
-
-
-export enum SpellComponent {
-    V = "verbal",
-    S = "somatic",
-    M = "material",
-    F = "focus",
-    DF = "divine focus",
-    XP = "xp cost"
-}
-
-export enum SpellSchool {
-    Abj = "abjuration",
-    Conj = "conjuration",
-    Div = "divination",
-    Ench = "enchantment",
-    Evo = "evocation",
-    Ill = "illusion",
-    Nec = "necromancy",
-    Tran = "transmutation"
-}
