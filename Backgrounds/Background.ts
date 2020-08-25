@@ -89,13 +89,13 @@ export class FolkHero extends Background {
 export class GuildArtisan extends Background {
     constructor(artisansTool: string, language: string){
         super();
-        this.toolProficiencies.push(artisansTool);
+        this.toolProficiencies = [artisansTool];
         this.languages = [language];
     }
 
     skillProficiencies = ["Insight", "Persuasion"];
     languages: string[];
-    toolProficiencies = [];
+    toolProficiencies: string[];
     equipment = [];
     features = [{"title": "Guild Membership", "description": "As an established and respected member of a guild, you can rely on certain benefits that membership provides. Your fellow guild members will provide you with lodging and food if necessary, and pay for your funeral if needed. In some cities and towns, a guildhall offers a central place to meet other members of your profession, which can be a good place to meet potential patrons, allies, or hirelings. Guilds often wield tremendous political power. If you are accused of a crime, your guild will support you if a good case can be made for your innocence or the crime is justifiable. You can also gain access to powerful political figures through the guild, if you are a member in good standing. Such connections might require the donation of money or magic items to the guild's coffers. You must pay dues of 5 gp per month to the guild. If you miss payments, you must make up back dues to remain in the guild's good graces."}];
 }
@@ -127,6 +127,10 @@ export class Noble extends Background {
     features = [{"title": "Position of Privilege", "description": "Thanks to your noble birth, people are inclined to think the best of you. You are welcome in high society, and people assume you have the right to be wwherever you are. The common folk make every effort to accommodate you and avoid your displeasure, and other people of high birth treat you as a member of the same social sphere, You can secure an audience with a local noble if you need to."}];
 }
 
+export class Knight extends Noble {
+    features = [{"title": "Retainers", "description": "You have the service of three retainers loyal to your family. These retainers can be attendants or messengers, and one might be a majordomo. Your retainers are commoners who can perform mundane tasks for you, but they do not fight for you, will not follow you into obviously dangerous areas (such as dungeons), and will leave if they are frequently endangered or abused."}];
+}
+
 export class Outlander extends Background {
     constructor(musicalInstrument: string, language: string){
         super();
@@ -139,4 +143,58 @@ export class Outlander extends Background {
     toolProficiencies: string[];
     equipment = [];
     features = [{"title": "Wanderer", "description": "You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers berries, small game, water, and so forth."}];
+}
+
+export class Sage extends Background {
+    constructor(languages: string[]){
+        super();
+        this.languages = languages;
+    }
+
+    skillProficiencies = ["Arcana", "History"];
+    languages: string[];
+    toolProficiencies = [];
+    equipment = [];
+    features = [{"title": "Research", "description": "When you attempt to learn or recall a piece of lore, if you do not know that information, you often know where and from whom you can obtain it. Usually, this information comes from a library, scriptorium, university, or a sage or other learned person or creature."}];
+}
+
+export class Sailor extends Background {
+    constructor(){
+        super();
+    }
+
+    skillProficiencies = ["Athletics", "Perpection"];
+    languages = [];
+    toolProficiencies = ["Navigator's tools, Vehicles, water"];
+    equipment = [];
+    features = [{"title": "Ship's Passage", "description": "When you need to, you can secure free passage on a siling ship for yourself and your adventuring companions. You might sail on the ship you served on, or another ship you have good relations with (perhaps one captained by former crewmate). Because you're calling in a favor, you can't be certain of a schedule or route that will meet your every need. In return for your free passage, you and your companions are expected to assist the crew during voyage."}];
+}
+
+export class Pirate extends Sailor {
+    features = [{"title": "Bad Reputation", "description": "No matter where you go, people are afraid of you due to your reputation. When you are in a civilized settlement, you can get away with minor criminal offenses, such as refusing to pay for food at a tavern or breaking down doors at a local shop, since most people will not report your activity to the authorities."}]
+}
+
+export class Soldier extends Background {
+    constructor(gamingSet: string){
+        super();
+        this.toolProficiencies.push(gamingSet);
+    }
+
+    skillProficiencies = ["Athletics", "Perpection"];
+    languages = [];
+    toolProficiencies = ["Vehicles, land"]
+    equipment = [];
+    features = [{"title": "Military Rank", "description": "You have a military rank from your career as a soldier. Soldiers loyal to your former military organization still recognize your authority and influence. and they defer to you if they are of a lower rank. You can invoke your rank to exert influence over other soldiers and requisition simple equipment or horses for temporary use. You can also usually gain access to friendly military encampments and fortresses where your rank is recognized."}];
+}
+
+export class Urchin extends Background {
+    constructor(){
+        super();
+    }
+
+    skillProficiencies = ["Sleight of Hand", "Stealth"];
+    languages = [];
+    toolProficiencies = ["Disguise Kit", "Thieves' Tools"];
+    equipment = [];
+    features = [{"title": "City Secrets", "description": "You know the secret patterns and flow to cities and can find passages through the urban sprawl that other would miss. When you are not in combat, you (and companions you lead) can travel between any two locations in the city twice as fast as your speed would normally allow."}];
 }
