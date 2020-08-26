@@ -3,7 +3,7 @@ export interface Inventory {
     armor: Armor[];
     toolKits: ToolKit[];
     items: Item[];
-
+    gp: number;
 }
 
 export interface Weapon {

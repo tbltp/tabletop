@@ -64,7 +64,8 @@ export abstract class BaseCharacter {
         weapons: [],
         armor: [],
         toolKits: [],
-        items: []
+        items: [],
+        gp: 0
     };
 
     // Skill Check Modifiers

@@ -11,6 +11,7 @@
     "Celestial": {"title": "Celestial", "description": "The language of the Celestials."},
     "Draconic": {"title": "Draconic", "description": "The language of the Dragons and Dragonborn."},
     "Deep Speech": {"title": "Deep Speech", "description": "The language of the Far Realms."},
+    "Infernal": {"title": "Infernal", "description": "The language of the Devils (Lawful Evil)."},
     "Primordial": {"title": "Primordial", "description": "The language of the Elementals."},
     "Sylvan": {"title": "Sylvan", "description": "The language of the Fey."},
     "Undercommon": {"title": "Undercommon", "description": "The language of the Underworld."}
