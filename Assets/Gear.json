@@ -790,5 +790,29 @@
         "cost": "1 cp",
         "weight": "1 lb",
         "description": ""
+    },
+    "BIT AND BRIDLE": {
+        "name": "Bit and bridle",
+        "itemType": "Vehicle accessory",
+        "quantity": 1,
+        "cost": "2 gp",
+        "weight": "1 lb",
+        "description": ""
+    },
+    "FEED (PER DAY)": {
+        "name": "Feed (per day)",
+        "itemType": "Vehicle accessory",
+        "quantity": 1,
+        "cost": "5 cp",
+        "weight": "10 lb",
+        "description": ""
+    },
+    "SADDLEBAGS": {
+        "name": "Saddlebags",
+        "itemType": "Vehicle accessory",
+        "quantity": 1,
+        "cost": "4 gp",
+        "weight": "8 lb",
+        "description": ""
     }
 }
