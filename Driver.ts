@@ -9,7 +9,17 @@ import { HalfElf } from './Races/HalfElf';
 import { BaseHuman, VariantHuman } from './Races/Human';
 import { HalfOrc } from './Races/HalfOrc';
 import { Tiefling } from './Races/Tiefling';
+import { LightlyArmored } from './Feats/Ez';
 
 import { PlayerCharacter } from './Base/PlayerCharacter';
+import { Feat } from './Feats/Feat';
 
-let a = new PlayerCharacter(10, 10, 10, 10, 10, 10);
+let a = new PlayerCharacter(10, 10, 10, 10, 10, 13);
+
+let feat: Feat = new LightlyArmored('dexterity');
+feat.apply(a);
+
+
+
+console.log(a.abilityScores);
+console.log(a.traits);

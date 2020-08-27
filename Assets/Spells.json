@@ -2533,8 +2533,8 @@
     "material": "burning incense, a small measure of brimstone and oil, a knotted string, a small amount of umber hulk blood, and a small silver rod worth at least 10 gp",
     "minimumLevel": "6"
   },
-  "GUIDANGE": {
-    "name": "GUIDANGE",
+  "GUIDANCE": {
+    "name": "GUIDANCE",
     "description": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The spell then ends.",
     "school": "divination",
     "castTime": "1 action",
@@ -3320,8 +3320,8 @@
     "material": "a bit of fleece",
     "minimumLevel": "3"
   },
-  "MASS CURE WOUNPDS": {
-    "name": "MASS CURE WOUNPDS",
+  "MASS CURE WOUNDS": {
+    "name": "MASS CURE WOUNDS",
     "description": "A wave of healing energy washes out from a point of your choice within range, Choose up to six creatures in a 30-foot-radius sphere centered on that point. Each target regains hit points equal to 3d8 + your spelleasting ability modifier. This spell has no effect on undead or constructs. At Higher Levels. When you cast this spell using a spell slot of 6th tevel or higher, the healing increases by 1d8 for each slot level above 5th.",
     "school": "conjuration",
     "castTime": "1 action",
