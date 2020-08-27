@@ -2,7 +2,6 @@ import { Race } from './Race';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import * as traits from "../Assets/RacialTraits.json";
 import * as languages from "../Assets/Languages.json";
-import * as feats from "../Assets/Feats.json";
 
 abstract class Human extends Race {
     constructor(language: string) {
@@ -42,18 +41,17 @@ export class BaseHuman extends Human {
 }
 
 export class VariantHuman extends Human {
-    constructor(language: string, feat: string, proficiency: string, abilityScores: string[]) {
+    constructor(language: string, proficiency: string, abilityScores: string[]) {
         super(language);
         this.traits.push(
-            feats[feat],
             {"title": "Extra Language", "description": `You can speak, read, and write one extra language of your chotce. - ${language}`},
             {"title": "Proficiency", "description": `You gain proficiency in a skill of your choice . - ${proficiency}`}
         );
-
+        
         this.chosenAbilityScores = abilityScores;
         this.chosenProficiency = proficiency;
     }
- 
+    
     chosenAbilityScores: string[];
     chosenProficiency: string;
 
