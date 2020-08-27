@@ -7,15 +7,15 @@ export abstract class Feat {
 
     abstract apply(pc: PlayerCharacter);
 
-    abilityPrereqCheck(pc: PlayerCharacter, skill: string, target: number){
-        if (pc.abilityScores[skill].score < target) { throw Error("Haha Fuck U Get Rekt Scrub"); }
+    abilityPrereqCheck(pc: PlayerCharacter, skill: string, target: number): boolean {
+        return (pc.abilityScores[skill].score < target) ? false : true;
     }
 
-    armorPrereqCheck(pc: PlayerCharacter, skill: string){
-        if(pc.traits.armorProficiencies.indexOf(skill) === -1) { throw Error("Haha Fuck U Get Rekt Scrub"); }
+    armorPrereqCheck(pc: PlayerCharacter, skill: string) {
+        return (pc.traits.armorProficiencies.indexOf(skill) === -1) ? false : true;
     }
 
     spellcasterPrereqCheck(pc: PlayerCharacter) {
-        if(!pc.isSpellcaster()) { throw Error("Haha Fuck U Get Rekt Scrub"); }
+        return (!pc.isSpellcaster()) ? false : true;
     }
 }

@@ -112,6 +112,7 @@ class BaseAbility {
     name: string;
     score: number;
     modifier: number;
+    savingThrowProficiency: boolean = false;
     skills: {[key:string]: Skill} = {};
 
     update(bonus: number) {
