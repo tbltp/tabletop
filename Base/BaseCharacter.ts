@@ -116,7 +116,7 @@ class BaseAbility {
     skills: {[key:string]: Skill} = {};
 
     update(bonus: number) {
-        this.score += bonus;
+        this.score = this.score + bonus > 20 ? 20: this.score + bonus;
         this.modifier = Math.floor((this.score - 10) / 2);
         for(const skill in this.skills) { this.skills[skill].modifier = this.modifier; }
     }
