@@ -1,8 +1,8 @@
 import { Race } from './Race';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
-import * as traits from "../Assets/RacialTraits.json";
-import * as languages from "../Assets/Languages.json";
-import * as Spells from "../Assets/Spells.json";
+import * as traits from "../../Assets/RacialTraits.json";
+import * as languages from "../../Assets/Languages.json";
+import * as Spells from "../../Assets/Spells.json";
 
 abstract class Elf extends Race {
     constructor(name: string) {

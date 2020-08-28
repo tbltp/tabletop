@@ -1,8 +1,8 @@
 import { Feat } from './Feat';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
-import * as Feats from '../Assets/Feats.json';
-import * as Languages from '../Assets/Languages.json';
-import * as Spells from '../Assets/Spells.json';
+import * as Feats from '../../Assets/Feats.json';
+import * as Languages from '../../Assets/Languages.json';
+import * as Spells from '../../Assets/Spells.json';
 import { ResourceTrait, Spell, Trait } from '../Base/Interfaces';
 
 export class InspiringLeader extends Feat {
@@ -242,8 +242,8 @@ export class Observant extends Feat {
     public apply(pc: PlayerCharacter) {
        
         pc.abilityScores[this.ability].update(1);
-        pc.skills['Perception'].modifier += 5;
-        pc.skills['Investigation'].modifier += 5;
+        pc.baseStats['passivePerception'].bonus += 5;
+        pc.baseStats['passiveInvestigation'].bonus += 5;
         this.trait.description += `\n(${this.ability})`
         pc.traits.features.push(this.trait);
     }

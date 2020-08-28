@@ -1,6 +1,6 @@
-import { Lucky, InspiringLeader, KeenMind, LightlyArmored, Linguist, MageSlayer, MagicInitiate, MediumArmorMaster, Mobile, ModeratelyArmored, MountedCombatant, Observant } from '../Ez';
-import { Feat } from '../Feat';
-import { PlayerCharacter } from '../../Base/PlayerCharacter';
+import { Lucky, InspiringLeader, KeenMind, LightlyArmored, Linguist, MageSlayer, MagicInitiate, MediumArmorMaster, Mobile, ModeratelyArmored, MountedCombatant, Observant } from '../../src/Feats/Ez';
+import { Feat } from '../../src/Feats/Feat';
+import { PlayerCharacter } from '../../src/Base/PlayerCharacter';
 import * as Languages from '../../Assets/Languages.json';
 import * as Feats from '../../Assets/Feats.json';
 import * as Spells from '../../Assets/Spells.json';
@@ -195,16 +195,16 @@ describe('Ez Feats', () => {
         ).toBeTruthy();
     });
 
-    test('Observant feat increases perception and investigation modifiers by 5', () => {
+    test('Observant feat increases passive perception and investigation score by 5', () => {
 
         let pc1: PlayerCharacter = new PlayerCharacter(14, 14, 14, 14, 14, 14);
         let ft: Feat = new Observant('wisdom'); 
-        let initialPerc = pc1.skills['Perception'].modifier;
-        let initialInv = pc1.skills['Investigation'].modifier;
+        let initialPerc = pc1.baseStats['passivePerception'].bonus;
+        let initialInv = pc1.baseStats['passiveInvestigation'].bonus;
         ft.apply(pc1);
         expect(
-            pc1.skills['Perception'].modifier === initialPerc + 5 &&
-            pc1.skills['Investigation'].modifier === initialPerc + 5
+            pc1.baseStats['passivePerception'].bonus === initialPerc + 5 &&
+            pc1.baseStats['passiveInvestigation'].bonus === initialPerc + 5
         ).toBeTruthy();
     });
 });

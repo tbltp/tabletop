@@ -1,25 +1,30 @@
-import { Acolyte, Charlatan, Criminal, Entertainer, FolkHero, GuildArtisan, Hermit, Noble, Knight, Outlander, Sage, Sailor, Pirate, Soldier, Urchin } from './Backgrounds/Background';
+import { Acolyte, Charlatan, Criminal, Entertainer, FolkHero, GuildArtisan, Hermit, Noble, Knight, Outlander, Sage, Sailor, Pirate, Soldier, Urchin } from './src/Backgrounds/Background';
 
-import { HillDwarf, MountainDwarf } from './Races/Dwarf';
-import { HighElf, WoodElf, DarkElf } from './Races/Elf';
-import { Lightfoot, Stout } from './Races/Halfling';
-import { ForestGnome, MountainGnome } from './Races/Gnome';
-import { Dragonborn } from './Races/Dragonborn';
-import { HalfElf } from './Races/HalfElf';
-import { BaseHuman, VariantHuman } from './Races/Human';
-import { HalfOrc } from './Races/HalfOrc';
-import { Tiefling } from './Races/Tiefling';
-import { LightlyArmored } from './Feats/Ez';
+import { HillDwarf, MountainDwarf } from './src/Races/Dwarf';
+import { HighElf, WoodElf, DarkElf } from './src/Races/Elf';
+import { Lightfoot, Stout } from './src/Races/Halfling';
+import { ForestGnome, MountainGnome } from './src/Races/Gnome';
+import { Dragonborn } from './src/Races/Dragonborn';
+import { HalfElf } from './src/Races/HalfElf';
+import { BaseHuman, VariantHuman } from './src/Races/Human';
+import { HalfOrc } from './src/Races/HalfOrc';
+import { Tiefling } from './src/Races/Tiefling';
+import { Observant } from './src/Feats/Ez';
 
-import { PlayerCharacter } from './Base/PlayerCharacter';
-import { Feat } from './Feats/Feat';
+import { PlayerCharacter } from './src/Base/PlayerCharacter';
+import { Feat } from './src/Feats/Feat';
 
-let a = new PlayerCharacter(10, 10, 10, 10, 10, 13);
+let pc1: PlayerCharacter = new PlayerCharacter(15, 15, 15, 15, 15, 15);
 
-let feat: Feat = new LightlyArmored('dexterity');
-feat.apply(a);
+let ft: Feat = new Observant('intelligence'); 
 
-
-
-console.log(a.abilityScores);
-console.log(a.traits);
+console.log(pc1.passivePerception);
+console.log(pc1.getSkillTotal('Perception'));
+console.log(pc1.passiveInvestigation);
+console.log(pc1.getSkillTotal('Investigation'));
+console.log('-------------------------------------------------------------------------');
+ft.apply(pc1);
+console.log(pc1.passivePerception);
+console.log(pc1.getSkillTotal('Perception'));
+console.log(pc1.passiveInvestigation);
+console.log(pc1.getSkillTotal('Investigation'));

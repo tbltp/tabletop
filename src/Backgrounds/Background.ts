@@ -1,8 +1,8 @@
 import {PlayerCharacter} from '../Base/PlayerCharacter';
 import { Trait } from '../Base/Interfaces';
-import * as Languages from '../Assets/Languages.json';
-import * as Gear from '../Assets/Gear.json';
-import * as ToolKits from '../Assets/Tools.json';
+import * as Languages from '../../Assets/Languages.json';
+import * as Gear from '../../Assets/Gear.json';
+import * as ToolKits from '../../Assets/Tools.json';
 
 abstract class Background {
     

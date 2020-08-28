@@ -1,7 +1,7 @@
 import { Race } from './Race';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
-import * as traits from "../Assets/RacialTraits.json";
-import * as languages from "../Assets/Languages.json";
+import * as traits from "../../Assets/RacialTraits.json";
+import * as languages from "../../Assets/Languages.json";
 
 abstract class Human extends Race {
     constructor(name: string, language: string) {

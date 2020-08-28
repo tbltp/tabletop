@@ -1,6 +1,6 @@
 module.exports = {
     "roots": [
-        "./Feats"
+        "./tests"
     ],
     "testMatch": [
         "**/?(*.)test.+(ts|tsx)"

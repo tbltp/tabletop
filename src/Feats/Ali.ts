@@ -1,6 +1,6 @@
 import { Feat } from './Feat';
-import * as Feats from '../Assets/Feats.json';
-import * as Spells from '../Assets/Feats.json';
+import * as Feats from '../../Assets/Feats.json';
+import * as Spells from '../../Assets/Feats.json';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 
 export class PolearmMaster extends Feat {
@@ -167,7 +167,7 @@ export class Tough extends Feat {  // THIS IMPROVES AT LEVEL - NOT DONE
     trait = Feats["TOUGH"];
 
     apply(pc: PlayerCharacter){
-        pc.hpMax += 2 * pc.totalLevel;
+        pc.baseStats['hpMax'].bonus += 2 * pc.totalLevel;
         pc.traits.features.push(this.trait);
     }
 }
