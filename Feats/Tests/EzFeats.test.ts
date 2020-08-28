@@ -19,7 +19,7 @@ describe('Ez Feats', () => {
         
         pc.abilityScores.charisma.update(-1);
         let ft: Feat = new InspiringLeader();
-        expect(() => ft.apply(pc)).toThrowError('Haha Fuck U Get Rekt Scrub');
+        expect(() => ft.apply(pc)).toThrowError('requirement not met: charisma minimum score of 13');
     });
 
     test('Inspiring Leader feat applies when the Charisma >= 13', () => {
@@ -112,7 +112,7 @@ describe('Ez Feats', () => {
     test('Medium Armor Master feat fails to apply without medium armor proficiency', () => {
 
         let ft: Feat = new MediumArmorMaster();
-        expect(() => ft.apply(pc)).toThrowError("Haha Fuck U Get Rekt Scrub");
+        expect(() => ft.apply(pc)).toThrowError('requirement not met: medium armor proficiency');
     });
 
     test('Medium Armor Master feat applies when proficient in medium armor', () => {
@@ -138,7 +138,7 @@ describe('Ez Feats', () => {
     test('Moderately Armored feat fails to apply without light armor proficiency', () => {
 
         let ft: Feat = new ModeratelyArmored('dexterity');
-        expect(() => ft.apply(pc)).toThrowError("Haha Fuck U Get Rekt Scrub");
+        expect(() => ft.apply(pc)).toThrowError('requirement not met: light armor proficiency');
     });
 
     test('Moderately Armored feat applies when proficient in light armor', () => {

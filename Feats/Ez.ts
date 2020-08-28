@@ -14,11 +14,8 @@ export class InspiringLeader extends Feat {
 
     public apply(pc: PlayerCharacter) {
 
-        try {
-            this.abilityPrereqCheck(pc, 'charisma', 13);
-        } 
-        catch(err) {
-            throw err;
+        if(!this.abilityPrereqCheck(pc, 'charisma', 13)) {
+            throw Error('requirement not met: charisma minimum score of 13')
         }
         pc.traits.features.push(this.trait);
     }
@@ -175,11 +172,8 @@ export class MediumArmorMaster extends Feat {
 
     public apply(pc: PlayerCharacter) {
 
-        try {
-            this.armorPrereqCheck(pc, 'medium');
-        } 
-        catch(err) {
-            throw err;
+        if(!this.armorPrereqCheck(pc, 'medium')) {
+            throw Error('requirement not met: medium armor proficiency');
         }
         pc.traits.features.push(this.trait);
     }
@@ -210,12 +204,9 @@ export class ModeratelyArmored extends Feat {
     private ability: string;
 
     public apply(pc: PlayerCharacter) {
-        
-        try {
-            this.armorPrereqCheck(pc, 'light');
-        } 
-        catch(err) {
-            throw err;
+
+        if(!this.armorPrereqCheck(pc, 'light')) {
+            throw Error('requirement not met: light armor proficiency');
         }
 
         pc.abilityScores[this.ability].update(1);
