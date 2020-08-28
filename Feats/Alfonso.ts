@@ -1,1 +1,1 @@
-import { Feat } from './Feats';
+import { Feat } from './Feat';
