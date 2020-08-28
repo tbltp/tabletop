@@ -119,8 +119,8 @@
       "1d8 damage if two-hand wielded."
     ]
   },
-  "UNARMED STRKE": {
-    "name": "Unarmed Strke",
+  "UNARMED STRIKE": {
+    "name": "Unarmed Strike",
     "weaponType": "Simple Melee",
     "cost": "--",
     "damage": "1",
