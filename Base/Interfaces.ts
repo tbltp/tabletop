@@ -42,7 +42,7 @@ export interface ToolKit {
 export interface Trait {
     /**Spell slots are just special traits with no additional properties */
     readonly title: string;
-    readonly description: string;
+    description: string;
 }
 
 export interface ResourceTrait extends Trait {
