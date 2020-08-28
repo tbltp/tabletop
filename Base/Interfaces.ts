@@ -61,5 +61,6 @@ export interface Spell {
     readonly components: string[];
     readonly material: string
     readonly minimumLevel: string;
+    spellCastAbility?: string;
 }
 
