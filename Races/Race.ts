@@ -3,7 +3,8 @@ import { PlayerCharacter } from '../Base/PlayerCharacter';
 
 export abstract class Race {
     
-    constructor(age: string, speed: number, size: string, languages: Trait[], traits: Trait[], weaponProficiencies: string[], armorProficiencies: string[], toolProficiencies: string[]) {
+    constructor(name: string, age: string, speed: number, size: string, languages: Trait[], traits: Trait[], weaponProficiencies: string[], armorProficiencies: string[], toolProficiencies: string[]) {
+        this.name = name;
         this.age = age;
         this.speed = speed;
         this.size = size;
@@ -14,6 +15,7 @@ export abstract class Race {
         this.toolProficiencies = toolProficiencies;
     }
     
+    name: string;
     age: string;
     speed: number;
     size: string;

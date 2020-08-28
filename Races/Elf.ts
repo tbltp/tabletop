@@ -5,8 +5,9 @@ import * as languages from "../Assets/Languages.json";
 import * as Spells from "../Assets/Spells.json";
 
 abstract class Elf extends Race {
-    constructor() {
+    constructor(name: string) {
         super(
+            name,
             "750 years",  // Average Lifespan
             30,  // Speed (Movement)
             "Medium", // Size
@@ -21,7 +22,7 @@ abstract class Elf extends Race {
 
 export class HighElf extends Elf {
     constructor(cantrip: string, language: string) {
-        super();
+        super("High Elf");
         this.traits.push(
             {"title": "Cantrip", "description": `You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it - ${cantrip}`},
             {"title": "Extra Language", "description": `You can speak, read, and write one extra language of your chotce. - ${language}`}
@@ -50,7 +51,7 @@ export class HighElf extends Elf {
 
 export class WoodElf extends Elf {
     constructor(language: string) {
-        super();
+        super("Wood Elf");
         this.traits.push(
             traits["Fleet of Foot"],
             traits["Mask of Wild"]
@@ -74,7 +75,7 @@ export class WoodElf extends Elf {
 
 export class DarkElf extends Elf {
     constructor(language: string) {
-        super();
+        super("Dark Elf");
         this.traits.push(
             traits["Superior Darkvision"], 
             traits["Sunlight Sensitivity"],

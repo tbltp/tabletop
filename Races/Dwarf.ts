@@ -4,8 +4,9 @@ import * as traits from "../Assets/RacialTraits.json";
 import * as languages from "../Assets/Languages.json";
 
 abstract class Dwarf extends Race {
-    constructor(toolProficiency: string) {
+    constructor(name: string, toolProficiency: string) {
         super(
+            name,
             "350 years",  // Average Lifespan
             25,  // Speed (Movement)
             "Medium", // Size
@@ -23,7 +24,7 @@ abstract class Dwarf extends Race {
 
 export class HillDwarf extends Dwarf {
     constructor(toolProficiency: string) {
-        super(toolProficiency);
+        super("Hill Dwarf", toolProficiency);
     }
 
     
@@ -39,7 +40,7 @@ export class HillDwarf extends Dwarf {
 
 export class MountainDwarf extends Dwarf {
     constructor(toolProficiency: string) {
-        super(toolProficiency);
+        super("Mountain Dwarf", toolProficiency);
         this.traits.push(traits["Dwarven Toughness"]);
         this.armorProficiencies.push("Light", "Medium");
     }

@@ -5,8 +5,9 @@ import * as languages from "../Assets/Languages.json";
 import * as Spells from "../Assets/Spells.json";
 
 abstract class Gnome extends Race {
-    constructor() {
+    constructor(name: string) {
         super(
+            name,
             "425 years",  // Average Lifespan
             25,  // Speed (Movement)
             "Small", // Size
@@ -21,7 +22,7 @@ abstract class Gnome extends Race {
 
 export class ForestGnome extends Gnome {
     constructor() {
-        super();
+        super("Forest Gnome");
         this.traits.push(traits["Natural Illusionist"], traits["Speak With Small Beasts"]);
     }
     
@@ -43,7 +44,7 @@ export class ForestGnome extends Gnome {
 
 export class MountainGnome extends Gnome {
     constructor() {
-        super();
+        super("Mountain Gnome");
         this.traits.push(traits["Artificer's Lore"], traits["Tinker"]);
         this.toolProficiencies.push("Tinker's tools")
     }

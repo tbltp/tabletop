@@ -6,6 +6,7 @@ import * as languages from "../Assets/Languages.json";
 export class Dragonborn extends Race {
     constructor(draconicAncestry: string) {
         super(
+            `Dragonborn - ${draconicAncestry}`,
             "80 years",  // Average Lifespan
             30,  // Speed (Movement)
             "Medium", // Size

@@ -7,6 +7,7 @@ import * as Spells from "../Assets/Spells.json";
 export class Tiefling extends Race {
     constructor() {
         super(
+            "Tiefling",
             "100 years",  // Average Lifespan
             30,  // Speed (Movement)
             "Medium", // Size

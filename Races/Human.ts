@@ -4,8 +4,9 @@ import * as traits from "../Assets/RacialTraits.json";
 import * as languages from "../Assets/Languages.json";
 
 abstract class Human extends Race {
-    constructor(language: string) {
+    constructor(name: string, language: string) {
         super(
+            name,
             "100 years",  // Average Lifespan
             30,  // Speed (Movement)
             "Medium", // Size
@@ -23,7 +24,7 @@ abstract class Human extends Race {
 
 export class BaseHuman extends Human {
     constructor(language: string) {
-        super(language);
+        super("Human", language);
     }
 
     abilityIncrease(pc: PlayerCharacter): void {
@@ -42,7 +43,7 @@ export class BaseHuman extends Human {
 
 export class VariantHuman extends Human {
     constructor(language: string, proficiency: string, abilityScores: string[]) {
-        super(language);
+        super("Variant Human", language);
         this.traits.push(
             {"title": "Extra Language", "description": `You can speak, read, and write one extra language of your chotce. - ${language}`},
             {"title": "Proficiency", "description": `You gain proficiency in a skill of your choice . - ${proficiency}`}
