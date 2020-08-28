@@ -12,11 +12,13 @@ export abstract class BaseCharacter {
             "charisma": new BaseAbility("Cha", cha, ["Deception", "Intimidation", "Performance", "Persuasion"])
         };
 
-        this.initiativeBonus = this.abilityScores["dexterity"].modifier;
-        this.baseArmorClass = 10 + this.abilityScores["dexterity"].modifier;
-        this.hpMax = 8 + this.abilityScores["constitution"].modifier;
         this.proficiencyBonus = Math.floor((this.totalLevel + 7) / 4);
-        this.passivePerception = 10 + this.abilityScores["wisdom"].modifier;
+        this.baseStats = {
+            "initiativeBonus": {base: 0, modifier: this.abilityScores["dexterity"], bonus: 0},
+            "baseArmorClass": {base: 10, modifier: this.abilityScores["dexterity"], bonus: 0},
+            "hpMax": {base: 8, modifier: this.abilityScores["constitution"], bonus: 0},
+            "passivePerception": {base: 10, modifier: this.abilityScores["wisdoom"], bonus: 0}
+        }
         
         this.skills = {
             "Acrobatics": this.abilityScores["dexterity"].skills["Acrobatics"], //--> f(dex), + proficiency (Class Dependent);
@@ -42,11 +44,8 @@ export abstract class BaseCharacter {
 
     // Base Stats
     totalLevel: number = 1;
-    baseArmorClass: number; 
-    initiativeBonus: number;
     proficiencyBonus: number;
-    hpMax: number;
-    passivePerception: number;
+    baseStats: {[key: string]: {base: number, modifier: BaseAbility, bonus: number}};
     speed: number;
     size: string;
 
@@ -105,7 +104,7 @@ class BaseAbility {
         this.modifier = Math.floor((this.score - 10) / 2);
 
         for(const skill of skills){
-            this.skills[skill] = { ability: this.name, modifier: this.modifier, proficient: false }
+            this.skills[skill] = { ability: this.name, modifier: this.modifier, proficient: false, expertise: false, bonus: 0 }
         }
     }
     
@@ -126,4 +125,6 @@ interface Skill {
     readonly ability: string;
     modifier: number;
     proficient: boolean;
+    expertise: boolean;
+    bonus: number;
 }
