@@ -27,6 +27,7 @@ export class Resilient extends Feat {
     apply(pc: PlayerCharacter){
         pc.abilityScores[this.abilityScore].update(1);
         pc.abilityScores[this.abilityScore].savingThrowProficiency = true;
+        this.trait.description += `(${this.abilityScore})`;
         pc.traits.features.push(this.trait);
     }
 }
@@ -103,8 +104,10 @@ export class Skilled extends Feat {
     trait = Feats["SKILLED"];
 
     apply(pc: PlayerCharacter){
-        for(let skill in this.skillProficiencies){ pc.skills[skill].proficient = true; }
-        for(let tool in this.toolProficiencies){ pc.traits.toolProficiencies.push(tool); }
+        const allProficiencies = this.skillProficiencies.concat(this.toolProficiencies);
+        for(let skill of this.skillProficiencies){ pc.skills[skill].proficient = true; }
+        for(let tool of this.toolProficiencies){ pc.traits.toolProficiencies.push(tool); }
+        this.trait.description += `(${allProficiencies[0]}, ${allProficiencies[1]}, ${allProficiencies[2]})`
         pc.traits.features.push(this.trait);
     }
 }
@@ -122,7 +125,7 @@ export class Skulker extends Feat {
 }
 
 export class SpellSniper extends Feat {  // WAITING FOR SPELL LISTS - NOT DONE
-    constructor(cantrip: string){
+    constructor(_class: string, cantrip: string){
         super();
         this.cantrip = cantrip;
     }
@@ -195,6 +198,7 @@ export class WeaponMaster extends Feat {
     apply(pc: PlayerCharacter){
         pc.abilityScores[this.abilityScore].update(1);
         for(let weapon of this.weaponProficiencies) { pc.traits.weaponProficiencies.push(weapon); }
+        this.trait.description += `(${this.abilityScore}, ${this.weaponProficiencies[0]}, ${this.weaponProficiencies[1]}, ${this.weaponProficiencies[2]}, ${this.weaponProficiencies[3]})`
         pc.traits.features.push(this.trait);
     }
 }
