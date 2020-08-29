@@ -16,8 +16,9 @@ export class InspiringLeader extends Feat {
     public apply(pc: PlayerCharacter) {
 
         if(!this.abilityPrereqCheck(pc, 'charisma', 13)) {
-            throw Error('requirement not met: charisma minimum score of 13')
+            throw Error('Requirement Not Met: 13 Cha')
         }
+        
         pc.traits.features.push(this.trait);
     }
 }
