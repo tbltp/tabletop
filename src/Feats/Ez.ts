@@ -9,8 +9,9 @@ export class InspiringLeader extends Feat {
 
     constructor() {
         super();
-        this.trait = Feats['INSPIRING LEADER'];
     }
+    
+    trait = Feats['INSPIRING LEADER'];
 
     public apply(pc: PlayerCharacter) {
 
@@ -25,8 +26,9 @@ export class KeenMind extends Feat {
 
     constructor() {
         super();
-        this.trait = Feats['KEEN MIND'];
     }
+
+    trait = Feats['KEEN MIND'];
     
     public apply(pc: PlayerCharacter) {
         
@@ -39,16 +41,16 @@ export class LightlyArmored extends Feat {
 
     constructor(ability: string) {
         super();
-        this.trait = Feats['LIGHTLY ARMORED'];
         this.ability = ability;
     }
 
     private ability: string;
+    trait = Feats['LIGHTLY ARMORED'];
 
     public apply(pc: PlayerCharacter) {
        
         pc.abilityScores[this.ability].update(1);
-        pc.traits.armorProficiencies.push('light');
+        pc.traits.armorProficiencies.push('Light');
         this.trait.description += `\n(${this.ability})`
         pc.traits.features.push(this.trait);
     }
@@ -56,22 +58,19 @@ export class LightlyArmored extends Feat {
 
 export class Linguist extends Feat {
 
-    constructor (languageChoices: string[]) {
+    constructor (languages: string[]) {
         super();
-        this.trait = Feats['LINGUIST'];
-        this.languageChoices = [];
-        for(let lang of languageChoices) {
-            this.languageChoices.push(Languages[lang])
-        } 
+        this.languages = languages;
     }
 
-    private languageChoices: Trait[];
+    trait = Feats['LINGUIST'];
+    private languages: string[];
 
     public apply(pc: PlayerCharacter) {
  
         pc.abilityScores['intelligence'].update(1);
-        pc.traits.languages.push(...this.languageChoices);
-        this.trait.description += `\n(${this.languageChoices[0].title}, ${this.languageChoices[1].title}, ${this.languageChoices[2].title})`
+        for(let lang of this.languages) {pc.traits.languages.push(Languages[lang]) }
+        this.trait.description += `\n(${this.languages[0]}, ${this.languages[1]}, ${this.languages[2]})`
         pc.traits.features.push(this.trait);
     }
 }
@@ -80,13 +79,13 @@ export class Lucky extends Feat {
 
     constructor() {
         super();
-        this.trait = Feats['LUCKY'];
         this.luckyResource = {
             ...this.trait,
             resourceMax: 3
         };
     }
 
+    trait = Feats['LUCKY'];
     private luckyResource: ResourceTrait;
 
     public apply(pc: PlayerCharacter) {
@@ -100,8 +99,9 @@ export class MageSlayer extends Feat {
 
     constructor() {
         super();
-        this.trait = Feats['MAGE SLAYER'];
     }
+    
+    trait = Feats['MAGE SLAYER'];
 
     public apply(pc: PlayerCharacter) {
         
@@ -172,9 +172,10 @@ export class MediumArmorMaster extends Feat {
 
     public apply(pc: PlayerCharacter) {
 
-        if(!this.armorPrereqCheck(pc, 'medium')) {
-            throw Error('requirement not met: medium armor proficiency');
+        if(!this.armorPrereqCheck(pc, 'Medium')) {
+            throw Error('Requirement Not Met: Medium Armor Proficiency');
         }
+        
         pc.traits.features.push(this.trait);
     }
 }
@@ -183,8 +184,9 @@ export class Mobile extends Feat {
     
     constructor() {
         super();
-        this.trait = Feats['MOBILE'];
     }
+    
+    trait = Feats['MOBILE'];
 
     public apply(pc: PlayerCharacter) {
         
@@ -195,23 +197,24 @@ export class Mobile extends Feat {
 
 export class ModeratelyArmored extends Feat {
 
-    constructor(ability: string) {
+    constructor(abilityScore: string) {
         super();
-        this.trait = Feats['MODERATELY ARMORED'];
-        this.ability = ability;
+        
+        this.abilityScore = abilityScore;
     }
 
-    private ability: string;
+    trait = Feats['MODERATELY ARMORED'];
+    private abilityScore: string;
 
     public apply(pc: PlayerCharacter) {
 
-        if(!this.armorPrereqCheck(pc, 'light')) {
-            throw Error('requirement not met: light armor proficiency');
+        if(!this.armorPrereqCheck(pc, 'Light')) {
+            throw Error('Requirement Not Met: Light Armor Proficiency');
         }
 
-        pc.abilityScores[this.ability].update(1);
+        pc.abilityScores[this.abilityScore].update(1);
         pc.traits.armorProficiencies.push('medium', 'shield');
-        this.trait.description += `\n(${this.ability})`
+        this.trait.description += `\n(${this.abilityScore})`
         pc.traits.features.push(this.trait);
     }
 }
@@ -220,31 +223,31 @@ export class MountedCombatant extends Feat {
 
     constructor() {
         super();
-        this.trait = Feats['MOUNTED COMBATANT'];
     }
 
+    trait = Feats['MOUNTED COMBATANT'];
+
     public apply(pc: PlayerCharacter) {
-        
         pc.traits.features.push(this.trait);
     }
 }
 
 export class Observant extends Feat {
 
-    constructor(ability: string) {
+    constructor(abilityScore: string) {
         super();
-        this.trait = Feats['OBSERVANT'];
-        this.ability = ability;
+        this.abilityScore = abilityScore;
     }
 
-    private ability: string;
+    trait = Feats['OBSERVANT'];
+    private abilityScore: string;
 
     public apply(pc: PlayerCharacter) {
        
-        pc.abilityScores[this.ability].update(1);
+        pc.abilityScores[this.abilityScore].update(1);
         pc.baseStats['passivePerception'].bonus += 5;
         pc.baseStats['passiveInvestigation'].bonus += 5;
-        this.trait.description += `\n(${this.ability})`
+        this.trait.description += `\n(${this.abilityScore})`
         pc.traits.features.push(this.trait);
     }
 }

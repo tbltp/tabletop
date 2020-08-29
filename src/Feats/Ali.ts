@@ -10,7 +10,8 @@ export class PolearmMaster extends Feat {
 
     trait = Feats["POLEARM MASTER"];
 
-    apply(pc: PlayerCharacter){
+    apply(pc: PlayerCharacter) {
+
         pc.traits.features.push(this.trait);
     }
 }
@@ -21,10 +22,11 @@ export class Resilient extends Feat {
         this.abilityScore = abilityScore;
     }
 
-    abilityScore: string;
     trait = Feats["RESILIENT"];
+    private abilityScore: string;
 
-    apply(pc: PlayerCharacter){
+    apply(pc: PlayerCharacter) {
+
         pc.abilityScores[this.abilityScore].update(1);
         pc.abilityScores[this.abilityScore].savingThrowProficiency = true;
         this.trait.description += `(${this.abilityScore})`;
@@ -39,7 +41,8 @@ export class RitualCaster extends Feat {  // THIS IS VERY COMPLEX - NOT DONE
     
     trait = Feats["RITUAL CASTER"];
 
-    apply(pc: PlayerCharacter){
+    apply(pc: PlayerCharacter) {
+
         pc.traits.features.push(this.trait);
     }
 }
@@ -51,7 +54,8 @@ export class SavageAttacker extends Feat {
 
     trait = Feats["SAVAGE ATTACKER"];
 
-    apply(pc: PlayerCharacter){
+    apply(pc: PlayerCharacter) {
+
         pc.traits.features.push(this.trait);
     }
 }
@@ -63,7 +67,8 @@ export class Sentinel extends Feat {
 
     trait = Feats["SENTINEL"];
 
-    apply(pc: PlayerCharacter){
+    apply(pc: PlayerCharacter) {
+
         pc.traits.features.push(this.trait);
     }
 }
@@ -75,7 +80,8 @@ export class Sharpshooter extends Feat {
 
     trait = Feats["SHARPSHOOTER"];
 
-    apply(pc: PlayerCharacter){
+    apply(pc: PlayerCharacter) {
+
         pc.traits.features.push(this.trait);
     }
 }
@@ -87,7 +93,8 @@ export class ShieldMaster extends Feat {
 
     trait = Feats["SHIELD MASTER"];
 
-    apply(pc: PlayerCharacter){
+    apply(pc: PlayerCharacter) {
+
         pc.traits.features.push(this.trait);
     }
 }
@@ -99,11 +106,12 @@ export class Skilled extends Feat {
         this.toolProficiencies = tools;
     }
 
-    skillProficiencies: string[];
-    toolProficiencies: string[];
     trait = Feats["SKILLED"];
+    private skillProficiencies: string[];
+    private toolProficiencies: string[];
 
-    apply(pc: PlayerCharacter){
+    apply(pc: PlayerCharacter) {
+        
         const allProficiencies = this.skillProficiencies.concat(this.toolProficiencies);
         for(let skill of this.skillProficiencies){ pc.skills[skill].proficient = true; }
         for(let tool of this.toolProficiencies){ pc.traits.toolProficiencies.push(tool); }
@@ -119,39 +127,48 @@ export class Skulker extends Feat {
 
     trait = Feats["SKULKER"];
 
-    apply(pc: PlayerCharacter){
-        if(this.abilityPrereqCheck(pc, "dexterity", 13)){ pc.traits.features.push(this.trait); }
+    apply(pc: PlayerCharacter) {
+
+        if(!this.abilityPrereqCheck(pc, "dexterity", 13)) {
+            throw Error('Requirement Not Met: 13 Dex');
+        }
+        pc.traits.features.push(this.trait);
     }
 }
 
 export class SpellSniper extends Feat {  // WAITING FOR SPELL LISTS - NOT DONE
-    constructor(_class: string, cantrip: string){
+    constructor(dclass: string, cantrip: string){
         super();
         this.cantrip = cantrip;
     }
 
-    cantrip: string;
     trait = Feats["SPELL SNIPER"];
+    private cantrip: string;
 
-    apply(pc: PlayerCharacter){
-        if(this.spellcasterPrereqCheck(pc)){ 
-            pc.spells["0"].push(Spells[this.cantrip])
-            this.trait.description += `(${this.cantrip})`;
-            pc.traits.features.push(this.trait);
+    apply(pc: PlayerCharacter) {
+
+        if(!this.spellcasterPrereqCheck(pc)) { 
+            throw Error('Requirement Not Met: Spellcaster');    
         }
+        
+        pc.spells["0"].push(Spells[this.cantrip])
+        this.trait.description += `(${this.cantrip})`;
+        pc.traits.features.push(this.trait);
     }
 }
 
 export class TavernBrawler extends Feat {
-    constructor(abilityScore: string){
+    constructor(abilityScore: string) {
+
         super();
         this.abilityScore = abilityScore;
     }
 
-    abilityScore: string;
     trait = Feats["TAVERN BRAWLER"];
+    private abilityScore: string;
 
-    apply(pc: PlayerCharacter){
+    apply(pc: PlayerCharacter) {
+
         pc.abilityScores[this.abilityScore].update(1);
         pc.traits.weaponProficiencies.push("Unarmed Strike", "Improvised Weapons");
         this.trait.description += `(${this.abilityScore})`;
@@ -165,8 +182,36 @@ export class Tough extends Feat {  // THIS IMPROVES AT LEVEL - NOT DONE
     }
 
     trait = Feats["TOUGH"];
+    abilitiesAtLevels = {
+        "0": this.plusTwoHealth,
+        "1": this.plusTwoHealth,
+        "2": this.plusTwoHealth,
+        "3": this.plusTwoHealth,
+        "4": this.plusTwoHealth,
+        "5": this.plusTwoHealth,
+        "6": this.plusTwoHealth,
+        "7": this.plusTwoHealth,
+        "8": this.plusTwoHealth,
+        "9": this.plusTwoHealth,
+        "10": this.plusTwoHealth,
+        "11": this.plusTwoHealth,
+        "12": this.plusTwoHealth,
+        "13": this.plusTwoHealth,
+        "14": this.plusTwoHealth,
+        "15": this.plusTwoHealth,
+        "16": this.plusTwoHealth,
+        "17": this.plusTwoHealth,
+        "18": this.plusTwoHealth,
+        "19": this.plusTwoHealth,
+        "20": this.plusTwoHealth
+    }
 
-    apply(pc: PlayerCharacter){
+    plusTwoHealth(pc: PlayerCharacter) {
+        pc.baseStats["hpMax"].bonus += 2;
+    }
+
+    apply(pc: PlayerCharacter) {
+
         pc.baseStats['hpMax'].bonus += 2 * pc.totalLevel;
         pc.traits.features.push(this.trait);
     }
@@ -179,8 +224,13 @@ export class WarCaster extends Feat {
 
     trait = Feats["WAR CASTER"];
 
-    apply(pc: PlayerCharacter){
-        if(this.spellcasterPrereqCheck(pc)) { pc.traits.features.push(this.trait); }
+    apply(pc: PlayerCharacter) {
+
+        if(this.spellcasterPrereqCheck(pc)) {  
+            throw Error('Requirement Not Met: Spellcaster');
+        }
+
+        pc.traits.features.push(this.trait);
     }
 }
 
@@ -191,11 +241,12 @@ export class WeaponMaster extends Feat {
         this.weaponProficiencies = weaponProficiencies;
     }
 
-    abilityScore: string;
-    weaponProficiencies: string[];
     trait = Feats["WEAPON MASTER"];
+    private abilityScore: string;
+    private weaponProficiencies: string[];
 
-    apply(pc: PlayerCharacter){
+    apply(pc: PlayerCharacter) {
+
         pc.abilityScores[this.abilityScore].update(1);
         for(let weapon of this.weaponProficiencies) { pc.traits.weaponProficiencies.push(weapon); }
         this.trait.description += `(${this.abilityScore}, ${this.weaponProficiencies[0]}, ${this.weaponProficiencies[1]}, ${this.weaponProficiencies[2]}, ${this.weaponProficiencies[3]})`

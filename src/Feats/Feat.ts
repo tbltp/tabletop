@@ -4,7 +4,8 @@ import { Trait } from '../Base/Interfaces';
 export abstract class Feat {
     
     trait: Trait;  // Description of Feat inside of Trait list inside PC
-    
+    abilitiesAtLevels: {[key: string]: (pc: PlayerCharacter) => void; } = {};
+
     public abstract apply(pc: PlayerCharacter);
 
     abilityPrereqCheck(pc: PlayerCharacter, skill: string, target: number): boolean {
