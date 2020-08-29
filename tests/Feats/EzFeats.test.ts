@@ -19,7 +19,7 @@ describe('Ez Feats', () => {
         
         pc.abilityScores.charisma.update(-1);
         let ft: Feat = new InspiringLeader();
-        expect(() => ft.apply(pc)).toThrowError('requirement not met: charisma minimum score of 13');
+        expect(() => ft.apply(pc)).toThrowError('Requirement Not Met: 13 Cha');
     });
 
     test('Inspiring Leader feat applies when the Charisma >= 13', () => {
@@ -53,7 +53,7 @@ describe('Ez Feats', () => {
         
         let ft: Feat = new LightlyArmored('strength');
         ft.apply(pc);
-        expect(pc.traits.armorProficiencies).toContain('light');
+        expect(pc.traits.armorProficiencies).toContain('Light');
     });
 
     test('Linguist feat increases intelligence by 1', () => {
@@ -112,12 +112,12 @@ describe('Ez Feats', () => {
     test('Medium Armor Master feat fails to apply without medium armor proficiency', () => {
 
         let ft: Feat = new MediumArmorMaster();
-        expect(() => ft.apply(pc)).toThrowError('requirement not met: medium armor proficiency');
+        expect(() => ft.apply(pc)).toThrowError('Requirement Not Met: Medium Armor Proficiency');
     });
 
     test('Medium Armor Master feat applies when proficient in medium armor', () => {
         
-        pc.traits.armorProficiencies.push('medium');
+        pc.traits.armorProficiencies.push('Medium');
         let ft: Feat = new MediumArmorMaster();
         ft.apply(pc);
         expect(pc.traits.features).toContain(Feats['MEDIUM ARMOR MASTER']);
@@ -138,12 +138,12 @@ describe('Ez Feats', () => {
     test('Moderately Armored feat fails to apply without light armor proficiency', () => {
 
         let ft: Feat = new ModeratelyArmored('dexterity');
-        expect(() => ft.apply(pc)).toThrowError('requirement not met: light armor proficiency');
+        expect(() => ft.apply(pc)).toThrowError('Requirement Not Met: Light Armor Proficiency');
     });
 
     test('Moderately Armored feat applies when proficient in light armor', () => {
         
-        pc.traits.armorProficiencies.push('light');
+        pc.traits.armorProficiencies.push('Light');
         let ft: Feat = new ModeratelyArmored('dexterity');
         ft.apply(pc);
         expect(pc.traits.features).toContain(Feats['MODERATELY ARMORED']);
@@ -152,8 +152,8 @@ describe('Ez Feats', () => {
     test('Moderately Armored feat increases strengh or dexterity by 1', () => {
         
         let pc2: PlayerCharacter = new PlayerCharacter(13, 13, 13, 13, 13, 13);
-        pc.traits.armorProficiencies.push('light');
-        pc2.traits.armorProficiencies.push('light');        
+        pc.traits.armorProficiencies.push('Light');
+        pc2.traits.armorProficiencies.push('Light');        
         let ft1: Feat = new ModeratelyArmored('strength');
         let ft2: Feat = new ModeratelyArmored('dexterity');
         ft1.apply(pc);
@@ -166,12 +166,12 @@ describe('Ez Feats', () => {
 
     test('Moderately Armored feat introduces medium and shield armor proficiencies', () => {
 
-        pc.traits.armorProficiencies.push('light');
+        pc.traits.armorProficiencies.push('Light');
         let ft: Feat = new ModeratelyArmored('strength');
         ft.apply(pc);
         expect(
-            pc.traits.armorProficiencies.includes('medium') &&
-            pc.traits.armorProficiencies.includes('shield')
+            pc.traits.armorProficiencies.includes('Medium') &&
+            pc.traits.armorProficiencies.includes('Shield')
         ).toBeTruthy();
     });
 
