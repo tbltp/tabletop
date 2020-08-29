@@ -18,7 +18,7 @@ export class InspiringLeader extends Feat {
         if(!this.abilityPrereqCheck(pc, 'charisma', 13)) {
             throw Error('Requirement Not Met: 13 Cha')
         }
-        
+
         pc.traits.features.push(this.trait);
     }
 }
@@ -200,7 +200,6 @@ export class ModeratelyArmored extends Feat {
 
     constructor(abilityScore: string) {
         super();
-        
         this.abilityScore = abilityScore;
     }
 
