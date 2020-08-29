@@ -132,6 +132,7 @@ export class Skulker extends Feat {
         if(!this.abilityPrereqCheck(pc, "dexterity", 13)) {
             throw Error('Requirement Not Met: 13 Dex');
         }
+        
         pc.traits.features.push(this.trait);
     }
 }
