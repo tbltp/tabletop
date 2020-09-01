@@ -12,6 +12,12 @@ export class PlayerCharacter extends BaseCharacter {
         super(str,dex,con,int,wis,cha);
     }
     
+    isSpellcaster(): boolean {
+        for(let knownSpells of Object.keys(this.spells)){ if(this.spells[knownSpells].length > 0) {return true; } }
+
+        return false;
+    }
+
 }
 
 

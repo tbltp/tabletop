@@ -42,7 +42,7 @@ export interface ToolKit {
 export interface Trait {
     /**Spell slots are just special traits with no additional properties */
     readonly title: string;
-    readonly description: string;
+    description: string;
 }
 
 export interface ResourceTrait extends Trait {
@@ -50,7 +50,7 @@ export interface ResourceTrait extends Trait {
 }
 
 
-export interface Spell {
+export interface ISpell {
     readonly name: string;
     readonly description: string;
     readonly school: string;
@@ -61,5 +61,10 @@ export interface Spell {
     readonly components: string[];
     readonly material: string
     readonly minimumLevel: string;
+    readonly ritual: boolean;
+    readonly spellAttack: boolean;
 }
 
+export interface Spell extends ISpell {
+    spellcastingAbility: string;
+}

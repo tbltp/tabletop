@@ -1,11 +1,12 @@
 import { Race } from './Race';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
-import * as DraconicAncestry from "../Assets/DraconicAncestry.json";
-import * as languages from "../Assets/Languages.json";
+import * as DraconicAncestry from "../../Assets/DraconicAncestry.json";
+import * as languages from "../../Assets/Languages.json";
 
 export class Dragonborn extends Race {
     constructor(draconicAncestry: string) {
         super(
+            `Dragonborn - ${draconicAncestry}`,
             "80 years",  // Average Lifespan
             30,  // Speed (Movement)
             "Medium", // Size

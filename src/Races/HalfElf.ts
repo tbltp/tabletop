@@ -1,11 +1,12 @@
 import { Race } from './Race';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
-import * as traits from "../Assets/RacialTraits.json";
-import * as languages from "../Assets/Languages.json";
+import * as traits from "../../Assets/RacialTraits.json";
+import * as languages from "../../Assets/Languages.json";
 
 export class HalfElf extends Race {
     constructor(language: string, abilityScores: string[], proficiencies: string[]) {
         super(
+            "Half-Elf",
             "180 years",  // Average Lifespan
             30,  // Speed (Movement)
             "Medium", // Size

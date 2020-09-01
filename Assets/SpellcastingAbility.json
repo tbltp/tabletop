@@ -1,0 +1,10 @@
+{
+    "Bard": "charisma",
+    "Cleric": "wisdom",
+    "Druid": "wisdom",
+    "Paladin": "charisma",
+    "Ranger": "wisdom",
+    "Sorcerer": "charisma",
+    "Warlock": "charisma",
+    "Wizard": "intelligence"
+}

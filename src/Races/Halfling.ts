@@ -1,11 +1,12 @@
 import { Race } from './Race';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
-import * as traits from "../Assets/RacialTraits.json";
-import * as languages from "../Assets/Languages.json";
+import * as traits from "../../Assets/RacialTraits.json";
+import * as languages from "../../Assets/Languages.json";
 
 abstract class Halfling extends Race {
-    constructor() {
+    constructor(name: string) {
         super(
+            name,
             "150 years",  // Average Lifespan
             25,  // Speed (Movement)
             "Small", // Size
@@ -23,7 +24,7 @@ abstract class Halfling extends Race {
 
 export class Lightfoot extends Halfling {
     constructor() {
-        super();
+        super("Lightfoot Halfling");
         this.traits.push(traits["Naturally Stealthy"]);
     }
  
@@ -39,7 +40,7 @@ export class Lightfoot extends Halfling {
 
 export class Stout extends Halfling {
     constructor() {
-        super();
+        super("Stout Halfling");
         this.traits.push(traits["Stout Resilience"]);
     }
 
