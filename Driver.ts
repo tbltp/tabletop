@@ -9,22 +9,17 @@ import { HalfElf } from './src/Races/HalfElf';
 import { BaseHuman, VariantHuman } from './src/Races/Human';
 import { HalfOrc } from './src/Races/HalfOrc';
 import { Tiefling } from './src/Races/Tiefling';
-import { Observant } from './src/Feats/Ez';
 
 import { PlayerCharacter } from './src/Base/PlayerCharacter';
-import { Feat } from './src/Feats/Feat';
 
-let pc1: PlayerCharacter = new PlayerCharacter(15, 15, 15, 15, 15, 15);
+import {RitualCaster} from './src/Feats/Ali';
 
-let ft: Feat = new Observant('intelligence'); 
+let pc: PlayerCharacter = new PlayerCharacter(10, 10, 10, 10, 10, 10);
 
-console.log(pc1.passivePerception);
-console.log(pc1.getSkillTotal('Perception'));
-console.log(pc1.passiveInvestigation);
-console.log(pc1.getSkillTotal('Investigation'));
-console.log('-------------------------------------------------------------------------');
-ft.apply(pc1);
-console.log(pc1.passivePerception);
-console.log(pc1.getSkillTotal('Perception'));
-console.log(pc1.passiveInvestigation);
-console.log(pc1.getSkillTotal('Investigation'));
+let t = new Tiefling();
+t.apply(pc);
+
+let feat = new RitualCaster("Wizard", ["ALARM", "MAGE ARMOR"]);
+feat.apply(pc);
+
+console.log(pc.spells);

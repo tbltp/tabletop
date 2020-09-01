@@ -3,6 +3,7 @@ import { PlayerCharacter } from '../Base/PlayerCharacter';
 import * as traits from "../../Assets/RacialTraits.json";
 import * as languages from "../../Assets/Languages.json";
 import * as Spells from "../../Assets/Spells.json";
+import { ISpell, Spell } from '../Base/Interfaces';
 
 abstract class Gnome extends Race {
     constructor(name: string) {
@@ -30,7 +31,11 @@ export class ForestGnome extends Gnome {
         "1": this.level1
     }
 
-    level1(pc: PlayerCharacter){ pc.spells["0"].push(Spells["MINOR ILLUSION"]); }
+    level1(pc: PlayerCharacter){ 
+        const ispell: ISpell = Spells["MINOR ILLUSION"];
+        const spell: Spell = {...ispell, spellcastingAbility: "Intelligence"};
+        pc.spells["0"].push(spell);
+    }
 
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.intelligence.update(2);

@@ -50,7 +50,7 @@ export interface ResourceTrait extends Trait {
 }
 
 
-export interface Spell {
+export interface ISpell {
     readonly name: string;
     readonly description: string;
     readonly school: string;
@@ -62,5 +62,9 @@ export interface Spell {
     readonly material: string
     readonly minimumLevel: string;
     readonly ritual: boolean;
-    spellCastAbility?: string;
+    readonly spellAttack: boolean;
+}
+
+export interface Spell extends ISpell {
+    spellcastingAbility: string;
 }

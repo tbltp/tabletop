@@ -1,7 +1,9 @@
 import { Feat } from './Feat';
 import * as Feats from '../../Assets/Feats.json';
-import * as Spells from '../../Assets/Feats.json';
+import * as Spells from '../../Assets/Spells.json';
+import * as SpellcastingAbility from '../../Assets/SpellcastingAbility.json';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
+import { Spell, ISpell } from '../Base/Interfaces';
 
 export class PolearmMaster extends Feat {
     constructor(){
@@ -35,13 +37,23 @@ export class Resilient extends Feat {
 }
 
 export class RitualCaster extends Feat {  // THIS IS VERY COMPLEX - NOT DONE
-    constructor(){
+    constructor(spellClass: string, spells: string[]){
         super();
+        this.spellClass = spellClass;
+        this.spells = spells;
     }
     
     trait = Feats["RITUAL CASTER"];
+    private spellClass: string;
+    private spells: string[];
 
     apply(pc: PlayerCharacter) {
+
+        for(const spellName of this.spells) {
+            const ispell: ISpell = Spells[spellName];
+            const spell: Spell = {...ispell, spellcastingAbility: SpellcastingAbility[this.spellClass]};
+            pc.spells["0"].push(spell);
+        }
 
         pc.traits.features.push(this.trait);
     }
@@ -137,13 +149,15 @@ export class Skulker extends Feat {
     }
 }
 
-export class SpellSniper extends Feat {  // WAITING FOR SPELL LISTS - NOT DONE
-    constructor(dclass: string, cantrip: string){
+export class SpellSniper extends Feat {
+    constructor(spellClass: string, cantrip: string){
         super();
         this.cantrip = cantrip;
+        this.spellClass = spellClass;
     }
 
     trait = Feats["SPELL SNIPER"];
+    private spellClass: string;
     private cantrip: string;
 
     apply(pc: PlayerCharacter) {
@@ -152,7 +166,9 @@ export class SpellSniper extends Feat {  // WAITING FOR SPELL LISTS - NOT DONE
             throw Error('Requirement Not Met: Spellcaster');    
         }
         
-        pc.spells["0"].push(Spells[this.cantrip])
+        const ispell: ISpell = Spells[this.cantrip]
+        const spell: Spell = {...ispell, spellcastingAbility: SpellcastingAbility[this.spellClass] }
+        pc.spells["0"].push(spell)
         this.trait.description += `(${this.cantrip})`;
         pc.traits.features.push(this.trait);
     }

@@ -3,6 +3,7 @@ import { PlayerCharacter } from '../Base/PlayerCharacter';
 import * as traits from "../../Assets/RacialTraits.json";
 import * as languages from "../../Assets/Languages.json";
 import * as Spells from "../../Assets/Spells.json";
+import { ISpell, Spell } from '../Base/Interfaces';
 
 export class Tiefling extends Race {
     constructor() {
@@ -28,11 +29,23 @@ export class Tiefling extends Race {
     }
     
     
-    level1(pc: PlayerCharacter) { pc.spells["0"].push(Spells["THAUMATURGY"]); }
+    level1(pc: PlayerCharacter) { 
+        let ispell: ISpell = Spells["THAUMATURGY"];
+        const spell = {...ispell, spellcastingAbility: "Charisma"};
+        pc.spells["0"].push(spell);
+    }
 
-    level3(pc: PlayerCharacter) { pc.spells["1"].push(Spells["HELLISH REBUKE"]); }
+    level3(pc: PlayerCharacter) { 
+        let ispell: ISpell = Spells["DARKNESS"];
+        const spell = {...ispell, spellcastingAbility: "Charisma"}
+        pc.spells["1"].push(spell); 
+}
 
-    level5(pc: PlayerCharacter) { pc.spells["2"].push(Spells["DARKNESS"]); }
+    level5(pc: PlayerCharacter) { 
+        let ispell: ISpell = Spells["DARKNESS"];
+        const spell = {...ispell, spellcastingAbility: "Charisma"}
+        pc.spells["2"].push(spell); 
+    }
 
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.charisma.update(2);

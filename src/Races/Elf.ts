@@ -3,6 +3,7 @@ import { PlayerCharacter } from '../Base/PlayerCharacter';
 import * as traits from "../../Assets/RacialTraits.json";
 import * as languages from "../../Assets/Languages.json";
 import * as Spells from "../../Assets/Spells.json";
+import { ISpell, Spell } from '../Base/Interfaces';
 
 abstract class Elf extends Race {
     constructor(name: string) {
@@ -37,7 +38,12 @@ export class HighElf extends Elf {
         "1": this.level1
     }
 
-    level1(pc: PlayerCharacter){ pc.spells["0"].push(Spells[this.cantrip])}
+    level1(pc: PlayerCharacter){ 
+        const ispell: ISpell = Spells[this.cantrip];
+        const spell: Spell = {...ispell, spellcastingAbility: "Intelligence"};
+        pc.spells["0"].push(spell)
+    };
+
 
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.dexterity.update(2);
@@ -92,11 +98,23 @@ export class DarkElf extends Elf {
         "5": this.level5
     }
 
-    level1(pc: PlayerCharacter) { pc.spells["0"].push(Spells["DANCING LIGHTS"]); }
+    level1(pc: PlayerCharacter) { 
+        const ispell: ISpell = Spells["DANCING LIGHTS"];
+        const spell: Spell = {...ispell, spellcastingAbility: "Charisma"};
+        pc.spells["0"].push(spell);
+    }
 
-    level3(pc: PlayerCharacter) { pc.spells["1"].push(Spells["FAERIE FIRE"]); }
+    level3(pc: PlayerCharacter) { 
+        const ispell: ISpell = Spells["FAERIE FIRE"];
+        const spell: Spell = {...ispell, spellcastingAbility: "Charisma"};
+        pc.spells["1"].push(spell);
+    }
 
-    level5(pc: PlayerCharacter) { pc.spells["2"].push(Spells["DARKNESS"]); }
+    level5(pc: PlayerCharacter) { 
+        const ispell: ISpell = Spells["DARKNESS"];
+        const spell: Spell = {...ispell, spellcastingAbility: "Charisma"};
+        pc.spells["2"].push(spell);
+    }
 
     abilityIncrease(pc: PlayerCharacter): void {
         pc.abilityScores.dexterity.update(2);

@@ -3,7 +3,7 @@ import { PlayerCharacter } from '../Base/PlayerCharacter';
 import * as Feats from '../../Assets/Feats.json';
 import * as Languages from '../../Assets/Languages.json';
 import * as Spells from '../../Assets/Spells.json';
-import { ResourceTrait, Spell, Trait } from '../Base/Interfaces';
+import { ResourceTrait, ISpell, Spell, Trait } from '../Base/Interfaces';
 
 export class InspiringLeader extends Feat {
 

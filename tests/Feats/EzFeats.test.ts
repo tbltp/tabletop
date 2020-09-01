@@ -1,4 +1,4 @@
-import { Lucky, InspiringLeader, KeenMind, LightlyArmored, Linguist, MageSlayer, MagicInitiate, MediumArmorMaster, Mobile, ModeratelyArmored, MountedCombatant, Observant } from '../../src/Feats/Ez';
+/*import { Lucky, InspiringLeader, KeenMind, LightlyArmored, Linguist, MageSlayer, MagicInitiate, MediumArmorMaster, Mobile, ModeratelyArmored, MountedCombatant, Observant } from '../../src/Feats/Ez';
 import { Feat } from '../../src/Feats/Feat';
 import { PlayerCharacter } from '../../src/Base/PlayerCharacter';
 import * as Languages from '../../Assets/Languages.json';
@@ -208,5 +208,5 @@ describe('Ez Feats', () => {
         ).toBeTruthy();
     });
 });
-
+*/
 
