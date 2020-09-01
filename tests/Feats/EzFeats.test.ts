@@ -1,4 +1,4 @@
-/*import { Lucky, InspiringLeader, KeenMind, LightlyArmored, Linguist, MageSlayer, MagicInitiate, MediumArmorMaster, Mobile, ModeratelyArmored, MountedCombatant, Observant } from '../../src/Feats/Ez';
+import { Lucky, InspiringLeader, KeenMind, LightlyArmored, Linguist, MageSlayer, MagicInitiate, MediumArmorMaster, Mobile, ModeratelyArmored, MountedCombatant, Observant } from '../../src/Feats/Feat';
 import { Feat } from '../../src/Feats/Feat';
 import { PlayerCharacter } from '../../src/Base/PlayerCharacter';
 import * as Languages from '../../Assets/Languages.json';
@@ -7,7 +7,7 @@ import * as Spells from '../../Assets/Spells.json';
 
 
 
-describe('Ez Feats', () => {
+describe('Feats', () => {
 
     let pc: PlayerCharacter;
 
@@ -90,37 +90,23 @@ describe('Ez Feats', () => {
 
     test('Magic Initiate feat introduces 2 cantrips', () => {
         
-        let ft: Feat = new MagicInitiate(['DRUIDCRAFT', 'GUIDANCE'], 'ANIMAL FRIENDSHIP');
+        let ft: Feat = new MagicInitiate('Druid', ['DRUIDCRAFT', 'GUIDANCE'], 'ANIMAL FRIENDSHIP');
         ft.apply(pc);
         expect(
-            pc.spells[0].includes(Spells['DRUIDCRAFT']) &&
-            pc.spells[0].includes(Spells['GUIDANCE'])
+            pc.spells[0][0].spellcastingAbility === 'wisdom' &&
+            pc.spells[0][1].spellcastingAbility === 'wisdom'
         ).toBeTruthy();
     });
 
     test('Magic Initiate feat introduces 1 first level spell', () => {
         
-        let ft: Feat = new MagicInitiate(['DRUIDCRAFT', 'GUIDANCE'], 'ANIMAL FRIENDSHIP');
+        let ft: Feat = new MagicInitiate('Druid', ['DRUIDCRAFT', 'GUIDANCE'], 'ANIMAL FRIENDSHIP');
         ft.apply(pc);
-        expect(pc.spells[1]).toContain(Spells['ANIMAL FRIENDSHIP']);
+        expect(pc.spells[1][0].spellcastingAbility == 'wisdom').toBeTruthy();
     });
 
     test.skip('Martial Adept feat is not testable yet', () => {
 
-    });
-
-    test('Medium Armor Master feat fails to apply without medium armor proficiency', () => {
-
-        let ft: Feat = new MediumArmorMaster();
-        expect(() => ft.apply(pc)).toThrowError('Requirement Not Met: Medium Armor Proficiency');
-    });
-
-    test('Medium Armor Master feat applies when proficient in medium armor', () => {
-        
-        pc.traits.armorProficiencies.push('Medium');
-        let ft: Feat = new MediumArmorMaster();
-        ft.apply(pc);
-        expect(pc.traits.features).toContain(Feats['MEDIUM ARMOR MASTER']);
     });
 
     test.skip('Medium Armor Master feat is not fully testable yet', () => {
@@ -208,5 +194,5 @@ describe('Ez Feats', () => {
         ).toBeTruthy();
     });
 });
-*/
+
 
