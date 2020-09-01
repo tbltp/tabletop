@@ -12,14 +12,11 @@ import { Tiefling } from './src/Races/Tiefling';
 
 import { PlayerCharacter } from './src/Base/PlayerCharacter';
 
-import {RitualCaster} from './src/Feats/Ali';
+import {MagicInitiate} from './src/Feats/Ez';
 
 let pc: PlayerCharacter = new PlayerCharacter(10, 10, 10, 10, 10, 10);
 
-let t = new Tiefling();
-t.apply(pc);
-
-let feat = new RitualCaster("Wizard", ["ALARM", "MAGE ARMOR"]);
+let feat = new MagicInitiate("Wizard", ["MAGE ARMOR", "AID"], "BANE");
 feat.apply(pc);
 
 console.log(pc.spells);

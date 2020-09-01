@@ -3,6 +3,7 @@ import { PlayerCharacter } from '../Base/PlayerCharacter';
 import * as Feats from '../../Assets/Feats.json';
 import * as Languages from '../../Assets/Languages.json';
 import * as Spells from '../../Assets/Spells.json';
+import * as SpellcastingAbility from '../../Assets/SpellcastingAbility.json';
 import { ResourceTrait, ISpell, Spell, Trait } from '../Base/Interfaces';
 
 export class InspiringLeader extends Feat {
@@ -40,19 +41,19 @@ export class KeenMind extends Feat {
 
 export class LightlyArmored extends Feat {
 
-    constructor(ability: string) {
+    constructor(abilityScore: string) {
         super();
-        this.ability = ability;
+        this.abilityScore = abilityScore;
     }
 
-    private ability: string;
     trait = Feats['LIGHTLY ARMORED'];
+    private abilityScore: string;
 
     public apply(pc: PlayerCharacter) {
        
-        pc.abilityScores[this.ability].update(1);
+        pc.abilityScores[this.abilityScore].update(1);
         pc.traits.armorProficiencies.push('Light');
-        this.trait.description += `\n(${this.ability})`
+        this.trait.description += `\n(${this.abilityScore})`
         pc.traits.features.push(this.trait);
     }
 }
@@ -111,30 +112,31 @@ export class MageSlayer extends Feat {
 }
 
 export class MagicInitiate extends Feat {
-
-    /**
-     * TO DO: Fill this class in when:
-     *      -spell lists are completed
-     *      -spellcasting ability is represented (optional)
-     */
-    constructor(cantripChoices: string[], firstLevelChoice: string) {
+    constructor(spellClass: string, cantrips: string[], firstLevelSpell: string) {
         super();
-        this.cantrips = [];
-        this.trait = Feats['MAGIC INITIATE'];
-        for(let ctrip of cantripChoices) {
-            this.cantrips.push(Spells[ctrip]);
-        }
-        this.firstLevel = Spells[firstLevelChoice];
+        this.spellClass = spellClass;
+        this.cantrips = cantrips;
+        this.firstLevelSpell = firstLevelSpell;
     }
     
-    private cantrips: Spell[];
-    private firstLevel: Spell;
+    trait = Feats['MAGIC INITIATE'];
+    private spellClass: string;
+    private cantrips: string[];
+    private firstLevelSpell: string;
 
     public apply(pc: PlayerCharacter) {
         
-        pc.spells["0"].push(...this.cantrips);
-        pc.spells["1"].push(this.firstLevel);
-        this.trait.description += `\n(${this.cantrips[0].name}, ${this.cantrips[0].name}, ${this.firstLevel.name})`
+        for(const spellName of this.cantrips) {
+            const ispell: ISpell = Spells[spellName];
+            const spell: Spell = {...ispell, spellcastingAbility: SpellcastingAbility[this.spellClass] };
+            pc.spells[0].push(spell);
+        }
+
+        const ispell: ISpell = Spells[this.firstLevelSpell];
+        const spell: Spell = {...ispell, spellcastingAbility: SpellcastingAbility[this.spellClass]};
+        pc.spells[1].push(spell);
+
+        this.trait.description += `\n(${this.cantrips[0]}, ${this.cantrips[0]}, ${this.firstLevelSpell})`;
         pc.traits.features.push(this.trait);
     }
 }
@@ -143,19 +145,16 @@ export class MartialAdept extends Feat {
 
     /**
      * TO DO: Fill this class in when:
-     *      -actions are represented 
-     *      -classes are implemented
-     *          -class-specific resources are known
+     * actions are represented 
+     * classes are implemented
+     * class-specific resources are known
      */
+
     constructor() {
         super();
-        this.trait = Feats['MARTIAL ADEPT'];
-    }
+    };
 
-    public apply(pc: PlayerCharacter) {
-        
-        pc.traits.features.push(this.trait);
-    }
+    apply(pc: PlayerCharacter) {}
 
 }
 
@@ -163,26 +162,18 @@ export class MediumArmorMaster extends Feat {
 
     /**
      * TO DO: Fill this class in when:
-     *      -stats are better represented
-     *      -ability checks return a boolean
+     * stats are better represented
+     * ability checks return a boolean
      */
+
     constructor() {
         super();
-        this.trait = Feats['MEDIUM ARMOR MASTER'];
-    }
+    };
 
-    public apply(pc: PlayerCharacter) {
-
-        if(!this.armorPrereqCheck(pc, 'Medium')) {
-            throw Error('Requirement Not Met: Medium Armor Proficiency');
-        }
-        
-        pc.traits.features.push(this.trait);
-    }
+    apply(pc: PlayerCharacter) {}
 }
 
 export class Mobile extends Feat {
-    
     constructor() {
         super();
     }
@@ -197,7 +188,6 @@ export class Mobile extends Feat {
 }
 
 export class ModeratelyArmored extends Feat {
-
     constructor(abilityScore: string) {
         super();
         this.abilityScore = abilityScore;
@@ -220,7 +210,6 @@ export class ModeratelyArmored extends Feat {
 }
 
 export class MountedCombatant extends Feat {
-
     constructor() {
         super();
     }
@@ -233,7 +222,6 @@ export class MountedCombatant extends Feat {
 }
 
 export class Observant extends Feat {
-
     constructor(abilityScore: string) {
         super();
         this.abilityScore = abilityScore;
