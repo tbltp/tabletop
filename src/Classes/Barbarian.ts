@@ -1,9 +1,7 @@
-import { PlayerClass, levelingParams } from './PlayerClass';
+import { PlayerClass, LevelingParams } from './PlayerClass';
 import { ResourceTrait, Trait } from '../Base/Interfaces';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import * as ClassTraits from '../../Assets/ClassTraits.json';
-import * as Archetypes from '../../Assets/Archetypes.json';
-import * as Spells from '../../Assets/Spells.json';
 import { BarbarianArchetype } from './Archetypes';
 
 export class Barbarian extends PlayerClass {
@@ -24,14 +22,20 @@ export class Barbarian extends PlayerClass {
             ["strength", "constitution"]
         );
 
+        for(let level in this.abilitiesAtLevels) {
+            
+            const func: Function = this.abilitiesAtLevels[level];
+            this.abilitiesAtLevels[level] = func.bind(this);
+        }
 
     }
     /** TODO
+     * Version control on rage and brutal critical (what level are they currently?)
+     * Set the new maximum of 24 on str/con ability scores for lvl 20
      * Inventory is not done yet: FOUR JAVELINS, EXPLORER'S PACK
      * 12 + Constitution Modifier HP Max
      * UNARMORED DEFENSE and FAST MOVEMENT depends on equipped armor.
      * EXTRA ATTACK should be represented in action economy.
-     * Primal Path LVL 10
      */
 
     primalPath: string;
@@ -57,100 +61,115 @@ export class Barbarian extends PlayerClass {
         "19": this.level19,
         "20": this.level20
     }
-
-    level1(pc: PlayerCharacter, params: levelingParams): void {
-        pc.traits.features.push(ClassTraits["RAGE"], ClassTraits["UNARMORED DEFENSE"]);
-        const rage: ResourceTrait = {title: "Rage", description: "Number of times you can go into a Rage.", resourceMax: 2, bonus: '+2'}; 
-        pc.traits.resources.push(rage);
+    
+    pushBarbarianFeatures(pc: PlayerCharacter, level: string) {
+        this.pushClassFeatures(pc, level, "BARBARIAN");
     }
 
-    level2(pc: PlayerCharacter, params: levelingParams): void {
-        pc.traits.features.push(ClassTraits["RECKLESS ATTACK"], ClassTraits["DANGER SENSE"]);
+    level1(pc: PlayerCharacter, params: LevelingParams): void {
+        this.pushBarbarianFeatures(pc, "1");
+        const rage: ResourceTrait = {title: "Rage", description: "Number of times you can go into a Rage.  Bonus applies to attack damage.", resourceMax: 2, bonus: '+2'}; 
+        pc.addResourceTraits(rage);
     }
 
-    level3(pc: PlayerCharacter, params: levelingParams): void {
+    level2(pc: PlayerCharacter, params: LevelingParams): void {
+        this.pushBarbarianFeatures(pc, "2");
+    }
+
+    level3(pc: PlayerCharacter, params: LevelingParams): void {
         this.primalPath = params.archetypeSelection[0].archetype;
         BarbarianArchetype.archetypeHelper[this.primalPath][3](pc, params);
-        pc.findResourceTraitByName('resources', 'Rage')[0].resourceMax++;
+        pc.findTraitByName('resources', 'Rage')[0].resourceMax++;
     }
     
-    level4(pc: PlayerCharacter, params: levelingParams): void {
-        for(const ability of params.abilityScoreImprovement) { pc.abilityScores[ability.ability].update(ability.improvement); } 
+    level4(pc: PlayerCharacter, params: LevelingParams): void {
+        pc.improveAbilityScores(params.abilityScoreImprovement);
     }
 
-    level5(pc: PlayerCharacter, params: levelingParams): void {
-        pc.traits.features.push(ClassTraits["EXTRA ATTACK"], ClassTraits["FAST MOVEMENT"]);
-    }
-    level6(pc: PlayerCharacter, params: levelingParams): void {
-        BarbarianArchetype.archetypeHelper[`${this.primalPath}6`](pc, params);
-        pc.findResourceTraitByName('resources', 'Rage')[0].resourceMax++;
+    level5(pc: PlayerCharacter, params: LevelingParams): void {
+        this.pushBarbarianFeatures(pc, "5");
     }
 
-    level7(pc: PlayerCharacter, params: levelingParams): void {
-        pc.traits.features.push(ClassTraits["FERAL INSTINCT"]);
+    level6(pc: PlayerCharacter, params: LevelingParams): void {
+        BarbarianArchetype.archetypeHelper[this.primalPath][6](pc, params);
+        pc.findTraitByName('resources', 'Rage')[0].resourceMax++;
     }
 
-    level8(pc: PlayerCharacter, params: levelingParams): void {
-        for(const ability of params.abilityScoreImprovement) { pc.abilityScores[ability.ability].update(ability.improvement); }
+    level7(pc: PlayerCharacter, params: LevelingParams): void {
+        this.pushBarbarianFeatures(pc, "7");
     }
 
-    level9(pc: PlayerCharacter, params: levelingParams): void {
-        pc.traits.features.push(ClassTraits["BRUTAL CRITICAL"]);
-        pc.traits.resources.push(
-            {title: "Brutal Critical", "description": "Number of extra damage dice on a critical hit.", resourceMax: Infinity, dice: "1dx"}
-        )
-        pc.findResourceTraitByName('resources', 'Rage')[0].bonus = "+3";
+    level8(pc: PlayerCharacter, params: LevelingParams): void {
+        pc.improveAbilityScores(params.abilityScoreImprovement);
     }
 
-    level10(pc: PlayerCharacter, params: levelingParams): void {
-        // PATH FEATURE    
+    level9(pc: PlayerCharacter, params: LevelingParams): void {
+        this.pushBarbarianFeatures(pc, "9");
+        const brutalCritical: ResourceTrait = {title: "Brutal Critical", "description": "Number of extra damage dice on a critical hit.", resourceMax: Infinity, dice: "1dx"};
+        pc.addResourceTraits(brutalCritical);
+        pc.findTraitByName('resources', 'Rage')[0].bonus = "+3";
     }
 
-    level11(pc: PlayerCharacter, params: levelingParams): void {
-        pc.traits.features.push(ClassTraits["RELENTLESS RAGE"]);
+    level10(pc: PlayerCharacter, params: LevelingParams): void {
+        BarbarianArchetype.archetypeHelper[this.primalPath][10](pc, params);
     }
 
-    level12(pc: PlayerCharacter, params: levelingParams): void {
-        for(const ability of params.abilityScoreImprovement) { pc.abilityScores[ability.ability].update(ability.improvement); }
-        pc.findResourceTraitByName('resources', 'Rage')[0].resourceMax++;
+    level11(pc: PlayerCharacter, params: LevelingParams): void {
+        this.pushBarbarianFeatures(pc, '11');
     }
 
-    level13(pc: PlayerCharacter, params: levelingParams): void {
-        pc.traits.resources.filter(resource => resource.title == "Brutal Critical")[0].dice = "2dx";
-        pc.traits.features.push( {title: "Brutal Critical (Level 13)", description: "You now roll 2 additional damage dice on critical hits."} )    
+    level12(pc: PlayerCharacter, params: LevelingParams): void {
+        pc.improveAbilityScores(params.abilityScoreImprovement);
+        pc.findTraitByName('resources', 'Rage')[0].resourceMax++;
     }
 
-    level14(pc: PlayerCharacter, params: levelingParams): void {
-        // PATH FEATURE    
+    level13(pc: PlayerCharacter, params: LevelingParams): void {
+        pc.findTraitByName('resources', 'Brutal Critical')[0].dice = "2dx";
+        //pc.traits.features.push( {title: "Brutal Critical (Level 13)", description: "You now roll 2 additional damage dice on critical hits."} )    
+        //^I'd prefer to not add more features with the same name if the functionality is unchanged
     }
 
-    level15(pc: PlayerCharacter, params: levelingParams): void {
-        pc.traits.features.push(ClassTraits["PERSISTENT RAGE"]);
+    level14(pc: PlayerCharacter, params: LevelingParams): void {
+        BarbarianArchetype.archetypeHelper[this.primalPath][14](pc, params);
     }
 
-    level16(pc: PlayerCharacter, params: levelingParams): void {
-        for(const ability of params.abilityScoreImprovement) { pc.abilityScores[ability.ability].update(ability.improvement); }
-        pc.findResourceTraitByName('resources', 'Rage')[0].bonus = "+4";
+    level15(pc: PlayerCharacter, params: LevelingParams): void {
+        this.pushBarbarianFeatures(pc, '15');
     }
 
-    level17(pc: PlayerCharacter, params: levelingParams): void {
-        pc.traits.resources.filter(resource => resource.title == "Brutal Critical")[0].dice = "3dx";
-        pc.traits.features.push( {title: "Brutal Critical (Level 17)", description: "You now roll 3 additional damage dice on critical hits."} )
-        pc.findResourceTraitByName('resources', 'Rage')[0].resourceMax++;
+    level16(pc: PlayerCharacter, params: LevelingParams): void {
+        pc.improveAbilityScores(params.abilityScoreImprovement);
+        pc.findTraitByName('resources', 'Rage')[0].bonus = "+4";
     }
 
-    level18(pc: PlayerCharacter, params: levelingParams): void {
-        pc.traits.features.push(ClassTraits["IMDOMITABLE MIGHT"]);
+    level17(pc: PlayerCharacter, params: LevelingParams): void {
+        pc.findTraitByName('resources', 'Brutal Critical')[0].dice = "3dx";
+        //pc.traits.features.push( {title: "Brutal Critical (Level 17)", description: "You now roll 3 additional damage dice on critical hits."} )
+        pc.findTraitByName('resources', 'Rage')[0].resourceMax++;
     }
 
-    level19(pc: PlayerCharacter, params: levelingParams): void {
-        for(const ability of params.abilityScoreImprovement) { pc.abilityScores[ability.ability].update(ability.improvement); }
-        pc.traits.resources[2].resourceMax++;
+    level18(pc: PlayerCharacter, params: LevelingParams): void {
+        this.pushBarbarianFeatures(pc, '18');
     }
 
-    level20(pc: PlayerCharacter, params: levelingParams): void {
-        pc.traits.features.push(ClassTraits["PRIMAL CHAMPION"]);
-        pc.findResourceTraitByName('resources', 'Rage')[0].resourceMax = Infinity; 
+    level19(pc: PlayerCharacter, params: LevelingParams): void {
+        pc.improveAbilityScores(params.abilityScoreImprovement);
+    }
+
+    level20(pc: PlayerCharacter, params: LevelingParams): void {
+        this.pushBarbarianFeatures(pc, '20');
+        pc.improveAbilityScores([
+            {
+                ability: 'strength',
+                improvement: 4
+            },
+            {
+                ability: 'constitution',
+                improvement: 4
+            },
+        ]);
+        //How to set new maximum??
+        pc.findTraitByName('resources', 'Rage')[0].resourceMax = Infinity; 
     }
     
 }

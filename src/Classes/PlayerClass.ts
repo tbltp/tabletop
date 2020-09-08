@@ -1,5 +1,6 @@
 import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { Spell, Trait } from "../Base/Interfaces";
+import * as ClassTraits from "../../Assets/ClassTraits.json";
 import * as Languages from "../../Assets/Languages.json";
 import * as Gear from "../../Assets/Gear.json";
 import * as ToolKits from "../../Assets/Tools.json";
@@ -19,7 +20,7 @@ export abstract class PlayerClass {
         armor: string[],
         equipment: string[],
         toolKits: string[],
-        lvlOneParams: levelingParams,
+        lvlOneParams: LevelingParams,
         hitDie: string,
         savingThrowProficiencies: string[] 
     ) {
@@ -51,7 +52,7 @@ export abstract class PlayerClass {
     armor: string[];
     equipment: string[];
     toolKits: string[];
-    lvlOneParams: levelingParams;
+    lvlOneParams: LevelingParams;
     hitDie: string;
     savingThrowProficiencies: string[];
     features: Trait[];
@@ -59,7 +60,7 @@ export abstract class PlayerClass {
     //TODO: wtf is a Path
     //path: Path;
 
-    abstract abilitiesAtLevels: {[key: string]: (pc: PlayerCharacter, params: levelingParams) => void; };
+    abstract abilitiesAtLevels: {[key: string]: (pc: PlayerCharacter, params: LevelingParams) => void; };
 
     addLanguages(pc: PlayerCharacter): void {
         for(let language of this.languages) { pc.traits.languages.push(Languages[language]); };
@@ -125,10 +126,15 @@ export abstract class PlayerClass {
         for(const ability of abilityScoreImprovements) { pc.abilityScores[ability.ability].update(ability.improvement); }
     }
 
+    pushClassFeatures(pc: PlayerCharacter, level: string, className: string) {
+        for(let key in ClassTraits[className][level]) {
+            pc.addFeatures(ClassTraits[className][level][key]);
+        }
+    }
 
 }
 
-export interface levelingParams {
+export interface LevelingParams {
     isNoInput: boolean,
 	abilityScoreImprovement?: { 
 		ability: string, 

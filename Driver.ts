@@ -20,15 +20,140 @@ import { PlayerClass } from './src/Classes/PlayerClass';
 
 const pc = new PlayerCharacter(12,12,12,12,12,12);
 const bclass = new Barbarian([], [], "");
+const barbarianArgs = [
+    {
+        isNoInput: true
+    },
+    {
+        isNoInput: true
+    },
+    {
+        isNoInput: false,
+        archetypeSelection: [{
+            archetype: 'TOTEM WARRIOR',
+            options: ['BEAR']
+        }]
+    },
+    {
+        isNoInput: false,
+        abilityScoreImprovement: [
+            {
+                ability: 'strength',
+                improvement: 1
+            },
+            {
+                ability: 'constitution',
+                improvement: 1
+            }
+        ]
+    },
+    {
+        isNoInput: true
+    },
+    {
+        isNoInput: false,
+        archetypeSelection: [{
+            archetype: 'TOTEM WARRIOR',
+            options: ['BEAR']
+        }]
+    },
+    {
+        isNoInput: true
+    },
+    {
+        isNoInput: false, 
+        abilityScoreImprovement: [
+            {
+                ability: 'strength',
+                improvement: 1
+            },
+            {
+                ability: 'constitution',
+                improvement: 1
+            }
+        ]
+    },
+    {
+        isNoInput: true
+    },
+    {
+        isNoInput: false,
+        archetypeSelection: [{
+            archetype: 'TOTEM WARRIOR',
+            options: ['BEAR']
+        }]
+    },
+    {
+        isNoInput: true
+    },
+    {
+        isNoInput: false, 
+        abilityScoreImprovement: [
+            {
+                ability: 'strength',
+                improvement: 1
+            },
+            {
+                ability: 'constitution',
+                improvement: 1
+            }
+        ]
+    },
+    {
+        isNoInput: true
+    },
+    {
+        isNoInput: false,
+        archetypeSelection: [{
+            archetype: 'TOTEM WARRIOR',
+            options: ['BEAR']
+        }]
+    },
+    {
+        isNoInput: true
+    },
+    {
+        isNoInput: false, 
+        abilityScoreImprovement: [
+            {
+                ability: 'strength',
+                improvement: 1
+            },
+            {
+                ability: 'constitution',
+                improvement: 1
+            }
+        ]
+    },
+    {
+        isNoInput: true
+    },
+    {
+        isNoInput: true
+    },
+    {
+        isNoInput: false, 
+        abilityScoreImprovement: [
+            {
+                ability: 'strength',
+                improvement: 1
+            },
+            {
+                ability: 'constitution',
+                improvement: 1
+            }
+        ]
+    },
+    {
+       isNoInput: true 
+    }
+]
 
 bclass.apply(pc);
-bclass.abilitiesAtLevels[3](pc, {
-    isNoInput: false,
-    archetypeSelection: [{
-        archetype: 'TOTEM WARRIOR',
-        options: ['BEAR']
-    }]
-});
+for(let i = 2; i <= barbarianArgs.length; i++) {
+    bclass.abilitiesAtLevels[i](pc, barbarianArgs[i - 1]);
+}
 
-console.log(pc.traits.features);
-
+console.log(pc.abilityScores);
+console.log(pc.spells);
+console.log(pc.traits);

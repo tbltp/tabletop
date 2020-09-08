@@ -1,4 +1,4 @@
-import { PlayerClass, levelingParams } from './PlayerClass';
+import { PlayerClass, LevelingParams } from './PlayerClass';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import {ISpell, Spell} from '../Base/Interfaces';
 import * as ClassTraits from '../../Assets/ClassTraits.json';

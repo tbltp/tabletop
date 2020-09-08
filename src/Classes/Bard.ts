@@ -1,9 +1,9 @@
-import { PlayerClass, levelingParams } from './PlayerClass';
+import { PlayerClass, LevelingParams } from './PlayerClass';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import * as ClassTraits from '../../Assets/ClassTraits.json';
 
 export class Bard extends PlayerClass {
-    constructor(skillProficiencies: string[], weapons: string[], instrumentProficiencies: string[], equipmentPack: string, bardParams: levelingParams) {
+    constructor(skillProficiencies: string[], weapons: string[], instrumentProficiencies: string[], equipmentPack: string, bardParams: LevelingParams) {
         super(
             "Barbarian",
             [], 
@@ -52,98 +52,98 @@ export class Bard extends PlayerClass {
         "20": this.level20,
     }
 
-    level1(pc: PlayerCharacter, params: levelingParams): void {
+    level1(pc: PlayerCharacter, params: LevelingParams): void {
         PlayerClass.addSpells(pc, params.spellSelection, "charisma");
         pc.traits.resources.push( {title: "First Level Spell Slots", description: "Number of first level spells you can cast", resourceMax: 2} )
         // 
     }
 
-    level2(pc: PlayerCharacter, params: levelingParams): void {
+    level2(pc: PlayerCharacter, params: LevelingParams): void {
         PlayerClass.addSpells(pc, params.spellSelection, "charisma");
         pc.traits.resources.filter((resource) => resource.title == "First Level Spell Slots")[0].resourceMax++;
     }
 
-    level3(pc: PlayerCharacter, params: levelingParams): void {
+    level3(pc: PlayerCharacter, params: LevelingParams): void {
         PlayerClass.addSpells(pc, params.spellSelection, "charisma");
         pc.traits.resources.filter((resource) => resource.title == "First Level Spell Slots")[0].resourceMax++;
         pc.traits.resources.push( {title: "Second Level Spell Slots", description: "Number of second level spells you can cast", resourceMax: 2} )
     }
     
-    level4(pc: PlayerCharacter, params: levelingParams): void {
+    level4(pc: PlayerCharacter, params: LevelingParams): void {
         PlayerClass.addSpells(pc, params.spellSelection, "charisma");
         pc.traits.resources.filter((resource) => resource.title == "Second Level Spell Slots")[0].resourceMax++;        
     }
 
-    level5(pc: PlayerCharacter, params: levelingParams): void {
+    level5(pc: PlayerCharacter, params: LevelingParams): void {
         PlayerClass.addSpells(pc, params.spellSelection, "charisma");
         pc.traits.resources.push( {title: "Third Level Spell Slots", description: "Number of third level spells you can cast", resourceMax: 2} )
     }
 
-    level6(pc: PlayerCharacter, params: levelingParams): void {
+    level6(pc: PlayerCharacter, params: LevelingParams): void {
         PlayerClass.addSpells(pc, params.spellSelection, "charisma");
         pc.traits.resources.filter((resource) => resource.title == "Third Level Spell Slots")[0].resourceMax++;
     }
 
-    level7(pc: PlayerCharacter, params: levelingParams): void {
+    level7(pc: PlayerCharacter, params: LevelingParams): void {
         PlayerClass.addSpells(pc, params.spellSelection, "charisma");
         pc.traits.resources.push( {title: "Fourth Level Spell Slots", description: "Number of fourth level spells you can cast", resourceMax: 1} )
     }
 
-    level8(pc: PlayerCharacter, params: levelingParams): void {
+    level8(pc: PlayerCharacter, params: LevelingParams): void {
         PlayerClass.addSpells(pc, params.spellSelection, "charisma");
         pc.traits.resources.filter((resource) => resource.title == "Fourth Level Spell Slots")[0].resourceMax++;
     }
 
-    level9(pc: PlayerCharacter, params: levelingParams): void {
+    level9(pc: PlayerCharacter, params: LevelingParams): void {
         PlayerClass.addSpells(pc, params.spellSelection, "charisma");
         pc.traits.resources.filter((resource) => resource.title == "Fourth Level Spell Slots")[0].resourceMax++;
         pc.traits.resources.push( {title: "Fifth Level Spell Slots", description: "Number of fifth level spells you can cast", resourceMax: 1} )
     }
 
-    level10(pc: PlayerCharacter, params: levelingParams): void {
+    level10(pc: PlayerCharacter, params: LevelingParams): void {
         PlayerClass.addSpells(pc, params.spellSelection, "charisma");
         pc.traits.resources.filter((resource) => resource.title == "Fifth Level Spell Slots")[0].resourceMax++;
     }
 
-    level11(pc: PlayerCharacter, params: levelingParams): void {
+    level11(pc: PlayerCharacter, params: LevelingParams): void {
         PlayerClass.addSpells(pc, params.spellSelection, "charisma");
         pc.traits.resources.push( {title: "Sixth Level Spell Slots", description: "Number of sixth level spells you can cast", resourceMax: 1} )
     }
 
-    level12(pc: PlayerCharacter, params: levelingParams): void {
+    level12(pc: PlayerCharacter, params: LevelingParams): void {
     }
 
-    level13(pc: PlayerCharacter, params: levelingParams): void {
+    level13(pc: PlayerCharacter, params: LevelingParams): void {
         PlayerClass.addSpells(pc, params.spellSelection, "charisma");
         pc.traits.resources.push( {title: "Seventh Level Spell Slots", description: "Number of seventh level spells you can cast", resourceMax: 1} )
     }
 
-    level14(pc: PlayerCharacter, params: levelingParams): void {
+    level14(pc: PlayerCharacter, params: LevelingParams): void {
         PlayerClass.addSpells(pc, params.spellSelection, "charisma");   
     }
 
-    level15(pc: PlayerCharacter, params: levelingParams): void {
+    level15(pc: PlayerCharacter, params: LevelingParams): void {
         PlayerClass.addSpells(pc, params.spellSelection, "charisma");
         pc.traits.resources.push( {title: "Eighth Level Spell Slots", description: "Number of eighth level spells you can cast", resourceMax: 1} )
     }
 
-    level16(pc: PlayerCharacter, params: levelingParams): void {
+    level16(pc: PlayerCharacter, params: LevelingParams): void {
     }
 
-    level17(pc: PlayerCharacter, params: levelingParams): void {
+    level17(pc: PlayerCharacter, params: LevelingParams): void {
         PlayerClass.addSpells(pc, params.spellSelection, "charisma");
         pc.traits.resources.push( {title: "Ninth Level Spell Slots", description: "Number of ninth level spells you can cast", resourceMax: 1} )
     }
 
-    level18(pc: PlayerCharacter, params: levelingParams): void {
+    level18(pc: PlayerCharacter, params: LevelingParams): void {
         pc.traits.resources.filter((resource) => resource.title == "Fifth Level Spell Slots")[0].resourceMax++;
     }
 
-    level19(pc: PlayerCharacter, params: levelingParams): void {
+    level19(pc: PlayerCharacter, params: LevelingParams): void {
         pc.traits.resources.filter((resource) => resource.title == "Sixth Level Spell Slots")[0].resourceMax++;
     }
 
-    level20(pc: PlayerCharacter, params: levelingParams): void {
+    level20(pc: PlayerCharacter, params: LevelingParams): void {
         pc.traits.resources.filter((resource) => resource.title == "Seventh Level Spell Slots")[0].resourceMax++;
     }
     
