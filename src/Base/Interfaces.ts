@@ -43,12 +43,12 @@ export interface Trait {
     /**Spell slots are just special traits with no additional properties */
     readonly title: string;
     description: string;
-    dice?: string;
 }
 
 export interface ResourceTrait extends Trait {
     resourceMax: number;
     bonus?: string;
+    dice?: string;
 }
 
 

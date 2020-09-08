@@ -1,4 +1,6 @@
 import { BaseCharacter } from './BaseCharacter';
+import { ResourceTrait, Spell, Trait } from './Interfaces';
+import * as Spells from '../../Assets/Spells.json';
 
 export class PlayerCharacter extends BaseCharacter {
     
@@ -18,10 +20,25 @@ export class PlayerCharacter extends BaseCharacter {
         return false;
     }
 
-    findResourceTraitByName(traitType: string, name: string) {
+    findTraitByName(traitType: string, name: string): Trait {
         return this.traits[traitType].filter(resource => resource.title == name);
     }
+
+    improveAbilityScores(abilityScoreImprovements: {ability: string, improvement: number} []): void {
+        for(const ability of abilityScoreImprovements) { this.abilityScores[ability.ability].update(ability.improvement); }
+    }
+
+    addFeatures(...features: Trait []): void {
+        this.traits.features.push(...features);
+    }
+
+    addResourceTraits(...resTraits: ResourceTrait []): void {
+        this.traits.resources.push(...resTraits);
+    }
+
+    addSpells(spellList: string[], spellcastingAbility: string): void {
+        let spells: Spell[] = []
+        for(const selectedSpell of spellList) { spells.push({...Spells[selectedSpell], spellcastingAbility: spellcastingAbility}); }
+        for(const spell of spells) {  this.spells[spell.minimumLevel].push(spell) }
+    }
 }
-
-
-
