@@ -23,6 +23,8 @@ export class Barbarian extends PlayerClass {
             "d12",
             ["strength", "constitution"]
         );
+
+
     }
     /** TODO
      * Inventory is not done yet: FOUR JAVELINS, EXPLORER'S PACK
@@ -32,6 +34,7 @@ export class Barbarian extends PlayerClass {
      * Primal Path LVL 10
      */
 
+    primalPath: string;
     abilitiesAtLevels = {
         "1": this.level1,
         "2": this.level2,
@@ -55,25 +58,19 @@ export class Barbarian extends PlayerClass {
         "20": this.level20
     }
 
-    primalPath: string;
-
-
     level1(pc: PlayerCharacter, params: levelingParams): void {
-        con
-        this.features.push(ClassTraits["RAGE"], ClassTraits["UNARMORED DEFENSE"]);
         pc.traits.features.push(ClassTraits["RAGE"], ClassTraits["UNARMORED DEFENSE"]);
         const rage: ResourceTrait = {title: "Rage", description: "Number of times you can go into a Rage.", resourceMax: 2, bonus: '+2'}; 
         pc.traits.resources.push(rage);
     }
 
     level2(pc: PlayerCharacter, params: levelingParams): void {
-        //this.features.push(ClassTraits["RECKLESS ATTACK"], ClassTraits["DANGER SENSE"]);
         pc.traits.features.push(ClassTraits["RECKLESS ATTACK"], ClassTraits["DANGER SENSE"]);
     }
 
     level3(pc: PlayerCharacter, params: levelingParams): void {
         this.primalPath = params.archetypeSelection[0].archetype;
-        BarbarianArchetype.archetypeHelper[`${this.primalPath}3`](pc, params);
+        BarbarianArchetype.archetypeHelper[this.primalPath][3](pc, params);
         pc.findResourceTraitByName('resources', 'Rage')[0].resourceMax++;
     }
     
@@ -82,21 +79,14 @@ export class Barbarian extends PlayerClass {
     }
 
     level5(pc: PlayerCharacter, params: levelingParams): void {
-        this.features.push(ClassTraits["EXTRA ATTACK"], ClassTraits["FAST MOVEMENT"]);
         pc.traits.features.push(ClassTraits["EXTRA ATTACK"], ClassTraits["FAST MOVEMENT"]);
     }
     level6(pc: PlayerCharacter, params: levelingParams): void {
-        if(this.primalPath === "BERSERKER") {
-            pc.traits.features.filter(resource => resource.title == this.primalPath)[0].description += `\n MINDLESS RAGE: ${Archetypes["BARBARIAN"]["BERSERKER"].features["MINDLESS RAGE"].description}`
-        }
-        else if(this.primalPath === "TOTEM WARRIOR"){ 
-            pc.traits.features.filter(resource => resource.title == this.primalPath)[0].description += `\n ${params.archetypeSelection[0].options[0]}: Archetypes["BARBARIAN"]["TOTEM WARRIOR"].features[${params.archetypeSelection[0].options[0]}].description`
-        }
+        BarbarianArchetype.archetypeHelper[`${this.primalPath}6`](pc, params);
         pc.findResourceTraitByName('resources', 'Rage')[0].resourceMax++;
     }
 
     level7(pc: PlayerCharacter, params: levelingParams): void {
-        this.features.push(ClassTraits["FERAL INSTINCT"]);
         pc.traits.features.push(ClassTraits["FERAL INSTINCT"]);
     }
 
@@ -105,7 +95,6 @@ export class Barbarian extends PlayerClass {
     }
 
     level9(pc: PlayerCharacter, params: levelingParams): void {
-        this.features.push(ClassTraits["BRUTAL CRITICAL"]);
         pc.traits.features.push(ClassTraits["BRUTAL CRITICAL"]);
         pc.traits.resources.push(
             {title: "Brutal Critical", "description": "Number of extra damage dice on a critical hit.", resourceMax: Infinity, dice: "1dx"}
@@ -118,7 +107,6 @@ export class Barbarian extends PlayerClass {
     }
 
     level11(pc: PlayerCharacter, params: levelingParams): void {
-        this.features.push(ClassTraits["RELENTLESS RAGE"]);
         pc.traits.features.push(ClassTraits["RELENTLESS RAGE"]);
     }
 
@@ -137,7 +125,6 @@ export class Barbarian extends PlayerClass {
     }
 
     level15(pc: PlayerCharacter, params: levelingParams): void {
-        this.features.push(ClassTraits["PERSISTENT RAGE"]);
         pc.traits.features.push(ClassTraits["PERSISTENT RAGE"]);
     }
 
@@ -153,7 +140,6 @@ export class Barbarian extends PlayerClass {
     }
 
     level18(pc: PlayerCharacter, params: levelingParams): void {
-        this.features.push(ClassTraits["INDOMITABLE MIGHT"]);
         pc.traits.features.push(ClassTraits["IMDOMITABLE MIGHT"]);
     }
 
@@ -163,7 +149,6 @@ export class Barbarian extends PlayerClass {
     }
 
     level20(pc: PlayerCharacter, params: levelingParams): void {
-        this.features.push(ClassTraits["PRIMAL CHAMPION"]);
         pc.traits.features.push(ClassTraits["PRIMAL CHAMPION"]);
         pc.findResourceTraitByName('resources', 'Rage')[0].resourceMax = Infinity; 
     }

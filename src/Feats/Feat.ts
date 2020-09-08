@@ -34,7 +34,7 @@ export class Alert extends Feat {
 
     apply(pc: PlayerCharacter) {
 
-        pc.baseStats["initiatveBonus"].bonus += 5;
+        pc.baseStats["initiativeBonus"].bonus += 5;
         pc.traits.features.push(this.trait);
     }
 }

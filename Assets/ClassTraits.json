@@ -1,7 +1,7 @@
 {
     "RAGE": {
         "title": "Rage", 
-        "description": "In battle, youo fight with primal ferocity. On yoour turn you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing any heavy armor: \n - You have advantage on Strength checks and Strength saving throws. \n - When you make a melee weapon attack using Strength, yuo gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table. \n - You have resistance to bludgeoning, piercing, and slashing damage. \n If you are able to cast spells, youo can't cast them or concentrate on them while raging. \n Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on youor turn as a bonus action. \n Once you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again."
+        "description": "In battle, yoo fight with primal ferocity. On your turn you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing any heavy armor:  - You have advantage on Strength checks and Strength saving throws.  - When you make a melee weapon attack using Strength, yuo gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.  - You have resistance to bludgeoning, piercing, and slashing damage.  If you are able to cast spells, youo can't cast them or concentrate on them while raging.  Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on youor turn as a bonus action.  Once you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again."
     },
     "UNARMORED DEFENSE": {
         "title": "Unarmored Defense",
@@ -13,7 +13,7 @@
     },
     "DANGER SENSE": {
         "title": "Danger Sense", 
-        "description": "You gain an uncanny sense of when things nearby aren't as they should be, giving you an edge when you dodge away from danger. \n You have advantage on Dexterity saving throws againist effects that you can see, such as traps and spells. To gain this benefit, you can't be blinded, deafened, or incapacitated."
+        "description": "You gain an uncanny sense of when things nearby aren't as they should be, giving you an edge when you dodge away from danger.   You have advantage on Dexterity saving throws againist effects that you can see, such as traps and spells. To gain this benefit, you can't be blinded, deafened, or incapacitated."
     },
     "EXTRA ATTACK": {
         "title": "Extra Attack", 
@@ -25,7 +25,7 @@
     },
     "FERAL INSTINCT": {
         "title": "Feral Instinct", 
-        "description": "Your instincts are so honed that you have advantage on initiative rolls. \n Additionally, if you are surprised at the beginning of combat and aren't incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn."
+        "description": "Your instincts are so honed that you have advantage on initiative rolls.  Additionally, if you are surprised at the beginning of combat and aren't incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn."
     },
     "BRUTAL CRITICAL": {
         "title": "Brutal Critical", 
@@ -33,7 +33,7 @@
     },
     "RELENTLESS RAGE": {
         "title": "Relentless Rage", 
-        "description": "Yuor rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you're raging and don't die outright, yuo can make a DC 10 Coonstitution saving throw. If you succeed, you can drop to 1 hit point instead. \n Each time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10."
+        "description": "Yuor rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you're raging and don't die outright, yuo can make a DC 10 Coonstitution saving throw. If you succeed, you can drop to 1 hit point instead.  Each time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10."
     },
     "PERSISTENT RAGE": {
         "title": "Persistent Rage", 
@@ -49,7 +49,7 @@
     },
     "BARDIC INSPIRATION": {
         "title": "Bardic Inspiration",
-        "description": "You can inspire others through stirring words or music. To do soo, you use a bonus action your turn to choose one creature other than  yourself within 60 feat of you who can hear you. That creature gains one Bardic Inspiration die, a d6. \n Once within the next ten minutes, the creature can roll the die and add the number rolled to one ability check, attack  roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide before the DM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time. \n You can use this feature a number of times equal to your Charisma modifier (minimum of once). You regain any expended uses when you finish a long rest."
+        "description": "You can inspire others through stirring words or music. To do soo, you use a bonus action your turn to choose one creature other than  yourself within 60 feat of you who can hear you. That creature gains one Bardic Inspiration die, a d6.  Once within the next ten minutes, the creature can roll the die and add the number rolled to one ability check, attack  roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide before the DM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time.  You can use this feature a number of times equal to your Charisma modifier (minimum of once). You regain any expended uses when you finish a long rest."
     },
     "JACK OF ALL TRADES": {
         "title": "Jack of All Trades",
@@ -73,7 +73,7 @@
     },
     "MAGICAL SECRETS": {
         "title": "Magical Secrets",
-        "description": "Youo have plundered magical knowledge from a wide spectrum of disciplines.  Choose two  spells from any class, including this one. A spell you  choose mustt be of a level  you can cast, as shown on  the Bard table,  or a cantrip. \n The chosen spells count as a bard spells for yoouo and are included in the number in the Spells Known column of the Bard table."
+        "description": "Youo have plundered magical knowledge from a wide spectrum of disciplines.  Choose two  spells from any class, including this one. A spell you  choose mustt be of a level  you can cast, as shown on  the Bard table,  or a cantrip.  The chosen spells count as a bard spells for yoouo and are included in the number in the Spells Known column of the Bard table."
     },
     "SUPERIOR INSPIRATION": {
         "title": "Superior Inspiration",
@@ -105,6 +105,6 @@
     },
     "NATURAL EXPLORER": {
         "title": "Natural Explorer", 
-        "description": "You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. Choose one type of favored terrain. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in. While traveling for an hour or more in your favored terrain, you gain the following benefits: \n - Difficult terrain doesn’t slow your group’s travel. \n - Your group can’t become lost except by magical means. \n -  Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger. \n - If you are traveling alone, you can move stealthily at a normal pace. \n -  When you forage, you find twice as much food as you normally would. \n - While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area."
+        "description": "You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. Choose one type of favored terrain. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in. While traveling for an hour or more in your favored terrain, you gain the following benefits:  - Difficult terrain doesn’t slow your group’s travel.  - Your group can’t become lost except by magical means.  -  Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.  - If you are traveling alone, you can move stealthily at a normal pace.  -  When you forage, you find twice as much food as you normally would.  - While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area."
     }
 }

@@ -4,7 +4,7 @@ import * as Languages from '../../Assets/Languages.json';
 import * as Gear from '../../Assets/Gear.json';
 import * as ToolKits from '../../Assets/Tools.json';
 
-abstract class Background {
+export abstract class Background {
     
     constructor(name: string, skillProficiencies: string[], languages: string[], toolProficiencies: string[], equipment: string[], toolKits: string[], gp: number, features: Trait[]){
         this.name = name;
