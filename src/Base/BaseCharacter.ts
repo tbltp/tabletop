@@ -1,4 +1,4 @@
-import {Inventory, Trait, ResourceTrait, Spell} from './Interfaces';
+import {Inventory, Trait, ResourceTrait, Spell } from './Interfaces';
 
 export abstract class BaseCharacter {
     
@@ -80,7 +80,7 @@ export abstract class BaseCharacter {
         toolProficiencies: [], 
         languages: [], 
         features: [], 
-        resources: []
+        resources: [],
     };
 
 
