@@ -100,7 +100,8 @@ export abstract class BaseCharacter {
 
     // Obtain total modifier
     public getSkillTotal(skill: string): number {
-        return this.skills[skill].bonus + this.skills[skill].modifier;
+        return  this.skills[skill].bonus * (this.skills[skill].expertise ? 2 : 1) + 
+            this.skills[skill].modifier;
     } 
 
     // Base Stats Getters

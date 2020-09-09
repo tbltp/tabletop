@@ -1,5 +1,6 @@
 import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { LevelingParams } from "./PlayerClass";
+import { Trait } from "../Base/Interfaces";
 import * as Archetypes from "../../Assets/Archetypes.json";
 import * as Spells from "../../Assets/Spells.json";
 import { Barbarian } from "./Barbarian";
@@ -93,26 +94,31 @@ export class BardArchetype extends Archetype {
     }
     
     static lore3(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(BarbarianArchetype.getFeature("BARD", "3", "CUTTING WORDS"));
+        pc.addFeatures(BardArchetype.getFeature("LORE", "3", "CUTTING WORDS"));
     }
 
     static lore6(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(BarbarianArchetype.getFeature("BARD", "6", "ADDITIONAL MAGICAL SECRETS"));
+        const lore6Trait: Trait = { 
+            ...BardArchetype.getFeature("LORE", "6", "ADDITIONAL MAGICAL SECRETS"), 
+            choices: params.archetypeSelection[0].options
+        };
+        pc.addSpells(params.archetypeSelection[0].options, "charisma")
+        pc.addFeatures(lore6Trait);
     }
 
     static lore14(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(BarbarianArchetype.getFeature("BARD", "14", "PEERLESS SKILL"));
+        pc.addFeatures(BardArchetype.getFeature("LORE", "14", "PEERLESS SKILL"));
     }
 
     static valor3(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(BarbarianArchetype.getFeature("BARD", "3", "COMBAT INSPIRATION"));
+        pc.addFeatures(BardArchetype.getFeature("VALOR", "3", "COMBAT INSPIRATION"));
     }
 
     static valor6(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(BarbarianArchetype.getFeature("BARD", "3", "EXTRA ATTACK"));
+        pc.addFeatures(BardArchetype.getFeature("VALOR", "6", "EXTRA ATTACK"));
     }
 
     static valor14(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(BarbarianArchetype.getFeature("BARD", "3", "BATTLE MAGIC"));
+        pc.addFeatures(BardArchetype.getFeature("VALOR", "14", "BATTLE MAGIC"));
     }
 }

@@ -25,7 +25,7 @@ export class PlayerCharacter extends BaseCharacter {
     }
 
     findResourceTraitByName(name: string): ResourceTrait {
-        return this.findTraitByName('resources', name)[0];
+        return this.findTraitByName('resources', name) as ResourceTrait;
     }
 
     improveAbilityScores(abilityScoreImprovements: {ability: string, improvement: number} []): void {
@@ -45,4 +45,6 @@ export class PlayerCharacter extends BaseCharacter {
         for(const selectedSpell of spellList) { spells.push({...Spells[selectedSpell], spellcastingAbility: spellcastingAbility}); }
         for(const spell of spells) {  this.spells[spell.minimumLevel].push(spell) }
     }
+
+    //remember to implement replaceSpells
 }

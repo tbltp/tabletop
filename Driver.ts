@@ -22,17 +22,55 @@ const pc = new PlayerCharacter(12,12,12,12,12,12);
 const bdclass = new Bard([], [], [], "", {
     isNoInput: false,
     spellSelection: [
-        "CHARM PERSON", 
-        "SLEEP"
+        "VICIOUS MOCKERY",
+        "DANCING LIGHTS",
+        "CHARM PERSON",
+        "BANE",
+        "HEALING WORD",
+        "THUNDERWAVE"
     ]
 });
 
 const bardArgs = [
+    {
+        isNoInput: false,
+        spellSelection: [
+            "VICIOUS MOCKERY",
+            "DANCING LIGHTS",
+            "CHARM PERSON",
+            "BANE",
+            "HEALING WORD",
+            "THUNDERWAVE"
+        ]
+    },
+    {
+        isNoInput: false,
+        spellSelection: [
+            "SLEEP"
+        ]
+    },
+    {
+        isNoInput: false,
+        spellSelection: [
+            "INVISIBILITY"
+        ],
+        proficiencySelection: [
+            "Persuasion",
+            "Performance"
+        ],
+        archetypeSelection: [{
+            archetype: "LORE"
+        }]
+    }
 
 ];
 
 bdclass.apply(pc);
+for(let i = 2; i <= bardArgs.length; i++) {
+    bdclass.abilitiesAtLevels[i](pc, bardArgs[i - 1]);
+}
 console.log(pc.abilityScores);
+console.log(pc.skills);
 console.log(pc.spells);
 console.log(pc.traits);
 

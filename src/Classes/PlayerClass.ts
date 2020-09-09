@@ -127,10 +127,16 @@ export abstract class PlayerClass {
     }
 
     pushClassFeatures(pc: PlayerCharacter, level: string, className: string) {
+
         for(let key in ClassTraits[className][level]) {
             pc.addFeatures(ClassTraits[className][level][key]);
         }
     }
+
+    pushCustomizedClassFeature(pc: PlayerCharacter, level: string, className: string, feature: string, choices: string[]) {
+        const customFeature: Trait = {...ClassTraits[className][level][feature], choices: choices};
+        pc.addFeatures(customFeature);
+    } 
 
 }
 
@@ -215,8 +221,12 @@ export interface LevelingParams {
 		ability: string, 
 		improvement: number 
 	} [],
-	spellSelection?: string [],
-	fightingStyle?: string [],
+    spellSelection?: string [],
+    spellReplacements?: {
+        [key: string]: string
+    },
+    proficiencySelection?: string[],
+    fightingStyle?: string [],
 	archetypeSelection?: {
 		archetype: string, //school/oath/patron/etc
 		options?: string [] //totems/maneuvers/elements/beast companions/etc

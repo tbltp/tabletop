@@ -67,9 +67,9 @@ export class Barbarian extends PlayerClass {
     }
 
     level1(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushBarbarianFeatures(pc, "1");
         const rage: ResourceTrait = {title: "Rage", description: "Number of times you can go into a Rage.  Bonus applies to attack damage while in a rage.", resourceMax: 2, bonus: '+2'}; 
         pc.addResourceTraits(rage);
+        this.pushBarbarianFeatures(pc, "1");
     }
 
     level2(pc: PlayerCharacter, params: LevelingParams): void {
@@ -104,10 +104,10 @@ export class Barbarian extends PlayerClass {
     }
 
     level9(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushBarbarianFeatures(pc, "9");
         const brutalCritical: ResourceTrait = {title: "Brutal Critical", "description": "Number of extra damage dice on a critical hit.", resourceMax: Infinity, dice: "1dx"};
         pc.addResourceTraits(brutalCritical);
         pc.findResourceTraitByName('Rage').bonus = "+3";
+        this.pushBarbarianFeatures(pc, "9");
     }
 
     level10(pc: PlayerCharacter, params: LevelingParams): void {

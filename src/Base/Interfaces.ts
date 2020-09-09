@@ -43,6 +43,7 @@ export interface Trait {
     /**Spell slots are just special traits with no additional properties */
     readonly title: string;
     description: string;
+    choices?: string[];
 }
 
 export interface ResourceTrait extends Trait {
