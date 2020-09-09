@@ -18,6 +18,9 @@ import { Bard } from './src/Classes/Bard';
 import { PlayerClass } from './src/Classes/PlayerClass';
 
 
+
+
+
 const pc = new PlayerCharacter(12,12,12,12,12,12);
 const bdclass = new Bard([], [], [], "", {
     isNoInput: false,
@@ -54,6 +57,9 @@ const bardArgs = [
         spellSelection: [
             "INVISIBILITY"
         ],
+        spellReplacements: {
+            "HEALING WORD": "CURE WOUNDS" 
+        },
         proficiencySelection: [
             "Persuasion",
             "Performance"
@@ -73,7 +79,6 @@ console.log(pc.abilityScores);
 console.log(pc.skills);
 console.log(pc.spells);
 console.log(pc.traits);
-
 
 
 

@@ -29,6 +29,16 @@ export class PlayerCharacter extends BaseCharacter {
         return this.findTraitByName('resources', name) as ResourceTrait;
     }
 
+    findSpellByName(spellName: string): Spell | null {
+        for(let knownSpells of Object.keys(this.spells)) {
+            const results = this.spells[knownSpells].filter(spell => spell.name == spellName)
+            if(results.length == 1) {
+                return results[0]
+            }
+        }
+        return null;
+    }
+
     improveAbilityScores(abilityScoreImprovements: {ability: string, improvement: number} []): void {
         for(const ability of abilityScoreImprovements) { this.abilityScores[ability.ability].update(ability.improvement); }
     }
@@ -47,5 +57,17 @@ export class PlayerCharacter extends BaseCharacter {
         for(const spell of spells) {  this.spells[spell.minimumLevel].push(spell) }
     }
 
-    //remember to implement replaceSpells
+    replaceSpells(spellReplacements: {[key: string]: string}, spellcastingAbility: string): void {
+        for(let oldSpell in spellReplacements) {
+            const newSpell = { ...Spells[spellReplacements[oldSpell]],  spellcastingAbility: spellcastingAbility };
+            const oldSpellLevel: number = Spells[oldSpell].minimumLevel;
+            const oldSpellsAtLevel: Spell[] = this.spells[oldSpellLevel];
+            for(let ind = 0; ind < oldSpellsAtLevel.length; ind++ ) {
+                if(oldSpellsAtLevel[ind].name == Spells[oldSpell].name) {
+                    oldSpellsAtLevel.splice(ind, 1);
+                }
+            }
+            this.spells[newSpell.minimumLevel].push(newSpell);
+        }
+    }
 }

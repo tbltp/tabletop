@@ -75,6 +75,7 @@ export class Bard extends PlayerClass {
     }
 
     level2(pc: PlayerCharacter, params: BardLevelingParams): void {
+        pc.replaceSpells(params.spellReplacements, "charisma");
         pc.addSpells(params.spellSelection, "charisma");
         const songOfRest: ResourceTrait = {title: "Song Of Rest", description: "Dice used for Song of Rest", resourceMax: Infinity, dice: '1d6'}; 
         pc.addResourceTraits(songOfRest);
@@ -90,6 +91,7 @@ export class Bard extends PlayerClass {
     }
 
     level3(pc: PlayerCharacter, params: BardLevelingParams): void {
+        pc.replaceSpells(params.spellReplacements, "charisma");
         pc.addSpells(params.spellSelection, "charisma");
         const level2Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(2, 2);
         pc.addResourceTraits(level2Slots);
@@ -105,12 +107,14 @@ export class Bard extends PlayerClass {
     }
     
     level4(pc: PlayerCharacter, params: BardLevelingParams): void {
+        pc.replaceSpells(params.spellReplacements, "charisma");
         pc.addSpells(params.spellSelection, "charisma");
         pc.improveAbilityScores(params.abilityScoreImprovement);
         SpellSlotFactory.findPlayerSpellSlots(pc, 2).resourceMax++;
     }
 
     level5(pc: PlayerCharacter, params: BardLevelingParams): void {
+        pc.replaceSpells(params.spellReplacements, "charisma");
         pc.addSpells(params.spellSelection, "charisma");
         const level3Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(3, 2);
         pc.addResourceTraits(level3Slots);
@@ -119,6 +123,7 @@ export class Bard extends PlayerClass {
     }
 
     level6(pc: PlayerCharacter, params: BardLevelingParams): void {
+        pc.replaceSpells(params.spellReplacements, "charisma");
         pc.addSpells(params.spellSelection, "charisma");
         // college
         BardArchetype.archetypeHelper[this.bardCollege][6](pc, params);
@@ -127,18 +132,21 @@ export class Bard extends PlayerClass {
     }
 
     level7(pc: PlayerCharacter, params: BardLevelingParams): void {
+        pc.replaceSpells(params.spellReplacements, "charisma");
         pc.addSpells(params.spellSelection, "charisma");
         const level4Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(4, 1)
         pc.addResourceTraits(level4Slots);
     }
 
     level8(pc: PlayerCharacter, params: BardLevelingParams): void {
+        pc.replaceSpells(params.spellReplacements, "charisma");
         pc.addSpells(params.spellSelection, "charisma");
         pc.improveAbilityScores(params.abilityScoreImprovement);
         SpellSlotFactory.findPlayerSpellSlots(pc, 4).resourceMax++;
     }
 
     level9(pc: PlayerCharacter, params: BardLevelingParams): void {
+        pc.replaceSpells(params.spellReplacements, "charisma");
         pc.addSpells(params.spellSelection, "charisma");
         const level5Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(5, 1);
         pc.addResourceTraits(level5Slots);
@@ -147,6 +155,7 @@ export class Bard extends PlayerClass {
     }
 
     level10(pc: PlayerCharacter, params: BardLevelingParams): void {
+        pc.replaceSpells(params.spellReplacements, "charisma");
         pc.addSpells(params.spellSelection, "charisma"); 
         // expertise
         for(let skill of params.proficiencySelection) {
@@ -161,6 +170,7 @@ export class Bard extends PlayerClass {
     }
 
     level11(pc: PlayerCharacter, params: BardLevelingParams): void {
+        pc.replaceSpells(params.spellReplacements, "charisma");
         pc.addSpells(params.spellSelection, "charisma");
         const level6Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(6, 1);
         pc.addResourceTraits(level6Slots);
@@ -171,6 +181,7 @@ export class Bard extends PlayerClass {
     }
 
     level13(pc: PlayerCharacter, params: BardLevelingParams): void {
+        pc.replaceSpells(params.spellReplacements, "charisma");
         pc.addSpells(params.spellSelection, "charisma");
         const level7Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(7, 1);
         pc.addResourceTraits(level7Slots);
@@ -178,6 +189,7 @@ export class Bard extends PlayerClass {
     }
 
     level14(pc: PlayerCharacter, params: BardLevelingParams): void {
+        pc.replaceSpells(params.spellReplacements, "charisma");
         pc.addSpells(params.spellSelection, "charisma"); 
         // magical secrets
         pc.addSpells(params.magicalSecretsSpellSelection, "charisma");
@@ -187,6 +199,7 @@ export class Bard extends PlayerClass {
     }
 
     level15(pc: PlayerCharacter, params: BardLevelingParams): void {
+        pc.replaceSpells(params.spellReplacements, "charisma");
         pc.addSpells(params.spellSelection, "charisma");
         const level8Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(8, 1);
         pc.addResourceTraits(level8Slots);
@@ -198,6 +211,7 @@ export class Bard extends PlayerClass {
     }
 
     level17(pc: PlayerCharacter, params: BardLevelingParams): void {
+        pc.replaceSpells(params.spellReplacements, "charisma");
         pc.addSpells(params.spellSelection, "charisma");
         const level9Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(9, 1);
         pc.addResourceTraits(level9Slots);
@@ -205,6 +219,7 @@ export class Bard extends PlayerClass {
     }
 
     level18(pc: PlayerCharacter, params: BardLevelingParams): void {
+        pc.replaceSpells(params.spellReplacements, "charisma");
         pc.addSpells(params.spellSelection, "charisma"); 
         // magical secrets
         pc.addSpells(params.magicalSecretsSpellSelection, "charisma");
