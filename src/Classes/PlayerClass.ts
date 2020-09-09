@@ -1,5 +1,5 @@
 import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { Spell, Trait } from "../Base/Interfaces";
+import { Spell, Trait, ResourceTrait } from "../Base/Interfaces";
 import * as ClassTraits from "../../Assets/ClassTraits.json";
 import * as Languages from "../../Assets/Languages.json";
 import * as Gear from "../../Assets/Gear.json";
@@ -130,6 +130,81 @@ export abstract class PlayerClass {
         for(let key in ClassTraits[className][level]) {
             pc.addFeatures(ClassTraits[className][level][key]);
         }
+    }
+
+}
+
+export class SpellSlotFactory {
+
+    private static getLevelString(level: number): string {
+        let slotLevel: string = '';
+        switch(level) {
+            case 1: {
+                slotLevel = 'first';
+                break;
+            }
+            case 2: {
+                slotLevel = 'second';
+                break;
+            }
+            case 3: {
+                slotLevel = 'third';
+                break;
+            }
+            case 4: {
+                slotLevel = 'fourth';
+                break;
+            }
+            case 5: {
+                slotLevel = 'fifth';
+                break;
+            }
+            case 6: {
+                slotLevel = 'sixth';
+                break;
+            }
+            case 7: {
+                slotLevel = 'seventh';
+                break;
+            }
+            case 8: {
+                slotLevel = 'eigth';
+                break;
+            }
+            case 9: {
+                slotLevel = 'ninth';
+                break;
+            }
+            default: {
+                slotLevel = 'zeroth';
+                break;
+            }
+        }
+        return slotLevel;
+    }
+
+    private static generateSpellSlots(level: number, max: number): ResourceTrait {
+        
+        const slotLevelString: string = SpellSlotFactory.getLevelString(level);
+        return {
+            title: slotLevelString.charAt(0).toUpperCase() + 
+                slotLevelString.slice(1) + 
+                " Level Spell Slots",
+            description: "Number of " + slotLevelString + 
+                " level spells you can cast",
+            resourceMax: max
+        };
+    }
+
+    public static getSpellSlots(level: number, max: number): ResourceTrait {
+        return SpellSlotFactory.generateSpellSlots(level, max);
+    }
+
+    public static findPlayerSpellSlots(pc: PlayerCharacter, level: number): ResourceTrait {
+        const slotLevelString: string = SpellSlotFactory.getLevelString(level);
+        const resourceTitle: string = slotLevelString.charAt(0).toUpperCase() + slotLevelString.slice(1) +
+            " Level Spell Slots";
+        return pc.findResourceTraitByName(resourceTitle);
     }
 
 }

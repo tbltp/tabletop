@@ -87,39 +87,87 @@
                     }
                 }
             }
-        },
-        "BARD": {
-
-        },
-        "CLERIC": {
-
-        },
-        "DRUID": {
-
-        },
-        "FIGHTER": {
-
-        },
-        "MONK": {
-
-        },
-        "PALADIN": {
-
-        },
-        "RANGER": {
-
-        },
-        "ROGUE": {
-
-        },
-        "SORCEROR": {
-
-        },
-        "WARLOCK": {
-
-        },
-        "WIZARD": {
-
         }
+    },
+    "BARD": {
+        "LORE": {
+            "title": "College of Lore",
+            "description": "Bards of the College of Lore know something about most things, collecting bits of knowledge from sources as diverse as cholarly otmes and peasant tales. Wether singing folk ballards in taverns or elaborate compositions in royal courts, these bards use their gifts to hold audiences spellbound. When the applause dies down, the audience memebres might find themselves questioning everything they held to be true, from their faith in the piresthood of the local temple to their loyalty to the king. The loyalty of these bards lies in the pursuit of beauty and truth, not in the fealty to a monarch or following the tenets of a deity. A noble who keeps such a bard as a herald or advisor knows that the bard would rather be honest than politic. The college's members gather in libraries and sometimes in actual colleges, complete with classrooms and dormitories, to share their lore with one another. They also meet at festivals or affairs of state, where they can expose corruption, unravel lies, and poke fun at self-important figures of authority.",
+            "features": {
+                "3": {
+                    "CUTTING WORDS": {
+                        "title":  "Cutting Words",
+                        "description": "You learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others. When a creature that you can see within 60 feet of you makes an attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature's roll. You can choose to use this feature after the creature makes its roll, but before the DM determines whether the attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can't hear you or if it's immune to being charmed."
+                    }
+                },
+                "6":{
+                    "ADDITIONAL MAGICAL SECRETS": {
+                        "title":  "Additional Magical Secrets",
+                        "description": "You learn two spells of your choice from any class. A spell you choose must be a level you can cast, as shown on the Bard table, or a cantrip. The chosen spells count as bard spells for you but don't count against the number of bard spells you know."
+                    }
+                },
+                "14": {
+                    "PEERLESS SKILL": {
+                        "title":  "Peerless Skill",
+                        "description": "When you make an ability check, you can expend one use of Bardic Inspiration. Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after you roll the die for the ability check, but before the DM tells you whether you succeed or fail."
+                    }
+                }
+            }
+        },
+        "VALOR": {
+            "title": "College of Valor",
+            "description":  "Bards of the College of Valor are daring skalds whose tales keep alive the memory of the great heroes of the past, and thereby inspire a new generation of heroes. These bards gather in mead halls or around great bonfires to sing the deeds of the mighty, both past and present. They travel the land to witness great events firsthand and to ensure the memory of those events doesn't pass from the world. With their songs, they inspire others to reach the same heights of accomplishment as the heroes of old.",
+            "features": {
+                "3": {
+                    "COMBAT INSPIRATION": {
+                        "title": "Combat Inspiration", 
+                        "description": "You learn to inspire others in battle. A creature that has a Bardic Inspiration die from you can roll that die and add the number rolled to a weapon damage roll it just made. Alternative, when an attack roll is made against the creature, it can use its reaction to roll the Bardic Inspiration die and add the number rolled to its AC against that attack, after seeing the roll but before knowing whether it hits or misses."
+                    }
+                },
+                "6": {
+                    "EXTRA ATTACK": {
+                        "title": "Extra Attack",
+                        "description": "You can attack twice, instead of once, when you take the Attack action on your turn."
+                    }
+                },
+                "14": {
+                    "BATTLE MAGIC": {
+                        "title": "Battle Magic",
+                        "description": "You have mastered the art of weaving spellcasting and weapon use into a single harmonious act. When you use your action to cast a bard spell, you can make one weapon attack as a bonus action."
+                    }
+                }
+            }
+        }
+
+    },
+    "CLERIC": {
+
+    },
+    "DRUID": {
+
+    },
+    "FIGHTER": {
+
+    },
+    "MONK": {
+
+    },
+    "PALADIN": {
+
+    },
+    "RANGER": {
+
+    },
+    "ROGUE": {
+
+    },
+    "SORCEROR": {
+
+    },
+    "WARLOCK": {
+
+    },
+    "WIZARD": {
+
     }
 }

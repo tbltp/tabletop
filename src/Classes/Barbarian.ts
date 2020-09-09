@@ -5,7 +5,7 @@ import * as ClassTraits from '../../Assets/ClassTraits.json';
 import { BarbarianArchetype } from './Archetypes';
 
 export class Barbarian extends PlayerClass {
-    constructor(skillProficiencies: string[], weapons: string[], equipmentPack: string) {
+    constructor(skillProficiencies: string[], weapons: string[]) {
         super(
             "Barbarian",
             [], 
@@ -68,7 +68,7 @@ export class Barbarian extends PlayerClass {
 
     level1(pc: PlayerCharacter, params: LevelingParams): void {
         this.pushBarbarianFeatures(pc, "1");
-        const rage: ResourceTrait = {title: "Rage", description: "Number of times you can go into a Rage.  Bonus applies to attack damage.", resourceMax: 2, bonus: '+2'}; 
+        const rage: ResourceTrait = {title: "Rage", description: "Number of times you can go into a Rage.  Bonus applies to attack damage while in a rage.", resourceMax: 2, bonus: '+2'}; 
         pc.addResourceTraits(rage);
     }
 
@@ -79,7 +79,7 @@ export class Barbarian extends PlayerClass {
     level3(pc: PlayerCharacter, params: LevelingParams): void {
         this.primalPath = params.archetypeSelection[0].archetype;
         BarbarianArchetype.archetypeHelper[this.primalPath][3](pc, params);
-        pc.findTraitByName('resources', 'Rage')[0].resourceMax++;
+        pc.findResourceTraitByName('Rage').resourceMax++;
     }
     
     level4(pc: PlayerCharacter, params: LevelingParams): void {
@@ -92,7 +92,7 @@ export class Barbarian extends PlayerClass {
 
     level6(pc: PlayerCharacter, params: LevelingParams): void {
         BarbarianArchetype.archetypeHelper[this.primalPath][6](pc, params);
-        pc.findTraitByName('resources', 'Rage')[0].resourceMax++;
+        pc.findResourceTraitByName('Rage').resourceMax++;
     }
 
     level7(pc: PlayerCharacter, params: LevelingParams): void {
@@ -107,7 +107,7 @@ export class Barbarian extends PlayerClass {
         this.pushBarbarianFeatures(pc, "9");
         const brutalCritical: ResourceTrait = {title: "Brutal Critical", "description": "Number of extra damage dice on a critical hit.", resourceMax: Infinity, dice: "1dx"};
         pc.addResourceTraits(brutalCritical);
-        pc.findTraitByName('resources', 'Rage')[0].bonus = "+3";
+        pc.findResourceTraitByName('Rage').bonus = "+3";
     }
 
     level10(pc: PlayerCharacter, params: LevelingParams): void {
@@ -120,11 +120,11 @@ export class Barbarian extends PlayerClass {
 
     level12(pc: PlayerCharacter, params: LevelingParams): void {
         pc.improveAbilityScores(params.abilityScoreImprovement);
-        pc.findTraitByName('resources', 'Rage')[0].resourceMax++;
+        pc.findResourceTraitByName('Rage').resourceMax++;
     }
 
     level13(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.findTraitByName('resources', 'Brutal Critical')[0].dice = "2dx";
+        pc.findResourceTraitByName('Brutal Critical').dice = "2dx";
         //pc.traits.features.push( {title: "Brutal Critical (Level 13)", description: "You now roll 2 additional damage dice on critical hits."} )    
         //^I'd prefer to not add more features with the same name if the functionality is unchanged
     }
@@ -139,13 +139,13 @@ export class Barbarian extends PlayerClass {
 
     level16(pc: PlayerCharacter, params: LevelingParams): void {
         pc.improveAbilityScores(params.abilityScoreImprovement);
-        pc.findTraitByName('resources', 'Rage')[0].bonus = "+4";
+        pc.findResourceTraitByName('Rage').bonus = "+4";
     }
 
     level17(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.findTraitByName('resources', 'Brutal Critical')[0].dice = "3dx";
+        pc.findResourceTraitByName('Brutal Critical').dice = "3dx";
         //pc.traits.features.push( {title: "Brutal Critical (Level 17)", description: "You now roll 3 additional damage dice on critical hits."} )
-        pc.findTraitByName('resources', 'Rage')[0].resourceMax++;
+        pc.findResourceTraitByName('Rage').resourceMax++;
     }
 
     level18(pc: PlayerCharacter, params: LevelingParams): void {
@@ -168,8 +168,8 @@ export class Barbarian extends PlayerClass {
                 improvement: 4
             },
         ]);
-        //How to set new maximum??
-        pc.findTraitByName('resources', 'Rage')[0].resourceMax = Infinity; 
+        //How to set new maximum of ability scores??
+        pc.findResourceTraitByName('Rage').resourceMax = Infinity;
     }
     
 }

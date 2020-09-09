@@ -72,3 +72,47 @@ export class BarbarianArchetype extends Archetype {
         pc.addFeatures(BarbarianArchetype.getFeature("TOTEM WARRIOR", "14", params.archetypeSelection[0].options[0]));
     }
 }
+
+export class BardArchetype extends Archetype {
+    
+    static archetypeHelper = {
+        "LORE": {
+            "3": BardArchetype.lore3,
+            "6": BardArchetype.lore6,
+            "14": BardArchetype.lore14
+        }, 
+        "VALOR":{
+            "3": BardArchetype.valor3, 
+            "6": BardArchetype.valor6,
+            "14": BardArchetype.valor14
+        } 
+    }
+
+    static getFeature(archetypeName: string, level: string, featureName: string) {
+        return Archetype.getFeature("BARD", archetypeName, level, featureName);
+    }
+    
+    static lore3(pc: PlayerCharacter, params: LevelingParams) {
+        pc.addFeatures(BarbarianArchetype.getFeature("BARD", "3", "CUTTING WORDS"));
+    }
+
+    static lore6(pc: PlayerCharacter, params: LevelingParams) {
+        pc.addFeatures(BarbarianArchetype.getFeature("BARD", "6", "ADDITIONAL MAGICAL SECRETS"));
+    }
+
+    static lore14(pc: PlayerCharacter, params: LevelingParams) {
+        pc.addFeatures(BarbarianArchetype.getFeature("BARD", "14", "PEERLESS SKILL"));
+    }
+
+    static valor3(pc: PlayerCharacter, params: LevelingParams) {
+        pc.addFeatures(BarbarianArchetype.getFeature("BARD", "3", "COMBAT INSPIRATION"));
+    }
+
+    static valor6(pc: PlayerCharacter, params: LevelingParams) {
+        pc.addFeatures(BarbarianArchetype.getFeature("BARD", "3", "EXTRA ATTACK"));
+    }
+
+    static valor14(pc: PlayerCharacter, params: LevelingParams) {
+        pc.addFeatures(BarbarianArchetype.getFeature("BARD", "3", "BATTLE MAGIC"));
+    }
+}

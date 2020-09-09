@@ -14,10 +14,33 @@ import { Acolyte, Charlatan, Criminal, Entertainer, FolkHero, GuildArtisan, Herm
 
 import { Alert, Athlete, Actor, Charger, CrossbowExpert, DefensiveDuelist, DualWielder, DungeonDelver, Durable, ElementalAdept, Grappler, GreatWeaponMaster, Healer, HeavilyArmored, HeavyArmorMaster, InspiringLeader, KeenMind, LightlyArmored, Linguist, Lucky, MageSlayer, MagicInitiate, MartialAdept, MediumArmorMaster, Mobile, ModeratelyArmored, MountedCombatant, Observant, PolearmMaster, Resilient, RitualCaster, SavageAttacker, Sentinel, Sharpshooter, ShieldMaster, Skilled, Skulker, SpellSniper, TavernBrawler, Tough, WarCaster, WeaponMaster } from './src/Feats/Feat';
 import { Barbarian } from './src/Classes/Barbarian';
+import { Bard } from './src/Classes/Bard';
 import { PlayerClass } from './src/Classes/PlayerClass';
 
 
+const pc = new PlayerCharacter(12,12,12,12,12,12);
+const bdclass = new Bard([], [], [], "", {
+    isNoInput: false,
+    spellSelection: [
+        "CHARM PERSON", 
+        "SLEEP"
+    ]
+});
 
+const bardArgs = [
+
+];
+
+bdclass.apply(pc);
+console.log(pc.abilityScores);
+console.log(pc.spells);
+console.log(pc.traits);
+
+
+
+
+
+/*
 const pc = new PlayerCharacter(12,12,12,12,12,12);
 const bclass = new Barbarian([], [], "");
 const barbarianArgs = [
@@ -157,3 +180,5 @@ for(let i = 2; i <= barbarianArgs.length; i++) {
 console.log(pc.abilityScores);
 console.log(pc.spells);
 console.log(pc.traits);
+*/
+

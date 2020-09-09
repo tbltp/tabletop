@@ -102,7 +102,7 @@
                 "description": "You gain the ability to use musical notes or words of power to  disrupt mind-influencing effects. As an action,  you c an s tart a performance that lasts until the end of your next turn. During that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against being frightened or charmed. A creature must be able to hear you to gain this benefit.  The performance ends early if you are incapacitated oor silenced if you voluntarily end it (no action requred)."
             }
         },
-        "14": {
+        "10": {
             "MAGICAL SECRETS": {
                 "title": "Magical Secrets",
                 "description": "You have plundered magical knowledge from a wide spectrum of disciplines.  Choose two  spells from any class, including this one. A spell you choose mustt be of a level  you can cast, as shown on  the Bard table,  or a cantrip.  The chosen spells count as a bard spells for yoouo and are included in the number in the Spells Known column of the Bard table."

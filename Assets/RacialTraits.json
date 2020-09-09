@@ -25,5 +25,7 @@
     "Relentless Endurance": {"title": "Relentless Endurance", "description": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest."},
     "Savage Attacks": {"title": "Savage Attacks", "description": "When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit."},
     "Hellish Resistance": {"title": "Hellish Resistance", "description": "You have resistance to fire damage."},
-    "Infernal Legacy": {"title": "Infernal Legacy", "description": "You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell once per day as a 2nd-level spell. Once you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells."}
+    "Infernal Legacy": {"title": "Infernal Legacy", "description": "You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell once per day as a 2nd-level spell. Once you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells."},
+    "Fire Resistance": {"title": "Fire Resistance", "description": "You have resistance to fire damage."},
+    "Reach to the Blaze": {"title": "Reach to the Blaze", "description": "You know the produce flame cantrip. Once you reach 3rd level, you can cast the burning hands spell once with this trait as a 1st-level spell, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for these spells."}
 }
