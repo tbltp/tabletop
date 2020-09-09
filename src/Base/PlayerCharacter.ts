@@ -20,8 +20,9 @@ export class PlayerCharacter extends BaseCharacter {
         return false;
     }
 
-    findTraitByName(traitType: string, name: string): Trait | ResourceTrait {
-        return this.traits[traitType].filter(trait => trait.title == name)[0];
+    findTraitByName(traitType: string, name: string): Trait | null {
+        const results = this.traits[traitType].filter(trait => trait.title == name);
+        return results.length == 1 ? results[0] : null;
     }
 
     findResourceTraitByName(name: string): ResourceTrait {
