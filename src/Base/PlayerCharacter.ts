@@ -14,15 +14,20 @@ export class PlayerCharacter extends BaseCharacter {
         super(str,dex,con,int,wis,cha);
     }
     
+
+    private findTraitByName(traitType: string, name: string): Trait | null {
+        const results = this.traits[traitType].filter(trait => trait.title == name);
+        return results.length == 1 ? results[0] : null;
+    }
+
     isSpellcaster(): boolean {
         for(let knownSpells of Object.keys(this.spells)){ if(this.spells[knownSpells].length > 0) {return true; } }
 
         return false;
     }
 
-    findTraitByName(traitType: string, name: string): Trait | null {
-        const results = this.traits[traitType].filter(trait => trait.title == name);
-        return results.length == 1 ? results[0] : null;
+    findFeatureTraitByName(name: string): Trait {
+        return this.findTraitByName('features', name);
     }
 
     findResourceTraitByName(name: string): ResourceTrait {
@@ -37,6 +42,10 @@ export class PlayerCharacter extends BaseCharacter {
             }
         }
         return null;
+    }
+
+    changeAbilityScoreMaxes(abilityScores: string[], newMax: number): void {
+        for(const ability of abilityScores) { this.abilityScores[ability].scoreMax = newMax; }
     }
 
     improveAbilityScores(abilityScoreImprovements: {ability: string, improvement: number} []): void {

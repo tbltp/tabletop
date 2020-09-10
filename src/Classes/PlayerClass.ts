@@ -116,16 +116,6 @@ export abstract class PlayerClass {
         this.abilitiesAtLevels["1"](pc, this.lvlOneParams); 
     }
 
-    static addSpells(pc: PlayerCharacter, spellList: string[], spellcastingAbility: string) {
-        let spells: Spell[] = []
-        for(const selectedSpell of spellList) { spells.push({...Spells[selectedSpell], spellcastingAbility: spellcastingAbility}); }
-        for(const spell of spells) {  pc.spells[spell.minimumLevel].push(spell) }
-    }
-
-    static improveAbilityScore(pc: PlayerCharacter, abilityScoreImprovements: {ability: string, improvement: number}[]) {
-        for(const ability of abilityScoreImprovements) { pc.abilityScores[ability.ability].update(ability.improvement); }
-    }
-
     pushClassFeatures(pc: PlayerCharacter, level: string, className: string) {
 
         for(let key in ClassTraits[className][level]) {
@@ -136,7 +126,13 @@ export abstract class PlayerClass {
     pushCustomizedClassFeature(pc: PlayerCharacter, level: string, className: string, feature: string, choices: string[]) {
         const customFeature: Trait = {...ClassTraits[className][level][feature], choices: choices};
         pc.addFeatures(customFeature);
-    } 
+    }
+    
+    static quickClassLevelUp(pc: PlayerCharacter, pcls: PlayerClass, argsAry: LevelingParams[], level: number): void {
+        for(let i = 2; i <= level; i++) {
+            pcls.abilitiesAtLevels[i](pc, argsAry[i - 1]);
+        }
+    }
 
 }
 

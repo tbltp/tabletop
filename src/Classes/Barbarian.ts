@@ -31,7 +31,6 @@ export class Barbarian extends PlayerClass {
     }
     /** TODO
      * Version control on rage and brutal critical (what level are they currently?)
-     * Set the new maximum of 24 on str/con ability scores for lvl 20
      * Inventory is not done yet: FOUR JAVELINS, EXPLORER'S PACK
      * 12 + Constitution Modifier HP Max
      * UNARMORED DEFENSE and FAST MOVEMENT depends on equipped armor.
@@ -158,6 +157,7 @@ export class Barbarian extends PlayerClass {
 
     level20(pc: PlayerCharacter, params: LevelingParams): void {
         this.pushBarbarianFeatures(pc, '20');
+        pc.changeAbilityScoreMaxes(['strength', 'constitution'], 24);
         pc.improveAbilityScores([
             {
                 ability: 'strength',
@@ -168,7 +168,6 @@ export class Barbarian extends PlayerClass {
                 improvement: 4
             },
         ]);
-        //How to set new maximum of ability scores??
         pc.findResourceTraitByName('Rage').resourceMax = Infinity;
     }
     

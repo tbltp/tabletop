@@ -161,7 +161,7 @@ export class Bard extends PlayerClass {
         for(let skill of params.proficiencySelection) {
             pc.skills[skill].expertise = true;
         }
-        pc.findTraitByName("features", "Expertise").choices.push(...params.proficiencySelection);
+        pc.findFeatureTraitByName("Expertise").choices.push(...params.proficiencySelection);
         SpellSlotFactory.findPlayerSpellSlots(pc, 5).resourceMax++;
         pc.findResourceTraitByName("Bardic Inspiration").dice = "1d10";
         // magical secrets
@@ -193,7 +193,7 @@ export class Bard extends PlayerClass {
         pc.addSpells(params.spellSelection, "charisma"); 
         // magical secrets
         pc.addSpells(params.magicalSecretsSpellSelection, "charisma");
-        pc.findTraitByName("features", "Magical Secrets").choices.push(...params.magicalSecretsSpellSelection);
+        pc.findFeatureTraitByName("Magical Secrets").choices.push(...params.magicalSecretsSpellSelection);
         // college
         BardArchetype.archetypeHelper[this.bardCollege][14](pc, params);
     }
@@ -223,7 +223,7 @@ export class Bard extends PlayerClass {
         pc.addSpells(params.spellSelection, "charisma"); 
         // magical secrets
         pc.addSpells(params.magicalSecretsSpellSelection, "charisma");
-        pc.findTraitByName("features", "Magical Secrets").choices.push(...params.magicalSecretsSpellSelection);
+        pc.findFeatureTraitByName("Magical Secrets").choices.push(...params.magicalSecretsSpellSelection);
         SpellSlotFactory.findPlayerSpellSlots(pc, 5).resourceMax++;
     }
 

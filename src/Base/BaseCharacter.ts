@@ -149,6 +149,7 @@ class BaseAbility {
     constructor(name: string, score: number, skills: string[]) {
         this.name = name;
         this.score = score;
+        this.scoreMax = 20;
         this.modifier = Math.floor((this.score - 10) / 2);
 
         for(const skill of skills){
@@ -158,12 +159,13 @@ class BaseAbility {
     
     name: string;
     score: number;
+    scoreMax: number;
     modifier: number;
     savingThrowProficiency: boolean = false;
     skills: {[key:string]: Skill} = {};
 
     update(bonus: number) {
-        this.score = this.score + bonus > 20 ? 20: this.score + bonus;
+        this.score = this.score + bonus > this.scoreMax ? this.scoreMax: this.score + bonus;
         this.modifier = Math.floor((this.score - 10) / 2);
         for(const skill in this.skills) { this.skills[skill].modifier = this.modifier; }
     }

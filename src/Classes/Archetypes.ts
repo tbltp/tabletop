@@ -48,7 +48,7 @@ export class BarbarianArchetype extends Archetype {
     }
 
     static berserker14(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(BarbarianArchetype.getFeature("BERSERKER", "14", "INTIMIDATING PRESENCE"));
+        pc.addFeatures(BarbarianArchetype.getFeature("BERSERKER", "14", "RETALIATION"));
     }
 
     static totemWarrior3(pc: PlayerCharacter, params: LevelingParams){

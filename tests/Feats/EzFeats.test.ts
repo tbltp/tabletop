@@ -36,7 +36,7 @@ describe('Feats', () => {
         expect(pc.abilityScores.intelligence.score).toBe(14);
     });
 
-    test('Lightly Armored feat increases strengh or dexterity by 1', () => {
+    test('Lightly Armored feat increases strength or dexterity by 1', () => {
         
         let pc2: PlayerCharacter = new PlayerCharacter(13, 13, 13, 13, 13, 13);
         let ft1: Feat = new LightlyArmored('strength');
