@@ -30,7 +30,7 @@ abstract class Genasi extends Race {
 
 export class FireGenasi extends Genasi {
     constructor() {
-        super("Fire Genasi", [Traits["Darkvision"], Traits["Fire Resistance"], Traits["Reach to the Blaze"]]);
+        super("Fire Genasi", [Traits["DARKVISION"], Traits["FIRE RESISTANCE"], Traits["REACH TO THE BLAZE"]]);
     }
 
     

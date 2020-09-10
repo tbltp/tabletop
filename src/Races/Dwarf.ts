@@ -11,7 +11,7 @@ abstract class Dwarf extends Race {
             25,  // Speed (Movement)
             "Medium", // Size
             [languages["Common"], languages["Dwarvish"]],  // Languages
-            [traits["Darkvision"], traits["Dwarven Resilience"], traits["Stonecunning"]],  // Racial Traits
+            [traits["DARKVISION"], traits["DWARVEN RESILIENCE"], traits["STONECUNNING"]],  // Racial Traits
             ["Battleaxe", "Handaxe", "Light Hammer", "Warhammer"],  // Weapon Proficiencies
             [],  // Armor Proficiencies
             [toolProficiency]  // Tool Proficiences
@@ -41,7 +41,7 @@ export class HillDwarf extends Dwarf {
 export class MountainDwarf extends Dwarf {
     constructor(toolProficiency: string) {
         super("Mountain Dwarf", toolProficiency);
-        this.traits.push(traits["Dwarven Toughness"]);
+        this.traits.push(traits["DWARVEN TOUGHNESS"]);
         this.armorProficiencies.push("Light", "Medium");
     }
     

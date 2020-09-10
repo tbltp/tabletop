@@ -13,7 +13,7 @@ abstract class Gnome extends Race {
             25,  // Speed (Movement)
             "Small", // Size
             [languages["Common"], languages["Gnomish"]],  // Languages
-            [traits["Darkvision"], traits["Gnome Cunning"]],  // Racial Traits
+            [traits["DARKVISION"], traits["GNOME CUNNING"]],  // Racial Traits
             [],  // Weapon Proficiencies
             [],  // Armor Proficiencies
             []  // Tool Proficiences
@@ -24,7 +24,7 @@ abstract class Gnome extends Race {
 export class ForestGnome extends Gnome {
     constructor() {
         super("Forest Gnome");
-        this.traits.push(traits["Natural Illusionist"], traits["Speak With Small Beasts"]);
+        this.traits.push(traits["NATURAL ILLUSIONIST"], traits["SPEAK WITH SMALL BEASTS"]);
     }
     
     abilitiesAtLevels = {
@@ -50,7 +50,7 @@ export class ForestGnome extends Gnome {
 export class MountainGnome extends Gnome {
     constructor() {
         super("Mountain Gnome");
-        this.traits.push(traits["Artificer's Lore"], traits["Tinker"]);
+        this.traits.push(traits["ARTIFICER'S LORE"], traits["TINKER"]);
         this.toolProficiencies.push("Tinker's tools")
     }
  

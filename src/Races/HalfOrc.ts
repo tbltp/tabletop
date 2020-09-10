@@ -11,7 +11,7 @@ export class HalfOrc extends Race {
             30,  // Speed (Movement)
             "Medium", // Size
             [languages["Common"], languages["Orc"]],  // Languages
-            [traits["Darkvision"], traits["Menacing"], traits["Relentless Endurance"], traits["Savage Attacks"]],  // Racial Traits
+            [traits["DARKVISION"], traits["MENACING"], traits["RELENTLESS ENDURANCE"], traits["SAVAGE ATTACKS"]],  // Racial Traits
             [],  // Weapon Proficiencies
             [],  // Armor Proficiencies
             []  // Tool Proficiences

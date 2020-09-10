@@ -13,7 +13,7 @@ abstract class Elf extends Race {
             30,  // Speed (Movement)
             "Medium", // Size
             [languages["Common"], languages["Elvish"]],  // Languages
-            [traits["Darkvision"], traits["Keen Senses"], traits["Fey Ancestry"], traits["Trance"]],  // Racial Traits
+            [traits["DARKVISION"], traits["KEEN SENSES"], traits["FEY ANCESTRY"], traits["TRANCE"]],  // Racial Traits
             [],  // Weapon Proficiencies
             [],  // Armor Proficiencies
             []  // Tool Proficiences
@@ -59,8 +59,8 @@ export class WoodElf extends Elf {
     constructor(language: string) {
         super("Wood Elf");
         this.traits.push(
-            traits["Fleet of Foot"],
-            traits["Mask of Wild"]
+            traits["FLEET OF FOOT"],
+            traits["MASK OF THE WILD"]
         );
         this.speed += 5;
         this.languages.push(languages[language]);
@@ -83,9 +83,9 @@ export class DarkElf extends Elf {
     constructor(language: string) {
         super("Dark Elf");
         this.traits.push(
-            traits["Superior Darkvision"], 
-            traits["Sunlight Sensitivity"],
-            traits["Drow Magic"]
+            traits["SUPERIOR DARKVISION"], 
+            traits["SUNLIGHT SENSITIVITY"],
+            traits["DROW MAGIC"]
         );
         this.languages.push(languages[language]);
         this.weaponProficiencies.push("Rapier", "Shortsword", "Crossbow, hand");

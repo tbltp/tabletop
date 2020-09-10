@@ -11,7 +11,7 @@ abstract class Halfling extends Race {
             25,  // Speed (Movement)
             "Small", // Size
             [languages["Common"], languages["Halfling"]],  // Languages
-            [traits["Lucky"], traits["Brave"], traits["Halfling Nimbleness"]],  // Racial Traits
+            [traits["LUCKY"], traits["BRAVE"], traits["HALFLING NIMBLENESS"]],  // Racial Traits
             [],  // Weapon Proficiencies
             [],  // Armor Proficiencies
             []  // Tool Proficiences
@@ -25,7 +25,7 @@ abstract class Halfling extends Race {
 export class Lightfoot extends Halfling {
     constructor() {
         super("Lightfoot Halfling");
-        this.traits.push(traits["Naturally Stealthy"]);
+        this.traits.push(traits["NATURALLY STEALTHY"]);
     }
  
     abilityIncrease(pc: PlayerCharacter): void {
@@ -41,7 +41,7 @@ export class Lightfoot extends Halfling {
 export class Stout extends Halfling {
     constructor() {
         super("Stout Halfling");
-        this.traits.push(traits["Stout Resilience"]);
+        this.traits.push(traits["STOUT RESILIENCE"]);
     }
 
     abilityIncrease(pc: PlayerCharacter): void {

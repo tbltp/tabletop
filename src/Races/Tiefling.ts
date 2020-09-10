@@ -13,7 +13,7 @@ export class Tiefling extends Race {
             30,  // Speed (Movement)
             "Medium", // Size
             [languages["Common"], languages["Infernal"]],  // Languages
-            [traits["Darkvision"], traits["Hellish Resistance"], traits["Infernal Legacy"]],  // Racial Traits
+            [traits["DARKVISION"], traits["HELLISH RESISTANCE"], traits["INFERNAL LEGACY"]],  // Racial Traits
             [],  // Weapon Proficiencies
             [],  // Armor Proficiencies
             []  // Tool Proficiences

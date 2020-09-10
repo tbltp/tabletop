@@ -153,7 +153,13 @@ class BaseAbility {
         this.modifier = Math.floor((this.score - 10) / 2);
 
         for(const skill of skills){
-            this.skills[skill] = { ability: this.name, modifier: this.modifier, proficient: false, expertise: false, bonus: 0 }
+            this.skills[skill] = { 
+                ability: this.name, 
+                modifier: this.modifier, 
+                proficient: false, 
+                expertise: false, 
+                bonus: 0 
+            };
         }
     }
     

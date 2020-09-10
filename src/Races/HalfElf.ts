@@ -11,7 +11,7 @@ export class HalfElf extends Race {
             30,  // Speed (Movement)
             "Medium", // Size
             [languages["Common"], languages[language]],  // Languages
-            [traits["Darkvision"], traits["Fey Ancestry"]],  // Racial Traits
+            [traits["DARKVISION"], traits["FEY ANCESTRY"]],  // Racial Traits
             [],  // Weapon Proficiencies
             [],  // Armor Proficiencies
             []  // Tool Proficiences
