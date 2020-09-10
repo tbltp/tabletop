@@ -40,16 +40,23 @@ export interface ToolKit {
 }
 
 export interface Trait {
-    /**Spell slots are just special traits with no additional properties */
     readonly title: string;
     description: string;
     choices?: string[];
 }
 
 export interface ResourceTrait extends Trait {
+    /**Spell slots are just special resource traits with no additional properties */
     resourceMax: number;
     bonus?: string;
     dice?: string;
+    
+}
+
+export interface ScalingTrait extends Trait {
+    bonus?: string;
+    dice?: string;
+    threshold?: string;
 }
 
 

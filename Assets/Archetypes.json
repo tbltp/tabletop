@@ -141,10 +141,360 @@
 
     },
     "CLERIC": {
+        "KNOWLEDGE": {
+            "title":  "Knowledge Domain",
+            "description": "The gods of knowledge - including Oghma, Boccob, Gilean, Aureon, and Thoth - value learning and understanding above all. Some teach that knowledge is to be gathered and shared in libraries and universities, or promote the practical knowledge of craft and invention. Some deities hoard knowledge and keep its secrets to themselves. And some promise thier followers that they will gain tremendous power if they unlock the secrets of the multiverse. Followers of these gods study esoteric lore, collectold tomes, delve into the secret places of the earth, and learn all they can. Some gods of knowledge promote the practical knowledge of craft and invention, including smith deities like Gond, Reorx, Onatar, Moradin, Hephaestus, and Goibhniu.",
+            "features": {
+                "1": {
+                    "BLESSINGS OF KNOWLEDGE": {
+                        "title":  "Blessings of Knowledge",
+                        "description": "You learn two languages of your choice. You become proficient in your choice of two of the following skills: Arcana, History, Nature, Religion.\nYour proficiency bonus is doubled for any ability check you make with either of those skills."
+                    }
+                },
+                "2": {
+                    "CHANNEL DIVINITY: THE KNOWLEDGE OF THE AGES": {
+                        "title":  "Channel Divinity: The Knowledge of the Ages",
+                        "description": "Starting at 2nd level, you can use your Channel Divinity to tap into a divine well of knowledge. As an action, you choose one skill or tool. For 10 minutes, you have proficiency with the chosen skill or tool."
+                    }
+                },
+                "6": {
+                    "CHANNEL DIVINITY: READ THOUGHTS": {
+                        "title":  "Channel Divinity: Read Thoughts",
+                        "description": "You can use your Channel Divinity to read a creature's thoughts. You can then use your access to the creature's mind to command it.\nAs an action, choose one creature that you can see within 60 feet of you. That creature must make a Wisdom saving throw. If the creature succeeds on the saving throw, you can't use this feature on it again until you finish a long rest.\nIf the creature fails its save, you can read its surface throughts (those foremost in its mind, reflecting its current emotions and what it is actively thinking about_ when it is within 60 feet of you. This effect lasts for 1 minute.\nDuring that time, you can use your action to end this effect and cast the suggestion spell on the creature without expending a spell slot. The target automatically fails its saving throw against the spell."
+                    }
+                },
+                "8": {
+                    "POTENT SPELLCASTING": {
+                        "title":  "Potent Spellcasting",
+                        "description": "Starting at 8th level, you add your Wisdom modifier to the damage you deal with any cleric cantrip."
+                    }
+
+                },
+                "17": {
+                    "VISIONS OF THE PAST": {
+                        "title":  "Visions of the Past",
+                        "description": "Starting at 17th level, you can call up visions of the past that relate to an object you hold or your immediate surroundings. You spend at least 1 minute in meditation and prayer, then receive dreamlike, shadowy glimpses of recent events. You can meditate in this way for a number of minutes equal to your Wisdom score and must maintain concentration during that time, as if you were casting a spell.\nOnce you use this feature, you can’t use it again until you finish a short or long rest.\nObject Reading. Holding an object as you meditate, you can see visions of the object’s previous owner. After meditating for 1 minute, you learn how the owner acquired and lost the object, as well as the most recent significant event involving the object and that owner. if the object was owned by another creature in the recent past (within a number of days equal to your Wisdom score), you can spend 1 additional minute for each owner to learn the same information about that creature.\nArea Reading. As you meditate, you see visions of recent events in your immediate vicinity (a room. street, tunnel, clearing, or the like, up to a 50-foot cube), going back a number of days equal to your Wisdom score. For each minute you meditate, you learn about one significant event, beginning with the most recent. Significant events typically involve powerful emotions, such as battles and betrayals, marriages and murders, births and funerals. However, they might also include more mundane events that are nevertheless important in your current situation."
+                    }
+                }
+            }
+        },
+        "LIFE": {
+            "title": "Life Domain",
+            "description": "The Life domain focuses on the vibrant positive energy - one of the fundamental forces of the universe - that sustains all life. The gods of life promote vitality and health through healing the sick and wounded, caring for those in need, and driving away the forces of death and undeath. Almost any non-evil deity can claim influence over this domain, particularly agricultural deities (succh as Chauntea, Arawai, and Demeter), sun gods (such as Lathander, Pelor, and Re-Horakhty), gods of healing or endurance (such as Ilmater, Mishakal, Apollo, and Diancecht), and gods of home and community (such as Hestia, Hathor, and Bolderei).",
+            "features": {
+                "1": {
+                    "BONUS PROFICIENCY": {
+                        "title": "Bonus Proficiency",
+                        "description": "When you choose this domain at 1st level, you gain proficiency with heavy armor."
+                    },
+                    "DISCIPLE OF LIFE": {
+                        "title":  "Disciple of Life",
+                        "description": "Your healing spells are more effective. Whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to 2 + the spell's level."
+                    }
+                },
+                "2": {
+                    "CHANNEL DIVINITY: PRESERVE LIFE": {
+                        "title":  "Channel Divinity: Preserve Life",
+                        "description": "Starting at 2nd level, you can use your Channel Divinity to heal the badly injured.\nAs an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can't use this feature on an undead or a construct."
+                    }
+                },
+                "6": {
+                    "BLESSED HEALER": {
+                        "title":  "Blessed Healer",
+                        "description": "The healing spells you cast on others heal you as well. When you cast a spell of 1st level or higher that restores hit points to a creature other than you, you regain hit points equal to 2 + the spell's level."
+                    }
+                },
+                "8": {
+                    "DIVINE STRIKE": {
+                        "title":  "Divine Strike",
+                        "description": "You gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a sweapon attack, you can cause the attack to deal an extra 1d8 radiant damage to the target. When you reach 14th level, the extra damage increases to 2d8."
+                    }
+
+                },
+                "17": {
+                    "SUPREME HEALING": {
+                        "title":  "Supreme Healer",
+                        "description": "Starting at 17th level, when you would normally roll one or more dice to restore hit points with a spell,you instead use the highest number possible for each die. For example, instead of restoring 2d6 hit points to a creature, you restore 12. "
+                    }
+                }
+            }
+        },
+        "LIGHT": {
+            "title": "Light",
+            "description": "Gods of light—including Helm, Lathander, Pholtus, Branchala, the Silver Flame, Belenus, Apollo, and Ke-Horakhty—promote the ideals of rebirth and renewal, truth, vigilance, and beauty, often using the symbol of the sun. Some of these gods are portrayed as the sun itself or as a charioteer who guides the sun across the sky. Others are tireless sentinels whose eyes pierce every shadow and see through every deception. Some are deities of beauty and artistry, who teach that art is a vehicle for the soul's improvement. Clerics of a god of light are enlightened souls infused with radiance and the power of their gods’ discerning vision, charged with chasing away lies and burning away darkness.",
+            "features": {
+                "1": {
+                    "BONUS CANTRIP": {
+                        "title": "Bonus Cantrip",
+                        "description": "When you choose this domain at 1st level, you gain the Light cantrip if you don't already know it."
+                    },
+                    "WARDING FLARE": {
+                        "title":  "Warding Flare",
+                        "description": "Also at 1st level, you can interpose divine light between yourself and an attacking enemy. When you are attacked by a creature within 30 feet of you that you can see, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can’t be blinded is immune to this feature.\nYou can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest."
+                    }
+                },
+                "2": {
+                    "CHANNEL DIVINITY: RADIANCE OF THE DAWN": {
+                        "title":  "Channel Divinity: Radiance of the Dawn",
+                        "description": "Starting at 2nd level, you can use your Channel Divinity to harness sunlight, banishing darkness and dealing radiant damage to your foes.\nAs an action, you present your holy symbol, and any magical darkness within 30 feet of you is dispelled. Additionally, each hostile creature within 30 feet of you must make a Constitution saving throw. A creature takes radiant damage equal to 2d10 + your cleric level on a failed saving throw, and half as much damage on a successful one. A creature that has total cover from you is not affected."
+                    }
+                },
+                "6": {
+                    "IMPROVED FLARE": {
+                        "title":  "Improved Flare",
+                        "description": "Starting at 6th level. you can also use your Warding Flare feature when a creature that you can see within 30 feet of you attacks a creature other than you."
+                    }
+                },
+                "8": {
+                    "POTENT SPELLCASTING": {
+                        "title":  "Potent Spellcasting",
+                        "description": "You add your Wisdom modifier to the damage you deal with any cleric cantrip."
+                    }
+
+                },
+                "17": {
+                    "CORONA OF LIGHT": {
+                        "title":  "Corona of Light",
+                        "description": "Starting at 17th level, you can use your action to activate an aura of sunlight that lasts for 1 minute or until you dismiss it using another action. You emit bright light in a 60-foot radius and dim light 30 feet beyond that. Your enemies in the bright light have disadvantage on saving throws against any spell that deals fire or radiant damage."
+                    }
+                }
+            }
+        },
+        "NATURE": {
+            "title": "Nature",
+            "description": "Gods of nature are as varied as the natural world itself, from inscrutable gods of the deep forests (Such as Silvanus, Obad-Hai, Chislev, Balinor, and Pan) to friendly deities associated with particular springs and groves (such as Eldath). Druids revere nature as a whole and might serve one of these deities, practicing mysterious rites and reciting all-but-forgotten prayers in their own secret tongue. But many of these gods have clerics as well, champions who take a more active role in advancing the interests of a particular nature god. These clerics might hunt the evil monstrosities that despoil the woodlands, bless the harvest of the faithful, or wither the crops of those who anger their gods.",
+            "features": {
+                "1": {
+                    "BONUS PROFICIENCY": {
+                        "title": "Bonus Proficiency",
+                        "description": "Also at 1st level, you gain proficiency with heavy armor."
+                    },
+                    "ACOLYTE OF NATURE": {
+                        "title":  "Acolyte of Nature",
+                        "description": "At 1st level, you learn one druid cantrip of your choice. You also gain proficiency in one of the following skills of your choice: Animal Handling, Nature, or Survival."
+                    }
+                },
+                "2": {
+                    "CHANNEL DIVINITY: CHARM ANIMALS AND PLANTS": {
+                        "title":  "Channel Divinity: Charm Animals and Plants",
+                        "description": "Starting at 2nd level, you can use your Channel Divinity to charm animals and plants. As an action, you present your holy symbol and invoke the name of our deity. Each beast or plant creature that can see you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is charmed by you for 1 minute or until it takes damage. While it is charmed by you, it is friendly to you and other creatures you designate."
+                    }
+                },
+                "6": {
+                    "DAMPEN ELEMENTS": {
+                        "title":  "Dampen Elements",
+                        "description": "Starting at 6th level, when you or a creature within 30 feet of you takes acid, cold, fire, lightning, or thunder damage, you can use your reaction to grant resistance to the creature against that instance of the damage."
+                    }
+                },
+                "8": {
+                    "DIVINE STRIKE": {
+                        "title":  "Divine Strike",
+                        "description": "At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 cold, fire, or lightning damage (your choice) to the target. When you reach 14th level, the extra damage increases to 2d8."
+                    }
+
+                },
+                "17": {
+                    "MASTER OF NATURE": {
+                        "title":  "Master of Nature",
+                        "description": "At 17th level, you gain the ability to command animals and plant creatures. While creatures are charmed by your Charm Animals and Plants feature, you can take a bonus action on your turn to verbally command what each of those creatures will do on its next turn."
+                    }
+                }
+            }
+        },
+        "TEMPEST": {
+            "title": "Tempest",
+            "description": "Gods whose portfolios include the Tempest domain— including Talos, Umberlee, Kord, Zeboim, the Devourer, Zeus, and Thor—govern storms, sea, and sky. They include gods of lightning and thunder, gods of earthquakes, some fire gods, and certain gods of violence, physical strength, and courage. In some pantheons, a god of this domain rules over other deities and is known for swift justice delivered by thunderbolts. In the pantheons of seafaring people, gods of this domain are ocean deities and the patrons of sailors. Tempest gods send their clerics to inspire fear in the common folk, either to keep those folk on the path of righteousness or to encourage them to offer sacrifices of propitiation to ward off divine wrath.",
+            "features": {
+                "1": {
+                    "BONUS PROFICIENCY": {
+                        "title": "Bonus Proficiency",
+                        "description": "At 1st level, you gain proficiency with martial weapons and heavy armor."    
+                    },
+                    "WRATH OF THE STORM": {
+                        "title":  "Wrath of the Storm",
+                        "description": "Also at 1st level, you can thunderously rebuke attackers. When a creature within 5 feet of you that you can see hits you with an attack, you can use your reaction to cause the creature to make a Dexterity saving throw. The creature takes 2d8 lightning or thunder damage (your choice) on a failed saving throw, and half as much damage on a successful one.\nYou can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest."
+                    }
+                },
+                "2": {
+                    "CHANNEL DIVINITY: DESTRUCTIVE WRATH": {
+                        "title":  "Channel Divinity: Destructive Wrath",
+                        "description": "Starting at 2nd level, you can use your Channel Divinity to wield the power of the storm with unchecked ferocity.\nWhen you roll lightning or thunder damage, you can use your Channel Divinity to deal maximum damage, instead of rolling."
+                    }
+                },
+                "6": {
+                    "THUNDERBOLT STRIKE": {
+                        "title":  "Thunderbolt Strike",
+                        "description": "At 6th level, when you deal lightning damage to a Large or smaller creature, you can also push it up to 10 feet away from you."
+                    }
+                },
+                "8": {
+                    "DIVINE STRIKE": {
+                        "title":  "Divine Strike",
+                        "description": "At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 thunder damage to the target. When you reach 14th level, the extra damage increases to 2d8."
+                    }
+                },
+                "17": {
+                    "STORMBORN": {
+                        "title":  "Stormborn",
+                        "description": "At 17th level, you have a flying speed equal to your current walking speed whenever you are not underground or indoors."
+                    }
+                }
+            }
+        },
+        "TRICKERY": {
+            "title": "Trickery",
+            "description": "Gods of trickery—such as Tymora, Beshaba, Olidammara, the Traveler, Garl Glittergold, and Loki—are mischief-makers and instigators who stand as a constant challenge to the accepted order among both gods and mortals. They're patrons of thieves, scoundrels, gamblers, rebels, and liberators. Their clerics are a disruptive force in the world, puncturing pride, mocking tyrants, stealing from the rich, freeing Captives, and flouting hollow traditions. They prefer subterfuge, pranks, deception, and theft rather than direct confrontation.",
+            "features": {
+                "1": {
+                    "BLESSING OF THE TRICKSTER": {
+                        "title":  "Blessing of the Trickster",
+                        "description": "Starting when you choose this domain at Ist level, you can use your action to touch a willing creature other than yourself to give it advantage on Dexterity (Stealth) checks. This blessing lasts for 1 hour or until you use this feature again."
+                    }
+                },
+                "2": {
+                    "CHANNEL DIVINITY: INVOKE DUPLICITY": {
+                        "title":  "Channel Divinity: Invoke Duplicity",
+                        "description": "Starting at 2nd level, you can use your Channel Divinity to create an illusory duplicate of yourself.\nAs an action, you create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell). The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but it must remain within 120 feet of you.\nFor the duration, you can cast spells as though you were in the illusion’s space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how distracting the illusion is to the target."
+                    }
+                },
+                "6": {
+                    "CHANNEL DIVINITY: CLOAK OF SHADOWS": {
+                        "title":  "Channel Divinity: Cloak of Shadows",
+                        "description": "Starting at 6th level, you can use your Channel Divinity to vanish.\nAs an action, you become invisible until the end of your next turn. You become visible if you attack or cast a spell."
+                    }
+                },
+                "8": {
+                    "DIVINE STRIKE": {
+                        "title":  "Divine Strike",
+                        "description": "At 8th level, you gain the ability to infuse your weapon strikes with poison—a gift from your deity. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 poison damage to the target. When you reach 14th level. the extra damage increases to 2d8."
+                    }
+
+                },
+                "17": {
+                    "IMPROVE DUPLICITY": {
+                        "title":  "Improve Duplicity",
+                        "description": "At 17th level, you can create up to four duplicates of yourself, instead of one, when you use Invoke Duplicity. As a bonus action on your turn, you can move any number of them up to 30 feet, to a maximum range of 120 feet."
+                    }
+                }
+            }
+        },
+        "WAR": {
+            "title": "War Domain",
+            "description": "War has many manifestations. It can make heroes of ordinary people. It can be desperate and horrific, with acts of crulety and cowardice eclipsing isntances of excellence and courage. In either case, the gods of war watch over warriors and reward them for their great deeds. The clerics of such gods excel in battle, inspiring others to fight the good fight or offering acts of violence as prayers. Gods of war include champions of honor and chivalry (such as Torm, Heironeous, and Kiri-Jolith) as well as gods of destruction and pillage (such as Erythnul, the Fury, Gruumash, and Ares) and gods of conquest and domnation (such as Bane, Hextor, and Maglubiyet). Other war gods (such as Tempus, Nike, and Nuada) take  amore netural stance, promoting war in all its manifestations and supporting warriors in any circumstance.",
+            "features": {
+                "1": {
+                    "BONUS PROFICIENCY": {
+                        "title": "Bonus Proficiency",
+                        "description": "At 1st level, you gain proficiency with martial weapons and heavy armor."    
+                    },
+                    "WAR PRIEST": {
+                        "title":  "War Priest",
+                        "description": "From 1st level, your god delivers bolts of inspiration to you while you are engaged in battle. hen you use the Attack action, you can make one weapon attack as a bonus action. You can use this feature a number of times qual to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest."
+                    }
+                },
+                "2": {
+                    "CHANNEL DIVINITY: GUIDED STRIKE": {
+                        "title":  "Channel Divinity: Guided Strike",
+                        "description": "Starting at 2nd level, you can use your Channel Divinity to strike with supernatural accuracy. When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You can make this choice after you see the roll, but before the DM says whether the attack hits or misses."
+                    }
+                },
+                "6": {
+                    "CHANNEL DIVINITY: WAR GOD'S BLESSING": {
+                        "title":  "Channel Divinity: War God's Blessing",
+                        "description": "At 6th level, when a creature within 30 feet of you makes an attack roll, you can use your reaction to grant that creature a +10 bonus to the roll, using your Channel Divinity. You make this choice after you see the roll, but before the DM says whether the attack hits or misses."
+                    }
+                },
+                "8": {
+                    "DIVINE STRIKE": {
+                        "title":  "Divine Strike",
+                        "description": "At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creatur with a weapon attack, you can cause the attack to deal an extra 1d8 damage of the sametype dealt by the weapon to the target. When you reach 14th level, the extra damage increases to 2d8."
+                    }
+
+                },
+                "17": {
+                    "AVATAR OF BATTLE": {
+                        "title":  "Avatar of Battle",
+                        "description": "At 17th level, you gain resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons. "
+                    }
+                }
+            }
+        }
 
     },
     "DRUID": {
-
+        "LAND": {
+            "title": "Circle of the Land",
+            "description": "The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition. These druids meet within sacred circles of trees or standing stones to whisper primal secrets in Druidic. The circle's wisest members preside as the chief priests of commmunities that hold to the Old Faith and serve as advisors to the rulers of those folk. As a member of this circle, your magic is influenced by the land where you were initiated into the circle's mysterious rites.",
+            "features": {
+                "2": {
+                    "BONUS CANTRIP": {
+                        "title":  "Bonus Cantrip",
+                        "description": "When you choose this circle at 2nd level, you learn one additional druid cantrip of your choice."
+                    },
+                    "NATURAL RECOVERY":{
+                        "title": "Natural Recovery",
+                        "description": "Starting at 2nd level, you can regain some of your magical energy by sitting in meditation and communing with nature. During a short rest, you choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your druid level (rounded up), and none of the slots can be 6th level or higher. You can't use this feature again until you finish a long rest. For example, when you are a 4th-level druid, you can recover up to two levels worth of spell slots. You can recover either a 2nd-level slot or two 1st-level slots."
+                    }
+                },
+                "3": {
+                    "CIRCLE SPELLS": {
+                        "title": "Circle Spells",
+                        "description": "Your mystical connection to the land infuses you with the ability to cast certain spells. At 3rd, 5th, 7th, and 9th level you gain access to circle spells connected to the land where you became a druid. Choose that land - arctic, coast, desert, forest, grassland, mountain, swamp, or Underdark - and consult the associated list of spells. Once you gain access to a circle spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you."
+                    }
+                },
+                "6": {
+                    "LAND'S STRIDE": {
+                        "title": "Land's Stride",
+                        "description": "Starting at 6th level, moving through nonmagical difficult terrain costs you no extra movement. You can also pass through nonmagical plants without being slowed by them and without taking damage from them if they have throns, spines, or a smilar hazard. In addition, you have advantage on saving throws against plants that are magically created or manipulated to impede movement, such those created by the entangle spell."
+                    }
+                },
+                "10": {
+                    "NATURE'S WARD": {
+                        "title": "Nature's Ward",
+                        "description": "When you reach 10th level, you can't be charmed or frightened by elementals or fey, and you are immune to poison and disease."
+                    }
+                },
+                "14": {
+                    "NATURE'S SANCTUARY": {
+                        "title": "Nature's Sanctuary",
+                        "description": "When you reach 14th level, creatures of the natural world sense your connection to nature and become hesitant to attack you. When a beast or plant creature attacks you, that creature must make a Wisdom saving throw against your druid spell save DC. On a failed save, the creature must chooes a different target, or the attack automatically misses. On a successful save, the creature is immune to this effect for 24 hours. The creature is aware of this effect before it makes its attack against you."
+                    }
+                }
+            },
+        "MOON": {
+            "title": "Circle of the Moon",
+            "description": "Druids of the Circle of the Moon are fierce guardians of the wilds. Their order gathers under the full moon to share news and trade warnings. They haunt the deepst parts of the wilderness, where they might go for weeks on end before crossing paths with another humanoid creature, let alone another druid. Changeable as the moon, a druid of this circle might prowl as a great cat one night, soar over the treetops as an eagle the next day, and crash through the undergrowth in bear form to drive off a trespassing monster. The wild is in the druid's blood.",
+            "features": {
+                "2": {
+                    "COMBAT WILD SHAPE": {
+                        "title": "Combat Wild Shape",
+                        "description": "When you choose this circle at 2nd level, you gain the ability to use Wild Shape on your turn as a bonus action, rather than as an action. Additionally, while you are transformed by Wild Shape, you can use a bonus action to expend one spell slot to regain 1d8 hit points per level of the spell slot expended."
+                    },
+                    "CIRCLE FORMS": {
+                        "title": "Circle Forms",
+                        "description": "The rites of your circle grant you the ability to transform into more dangerous animal forms. Starting at 2nd level, you can use your Wild Shape to transform into a beast with a challenge rating as high as 1 (you ignorethe Max, CR column of the Beast Shapes table, but mustabide by the other limitations there). Starting at 6th level, you can transform into a beast with a challenge rating as high as your druid level divided by 3, rounded down."
+                    }
+                },
+                "6": {
+                    "PRIMAL STRIKE": {
+                        "title": "Primal Strike",
+                        "description": "Starting at 6th level, your attacks in beast form count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage."
+                    }
+                },
+                "10": {
+                    "ELEMENTAL WILD SHAPE": {
+                        "title": "Elemental Wild Shape",
+                        "description": "At 10th level, you can expend two uses of Wild Shape at the same time to transform into an air elemental, an earth elemental, a fire elemental, or a water elemental."
+                    }
+                },
+                "14": {
+                    "THOUSAND FORMS": {
+                        "title": "Thousand Forms",
+                        "description": "By 14th level, you have learned to use magic to alter your physical form in more subtle ways. You can cast the alter self spell at will."
+                    }
+                }
+            }
+        }
     },
     "FIGHTER": {
 

@@ -79,7 +79,8 @@ export class Bard extends PlayerClass {
         pc.addSpells(params.spellSelection, "charisma");
         const songOfRest: ResourceTrait = {title: "Song Of Rest", description: "Dice used for Song of Rest", resourceMax: Infinity, dice: '1d6'}; 
         pc.addResourceTraits(songOfRest);
-        // jack of all trades
+        
+        // Jack of All Trades
         for(let skill of Object.keys(pc.skills)){
             if(!pc.skills[skill].proficient) {
                 pc.skills[skill].bonus = Math.floor(pc.proficiencyBonus / 2);

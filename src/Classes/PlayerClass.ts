@@ -133,9 +133,8 @@ export abstract class PlayerClass {
             pcls.abilitiesAtLevels[i](pc, argsAry[i - 1]);
         }
     }
-
 }
-
+    
 export class SpellSlotFactory {
 
     private static getLevelString(level: number): string {
@@ -146,22 +145,6 @@ export class SpellSlotFactory {
                 break;
             }
             case 2: {
-                slotLevel = 'second';
-                break;
-            }
-            case 3: {
-                slotLevel = 'third';
-                break;
-            }
-            case 4: {
-                slotLevel = 'fourth';
-                break;
-            }
-            case 5: {
-                slotLevel = 'fifth';
-                break;
-            }
-            case 6: {
                 slotLevel = 'sixth';
                 break;
             }

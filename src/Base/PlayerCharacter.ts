@@ -1,5 +1,5 @@
 import { BaseCharacter } from './BaseCharacter';
-import { ResourceTrait, Spell, Trait } from './Interfaces';
+import { ResourceTrait, ScalingTrait, Spell, Trait } from './Interfaces';
 import * as Spells from '../../Assets/Spells.json';
 
 export class PlayerCharacter extends BaseCharacter {
@@ -29,8 +29,12 @@ export class PlayerCharacter extends BaseCharacter {
         return this.findTraitByName('features', name);
     }
 
-    findResourceTraitByName(name: string): ResourceTrait {
+    findResourceTraitByName(name: string): ResourceTrait{
         return this.findTraitByName('resources', name) as ResourceTrait;
+    }
+
+    findScalingTraitByName(name: string): ScalingTrait {
+        return this.findTraitByName('scalingEffects', name) as ScalingTrait;
     }
 
     findSpellByName(spellName: string): Spell | null {
@@ -51,12 +55,16 @@ export class PlayerCharacter extends BaseCharacter {
         for(const ability of abilityScoreImprovements) { this.abilityScores[ability.ability].update(ability.improvement); }
     }
 
-    addFeatures(...features: Trait []): void {
+    addFeatures(...features: Trait[]): void {
         this.traits.features.push(...features);
     }
 
-    addResourceTraits(...resTraits: ResourceTrait []): void {
+    addResourceTraits(...resTraits: ResourceTrait[]): void {
         this.traits.resources.push(...resTraits);
+    }
+
+    addScalingTraits(...scalTraits: ScalingTrait[]): void {
+        this.traits.scalingEffects.push(...scalTraits);
     }
 
     addSpells(spellList: string[], spellcastingAbility: string): void {

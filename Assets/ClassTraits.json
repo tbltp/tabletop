@@ -117,15 +117,28 @@
     },
     "CLERIC": {
         "1": {},
-        "2": {},
-        "3": {},
-        "4": {},
-        "5": {},
+        "2": {
+            "CHANNEL DIVINITY: TURN UNDEAD": {
+                "title": "Channel Divinity: Turn Undead",
+                "description": "As an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.\nA turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also cant take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action."
+            }
+        },
+        "5": {
+            "DESTROY UNDEAD": {
+                "title":  "Destroy Undead",
+                "description": "Starting at 5th level, when an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed if its challenge rating is at or below a certain threshold, as shown in the Destroy Undead table"
+            }
+        },
         "6": {},
         "7": {},
         "8": {},
         "9": {},
-        "10": {},
+        "10": {
+            "DIVINE INTERVENTION": {
+                "title": "",
+                "description": ""
+            }
+        },
         "11": {},
         "12": {},
         "13": {},
@@ -135,17 +148,42 @@
         "17": {},
         "18": {},
         "19": {},
-        "20": {}
+        "20": {
+            "DIVINE INTERVENTION IMPROVEMENT": {
+                "title": "",
+                "description": ""
+            }
+        }
     },
     "DRUID": {
-        "1": {},
-        "2": {},
+        "1": {
+            "DRUIDIC": {
+                "title": "",
+                "description": ""
+            }
+        },
+        "2": {
+            "WILDSHAPE": {
+                "title": "",
+                "description": ""
+            }
+        },
         "3": {},
-        "4": {},
+        "4": {
+            "WILDSHAPE IMPROVEMENT": {
+                "title": "",
+                "description": ""
+            }
+        },
         "5": {},
         "6": {},
         "7": {},
-        "8": {},
+        "8": {
+            "WILDSHAPE IMPROVEMENT": {
+                "title": "",
+                "description": ""
+            }
+        },
         "9": {},
         "10": {},
         "11": {},
@@ -155,9 +193,23 @@
         "15": {},
         "16": {},
         "17": {},
-        "18": {},
+        "18": {
+            "TIMELESS BODY": {
+                "title": "",
+                "description": ""
+            },
+            "BEAST SPELLS": {
+                "title": "",
+                "description": ""
+            }
+        },
         "19": {},
-        "20": {}
+        "20": {
+            "ARCHDRUID": {
+                "title": "",
+                "description": ""
+            }
+        }
     },
     "FIGHTER": {
         "1": {},
