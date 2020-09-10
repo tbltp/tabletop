@@ -26,6 +26,10 @@ describe('PlayerCharacter', () => {
         expect(pc.traits.resources).toIncludeAllMembers([rage]);
     });
 
+    test.skip('can add scaling traits', () => {
+        //TO DO
+    });
+
     test('can add spells with a specified spellcasting ability', () => {
         pc.addSpells(["HEALING WORD"], "charisma");
         expect(pc.spells[1]).toIncludeAllMembers([{...Spells["HEALING WORD"], spellcastingAbility: "charisma"}]);
@@ -67,6 +71,14 @@ describe('PlayerCharacter', () => {
 
     test('will return null if a resource trait cannot be found', () => {
         expect(pc.findResourceTraitByName("Rage")).toBeNull();
+    });
+
+    test.skip('can retrieve scaling traits by name', () => {
+        //TO DO
+    });
+
+    test.skip('will return null if a scaling trait cannot be found', () => {
+        //TO DO
     });
 
     test('can retrieve known spells by name', () => {

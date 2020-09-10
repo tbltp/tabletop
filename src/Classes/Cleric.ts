@@ -89,7 +89,7 @@ export class Cleric extends PlayerClass {
         pc.improveAbilityScores(params.abilityScoreImprovement);
     }
 
-        SpellSlotFactory.findPlayerSpellSlots(pc, )
+    level5(pc: PlayerCharacter, params: LevelingParams): void {
         const level3Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(3, 2);
         pc.addResourceTraits(level3Slots);
         this.pushClericFeatures(pc, "5");
