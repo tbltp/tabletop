@@ -217,7 +217,7 @@ export class Soldier extends Background {
     constructor(gamingSet: string){
         super(
             "Soldier",
-            ["Athletics", "Perpection"],
+            ["Athletics", "Intimidation"],
             [],
             ["Vehicles, land", gamingSet],
             ["CLOTHES, COMMON"],

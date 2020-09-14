@@ -3,6 +3,7 @@ import { LevelingParams } from "./PlayerClass";
 import { Trait } from "../Base/Interfaces";
 import * as Archetypes from "../../Assets/Archetypes.json";
 import * as Spells from "../../Assets/Spells.json";
+import * as Languages from "../../Assets/Languages.json";
 import { Barbarian } from "./Barbarian";
 
 abstract class Archetype {
@@ -214,7 +215,7 @@ export class ClericArchetype extends Archetype {
         pc.addFeatures(ClericArchetype.getFeature("KNOWLEDGE","1", "BLESSINGS OF KNOWLEDGE"));
         
         // Blessings of Knowledge
-        pc.traits.languages.push()  // Languages, How do we pass this?
+        pc.traits.languages.push(Languages[params.archetypeSelection[0].options[0]], Languages[params.archetypeSelection[0].options[1]])  // Languages, How do we pass this?
 
         for(const skill  of params.proficiencySelection){
             // Skill  Proficiencies / Expertise
@@ -558,3 +559,11 @@ export class DruidArchetype extends Archetype {
         pc.addFeatures(DruidArchetype.getFeature("MOON", "14", "THOUSAND FORMS"))   
     }
 }
+
+export class FighterArchetype extends Archetype { }
+
+export class MonkArchetype extends Archetype { }
+
+export class PaladinArchetype extends Archetype { }
+
+export class RangerArchetype extends Archetype { }

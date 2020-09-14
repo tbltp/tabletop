@@ -1,3 +1,5 @@
+import { BaseAbility } from './BaseCharacter';
+
 export interface Inventory {
     weapons: Weapon[];
     armor: Armor[];
@@ -7,18 +9,24 @@ export interface Inventory {
 }
 
 export interface Weapon {
-    readonly weaponType: string,
-    readonly cost: string,
-    readonly damage: string,
-    readonly damageType: string,
-    readonly weight: string,
-    readonly properties: string[]
+    readonly name: string;
+    readonly weaponType: string;
+    readonly cost: string;
+    readonly damage: string;
+    readonly damageType: string;
+    readonly weight: string;
+    readonly properties: string[];
 }
 
 export interface Armor {
+    readonly name: string;
     readonly armorType: string;
     readonly cost: string;
-    readonly AC: string;
+    readonly AC: {
+        base: number,
+        modifier: {value: number}
+        bonus: number
+    };
     readonly strengthPrerequisite: number;
     readonly stealthDisadvantage: boolean;
     readonly weight: string;
@@ -45,19 +53,26 @@ export interface Trait {
     choices?: string[];
 }
 
-export interface ResourceTrait extends Trait {
-    /**Spell slots are just special resource traits with no additional properties */
-    resourceMax: number;
-    bonus?: string;
-    dice?: string;
+export interface ITrait extends Trait {
     
 }
 
+export interface ResourceTrait extends ITrait {
+    /**Spell slots are just special resource traits with no additional properties */
+    
+    resourceMax?: {value: number};
+    proficiency?: boolean;
+    bonus?: string;
+    dice?: string;
+}
+
+/*
 export interface ScalingTrait extends Trait {
     bonus?: string;
     dice?: string;
     threshold?: string;
 }
+*/
 
 
 export interface ISpell {

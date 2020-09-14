@@ -3,7 +3,7 @@
         "name": "Padded",
         "armorType": "Light",
         "cost": "5 gp",
-        "AC": "11 + Dex modifier",
+        "AC": {"base": 11, "modifier": null, "bonus": 0},
         "strengthPrequisite": 0,
         "stealthDisadvantage": true,
         "weight": "8 lb"
@@ -12,7 +12,7 @@
         "name": "Leather",
         "armorType": "Light",
         "cost": "10 gp",
-        "AC": "11 + Dex modifier",
+        "AC": {"base": 11, "modifier": null, "bonus": 0},
         "strengthPrequisite": 0,
         "stealthDisadvantage": false,
         "weight": "10 lb"
@@ -21,7 +21,7 @@
         "name": "Studded leather",
         "armorType": "Light",
         "cost": "45 gp",
-        "AC": "12 + Dex modifier",
+        "AC": {"base": 12, "modifier": null, "bonus": 0},
         "strengthPrequisite": 0,
         "stealthDisadvantage": false,
         "weight": "13 lb"
@@ -30,7 +30,7 @@
         "name": "Hide",
         "armorType": "Medium",
         "cost": "10",
-        "AC": "12 + Dex modifier (max 2)",
+        "AC": {"base": 12, "modifier": null, "bonus": 0},
         "strengthPrequisite": 0,
         "stealthDisadvantage": false,
         "weight": "12 lb"
@@ -39,7 +39,7 @@
         "name": "Chain shirt",
         "armorType": "Medium",
         "cost": "50 gp",
-        "AC": "13 + Dex modifier (max 2)",
+        "AC": {"base": 13, "modifier": null, "bonus": 0},
         "strengthPrequisite": 0,
         "stealthDisadvantage": false,
         "weight": "20 lb"
@@ -48,7 +48,7 @@
         "name": "Scale mail",
         "armorType": "Medium",
         "cost": "50 gp",
-        "AC": "14 + Dex modifier (max 2)",
+        "AC": {"base": 14, "modifier": null, "bonus": 0},
         "strengthPrequisite": 0,
         "stealthDisadvantage": true,
         "weight": "45 lb"
@@ -57,7 +57,7 @@
         "name": "Breastplate",
         "armorType": "Medium",
         "cost": "400 gp",
-        "AC": "14 + Dex modifier (max 2)",
+        "AC": {"base": 14, "modifier": null, "bonus": 0},
         "strengthPrequisite": 0,
         "stealthDisadvantage": false,
         "weight": "20 lb"
@@ -66,7 +66,7 @@
         "name": "Half plate",
         "armorType": "Medium",
         "cost": "750 gp",
-        "AC": "15 + Dex modifier (max 2)",
+        "AC": {"base": 15, "modifier": null, "bonus": 0},
         "strengthPrequisite": 0,
         "stealthDisadvantage": true,
         "weight": "40 lb"
@@ -75,7 +75,7 @@
         "name": "Ring mail",
         "armorType": "Heavy",
         "cost": "30 gp",
-        "AC": "14",
+        "AC": {"base": 14, "modifier": null, "bonus": 0},
         "strengthPrequisite": 0,
         "stealthDisadvantage": true,
         "weight": "40 lb"
@@ -84,7 +84,7 @@
         "name": "Chain mail",
         "armorType": "Heavy",
         "cost": "75 gp",
-        "AC": "16",
+        "AC": {"base": 16, "modifier": null, "bonus": 0},
         "strengthPrequisite": 13,
         "stealthDisadvantage": true,
         "weight": "55 lb"
@@ -93,7 +93,7 @@
         "name": "Splint",
         "armorType": "Heavy",
         "cost": "200 gp",
-        "AC": "17",
+        "AC": {"base": 17, "modifier": null, "bonus": 0},
         "strengthPrequisite": 15,
         "stealthDisadvantage": true,
         "weight": "60 lb"
@@ -102,7 +102,7 @@
         "name": "Plate",
         "armorType": "Heavy",
         "cost": "1500 gp",
-        "AC": "18",
+        "AC": {"base": 18, "modifier": null, "bonus": 0},
         "strengthPrequisite": 15,
         "stealthDisadvantage": true,
         "weight": "65 lb"
@@ -111,7 +111,7 @@
         "name": "Shield",
         "armorType": "Shield",
         "cost": "10 gp",
-        "AC": "+2",
+        "AC": {"base": 10, "modifier": null, "bonus": 0},
         "strengthPrequisite": 0,
         "stealthDisadvantage": false,
         "weight": "6 lb"
@@ -120,7 +120,7 @@
         "name": "Barding, padded",
         "armorType": "Barding",
         "cost": "20 gp",
-        "AC": "11 + Dex modifier",
+        "AC": {"base": 11, "modifier": null, "bonus": 0},
         "strengthPrequisite": 0,
         "stealthDisadvantage": true,
         "weight": "16 lb"
@@ -129,7 +129,7 @@
         "name": "Barding, leather",
         "armorType": "Barding",
         "cost": "40 gp",
-        "AC": "11 + Dex modifier",
+        "AC": {"base": 11, "modifier": null, "bonus": 0},
         "strengthPrequisite": 0,
         "stealthDisadvantage": false,
         "weight": "20 lb"
@@ -138,7 +138,7 @@
         "name": "Barding, studded leather",
         "armorType": "Barding",
         "cost": "180 gp",
-        "AC": "12 + Dex modifier",
+        "AC": {"base": 12, "modifier": null, "bonus": 0},
         "strengthPrequisite": 0,
         "stealthDisadvantage": false,
         "weight": "26 lb"
@@ -147,7 +147,7 @@
         "name": "Barding, hide",
         "armorType": "Barding",
         "cost": "40 gp",
-        "AC": "12 + Dex modifier (max 2)",
+        "AC": {"base": 12, "modifier": 2, "bonus": 0},
         "strengthPrequisite": 0,
         "stealthDisadvantage": false,
         "weight": "24 lb"
@@ -156,7 +156,7 @@
         "name": "Barding, chain shirt",
         "armorType": "Barding",
         "cost": "200 gp",
-        "AC": "13 + Dex modifier (max 2)",
+        "AC": {"base": 13, "modifier": 2, "bonus": 0},
         "strengthPrequisite": 0,
         "stealthDisadvantage": false,
         "weight": "40 lb"
@@ -165,7 +165,7 @@
         "name": "Barding, scale mail",
         "armorType": "Barding",
         "cost": "200 gp",
-        "AC": "14 + Dex modifier (max 2)",
+        "AC": {"base": 14, "modifier": 2, "bonus": 0},
         "strengthPrequisite": 0,
         "stealthDisadvantage": true,
         "weight": "90 lb"
@@ -174,7 +174,7 @@
         "name": "Barding, breastplate",
         "armorType": "Barding",
         "cost": "1600 gp",
-        "AC": "14 + Dex modifier (max 2)",
+        "AC": {"base": 14, "modifier": 2, "bonus": 0},
         "strengthPrequisite": 0,
         "stealthDisadvantage": false,
         "weight": "40 lb"
@@ -183,7 +183,7 @@
         "name": "Barding, half plate",
         "armorType": "Barding",
         "cost": "3000 gp",
-        "AC": "15 + Dex modifier (max 2)",
+        "AC": {"base": 15, "modifier": 2, "bonus": 0},
         "strengthPrequisite": 0,
         "stealthDisadvantage": true,
         "weight": "80 lb"
@@ -192,7 +192,7 @@
         "name": "Barding, ring mail",
         "armorType": "Barding",
         "cost": "120 gp",
-        "AC": "14",
+        "AC": {"base": 14, "modifier": null, "bonus": 0},
         "strengthPrequisite": 0,
         "stealthDisadvantage": true,
         "weight": "80 lb"
@@ -201,7 +201,7 @@
         "name": "Barding, chain mail",
         "armorType": "Barding",
         "cost": "300 gp",
-        "AC": "16",
+        "AC": {"base": 16, "modifier": null, "bonus": 0},
         "strengthPrequisite": 13,
         "stealthDisadvantage": true,
         "weight": "110 lb"
@@ -210,7 +210,7 @@
         "name": "Barding, splint",
         "armorType": "Barding",
         "cost": "800 gp",
-        "AC": "17",
+        "AC": {"base": 17, "modifier": null, "bonus": 0},
         "strengthPrequisite": 15,
         "stealthDisadvantage": true,
         "weight": "120 lb"
@@ -219,7 +219,7 @@
         "name": "Barding, plate",
         "armorType": "Barding",
         "cost": "6000 gp",
-        "AC": "18",
+        "AC": {"base": 18, "modifier": null, "bonus": 0},
         "strengthPrequisite": 15,
         "stealthDisadvantage": true,
         "weight": "130 lb"

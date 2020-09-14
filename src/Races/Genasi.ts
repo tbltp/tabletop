@@ -44,8 +44,8 @@ export class FireGenasi extends Genasi {
     }
 
     abilitiesAtLevels = {
-        "level1": this.level1,
-        "level3": this.level3
+        "1": this.level1,
+        "3": this.level3
     }
 
     level1(pc: PlayerCharacter) { 
@@ -56,7 +56,7 @@ export class FireGenasi extends Genasi {
 
     level3(pc: PlayerCharacter) { 
         let ispell: ISpell = Spells["BURNING HANDS"];
-        const spell = {...ispell, spellcastingAbility: "Constitution"};
+        const spell = {...ispell, spellcastingAbility: "constitution"};
         pc.spells["0"].push(spell);
     }
 }

@@ -1,13 +1,12 @@
 import { PlayerClass, LevelingParams, SpellSlotFactory } from './PlayerClass';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
-import {ISpell, Spell, ResourceTrait } from '../Base/Interfaces';
-import * as ClassTraits from '../../Assets/ClassTraits.json';
-import * as Spells from '../../Assets/Spells.json';
+import { ResourceTrait } from '../Base/Interfaces';
 import { ClericArchetype } from './Archetypes';
+import * as SpellList from '../../Assets/SpellList.json'
 
 export class Cleric extends PlayerClass {
 
-    constructor(skillProficiencies: string[], weapons: string[], clericParams: LevelingParams, equipmentPack: string){ 
+    constructor(skillProficiencies: string[], weapons: string[], armor: string[], clericParams: LevelingParams, equipmentPack: string){ 
         super(
             "Cleric",
             [],
@@ -15,14 +14,22 @@ export class Cleric extends PlayerClass {
             ["Simple"],
             ["Light", "Medium", "Shield"],
             [],
-            [],
-            [],
+            weapons,
+            armor,
             [],
             [],
             clericParams,
             "d8",
-            ["Wisdom", "Charisma"]
+            8,
+            ["wisdom", "charisma"]
         );
+
+        this.equipmentPack = equipmentPack;
+
+        for(let level in this.abilitiesAtLevels) {   
+            const func: Function = this.abilitiesAtLevels[level];
+            this.abilitiesAtLevels[level] = func.bind(this);
+        }
     }
 
     clericDomain: string;
@@ -50,8 +57,9 @@ export class Cleric extends PlayerClass {
     }
 
     /** TODO:
-     * ADD SPELL SLOTS
      * FIGURE OUT HOW TO REPRESENT NUMBER OF PREPARED SPELLS.
+     * HOLY SYMBOL IN INVENTORY - NOT A REAL ITEM
+     * PRIESTS PACK CONTAINS NOT REAL ITEMS
      */
 
     pushClericFeatures(pc: PlayerCharacter, level: string) {
@@ -59,7 +67,7 @@ export class Cleric extends PlayerClass {
     }
 
     level1(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addSpells(params.spellSelection, "wisdom");
+        pc.addSpells([...params.spellSelection, ...SpellList["Cleric"]["1"]], "wisdom");
         const level1Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(1, 2);
         pc.addResourceTraits(level1Slots);
         // cleric domain
@@ -68,9 +76,9 @@ export class Cleric extends PlayerClass {
     }
 
     level2(pc: PlayerCharacter, params: LevelingParams): void {
-        SpellSlotFactory.findPlayerSpellSlots(pc, 1).resourceMax++;
+        SpellSlotFactory.findPlayerSpellSlots(pc, 1).resourceMax.value++;
         // channel divinity
-        const channelDivinity: ResourceTrait = {title: "Channel Divinity", description: "Number of times you can use a Channel Divinity ability.", resourceMax: 1}; 
+        const channelDivinity: ResourceTrait = {title: "Channel Divinity", description: "Number of times you can use a Channel Divinity ability.", resourceMax: {value: 1} }; 
         pc.addResourceTraits(channelDivinity);
         // cleric domain
         ClericArchetype.archetypeHelper[this.clericDomain]["2"](pc, params);
@@ -78,14 +86,14 @@ export class Cleric extends PlayerClass {
     }
 
     level3(pc: PlayerCharacter, params: LevelingParams): void {
-        SpellSlotFactory.findPlayerSpellSlots(pc, 1).resourceMax++;
+        SpellSlotFactory.findPlayerSpellSlots(pc, 1).resourceMax.value++;
         const level2Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(2, 2);
         pc.addResourceTraits(level2Slots);
     }
     
     level4(pc: PlayerCharacter, params: LevelingParams): void {
         pc.addSpells(params.spellSelection, "wisdom");
-        SpellSlotFactory.findPlayerSpellSlots(pc, 2).resourceMax++;
+        SpellSlotFactory.findPlayerSpellSlots(pc, 2).resourceMax.value++;
         pc.improveAbilityScores(params.abilityScoreImprovement);
     }
 
@@ -97,7 +105,7 @@ export class Cleric extends PlayerClass {
     }
 
     level6(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.findResourceTraitByName("Channel Divinity").resourceMax++;
+        pc.findResourceTraitByName("Channel Divinity").resourceMax.value++;
         ClericArchetype.archetypeHelper[this.clericDomain]["6"](pc, params);
     }
 
@@ -150,7 +158,7 @@ export class Cleric extends PlayerClass {
     }
 
     level18(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.findResourceTraitByName("Channel Divinity").resourceMax++;
+        pc.findResourceTraitByName("Channel Divinity").resourceMax.value++;
     }
 
     level19(pc: PlayerCharacter, params: LevelingParams): void {

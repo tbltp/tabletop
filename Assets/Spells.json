@@ -1618,8 +1618,8 @@
     "ritual": false,
     "spellAttack": false
   },
-  "DETECT MACIC": {
-    "name": "Detect Macic",
+  "DETECT MAGIC": {
+    "name": "Detect Magic",
     "description": "For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic, and you learn its school of magic, if any. The spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.",
     "school": "divination",
     "castTime": "1 action",
@@ -3490,8 +3490,8 @@
     "ritual": false,
     "spellAttack": false
   },
-  "LICGHT": {
-    "name": "Licght",
+  "LIGHT": {
+    "name": "Light",
     "description": "You touch one object that is no larger than 10 feet in any dimension. Until the spell ends, the object sheds bright light in a 20-foot radius and dim light for an additional 20 feet. The light can be colored as you like. Completely covering the object with something opaque blocks the light. The spell ends if you cast it again or dismiss it as an action. If you target an object held or worn by a hostile creature, that creature must succeed on a Dexterity saving throw to avoid the spell.",
     "school": "evocation",
     "castTime": "1 action",
@@ -4599,8 +4599,8 @@
     "ritual": false,
     "spellAttack": false
   },
-  "PROTECTION FROM EVIL AND GOOP": {
-    "name": "Protection From Evil And Goop",
+  "PROTECTION FROM EVIL AND GOOD": {
+    "name": "Protection From Evil And Good",
     "description": "Until the spell ends, one willing creature you touch is protected against certain types of creatures: aberrations, celestials, elementals, fey, fiends, and undead. The protection grants several benefits. Creatures of those types have disadvantage on attack rolls against the target. The target also can't be charmed, frightened, or possessed by them. If the target is already charmed, frightened, or possessed by such a creature, the target has advantage on any new saving throw against the relevant effect.",
     "school": "abjuration",
     "castTime": "1 action",

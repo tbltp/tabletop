@@ -1,4 +1,4 @@
-import {Inventory, Trait, ResourceTrait, ScalingTrait, Spell } from './Interfaces';
+import {Inventory, Trait, ResourceTrait, Spell } from './Interfaces';
 
 export abstract class BaseCharacter {
     
@@ -15,12 +15,12 @@ export abstract class BaseCharacter {
         this.proficiencyBonus = Math.floor((this.totalLevel + 7) / 4);
 
         this.baseStats = {
-            "initiativeBonus": {base: 0, ability: this.abilityScores["dexterity"], bonus: 0},
-            "baseArmorClass": {base: 10, ability: this.abilityScores["dexterity"], bonus: 0},
-            "hpMax": {base: 8, ability: this.abilityScores["constitution"], bonus: 0},
-            "passivePerception": {base: 10, ability: this.abilityScores["wisdom"], bonus: 0},
-            "passiveInvestigation": {base: 10, ability: this.abilityScores["intelligence"], bonus: 0},
-            "passiveInsight": {base: 10, ability: this.abilityScores["wisdom"], bonus: 0}
+            "initiativeBonus": {base: 0, modifier: this.abilityScores["dexterity"].modifier, bonus: 0},
+            "baseArmorClass": {base: 10, modifier: this.abilityScores["dexterity"].modifier, bonus: 0},
+            "hpMax": {base: undefined, modifier: this.abilityScores["constitution"].modifier, bonus: 0},
+            "passivePerception": {base: 10, modifier: this.abilityScores["wisdom"].modifier, bonus: 0},
+            "passiveInvestigation": {base: 10, modifier: this.abilityScores["intelligence"].modifier, bonus: 0},
+            "passiveInsight": {base: 10, modifier: this.abilityScores["wisdom"].modifier, bonus: 0}
         }
         
         this.skills = {
@@ -48,7 +48,7 @@ export abstract class BaseCharacter {
     // Base Stats
     totalLevel: number = 1;
     proficiencyBonus: number;
-    baseStats: {[key: string]: {base: number, ability: BaseAbility, bonus: number}};
+    baseStats: {[key: string]: {base: number, modifier: {value: number}, bonus: number}};
     speed: number;
     size: string;
 
@@ -74,14 +74,13 @@ export abstract class BaseCharacter {
     skills: {[key: string]: Skill};
 
     // Traits (Class Features, Racial Traits, Feats)
-    traits: { armorProficiencies: string[], weaponProficiencies: string[], toolProficiencies: string[], languages: Trait[], features: Trait[], resources: ResourceTrait[], scalingEffects: ScalingTrait[] } = {
+    traits: { armorProficiencies: string[], weaponProficiencies: string[], toolProficiencies: string[], languages: Trait[], features: Trait[], resources: ResourceTrait[] } = {
         armorProficiencies: [], 
         weaponProficiencies: [], 
         toolProficiencies: [], 
         languages: [], 
         features: [], 
-        resources: [],
-        scalingEffects: []
+        resources: []
     };
 
 
@@ -99,59 +98,22 @@ export abstract class BaseCharacter {
         "9": []
     };
 
+    
     // Obtain total modifier
     public getSkillTotal(skill: string): number {
         return  this.skills[skill].bonus * (this.skills[skill].expertise ? 2 : 1) + 
-            this.skills[skill].modifier;
+            this.skills[skill].modifier.value;
     } 
 
-    // Base Stats Getters
-    get initiativeBonus(): number {
-        return this.retrieveStatVal('initiativeBonus');
-    }
-
-    get baseArmorClass(): number {
-        return this.retrieveStatVal('baseArmorClass');
-    }
-
-    get hpMax(): number {
-        return this.retrieveStatVal('hpMax');
-    }
-
-    get passivePerception(): number {
-        return this.retrieveStatVal('passivePerception');
-    }
-
-    get passiveInvestigation(): number {
-        return this.retrieveStatVal('passiveInvestigation');
-    }
-
-    get passiveInsight(): number {
-        return this.retrieveStatVal('passiveInsight');
-    }
-
-    // Private method for retrieving values of base stats
-    private retrieveStatVal(stat: string) {
-
-        const bstat = this.baseStats[stat];
-        //Disgusting.  I hate passive checks
-        if(stat.startsWith('passive')) {
-
-            const skillName = stat.replace('passive', '');
-            return bstat.base + bstat.ability.modifier + 
-                bstat.ability.skills[skillName].bonus + bstat.bonus;
-        }
-        return bstat.base + bstat.ability.modifier + bstat.bonus;
-    }
-
+   
 }
 
-class BaseAbility {
+export class BaseAbility {
     constructor(name: string, score: number, skills: string[]) {
         this.name = name;
         this.score = score;
         this.scoreMax = 20;
-        this.modifier = Math.floor((this.score - 10) / 2);
+        this.modifier = { value: Math.floor((this.score - 10) / 2) };
 
         for(const skill of skills){
             this.skills[skill] = { 
@@ -167,20 +129,20 @@ class BaseAbility {
     name: string;
     score: number;
     scoreMax: number;
-    modifier: number;
+    modifier: {value: number};
     savingThrowProficiency: boolean = false;
     skills: {[key:string]: Skill} = {};
 
     update(bonus: number) {
         this.score = this.score + bonus > this.scoreMax ? this.scoreMax: this.score + bonus;
-        this.modifier = Math.floor((this.score - 10) / 2);
-        for(const skill in this.skills) { this.skills[skill].modifier = this.modifier; }
+        this.modifier.value = Math.floor((this.score - 10) / 2);
+        // for(const skill in this.skills) { this.skills[skill].modifier = this.modifier; }
     }
 }
 
 interface Skill {
     readonly ability: string;
-    modifier: number;
+    modifier: {value: number};
     proficient: boolean;
     expertise: boolean;
     bonus: number;

@@ -6,7 +6,7 @@ import * as Spells from '../../Assets/Spells.json';
 import * as ClassTraits from '../../Assets/ClassTraits.json';
 
 
-
+/*
 describe('PlayerCharacter', () => {
 
     let pc: PlayerCharacter;
@@ -110,3 +110,4 @@ describe('PlayerCharacter', () => {
         ).toBeTruthy();
     });
 });
+*/

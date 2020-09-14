@@ -21,8 +21,14 @@ import { PlayerClass } from './src/Classes/PlayerClass';
 
 
 
+
+
+
+/*
+
+
 const pc = new PlayerCharacter(12,12,12,12,12,12);
-const bdclass = new Bard([], [], [], "", {
+const bdclass = new Bard([], [], [], "", "", {
     isNoInput: false,
     spellSelection: [
         "VICIOUS MOCKERY",
@@ -81,7 +87,7 @@ console.log(pc.spells);
 console.log(pc.traits);
 
 
-
+*/
 
 /*
 const pc = new PlayerCharacter(12,12,12,12,12,12);

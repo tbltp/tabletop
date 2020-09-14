@@ -11,6 +11,7 @@ import { LevelingParams, PlayerClass } from '../../src/Classes/PlayerClass';
 const BarbarianTraits = ClassTraits["BARBARIAN"];
 const BarbarianArchetypeTraits = ArchetypeTraits["BARBARIAN"];
 
+/*
 describe('Barbarian Class', () => {
 
     let pc: PlayerCharacter;
@@ -719,3 +720,4 @@ describe('Barbarian Class', () => {
         });
     });
 });
+*/
