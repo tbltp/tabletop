@@ -67,7 +67,7 @@ export class PlayerCharacter extends BaseCharacter {
     }
 
     addScalingTraits(...scalTraits: ScalingTrait[]): void {
-        this.traits.scalingEffects.push(...scalTraits);
+        // this.traits.scalingEffects.push(...scalTraits);
     }
 
     addSpells(spellList: string[], spellcastingAbility: string): void {

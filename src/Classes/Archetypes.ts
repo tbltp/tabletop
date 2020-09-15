@@ -560,7 +560,13 @@ export class DruidArchetype extends Archetype {
     }
 }
 
-export class FighterArchetype extends Archetype { }
+export class FighterArchetype extends Archetype {
+    static archetypeHelper = {
+        "CHAMPION": {},
+        "BATTLE MASTER": {},
+        "ELDRITCH KNIGHT": {}
+    }
+}
 
 export class MonkArchetype extends Archetype { }
 

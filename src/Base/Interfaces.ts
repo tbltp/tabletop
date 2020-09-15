@@ -1,5 +1,3 @@
-import { BaseAbility } from './BaseCharacter';
-
 export interface Inventory {
     weapons: Weapon[];
     armor: Armor[];

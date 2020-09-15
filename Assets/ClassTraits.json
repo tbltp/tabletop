@@ -212,15 +212,35 @@
         }
     },
     "FIGHTER": {
-        "1": {},
-        "2": {},
+        "1": {
+            "SECOND WIND": {
+                "title": "",
+                "description": ""
+            }
+        },
+        "2": {
+            "ACTION SURGE": {
+                "title": "",
+                "description": ""
+            }
+        },
         "3": {},
         "4": {},
-        "5": {},
+        "5": {
+            "EXTRA ATTACK": {
+                "title": "",
+                "description": ""
+            }
+        },
         "6": {},
         "7": {},
         "8": {},
-        "9": {},
+        "9": {
+            "INDOMITABLE": {
+                "title": "",
+                "description": ""
+            }
+        },
         "10": {},
         "11": {},
         "12": {},
