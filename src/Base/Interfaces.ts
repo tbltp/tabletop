@@ -55,11 +55,11 @@ export interface Trait {
 
 export interface ResourceTrait extends Trait {
     /**Spell slots are just special resource traits with no additional properties */
-    
     resourceMax?: {value: number};
     proficiency?: boolean;
     bonus?: number;
     dice?: string;
+    requiredRoll?: number;
 }
 
 export interface ScalingTrait extends Trait {
