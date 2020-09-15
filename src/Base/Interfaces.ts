@@ -59,7 +59,6 @@ export interface ResourceTrait extends Trait {
     proficiency?: boolean;
     bonus?: number;
     dice?: string;
-    requiredRoll?: number;
 }
 
 export interface ScalingTrait extends Trait {

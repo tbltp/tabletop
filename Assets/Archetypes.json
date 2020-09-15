@@ -13,19 +13,19 @@
                 "6": {
                     "MINDLESS RAGE": {
                         "title": "Mindless Rage",
-                        "description": "Beginning at 6th level, you can't be charmed or frightened while raging. If you are charmed or frightened when you enter your rage, the effect is suspended for the duration of the rage."
+                        "description": "You can't be charmed or frightened while raging. If you are charmed or frightened when you enter your rage, the effect is suspended for the duration of the rage."
                     }
                 },
                 "10": {
                     "INTIMIDATING PRESENCE": {
                         "title": "Intimidating Presence",
-                        "description": "Beginning at 10th level, you can use your action to frighten someone with your menacing presence. When you do so, choose one creature that you can see within 30 feet of you. If the creature can see or hear you, it must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier) or be frightened of you until the end of your next turn. On subsequent turns, you can use your action to extend the duration of this effect on the frightened creature until the end of your next turn. This effect ends if the creature ends its turn out of line of sight or more than 60 feet away from you. If the creature succeeds on its saving throw, you cant use this feature on that creature again for 24 hours."
+                        "description": "You can use your action to frighten someone with your menacing presence. When you do so, choose one creature that you can see within 30 feet of you. If the creature can see or hear you, it must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier) or be frightened of you until the end of your next turn. On subsequent turns, you can use your action to extend the duration of this effect on the frightened creature until the end of your next turn. This effect ends if the creature ends its turn out of line of sight or more than 60 feet away from you. If the creature succeeds on its saving throw, you cant use this feature on that creature again for 24 hours."
                     }
                 },
                 "14": {
                     "RETALIATION": {
                         "title": "Retaliation",
-                        "description": "Starting at 14th level. when you take damage from a creature that is within 5 feet of you. you can use your reaction to make a melee weapon attack against that creature."
+                        "description": "When you take damage from a creature that is within 5 feet of you. you can use your reaction to make a melee weapon attack against that creature."
                     }
                 }
             }
@@ -69,7 +69,7 @@
                 "10": {
                     "SPIRIT WALKER": {
                         "title": "Spirit Walker", 
-                        "description": "At 10th level. vou can cast the commune with nature spell, but only as a ritual. When you do so, a spiritual version of one of the animals you chose for Totem Spirit or Aspect of the Beast appears to you to convey the information you seek."
+                        "description": "You can cast the Commune with Nature spell, but only as a ritual. When you do so, a spiritual version of one of the animals you chose for Totem Spirit or Aspect of the Beast appears to you to convey the information you seek."
                     }
                 },
                 "14": {
@@ -154,7 +154,7 @@
                 "2": {
                     "CHANNEL DIVINITY: THE KNOWLEDGE OF THE AGES": {
                         "title":  "Channel Divinity: The Knowledge of the Ages",
-                        "description": "Starting at 2nd level, you can use your Channel Divinity to tap into a divine well of knowledge. As an action, you choose one skill or tool. For 10 minutes, you have proficiency with the chosen skill or tool."
+                        "description": "You can use your Channel Divinity to tap into a divine well of knowledge. As an action, you choose one skill or tool. For 10 minutes, you have proficiency with the chosen skill or tool."
                     }
                 },
                 "6": {
@@ -166,14 +166,14 @@
                 "8": {
                     "POTENT SPELLCASTING": {
                         "title":  "Potent Spellcasting",
-                        "description": "Starting at 8th level, you add your Wisdom modifier to the damage you deal with any cleric cantrip."
+                        "description": "You add your Wisdom modifier to the damage you deal with any cleric cantrip."
                     }
 
                 },
                 "17": {
                     "VISIONS OF THE PAST": {
                         "title":  "Visions of the Past",
-                        "description": "Starting at 17th level, you can call up visions of the past that relate to an object you hold or your immediate surroundings. You spend at least 1 minute in meditation and prayer, then receive dreamlike, shadowy glimpses of recent events. You can meditate in this way for a number of minutes equal to your Wisdom score and must maintain concentration during that time, as if you were casting a spell.\nOnce you use this feature, you can’t use it again until you finish a short or long rest.\nObject Reading. Holding an object as you meditate, you can see visions of the object’s previous owner. After meditating for 1 minute, you learn how the owner acquired and lost the object, as well as the most recent significant event involving the object and that owner. if the object was owned by another creature in the recent past (within a number of days equal to your Wisdom score), you can spend 1 additional minute for each owner to learn the same information about that creature.\nArea Reading. As you meditate, you see visions of recent events in your immediate vicinity (a room. street, tunnel, clearing, or the like, up to a 50-foot cube), going back a number of days equal to your Wisdom score. For each minute you meditate, you learn about one significant event, beginning with the most recent. Significant events typically involve powerful emotions, such as battles and betrayals, marriages and murders, births and funerals. However, they might also include more mundane events that are nevertheless important in your current situation."
+                        "description": "You can call up visions of the past that relate to an object you hold or your immediate surroundings. You spend at least 1 minute in meditation and prayer, then receive dreamlike, shadowy glimpses of recent events. You can meditate in this way for a number of minutes equal to your Wisdom score and must maintain concentration during that time, as if you were casting a spell.\nOnce you use this feature, you can’t use it again until you finish a short or long rest.\nObject Reading: Holding an object as you meditate, you can see visions of the object’s previous owner. After meditating for 1 minute, you learn how the owner acquired and lost the object, as well as the most recent significant event involving the object and that owner. if the object was owned by another creature in the recent past (within a number of days equal to your Wisdom score), you can spend 1 additional minute for each owner to learn the same information about that creature.\nArea Reading: As you meditate, you see visions of recent events in your immediate vicinity (a room. street, tunnel, clearing, or the like, up to a 50-foot cube), going back a number of days equal to your Wisdom score. For each minute you meditate, you learn about one significant event, beginning with the most recent. Significant events typically involve powerful emotions, such as battles and betrayals, marriages and murders, births and funerals. However, they might also include more mundane events that are nevertheless important in your current situation."
                     }
                 }
             }
@@ -195,7 +195,7 @@
                 "2": {
                     "CHANNEL DIVINITY: PRESERVE LIFE": {
                         "title":  "Channel Divinity: Preserve Life",
-                        "description": "Starting at 2nd level, you can use your Channel Divinity to heal the badly injured.\nAs an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can't use this feature on an undead or a construct."
+                        "description": "You can use your Channel Divinity to heal the badly injured.\nAs an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can't use this feature on an undead or a construct."
                     }
                 },
                 "6": {
@@ -207,14 +207,14 @@
                 "8": {
                     "DIVINE STRIKE": {
                         "title":  "Divine Strike",
-                        "description": "You gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a sweapon attack, you can cause the attack to deal an extra 1d8 radiant damage to the target. When you reach 14th level, the extra damage increases to 2d8."
+                        "description": "You gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 radiant damage to the target. When you reach 14th level, the extra damage increases to 2d8."
                     }
 
                 },
                 "17": {
                     "SUPREME HEALING": {
                         "title":  "Supreme Healer",
-                        "description": "Starting at 17th level, when you would normally roll one or more dice to restore hit points with a spell,you instead use the highest number possible for each die. For example, instead of restoring 2d6 hit points to a creature, you restore 12. "
+                        "description": "When you would normally roll one or more dice to restore hit points with a spell,you instead use the highest number possible for each die. For example, instead of restoring 2d6 hit points to a creature, you restore 12. "
                     }
                 }
             }
@@ -230,19 +230,19 @@
                     },
                     "WARDING FLARE": {
                         "title":  "Warding Flare",
-                        "description": "Also at 1st level, you can interpose divine light between yourself and an attacking enemy. When you are attacked by a creature within 30 feet of you that you can see, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can’t be blinded is immune to this feature.\nYou can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest."
+                        "description": "You can interpose divine light between yourself and an attacking enemy. When you are attacked by a creature within 30 feet of you that you can see, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can’t be blinded is immune to this feature.\nYou can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest."
                     }
                 },
                 "2": {
                     "CHANNEL DIVINITY: RADIANCE OF THE DAWN": {
                         "title":  "Channel Divinity: Radiance of the Dawn",
-                        "description": "Starting at 2nd level, you can use your Channel Divinity to harness sunlight, banishing darkness and dealing radiant damage to your foes.\nAs an action, you present your holy symbol, and any magical darkness within 30 feet of you is dispelled. Additionally, each hostile creature within 30 feet of you must make a Constitution saving throw. A creature takes radiant damage equal to 2d10 + your cleric level on a failed saving throw, and half as much damage on a successful one. A creature that has total cover from you is not affected."
+                        "description": "You can use your Channel Divinity to harness sunlight, banishing darkness and dealing radiant damage to your foes.\nAs an action, you present your holy symbol, and any magical darkness within 30 feet of you is dispelled. Additionally, each hostile creature within 30 feet of you must make a Constitution saving throw. A creature takes radiant damage equal to 2d10 + your cleric level on a failed saving throw, and half as much damage on a successful one. A creature that has total cover from you is not affected."
                     }
                 },
                 "6": {
                     "IMPROVED FLARE": {
                         "title":  "Improved Flare",
-                        "description": "Starting at 6th level. you can also use your Warding Flare feature when a creature that you can see within 30 feet of you attacks a creature other than you."
+                        "description": "You can also use your Warding Flare feature when a creature that you can see within 30 feet of you attacks a creature other than you."
                     }
                 },
                 "8": {
@@ -255,7 +255,7 @@
                 "17": {
                     "CORONA OF LIGHT": {
                         "title":  "Corona of Light",
-                        "description": "Starting at 17th level, you can use your action to activate an aura of sunlight that lasts for 1 minute or until you dismiss it using another action. You emit bright light in a 60-foot radius and dim light 30 feet beyond that. Your enemies in the bright light have disadvantage on saving throws against any spell that deals fire or radiant damage."
+                        "description": "You can use your action to activate an aura of sunlight that lasts for 1 minute or until you dismiss it using another action. You emit bright light in a 60-foot radius and dim light 30 feet beyond that. Your enemies in the bright light have disadvantage on saving throws against any spell that deals fire or radiant damage."
                     }
                 }
             }
@@ -267,36 +267,36 @@
                 "1": {
                     "BONUS PROFICIENCY": {
                         "title": "Bonus Proficiency",
-                        "description": "Also at 1st level, you gain proficiency with heavy armor."
+                        "description": "At 1st level, you gain proficiency with heavy armor."
                     },
                     "ACOLYTE OF NATURE": {
                         "title":  "Acolyte of Nature",
-                        "description": "At 1st level, you learn one druid cantrip of your choice. You also gain proficiency in one of the following skills of your choice: Animal Handling, Nature, or Survival."
+                        "description": "You learn one druid cantrip of your choice. You also gain proficiency in one of the following skills of your choice: Animal Handling, Nature, or Survival."
                     }
                 },
                 "2": {
                     "CHANNEL DIVINITY: CHARM ANIMALS AND PLANTS": {
                         "title":  "Channel Divinity: Charm Animals and Plants",
-                        "description": "Starting at 2nd level, you can use your Channel Divinity to charm animals and plants. As an action, you present your holy symbol and invoke the name of our deity. Each beast or plant creature that can see you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is charmed by you for 1 minute or until it takes damage. While it is charmed by you, it is friendly to you and other creatures you designate."
+                        "description": "You can use your Channel Divinity to charm animals and plants. As an action, you present your holy symbol and invoke the name of our deity. Each beast or plant creature that can see you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is charmed by you for 1 minute or until it takes damage. While it is charmed by you, it is friendly to you and other creatures you designate."
                     }
                 },
                 "6": {
                     "DAMPEN ELEMENTS": {
                         "title":  "Dampen Elements",
-                        "description": "Starting at 6th level, when you or a creature within 30 feet of you takes acid, cold, fire, lightning, or thunder damage, you can use your reaction to grant resistance to the creature against that instance of the damage."
+                        "description": "When you or a creature within 30 feet of you takes acid, cold, fire, lightning, or thunder damage, you can use your reaction to grant resistance to the creature against that instance of the damage."
                     }
                 },
                 "8": {
                     "DIVINE STRIKE": {
                         "title":  "Divine Strike",
-                        "description": "At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 cold, fire, or lightning damage (your choice) to the target. When you reach 14th level, the extra damage increases to 2d8."
+                        "description": "You gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 cold, fire, or lightning damage (your choice) to the target. When you reach 14th level, the extra damage increases to 2d8."
                     }
 
                 },
                 "17": {
                     "MASTER OF NATURE": {
                         "title":  "Master of Nature",
-                        "description": "At 17th level, you gain the ability to command animals and plant creatures. While creatures are charmed by your Charm Animals and Plants feature, you can take a bonus action on your turn to verbally command what each of those creatures will do on its next turn."
+                        "description": "You gain the ability to command animals and plant creatures. While creatures are charmed by your Charm Animals and Plants feature, you can take a bonus action on your turn to verbally command what each of those creatures will do on its next turn."
                     }
                 }
             }
@@ -312,31 +312,31 @@
                     },
                     "WRATH OF THE STORM": {
                         "title":  "Wrath of the Storm",
-                        "description": "Also at 1st level, you can thunderously rebuke attackers. When a creature within 5 feet of you that you can see hits you with an attack, you can use your reaction to cause the creature to make a Dexterity saving throw. The creature takes 2d8 lightning or thunder damage (your choice) on a failed saving throw, and half as much damage on a successful one.\nYou can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest."
+                        "description": "You can thunderously rebuke attackers. When a creature within 5 feet of you that you can see hits you with an attack, you can use your reaction to cause the creature to make a Dexterity saving throw. The creature takes 2d8 lightning or thunder damage (your choice) on a failed saving throw, and half as much damage on a successful one.\nYou can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest."
                     }
                 },
                 "2": {
                     "CHANNEL DIVINITY: DESTRUCTIVE WRATH": {
                         "title":  "Channel Divinity: Destructive Wrath",
-                        "description": "Starting at 2nd level, you can use your Channel Divinity to wield the power of the storm with unchecked ferocity.\nWhen you roll lightning or thunder damage, you can use your Channel Divinity to deal maximum damage, instead of rolling."
+                        "description": "You can use your Channel Divinity to wield the power of the storm with unchecked ferocity.\nWhen you roll lightning or thunder damage, you can use your Channel Divinity to deal maximum damage, instead of rolling."
                     }
                 },
                 "6": {
                     "THUNDERBOLT STRIKE": {
                         "title":  "Thunderbolt Strike",
-                        "description": "At 6th level, when you deal lightning damage to a Large or smaller creature, you can also push it up to 10 feet away from you."
+                        "description": "When you deal lightning damage to a Large or smaller creature, you can also push it up to 10 feet away from you."
                     }
                 },
                 "8": {
                     "DIVINE STRIKE": {
                         "title":  "Divine Strike",
-                        "description": "At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 thunder damage to the target. When you reach 14th level, the extra damage increases to 2d8."
+                        "description": "You gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 thunder damage to the target. When you reach 14th level, the extra damage increases to 2d8."
                     }
                 },
                 "17": {
                     "STORMBORN": {
                         "title":  "Stormborn",
-                        "description": "At 17th level, you have a flying speed equal to your current walking speed whenever you are not underground or indoors."
+                        "description": "You have a flying speed equal to your current walking speed whenever you are not underground or indoors."
                     }
                 }
             }
@@ -348,32 +348,32 @@
                 "1": {
                     "BLESSING OF THE TRICKSTER": {
                         "title":  "Blessing of the Trickster",
-                        "description": "Starting when you choose this domain at Ist level, you can use your action to touch a willing creature other than yourself to give it advantage on Dexterity (Stealth) checks. This blessing lasts for 1 hour or until you use this feature again."
+                        "description": "You can use your action to touch a willing creature other than yourself to give it advantage on Dexterity (Stealth) checks. This blessing lasts for 1 hour or until you use this feature again."
                     }
                 },
                 "2": {
                     "CHANNEL DIVINITY: INVOKE DUPLICITY": {
                         "title":  "Channel Divinity: Invoke Duplicity",
-                        "description": "Starting at 2nd level, you can use your Channel Divinity to create an illusory duplicate of yourself.\nAs an action, you create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell). The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but it must remain within 120 feet of you.\nFor the duration, you can cast spells as though you were in the illusion’s space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how distracting the illusion is to the target."
+                        "description": "You can use your Channel Divinity to create an illusory duplicate of yourself.\nAs an action, you create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell). The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but it must remain within 120 feet of you.\nFor the duration, you can cast spells as though you were in the illusion’s space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how distracting the illusion is to the target."
                     }
                 },
                 "6": {
                     "CHANNEL DIVINITY: CLOAK OF SHADOWS": {
                         "title":  "Channel Divinity: Cloak of Shadows",
-                        "description": "Starting at 6th level, you can use your Channel Divinity to vanish.\nAs an action, you become invisible until the end of your next turn. You become visible if you attack or cast a spell."
+                        "description": "You can use your Channel Divinity to vanish.\nAs an action, you become invisible until the end of your next turn. You become visible if you attack or cast a spell."
                     }
                 },
                 "8": {
                     "DIVINE STRIKE": {
                         "title":  "Divine Strike",
-                        "description": "At 8th level, you gain the ability to infuse your weapon strikes with poison—a gift from your deity. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 poison damage to the target. When you reach 14th level. the extra damage increases to 2d8."
+                        "description": "You gain the ability to infuse your weapon strikes with poison—a gift from your deity. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 poison damage to the target. When you reach 14th level. the extra damage increases to 2d8."
                     }
 
                 },
                 "17": {
                     "IMPROVE DUPLICITY": {
                         "title":  "Improve Duplicity",
-                        "description": "At 17th level, you can create up to four duplicates of yourself, instead of one, when you use Invoke Duplicity. As a bonus action on your turn, you can move any number of them up to 30 feet, to a maximum range of 120 feet."
+                        "description": "You can create up to four duplicates of yourself, instead of one, when you use Invoke Duplicity. As a bonus action on your turn, you can move any number of them up to 30 feet, to a maximum range of 120 feet."
                     }
                 }
             }
@@ -383,38 +383,38 @@
             "description": "War has many manifestations. It can make heroes of ordinary people. It can be desperate and horrific, with acts of crulety and cowardice eclipsing isntances of excellence and courage. In either case, the gods of war watch over warriors and reward them for their great deeds. The clerics of such gods excel in battle, inspiring others to fight the good fight or offering acts of violence as prayers. Gods of war include champions of honor and chivalry (such as Torm, Heironeous, and Kiri-Jolith) as well as gods of destruction and pillage (such as Erythnul, the Fury, Gruumash, and Ares) and gods of conquest and domnation (such as Bane, Hextor, and Maglubiyet). Other war gods (such as Tempus, Nike, and Nuada) take  amore netural stance, promoting war in all its manifestations and supporting warriors in any circumstance.",
             "features": {
                 "1": {
-                    "BONUS PROFICIENCY": {
-                        "title": "Bonus Proficiency",
+                    "BONUS PROFICIENCIES": {
+                        "title": "Bonus Proficiencies",
                         "description": "At 1st level, you gain proficiency with martial weapons and heavy armor."    
                     },
                     "WAR PRIEST": {
                         "title":  "War Priest",
-                        "description": "From 1st level, your god delivers bolts of inspiration to you while you are engaged in battle. hen you use the Attack action, you can make one weapon attack as a bonus action. You can use this feature a number of times qual to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest."
+                        "description": "Your god delivers bolts of inspiration to you while you are engaged in battle. hen you use the Attack action, you can make one weapon attack as a bonus action. You can use this feature a number of times qual to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest."
                     }
                 },
                 "2": {
                     "CHANNEL DIVINITY: GUIDED STRIKE": {
                         "title":  "Channel Divinity: Guided Strike",
-                        "description": "Starting at 2nd level, you can use your Channel Divinity to strike with supernatural accuracy. When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You can make this choice after you see the roll, but before the DM says whether the attack hits or misses."
+                        "description": "You can use your Channel Divinity to strike with supernatural accuracy. When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You can make this choice after you see the roll, but before the DM says whether the attack hits or misses."
                     }
                 },
                 "6": {
                     "CHANNEL DIVINITY: WAR GOD'S BLESSING": {
                         "title":  "Channel Divinity: War God's Blessing",
-                        "description": "At 6th level, when a creature within 30 feet of you makes an attack roll, you can use your reaction to grant that creature a +10 bonus to the roll, using your Channel Divinity. You make this choice after you see the roll, but before the DM says whether the attack hits or misses."
+                        "description": "When a creature within 30 feet of you makes an attack roll, you can use your reaction to grant that creature a +10 bonus to the roll, using your Channel Divinity. You make this choice after you see the roll, but before the DM says whether the attack hits or misses."
                     }
                 },
                 "8": {
                     "DIVINE STRIKE": {
                         "title":  "Divine Strike",
-                        "description": "At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creatur with a weapon attack, you can cause the attack to deal an extra 1d8 damage of the sametype dealt by the weapon to the target. When you reach 14th level, the extra damage increases to 2d8."
+                        "description": "You gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 damage of the sametype dealt by the weapon to the target. When you reach 14th level, the extra damage increases to 2d8."
                     }
 
                 },
                 "17": {
                     "AVATAR OF BATTLE": {
                         "title":  "Avatar of Battle",
-                        "description": "At 17th level, you gain resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons. "
+                        "description": "You gain resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons. "
                     }
                 }
             }

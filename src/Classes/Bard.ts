@@ -71,7 +71,7 @@ export class Bard extends PlayerClass {
     level1(pc: PlayerCharacter, params: BardLevelingParams): void {
         pc.addSpells(params.spellSelection, "charisma");
         const level1Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(1, 2);
-        const bardicInspiration: ResourceTrait = {title: "Bardic Inspiration", description: "Number of times you can give Bardic Inspiration. Dice is Bardic Inspiration die.", resourceMax: pc.abilityScores.charisma.modifier, dice: '1d6'}; 
+        const bardicInspiration: ResourceTrait = {title: "Bardic Inspiration", description: "Number of times you can give Bardic Inspiration per long rest. Dice is Bardic Inspiration die.", resourceMax: pc.abilityScores.charisma.modifier, dice: '1d6'}; 
         pc.addResourceTraits(level1Slots, bardicInspiration);
         this.pushBardFeatures(pc, "1");  
     }
@@ -79,7 +79,7 @@ export class Bard extends PlayerClass {
     level2(pc: PlayerCharacter, params: BardLevelingParams): void {
         pc.replaceSpells(params.spellReplacements, "charisma");
         pc.addSpells(params.spellSelection, "charisma");
-        const songOfRest: ScalingTrait = {title: "Song Of Rest", description: "Dice used for Song of Rest", dice: '1d6'}; 
+        const songOfRest: ScalingTrait = {title: "Song Of Rest", description: "Dice used for Song of Rest.", dice: '1d6'}; 
         pc.addResourceTraits(songOfRest);
         
         // Jack of All Trades

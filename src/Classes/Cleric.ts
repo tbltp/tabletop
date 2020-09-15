@@ -149,7 +149,7 @@ export class Cleric extends PlayerClass {
         pc.addSpells(params.spellSelection, "wisdom");
         SpellSlotFactory.findPlayerSpellSlots(pc, 5).resourceMax.value++;
         // divine intervention
-        const divineIntervention: ResourceTrait = { title: "Divine Intervention", description: "Number of times your deity can intervene through a successful Divine Intervention. (Once per 7 days and a long rest)", resourceMax: {value: 1}, requiredRoll: 10 }; 
+        const divineIntervention: ResourceTrait = { title: "Divine Intervention", description: "Number of times your deity can intervene through a successful Divine Intervention. (Once per 7 days and a long rest)", resourceMax: {value: 1} }; 
         pc.addResourceTraits(divineIntervention);
         this.pushClericFeatures(pc, "10");
     }
@@ -159,41 +159,33 @@ export class Cleric extends PlayerClass {
         pc.addResourceTraits(level6Slots);
         // destroy undead
         pc.findScalingTraitByName("Destroy Undead").challengeRating++;
-        // divine intervention
-        pc.findResourceTraitByName("Divine Intervention").requiredRoll++;
     }
 
     level12(pc: PlayerCharacter, params: LevelingParams): void {
         pc.improveAbilityScores(params.abilityScoreImprovement);
-        // divine intervention
-        pc.findResourceTraitByName("Divine Intervention").requiredRoll++;
     }
 
     level13(pc: PlayerCharacter, params: LevelingParams): void {
         const level7Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(7, 1);    
         pc.addResourceTraits(level7Slots);   
-        // divine intervention
-        pc.findResourceTraitByName("Divine Intervention").requiredRoll++;
     }
 
     level14(pc: PlayerCharacter, params: LevelingParams): void {
+        // divine strike improvement where applicable
+        if(!["KNOWLEDGE", "LIGHT"].includes(this.clericDomain)) {
+            pc.findScalingTraitByName("Divine Strike").dice = "2d8";
+        }
         // destroy undead
         pc.findScalingTraitByName("Destroy Undead").challengeRating++;
-        // divine intervention
-        pc.findResourceTraitByName("Divine Intervention").requiredRoll++;
     }
 
     level15(pc: PlayerCharacter, params: LevelingParams): void {
         const level8Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(8, 1);    
         pc.addResourceTraits(level8Slots);
-        // divine intervention
-        pc.findResourceTraitByName("Divine Intervention").requiredRoll++;
     }
 
     level16(pc: PlayerCharacter, params: LevelingParams): void {
         pc.improveAbilityScores(params.abilityScoreImprovement);
-        // divine intervention
-        pc.findResourceTraitByName("Divine Intervention").requiredRoll++;
     }
 
     level17(pc: PlayerCharacter, params: LevelingParams): void {
@@ -201,29 +193,22 @@ export class Cleric extends PlayerClass {
         pc.addResourceTraits(level9Slots);
         // destroy undead
         pc.findScalingTraitByName("Destroy Undead").challengeRating++;
+        // divine domain
         ClericArchetype.archetypeHelper[this.clericDomain]["17"](pc, params);
-        // divine intervention
-        pc.findResourceTraitByName("Divine Intervention").requiredRoll++;
     }
 
     level18(pc: PlayerCharacter, params: LevelingParams): void {
         SpellSlotFactory.findPlayerSpellSlots(pc, 5).resourceMax.value++;
         // channel divinity
         pc.findResourceTraitByName("Channel Divinity").resourceMax.value++;
-        // divine intervention
-        pc.findResourceTraitByName("Divine Intervention").requiredRoll++;
     }
 
     level19(pc: PlayerCharacter, params: LevelingParams): void {
         SpellSlotFactory.findPlayerSpellSlots(pc, 6).resourceMax.value++;
         pc.improveAbilityScores(params.abilityScoreImprovement);
-        // divine intervention
-        pc.findResourceTraitByName("Divine Intervention").requiredRoll++;
     }
 
     level20(pc: PlayerCharacter, params: LevelingParams): void {
         SpellSlotFactory.findPlayerSpellSlots(pc, 7).resourceMax.value++;
-        // divine intervention
-        pc.findResourceTraitByName("Divine Intervention").requiredRoll = 0;
     }   
 }

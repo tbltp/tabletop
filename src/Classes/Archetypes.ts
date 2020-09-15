@@ -1,6 +1,6 @@
 import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { LevelingParams } from "./PlayerClass";
-import { Trait } from "../Base/Interfaces";
+import { LevelingParams, PlayerClass } from "./PlayerClass";
+import { Trait, ResourceTrait, ScalingTrait } from "../Base/Interfaces";
 import * as Archetypes from "../../Assets/Archetypes.json";
 import * as Spells from "../../Assets/Spells.json";
 import * as Languages from "../../Assets/Languages.json";
@@ -212,20 +212,19 @@ export class ClericArchetype extends Archetype {
     
     static knowledge1(pc: PlayerCharacter, params: LevelingParams) {
         pc.addSpells(["COMMAND", "IDENTIFY"], "wisdom");
-        pc.addFeatures(ClericArchetype.getFeature("KNOWLEDGE","1", "BLESSINGS OF KNOWLEDGE"));
         
-        // Blessings of Knowledge
+        // Languages
         pc.traits.languages.push(Languages[params.archetypeSelection[0].options[0]], Languages[params.archetypeSelection[0].options[1]])  // Languages, How do we pass this?
-
-        for(const skill  of params.proficiencySelection){
-            // Skill  Proficiencies / Expertise
+        for(const skill of params.proficiencySelection){
+            // Skill Proficiencies / Expertise
             pc.skills[skill].proficient = true;
             pc.skills[skill].expertise = true;
         } 
+        pc.addFeatures({...ClericArchetype.getFeature("KNOWLEDGE","1", "BLESSINGS OF KNOWLEDGE"), choices: [...params.archetypeSelection[0].options, ...params.proficiencySelection] });
     }
 
     static knowledge2(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("KNOWLEDGE", "2", "CHANNEL DIVINITY: KNOWLEDGE OF THE AGES"))
+        pc.addFeatures(ClericArchetype.getFeature("KNOWLEDGE", "2", "CHANNEL DIVINITY: KNOWLEDGE OF THE AGES"));
     }
 
     static knowledge3(pc: PlayerCharacter, params: LevelingParams) {
@@ -237,7 +236,7 @@ export class ClericArchetype extends Archetype {
     }
 
     static knowledge6(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("KNOWLEDGE", "6", "CHANNEL DIVINITY: READ THOUGHTS"))
+        pc.addFeatures(ClericArchetype.getFeature("KNOWLEDGE", "6", "CHANNEL DIVINITY: READ THOUGHTS"));
     }
 
     static knowledge7(pc: PlayerCharacter, params: LevelingParams) {
@@ -245,7 +244,7 @@ export class ClericArchetype extends Archetype {
     }
 
     static knowledge8(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("KNOWLEDGE", "8", "POTENT SPELLCASTING"))
+        pc.addFeatures(ClericArchetype.getFeature("KNOWLEDGE", "8", "POTENT SPELLCASTING"));
     }
 
     static knowledge9(pc: PlayerCharacter, params: LevelingParams) {
@@ -253,13 +252,16 @@ export class ClericArchetype extends Archetype {
     }
     
     static knowledge17(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("KNOWLEDGE", "17", "VISION OF THE PAST"))
+        pc.addFeatures(ClericArchetype.getFeature("KNOWLEDGE", "17", "VISION OF THE PAST"));
     }
 
     static life1(pc: PlayerCharacter, params: LevelingParams) {
         pc.addSpells(["BLESS","CURE WOUNDS"], "wisdom");
-        pc.addFeatures(ClericArchetype.getFeature("LIFE", "1", "DISCIPLE OF LIFE"))
         pc.traits.armorProficiencies.push("Heavy");
+        pc.addFeatures(
+            ClericArchetype.getFeature("LIFE", "1", "DISCIPLE OF LIFE"),
+            ClericArchetype.getFeature("LIFE", "1", "BONUS PROFICIENCY")
+        );
     }
 
     static life2(pc: PlayerCharacter, params: LevelingParams) {
@@ -275,7 +277,7 @@ export class ClericArchetype extends Archetype {
     }
 
     static life6(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("LIFE", "6", "BLESSED HEALER"))
+        pc.addFeatures(ClericArchetype.getFeature("LIFE", "6", "BLESSED HEALER"));
     }
 
     static life7(pc: PlayerCharacter, params: LevelingParams) {
@@ -283,7 +285,9 @@ export class ClericArchetype extends Archetype {
     }
     
     static life8(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("LIFE", "8", "DIVINE STRIKE"))
+        const divineStrike: ScalingTrait = { title: "Divine Strike", description: "Dice used for Divine Strike (radiant damage).", dice: "1d8"};
+        pc.addScalingTraits(divineStrike);
+        pc.addFeatures(ClericArchetype.getFeature("LIFE", "8", "DIVINE STRIKE"));
     }
 
     static life9(pc: PlayerCharacter, params: LevelingParams) {
@@ -291,16 +295,22 @@ export class ClericArchetype extends Archetype {
     }
 
     static life17(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("LIFE", "17", "SUPREME HEALING"))
+        pc.addFeatures(ClericArchetype.getFeature("LIFE", "17", "SUPREME HEALING"));
     }
 
     static light1(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["BURNING HANDS","FAERIE FIRE", "LIGHT"], "wisdom")
-        pc.addFeatures(ClericArchetype.getFeature("LIGHT", "1", "WARDING FLARE"))
+        pc.addSpells(["BURNING HANDS","FAERIE FIRE", "LIGHT"], "wisdom");
+        // warding flare needs to have a minimum of one use available
+        const wardingFlare: ResourceTrait = { title: "Warding Flare", description: "Number of times you can use Warding Flare per long rest.", resourceMax: pc.abilityScores.wisdom.modifier };
+        pc.addResourceTraits(wardingFlare);
+        pc.addFeatures(
+            ClericArchetype.getFeature("LIGHT", "1", "WARDING FLARE"),
+            ClericArchetype.getFeature("LIGHT", "1", "BONUS CANTRIP")
+        );
     }
 
     static light2(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("LIGHT", "2", "CHANNEL DIVINITY: RADIANCE OF THE DAWN"))
+        pc.addFeatures(ClericArchetype.getFeature("LIGHT", "2", "CHANNEL DIVINITY: RADIANCE OF THE DAWN"));
     }
 
     static light3(pc: PlayerCharacter, params: LevelingParams) {
@@ -312,7 +322,7 @@ export class ClericArchetype extends Archetype {
     }
 
     static light6(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("LIGHT", "6", "IMPROVED FLARE"))
+        pc.addFeatures(ClericArchetype.getFeature("LIGHT", "6", "IMPROVED FLARE"));
     }
 
     static light7(pc: PlayerCharacter, params: LevelingParams) {
@@ -320,7 +330,7 @@ export class ClericArchetype extends Archetype {
     }
     
     static light8(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("LIGHT", "8", "POTENT SPELLCASTING"))
+        pc.addFeatures(ClericArchetype.getFeature("LIGHT", "8", "POTENT SPELLCASTING"));
     }
 
     static light9(pc: PlayerCharacter, params: LevelingParams) {
@@ -328,17 +338,20 @@ export class ClericArchetype extends Archetype {
     }
 
     static light17(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("LIGHT", "17", "CORONA OF LIGHT"))
+        pc.addFeatures(ClericArchetype.getFeature("LIGHT", "17", "CORONA OF LIGHT"));
     }
 
     static nature1(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("NATURE", "1", "ACOLYTE OF NATURE"));
         pc.addSpells([...params.spellSelection, "ANIMAL FRIENDSHIP", "SPEAK WITH ANIMALS"], "wisdom");
         pc.traits.armorProficiencies.push("Heavy");
+        pc.addFeatures(
+            {...ClericArchetype.getFeature("NATURE", "1", "ACOLYTE OF NATURE"), choices: params.spellSelection },
+            ClericArchetype.getFeature("NATURE", "1", "BONUS PROFICIENCY")
+        );
     }
 
     static nature2(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("NATURE", "2", "CHANNEL DIVINITY: CHARM ANIMALS AND PLANTS"))
+        pc.addFeatures(ClericArchetype.getFeature("NATURE", "2", "CHANNEL DIVINITY: CHARM ANIMALS AND PLANTS"));
     }
 
     static nature3(pc: PlayerCharacter, params: LevelingParams) {
@@ -350,7 +363,7 @@ export class ClericArchetype extends Archetype {
     }
 
     static nature6(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("NATURE", "6", "DAMPEN ELEMENTS"))
+        pc.addFeatures(ClericArchetype.getFeature("NATURE", "6", "DAMPEN ELEMENTS"));
     }
 
     static nature7(pc: PlayerCharacter, params: LevelingParams) {
@@ -358,7 +371,9 @@ export class ClericArchetype extends Archetype {
     }
     
     static nature8(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("NATURE", "8", "DIVINE STRIKE"))
+        const divineStrike: ScalingTrait = { title: "Divine Strike", description: "Dice used for Divine Strike (cold, fire, or lightning damage).", dice: "1d8"};
+        pc.addScalingTraits(divineStrike);
+        pc.addFeatures(ClericArchetype.getFeature("NATURE", "8", "DIVINE STRIKE"));
     }
 
     static nature9(pc: PlayerCharacter, params: LevelingParams) {
@@ -366,13 +381,19 @@ export class ClericArchetype extends Archetype {
     }
 
     static nature17(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("NATURE", "17", "MASTER OF NATURE"))
+        pc.addFeatures(ClericArchetype.getFeature("NATURE", "17", "MASTER OF NATURE"));
     }
     
     static tempest1(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["FOG CLOUD","THUNDERWAVE"], "wisdom")
-        pc.addFeatures(ClericArchetype.getFeature("TEMPEST", "1", "WRATH OF THE STORM"))
+        pc.addSpells(["FOG CLOUD","THUNDERWAVE"], "wisdom");
+        // wrath of the storm needs to have a minimum of one use available
+        const wrathOfTheStorm: ResourceTrait = { title: "Wrath of the Storm", description: "Number of times you can use Wrath of the Storm per long rest.", resourceMax: pc.abilityScores.wisdom.modifier };
+        pc.addResourceTraits(wrathOfTheStorm);
         pc.traits.armorProficiencies.push("Heavy");
+        pc.addFeatures(
+            ClericArchetype.getFeature("TEMPEST", "1", "WRATH OF THE STORM"),
+            ClericArchetype.getFeature("TEMPEST", "1", "BONUS PROFICIENCY")
+        );
     }
 
     static tempest2(pc: PlayerCharacter, params: LevelingParams) {
@@ -396,6 +417,8 @@ export class ClericArchetype extends Archetype {
     }
     
     static tempest8(pc: PlayerCharacter, params: LevelingParams) {
+        const divineStrike: ScalingTrait = { title: "Divine Strike", description: "Dice used for Divine Strike (thunder damage).", dice: "1d8"};
+        pc.addScalingTraits(divineStrike);
         pc.addFeatures(ClericArchetype.getFeature("TEMPEST", "8", "DIVINE STRIKE"))
     }
 
@@ -404,16 +427,16 @@ export class ClericArchetype extends Archetype {
     }
 
     static tempest17(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("TEMPEST", "17", "STORMBORN"))
+        pc.addFeatures(ClericArchetype.getFeature("TEMPEST", "17", "STORMBORN"));
     }
 
     static trickery1(pc: PlayerCharacter, params: LevelingParams) {
         pc.addSpells(["CHARM PERSON","DISGUISE SELF"], "wisdom")
-        pc.addFeatures(ClericArchetype.getFeature("TRICKERY", "1", "BLESSING OF THE TRICKSTER"))
+        pc.addFeatures(ClericArchetype.getFeature("TRICKERY", "1", "BLESSING OF THE TRICKSTER"));
     }
 
     static trickery2(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("TRICKERY", "2", "CHANNEL DIVINITY: INVOKE DUPLICITY"))
+        pc.addFeatures(ClericArchetype.getFeature("TRICKERY", "2", "CHANNEL DIVINITY: INVOKE DUPLICITY"));
     }
 
     static trickery3(pc: PlayerCharacter, params: LevelingParams) {
@@ -425,7 +448,7 @@ export class ClericArchetype extends Archetype {
     }
 
     static trickery6(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("TRICKERY", "6", "CHANNEL DIVINITY: CLOAK OF SHADOWS"))
+        pc.addFeatures(ClericArchetype.getFeature("TRICKERY", "6", "CHANNEL DIVINITY: CLOAK OF SHADOWS"));
     }
 
     static trickery7(pc: PlayerCharacter, params: LevelingParams) {
@@ -433,7 +456,9 @@ export class ClericArchetype extends Archetype {
     }
     
     static trickery8(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("TRICKERY", "8", "DIVINE STRIKE"))
+        const divineStrike: ScalingTrait = { title: "Divine Strike", description: "Dice used for Divine Strike (poison damage).", dice: "1d8"};
+        pc.addScalingTraits(divineStrike);
+        pc.addFeatures(ClericArchetype.getFeature("TRICKERY", "8", "DIVINE STRIKE"));
     }
 
     static trickery9(pc: PlayerCharacter, params: LevelingParams) {
@@ -441,18 +466,24 @@ export class ClericArchetype extends Archetype {
     }
 
     static trickery17(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("TRICKERY", "17", "IMPROVED DUPLICITY"))
+        pc.addFeatures(ClericArchetype.getFeature("TRICKERY", "17", "IMPROVED DUPLICITY"));
     }
 
     static war1(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["DIVINE FAVOR","SHIELD OF FAITH"], "wisdom")
-        pc.addFeatures(ClericArchetype.getFeature("WAR", "1", "WAR PRIEST"))
+        pc.addSpells(["DIVINE FAVOR","SHIELD OF FAITH"], "wisdom");
+        // war priest needs to have a minimum of one use available
+        const warPriest: ResourceTrait = { title: "War Priest", description: "Number of times you can use War Priest per long rest.", resourceMax: pc.abilityScores.wisdom.modifier };
+        pc.addResourceTraits(warPriest);
         pc.traits.weaponProficiencies.push("Martial");
         pc.traits.armorProficiencies.push("Heavy");
+        pc.addFeatures(
+            ClericArchetype.getFeature("WAR", "1", "WAR PRIEST"),
+            ClericArchetype.getFeature("WAR", "1", "BONUS PROFICIENCIES")
+        );
     }
 
     static war2(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("WAR", "2", "CHANNEL DIVINITY: GUIDED STRIKE"))
+        pc.addFeatures(ClericArchetype.getFeature("WAR", "2", "CHANNEL DIVINITY: GUIDED STRIKE"));
     }
 
     static war3(pc: PlayerCharacter, params: LevelingParams) {
@@ -464,7 +495,7 @@ export class ClericArchetype extends Archetype {
     }
 
     static war6(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("WAR", "6", "CHANNEL DIVINITY: WAR GOD'S BLESSING"))
+        pc.addFeatures(ClericArchetype.getFeature("WAR", "6", "CHANNEL DIVINITY: WAR GOD'S BLESSING"));
     }
 
     static war7(pc: PlayerCharacter, params: LevelingParams) {
@@ -472,7 +503,9 @@ export class ClericArchetype extends Archetype {
     }
     
     static war8(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(ClericArchetype.getFeature("WAR", "8", "DIVINE STRIKE"))
+        const divineStrike: ScalingTrait = { title: "Divine Strike", description: "Dice used for Divine Strike (extra weapon damage).", dice: "1d8"};
+        pc.addScalingTraits(divineStrike);
+        pc.addFeatures(ClericArchetype.getFeature("WAR", "8", "DIVINE STRIKE"));
     }
 
     static war9(pc: PlayerCharacter, params: LevelingParams) {
