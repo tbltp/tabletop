@@ -19,31 +19,12 @@ import { PlayerClass } from './src/Classes/PlayerClass';
 
 
 
+
+
+
+
 const pc = new PlayerCharacter(12,12,12,12,12,12);
 const bdclass = new Bard([], [], [], "", "ENTERTAINER", {
-    isNoInput: false,
-    spellSelection: [
-        "VICIOUS MOCKERY",
-        "DANCING LIGHTS",
-        "CHARM PERSON",
-        "BANE",
-        "HEALING WORD",
-        "THUNDERWAVE"
-    ]
-});
-bdclass.apply(pc);
-console.log(pc.abilityScores.charisma);
-console.log(pc.traits.resources);
-pc.abilityScores.charisma.update(8);
-console.log(pc.abilityScores.charisma);
-console.log(pc.traits.resources);
-
-
-
-
-/*
-const pc = new PlayerCharacter(12,12,12,12,12,12);
-const bdclass = new Bard([], [], [], "", "", {
     isNoInput: false,
     spellSelection: [
         "VICIOUS MOCKERY",
@@ -96,11 +77,11 @@ bdclass.apply(pc);
 for(let i = 2; i <= bardArgs.length; i++) {
     bdclass.abilitiesAtLevels[i](pc, bardArgs[i - 1]);
 }
-console.log(pc.abilityScores);
+console.log(pc.proficiency);
 console.log(pc.skills);
-console.log(pc.spells);
-console.log(pc.traits);
-*/
+pc.proficiency.levelUp(15);
+console.log(pc.proficiency);
+console.log(pc.skills);
 
 
 

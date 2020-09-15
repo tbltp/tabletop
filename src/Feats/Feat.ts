@@ -418,7 +418,7 @@ export class Mobile extends Feat {
 
     public apply(pc: PlayerCharacter) {
         
-        pc.speed += 10;
+        pc.speed.value += 10;
         pc.traits.features.push(this.trait);
     }
 }
@@ -700,7 +700,7 @@ export class Tough extends Feat {  // THIS IMPROVES AT LEVEL - NOT DONE
 
     apply(pc: PlayerCharacter) {
 
-        pc.baseStats['hpMax'].bonus.value += 2 * pc.totalLevel;
+        pc.baseStats['hpMax'].bonus.value += 2 * pc.level.totalLevel;
         pc.traits.features.push(this.trait);
     }
 }

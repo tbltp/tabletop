@@ -24,6 +24,7 @@ export class Bard extends PlayerClass {
 
         this.equipmentPack = equipmentPack;
 
+
         for(let level in this.abilitiesAtLevels) {
             const func: Function = this.abilitiesAtLevels[level];
             this.abilitiesAtLevels[level] = func.bind(this);
@@ -84,7 +85,7 @@ export class Bard extends PlayerClass {
         // Jack of All Trades
         for(let skill of Object.keys(pc.skills)){
             if(!pc.skills[skill].proficient) {
-                pc.skills[skill].bonus = Math.floor(pc.proficiencyBonus / 2);
+                pc.skills[skill].bonus = pc.proficiency.halfBonus;
             }
         }
         SpellSlotFactory.findPlayerSpellSlots(pc, 1).resourceMax.value++;

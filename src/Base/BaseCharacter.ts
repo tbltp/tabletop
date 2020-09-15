@@ -12,7 +12,8 @@ export abstract class BaseCharacter {
             "charisma": new BaseAbility("Cha", cha)
         };
 
-        this.proficiencyBonus = Math.floor((this.totalLevel + 7) / 4);
+        this.proficiency = new BaseProficiency(this.level.totalLevel);
+
 
         this.baseStats = {
             "initiativeBonus": {base: 0, modifier: this.abilityScores["dexterity"].modifier, bonus: {value: 0}},
@@ -46,10 +47,16 @@ export abstract class BaseCharacter {
     }
 
     // Base Stats
-    totalLevel: number = 1;
-    proficiencyBonus: number;
-    baseStats: {[key: string]: {base: number, modifier: {value: number}, bonus: {value: number}}};
-    speed: number;
+    proficiency: BaseProficiency;
+    level: {totalLevel: number } = { totalLevel: 1 };
+    baseStats: {
+        [key: string]: {
+            base: number, 
+            modifier: {value: number}, 
+            bonus: {value: number}
+        }
+    };
+    speed: {value: number} = { value: 0 };
     size: string;
 
     // Base Ability Scores
@@ -126,6 +133,21 @@ export class BaseAbility {
     update(bonus: number) {
         this.score = this.score + bonus > this.scoreMax ? this.scoreMax: this.score + bonus;
         this.modifier.value = Math.floor((this.score - 10) / 2);
+    }
+}
+
+export class BaseProficiency {
+    constructor(level: number) {
+        this.baseBonus = { value: Math.floor((level + 7) / 4)};
+        this.halfBonus = { value: Math.floor(this.baseBonus.value / 2)};
+    }
+
+    baseBonus: { value: number};
+    halfBonus: { value: number };
+
+    levelUp(level: number) {
+        this.baseBonus.value = Math.floor((level + 7) / 4);
+        this.halfBonus.value = Math.floor(this.baseBonus.value / 2);
     }
 }
 

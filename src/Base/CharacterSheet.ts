@@ -14,8 +14,8 @@ class CharacterSheet {
 
     levelUp(params): void {
 
-        const level = this.character.totalLevel + 1
-        this.character.totalLevel = level;
+        const level = this.character.level.totalLevel + 1
+        this.character.level.totalLevel = level;
         this.race.abilitiesAtLevels[level.toString()](this.character);
         //same for every feat
         this.playerClass.abilitiesAtLevels[level.toString()](this.character, params);

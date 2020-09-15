@@ -95,7 +95,7 @@ export interface PCArmorClass {
     name: string, 
     base: number, 
     modifier: {value: number}, 
-    bonus: number
+    bonus: {value: number}
 }
 
 export interface PCAttack {

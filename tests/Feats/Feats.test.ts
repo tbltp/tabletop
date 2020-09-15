@@ -116,9 +116,9 @@ describe('Feats', () => {
     test('Mobile feat increases speed by 10', () => {
 
         let ft: Feat = new Mobile();
-        let initialSpeed = pc.speed;
+        let initialSpeed = pc.speed.value;
         ft.apply(pc);
-        expect(pc.speed).toBe(initialSpeed + 10);
+        expect(pc.speed.value).toBe(initialSpeed + 10);
     });
 
     test('Moderately Armored feat fails to apply without light armor proficiency', () => {

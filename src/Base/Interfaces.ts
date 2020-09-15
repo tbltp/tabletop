@@ -25,7 +25,7 @@ export interface Armor {
     readonly AC: {
         base: number,
         modifier: {value: number}
-        bonus: number
+        bonus: {value: number}
     };
     readonly strengthPrerequisite: number;
     readonly stealthDisadvantage: boolean;
