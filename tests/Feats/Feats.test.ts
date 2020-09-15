@@ -78,7 +78,7 @@ describe('Feats', () => {
         
         let ft: Feat = new Lucky();
         ft.apply(pc);
-        expect(pc.traits.resources[0].resourceMax).toBe(3);
+        expect(pc.traits.resources[0].resourceMax.value).toBe(3);
     });
 
     test('Mage Slayer feat introduces combat changes', () => {

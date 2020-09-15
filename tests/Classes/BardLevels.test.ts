@@ -8,7 +8,7 @@ import * as ClassTraits from "../../Assets/ClassTraits.json";
 
 const BarbarianTraits = ClassTraits["BARBARIAN"];
 
-/*
+
 describe('Bard Class', () => {
 
     let pc: PlayerCharacter;
@@ -118,4 +118,3 @@ describe('Bard Class', () => {
         });
     });
 });
-*/

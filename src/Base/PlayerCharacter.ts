@@ -1,5 +1,5 @@
 import { BaseCharacter, BaseAbility } from './BaseCharacter';
-import { ResourceTrait, Spell, Trait, ITrait } from './Interfaces';
+import { ResourceTrait, Spell, Trait, ScalingTrait } from './Interfaces';
 import * as Spells from '../../Assets/Spells.json';
 
 export class PlayerCharacter extends BaseCharacter {
@@ -15,18 +15,8 @@ export class PlayerCharacter extends BaseCharacter {
     }
 
     hitDie: string;
-    attacks: {
-        name: string,
-        attackBonus: { 
-            ability: {value: number}, 
-            proficient: boolean
-        }, 
-        dice: string, 
-        damageType: string, 
-        damageBonus: {value: number}
-    }[] = [];
-    
-    armorClasses: {name: string, base: number, modifier: {value: number}, bonus: number}[] = [{name: "Base", ...this.baseStats.baseArmorClass}]
+    attacks: PCAttack[] = [];
+    armorClasses: PCArmorClass[] = [ {name: "Base", ...this.baseStats.baseArmorClass} ];
 
     private findTraitByName(traitType: string, name: string): Trait | null {
         const results = this.traits[traitType].filter(trait => trait.title == name);
@@ -46,11 +36,9 @@ export class PlayerCharacter extends BaseCharacter {
         return this.findTraitByName('resources', name) as ResourceTrait;
     }
 
-    /*
     findScalingTraitByName(name: string): ScalingTrait {
         return this.findTraitByName('scalingEffects', name) as ScalingTrait;
     }
-    */
 
     findSpellByName(spellName: string): Spell | null {
         for(let knownSpells of Object.keys(this.spells)) {
@@ -78,11 +66,9 @@ export class PlayerCharacter extends BaseCharacter {
         this.traits.resources.push(...resTraits);
     }
 
-    /*
     addScalingTraits(...scalTraits: ScalingTrait[]): void {
         this.traits.scalingEffects.push(...scalTraits);
     }
-    */
 
     addSpells(spellList: string[], spellcastingAbility: string): void {
         let spells: Spell[] = []
@@ -103,4 +89,23 @@ export class PlayerCharacter extends BaseCharacter {
             this.spells[newSpell.minimumLevel].push(newSpell);
         }
     }
+}
+
+export interface PCArmorClass {
+    name: string, 
+    base: number, 
+    modifier: {value: number}, 
+    bonus: number
+}
+
+export interface PCAttack {
+    name: string,
+    attackBonus: { 
+        ability: {value: number}, 
+        proficient: boolean,
+        itemBonus: {value: number}
+    }, 
+    dice: string, 
+    damageType: string, 
+    damageBonus: {value: number}
 }

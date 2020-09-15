@@ -53,27 +53,20 @@ export interface Trait {
     choices?: string[];
 }
 
-export interface ITrait extends Trait {
-    
-}
-
-export interface ResourceTrait extends ITrait {
+export interface ResourceTrait extends Trait {
     /**Spell slots are just special resource traits with no additional properties */
     
     resourceMax?: {value: number};
     proficiency?: boolean;
-    bonus?: string;
+    bonus?: number;
     dice?: string;
 }
 
-/*
 export interface ScalingTrait extends Trait {
-    bonus?: string;
+    bonus?: number;
     dice?: string;
-    threshold?: string;
+    challengeRating?: number;
 }
-*/
-
 
 export interface ISpell {
     readonly name: string;

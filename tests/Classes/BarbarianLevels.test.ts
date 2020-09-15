@@ -11,7 +11,7 @@ import { LevelingParams, PlayerClass } from '../../src/Classes/PlayerClass';
 const BarbarianTraits = ClassTraits["BARBARIAN"];
 const BarbarianArchetypeTraits = ArchetypeTraits["BARBARIAN"];
 
-/*
+
 describe('Barbarian Class', () => {
 
     let pc: PlayerCharacter;
@@ -231,7 +231,7 @@ describe('Barbarian Class', () => {
 
             test('gets an increase in max Rages to 3', () => {
                 bnClass.abilitiesAtLevels[3](pc, bnArgs[2]);
-                expect(pc.findResourceTraitByName("Rage").resourceMax).toBe(3);
+                expect(pc.findResourceTraitByName("Rage").resourceMax.value).toBe(3);
             });
 
             test('can select the Berserker archetype', () => {
@@ -362,7 +362,7 @@ describe('Barbarian Class', () => {
 
             test('gets an increase in max Rages to 4', () => {
                 PlayerClass.quickClassLevelUp(pc, bnClass, bnArgs, 6);
-                expect(pc.findResourceTraitByName("Rage").resourceMax).toBe(4);
+                expect(pc.findResourceTraitByName("Rage").resourceMax.value).toBe(4);
             });
 
             describe('with Berserker archetype', () => {
@@ -459,12 +459,12 @@ describe('Barbarian Class', () => {
                 expect(pc.findFeatureTraitByName("Brutal Critical")).toBeTruthy();
             });
 
-            test('gains the Brutal Critical resource trait', () => {
-                expect(pc.findResourceTraitByName("Brutal Critical")).toBeTruthy();
+            test('gains the Brutal Critical scaling trait', () => {
+                expect(pc.findScalingTraitByName("Brutal Critical")).toBeTruthy();
             });
 
-            test('gets an increase in Rage bonus damage to +3', () => {
-                expect(pc.findResourceTraitByName("Rage").bonus).toBe("+3");
+            test('gets an increase in Rage bonus damage to 3', () => {
+                expect(pc.findResourceTraitByName("Rage").bonus).toBe(3);
             });
 
         });
@@ -532,7 +532,7 @@ describe('Barbarian Class', () => {
             });
             
             test('gets an increase in max Rages to 5', () => {
-                expect(pc.findResourceTraitByName("Rage").resourceMax).toBe(5);
+                expect(pc.findResourceTraitByName("Rage").resourceMax.value).toBe(5);
             });
 
         });
@@ -544,7 +544,7 @@ describe('Barbarian Class', () => {
             });
 
             test('gets an upgrade to Brutal Critical dice to 2dx', () => {
-                expect(pc.findResourceTraitByName("Brutal Critical").dice).toBe("2dx");
+                expect(pc.findScalingTraitByName("Brutal Critical").dice).toBe("2dx");
             });
 
         });
@@ -639,8 +639,8 @@ describe('Barbarian Class', () => {
                 ).toBeTruthy();
             });
             
-            test('gets an increase in Rage bonus damage to +4', () => {
-                expect(pc.findResourceTraitByName("Rage").bonus).toBe("+4");
+            test('gets an increase in Rage bonus damage to 4', () => {
+                expect(pc.findResourceTraitByName("Rage").bonus).toBe(4);
             });
 
         });
@@ -652,11 +652,11 @@ describe('Barbarian Class', () => {
             });
 
             test('gets an upgrade to Brutal Critical dice to 3dx', () => {
-                expect(pc.findResourceTraitByName("Brutal Critical").dice).toBe("3dx");
+                expect(pc.findScalingTraitByName("Brutal Critical").dice).toBe("3dx");
             });
 
             test('gets an increase in max Rages to 6', () => {
-                expect(pc.findResourceTraitByName("Rage").resourceMax).toBe(6);
+                expect(pc.findResourceTraitByName("Rage").resourceMax.value).toBe(6);
             });
 
         });
@@ -714,10 +714,9 @@ describe('Barbarian Class', () => {
             });
 
             test('sets max Rages to Infinity', () => {
-                expect(pc.findResourceTraitByName("Rage").resourceMax).toBe(Infinity);
+                expect(pc.findResourceTraitByName("Rage").resourceMax.value).toBe(Infinity);
             });
 
         });
     });
 });
-*/

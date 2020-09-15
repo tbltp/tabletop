@@ -1,16 +1,17 @@
 import "jest-extended";
 import { PlayerCharacter } from '../../src/Base/PlayerCharacter';
-import { ResourceTrait } from '../../src/Base/Interfaces';
+import { ResourceTrait, ScalingTrait } from '../../src/Base/Interfaces';
 import * as RacialTraits from '../../Assets/RacialTraits.json';
 import * as Spells from '../../Assets/Spells.json';
 import * as ClassTraits from '../../Assets/ClassTraits.json';
 
 
-/*
+
 describe('PlayerCharacter', () => {
 
     let pc: PlayerCharacter;
-    const rage: ResourceTrait = {title: "Rage", description: "Number of times you can go into a Rage.  Bonus applies to attack damage while in a rage.", resourceMax: 2, bonus: '+2'}; 
+    const rage: ResourceTrait = {title: "Rage", description: "Number of times you can go into a Rage.  Bonus applies to attack damage while in a rage.", resourceMax: {value: 2}, bonus: 2}; 
+    const brutalCritical: ScalingTrait = {title: "Brutal Critical", description: ""}
 
     beforeEach(() => {
         pc = new PlayerCharacter(12,12,12,12,12,12);
@@ -110,4 +111,3 @@ describe('PlayerCharacter', () => {
         ).toBeTruthy();
     });
 });
-*/

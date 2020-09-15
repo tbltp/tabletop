@@ -1,4 +1,4 @@
-import {Inventory, Trait, ResourceTrait, Spell } from './Interfaces';
+import {Inventory, Trait, ResourceTrait, Spell, ScalingTrait } from './Interfaces';
 
 export abstract class BaseCharacter {
     
@@ -74,13 +74,14 @@ export abstract class BaseCharacter {
     skills: {[key: string]: Skill};
 
     // Traits (Class Features, Racial Traits, Feats)
-    traits: { armorProficiencies: string[], weaponProficiencies: string[], toolProficiencies: string[], languages: Trait[], features: Trait[], resources: ResourceTrait[] } = {
+    traits: { armorProficiencies: string[], weaponProficiencies: string[], toolProficiencies: string[], languages: Trait[], features: Trait[], resources: ResourceTrait[], scalingEffects: ScalingTrait[] } = {
         armorProficiencies: [], 
         weaponProficiencies: [], 
         toolProficiencies: [], 
         languages: [], 
         features: [], 
-        resources: []
+        resources: [],
+        scalingEffects: []
     };
 
 

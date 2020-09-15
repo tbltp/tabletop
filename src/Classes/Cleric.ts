@@ -1,6 +1,8 @@
 import { PlayerClass, LevelingParams, SpellSlotFactory } from './PlayerClass';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
-import { ResourceTrait } from '../Base/Interfaces';
+import {ISpell, Spell, ResourceTrait, ScalingTrait } from '../Base/Interfaces';
+import * as ClassTraits from '../../Assets/ClassTraits.json';
+import * as Spells from '../../Assets/Spells.json';
 import { ClericArchetype } from './Archetypes';
 import * as SpellList from '../../Assets/SpellList.json'
 
@@ -100,6 +102,9 @@ export class Cleric extends PlayerClass {
     level5(pc: PlayerCharacter, params: LevelingParams): void {
         const level3Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(3, 2);
         pc.addResourceTraits(level3Slots);
+        // destroy undead
+        const destroyUndead: ScalingTrait = { title: "Destroy Undead", description: "Challenge rating threshold for destroying undead that fail the saving throw against Turn Undead", challengeRating: 0.5 };
+
         this.pushClericFeatures(pc, "5");
         //  Need to figure out how to track destroy undead CR - 1/2 (y)
     }

@@ -322,7 +322,7 @@ export class Lucky extends Feat {
         super();
         this.luckyResource = {
             ...this.trait,
-            resourceMax: 3
+            resourceMax: {value: 3}
         };
     }
 

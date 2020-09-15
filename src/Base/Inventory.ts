@@ -1,4 +1,4 @@
-import { PlayerCharacter } from "./PlayerCharacter";
+import { PlayerCharacter, PCArmorClass, PCAttack } from "./PlayerCharacter";
 import * as Gear from '../../Assets/Gear.json';
 import { Item, Armor, Weapon } from "./Interfaces";
 
@@ -13,7 +13,7 @@ export class Inventory {
         "SCHOLAR": Inventory.scholar
     }
 
-    static burglar(){
+    static burglar(): Item[] {
         const backpack = Gear["BACKPACK"];
         const ballBearings = Gear["BALL BEARINGS (BAG OF 1000)"]
         const bell = Gear["BELL"]
@@ -38,7 +38,7 @@ export class Inventory {
 
         return [backpack, ballBearings, bell, crowbar, hammer, lantern, tinderbox, waterskin, rope, candles, oil, pitons, rations]
     }
-    static diplomat(){
+    static diplomat(): Item[] {
         const chest = Gear["CHEST"]
         const fineClothes = Gear["CLOTHES, FINE"]
         const ink = Gear["INK (1 OUNCE BOTTLE)"]
@@ -59,7 +59,7 @@ export class Inventory {
 
         return [chest, fineClothes, ink, inkPen, lamp, perfume, sealingWax, soap, scrollCase, oil, paper]
     }
-    static dungeoneer(){
+    static dungeoneer(): Item[] {
         const backpack = Gear["BACKPACK"];
         const crowbar = Gear["CROWBAR"]
         const hammer = Gear["HAMMER"]
@@ -75,11 +75,10 @@ export class Inventory {
 
         return [backpack, crowbar, hammer, tinderbox, waterskin, rope, torches, rations]
     }
-    static entertainer(){
+    static entertainer(): Item[] {
         const backpack = Gear["BACKPACK"]
         const bedroll = Gear["BEDROLL"]
         const waterskin = Gear["WATERSKIN"]
-
 
         let candles = Gear["CANDLE"]
         candles.quantity = 5;
@@ -94,7 +93,8 @@ export class Inventory {
 
         return [backpack, bedroll, waterskin, candles, costumes, rations]
     }
-    static explorer(){
+
+    static explorer(): Item[] {
         const backpack = Gear["BACKPACK"]
         const bedroll = Gear["BEDROLL"]
         const messKit = Gear["MESS KIT"]
@@ -110,7 +110,8 @@ export class Inventory {
 
         return [backpack, bedroll, messKit, tinderbox, waterskin, rope, torches, rations]
     }
-    static priest(){
+
+    static priest(): Item[] {
         const backpack = Gear["BACKPACK"]
         const blanket = Gear["BLANKET"]
         const tinderbox = Gear["TINDERBOX"]
@@ -124,7 +125,7 @@ export class Inventory {
 
         return [backpack, blanket, tinderbox, waterskin, rations]
     }
-    static scholar(){
+    static scholar(): Item[] {
         const backpack = Gear["BACKPACK"]
         const book = Gear["BOOK"]
         const ink = Gear["INK (1 OUNCE BOTTLE)"]
@@ -136,30 +137,30 @@ export class Inventory {
         return [backpack, book, ink, inkPen, parchement]
     }
 
-    static acFromArmorType: {[key: string]: (pc: PlayerCharacter, armor: Armor) => {name: string, base: number, modifier: {value: number}, bonus: number } } = {
+    static acFromArmorType: {[key: string]: (pc: PlayerCharacter, armor: Armor) => PCArmorClass} = {
         "Light": Inventory.lightArmor,
         "Medium": Inventory.mediumArmor,
         "Heavy": Inventory.heavyArmor,
         "Shield": Inventory.lightArmor
     }
 
-    static lightArmor(pc: PlayerCharacter, armor: Armor) {
+    static lightArmor(pc: PlayerCharacter, armor: Armor): PCArmorClass  {
         armor.AC.modifier = pc.abilityScores.dexterity.modifier;
         return {name: armor.name, ...armor.AC};
     }
 
-    static mediumArmor(pc: PlayerCharacter, armor: Armor) {
+    static mediumArmor(pc: PlayerCharacter, armor: Armor): PCArmorClass {
         armor.AC.modifier = pc.abilityScores.dexterity.modifier.value > 2 ? {value: 2} : pc.abilityScores.dexterity.modifier;
         return {name: armor.name, ...armor.AC};
     }
 
-    static heavyArmor(pc: PlayerCharacter, armor: Armor) {
+    static heavyArmor(pc: PlayerCharacter, armor: Armor): PCArmorClass {
         return {name: armor.name, ...armor.AC};
     }
 
     // Add Shield
 
-    static buildAttack(pc: PlayerCharacter, weapon: Weapon){
+    static buildAttack(pc: PlayerCharacter, weapon: Weapon): PCAttack {
 
         const proficiencies = pc.traits.weaponProficiencies;
         const weaponType = weapon.weaponType.split(" ");
@@ -175,9 +176,16 @@ export class Inventory {
         else if(weaponType[1] == "Melee") { ability = "strength" }
         else if(weaponType[1] == "Ranged") { ability = "dexterity" } 
 
-        return { name: weapon.name, attackBonus: {ability: pc.abilityScores[ability].modifier, proficient: proficient}, dice: weapon.damage, damageType: weapon.damageType, damageBonus: pc.abilityScores[ability].modifier }
-
-
-        
+        return { 
+            name: weapon.name, 
+            attackBonus: {
+                ability: pc.abilityScores[ability].modifier, 
+                proficient: proficient, 
+                itemBonus: { value: 0 }
+            }, 
+            dice: weapon.damage, 
+            damageType: weapon.damageType, 
+            damageBonus: pc.abilityScores[ability].modifier 
+        };        
     }
 }
