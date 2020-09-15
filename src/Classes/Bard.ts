@@ -1,6 +1,6 @@
 import { PlayerClass, SpellSlotFactory, LevelingParams } from './PlayerClass';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
-import { ResourceTrait } from '../Base/Interfaces';
+import { ResourceTrait, ScalingTrait } from '../Base/Interfaces';
 import { BardArchetype } from './Archetypes';
 
 export class Bard extends PlayerClass {
@@ -78,7 +78,7 @@ export class Bard extends PlayerClass {
     level2(pc: PlayerCharacter, params: BardLevelingParams): void {
         pc.replaceSpells(params.spellReplacements, "charisma");
         pc.addSpells(params.spellSelection, "charisma");
-        const songOfRest: ResourceTrait = {title: "Song Of Rest", description: "Dice used for Song of Rest", resourceMax: {value: Infinity}, dice: '1d6'}; 
+        const songOfRest: ScalingTrait = {title: "Song Of Rest", description: "Dice used for Song of Rest", dice: '1d6'}; 
         pc.addResourceTraits(songOfRest);
         
         // Jack of All Trades
@@ -153,7 +153,7 @@ export class Bard extends PlayerClass {
         const level5Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(5, 1);
         pc.addResourceTraits(level5Slots);
         SpellSlotFactory.findPlayerSpellSlots(pc, 4).resourceMax.value++;
-        pc.findResourceTraitByName("Song of Rest").dice = "1d8";
+        pc.findScalingTraitByName("Song of Rest").dice = "1d8";
     }
 
     level10(pc: PlayerCharacter, params: BardLevelingParams): void {
@@ -187,7 +187,7 @@ export class Bard extends PlayerClass {
         pc.addSpells(params.spellSelection, "charisma");
         const level7Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(7, 1);
         pc.addResourceTraits(level7Slots);
-        pc.findResourceTraitByName("Song of Rest").dice = "1d10";
+        pc.findScalingTraitByName("Song of Rest").dice = "1d10";
     }
 
     level14(pc: PlayerCharacter, params: BardLevelingParams): void {
@@ -217,7 +217,7 @@ export class Bard extends PlayerClass {
         pc.addSpells(params.spellSelection, "charisma");
         const level9Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(9, 1);
         pc.addResourceTraits(level9Slots);
-        pc.findResourceTraitByName("Song of Rest").dice = "1d12";
+        pc.findScalingTraitByName("Song of Rest").dice = "1d12";
     }
 
     level18(pc: PlayerCharacter, params: BardLevelingParams): void {

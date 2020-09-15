@@ -34,7 +34,7 @@ export class Alert extends Feat {
 
     apply(pc: PlayerCharacter) {
 
-        pc.baseStats["initiativeBonus"].bonus += 5;
+        pc.baseStats["initiativeBonus"].bonus.value += 5;
         pc.traits.features.push(this.trait);
     }
 }
@@ -469,8 +469,8 @@ export class Observant extends Feat {
     public apply(pc: PlayerCharacter) {
        
         pc.abilityScores[this.abilityScore].update(1);
-        pc.baseStats['passivePerception'].bonus += 5;
-        pc.baseStats['passiveInvestigation'].bonus += 5;
+        pc.baseStats['passivePerception'].bonus.value += 5;
+        pc.baseStats['passiveInvestigation'].bonus.value += 5;
         this.trait.description += `\n(${this.abilityScore})`
         pc.traits.features.push(this.trait);
     }
@@ -695,12 +695,12 @@ export class Tough extends Feat {  // THIS IMPROVES AT LEVEL - NOT DONE
     }
 
     plusTwoHealth(pc: PlayerCharacter) {
-        pc.baseStats["hpMax"].bonus += 2;
+        pc.baseStats["hpMax"].bonus.value += 2;
     }
 
     apply(pc: PlayerCharacter) {
 
-        pc.baseStats['hpMax'].bonus += 2 * pc.totalLevel;
+        pc.baseStats['hpMax'].bonus.value += 2 * pc.totalLevel;
         pc.traits.features.push(this.trait);
     }
 }

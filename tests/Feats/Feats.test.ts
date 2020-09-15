@@ -185,12 +185,12 @@ describe('Feats', () => {
 
         let pc1: PlayerCharacter = new PlayerCharacter(14, 14, 14, 14, 14, 14);
         let ft: Feat = new Observant('wisdom'); 
-        let initialPerc = pc1.baseStats['passivePerception'].bonus;
-        let initialInv = pc1.baseStats['passiveInvestigation'].bonus;
+        let initialPerc = pc1.baseStats['passivePerception'].bonus.value;
+        let initialInv = pc1.baseStats['passiveInvestigation'].bonus.value;
         ft.apply(pc1);
         expect(
-            pc1.baseStats['passivePerception'].bonus === initialPerc + 5 &&
-            pc1.baseStats['passiveInvestigation'].bonus === initialPerc + 5
+            pc1.baseStats['passivePerception'].bonus.value === initialPerc + 5 &&
+            pc1.baseStats['passiveInvestigation'].bonus.value === initialPerc + 5
         ).toBeTruthy();
     });
 });
