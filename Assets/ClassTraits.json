@@ -3,7 +3,7 @@
         "1": {
             "RAGE": {
                 "title": "Rage", 
-                "description": "In battle, you fight with primal ferocity. On your turn you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing any heavy armor:  - You have advantage on Strength checks and Strength saving throws.  - When you make a melee weapon attack using Strength, yuo gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.  - You have resistance to bludgeoning, piercing, and slashing damage.  If you are able to cast spells, you can't cast them or concentrate on them while raging.  Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on youor turn as a bonus action.  Once you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again."
+                "description": "In battle, you fight with primal ferocity. On your turn you can enter a rage as a bonus action.\nWhile raging, you gain the following benefits if you aren't wearing any heavy armor:\n- You have advantage on Strength checks and Strength saving throws.\n- When you make a melee weapon attack using Strength, yuo gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.\n- You have resistance to bludgeoning, piercing, and slashing damage.\nIf you are able to cast spells, you can't cast them or concentrate on them while raging.\nYour rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on youor turn as a bonus action.\nOnce you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again."
             },
             "UNARMORED DEFENSE": {
                 "title": "Unarmored Defense",
@@ -17,7 +17,7 @@
             },
             "DANGER SENSE": {
                 "title": "Danger Sense", 
-                "description": "You gain an uncanny sense of when things nearby aren't as they should be, giving you an edge when you dodge away from danger.   You have advantage on Dexterity saving throws againist effects that you can see, such as traps and spells. To gain this benefit, you can't be blinded, deafened, or incapacitated."
+                "description": "You gain an uncanny sense of when things nearby aren't as they should be, giving you an edge when you dodge away from danger.\nYou have advantage on Dexterity saving throws againist effects that you can see, such as traps and spells. To gain this benefit, you can't be blinded, deafened, or incapacitated."
             }
         },
         "5": {
@@ -33,19 +33,19 @@
         "7": {
             "FERAL INSTINCT": {
                 "title": "Feral Instinct", 
-                "description": "Your instincts are so honed that you have advantage on initiative rolls.  Additionally, if you are surprised at the beginning of combat and aren't incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn."
+                "description": "Your instincts are so honed that you have advantage on initiative rolls.\nAdditionally, if you are surprised at the beginning of combat and aren't incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn."
             }
         },
         "9": {
             "BRUTAL CRITICAL": {
                 "title": "Brutal Critical", 
-                "description": "You can roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack."
+                "description": "You can roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack.\nThis increases to two additional dice at 13th level and three additional dice at 17th level."
             }
         },
         "11": {
             "RELENTLESS RAGE": {
                 "title": "Relentless Rage", 
-                "description": "Your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you're raging and don't die outright, yuo can make a DC 10 Coonstitution saving throw. If you succeed, you can drop to 1 hit point instead.  Each time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10."
+                "description": "Your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you're raging and don't die outright, you can make a DC 10 Constitution saving throw. If you succeed, you can drop to 1 hit point instead.\nEach time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10."
             }
         },
         "15": {
@@ -71,7 +71,7 @@
         "1": {
             "BARDIC INSPIRATION": {
                 "title": "Bardic Inspiration",
-                "description": "You can inspire others through stirring words or music. To do so, you use a bonus action your turn to choose one creature other than  yourself within 60 feat of you who can hear you. That creature gains one Bardic Inspiration die, a d6.  Once within the next ten minutes, the creature can roll the die and add the number rolled to one ability check, attack  roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide before the DM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time.  You can use this feature a number of times equal to your Charisma modifier (minimum of once). You regain any expended uses when you finish a long rest."
+                "description": "You can inspire others through stirring words or music. To do so, you use a bonus action your turn to choose one creature other than yourself within 60 feat of you who can hear you. That creature gains one Bardic Inspiration die, a d6.\nOnce within the next ten minutes, the creature can roll the die and add the number rolled to one ability check, attack  roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide before the DM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time.\nYou can use this feature a number of times equal to your Charisma modifier (minimum of once). You regain any expended uses when you finish a long rest.\nYour Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level."
             }
         },
         "2": {
@@ -81,13 +81,13 @@
             },
             "SONG OF REST": {
                 "title": "Song of Rest",
-                "description": "You can use soothing music or oration to help revitalize your wounded allies during a short rest. If you or any friendly creatures who can hear your performance regain hit points at the end of the short rest, each of those creatures regains an extra 1d6 hit points."
+                "description": "You can use soothing music or oration to help revitalize your wounded allies during a short rest. If you or any friendly creatures who can hear your performance regain hit points at the end of the short rest, each of those creatures regains an extra 1d6 hit points.\nThe extra hit points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at 13th level, and to 1d12 at 17th level."
             }
         },
         "3": {
             "EXPERTISE": {
                 "title": "Expertise",
-                "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any abiility check you make that uses either of the chosen proficiencies. At 10th level, you choose another two skill proficiencies to gain this benefit."
+                "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any abiility check you make that uses either of the chosen proficiencies.\nAt 10th level, you choose another two skill proficiencies to gain this benefit."
             }
         },
         "5": {
@@ -99,13 +99,13 @@
         "6": {
             "COUNTERCHARM": {
                 "title": "Countercharm",
-                "description": "You gain the ability to use musical notes or words of power to  disrupt mind-influencing effects. As an action,  you can start a performance that lasts until the end of your next turn. During that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against being frightened or charmed. A creature must be able to hear you to gain this benefit.  The performance ends early if you are incapacitated or silenced if you voluntarily end it (no action requred)."
+                "description": "You gain the ability to use musical notes or words of power to disrupt mind-influencing effects. As an action, you can start a performance that lasts until the end of your next turn. During that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against being frightened or charmed. A creature must be able to hear you to gain this benefit.  The performance ends early if you are incapacitated or silenced if you voluntarily end it (no action requred)."
             }
         },
         "10": {
             "MAGICAL SECRETS": {
                 "title": "Magical Secrets",
-                "description": "You have plundered magical knowledge from a wide spectrum of disciplines.  Choose two spells from any class, including this one. A spell you choose mustt be of a level you can cast, as shown on the Bard table, or a cantrip.  The chosen spells count as a bard spells for you and are included in the number in the Spells Known column of the Bard table.  You learn two additional spells from any class at 14th level and again at 18th level."
+                "description": "You have plundered magical knowledge from a wide spectrum of disciplines.  Choose two spells from any class, including this one. A spell you choose mustt be of a level you can cast, as shown on the Bard table, or a cantrip.\nThe chosen spells count as a bard spells for you and are included in the number in the Spells Known column of the Bard table.\nYou learn two additional spells from any class at 14th level and again at 18th level."
             }
         },
         "20": {
@@ -116,8 +116,11 @@
         }
     },
     "CLERIC": {
-        "1": {},
         "2": {
+            "CHANNEL DIVINITY": {
+                "title": "Channel Divinity", 
+                "description": "You gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description.\nWhen you use your Channel Divinity, you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again.\nSome Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your cleric spell save DC.\nBeginning at 6th level, you can use your Channel Divinity twice between rests, and beginning at 18th level you can use it three times between rests. When you finish a short or long rest, you regain your expended uses."
+            },
             "CHANNEL DIVINITY: TURN UNDEAD": {
                 "title": "Channel Divinity: Turn Undead",
                 "description": "As an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.\nA turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also cant take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action."
@@ -126,32 +129,13 @@
         "5": {
             "DESTROY UNDEAD": {
                 "title":  "Destroy Undead",
-                "description": "Starting at 5th level, when an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed if its challenge rating is at or below a certain threshold, as shown in the Destroy Undead table."
+                "description": "When an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed if its challenge rating is at or below a certain threshold, as shown in the Destroy Undead table."
             }
         },
-        "6": {},
-        "7": {},
-        "8": {},
-        "9": {},
         "10": {
             "DIVINE INTERVENTION": {
-                "title": "",
-                "description": ""
-            }
-        },
-        "11": {},
-        "12": {},
-        "13": {},
-        "14": {},
-        "15": {},
-        "16": {},
-        "17": {},
-        "18": {},
-        "19": {},
-        "20": {
-            "DIVINE INTERVENTION IMPROVEMENT": {
-                "title": "",
-                "description": ""
+                "title": "Divine Intervention",
+                "description": "You can call on your deity to intervene on your behalf when your need is great.\nImploring your deity’s aid requires you to use your action. Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your cleric level, your deity intervenes. The DM chooses the nature of the intervention; the effect of any cleric spell or cleric domain spell would be appropriate.\nIf your deity intervenes, you can't use this feature again for 7 days. Otherwise, you can use it again after you finish a long rest.\nAt 20th level, your call for intervention succeeds automatically, no roll required."
             }
         }
     },

@@ -72,7 +72,7 @@ export class Cleric extends PlayerClass {
         pc.addSpells([...params.spellSelection, ...SpellList["Cleric"]["1"]], "wisdom");
         const level1Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(1, 2);
         pc.addResourceTraits(level1Slots);
-        // cleric domain
+        // divine domain 
         this.clericDomain = params.archetypeSelection[0].archetype;
         ClericArchetype.archetypeHelper[this.clericDomain]["1"](pc, params);
     }
@@ -82,7 +82,7 @@ export class Cleric extends PlayerClass {
         // channel divinity
         const channelDivinity: ResourceTrait = {title: "Channel Divinity", description: "Number of times you can use a Channel Divinity ability.", resourceMax: {value: 1} }; 
         pc.addResourceTraits(channelDivinity);
-        // cleric domain
+        // divine domain
         ClericArchetype.archetypeHelper[this.clericDomain]["2"](pc, params);
         this.pushClericFeatures(pc, "2");
     }
@@ -91,9 +91,12 @@ export class Cleric extends PlayerClass {
         SpellSlotFactory.findPlayerSpellSlots(pc, 1).resourceMax.value++;
         const level2Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(2, 2);
         pc.addResourceTraits(level2Slots);
+        // divine domain spells
+        ClericArchetype.archetypeHelper[this.clericDomain]["3"](pc, params);
     }
     
     level4(pc: PlayerCharacter, params: LevelingParams): void {
+        // cantrip
         pc.addSpells(params.spellSelection, "wisdom");
         SpellSlotFactory.findPlayerSpellSlots(pc, 2).resourceMax.value++;
         pc.improveAbilityScores(params.abilityScoreImprovement);
@@ -104,53 +107,81 @@ export class Cleric extends PlayerClass {
         pc.addResourceTraits(level3Slots);
         // destroy undead
         const destroyUndead: ScalingTrait = { title: "Destroy Undead", description: "Challenge rating threshold for destroying undead that fail the saving throw against Turn Undead", challengeRating: 0.5 };
-
+        // divine domain spells
+        ClericArchetype.archetypeHelper[this.clericDomain]["5"](pc, params);
         this.pushClericFeatures(pc, "5");
-        //  Need to figure out how to track destroy undead CR - 1/2 (y)
     }
 
     level6(pc: PlayerCharacter, params: LevelingParams): void {
+        SpellSlotFactory.findPlayerSpellSlots(pc, 3).resourceMax.value++;
+        // channel divinity
         pc.findResourceTraitByName("Channel Divinity").resourceMax.value++;
+        // divine domain
         ClericArchetype.archetypeHelper[this.clericDomain]["6"](pc, params);
     }
 
     level7(pc: PlayerCharacter, params: LevelingParams): void {
-        
+        const level4Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(4, 1);
+        pc.addResourceTraits(level4Slots);
+        // divine domain spells
+        ClericArchetype.archetypeHelper[this.clericDomain]["7"](pc, params);
     }
 
     level8(pc: PlayerCharacter, params: LevelingParams): void {
         pc.improveAbilityScores(params.abilityScoreImprovement);
-        // Update Destroy Undead -  CR 1
+        SpellSlotFactory.findPlayerSpellSlots(pc, 4).resourceMax.value++;
+        // destroy undead
+        pc.findScalingTraitByName("Destroy Undead").challengeRating = 1;
+        // divine domain
         ClericArchetype.archetypeHelper[this.clericDomain]["8"](pc, params);
     }
 
     level9(pc: PlayerCharacter, params: LevelingParams): void {
-        
+        SpellSlotFactory.findPlayerSpellSlots(pc, 4).resourceMax.value++;
+        const level5Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(5, 1);
+        pc.addResourceTraits(level5Slots);
+        // divine domain spells
+        ClericArchetype.archetypeHelper[this.clericDomain]["9"](pc, params);
     }
 
     level10(pc: PlayerCharacter, params: LevelingParams): void {
+        // cantrip
         pc.addSpells(params.spellSelection, "wisdom");
+        SpellSlotFactory.findPlayerSpellSlots(pc, 5).resourceMax.value++;
+        // divine intervention
+        const divineIntervention: ResourceTrait = { title: "Divine Intervention", description: "Number of times your deity can intervene through a successful Divine Intervention. (Once per 7 days and a long rest)", resourceMax: {value: 1} }; 
+        pc.addResourceTraits(divineIntervention);
+        this.pushClericFeatures(pc, "10");
     }
 
     level11(pc: PlayerCharacter, params: LevelingParams): void {
-        // Update Destroy Undead - CR 2
+        const level6Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(6, 1);
+        pc.addResourceTraits(level6Slots);
+        // destroy undead
+        pc.findScalingTraitByName("Destroy Undead").challengeRating++;
     }
 
     level12(pc: PlayerCharacter, params: LevelingParams): void {
         pc.improveAbilityScores(params.abilityScoreImprovement);
-
     }
 
     level13(pc: PlayerCharacter, params: LevelingParams): void {
-        
+        const level7Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(7, 1);    
+        pc.addResourceTraits(level7Slots);   
     }
 
     level14(pc: PlayerCharacter, params: LevelingParams): void {
-        // Update Destroy Undead - CR 3
+        // divine strike improvement where applicable
+        if(!["KNOWLEDGE", "LIGHT"].includes(this.clericDomain)) {
+            pc.findScalingTraitByName("Divine Strike").dice = "2d8";
+        }
+        // destroy undead
+        pc.findScalingTraitByName("Destroy Undead").challengeRating++;
     }
 
     level15(pc: PlayerCharacter, params: LevelingParams): void {
-       
+        const level8Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(8, 1);    
+        pc.addResourceTraits(level8Slots);
     }
 
     level16(pc: PlayerCharacter, params: LevelingParams): void {
@@ -158,20 +189,26 @@ export class Cleric extends PlayerClass {
     }
 
     level17(pc: PlayerCharacter, params: LevelingParams): void {
-        // Update Destroy Undead - CR 4
+        const level9Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(9, 1);    
+        pc.addResourceTraits(level9Slots);
+        // destroy undead
+        pc.findScalingTraitByName("Destroy Undead").challengeRating++;
+        // divine domain
         ClericArchetype.archetypeHelper[this.clericDomain]["17"](pc, params);
     }
 
     level18(pc: PlayerCharacter, params: LevelingParams): void {
+        SpellSlotFactory.findPlayerSpellSlots(pc, 5).resourceMax.value++;
+        // channel divinity
         pc.findResourceTraitByName("Channel Divinity").resourceMax.value++;
     }
 
     level19(pc: PlayerCharacter, params: LevelingParams): void {
+        SpellSlotFactory.findPlayerSpellSlots(pc, 6).resourceMax.value++;
         pc.improveAbilityScores(params.abilityScoreImprovement);
     }
 
     level20(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushClericFeatures(pc, "20");
-    }
-    
+        SpellSlotFactory.findPlayerSpellSlots(pc, 7).resourceMax.value++;
+    }   
 }
