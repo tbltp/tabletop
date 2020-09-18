@@ -1,12 +1,12 @@
 import 'jest-extended';
 
 import { PlayerCharacter } from "../../src/Base/PlayerCharacter";
-import { BarbarianArchetype } from "../../src/Classes/Archetypes";
-import { Barbarian } from "../../src/Classes/Barbarian";
+import { BardArchetype } from "../../src/Classes/Archetypes";
+import { Bard, BardLevelingParams } from "../../src/Classes/Bard";
 
 import * as ClassTraits from "../../Assets/ClassTraits.json";
 
-const BarbarianTraits = ClassTraits["BARBARIAN"];
+const BardTraits = ClassTraits["BARD"];
 
 
 describe('Bard Class', () => {
@@ -19,27 +19,70 @@ describe('Bard Class', () => {
 
     describe('on initialization (Lvl 1):', () => {
 
-        let bnClass: Barbarian;
+        let bdClass: Bard;
 
-        test('gains  traits', () => {
+        beforeEach(() => {
+            bdClass = new Bard([], [], [], "", "ENTERTAINER", {
+                isNoInput: false, 
+                spellSelection: [
+                    "VICIOUS MOCKERY",
+                    "DANCING LIGHTS",
+                    "CHARM PERSON",
+                    "BANE",
+                    "HEALING WORD",
+                    "THUNDERWAVE"
+                ]
+            });
+            bdClass.apply(pc);
+        })
 
-            bnClass = new Barbarian([], []);
-            bnClass.apply(pc);
-            expect(pc.traits.features).toIncludeAllMembers(
-                [BarbarianTraits[1]["UNARMORED DEFENSE"],
-                BarbarianTraits[1]["RAGE"]]);
+        test('gains Bardic Inspiration feature trait', () => {
+
+            expect(pc.findFeatureTraitByName("Bardic Inspiration")).toBeTruthy();
+         });
+
+        test('gains Bardic Inspiration resource trait', () => {
+
+            expect(pc.findResourceTraitByName("Bardic Inspiration")).toBeTruthy(); 
         });
 
-        test('gains Rage resource trait', () => {
+        test('gains proficiency in Simple weapons, as well as in the Hand Crossbow, Longsword, Rapier, and Shortsword', () => {
+            
+            expect(pc.traits.weaponProficiencies).toIncludeAllMembers(
+                ["Simple", "Crossbow, hand", "Longsword", "Rapier", "Shortsword"]
+            );
+        });
 
-            bnClass = new Barbarian([], []);
-            bnClass.apply(pc);
-            expect(pc.traits.resources[0]).toContainValue("Rage");
+        test('gains proficiency in Light armor', () => {
+
+            expect(pc.traits.armorProficiencies).toIncludeAllMembers(
+                ["Light"]
+            );
+        });
+
+        test.skip('inventory is not implemented yet', () => {
+
+        });
+
+        test.skip('hit point max is not implemented yet', () => {
+
+        });
+
+        test.skip('hit die is not implemented yet', () => {
+
+        });
+        
+        test.skip('saving throw proficiency is not implemented yet', () => {
+
         });
 
     });
     
     describe('on leveling', () => {
+
+        let bdClass: Bard;
+        const bdArgs: BardLevelingParams[] = [
+        ];
 
         describe('to Level 2', () => {
 
@@ -47,6 +90,13 @@ describe('Bard Class', () => {
 
         describe('to Level 3', () => {
 
+            describe('with College of Lore archetype', () => {
+
+            });
+
+            describe('with College of Valor archetype', () => {
+
+            });
         });
 
         describe('to Level 4', () => {
@@ -59,6 +109,13 @@ describe('Bard Class', () => {
 
         describe('to Level 6', () => {
 
+            describe('with College of Lore archetype', () => {
+
+            });
+
+            describe('with College of Valor archetype', () => {
+
+            });
         });
 
         describe('to Level 7', () => {
@@ -90,7 +147,14 @@ describe('Bard Class', () => {
         });
 
         describe('to Level 14', () => {
+            
+            describe('with College of Lore archetype', () => {
 
+            });
+
+            describe('with College of Valor archetype', () => {
+
+            });
         });
 
         describe('to Level 15', () => {

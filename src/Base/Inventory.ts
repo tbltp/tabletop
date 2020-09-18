@@ -3,7 +3,9 @@ import * as Gear from '../../Assets/Gear.json';
 import { Item, Armor, Weapon } from "./Interfaces";
 
 export class Inventory {
+    
     static equipmentPacks: {[key: string]: () => Item[] } = {
+
         "BURGLAR": Inventory.burglar,
         "DIPLOMAT": Inventory.diplomat,
         "DUNGEONEER": Inventory.dungeoneer,

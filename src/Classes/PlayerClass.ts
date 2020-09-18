@@ -69,59 +69,59 @@ export abstract class PlayerClass {
 
     abstract abilitiesAtLevels: {[key: string]: (pc: PlayerCharacter, params: LevelingParams) => void; };
 
-    addLanguages(pc: PlayerCharacter): void {
+    protected addLanguages(pc: PlayerCharacter): void {
         for(let language of this.languages) { pc.traits.languages.push(Languages[language]); };
     }
 
-    addSkillProficiencies(pc: PlayerCharacter): void {
+    protected addSkillProficiencies(pc: PlayerCharacter): void {
         for(let skill of this.skillProficiencies) { pc.skills[skill].proficient = true; }
     }
 
-    addWeaponProficiencies(pc: PlayerCharacter): void {
+    protected addWeaponProficiencies(pc: PlayerCharacter): void {
         for(let weapon of this.weaponProficiencies) { pc.traits.weaponProficiencies.push(weapon) };
     }
 
-    addArmorProficiencies(pc: PlayerCharacter): void {
+    protected addArmorProficiencies(pc: PlayerCharacter): void {
         for(let armor of this.armorProficiencies) { pc.traits.armorProficiencies.push(armor) };
     }
 
-    addToolProficiencies(pc: PlayerCharacter): void {
+    protected addToolProficiencies(pc: PlayerCharacter): void {
         for(let tool of this.toolProficiencies) { pc.traits.toolProficiencies.push(tool) };
     }
 
-    addFeatures(pc: PlayerCharacter): void {
+    protected addFeatures(pc: PlayerCharacter): void {
         for(let trait of this.features) { pc.traits.features.push(trait) };
     }
 
-    addWeapons(pc: PlayerCharacter): void { 
+    protected addWeapons(pc: PlayerCharacter): void { 
         for(const weapon of this.weapons){ 
             pc.inventory.weapons.push(Weapons[weapon]) 
             if (pc.attacks.filter(attack => attack.name == Weapons[weapon].name).length == 0) { pc.attacks.push(Inventory.buildAttack(pc, Weapons[weapon])) }
         }
     }
 
-    addArmor(pc: PlayerCharacter): void { 
+    protected addArmor(pc: PlayerCharacter): void { 
         for(const armor of this.armor){ 
             pc.inventory.armor.push(Armor[armor]) 
             pc.armorClasses.push(Inventory.acFromArmorType[Armor[armor].armorType](pc, Armor[armor]))
         }
     }
 
-    addEquipment(pc: PlayerCharacter): void {
+    protected addEquipment(pc: PlayerCharacter): void {
         for(const item of Inventory.equipmentPacks[this.equipmentPack]()){ pc.inventory.items.push(item); }
        
         for(const item of this.equipment) { pc.inventory.items.push(Gear[item]); }
     }
 
-    addToolkits(pc: PlayerCharacter): void {
+    protected addToolkits(pc: PlayerCharacter): void {
        for(const tool of this.toolKits) { pc.inventory.toolKits.push(ToolKits[tool]); }
     }
 
-    addSavingThrowProficiencies(pc: PlayerCharacter): void {
+    protected addSavingThrowProficiencies(pc: PlayerCharacter): void {
         for(const savingThrowProficiency of this.savingThrowProficiencies){ pc.abilityScores[savingThrowProficiency].savingThrowProficiency = true; }
     }
 
-    apply(pc: PlayerCharacter): void {
+    public apply(pc: PlayerCharacter): void {
         this.addLanguages(pc);
         this.addSkillProficiencies(pc);
         this.addWeaponProficiencies(pc);
@@ -139,18 +139,27 @@ export abstract class PlayerClass {
         pc.baseStats.hpMax.base = this.hpBase;
     }
 
-    pushClassFeatures(pc: PlayerCharacter, level: string, className: string) {
+    protected pushClassFeatures(pc: PlayerCharacter, level: string, className: string) {
         for(let key in ClassTraits[className][level]) {
             pc.addFeatures(ClassTraits[className][level][key]);
         }
     }
 
-    static pushCustomizedClassFeature(pc: PlayerCharacter, level: string, className: string, feature: string, choices: string[]) {
+    protected handleSpellSelections(pc: PlayerCharacter, params: LevelingParams, ability: string) {
+        if(params.spellSelection) {
+            pc.addSpells(params.spellSelection, ability);
+        }
+        if(params.spellReplacement) {
+            pc.replaceSpells(params.spellReplacement, ability);
+        }
+    }
+
+    public static pushCustomizedClassFeature(pc: PlayerCharacter, level: string, className: string, feature: string, choices: string[]) {
         const customFeature: Trait = {...ClassTraits[className][level][feature], choices: choices};
         pc.addFeatures(customFeature);
     }
     
-    static quickClassLevelUp(pc: PlayerCharacter, pcls: PlayerClass, argsAry: LevelingParams[], level: number): void {
+    public static quickClassLevelUp(pc: PlayerCharacter, pcls: PlayerClass, argsAry: LevelingParams[], level: number): void {
         for(let i = 2; i <= level; i++) {
             pcls.abilitiesAtLevels[i](pc, argsAry[i - 1]);
         }
@@ -223,7 +232,7 @@ export interface LevelingParams {
 		improvement: number 
 	} [],
     spellSelection?: string [],
-    spellReplacements?: {
+    spellReplacement?: {
         [key: string]: string
     },
     proficiencySelection?: string[],
