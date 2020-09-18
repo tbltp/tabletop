@@ -29,15 +29,17 @@ describe('Barbarian Class', () => {
             bnClass = new Barbarian([], []);
             bnClass.apply(pc);
             expect(pc.traits.features).toIncludeAllMembers(
-                [BarbarianTraits[1]["UNARMORED DEFENSE"],
-                BarbarianTraits[1]["RAGE"]]);
+                [
+                    BarbarianTraits[1]["UNARMORED DEFENSE"],
+                    BarbarianTraits[1]["RAGE"]
+                ]);
         });
 
         test('gains the Rage resource trait', () => {
 
             bnClass = new Barbarian([], []);
             bnClass.apply(pc);
-            expect(pc.traits.resources[0]).toContainValue("Rage");
+            expect(pc.findResourceTraitByName("Rage")).toBeTruthy();
         });
 
         test('gains proficiency in Simple and Martial weapons', () => {
@@ -59,6 +61,10 @@ describe('Barbarian Class', () => {
         });
 
         test.skip('inventory is not implemented yet', () => {
+
+        });
+
+        test.skip('hit point max is not implemented yet', () => {
 
         });
 

@@ -58,18 +58,22 @@ export class Bard extends PlayerClass {
         "18": this.level18,
         "19": this.level19,
         "20": this.level20,
+    };
+
+    private pushBardFeaturesWithChoices(pc: PlayerCharacter, level: string, choices: string[]) {
+
     }
 
-    pushBardFeaturesWithChoices(pc: PlayerCharacter, level: string, choices: string[]) {
-
-    }
-
-    pushBardFeatures(pc: PlayerCharacter, level: string) {
+    private pushBardFeatures(pc: PlayerCharacter, level: string) {
         this.pushClassFeatures(pc, level, "BARD");
     }
 
+    private handleBardSpellSelections(pc: PlayerCharacter, params: LevelingParams) {
+        this.handleSpellSelections(pc, params, "charisma");
+    }
+
     level1(pc: PlayerCharacter, params: BardLevelingParams): void {
-        pc.addSpells(params.spellSelection, "charisma");
+        this.handleBardSpellSelections(pc, params);
         const level1Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(1, 2);
         const bardicInspiration: ResourceTrait = {title: "Bardic Inspiration", description: "Number of times you can give Bardic Inspiration per long rest. Dice is Bardic Inspiration die.", resourceMax: pc.abilityScores.charisma.modifier, dice: '1d6'}; 
         pc.addResourceTraits(level1Slots, bardicInspiration);
@@ -77,8 +81,7 @@ export class Bard extends PlayerClass {
     }
 
     level2(pc: PlayerCharacter, params: BardLevelingParams): void {
-        pc.replaceSpells(params.spellReplacements, "charisma");
-        pc.addSpells(params.spellSelection, "charisma");
+        this.handleBardSpellSelections(pc, params);
         const songOfRest: ScalingTrait = {title: "Song Of Rest", description: "Dice used for Song of Rest.", dice: '1d6'}; 
         pc.addResourceTraits(songOfRest);
         
@@ -94,8 +97,7 @@ export class Bard extends PlayerClass {
     }
 
     level3(pc: PlayerCharacter, params: BardLevelingParams): void {
-        pc.replaceSpells(params.spellReplacements, "charisma");
-        pc.addSpells(params.spellSelection, "charisma");
+        this.handleBardSpellSelections(pc, params);
         const level2Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(2, 2);
         pc.addResourceTraits(level2Slots);
         SpellSlotFactory.findPlayerSpellSlots(pc, 1).resourceMax.value++;
@@ -110,15 +112,13 @@ export class Bard extends PlayerClass {
     }
     
     level4(pc: PlayerCharacter, params: BardLevelingParams): void {
-        pc.replaceSpells(params.spellReplacements, "charisma");
-        pc.addSpells(params.spellSelection, "charisma");
+        this.handleBardSpellSelections(pc, params);
         pc.improveAbilityScores(params.abilityScoreImprovement);
         SpellSlotFactory.findPlayerSpellSlots(pc, 2).resourceMax.value++;
     }
 
     level5(pc: PlayerCharacter, params: BardLevelingParams): void {
-        pc.replaceSpells(params.spellReplacements, "charisma");
-        pc.addSpells(params.spellSelection, "charisma");
+        this.handleBardSpellSelections(pc, params);
         const level3Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(3, 2);
         pc.addResourceTraits(level3Slots);
         pc.findResourceTraitByName("Bardic Inspiration")[0].dice = "1d8";
@@ -126,8 +126,7 @@ export class Bard extends PlayerClass {
     }
 
     level6(pc: PlayerCharacter, params: BardLevelingParams): void {
-        pc.replaceSpells(params.spellReplacements, "charisma");
-        pc.addSpells(params.spellSelection, "charisma");
+        this.handleBardSpellSelections(pc, params);
         // college
         BardArchetype.archetypeHelper[this.bardCollege][6](pc, params);
         SpellSlotFactory.findPlayerSpellSlots(pc, 3).resourceMax.value++;
@@ -135,22 +134,19 @@ export class Bard extends PlayerClass {
     }
 
     level7(pc: PlayerCharacter, params: BardLevelingParams): void {
-        pc.replaceSpells(params.spellReplacements, "charisma");
-        pc.addSpells(params.spellSelection, "charisma");
+        this.handleBardSpellSelections(pc, params);
         const level4Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(4, 1)
         pc.addResourceTraits(level4Slots);
     }
 
     level8(pc: PlayerCharacter, params: BardLevelingParams): void {
-        pc.replaceSpells(params.spellReplacements, "charisma");
-        pc.addSpells(params.spellSelection, "charisma");
+        this.handleBardSpellSelections(pc, params);
         pc.improveAbilityScores(params.abilityScoreImprovement);
         SpellSlotFactory.findPlayerSpellSlots(pc, 4).resourceMax.value++;
     }
 
     level9(pc: PlayerCharacter, params: BardLevelingParams): void {
-        pc.replaceSpells(params.spellReplacements, "charisma");
-        pc.addSpells(params.spellSelection, "charisma");
+        this.handleBardSpellSelections(pc, params);
         const level5Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(5, 1);
         pc.addResourceTraits(level5Slots);
         SpellSlotFactory.findPlayerSpellSlots(pc, 4).resourceMax.value++;
@@ -158,8 +154,7 @@ export class Bard extends PlayerClass {
     }
 
     level10(pc: PlayerCharacter, params: BardLevelingParams): void {
-        pc.replaceSpells(params.spellReplacements, "charisma");
-        pc.addSpells(params.spellSelection, "charisma"); 
+        this.handleBardSpellSelections(pc, params);
         // expertise
         for(let skill of params.proficiencySelection) {
             pc.skills[skill].expertise = true;
@@ -173,7 +168,7 @@ export class Bard extends PlayerClass {
     }
 
     level11(pc: PlayerCharacter, params: BardLevelingParams): void {
-        pc.replaceSpells(params.spellReplacements, "charisma");
+        this.handleBardSpellSelections(pc, params);
         pc.addSpells(params.spellSelection, "charisma");
         const level6Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(6, 1);
         pc.addResourceTraits(level6Slots);
@@ -184,7 +179,7 @@ export class Bard extends PlayerClass {
     }
 
     level13(pc: PlayerCharacter, params: BardLevelingParams): void {
-        pc.replaceSpells(params.spellReplacements, "charisma");
+        this.handleBardSpellSelections(pc, params);
         pc.addSpells(params.spellSelection, "charisma");
         const level7Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(7, 1);
         pc.addResourceTraits(level7Slots);
@@ -192,7 +187,7 @@ export class Bard extends PlayerClass {
     }
 
     level14(pc: PlayerCharacter, params: BardLevelingParams): void {
-        pc.replaceSpells(params.spellReplacements, "charisma");
+        this.handleBardSpellSelections(pc, params);
         pc.addSpells(params.spellSelection, "charisma"); 
         // magical secrets
         pc.addSpells(params.magicalSecretsSpellSelection, "charisma");
@@ -202,8 +197,7 @@ export class Bard extends PlayerClass {
     }
 
     level15(pc: PlayerCharacter, params: BardLevelingParams): void {
-        pc.replaceSpells(params.spellReplacements, "charisma");
-        pc.addSpells(params.spellSelection, "charisma");
+        this.handleBardSpellSelections(pc, params);
         const level8Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(8, 1);
         pc.addResourceTraits(level8Slots);
         pc.findResourceTraitByName("Bardic Inspiration").dice = "1d12";
@@ -214,16 +208,14 @@ export class Bard extends PlayerClass {
     }
 
     level17(pc: PlayerCharacter, params: BardLevelingParams): void {
-        pc.replaceSpells(params.spellReplacements, "charisma");
-        pc.addSpells(params.spellSelection, "charisma");
+        this.handleBardSpellSelections(pc, params);
         const level9Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(9, 1);
         pc.addResourceTraits(level9Slots);
         pc.findScalingTraitByName("Song of Rest").dice = "1d12";
     }
 
     level18(pc: PlayerCharacter, params: BardLevelingParams): void {
-        pc.replaceSpells(params.spellReplacements, "charisma");
-        pc.addSpells(params.spellSelection, "charisma"); 
+        this.handleBardSpellSelections(pc, params);
         // magical secrets
         pc.addSpells(params.magicalSecretsSpellSelection, "charisma");
         pc.findFeatureTraitByName("Magical Secrets").choices.push(...params.magicalSecretsSpellSelection);

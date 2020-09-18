@@ -59,9 +59,9 @@ export class Barbarian extends PlayerClass {
         "18": this.level18,
         "19": this.level19,
         "20": this.level20
-    }
+    };
     
-    pushBarbarianFeatures(pc: PlayerCharacter, level: string) {
+    private pushBarbarianFeatures(pc: PlayerCharacter, level: string) {
         this.pushClassFeatures(pc, level, "BARBARIAN");
     }
 
