@@ -39,6 +39,8 @@ export class Druid extends PlayerClass {
      */
 
     druidCircle: string;
+
+    
     abilitiesAtLevels = {
         "1": this.level1,
         "2": this.level2,
@@ -142,7 +144,7 @@ export class Druid extends PlayerClass {
 
     level10(pc: PlayerCharacter, params: LevelingParams): void {
         SpellSlotFactory.findPlayerSpellSlots(pc, 5).resourceMax.value++;
-        DruidArchetype.archetypeHelper[this.druidCircle]["9"](pc, params);
+        DruidArchetype.archetypeHelper[this.druidCircle]["10"](pc, params);
     }
 
     level11(pc: PlayerCharacter, params: LevelingParams): void {

@@ -31,10 +31,9 @@ export class Barbarian extends PlayerClass {
 
     }
     /** TODO
-     * Version control on rage and brutal critical (what level are they currently?)
-     * 12 + Constitution Modifier HP Max
      * UNARMORED DEFENSE and FAST MOVEMENT depends on equipped armor.
      * EXTRA ATTACK should be represented in action economy.
+     * FIGHTING STYLE
      */
 
     primalPath: string;

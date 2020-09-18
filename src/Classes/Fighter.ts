@@ -33,7 +33,9 @@ export class Fighter extends PlayerClass {
     }
 
     /** TODO
+     * FIGHTING STYLE
      */
+    
 	fighterArchetype: string;
 
     abilitiesAtLevels = {

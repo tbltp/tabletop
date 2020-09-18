@@ -519,6 +519,7 @@ export class ClericArchetype extends Archetype {
 }
 
 export class DruidArchetype extends Archetype {
+    
     static archetypeHelper = {
         "LAND": {
             "2": DruidArchetype.land2,
@@ -538,18 +539,70 @@ export class DruidArchetype extends Archetype {
         }
     }
 
+
+    private landSpells = {
+        "ARCTIC": {
+            "3": ["HOLD PERSON", "SPIKE GROWTH"],
+            "5": ["SLEET STORM", "SLOW"],
+            "7": ["FREEDOM OF MOVEMENT", "ICE STORM"],
+            "9": ["COMMUNE WITH NATURE", "CONE OF COLD"]
+        },
+        "COAST": {
+            "3": ["MIRROR IMAGE", "MISTY STEP"],
+            "5": ["WATER BREATHING", "WATER WALK"],
+            "7": ["CONTROL WATER", "FREEDOM OF MOVEMENT"],
+            "9": ["CONJURE ELEMENTAL", "SCRYING"]
+        },
+        "DESERT": {
+            "3": ["BLUR", "SILENCE"],
+            "5": ["CREATE FOOD AND WATER", "PROTECTION FROM ENERGY"],
+            "7": ["BLIGHT", "HALLUCINATORY TERRAIN"],
+            "9": ["INSECT PLAGUE", "WALL OF STONE"]
+        }, 
+        "FOREST": {
+            "3": ["BARKSKIN", "SPIDER CLIMB"],
+            "5": ["CALL LIGHTNING", "PLANT GROWTH"],
+            "7": ["DIVINATION", "FREEDOM OF MOVEMENT"],
+            "9": ["COMMUNE WITH NATURE", "TREE STRIDE"]
+        }, 
+        "GRASSLAND": {
+            "3": ["INVISIBILITY", "PASS WITHOUT TRACE"],
+            "5": ["DAYLIGHT", "HASTE"],
+            "7": ["DIVINATION", "FREEDOM OF MOVEMENT"],
+            "9": ["DREAM", "INSECT PLAGUE"]           
+        },
+        "MOUNTAIN": {
+            "3": ["SPIDER CLIMB", "SPIKE GROWTH"],
+            "5": ["LIGHTNING BOLT", "MELD INTO STONE"],
+            "7": ["STONE SHAPE", "STONESKIN"],
+            "9": ["PASSWALL", "WALL OF STONE"]
+        },
+        "SWAMP": {
+            "3": ["DARKNESS", "MELF'S ACID ARROW"],
+            "5": ["WATER WALK", "STINKING CLOUD"],
+            "7": ["FREEDOM OF MOVEMENT", "LOCATE CREATURE"],
+            "9": ["INSECT PLAGUE", "SCRYING"]
+        },
+        "UNDERDARK": {
+            "3": ["SPIDER CLIMB", "WEB"],
+            "5": ["GASEOUS FORM", "STINKING CLOUD"],
+            "7": ["GREATER INVISIBILITY", "STONE SHAPE"],
+            "9": ["CLOUDKILL", "INSECT PLAGUE"]
+        }
+    };
+
     static getFeature(archetypeName: string, level: string, featureName: string) {
         return Archetype.getFeature("DRUID", archetypeName, level, featureName);
     }
 
     static land2(pc: PlayerCharacter, params: LevelingParams) {
         pc.addSpells(params.spellSelection, "wisdom");
-        pc.addFeatures(DruidArchetype.getFeature("LAND", "2", "NATURAL RECOVERY"))   
+        pc.addFeatures(DruidArchetype.getFeature("LAND", "2", "NATURAL RECOVERY"));   
     }
 
     static land3(pc: PlayerCharacter, params: LevelingParams) { 
         // pc.addSpells(params.spellSelection, "wisdom");
-        pc.addFeatures(DruidArchetype.getFeature("LAND", "3", "CIRCLE SPELLS")) 
+        pc.addFeatures(DruidArchetype.getFeature("LAND", "3", "CIRCLE SPELLS")); 
     }
 
     static land5(pc: PlayerCharacter, params: LevelingParams) {
@@ -595,14 +648,155 @@ export class DruidArchetype extends Archetype {
 
 export class FighterArchetype extends Archetype {
     static archetypeHelper = {
-        "CHAMPION": {},
-        "BATTLE MASTER": {},
-        "ELDRITCH KNIGHT": {}
+        "CHAMPION": {
+            "3": FighterArchetype.champion3,
+            "7": FighterArchetype.champion7,
+            "10": FighterArchetype.champion10,
+            "15": FighterArchetype.champion15,
+            "18": FighterArchetype.champion18
+        },
+        "BATTLE MASTER": {
+            "3": FighterArchetype.battleMaster3,
+            "7": FighterArchetype.battleMaster7,
+            "10": FighterArchetype.battleMaster10,
+            "15": FighterArchetype.battleMaster15,
+            "18": FighterArchetype.battleMaster18
+        },
+        "ELDRITCH KNIGHT": {
+            "3": FighterArchetype.eldritchKnight3,
+            "7": FighterArchetype.eldritchKnight7,
+            "10": FighterArchetype.eldritchKnight10,
+            "15": FighterArchetype.eldritchKnight15,
+            "18": FighterArchetype.eldritchKnight18
+        }
     }
+
+    static champion3(pc: PlayerCharacter, params: LevelingParams) {}
+
+    static champion7(pc: PlayerCharacter, params: LevelingParams) {}
+
+    static champion10(pc: PlayerCharacter, params: LevelingParams) {}
+
+    static champion15(pc: PlayerCharacter, params: LevelingParams) {}
+
+    static champion18(pc: PlayerCharacter, params: LevelingParams) {}
+
+    static battleMaster3(pc: PlayerCharacter, params: LevelingParams) {}
+
+    static battleMaster7(pc: PlayerCharacter, params: LevelingParams) {}
+
+    static battleMaster10(pc: PlayerCharacter, params: LevelingParams) {}
+
+    static battleMaster15(pc: PlayerCharacter, params: LevelingParams) {}
+
+    static battleMaster18(pc: PlayerCharacter, params: LevelingParams) {}
+    
+    static eldritchKnight3(pc: PlayerCharacter, params: LevelingParams) {}
+
+    static eldritchKnight7(pc: PlayerCharacter, params: LevelingParams) {}
+
+    static eldritchKnight10(pc: PlayerCharacter, params: LevelingParams) {}
+
+    static eldritchKnight15(pc: PlayerCharacter, params: LevelingParams) {}
+
+    static eldritchKnight18(pc: PlayerCharacter, params: LevelingParams) {}
+
 }
 
-export class MonkArchetype extends Archetype { }
+export class MonkArchetype extends Archetype { 
+    static archetypeHelper = {
+        "OPEN HAND": {
+            "3": MonkArchetype.openHand3,
+            "6": MonkArchetype.openHand6,
+            "11": MonkArchetype.openHand11,
+            "17": MonkArchetype.openHand17
+        },
+        "SHADOW": {
+            "3": MonkArchetype.shadow3,
+            "6": MonkArchetype.shadow6,
+            "11": MonkArchetype.shadow11,
+            "17": MonkArchetype.shadow17
+        },
+        "FOUR ELEMENTS": {
+            "3": MonkArchetype.fourElements3,
+            "6": MonkArchetype.fourElements6,
+            "11": MonkArchetype.fourElements11,
+            "17": MonkArchetype.fourElements17
+        }
+    }
 
-export class PaladinArchetype extends Archetype { }
+    static openHand3(pc: PlayerCharacter, params: LevelingParams) {}
+    
+    static openHand6(pc: PlayerCharacter, params: LevelingParams) {}
+    
+    static openHand11(pc: PlayerCharacter, params: LevelingParams) {}
+    
+    static openHand17(pc: PlayerCharacter, params: LevelingParams) {}
+
+    static shadow3(pc: PlayerCharacter, params: LevelingParams) {}
+    
+    static shadow6(pc: PlayerCharacter, params: LevelingParams) {}
+    
+    static shadow11(pc: PlayerCharacter, params: LevelingParams) {}
+    
+    static shadow17(pc: PlayerCharacter, params: LevelingParams) {}
+
+    static fourElements3(pc: PlayerCharacter, params: LevelingParams) {}
+    
+    static fourElements6(pc: PlayerCharacter, params: LevelingParams) {}
+    
+    static fourElements11(pc: PlayerCharacter, params: LevelingParams) {}
+    
+    static fourElements17(pc: PlayerCharacter, params: LevelingParams) {}
+
+}
+
+export class PaladinArchetype extends Archetype { 
+    static archetypeHelper = {
+        "DEVOTION": {
+            "3": PaladinArchetype.devotion3,
+            "7": PaladinArchetype.devotion7,
+            "15": PaladinArchetype.devotion15,
+            "20": PaladinArchetype.devotion20
+        },
+        "ANCIENTS": {
+            "3": PaladinArchetype.devotion3,
+            "7": PaladinArchetype.devotion7,
+            "15": PaladinArchetype.devotion15,
+            "20": PaladinArchetype.devotion20
+        },
+        "VENGEANCE": {
+            "3": PaladinArchetype.vengeance3,
+            "7": PaladinArchetype.vengeance7,
+            "15": PaladinArchetype.vengeance15,
+            "20": PaladinArchetype.vengeance20
+        }
+    }
+
+    static devotion3(pc: PlayerCharacter, params: LevelingParams) {}
+    
+    static devotion7(pc: PlayerCharacter, params: LevelingParams) {}
+    
+    static devotion15(pc: PlayerCharacter, params: LevelingParams) {}
+    
+    static devotion20(pc: PlayerCharacter, params: LevelingParams) {}
+
+    static ancients3(pc: PlayerCharacter, params: LevelingParams) {}
+    
+    static ancients7(pc: PlayerCharacter, params: LevelingParams) {}
+    
+    static ancients15(pc: PlayerCharacter, params: LevelingParams) {}
+    
+    static ancients20(pc: PlayerCharacter, params: LevelingParams) {}
+
+    static vengeance3(pc: PlayerCharacter, params: LevelingParams) {}
+    
+    static vengeance7(pc: PlayerCharacter, params: LevelingParams) {}
+    
+    static vengeance15(pc: PlayerCharacter, params: LevelingParams) {}
+    
+    static vengeance20(pc: PlayerCharacter, params: LevelingParams) {}
+
+}
 
 export class RangerArchetype extends Archetype { }
