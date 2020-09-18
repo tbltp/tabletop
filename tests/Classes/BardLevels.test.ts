@@ -82,6 +82,18 @@ describe('Bard Class', () => {
 
         let bdClass: Bard;
         const bdArgs: BardLevelingParams[] = [
+            {
+                isNoInput: false,
+                spellSelection: [
+                    "VICIOUS MOCKERY",
+                    "DANCING LIGHTS",
+                    "CHARM PERSON",
+                    "BANE",
+                    "HEALING WORD",
+                    "THUNDERWAVE"
+                ]
+            },
+            
         ];
 
         describe('to Level 2', () => {
