@@ -524,10 +524,7 @@ export class DruidArchetype extends Archetype {
         "LAND": {
             "2": DruidArchetype.land2,
             "3": DruidArchetype.land3,
-            "5": DruidArchetype.land5,
             "6": DruidArchetype.land6,
-            "7": DruidArchetype.land7,
-            "9": DruidArchetype.land9,
             "10": DruidArchetype.land10,
             "14": DruidArchetype.land14
         }, 
@@ -540,7 +537,7 @@ export class DruidArchetype extends Archetype {
     }
 
 
-    private landSpells = {
+    static landSpells = {
         "ARCTIC": {
             "3": ["HOLD PERSON", "SPIKE GROWTH"],
             "5": ["SLEET STORM", "SLOW"],
@@ -591,6 +588,10 @@ export class DruidArchetype extends Archetype {
         }
     };
 
+    static getTerrainSpells(pc: PlayerCharacter, terrain: string, level: string) {
+        pc.addSpells(DruidArchetype.landSpells[terrain][level], "wisdom");
+    }
+
     static getFeature(archetypeName: string, level: string, featureName: string) {
         return Archetype.getFeature("DRUID", archetypeName, level, featureName);
     }
@@ -601,24 +602,11 @@ export class DruidArchetype extends Archetype {
     }
 
     static land3(pc: PlayerCharacter, params: LevelingParams) { 
-        // pc.addSpells(params.spellSelection, "wisdom");
         pc.addFeatures(DruidArchetype.getFeature("LAND", "3", "CIRCLE SPELLS")); 
-    }
-
-    static land5(pc: PlayerCharacter, params: LevelingParams) {
-       // pc.addSpells(params.spellSelection, "wisdom");    
     }
 
     static land6(pc: PlayerCharacter, params: LevelingParams) {
         pc.addFeatures(DruidArchetype.getFeature("LAND", "6", "LAND'S STRIDE"))  
-    }
-
-    static land7(pc: PlayerCharacter, params: LevelingParams) {   
-        // SPELLS   
-    }
-
-    static land9(pc: PlayerCharacter, params: LevelingParams) {
-        // SPELLS   
     }
 
     static land10(pc: PlayerCharacter, params: LevelingParams) {
@@ -799,4 +787,44 @@ export class PaladinArchetype extends Archetype {
 
 }
 
-export class RangerArchetype extends Archetype { }
+export class RangerArchetype extends Archetype { 
+    static archetypeHelper = {
+        "HUNTER": {
+            "3": RangerArchetype.hunter3,
+            "7": RangerArchetype.hunter7,
+            "11": RangerArchetype.hunter11,
+            "15": RangerArchetype.hunter15
+        },
+        "BEAST MASTER": {
+            "3": RangerArchetype.beastMaster3,
+            "7": RangerArchetype.beastMaster7,
+            "11": RangerArchetype.beastMaster11,
+            "15": RangerArchetype.beastMaster15
+        }
+    }
+
+    static hunter3(pc: PlayerCharacter, params: LevelingParams){ }
+    
+    static hunter7(pc: PlayerCharacter, params: LevelingParams){ }
+    
+    static hunter11(pc: PlayerCharacter, params: LevelingParams){ }
+    
+    static hunter15(pc: PlayerCharacter, params: LevelingParams){ }
+
+    static beastMaster3(pc: PlayerCharacter, params: LevelingParams){ }
+    
+    static beastMaster7(pc: PlayerCharacter, params: LevelingParams){ }
+    
+    static beastMaster11(pc: PlayerCharacter, params: LevelingParams){ }
+    
+    static beastMaster15(pc: PlayerCharacter, params: LevelingParams){ }
+
+}
+
+export class RogueArchetype extends Archetype { }
+
+export class SorcererArchetype extends Archetype { }
+
+export class WarlockArchetype extends Archetype { }
+
+export class WizardArchetype extends Archetype { }

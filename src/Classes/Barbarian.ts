@@ -36,7 +36,8 @@ export class Barbarian extends PlayerClass {
      * FIGHTING STYLE
      */
 
-    primalPath: string;
+    primalPath: string = "";
+    
     abilitiesAtLevels = {
         "1": this.level1,
         "2": this.level2,

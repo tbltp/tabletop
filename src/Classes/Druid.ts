@@ -1,6 +1,6 @@
 import { PlayerClass, LevelingParams, SpellSlotFactory } from './PlayerClass';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
-import { ResourceTrait } from '../Base/Interfaces';
+import { ResourceTrait, ScalingTrait } from '../Base/Interfaces';
 import * as SpellList from '../../Assets/SpellList.json';
 import { DruidArchetype } from './Archetypes';
 
@@ -38,8 +38,8 @@ export class Druid extends PlayerClass {
      * MISSING CIRCLE OF LAND SPELLS, REPRESENTING CIRCLE OF LAND TERRAIN
      */
 
-    druidCircle: string;
-
+    druidCircle: string = "";
+    terrain?: string | null = null; 
     
     abilitiesAtLevels = {
         "1": this.level1,
@@ -64,35 +64,43 @@ export class Druid extends PlayerClass {
         "20": this.level20,
     }
 
-    pushDruidFeatures(pc: PlayerCharacter, level: string) {
+    private pushDruidFeatures(pc: PlayerCharacter, level: string) {
         this.pushClassFeatures(pc, level, "DRUID");
     }
 
     level1(pc: PlayerCharacter, params: LevelingParams): void {
         pc.addSpells([...params.spellSelection, ...SpellList["Druid"]["1"]], "wisdom");
-        this.pushDruidFeatures(pc, "1");
         const level1Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(1, 2);
         pc.addResourceTraits(level1Slots); 
+        this.pushDruidFeatures(pc, "1");
     }
 
     level2(pc: PlayerCharacter, params: LevelingParams): void {
+        // druid circle
         this.druidCircle = params.archetypeSelection[0].archetype;
         DruidArchetype.archetypeHelper[this.druidCircle]["2"](pc, params);
-
-        this.pushDruidFeatures(pc, "2");
-        pc.addResourceTraits({"title": "Wild Shape", "description": "Number of times you can Wild Shape", resourceMax: {value: 2}}) // ADD CHALLENGE RATING
+        // terrain selection
+        if(this.druidCircle == "LAND") {
+            this.terrain = params.archetypeSelection[0].options[0];
+        }
+        // wild shape
+        const wildShapeRes: ResourceTrait = {title: "Wild Shape", description: "Number of times you can Wild Shape", resourceMax: {value: 2}};
+        const wildShapeScale: ScalingTrait = {title: "Wild Shape", description: "Max challenge rating of beasts you can Wild Shape into (No flying or swimming speed).", challengeRating: .25 };
+        pc.addResourceTraits(wildShapeRes); 
+        pc.addScalingTraits(wildShapeScale);
 
         SpellSlotFactory.findPlayerSpellSlots(pc, 1).resourceMax.value++;
-        
+        this.pushDruidFeatures(pc, "2");
     }
 
     level3(pc: PlayerCharacter, params: LevelingParams): void {
         const level2Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(2, 2);
         pc.addResourceTraits(level2Slots)
         SpellSlotFactory.findPlayerSpellSlots(pc, 1).resourceMax.value++;
-
+        // terrain spells
         if(this.druidCircle == "LAND"){
-            DruidArchetype.archetypeHelper[this.druidCircle]["3"](pc, params);
+            DruidArchetype.archetypeHelper[this.druidCircle]["3"]
+            DruidArchetype.getTerrainSpells(pc, this.terrain, "3");
         }
     }
     
@@ -100,20 +108,24 @@ export class Druid extends PlayerClass {
         SpellSlotFactory.findPlayerSpellSlots(pc, 2).resourceMax.value++;
         pc.addSpells(params.spellSelection, "wisdom");
         pc.improveAbilityScores(params.abilityScoreImprovement);
-        // IMPROVE WILD SHAPE
+        // wild shape
+        const wildShapeScale: ScalingTrait = pc.findScalingTraitByName("Wild Shape");
+        wildShapeScale.challengeRating = .5;
+        wildShapeScale.description = "Max challenge rating of beasts you can Wild Shape into (No flying speed).";
     }
 
     level5(pc: PlayerCharacter, params: LevelingParams): void {
         const level3Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(3, 2);
         pc.addResourceTraits(level3Slots);
-
+        // terrain spells
         if(this.druidCircle == "LAND"){
-            DruidArchetype.archetypeHelper[this.druidCircle]["5"](pc, params);
+            DruidArchetype.getTerrainSpells(pc, this.terrain, "5");
         }
     }
 
     level6(pc: PlayerCharacter, params: LevelingParams): void {
         SpellSlotFactory.findPlayerSpellSlots(pc, 3).resourceMax.value++;
+        // drui cirl
         DruidArchetype.archetypeHelper[this.druidCircle]["6"](pc, params);
     }
 
@@ -121,29 +133,34 @@ export class Druid extends PlayerClass {
         const level4Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(4, 1);
         pc.addResourceTraits(level4Slots);
 
+        // terrain spells
         if(this.druidCircle == "LAND"){
-            DruidArchetype.archetypeHelper[this.druidCircle]["7"](pc, params);
+            DruidArchetype.getTerrainSpells(pc, this.terrain, "7");
         }
     }
 
     level8(pc: PlayerCharacter, params: LevelingParams): void {
         SpellSlotFactory.findPlayerSpellSlots(pc, 4).resourceMax.value++;
         pc.improveAbilityScores(params.abilityScoreImprovement);
-        // IMPROVE WILD SHAPE
+        // wild shape
+        const wildShapeScale: ScalingTrait = pc.findScalingTraitByName("Wild Shape");
+        wildShapeScale.challengeRating = 1;
+        wildShapeScale.description = "Max challenge rating of beasts you can Wild Shape into.";
     }
 
     level9(pc: PlayerCharacter, params: LevelingParams): void {
         const level5Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(5, 1);
         pc.addResourceTraits(level5Slots)
         SpellSlotFactory.findPlayerSpellSlots(pc, 4).resourceMax.value++;
-
+        // terrain spells
         if(this.druidCircle == "LAND"){
-            DruidArchetype.archetypeHelper[this.druidCircle]["9"](pc, params);
+            DruidArchetype.getTerrainSpells(pc, this.terrain, "9");
         }
     }
 
     level10(pc: PlayerCharacter, params: LevelingParams): void {
         SpellSlotFactory.findPlayerSpellSlots(pc, 5).resourceMax.value++;
+        // druid circle
         DruidArchetype.archetypeHelper[this.druidCircle]["10"](pc, params);
     }
 
@@ -162,7 +179,8 @@ export class Druid extends PlayerClass {
     }
 
     level14(pc: PlayerCharacter, params: LevelingParams): void {
-
+        // druid circle
+        DruidArchetype.archetypeHelper[this.druidCircle]["14"](pc, params);
     }
 
     level15(pc: PlayerCharacter, params: LevelingParams): void {
@@ -191,6 +209,8 @@ export class Druid extends PlayerClass {
 
     level20(pc: PlayerCharacter, params: LevelingParams): void {
         SpellSlotFactory.findPlayerSpellSlots(pc, 7).resourceMax.value++;
+        // archdruid
+        pc.findResourceTraitByName("Wild Shape").resourceMax.value = Infinity;
         this.pushDruidFeatures(pc, "20");
     }
     

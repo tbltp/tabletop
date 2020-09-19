@@ -363,24 +363,59 @@
             }
         },
         "2": {},
-        "3": {},
+        "3": {
+            "PRIMEVAL AWARENESS": {
+                "title": "",
+                "description": ""
+            }
+        },
         "4": {},
-        "5": {},
+        "5": {
+            "EXTRA ATTACK": {
+                "title": "",
+                "description": ""
+            }
+        },
         "6": {},
         "7": {},
-        "8": {},
+        "8": {
+            "LAND'S STRIDE": {
+                "title": "",
+                "description": ""
+            }
+        },
         "9": {},
-        "10": {},
+        "10": {
+            "HIDE IN PLAIN SIGHT": {
+                "title": "",
+                "description": ""
+            }
+        },
         "11": {},
         "12": {},
         "13": {},
-        "14": {},
+        "14": {
+            "VANISH": {
+                "title": "",
+                "description": ""
+            }
+        },
         "15": {},
         "16": {},
         "17": {},
-        "18": {},
+        "18": {
+            "FERAL SENSES": {
+                "title": "",
+                "description": ""
+            }
+        },
         "19": {},
-        "20": {}
+        "20": {
+            "FOE SLAYER": {
+                "title": "",
+                "description": ""
+            }
+        }
     },
     "ROGUE": {
         "1": {},

@@ -36,7 +36,8 @@ export class Bard extends PlayerClass {
     // RESOURCEMAX OF BARDIC INSPIRATION, BONUS FOR JACK OF ALL TRADES, CHANGE WITH LEVELS / ABILITY SCORE IMPROVEMENTS.
     // What should happen if a bard switches out a magical secret spell
 
-    bardCollege: string;
+    bardCollege: string = "";
+
     abilitiesAtLevels = {
         "1": this.level1,
         "2": this.level2,
@@ -75,6 +76,7 @@ export class Bard extends PlayerClass {
     level1(pc: PlayerCharacter, params: BardLevelingParams): void {
         this.handleBardSpellSelections(pc, params);
         const level1Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(1, 2);
+        // bardic inspiration
         const bardicInspiration: ResourceTrait = {title: "Bardic Inspiration", description: "Number of times you can give Bardic Inspiration per long rest. Dice is Bardic Inspiration die.", resourceMax: pc.abilityScores.charisma.modifier, dice: '1d6'}; 
         pc.addResourceTraits(level1Slots, bardicInspiration);
         this.pushBardFeatures(pc, "1");  
@@ -82,10 +84,10 @@ export class Bard extends PlayerClass {
 
     level2(pc: PlayerCharacter, params: BardLevelingParams): void {
         this.handleBardSpellSelections(pc, params);
+        // song of rest
         const songOfRest: ScalingTrait = {title: "Song Of Rest", description: "Dice used for Song of Rest.", dice: '1d6'}; 
         pc.addResourceTraits(songOfRest);
-        
-        // Jack of All Trades
+        // jack of all trades
         for(let skill of Object.keys(pc.skills)){
             if(!pc.skills[skill].proficient) {
                 pc.skills[skill].bonus = pc.proficiency.halfBonus;
@@ -93,7 +95,6 @@ export class Bard extends PlayerClass {
         }
         SpellSlotFactory.findPlayerSpellSlots(pc, 1).resourceMax.value++;
         this.pushBardFeatures(pc, "2");
-
     }
 
     level3(pc: PlayerCharacter, params: BardLevelingParams): void {
@@ -121,6 +122,7 @@ export class Bard extends PlayerClass {
         this.handleBardSpellSelections(pc, params);
         const level3Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(3, 2);
         pc.addResourceTraits(level3Slots);
+        // bardic inspiration
         pc.findResourceTraitByName("Bardic Inspiration")[0].dice = "1d8";
         this.pushBardFeatures(pc, "5");
     }
@@ -135,7 +137,7 @@ export class Bard extends PlayerClass {
 
     level7(pc: PlayerCharacter, params: BardLevelingParams): void {
         this.handleBardSpellSelections(pc, params);
-        const level4Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(4, 1)
+        const level4Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(4, 1);
         pc.addResourceTraits(level4Slots);
     }
 
@@ -149,8 +151,9 @@ export class Bard extends PlayerClass {
         this.handleBardSpellSelections(pc, params);
         const level5Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(5, 1);
         pc.addResourceTraits(level5Slots);
-        SpellSlotFactory.findPlayerSpellSlots(pc, 4).resourceMax.value++;
+        // song of rest
         pc.findScalingTraitByName("Song of Rest").dice = "1d8";
+        SpellSlotFactory.findPlayerSpellSlots(pc, 4).resourceMax.value++;
     }
 
     level10(pc: PlayerCharacter, params: BardLevelingParams): void {
@@ -160,16 +163,16 @@ export class Bard extends PlayerClass {
             pc.skills[skill].expertise = true;
         }
         pc.findFeatureTraitByName("Expertise").choices.push(...params.proficiencySelection);
-        SpellSlotFactory.findPlayerSpellSlots(pc, 5).resourceMax.value++;
+        // bardic inspiration
         pc.findResourceTraitByName("Bardic Inspiration").dice = "1d10";
         // magical secrets
         pc.addSpells(params.magicalSecretsSpellSelection, "charisma");
         PlayerClass.pushCustomizedClassFeature(pc, "10", "BARD", "MAGICAL SECRETS", params.magicalSecretsSpellSelection);
+        SpellSlotFactory.findPlayerSpellSlots(pc, 5).resourceMax.value++;
     }
 
     level11(pc: PlayerCharacter, params: BardLevelingParams): void {
         this.handleBardSpellSelections(pc, params);
-        pc.addSpells(params.spellSelection, "charisma");
         const level6Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(6, 1);
         pc.addResourceTraits(level6Slots);
     }
@@ -180,15 +183,14 @@ export class Bard extends PlayerClass {
 
     level13(pc: PlayerCharacter, params: BardLevelingParams): void {
         this.handleBardSpellSelections(pc, params);
-        pc.addSpells(params.spellSelection, "charisma");
         const level7Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(7, 1);
         pc.addResourceTraits(level7Slots);
+        // song of rest
         pc.findScalingTraitByName("Song of Rest").dice = "1d10";
     }
 
     level14(pc: PlayerCharacter, params: BardLevelingParams): void {
         this.handleBardSpellSelections(pc, params);
-        pc.addSpells(params.spellSelection, "charisma"); 
         // magical secrets
         pc.addSpells(params.magicalSecretsSpellSelection, "charisma");
         pc.findFeatureTraitByName("Magical Secrets").choices.push(...params.magicalSecretsSpellSelection);
@@ -200,6 +202,7 @@ export class Bard extends PlayerClass {
         this.handleBardSpellSelections(pc, params);
         const level8Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(8, 1);
         pc.addResourceTraits(level8Slots);
+        // bardic inspiration
         pc.findResourceTraitByName("Bardic Inspiration").dice = "1d12";
     }
 
@@ -211,6 +214,7 @@ export class Bard extends PlayerClass {
         this.handleBardSpellSelections(pc, params);
         const level9Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(9, 1);
         pc.addResourceTraits(level9Slots);
+        // song of rest
         pc.findScalingTraitByName("Song of Rest").dice = "1d12";
     }
 

@@ -34,7 +34,8 @@ export class Cleric extends PlayerClass {
         }
     }
 
-    clericDomain: string;
+    clericDomain: string = "";
+
     abilitiesAtLevels = {
         "1": this.level1,
         "2": this.level2,
@@ -64,7 +65,7 @@ export class Cleric extends PlayerClass {
      * PRIESTS PACK CONTAINS NOT REAL ITEMS
      */
 
-    pushClericFeatures(pc: PlayerCharacter, level: string) {
+    private pushClericFeatures(pc: PlayerCharacter, level: string) {
         this.pushClassFeatures(pc, level, "CLERIC");
     }
 

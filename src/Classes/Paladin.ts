@@ -73,6 +73,8 @@ export class Paladin extends PlayerClass {
     level2(pc: PlayerCharacter, params: LevelingParams): void {
         this.pushPaladinFeatures(pc, "2");
         pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
+        const lvl1Slots = SpellSlotFactory.getSpellSlots(1, 2);
+        pc.addResourceTraits(lvl1Slots);
     }
 
     level3(pc: PlayerCharacter, params: LevelingParams): void {
@@ -81,6 +83,7 @@ export class Paladin extends PlayerClass {
         pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
 
         PaladinArchetype.archetypeHelper[this.paladinOath]["3"](pc, params);
+        SpellSlotFactory.findPlayerSpellSlots(pc, 1).resourceMax.value++;
     }
     
     level4(pc: PlayerCharacter, params: LevelingParams): void {
@@ -92,7 +95,10 @@ export class Paladin extends PlayerClass {
     level5(pc: PlayerCharacter, params: LevelingParams): void {
         this.pushPaladinFeatures(pc, "5");
         pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
-    }
+
+        const lvl2Slots = SpellSlotFactory.getSpellSlots(2, 2);
+        pc.addResourceTraits(lvl2Slots);
+        SpellSlotFactory.findPlayerSpellSlots(pc, 1).resourceMax.value++;    }
 
     level6(pc: PlayerCharacter, params: LevelingParams): void {
         this.pushPaladinFeatures(pc, "6");
@@ -102,6 +108,8 @@ export class Paladin extends PlayerClass {
     level7(pc: PlayerCharacter, params: LevelingParams): void {
         pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
         PaladinArchetype.archetypeHelper[this.paladinOath]["7"](pc, params);
+        
+        SpellSlotFactory.findPlayerSpellSlots(pc, 2).resourceMax.value++;
     }
 
     level8(pc: PlayerCharacter, params: LevelingParams): void {
@@ -111,6 +119,9 @@ export class Paladin extends PlayerClass {
 
     level9(pc: PlayerCharacter, params: LevelingParams): void {
         pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
+        
+        const lvl3Slots = SpellSlotFactory.getSpellSlots(3, 2);
+        pc.addResourceTraits(lvl3Slots);
     }
 
     level10(pc: PlayerCharacter, params: LevelingParams): void {
@@ -121,6 +132,8 @@ export class Paladin extends PlayerClass {
     level11(pc: PlayerCharacter, params: LevelingParams): void {
         this.pushPaladinFeatures(pc, "11");
         pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
+
+        SpellSlotFactory.findPlayerSpellSlots(pc, 3).resourceMax.value++;
     }
 
     level12(pc: PlayerCharacter, params: LevelingParams): void {
@@ -130,6 +143,9 @@ export class Paladin extends PlayerClass {
 
     level13(pc: PlayerCharacter, params: LevelingParams): void {
         pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
+
+        const lvl4Slots = SpellSlotFactory.getSpellSlots(4, 1);
+        pc.addResourceTraits(lvl4Slots);
     }
 
     level14(pc: PlayerCharacter, params: LevelingParams): void {
@@ -140,6 +156,8 @@ export class Paladin extends PlayerClass {
     level15(pc: PlayerCharacter, params: LevelingParams): void {
         pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
         PaladinArchetype.archetypeHelper[this.paladinOath]["15"](pc, params);
+
+        SpellSlotFactory.findPlayerSpellSlots(pc, 4).resourceMax.value++;
     }
 
     level16(pc: PlayerCharacter, params: LevelingParams): void {
@@ -149,6 +167,11 @@ export class Paladin extends PlayerClass {
 
     level17(pc: PlayerCharacter, params: LevelingParams): void {
         pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
+
+
+        const lvl5Slots = SpellSlotFactory.getSpellSlots(5, 1);
+        pc.addResourceTraits(lvl5Slots);
+        SpellSlotFactory.findPlayerSpellSlots(pc, 4).resourceMax.value++;
     }
 
     level18(pc: PlayerCharacter, params: LevelingParams): void {
@@ -158,6 +181,9 @@ export class Paladin extends PlayerClass {
     level19(pc: PlayerCharacter, params: LevelingParams): void {
         pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
         pc.improveAbilityScores(params.abilityScoreImprovement);
+
+        SpellSlotFactory.findPlayerSpellSlots(pc, 5).resourceMax.value++;
+
     }
 
     level20(pc: PlayerCharacter, params: LevelingParams): void {
@@ -165,9 +191,4 @@ export class Paladin extends PlayerClass {
         PaladinArchetype.archetypeHelper[this.paladinOath]["20"](pc, params);
     }
     
-}
-
-interface RangerParams extends LevelingParams {
-	favoredEnemy?: string;
-	favoredTerrain?: string;
 }
