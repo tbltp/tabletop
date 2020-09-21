@@ -418,28 +418,81 @@
         }
     },
     "ROGUE": {
-        "1": {},
-        "2": {},
+        "1": {
+            "EXPERTISE": {
+                "title": "",
+                "description": ""
+            },
+            "SNEAK ATTACK": {
+                "title": "",
+                "description": ""
+            },
+            "THIEVES' CANT": {
+                "title": "",
+                "description": ""
+            }
+        },
+        "2": {
+            "CUNNING ACTION": {
+                "title": "",
+                "description": ""
+            }
+        },
         "3": {},
         "4": {},
-        "5": {},
+        "5": {
+            "UNCANNY DODGE": {
+                "title": "",
+                "description": ""
+            }
+        },
         "6": {},
-        "7": {},
+        "7": {
+            "EVASION": {
+                "title": "",
+                "description": ""
+            }
+        },
         "8": {},
         "9": {},
         "10": {},
-        "11": {},
+        "11": {
+            "RELIABLE TALENT": {
+                "title": "",
+                "description": ""
+            }
+        },
         "12": {},
         "13": {},
-        "14": {},
-        "15": {},
+        "14": {
+            "BLINDSENSE": {
+                "title": "",
+                "description": ""
+            }
+        },
+        "15": {
+            "SLIPPERY MIND": {
+                "title": "",
+                "description": ""
+            }
+        },
         "16": {},
         "17": {},
-        "18": {},
+        "18": {
+            "ELUSIVE": {
+                "title": "",
+                "description": ""
+            }
+        },
         "19": {},
-        "20": {}
+        "20": {
+            "STROKE OF LUCK": {
+                "title": "",
+                "description": ""
+            }
+        }
     },
-    "SORCEROR": {
+    "SORCERER": {
         "1": {},
         "2": {},
         "3": {},
