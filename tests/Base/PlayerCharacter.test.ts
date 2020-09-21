@@ -11,11 +11,11 @@ describe('PlayerCharacter', () => {
 
     let pc: PlayerCharacter;
     const rage: ResourceTrait = {title: "Rage", description: "Number of times you can go into a Rage.  Bonus applies to attack damage while in a rage.", resourceMax: {value: 2}, bonus: 2}; 
-    const brutalCritical: ScalingTrait = {title: "Brutal Critical", description: ""}
+    const brutalCritical: ScalingTrait = {title: "Brutal Critical", description: "Number of extra damage dice on a critical hit.", dice: "1dx"};
 
     beforeEach(() => {
         pc = new PlayerCharacter(12,12,12,12,12,12);
-    })
+    });
 
     test('can add feature traits', () => {
         pc.addFeatures(RacialTraits["DARKVISION"]);
@@ -27,8 +27,9 @@ describe('PlayerCharacter', () => {
         expect(pc.traits.resources).toIncludeAllMembers([rage]);
     });
 
-    test.skip('can add scaling traits', () => {
-        //TO DO
+    test('can add scaling traits', () => {
+        pc.addScalingTraits(brutalCritical);
+        expect(pc.traits.scalingEffects).toIncludeAllMembers([brutalCritical]);
     });
 
     test('can add spells with a specified spellcasting ability', () => {
@@ -74,12 +75,13 @@ describe('PlayerCharacter', () => {
         expect(pc.findResourceTraitByName("Rage")).toBeNull();
     });
 
-    test.skip('can retrieve scaling traits by name', () => {
-        //TO DO
+    test('can retrieve scaling traits by name', () => {
+        pc.addScalingTraits(brutalCritical);
+        expect(pc.findScalingTraitByName("Brutal Critical")).toBeTruthy();
     });
 
-    test.skip('will return null if a scaling trait cannot be found', () => {
-        //TO DO
+    test('will return null if a scaling trait cannot be found', () => {
+        expect(pc.findScalingTraitByName("Brutal Critical")).toBeNull();
     });
 
     test('can retrieve known spells by name', () => {

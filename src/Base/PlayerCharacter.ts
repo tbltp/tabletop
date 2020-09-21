@@ -23,6 +23,10 @@ export class PlayerCharacter extends BaseCharacter {
         return results.length == 1 ? results[0] : null;
     }
 
+    private addTraits( type: string, ...traits: Trait[]) {
+        this.traits[type].push(...traits);
+    }
+
     isSpellcaster(): boolean {
         for(let knownSpells of Object.keys(this.spells)){ if(this.spells[knownSpells].length > 0) { return true; } }
         return false;
@@ -59,15 +63,15 @@ export class PlayerCharacter extends BaseCharacter {
     }
 
     addFeatures(...features: Trait[]): void {
-        this.traits.features.push(...features);
+        this.addTraits('features', ...features);
     }
 
     addResourceTraits(...resTraits: ResourceTrait[]): void {
-        this.traits.resources.push(...resTraits);
+        this.addTraits('resources', ...resTraits);
     }
 
     addScalingTraits(...scalTraits: ScalingTrait[]): void {
-        // this.traits.scalingEffects.push(...scalTraits);
+        this.addTraits('scalingEffects', ...scalTraits);
     }
 
     addSpells(spellList: string[], spellcastingAbility: string): void {

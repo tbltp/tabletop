@@ -168,35 +168,21 @@ export abstract class PlayerClass {
     
 export class SpellSlotFactory {
 
+    private static levelStringDict: {[key: string]: string} = {
+        '1': 'first',
+        '2': 'second',
+        '3': 'third',
+        '4': 'fourth',
+        '5': 'fifth',
+        '6': 'sixth',
+        '7': 'seventh',
+        '8': 'eighth',
+        '9': 'ninth'
+    }
+
+
     private static getLevelString(level: number): string {
-        let slotLevel: string = '';
-        switch(level) {
-            case 1: {
-                slotLevel = 'first';
-                break;
-            }
-            case 2: {
-                slotLevel = 'sixth';
-                break;
-            }
-            case 7: {
-                slotLevel = 'seventh';
-                break;
-            }
-            case 8: {
-                slotLevel = 'eigth';
-                break;
-            }
-            case 9: {
-                slotLevel = 'ninth';
-                break;
-            }
-            default: {
-                slotLevel = 'zeroth';
-                break;
-            }
-        }
-        return slotLevel;
+        return SpellSlotFactory.levelStringDict[String(level)];
     }
 
     private static generateSpellSlots(level: number, max: number): ResourceTrait {
@@ -223,6 +209,16 @@ export class SpellSlotFactory {
         return pc.findResourceTraitByName(resourceTitle);
     }
 
+    public static countAllPlayerSpellSlots(pc: PlayerCharacter): { [key: string]: number } {
+        const result = {};
+        for(let level of Object.keys(SpellSlotFactory.levelStringDict)) {
+            const slots = SpellSlotFactory.findPlayerSpellSlots(pc, Number(level)); 
+            if(slots) {
+                result[level] = slots.resourceMax;
+            }
+        }
+        return result;
+    } 
 }
 
 export interface LevelingParams {

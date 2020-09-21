@@ -74,6 +74,7 @@ export class Bard extends PlayerClass {
     }
 
     level1(pc: PlayerCharacter, params: BardLevelingParams): void {
+        // spell additions at most levels, replacements can be done at every level
         this.handleBardSpellSelections(pc, params);
         const level1Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(1, 2);
         // bardic inspiration
@@ -178,6 +179,7 @@ export class Bard extends PlayerClass {
     }
 
     level12(pc: PlayerCharacter, params: BardLevelingParams): void {
+        this.handleBardSpellSelections(pc, params);
         pc.improveAbilityScores(params.abilityScoreImprovement);
     }
 
@@ -207,6 +209,7 @@ export class Bard extends PlayerClass {
     }
 
     level16(pc: PlayerCharacter, params: BardLevelingParams): void {
+        this.handleBardSpellSelections(pc, params);
         pc.improveAbilityScores(params.abilityScoreImprovement);
     }
 
@@ -227,11 +230,13 @@ export class Bard extends PlayerClass {
     }
 
     level19(pc: PlayerCharacter, params: BardLevelingParams): void {
+        this.handleBardSpellSelections(pc, params);
         pc.improveAbilityScores(params.abilityScoreImprovement);
         SpellSlotFactory.findPlayerSpellSlots(pc, 6).resourceMax.value++;
     }
 
     level20(pc: PlayerCharacter, params: BardLevelingParams): void {
+        this.handleBardSpellSelections(pc, params);
         SpellSlotFactory.findPlayerSpellSlots(pc, 7).resourceMax.value++;
         this.pushBardFeatures(pc, "20");
     }

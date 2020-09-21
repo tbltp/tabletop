@@ -81,7 +81,7 @@ describe('Bard Class', () => {
     describe('on leveling', () => {
 
         let bdClass: Bard;
-        const bdArgs: BardLevelingParams[] = [
+        const bdArgs  = (college): BardLevelingParams[] => ([
             {
                 isNoInput: false,
                 spellSelection: [
@@ -93,8 +93,185 @@ describe('Bard Class', () => {
                     "THUNDERWAVE"
                 ]
             },
-            
-        ];
+            {
+                isNoInput: false,
+                spellSelection: [
+                    "FAERIE FIRE"
+                ]
+            }, 
+            {
+                isNoInput: false,
+                spellSelection: [
+                    "KNOCK"
+                ],
+                archetypeSelection: [
+                    {
+                        archetype: college
+                    }
+                ],
+                proficiencySelection: [
+                    "performance", 
+                    "persuasion"
+                ]
+            },             
+            {
+                isNoInput: false,
+                spellSelection: [
+                    "TRUE STRIKE",
+                    "SUGGESTION"
+                ],
+                abilityScoreImprovement: [
+                    {
+                        ability: "charisma",
+                        improvement: 1
+                    },
+                    {
+                        ability: "dexterity",
+                        improvement: 1
+                    }
+                ]
+            },
+            {
+                isNoInput: false,
+                spellSelection: [
+                    "FEAR"
+                ]
+            },
+            {
+                isNoInput: false,
+                spellSelection: [
+                    "NONDETECTION"
+                ],
+                archetypeSelection: college == "LORE" ? [
+                    {
+                        archetype: college,
+                        options: ["SHIELD, SHATTER"] 
+                    }
+                ] : []
+            },
+            {
+                isNoInput: false,
+                spellSelection: [
+                    "DIMENSION DOOR"
+                ]
+            },
+            {
+                isNoInput: false,
+                spellSelection: [
+                    "CONFUSION"
+                ],
+                abilityScoreImprovement: [
+                    {
+                        ability: "charisma",
+                        improvement: 1
+                    },
+                    {
+                        ability: "dexterity",
+                        improvement: 1
+                    }
+                ]
+            },
+            {
+                isNoInput: false,
+                spellSelection: [
+                    "DREAM"
+                ]   
+            },
+            {
+                isNoInput: false,
+                spellSelection: [
+                    "MENDING",
+                ],
+                proficiencySelection: [
+                    "Intimidation",
+                    "Deception"
+                ],
+                magicalSecretsSpellSelection: [
+                    "TELEKINESIS",
+                    "INSECT PLAGUE"
+                ]
+            },
+            {
+                isNoInput: false,
+                spellSelection: [
+                    "MASS SUGGESTION"
+                ]
+            },
+            {
+                isNoInput: false,
+                abilityScoreImprovement: [
+                    {
+                        ability: "charisma",
+                        improvement: 1
+                    },
+                    {
+                        ability: "dexterity",
+                        improvement: 1
+                    }
+                ]
+            },
+            {
+                isNoInput: false,
+                spellSelection: [
+                    "MIRAGE ARCANE"
+                ]
+            },
+            {
+                isNoInput: false,
+                magicalSecretsSpellSelection: [
+                    "FIRE STORM",
+                    "HEAL"
+                ]
+            },
+            {
+                isNoInput: false,
+                spellSelection: [
+                    "POWER WORD STUN"
+                ]
+            },
+            {
+                isNoInput: false,
+                abilityScoreImprovement: [
+                    {
+                        ability: "charisma",
+                        improvement: 1
+                    },
+                    {
+                        ability: "dexterity",
+                        improvement: 1
+                    }
+                ]
+            },
+            {
+                isNoInput: false,
+                spellSelection: [
+                    "POWER WORD KILL"
+                ]  
+            },
+            {
+                isNoInput: false,
+                magicalSecretsSpellSelection: [
+                    "CREATION",
+                    "CRUSADER'S MANTLE"
+                ]
+            },
+            {
+                isNoInput: false,
+                abilityScoreImprovement: [
+                    {
+                        ability: "charisma",
+                        improvement: 1
+                    },
+                    {
+                        ability: "dexterity",
+                        improvement: 1
+                    }
+                ]
+            },
+            {
+                isNoInput: true
+            }
+        ]);
 
         describe('to Level 2', () => {
 

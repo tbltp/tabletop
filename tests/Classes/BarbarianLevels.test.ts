@@ -60,6 +60,12 @@ describe('Barbarian Class', () => {
             );
         });
 
+        test('starts with an Explorer\'s Pack', () => {
+
+            bnClass = new Barbarian([], []);
+            expect(bnClass.equipmentPack).toBe("EXPLORER");
+        });
+
         test.skip('inventory is not implemented yet', () => {
 
         });
