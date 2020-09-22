@@ -359,7 +359,9 @@ describe('Bard Class', () => {
                 );
             });
 
-            test('knows a total of 6 spells');
+            test('knows a total of 6 spells', () => {
+                expect(pc.getSpellCount()).toBe(6);
+            });
 
             describe('with College of Lore archetype', () => {
 
