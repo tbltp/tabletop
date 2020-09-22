@@ -209,12 +209,14 @@ export class SpellSlotFactory {
         return pc.findResourceTraitByName(resourceTitle);
     }
 
-    public static countAllPlayerSpellSlots(pc: PlayerCharacter): { [key: string]: number } {
-        const result = {};
-        for(let level of Object.keys(SpellSlotFactory.levelStringDict)) {
-            const slots = SpellSlotFactory.findPlayerSpellSlots(pc, Number(level)); 
+    public static countAllPlayerSpellSlots(pc: PlayerCharacter): number[] {
+        const result: number[] = [];
+        for(let level of Object.keys(SpellSlotFactory.levelStringDict).map(l => Number(l))) {
+            const slots = SpellSlotFactory.findPlayerSpellSlots(pc, level); 
             if(slots) {
-                result[level] = slots.resourceMax;
+                result[level - 1] = slots.resourceMax.value;
+            } else {
+                result[level - 1] = 0;
             }
         }
         return result;

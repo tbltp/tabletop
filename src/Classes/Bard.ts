@@ -86,8 +86,8 @@ export class Bard extends PlayerClass {
     level2(pc: PlayerCharacter, params: BardLevelingParams): void {
         this.handleBardSpellSelections(pc, params);
         // song of rest
-        const songOfRest: ScalingTrait = {title: "Song Of Rest", description: "Dice used for Song of Rest.", dice: '1d6'}; 
-        pc.addResourceTraits(songOfRest);
+        const songOfRest: ScalingTrait = {title: "Song of Rest", description: "Dice used for Song of Rest.", dice: '1d6'}; 
+        pc.addScalingTraits(songOfRest);
         // jack of all trades
         for(let skill of Object.keys(pc.skills)){
             if(!pc.skills[skill].proficient) {

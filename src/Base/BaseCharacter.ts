@@ -16,33 +16,33 @@ export abstract class BaseCharacter {
 
 
         this.baseStats = {
-            "initiativeBonus": {base: 0, modifier: this.abilityScores["dexterity"].modifier, bonus: {value: 0}},
-            "baseArmorClass": {base: 10, modifier: this.abilityScores["dexterity"].modifier, bonus: {value: 0}},
-            "hpMax": {base: undefined, modifier: this.abilityScores["constitution"].modifier, bonus: {value: 0}},
-            "passivePerception": {base: 10, modifier: this.abilityScores["wisdom"].modifier, bonus: {value: 0}},
-            "passiveInvestigation": {base: 10, modifier: this.abilityScores["intelligence"].modifier, bonus: {value: 0}},
-            "passiveInsight": {base: 10, modifier: this.abilityScores["wisdom"].modifier, bonus: {value: 0}}
+            "initiativeBonus": {base: 0, modifier: this.abilityScores['dexterity'].modifier, bonus: {value: 0}},
+            "baseArmorClass": {base: 10, modifier: this.abilityScores['dexterity'].modifier, bonus: {value: 0}},
+            "hpMax": {base: undefined, modifier: this.abilityScores['constitution'].modifier, bonus: {value: 0}},
+            "passivePerception": {base: 10, modifier: this.abilityScores['wisdom'].modifier, bonus: {value: 0}},
+            "passiveInvestigation": {base: 10, modifier: this.abilityScores['intelligence'].modifier, bonus: {value: 0}},
+            "passiveInsight": {base: 10, modifier: this.abilityScores['wisdom'].modifier, bonus: {value: 0}}
         }
         
         this.skills = {
-            "Acrobatics": { ability: "dexterity", modifier: this.abilityScores.dexterity.modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(dex), + proficiency (Class Dependent);
-            "Animal Handling": { ability: "wisdom", modifier: this.abilityScores.wisdom.modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(wis), + proficiency (Class Dependent);
-            "Arcana": { ability: "intelligence", modifier: this.abilityScores.intelligence.modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(int), + proficiency (Class Dependent);
-            "Athletics": { ability: "strength", modifier: this.abilityScores.strength.modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(str), + proficiency (Class Dependent);
-            "Deception": { ability: "charisma", modifier: this.abilityScores.charisma.modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(cha), + proficiency (Class Dependent);
-            "History": { ability: "intelligence", modifier: this.abilityScores.intelligence.modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(int), + proficiency (Class Dependent);
-            "Insight": { ability: "wisdom", modifier: this.abilityScores.wisdom.modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(wis), + proficiency (Class Dependent);
-            "Intimidation": { ability: "charisma", modifier: this.abilityScores.charisma.modifier, proficient: false, expertise: false, bonus: { value: 0} },  //--> f(cha), + proficiency (Class Dependent);
-            "Investigation": { ability: "intelligence", modifier: this.abilityScores.intelligence.modifier, proficient: false, expertise: false, bonus: { value: 0} },  //--> f(int), + proficiency (Class Dependent);
-            "Medicine": { ability: "wisdom", modifier: this.abilityScores.wisdom.modifier, proficient: false, expertise: false, bonus: { value: 0} },  //--> f(wis), + proficiency (Class Dependent);
-            "Nature": { ability: "intelligence", modifier: this.abilityScores.intelligence.modifier, proficient: false, expertise: false, bonus: { value: 0} },  //--> f(int), + proficiency (Class Dependent);
-            "Perception": { ability: "wisdom", modifier: this.abilityScores.wisdom.modifier, proficient: false, expertise: false, bonus: { value: 0} },  //--> f(wis), + proficiency (Class Dependent);
-            "Performance": { ability: "charisma", modifier: this.abilityScores.charisma.modifier, proficient: false, expertise: false, bonus: { value: 0} },  //--> f(cha), + proficiency (Class Dependent);
-            "Persuasion": { ability: "charisma", modifier: this.abilityScores.charisma.modifier, proficient: false, expertise: false, bonus: { value: 0} },  //--> f(cha), + proficiency (Class Dependent);
-            "Religion": { ability: "intelligence", modifier: this.abilityScores.intelligence.modifier, proficient: false, expertise: false, bonus: { value: 0} },  //--> f(int), + proficiency (Class Dependent);
-            "Sleight of Hand": { ability: "dexterity", modifier: this.abilityScores.dexterity.modifier, proficient: false, expertise: false, bonus: { value: 0} },  //--> f(dex), + proficiency (Class Dependent);
-            "Stealth": { ability: "dexterity", modifier: this.abilityScores.dexterity.modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(dex), + proficiency (Class Dependent);
-            "Survival": { ability: "wisdom", modifier: this.abilityScores.wisdom.modifier, proficient: false, expertise: false, bonus: { value: 0} }  //--> f(wis), + proficiency (Class Dependent);
+            "acrobatics": { ability: "dexterity", modifier: this.abilityScores['dexterity'].modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(dex), + proficiency (Class Dependent);
+            "animal Handling": { ability: "wisdom", modifier: this.abilityScores['wisdom'].modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(wis), + proficiency (Class Dependent);
+            "arcana": { ability: "intelligence", modifier: this.abilityScores['intelligence'].modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(int), + proficiency (Class Dependent);
+            "athletics": { ability: "strength", modifier: this.abilityScores['strength'].modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(str), + proficiency (Class Dependent);
+            "deception": { ability: "charisma", modifier: this.abilityScores['charisma'].modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(cha), + proficiency (Class Dependent);
+            "history": { ability: "intelligence", modifier: this.abilityScores['intelligence'].modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(int), + proficiency (Class Dependent);
+            "insight": { ability: "wisdom", modifier: this.abilityScores['wisdom'].modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(wis), + proficiency (Class Dependent);
+            "intimidation": { ability: "charisma", modifier: this.abilityScores['charisma'].modifier, proficient: false, expertise: false, bonus: { value: 0} },  //--> f(cha), + proficiency (Class Dependent);
+            "investigation": { ability: "intelligence", modifier: this.abilityScores['intelligence'].modifier, proficient: false, expertise: false, bonus: { value: 0} },  //--> f(int), + proficiency (Class Dependent);
+            "medicine": { ability: "wisdom", modifier: this.abilityScores['wisdom'].modifier, proficient: false, expertise: false, bonus: { value: 0} },  //--> f(wis), + proficiency (Class Dependent);
+            "nature": { ability: "intelligence", modifier: this.abilityScores['intelligence'].modifier, proficient: false, expertise: false, bonus: { value: 0} },  //--> f(int), + proficiency (Class Dependent);
+            "perception": { ability: "wisdom", modifier: this.abilityScores['wisdom'].modifier, proficient: false, expertise: false, bonus: { value: 0} },  //--> f(wis), + proficiency (Class Dependent);
+            "performance": { ability: "charisma", modifier: this.abilityScores['charisma'].modifier, proficient: false, expertise: false, bonus: { value: 0} },  //--> f(cha), + proficiency (Class Dependent);
+            "persuasion": { ability: "charisma", modifier: this.abilityScores['charisma'].modifier, proficient: false, expertise: false, bonus: { value: 0} },  //--> f(cha), + proficiency (Class Dependent);
+            "religion": { ability: "intelligence", modifier: this.abilityScores['intelligence'].modifier, proficient: false, expertise: false, bonus: { value: 0} },  //--> f(int), + proficiency (Class Dependent);
+            "sleight of hand": { ability: "dexterity", modifier: this.abilityScores['dexterity'].modifier, proficient: false, expertise: false, bonus: { value: 0} },  //--> f(dex), + proficiency (Class Dependent);
+            "stealth": { ability: "dexterity", modifier: this.abilityScores['dexterity'].modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(dex), + proficiency (Class Dependent);
+            "survival": { ability: "wisdom", modifier: this.abilityScores['wisdom'].modifier, proficient: false, expertise: false, bonus: { value: 0} }  //--> f(wis), + proficiency (Class Dependent);
         }
     }
 

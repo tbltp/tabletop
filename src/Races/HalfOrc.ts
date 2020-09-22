@@ -26,6 +26,6 @@ export class HalfOrc extends Race {
     }
 
     proficiencies(pc: PlayerCharacter): void {
-        pc.skills["Intimidation"].proficient = true;
+        pc.skills["intimidation"].proficient = true;
     }
 }

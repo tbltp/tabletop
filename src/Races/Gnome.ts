@@ -33,7 +33,7 @@ export class ForestGnome extends Gnome {
 
     level1(pc: PlayerCharacter){ 
         const ispell: ISpell = Spells["MINOR ILLUSION"];
-        const spell: Spell = {...ispell, spellcastingAbility: "Intelligence"};
+        const spell: Spell = {...ispell, spellcastingAbility: "intelligence"};
         pc.spells["0"].push(spell);
     }
 
@@ -51,7 +51,7 @@ export class MountainGnome extends Gnome {
     constructor() {
         super("Mountain Gnome");
         this.traits.push(traits["ARTIFICER'S LORE"], traits["TINKER"]);
-        this.toolProficiencies.push("Tinker's tools")
+        this.toolProficiencies.push("Tinker's Tools");
     }
  
     abilitiesAtLevels = {}

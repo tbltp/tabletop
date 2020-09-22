@@ -45,13 +45,28 @@ export class PlayerCharacter extends BaseCharacter {
     }
 
     findSpellByName(spellName: string): Spell | null {
-        for(let knownSpells of Object.keys(this.spells)) {
-            const results = this.spells[knownSpells].filter(spell => spell.name == spellName)
+        for(let level of Object.keys(this.spells)) {
+            const results = this.spells[level].filter(spell => spell.name == spellName)
             if(results.length == 1) {
-                return results[0]
+                return results[0];
             }
         }
         return null;
+    }
+
+    getSpellCountAtLevel(level: number): number {
+        return this.spells[level].length;
+    }
+
+    getCantripCount(): number {
+        return this.spells[0].length;
+    }
+
+    getSpellCount(): number {
+        //ignore cantrips
+        return Object.values(this.spells).slice(1)
+            .map(splsAtLvl => splsAtLvl.length)
+            .reduce((l1, l2) => l1 + l2);
     }
 
     changeAbilityScoreMaxes(abilityScores: string[], newMax: number): void {

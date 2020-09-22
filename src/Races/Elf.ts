@@ -51,7 +51,7 @@ export class HighElf extends Elf {
     }
 
     proficiencies(pc: PlayerCharacter): void {
-        pc.skills["Perception"].proficient = true;
+        pc.skills["perception"].proficient = true;
     }
 }
 
@@ -75,7 +75,7 @@ export class WoodElf extends Elf {
     }
 
     proficiencies(pc: PlayerCharacter): void {
-        pc.skills["Perception"].proficient = true;
+        pc.skills["perception"].proficient = true;
     }
 }
 
@@ -100,19 +100,19 @@ export class DarkElf extends Elf {
 
     level1(pc: PlayerCharacter) { 
         const ispell: ISpell = Spells["DANCING LIGHTS"];
-        const spell: Spell = {...ispell, spellcastingAbility: "Charisma"};
+        const spell: Spell = {...ispell, spellcastingAbility: "charisma"};
         pc.spells["0"].push(spell);
     }
 
     level3(pc: PlayerCharacter) { 
         const ispell: ISpell = Spells["FAERIE FIRE"];
-        const spell: Spell = {...ispell, spellcastingAbility: "Charisma"};
+        const spell: Spell = {...ispell, spellcastingAbility: "charisma"};
         pc.spells["1"].push(spell);
     }
 
     level5(pc: PlayerCharacter) { 
         const ispell: ISpell = Spells["DARKNESS"];
-        const spell: Spell = {...ispell, spellcastingAbility: "Charisma"};
+        const spell: Spell = {...ispell, spellcastingAbility: "charisma"};
         pc.spells["2"].push(spell);
     }
 
@@ -122,6 +122,6 @@ export class DarkElf extends Elf {
     }
 
     proficiencies(pc: PlayerCharacter): void {
-        pc.skills["Perception"].proficient = true;
+        pc.skills["perception"].proficient = true;
     }
 }

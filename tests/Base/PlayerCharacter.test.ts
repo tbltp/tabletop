@@ -89,6 +89,35 @@ describe('PlayerCharacter', () => {
         expect(pc.findSpellByName("Eldritch Blast")).toBeTruthy();
     });
 
+    test('can count the number of spells known at a given level', () => {
+        pc.addSpells(["CHARM PERSON","COMPREHEND LANGUAGES","ILLUSORY SCRIPT",], "intelligence");
+        expect(pc.getSpellCountAtLevel(1)).toBe(3);
+    });
+
+    test('can count the total number of cantrips known', () => {
+        pc.addSpells([
+            "CHARM PERSON",
+            "COMPREHEND LANGUAGES",
+            "ILLUSORY SCRIPT",
+            "ELDRITCH BLAST",
+            "INVISIBILITY",
+            "SHATTER"
+        ], "intelligence");
+        expect(pc.getCantripCount()).toBe(1);
+    });
+
+    test('can count the total number of spells known', () => {
+        pc.addSpells([
+            "CHARM PERSON",
+            "COMPREHEND LANGUAGES",
+            "ILLUSORY SCRIPT",
+            "ELDRITCH BLAST",
+            "INVISIBILITY",
+            "SHATTER"
+        ], "intelligence");
+        expect(pc.getSpellCount()).toBe(5);
+    });
+
     test('will return null if a specified spell is not known', () => {
         expect(pc.findSpellByName("BLADE WARD")).toBeNull();
     });
