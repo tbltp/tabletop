@@ -159,9 +159,9 @@ export abstract class PlayerClass {
         pc.addFeatures(customFeature);
     }
     
-    public static quickClassLevelUp(pc: PlayerCharacter, pcls: PlayerClass, argsAry: LevelingParams[], level: number): void {
+    public static quickClassLevelUp(pc: PlayerCharacter, pclass: PlayerClass, argsAry: LevelingParams[], level: number): void {
         for(let i = 2; i <= level; i++) {
-            pcls.abilitiesAtLevels[i](pc, argsAry[i - 1]);
+            pclass.abilitiesAtLevels[i](pc, argsAry[i - 1]);
         }
     }
 }

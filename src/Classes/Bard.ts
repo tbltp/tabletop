@@ -124,7 +124,7 @@ export class Bard extends PlayerClass {
         const level3Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(3, 2);
         pc.addResourceTraits(level3Slots);
         // bardic inspiration
-        pc.findResourceTraitByName("Bardic Inspiration")[0].dice = "1d8";
+        pc.findResourceTraitByName("Bardic Inspiration").dice = "1d8";
         this.pushBardFeatures(pc, "5");
     }
 
@@ -150,10 +150,10 @@ export class Bard extends PlayerClass {
 
     level9(pc: PlayerCharacter, params: BardLevelingParams): void {
         this.handleBardSpellSelections(pc, params);
-        const level5Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(5, 1);
-        pc.addResourceTraits(level5Slots);
         // song of rest
         pc.findScalingTraitByName("Song of Rest").dice = "1d8";
+        const level5Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(5, 1);
+        pc.addResourceTraits(level5Slots);
         SpellSlotFactory.findPlayerSpellSlots(pc, 4).resourceMax.value++;
     }
 

@@ -103,7 +103,7 @@ export class BardArchetype extends Archetype {
             ...BardArchetype.getFeature("LORE", "6", "ADDITIONAL MAGICAL SECRETS"), 
             choices: params.archetypeSelection[0].options
         };
-        pc.addSpells(params.archetypeSelection[0].options, "charisma")
+        pc.addSpells(params.archetypeSelection[0].options, "charisma");
         pc.addFeatures(lore6Trait);
     }
 

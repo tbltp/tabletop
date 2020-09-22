@@ -241,12 +241,12 @@ describe('Barbarian Class', () => {
                 PlayerClass.quickClassLevelUp(pc, bnClass, bnArgs, 2);
             });
 
-            test('gets an increase in max Rages to 3', () => {
+            test('upgrades max Rages to 3', () => {
                 bnClass.abilitiesAtLevels[3](pc, bnArgs[2]);
                 expect(pc.findResourceTraitByName("Rage").resourceMax.value).toBe(3);
             });
 
-            test('can select the Berserker archetype', () => {
+            test('can select the Berserker primal path', () => {
                 bnClass.abilitiesAtLevels[3](pc, {
                     isNoInput: false,
                     archetypeSelection: [{
@@ -256,7 +256,7 @@ describe('Barbarian Class', () => {
                 expect(bnClass.primalPath).toBe("BERSERKER");
             });
             
-            test('can select the Totem Warrior archetype', () => {
+            test('can select the Totem Warrior primal path', () => {
 
                 bnClass.abilitiesAtLevels[3](pc, bnArgs[2]);
                 expect(bnClass.primalPath).toBe("TOTEM WARRIOR");
@@ -372,7 +372,7 @@ describe('Barbarian Class', () => {
 
         describe('to Level 6', () => {
 
-            test('gets an increase in max Rages to 4', () => {
+            test('upgrades max Rages to 4', () => {
                 PlayerClass.quickClassLevelUp(pc, bnClass, bnArgs, 6);
                 expect(pc.findResourceTraitByName("Rage").resourceMax.value).toBe(4);
             });
@@ -475,7 +475,7 @@ describe('Barbarian Class', () => {
                 expect(pc.findScalingTraitByName("Brutal Critical")).toBeTruthy();
             });
 
-            test('gets an increase in Rage bonus damage to 3', () => {
+            test('upgrades Rage bonus damage to 3', () => {
                 expect(pc.findResourceTraitByName("Rage").bonus).toBe(3);
             });
 
@@ -543,7 +543,7 @@ describe('Barbarian Class', () => {
                 ).toBeTruthy();
             });
             
-            test('gets an increase in max Rages to 5', () => {
+            test('upgrades max Rages to 5', () => {
                 expect(pc.findResourceTraitByName("Rage").resourceMax.value).toBe(5);
             });
 
@@ -555,7 +555,7 @@ describe('Barbarian Class', () => {
                 PlayerClass.quickClassLevelUp(pc, bnClass, bnArgs, 13);
             });
 
-            test('gets an upgrade to Brutal Critical dice to 2dx', () => {
+            test('upgrades Brutal Critical dice to 2dx', () => {
                 expect(pc.findScalingTraitByName("Brutal Critical").dice).toBe("2dx");
             });
 
@@ -651,7 +651,7 @@ describe('Barbarian Class', () => {
                 ).toBeTruthy();
             });
             
-            test('gets an increase in Rage bonus damage to 4', () => {
+            test('upgrades Rage bonus damage to 4', () => {
                 expect(pc.findResourceTraitByName("Rage").bonus).toBe(4);
             });
 
@@ -663,11 +663,11 @@ describe('Barbarian Class', () => {
                 PlayerClass.quickClassLevelUp(pc, bnClass, bnArgs, 17);
             });
 
-            test('gets an upgrade to Brutal Critical dice to 3dx', () => {
+            test('upgrades Brutal Critical dice to 3dx', () => {
                 expect(pc.findScalingTraitByName("Brutal Critical").dice).toBe("3dx");
             });
 
-            test('gets an increase in max Rages to 6', () => {
+            test('upgrades max Rages to 6', () => {
                 expect(pc.findResourceTraitByName("Rage").resourceMax.value).toBe(6);
             });
 
@@ -725,7 +725,7 @@ describe('Barbarian Class', () => {
                 ).toBeTruthy();
             });
 
-            test('sets max Rages to Infinity', () => {
+            test('upgrades max Rages to Infinity', () => {
                 expect(pc.findResourceTraitByName("Rage").resourceMax.value).toBe(Infinity);
             });
 

@@ -263,6 +263,22 @@
     "ritual": false,
     "spellAttack": false
   },
+  "ARCANE SWORD": {
+    "name": "Arcane Sword",
+    "description": "You create a sword-shaped plane of force that hovers within range. It lasts for the duration. When the sword appears, you make a melee spell attack against a target of your choice within 5 feet of the sword. On a hit, the target takes 3d10 force damage. Until the spell ends, you can use a bonus action on each of your turns to move the sword up to 20 feet to a spot you can see and repeat this attack against the same target or a different one.",
+    "school": "evocation",
+    "castTime": "1 action or 8 hours",
+    "range": "60 feet",
+    "components": [
+      "V", 
+      "S",
+      "M"
+    ],
+    "material": "a miniature platinum sword with a grip and pommel of copper and zinc, worth 250 gp",
+    "minimumLevel": "7",
+    "ritual": false,
+    "spellAttack": true
+  },
   "ARMOR OF AGATHYS": {
     "name": "Armor Of Agathys",
     "description": "A protective magical force surrounds you, manifesting as a spectral frost that covers you and your gear. You gain 5 temporary hit points for the duration. If a creature hits you with a melee attack while you have these hit points, the creature takes 5 cold damage. At Higher Levels, When you cast this spell using a spell slot of 2nd level or higher, both the temporary hit points and the cold damage increase by 5 for each slot level above ist.",
@@ -4121,21 +4137,21 @@
   },
   "MOVE EARTH": {
     "name": "Move Earth",
-    "description": "changes to complete. At the end of every 10 minutes you spend terrain to affect. by the ground's movement. This spell can't manipulate natural stone or the terrain would make a structure unstable, it might collapse.",
+    "description": "Choose an area of terrain no larger than 40 feet on a side within range. You can reshape dirt, sand, or clay in the area in any manner you choose for the duration. You can raise or lower the area's elevation, create or fill in a trench, erect or flatten a wall, or form a pillar. The extent of any such changes can't exceed half the area's largest dimension. So, if you affect a 40-foot square, you can create a pillar up to 20 feet high, raise or lower the square's elevation by up to 20 feet, dig a trench up to 20 feet deep, and so on. It takes 10 minutes for these changes to complete.\nAt the end of every 10 minutes you spend concentrating on the spell, you can choose a new area of terrain to affect.\nBecause the terrain's transformation occurs slowly, creatures in the area can't usually be trapped or injured by the ground's movement. This spell can't manipulate natural stone or stone construction. Rocks and structures shift to accommodate the new terrain. If the way you shape the terrain would make a structure unstable, it might collapse.\nSimilarly, this spell doesn't directly affect plant growth. The moved earth carries any plants along with it.    ",
     "school": "transmutation",
     "castTime": "1 action",
     "range": "120 feet ",
     "concentration": true,
     "duration": "up to 2 hours",
     "components": [],
-    "material": "a miniature platinum sword with a grip and pommel of copper and zinc, worth 2S0 gp",
+    "material": "an iron blade and a small bag containing a mixture of soils--clay, loam, and sand",
     "minimumLevel": "6",
     "ritual": false,
     "spellAttack": false
   },
   "NONDETECTION": {
     "name": "Nondetection",
-    "description": "scrying sensors.",
+    "description": "For the duration, you hide a target that you touch from divination magic. The target can be a willing creature or a place or an object no larger than 10 feet in any dimension. The target can’t be targeted by any divination magic or perceived through magical scrying sensors.",
     "school": "abjuration",
     "castTime": "1 action",
     "range": "Touch",
@@ -4146,14 +4162,14 @@
       "S",
       "M"
     ],
-    "material": "a pinch of diamond dust spell consumes",
+    "material": "A pinch of diamond dust worth 25 gp sprinkled over the target, which the spell consumes",
     "minimumLevel": "3",
     "ritual": false,
     "spellAttack": false
   },
   "NYSTUL'S MACIC AURA": {
-    "name": "Nystul'S Macic Aura",
-    "description": "Until the spell ends, you can use a bonus action on each of your turns to move the sword up to 20 feet to a spot you can see and repeat this attack against the same",
+    "name": "Nystul's Macic Aura",
+    "description": "You place an illusion on a creature or an object you touch so that divination spells reveal false information about it. The target can be a willing creature or an object that isn't being carried or worn by another creature.\nWhen you cast the spell, choose one or both of the following effects. The effect lasts for the duration. If you cast this spell on the same creature or object every day for 30 days, placing the same effect on it each time, the illusion lasts until it is dispelled.\nFalse Aura: You change the way the target appears to spells and magical effects, such as detect magic, that detect magical auras. You can make a nonmagical object appear magical, a magical object appear nonmagical, or change the object's magical aura so that it appears to belong to a specific school of magic that you choose. When you use this effect on an object, you can make the false magic apparent to any creature that handles the item.\nMask: You change the way the target appears to spells and magical effects that detect creature types, such as a paladin's Divine Sense or the trigger of a symbol spell. You choose a creature type and other spells and magical effects treat the target as if it were a creature of that type or of that alignment.",
     "school": "illusion",
     "castTime": "1 action",
     "range": "Touch",
@@ -4164,13 +4180,13 @@
       "S",
       "M"
     ],
-    "material": "an iron blade and a small bag containing a mixture of soils\u2014clay, loam, and sand) Choose an area of terrain no larger than 40 feet ona side within range. You can reshape dirt, sand, or clay in the area in any manner you choose for the duration. You can raise or lower the area's elevation, create or fill in a trench, erect or flatten a wall, or form a pillar. The extent of any such changes can't exceed half the area's largest dimension. So, if you affect a 40-foot square, you can create a pillar up to 20 feet high, raise or lower the square's elevation by up to 20 feet, dig a trench up to 20 feet deep, and so on. It takes 10 minutes for these concentrating on the spell, you can choose a new area of Because the terrain's transformation occurs slowly, creatures in the area can't usually be trapped or injured stone construction. Rocks and structures shift to accommodate the new terrain. If the way you shape Similarly, this spell doesn't directly affect plant growth, The moved earth carries any plants along with it. worth 2S gp sprinkled over the target, which the For the duration, you hide a target that you touch from divination magic. The target can be a willing creature or a place or an object no larger than 10 feet in any dimension. The target can't be targeted by any divination magic or perceived through magical You place an illusion on a creature or an object you touch so that divination spells reveal false information about it. The target can be a willing creature or an object that isn't being carried or worn by another creature. When you cast the spell, choose one or both of the following effects. The effect lasts for the duration. If you cast this spell on the same creature or object every day for 30 days, placing the same effect on it each time, the illusion lasts until it is dispelled, False Aura. You change the way the target appears to spells and magical effects, such as detect magic, that detect magical auras. You can make a nonmagical object appear magical, a magical object appear nonmagical, or change the object's magical aura so that it appears to belong to a specific school of magic that you choose. When you use this effect on an object, you can make the false magic apparent to any creature that handles the item. Mask. You change the way the target appears to spells and magical effects that detect creature types, such as a paladin's Divine Sense or the trigger of a symbol spell. You choose a creature type and other spells and magical effects treat the target as if it were a creature of that type or of that alignment. OTILUKE'S FREEZING SPHERE",
+    "material": "a small square of silk",
     "minimumLevel": "2",
     "ritual": false,
     "spellAttack": false
   },
   "OTILUKE'S FREEZING SPHERE": {
-    "name": "Otiluke'S Freezing Sphere",
+    "name": "Otiluke's Freezing Sphere",
     "description": "A frigid globe of cold energy streaks from your fingertips to a point of your choice within range, where it explodes in a 60-foot-radius sphere. Each creature within the area must make a Constitution saving throw. On a failed save, a creature takes 10d6 cold damage. Ona successful save, it takes half as much damage. Hf the globe strikes a body of water or a liquid that is principally water (not including water-based creatures), it freezes the liquid to a depth of 6 inches over an area 30 feet square. This ice lasts for 1 minute. Creatures that were swimming on the surface of frozen water are trapped in the ice, A trapped creature can use an action to make a Strength check against your spell save DC to break free. You can refrain from firing the globe after completing the spell, if you wish. A small globe about the size of a sling stone, cool to the touch, appears in your hand. At any time, you or a creature you give the globe to can throw the globe (to a range of 40 feet) or hurl it with a sling (to the sling's normal range). It shatters on impact, with the same effect as the normal casting of the spell. You can also set the globe down without shattering it. After 1 minute, if the globe hasn't already shattered, it explodes. At Higher Levels. When you cast this spell using a spell slot of 7th level or higher, the damage increases by 1d6 for each slot level above 6th.",
     "school": "evocation",
     "castTime": "1 action",
