@@ -90,7 +90,7 @@ describe('Feats', () => {
 
     test('Magic Initiate feat introduces 2 cantrips', () => {
         
-        let ft: Feat = new MagicInitiate('Druid', ['DRUIDCRAFT', 'GUIDANCE'], 'ANIMAL FRIENDSHIP');
+        let ft: Feat = new MagicInitiate('DRUID', ['DRUIDCRAFT', 'GUIDANCE'], 'ANIMAL FRIENDSHIP');
         ft.apply(pc);
         expect(
             pc.spells[0][0].spellcastingAbility === 'wisdom' &&
@@ -100,7 +100,7 @@ describe('Feats', () => {
 
     test('Magic Initiate feat introduces 1 first level spell', () => {
         
-        let ft: Feat = new MagicInitiate('Druid', ['DRUIDCRAFT', 'GUIDANCE'], 'ANIMAL FRIENDSHIP');
+        let ft: Feat = new MagicInitiate('DRUID', ['DRUIDCRAFT', 'GUIDANCE'], 'ANIMAL FRIENDSHIP');
         ft.apply(pc);
         expect(pc.spells[1][0].spellcastingAbility == 'wisdom').toBeTruthy();
     });
