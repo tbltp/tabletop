@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams, SpellSlotFactory } from './PlayerClass';
+import { PlayerClass, LevelingParams } from './PlayerClass';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import { ResourceTrait } from '../Base/Interfaces';
 import * as SpellList from '../../Assets/SpellList.json';

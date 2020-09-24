@@ -1,8 +1,9 @@
-import { PlayerClass, SpellSlotFactory, LevelingParams } from './PlayerClass';
+import { PlayerClass, LevelingParams } from './PlayerClass';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
-import * as SpellCastingAbility from '../../Assets/SpellcastingAbility.json';
+import * as SpellcastingAbility from '../../Assets/SpellcastingAbility.json';
 import * as Metamagic from '../../Assets/Metamagic.json';
 import { SorcererArchetype } from './Archetypes';
+import { SpellSlotFactory } from './SpellSlotFactory';
 
 export class Sorcerer extends PlayerClass {
 
@@ -67,7 +68,7 @@ export class Sorcerer extends PlayerClass {
     }
 
     private handleSorcererSpellSelections(pc: PlayerCharacter, params: LevelingParams): void {
-        this.handleSpellSelections(pc, params, SpellCastingAbility["SORCEROR"]);
+        this.handleSpellSelections(pc, params, SpellcastingAbility["SORCEROR"]);
     }
 
     private applySorcererSpellSlots(pc: PlayerCharacter, level: number) {

@@ -1,11 +1,12 @@
-import { PlayerClass, LevelingParams, SpellSlotFactory } from './PlayerClass';
+import { PlayerClass, LevelingParams } from './PlayerClass';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import {ISpell, Spell, ResourceTrait, ScalingTrait } from '../Base/Interfaces';
 import * as ClassTraits from '../../Assets/ClassTraits.json';
 import * as Spells from '../../Assets/Spells.json';
 import { ClericArchetype } from './Archetypes';
 import * as SpellList from '../../Assets/SpellList.json';
-import * as SpellCastingAbility from '../../Assets/SpellcastingAbility.json';
+import * as SpellcastingAbility from '../../Assets/SpellcastingAbility.json';
+import { SpellSlotFactory } from './SpellSlotFactory';
 
 export class Cleric extends PlayerClass {
 
@@ -71,7 +72,7 @@ export class Cleric extends PlayerClass {
     }
 
     private handleClericSpellSelections(pc: PlayerCharacter, params: LevelingParams) {
-        this.handleSpellSelections(pc, params, SpellCastingAbility["CLERIC"]);
+        this.handleSpellSelections(pc, params, SpellcastingAbility["CLERIC"]);
     }
 
     private applyClericSpellSlots(pc: PlayerCharacter, level: number) {
@@ -79,7 +80,7 @@ export class Cleric extends PlayerClass {
     }
 
     level1(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addSpells([...params.spellSelection, ...SpellList["Cleric"][1]], SpellCastingAbility["CLERIC"]);
+        pc.addSpells([...params.spellSelection, ...SpellList["Cleric"][1]], SpellcastingAbility["CLERIC"]);
         this.applyClericSpellSlots(pc, 1);
         // divine domain 
         this.clericDomain = params.archetypeSelection[0].archetype;

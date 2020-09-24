@@ -1,8 +1,9 @@
-import { PlayerClass, SpellSlotFactory, LevelingParams } from './PlayerClass';
+import { PlayerClass, LevelingParams } from './PlayerClass';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import { ResourceTrait, ScalingTrait } from '../Base/Interfaces';
 import { BardArchetype } from './Archetypes';
-import * as SpellCastingAbility from '../../Assets/SpellCastingAbility.json'; 
+import * as SpellcastingAbility from '../../Assets/SpellcastingAbility.json'; 
+import { SpellSlotFactory } from './SpellSlotFactory';
 
 export class Bard extends PlayerClass {
     constructor(skillProficiencies: string[], weapons: string[], instrumentProficiencies: string[], instrument: string, equipmentPack: string, bardParams: LevelingParams) {
@@ -71,7 +72,7 @@ export class Bard extends PlayerClass {
     }
 
     private handleBardSpellSelections(pc: PlayerCharacter, params: LevelingParams) {
-        this.handleSpellSelections(pc, params, SpellCastingAbility["BARD"]);
+        this.handleSpellSelections(pc, params, SpellcastingAbility["BARD"]);
     }
 
     private applyBardSpellSlots(pc: PlayerCharacter, level: number) {
@@ -84,6 +85,7 @@ export class Bard extends PlayerClass {
         this.applyBardSpellSlots(pc, 1);
         // bardic inspiration
         const bardicInspiration: ResourceTrait = {title: "Bardic Inspiration", description: "Number of times you can give Bardic Inspiration per long rest. Dice is Bardic Inspiration die.", resourceMax: pc.abilityScores.charisma.modifier, dice: '1d6'}; 
+        pc.addResourceTraits(bardicInspiration);
         this.pushBardFeatures(pc, 1);  
     }
 
@@ -99,6 +101,7 @@ export class Bard extends PlayerClass {
             }
         }
         this.applyBardSpellSlots(pc, 2);
+        this.pushBardFeatures(pc, 2);  
     }
 
     level3(pc: PlayerCharacter, params: LevelingParams): void {
@@ -165,7 +168,7 @@ export class Bard extends PlayerClass {
         // bardic inspiration
         pc.findResourceTraitByName("Bardic Inspiration").dice = "1d10";
         // magical secrets
-        pc.addSpells(params.magicalSecretsSpellSelection, SpellCastingAbility["BARD"]);
+        pc.addSpells(params.magicalSecretsSpellSelection, SpellcastingAbility["BARD"]);
         PlayerClass.pushCustomizedClassFeature(pc, 10, "BARD", "MAGICAL SECRETS", params.magicalSecretsSpellSelection);
     }
 
@@ -189,7 +192,7 @@ export class Bard extends PlayerClass {
     level14(pc: PlayerCharacter, params: BardLevelingParams): void {
         this.handleBardSpellSelections(pc, params);
         // magical secrets
-        pc.addSpells(params.magicalSecretsSpellSelection, SpellCastingAbility["BARD"]);
+        pc.addSpells(params.magicalSecretsSpellSelection, SpellcastingAbility["BARD"]);
         pc.findFeatureTraitByName("Magical Secrets").choices.push(...params.magicalSecretsSpellSelection);
         // college
         BardArchetype.archetypeHelper[this.bardCollege][14](pc, params);
@@ -218,7 +221,7 @@ export class Bard extends PlayerClass {
         this.handleBardSpellSelections(pc, params);
         this.applyBardSpellSlots(pc, 18);
         // magical secrets
-        pc.addSpells(params.magicalSecretsSpellSelection, SpellCastingAbility["BARD"]);
+        pc.addSpells(params.magicalSecretsSpellSelection, SpellcastingAbility["BARD"]);
         pc.findFeatureTraitByName("Magical Secrets").choices.push(...params.magicalSecretsSpellSelection);
     }
 
@@ -231,6 +234,7 @@ export class Bard extends PlayerClass {
     level20(pc: PlayerCharacter, params: LevelingParams): void {
         this.handleBardSpellSelections(pc, params);
         this.applyBardSpellSlots(pc, 20);
+        this.pushBardFeatures(pc, 20);  
     }
 }
 

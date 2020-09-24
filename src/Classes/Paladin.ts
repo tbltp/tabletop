@@ -1,9 +1,10 @@
-import { PlayerClass, LevelingParams, SpellSlotFactory } from './PlayerClass';
+import { PlayerClass, LevelingParams } from './PlayerClass';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import { ResourceTrait } from '../Base/Interfaces';
 import * as SpellList from '../../Assets/SpellList.json';
-import * as SpellCastingAbility from '../../Assets/SpellcastingAbility.json';
+import * as SpellcastingAbility from '../../Assets/SpellcastingAbility.json';
 import { PaladinArchetype } from './Archetypes';
+import { SpellSlotFactory } from './SpellSlotFactory';
 
 export class Paladin extends PlayerClass {
 
@@ -71,7 +72,7 @@ export class Paladin extends PlayerClass {
     }
 
     private handlePaladinSpellSelections(pc: PlayerCharacter, params: LevelingParams) {
-        this.handleSpellSelections(pc, params, SpellCastingAbility["PALADIN"]);
+        this.handleSpellSelections(pc, params, SpellcastingAbility["PALADIN"]);
     }
 
     private applyPaladinSpellSlots(pc: PlayerCharacter, level: number) {

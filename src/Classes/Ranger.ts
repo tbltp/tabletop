@@ -1,9 +1,10 @@
-import { PlayerClass, LevelingParams, SpellSlotFactory } from './PlayerClass';
+import { PlayerClass, LevelingParams } from './PlayerClass';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import { ResourceTrait } from '../Base/Interfaces';
 import * as SpellList from '../../Assets/SpellList.json';
-import * as SpellCastingAbility from '../../Assets/SpellCastingAbility.json';
+import * as SpellcastingAbility from '../../Assets/SpellcastingAbility.json';
 import { RangerArchetype } from './Archetypes';
+import { SpellSlotFactory } from './SpellSlotFactory';
 
 export class Ranger extends PlayerClass {
 
@@ -67,7 +68,7 @@ export class Ranger extends PlayerClass {
     }
 
     private handleRangerSpellSelections(pc: PlayerCharacter, params: LevelingParams): void {
-        this.handleSpellSelections(pc, params, SpellCastingAbility["RANGER"]);
+        this.handleSpellSelections(pc, params, SpellcastingAbility["RANGER"]);
     }
 
     private applyRangerSpellSlots(pc: PlayerCharacter, level: number) {

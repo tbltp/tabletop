@@ -1,11 +1,12 @@
 import 'jest-extended';
 
-import { PlayerClass, SpellSlotFactory } from "../../src/Classes/PlayerClass";
+import { PlayerClass } from "../../src/Classes/PlayerClass";
 import { PlayerCharacter } from "../../src/Base/PlayerCharacter";
 import { BardArchetype } from "../../src/Classes/Archetypes";
 import { Bard, BardLevelingParams } from "../../src/Classes/Bard";
 
 import * as ClassTraits from "../../Assets/ClassTraits.json";
+import { SpellSlotFactory } from '../../src/Classes/SpellSlotFactory';
 
 const BardTraits = ClassTraits["BARD"];
 

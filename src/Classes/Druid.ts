@@ -1,9 +1,10 @@
-import { PlayerClass, LevelingParams, SpellSlotFactory } from './PlayerClass';
+import { PlayerClass, LevelingParams } from './PlayerClass';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import { ResourceTrait, ScalingTrait } from '../Base/Interfaces';
 import * as SpellList from '../../Assets/SpellList.json';
-import * as SpellCastingAbility from '../../Assets/SpellcastingAbility.json';
+import * as SpellcastingAbility from '../../Assets/SpellcastingAbility.json';
 import { DruidArchetype } from './Archetypes';
+import { SpellSlotFactory } from './SpellSlotFactory';
 
 export class Druid extends PlayerClass {
 
@@ -70,7 +71,7 @@ export class Druid extends PlayerClass {
     }
 
     private handleDruidSpellSelections(pc: PlayerCharacter, params: LevelingParams) {
-        this.handleSpellSelections(pc, params, SpellCastingAbility["DRUID"]);
+        this.handleSpellSelections(pc, params, SpellcastingAbility["DRUID"]);
     }
 
     private applyDruidSpellSlots(pc: PlayerCharacter, level: number) {
@@ -78,7 +79,7 @@ export class Druid extends PlayerClass {
     }
 
     level1(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addSpells([...params.spellSelection, ...SpellList["Druid"][1]], SpellCastingAbility["DRUID"]);
+        pc.addSpells([...params.spellSelection, ...SpellList["Druid"][1]], SpellcastingAbility["DRUID"]);
         this.applyDruidSpellSlots(pc, 1);
         this.pushDruidFeatures(pc, 1);
     }
