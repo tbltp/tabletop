@@ -61,8 +61,8 @@ export class Wizard extends PlayerClass {
         "20": this.level20,
     }
 
-    pushPaladinFeatures(pc: PlayerCharacter, level: string) {
-        this.pushClassFeatures(pc, level, "PALADIN");
+    pushPaladinFeatures(pc: PlayerCharacter, level: number) {
+        this.pushClassFeatures(pc, level, "WIZARD");
     }
 
     level1(pc: PlayerCharacter, params: LevelingParams): void {

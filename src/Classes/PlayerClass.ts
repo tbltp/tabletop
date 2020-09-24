@@ -74,7 +74,7 @@ export abstract class PlayerClass {
     }
 
     protected addSkillProficiencies(pc: PlayerCharacter): void {
-        for(let skill of this.skillProficiencies) { pc.skills[skill].proficient = true; }
+        for(let skill of this.skillProficiencies) { console.log(skill); pc.skills[skill].proficient = true; }
     }
 
     protected addWeaponProficiencies(pc: PlayerCharacter): void {
@@ -139,7 +139,7 @@ export abstract class PlayerClass {
         pc.baseStats.hpMax.base = this.hpBase;
     }
 
-    protected pushClassFeatures(pc: PlayerCharacter, level: string, className: string) {
+    protected pushClassFeatures(pc: PlayerCharacter, level: number, className: string) {
         for(let key in ClassTraits[className][level]) {
             pc.addFeatures(ClassTraits[className][level][key]);
         }
@@ -154,7 +154,7 @@ export abstract class PlayerClass {
         }
     }
 
-    public static pushCustomizedClassFeature(pc: PlayerCharacter, level: string, className: string, feature: string, choices: string[]) {
+    public static pushCustomizedClassFeature(pc: PlayerCharacter, level: number, className: string, feature: string, choices: string[]) {
         const customFeature: Trait = {...ClassTraits[className][level][feature], choices: choices};
         pc.addFeatures(customFeature);
     }
@@ -180,6 +180,50 @@ export class SpellSlotFactory {
         '9': 'ninth'
     }
 
+    private static spellSlotsByLevel = {
+        'PRIMARY': {
+            '1' : [2, 0, 0, 0, 0, 0, 0, 0, 0],
+            '2' : [3, 0, 0, 0, 0, 0, 0, 0, 0],
+            '3' : [4, 2, 0, 0, 0, 0, 0, 0, 0],
+            '4' : [4, 3, 0, 0, 0, 0, 0, 0, 0],
+            '5' : [4, 3, 2, 0, 0, 0, 0, 0, 0],
+            '6' : [4, 3, 3, 0, 0, 0, 0, 0, 0],
+            '7' : [4, 3, 3, 1, 0, 0, 0, 0, 0],
+            '8' : [4, 3, 3, 2, 0, 0, 0, 0, 0],
+            '9' : [4, 3, 3, 3, 1, 0, 0, 0, 0],
+            '10': [4, 3, 3, 3, 2, 0, 0, 0, 0],
+            '11': [4, 3, 3, 3, 2, 1, 0, 0, 0],
+            '13': [4, 3, 3, 3, 2, 1, 1, 0, 0],
+            '15': [4, 3, 3, 3, 2, 1, 1, 1, 0],
+            '17': [4, 3, 3, 3, 2, 1, 1, 1, 1],
+            '18': [4, 3, 3, 3, 3, 1, 1, 1, 1],
+            '19': [4, 3, 3, 3, 3, 2, 1, 1, 1],
+            '20': [4, 3, 3, 3, 3, 2, 2, 1, 1]
+        },
+        'SECONDARY': {
+            '2' : [2, 0, 0, 0, 0],
+            '3' : [3, 0, 0, 0, 0],
+            '5' : [4, 2, 0, 0, 0],
+            '7' : [4, 3, 0, 0, 0],
+            '9' : [4, 3, 2, 0, 0],
+            '11': [4, 3, 3, 0, 0],
+            '13': [4, 3, 3, 1, 0],
+            '15': [4, 3, 3, 2, 0],
+            '17': [4, 3, 3, 3, 1],
+            '19': [4, 3, 3, 3, 2]
+        },
+        'TERTIARY': {
+
+        }
+    };
+
+
+
+    private static spellSlotsByLevelSecondary: {[key: string]: number[]} = {
+
+
+    }
+
 
     private static getLevelString(level: number): string {
         return SpellSlotFactory.levelStringDict[String(level)];
@@ -198,15 +242,36 @@ export class SpellSlotFactory {
         };
     }
 
-    public static getSpellSlots(level: number, max: number): ResourceTrait {
-        return SpellSlotFactory.generateSpellSlots(level, max);
-    }
-
-    public static findPlayerSpellSlots(pc: PlayerCharacter, level: number): ResourceTrait {
+    private static findPlayerSpellSlots(pc: PlayerCharacter, level: number): ResourceTrait {
         const slotLevelString: string = SpellSlotFactory.getLevelString(level);
         const resourceTitle: string = slotLevelString.charAt(0).toUpperCase() + slotLevelString.slice(1) +
             " Level Spell Slots";
         return pc.findResourceTraitByName(resourceTitle);
+    }
+
+    public static applySpellSlotsAtLevel(pc: PlayerCharacter, level: number, rank: string): void {
+        
+        if(!Object.keys(SpellSlotFactory.spellSlotsByLevel[rank]).includes(String(level))) {
+            return;
+        }
+        const slotArray = SpellSlotFactory.spellSlotsByLevel[rank][String(level)];
+        for(let i = 0; i < slotArray.length; i++) {
+
+            const slotLevel = i + 1;
+            const slotMax = slotArray[i];
+
+            if(slotMax == 0) break;
+            else {
+                const existingSlot: ResourceTrait | null = this.findPlayerSpellSlots(pc, slotLevel);
+                if(!existingSlot) {
+                    const slot: ResourceTrait = SpellSlotFactory.generateSpellSlots(i + 1, slotMax);
+                    pc.addResourceTraits(slot);
+                }
+                else {
+                    existingSlot.resourceMax.value = slotMax;
+                }
+            }
+        }
     }
 
     public static countAllPlayerSpellSlots(pc: PlayerCharacter): number[] {

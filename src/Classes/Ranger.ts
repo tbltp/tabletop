@@ -2,11 +2,12 @@ import { PlayerClass, LevelingParams, SpellSlotFactory } from './PlayerClass';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import { ResourceTrait } from '../Base/Interfaces';
 import * as SpellList from '../../Assets/SpellList.json';
+import * as SpellCastingAbility from '../../Assets/SpellCastingAbility.json';
 import { RangerArchetype } from './Archetypes';
 
 export class Ranger extends PlayerClass {
 
-    constructor(skillProficiencies: string[], weapons: string[], armor: string[], rangerParams: RangerParams, equipmentPack: string){ 
+    constructor(skillProficiencies: string[], weapons: string[], armor: string[], rangerParams: RangerLevelingParams, equipmentPack: string){ 
         super(
             "Ranger",
             [],
@@ -61,83 +62,82 @@ export class Ranger extends PlayerClass {
         "20": this.level20,
     }
 
-    pushRangerFeatures(pc: PlayerCharacter, level: string) {
+    private pushRangerFeatures(pc: PlayerCharacter, level: number) {
         this.pushClassFeatures(pc, level, "RANGER");
     }
 
-    level1(pc: PlayerCharacter, params: RangerParams): void {
-		PlayerClass.pushCustomizedClassFeature(pc, "1", "RANGER", "FAVORED ENEMY", [params.favoredEnemy])
-        PlayerClass.pushCustomizedClassFeature(pc, "1", "RANGER", "NATURAL EXPLORER", [params.favoredTerrain])
+    private handleRangerSpellSelections(pc: PlayerCharacter, params: LevelingParams): void {
+        this.handleSpellSelections(pc, params, SpellCastingAbility["RANGER"]);
+    }
+
+    private applyRangerSpellSlots(pc: PlayerCharacter, level: number) {
+        SpellSlotFactory.applySpellSlotsAtLevel(pc, level, "SECONDARY");
+    }
+
+    level1(pc: PlayerCharacter, params: RangerLevelingParams): void {
+		PlayerClass.pushCustomizedClassFeature(pc, 1, "RANGER", "FAVORED ENEMY", [params.favoredEnemy])
+        PlayerClass.pushCustomizedClassFeature(pc, 1, "RANGER", "NATURAL EXPLORER", [params.favoredTerrain])
     }
 
     level2(pc: PlayerCharacter, params: LevelingParams): void {
-        const lvl1Slots = SpellSlotFactory.getSpellSlots(1, 2);
-        pc.addResourceTraits(lvl1Slots);
-        pc.addSpells(params.spellSelection, "wisdom");
+        this.handleRangerSpellSelections(pc, params);
+        this.applyRangerSpellSlots(pc, 2);
 
-        // FIGHTING STYLE
+        // TO DO FIGHTING STYLE
     }
 
     level3(pc: PlayerCharacter, params: LevelingParams): void {
-
+        this.handleRangerSpellSelections(pc, params);
+        this.applyRangerSpellSlots(pc, 3);
         this.rangerArchetype = params.archetypeSelection[0].archetype;
-
-        this.pushRangerFeatures(pc, "3");
-        pc.addSpells(params.spellSelection, "wisdom");
-        SpellSlotFactory.findPlayerSpellSlots(pc, 1).resourceMax.value++;
-
-        RangerArchetype.archetypeHelper[this.rangerArchetype]["3"](pc, params);
+        RangerArchetype.archetypeHelper[this.rangerArchetype][3](pc, params);
+        this.pushRangerFeatures(pc, 3);
     }
     
     level4(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushRangerFeatures(pc, "4");
-        SpellSlotFactory.findPlayerSpellSlots(pc, 1).resourceMax.value++;
-        pc.improveAbilityScores(params.abilityScoreImprovement)
+        this.applyRangerSpellSlots(pc, 4);
+        pc.improveAbilityScores(params.abilityScoreImprovement);
+        this.pushRangerFeatures(pc, 4);
+
     }
 
     level5(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushRangerFeatures(pc, "5");
-        const lvl2Slots = SpellSlotFactory.getSpellSlots(2, 2);
-        pc.addResourceTraits(lvl2Slots);
-        pc.addSpells(params.spellSelection, "wisdom");
-        SpellSlotFactory.findPlayerSpellSlots(pc, 1).resourceMax.value++;
+        this.handleRangerSpellSelections(pc, params);
+        this.applyRangerSpellSlots(pc, 5); 
+        this.pushRangerFeatures(pc, 5);
     }
 
-    level6(pc: PlayerCharacter, params: RangerParams): void {
-        this.pushRangerFeatures(pc, "6");
+    level6(pc: PlayerCharacter, params: RangerLevelingParams): void {
         pc.findFeatureTraitByName("Favored Enemy").choices.push(params.favoredEnemy);
         pc.findFeatureTraitByName("Natural Explorer").choices.push(params.favoredTerrain);
+        this.pushRangerFeatures(pc, 6);
     }
 
     level7(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addSpells(params.spellSelection, "wisdom");
-        SpellSlotFactory.findPlayerSpellSlots(pc, 2).resourceMax.value++;
-
-        RangerArchetype.archetypeHelper[this.rangerArchetype]["7"](pc, params);
- 
+        this.handleRangerSpellSelections(pc, params);
+        this.applyRangerSpellSlots(pc, 7); 
+        RangerArchetype.archetypeHelper[this.rangerArchetype][7](pc, params);
     }
 
     level8(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushRangerFeatures(pc, "8");
         pc.improveAbilityScores(params.abilityScoreImprovement);
+        this.pushRangerFeatures(pc, 8);
     }
 
     level9(pc: PlayerCharacter, params: LevelingParams): void {
-        const lvl3Slots = SpellSlotFactory.getSpellSlots(3, 2);
-        pc.addResourceTraits(lvl3Slots);
-        pc.addSpells(params.spellSelection, "wisdom");
+        this.handleRangerSpellSelections(pc, params);
+        this.applyRangerSpellSlots(pc, 9); 
     }
 
-    level10(pc: PlayerCharacter, params: RangerParams): void {
-        this.pushRangerFeatures(pc, "10");
+    level10(pc: PlayerCharacter, params: RangerLevelingParams): void {
+        this.pushRangerFeatures(pc, 10);
         pc.findFeatureTraitByName("Natural Explorer").choices.push(params.favoredTerrain);
     }
 
     level11(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addSpells(params.spellSelection, "wisdom");
-        SpellSlotFactory.findPlayerSpellSlots(pc, 3).resourceMax.value++;
-
-        RangerArchetype.archetypeHelper[this.rangerArchetype]["11"](pc, params); 
+        this.handleRangerSpellSelections(pc, params);
+        this.applyRangerSpellSlots(pc, 11); 
+        RangerArchetype.archetypeHelper[this.rangerArchetype][11](pc, params); 
     }
 
     level12(pc: PlayerCharacter, params: LevelingParams): void {
@@ -145,21 +145,19 @@ export class Ranger extends PlayerClass {
     }
 
     level13(pc: PlayerCharacter, params: LevelingParams): void {
-        const lvl4Slots = SpellSlotFactory.getSpellSlots(4, 1);
-        pc.addResourceTraits(lvl4Slots);
-        pc.addSpells(params.spellSelection, "wisdom"); 
+        this.handleRangerSpellSelections(pc, params);
+        this.applyRangerSpellSlots(pc, 13);         
     }
 
-    level14(pc: PlayerCharacter, params: RangerParams): void {
-        this.pushRangerFeatures(pc, "14");
+    level14(pc: PlayerCharacter, params: RangerLevelingParams): void {
         pc.findFeatureTraitByName("Favored Enemy").choices.push(params.favoredEnemy);
+        this.pushRangerFeatures(pc, 14);
     }
 
     level15(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addSpells(params.spellSelection, "wisdom");
-        SpellSlotFactory.findPlayerSpellSlots(pc, 4).resourceMax.value++;
- 
-        RangerArchetype.archetypeHelper[this.rangerArchetype]["15"](pc, params);
+        this.handleRangerSpellSelections(pc, params);
+        this.applyRangerSpellSlots(pc, 15);         
+        RangerArchetype.archetypeHelper[this.rangerArchetype][15](pc, params);
     }
 
     level16(pc: PlayerCharacter, params: LevelingParams): void {
@@ -167,29 +165,26 @@ export class Ranger extends PlayerClass {
     }
 
     level17(pc: PlayerCharacter, params: LevelingParams): void {
-        const lvl5Slots = SpellSlotFactory.getSpellSlots(5, 1);
-        pc.addResourceTraits(lvl5Slots);
-        pc.addSpells(params.spellSelection, "wisdom");
-        SpellSlotFactory.findPlayerSpellSlots(pc, 4).resourceMax.value++;
+        this.handleRangerSpellSelections(pc, params);
+        this.applyRangerSpellSlots(pc, 17);         
     }
 
     level18(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushRangerFeatures(pc, "18");
+        this.pushRangerFeatures(pc, 18);
     }
 
     level19(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addSpells(params.spellSelection, "wisdom");
-        SpellSlotFactory.findPlayerSpellSlots(pc, 5).resourceMax.value++;
+        this.handleRangerSpellSelections(pc, params);
+        this.applyRangerSpellSlots(pc, 19);         
         pc.improveAbilityScores(params.abilityScoreImprovement);
     }
 
     level20(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushRangerFeatures(pc, "20");
+        this.pushRangerFeatures(pc, 20);
     }
-    
 }
 
-interface RangerParams extends LevelingParams {
+interface RangerLevelingParams extends LevelingParams {
 	favoredEnemy?: string;
 	favoredTerrain?: string;
 }

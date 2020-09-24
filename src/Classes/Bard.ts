@@ -2,9 +2,10 @@ import { PlayerClass, SpellSlotFactory, LevelingParams } from './PlayerClass';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import { ResourceTrait, ScalingTrait } from '../Base/Interfaces';
 import { BardArchetype } from './Archetypes';
+import * as SpellCastingAbility from '../../Assets/SpellCastingAbility.json'; 
 
 export class Bard extends PlayerClass {
-    constructor(skillProficiencies: string[], weapons: string[], instrumentProficiencies: string[], instrument: string, equipmentPack: string, bardParams: BardLevelingParams) {
+    constructor(skillProficiencies: string[], weapons: string[], instrumentProficiencies: string[], instrument: string, equipmentPack: string, bardParams: LevelingParams) {
         super(
             "Bard",
             [], 
@@ -32,7 +33,7 @@ export class Bard extends PlayerClass {
     }
 
     // 8 + Constitution Modifier HP Max
-    // DIPLOMAT'S PACK OR ENTERTAINER'S PACK, MUSICAL INSTRUMENT, LEATHER ARMOR AND DAGGER, MUSICAL INSTRUMENT.
+    // DIPLOMAT'S PACK OR ENTERTAINER'S PACK, MUSICAL INSTRUMENT,-
     // RESOURCEMAX OF BARDIC INSPIRATION, BONUS FOR JACK OF ALL TRADES, CHANGE WITH LEVELS / ABILITY SCORE IMPROVEMENTS.
     // What should happen if a bard switches out a magical secret spell
 
@@ -61,29 +62,32 @@ export class Bard extends PlayerClass {
         "20": this.level20,
     };
 
-    private pushBardFeaturesWithChoices(pc: PlayerCharacter, level: string, choices: string[]) {
+    private pushBardFeaturesWithChoices(pc: PlayerCharacter, level: number, choices: string[]) {
 
     }
 
-    private pushBardFeatures(pc: PlayerCharacter, level: string) {
+    private pushBardFeatures(pc: PlayerCharacter, level: number) {
         this.pushClassFeatures(pc, level, "BARD");
     }
 
     private handleBardSpellSelections(pc: PlayerCharacter, params: LevelingParams) {
-        this.handleSpellSelections(pc, params, "charisma");
+        this.handleSpellSelections(pc, params, SpellCastingAbility["BARD"]);
     }
 
-    level1(pc: PlayerCharacter, params: BardLevelingParams): void {
+    private applyBardSpellSlots(pc: PlayerCharacter, level: number) {
+        SpellSlotFactory.applySpellSlotsAtLevel(pc, level, "PRIMARY");
+    }
+
+    level1(pc: PlayerCharacter, params: LevelingParams): void {
         // spell additions at most levels, replacements can be done at every level
         this.handleBardSpellSelections(pc, params);
-        const level1Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(1, 2);
+        this.applyBardSpellSlots(pc, 1);
         // bardic inspiration
         const bardicInspiration: ResourceTrait = {title: "Bardic Inspiration", description: "Number of times you can give Bardic Inspiration per long rest. Dice is Bardic Inspiration die.", resourceMax: pc.abilityScores.charisma.modifier, dice: '1d6'}; 
-        pc.addResourceTraits(level1Slots, bardicInspiration);
-        this.pushBardFeatures(pc, "1");  
+        this.pushBardFeatures(pc, 1);  
     }
 
-    level2(pc: PlayerCharacter, params: BardLevelingParams): void {
+    level2(pc: PlayerCharacter, params: LevelingParams): void {
         this.handleBardSpellSelections(pc, params);
         // song of rest
         const songOfRest: ScalingTrait = {title: "Song of Rest", description: "Dice used for Song of Rest.", dice: '1d6'}; 
@@ -94,15 +98,12 @@ export class Bard extends PlayerClass {
                 pc.skills[skill].bonus = pc.proficiency.halfBonus;
             }
         }
-        SpellSlotFactory.findPlayerSpellSlots(pc, 1).resourceMax.value++;
-        this.pushBardFeatures(pc, "2");
+        this.applyBardSpellSlots(pc, 2);
     }
 
-    level3(pc: PlayerCharacter, params: BardLevelingParams): void {
+    level3(pc: PlayerCharacter, params: LevelingParams): void {
         this.handleBardSpellSelections(pc, params);
-        const level2Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(2, 2);
-        pc.addResourceTraits(level2Slots);
-        SpellSlotFactory.findPlayerSpellSlots(pc, 1).resourceMax.value++;
+        this.applyBardSpellSlots(pc, 3)
         // college
         this.bardCollege = params.archetypeSelection[0].archetype;
         BardArchetype.archetypeHelper[this.bardCollege][3](pc, params);
@@ -110,55 +111,52 @@ export class Bard extends PlayerClass {
         for(let skill of params.proficiencySelection) {
             pc.skills[skill].expertise = true;
         }
-        PlayerClass.pushCustomizedClassFeature(pc, "3", "BARD", "EXPERTISE", params.proficiencySelection);
+        PlayerClass.pushCustomizedClassFeature(pc, 3, "BARD", "EXPERTISE", params.proficiencySelection);
     }
     
-    level4(pc: PlayerCharacter, params: BardLevelingParams): void {
+    level4(pc: PlayerCharacter, params: LevelingParams): void {
         this.handleBardSpellSelections(pc, params);
+        this.applyBardSpellSlots(pc, 4);
         pc.improveAbilityScores(params.abilityScoreImprovement);
-        SpellSlotFactory.findPlayerSpellSlots(pc, 2).resourceMax.value++;
     }
 
-    level5(pc: PlayerCharacter, params: BardLevelingParams): void {
+    level5(pc: PlayerCharacter, params: LevelingParams): void {
         this.handleBardSpellSelections(pc, params);
-        const level3Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(3, 2);
-        pc.addResourceTraits(level3Slots);
+        this.applyBardSpellSlots(pc, 5);
         // bardic inspiration
         pc.findResourceTraitByName("Bardic Inspiration").dice = "1d8";
-        this.pushBardFeatures(pc, "5");
+        this.pushBardFeatures(pc, 5);
     }
 
-    level6(pc: PlayerCharacter, params: BardLevelingParams): void {
+    level6(pc: PlayerCharacter, params: LevelingParams): void {
         this.handleBardSpellSelections(pc, params);
+        this.applyBardSpellSlots(pc, 6);
         // college
         BardArchetype.archetypeHelper[this.bardCollege][6](pc, params);
-        SpellSlotFactory.findPlayerSpellSlots(pc, 3).resourceMax.value++;
-        this.pushBardFeatures(pc, "6");
+        this.pushBardFeatures(pc, 6);
     }
 
-    level7(pc: PlayerCharacter, params: BardLevelingParams): void {
+    level7(pc: PlayerCharacter, params: LevelingParams): void {
         this.handleBardSpellSelections(pc, params);
-        const level4Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(4, 1);
-        pc.addResourceTraits(level4Slots);
+        this.applyBardSpellSlots(pc, 7);
     }
 
-    level8(pc: PlayerCharacter, params: BardLevelingParams): void {
+    level8(pc: PlayerCharacter, params: LevelingParams): void {
         this.handleBardSpellSelections(pc, params);
+        this.applyBardSpellSlots(pc, 8);
         pc.improveAbilityScores(params.abilityScoreImprovement);
-        SpellSlotFactory.findPlayerSpellSlots(pc, 4).resourceMax.value++;
     }
 
-    level9(pc: PlayerCharacter, params: BardLevelingParams): void {
+    level9(pc: PlayerCharacter, params: LevelingParams): void {
         this.handleBardSpellSelections(pc, params);
+        this.applyBardSpellSlots(pc, 9);
         // song of rest
         pc.findScalingTraitByName("Song of Rest").dice = "1d8";
-        const level5Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(5, 1);
-        pc.addResourceTraits(level5Slots);
-        SpellSlotFactory.findPlayerSpellSlots(pc, 4).resourceMax.value++;
     }
 
     level10(pc: PlayerCharacter, params: BardLevelingParams): void {
         this.handleBardSpellSelections(pc, params);
+        this.applyBardSpellSlots(pc, 10);
         // expertise
         for(let skill of params.proficiencySelection) {
             pc.skills[skill].expertise = true;
@@ -167,26 +165,23 @@ export class Bard extends PlayerClass {
         // bardic inspiration
         pc.findResourceTraitByName("Bardic Inspiration").dice = "1d10";
         // magical secrets
-        pc.addSpells(params.magicalSecretsSpellSelection, "charisma");
-        PlayerClass.pushCustomizedClassFeature(pc, "10", "BARD", "MAGICAL SECRETS", params.magicalSecretsSpellSelection);
-        SpellSlotFactory.findPlayerSpellSlots(pc, 5).resourceMax.value++;
+        pc.addSpells(params.magicalSecretsSpellSelection, SpellCastingAbility["BARD"]);
+        PlayerClass.pushCustomizedClassFeature(pc, 10, "BARD", "MAGICAL SECRETS", params.magicalSecretsSpellSelection);
     }
 
-    level11(pc: PlayerCharacter, params: BardLevelingParams): void {
+    level11(pc: PlayerCharacter, params: LevelingParams): void {
         this.handleBardSpellSelections(pc, params);
-        const level6Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(6, 1);
-        pc.addResourceTraits(level6Slots);
+        this.applyBardSpellSlots(pc, 11);
     }
 
-    level12(pc: PlayerCharacter, params: BardLevelingParams): void {
+    level12(pc: PlayerCharacter, params: LevelingParams): void {
         this.handleBardSpellSelections(pc, params);
         pc.improveAbilityScores(params.abilityScoreImprovement);
     }
 
-    level13(pc: PlayerCharacter, params: BardLevelingParams): void {
+    level13(pc: PlayerCharacter, params: LevelingParams): void {
         this.handleBardSpellSelections(pc, params);
-        const level7Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(7, 1);
-        pc.addResourceTraits(level7Slots);
+        this.applyBardSpellSlots(pc, 13);
         // song of rest
         pc.findScalingTraitByName("Song of Rest").dice = "1d10";
     }
@@ -194,53 +189,49 @@ export class Bard extends PlayerClass {
     level14(pc: PlayerCharacter, params: BardLevelingParams): void {
         this.handleBardSpellSelections(pc, params);
         // magical secrets
-        pc.addSpells(params.magicalSecretsSpellSelection, "charisma");
+        pc.addSpells(params.magicalSecretsSpellSelection, SpellCastingAbility["BARD"]);
         pc.findFeatureTraitByName("Magical Secrets").choices.push(...params.magicalSecretsSpellSelection);
         // college
         BardArchetype.archetypeHelper[this.bardCollege][14](pc, params);
     }
 
-    level15(pc: PlayerCharacter, params: BardLevelingParams): void {
+    level15(pc: PlayerCharacter, params: LevelingParams): void {
         this.handleBardSpellSelections(pc, params);
-        const level8Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(8, 1);
-        pc.addResourceTraits(level8Slots);
+        this.applyBardSpellSlots(pc, 15);
         // bardic inspiration
         pc.findResourceTraitByName("Bardic Inspiration").dice = "1d12";
     }
 
-    level16(pc: PlayerCharacter, params: BardLevelingParams): void {
+    level16(pc: PlayerCharacter, params: LevelingParams): void {
         this.handleBardSpellSelections(pc, params);
         pc.improveAbilityScores(params.abilityScoreImprovement);
     }
 
-    level17(pc: PlayerCharacter, params: BardLevelingParams): void {
+    level17(pc: PlayerCharacter, params: LevelingParams): void {
         this.handleBardSpellSelections(pc, params);
-        const level9Slots: ResourceTrait = SpellSlotFactory.getSpellSlots(9, 1);
-        pc.addResourceTraits(level9Slots);
+        this.applyBardSpellSlots(pc, 17);
         // song of rest
         pc.findScalingTraitByName("Song of Rest").dice = "1d12";
     }
 
     level18(pc: PlayerCharacter, params: BardLevelingParams): void {
         this.handleBardSpellSelections(pc, params);
+        this.applyBardSpellSlots(pc, 18);
         // magical secrets
-        pc.addSpells(params.magicalSecretsSpellSelection, "charisma");
+        pc.addSpells(params.magicalSecretsSpellSelection, SpellCastingAbility["BARD"]);
         pc.findFeatureTraitByName("Magical Secrets").choices.push(...params.magicalSecretsSpellSelection);
-        SpellSlotFactory.findPlayerSpellSlots(pc, 5).resourceMax.value++;
     }
 
-    level19(pc: PlayerCharacter, params: BardLevelingParams): void {
+    level19(pc: PlayerCharacter, params: LevelingParams): void {
         this.handleBardSpellSelections(pc, params);
+        this.applyBardSpellSlots(pc, 19);
         pc.improveAbilityScores(params.abilityScoreImprovement);
-        SpellSlotFactory.findPlayerSpellSlots(pc, 6).resourceMax.value++;
     }
 
-    level20(pc: PlayerCharacter, params: BardLevelingParams): void {
+    level20(pc: PlayerCharacter, params: LevelingParams): void {
         this.handleBardSpellSelections(pc, params);
-        SpellSlotFactory.findPlayerSpellSlots(pc, 7).resourceMax.value++;
-        this.pushBardFeatures(pc, "20");
+        this.applyBardSpellSlots(pc, 20);
     }
-    
 }
 
 export interface BardLevelingParams extends LevelingParams {

@@ -6,21 +6,21 @@ import { PaladinArchetype } from './Archetypes';
 
 export class Warlock extends PlayerClass {
 
-    constructor(skillProficiencies: string[], weapons: string[], armor: string[], params: LevelingParams, equipmentPack: string){ 
+    constructor(skillProficiencies: string[], weapons: string[], params: LevelingParams, equipmentPack: string){ 
         super(
             "Paladin",
             [],
             skillProficiencies, 
-            ["Simple", "Martial"],
-            ["Light", "Medium", "Heavy", "Shield"],
+            ["Simple"],
+            ["Light"],
             [],
-            weapons,
-            armor,
+            [...weapons, "DAGGER", "DAGGER"],
+            ["LEATHER"],
             [],
             [],
             params,
-            "d10",
-            10,
+            "d8",
+            8,
             ["wisdom", "charisma"]
         );
 
@@ -33,7 +33,7 @@ export class Warlock extends PlayerClass {
     }
 
     /** TODO
-     * FIGHTING STYLE LVL2
+     * ARCANE FOCUS / COMPONENT POUCH
      */
 
 	paladinOath: string;
@@ -61,8 +61,8 @@ export class Warlock extends PlayerClass {
         "20": this.level20,
     }
 
-    pushPaladinFeatures(pc: PlayerCharacter, level: string) {
-        this.pushClassFeatures(pc, level, "PALADIN");
+    pushPaladinFeatures(pc: PlayerCharacter, level: number) {
+        this.pushClassFeatures(pc, level, "WARLOCK");
     }
 
     level1(pc: PlayerCharacter, params: LevelingParams): void {

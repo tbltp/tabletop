@@ -61,18 +61,18 @@ export class Barbarian extends PlayerClass {
         "20": this.level20
     };
     
-    private pushBarbarianFeatures(pc: PlayerCharacter, level: string) {
+    private pushBarbarianFeatures(pc: PlayerCharacter, level: number) {
         this.pushClassFeatures(pc, level, "BARBARIAN");
     }
 
     level1(pc: PlayerCharacter, params: LevelingParams): void {
         const rage: ResourceTrait = {title: "Rage", description: "Number of times you can go into a Rage.  Bonus applies to attack damage while in a rage.", resourceMax: {value: 2}, bonus: 2}; 
         pc.addResourceTraits(rage);
-        this.pushBarbarianFeatures(pc, "1");
+        this.pushBarbarianFeatures(pc, 1);
     }
 
     level2(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushBarbarianFeatures(pc, "2");
+        this.pushBarbarianFeatures(pc, 2);
     }
 
     level3(pc: PlayerCharacter, params: LevelingParams): void {
@@ -86,7 +86,7 @@ export class Barbarian extends PlayerClass {
     }
 
     level5(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushBarbarianFeatures(pc, "5");
+        this.pushBarbarianFeatures(pc, 5);
     }
 
     level6(pc: PlayerCharacter, params: LevelingParams): void {
@@ -95,7 +95,7 @@ export class Barbarian extends PlayerClass {
     }
 
     level7(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushBarbarianFeatures(pc, "7");
+        this.pushBarbarianFeatures(pc, 7);
     }
 
     level8(pc: PlayerCharacter, params: LevelingParams): void {
@@ -106,7 +106,7 @@ export class Barbarian extends PlayerClass {
         const brutalCritical: ScalingTrait = {title: "Brutal Critical", "description": "Number of extra damage dice on a critical hit.", dice: "1dx"};
         pc.addScalingTraits(brutalCritical);
         pc.findResourceTraitByName('Rage').bonus = 3;
-        this.pushBarbarianFeatures(pc, "9");
+        this.pushBarbarianFeatures(pc, 9);
     }
 
     level10(pc: PlayerCharacter, params: LevelingParams): void {
@@ -114,7 +114,7 @@ export class Barbarian extends PlayerClass {
     }
 
     level11(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushBarbarianFeatures(pc, '11');
+        this.pushBarbarianFeatures(pc, 11);
     }
 
     level12(pc: PlayerCharacter, params: LevelingParams): void {
@@ -133,7 +133,7 @@ export class Barbarian extends PlayerClass {
     }
 
     level15(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushBarbarianFeatures(pc, '15');
+        this.pushBarbarianFeatures(pc, 15);
     }
 
     level16(pc: PlayerCharacter, params: LevelingParams): void {
@@ -148,7 +148,7 @@ export class Barbarian extends PlayerClass {
     }
 
     level18(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushBarbarianFeatures(pc, '18');
+        this.pushBarbarianFeatures(pc, 18);
     }
 
     level19(pc: PlayerCharacter, params: LevelingParams): void {
@@ -156,7 +156,7 @@ export class Barbarian extends PlayerClass {
     }
 
     level20(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushBarbarianFeatures(pc, '20');
+        this.pushBarbarianFeatures(pc, 20);
         pc.changeAbilityScoreMaxes(['strength', 'constitution'], 24);
         pc.improveAbilityScores([
             {

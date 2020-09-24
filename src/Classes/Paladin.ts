@@ -2,6 +2,7 @@ import { PlayerClass, LevelingParams, SpellSlotFactory } from './PlayerClass';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import { ResourceTrait } from '../Base/Interfaces';
 import * as SpellList from '../../Assets/SpellList.json';
+import * as SpellCastingAbility from '../../Assets/SpellcastingAbility.json';
 import { PaladinArchetype } from './Archetypes';
 
 export class Paladin extends PlayerClass {
@@ -61,134 +62,130 @@ export class Paladin extends PlayerClass {
         "20": this.level20,
     }
 
-    pushPaladinFeatures(pc: PlayerCharacter, level: string) {
+    private pushPaladinFeatures(pc: PlayerCharacter, level: number) {
         this.pushClassFeatures(pc, level, "PALADIN");
     }
 
+    private upgradeLayOnHands(pc: PlayerCharacter) : void {
+        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
+    }
+
+    private handlePaladinSpellSelections(pc: PlayerCharacter, params: LevelingParams) {
+        this.handleSpellSelections(pc, params, SpellCastingAbility["PALADIN"]);
+    }
+
+    private applyPaladinSpellSlots(pc: PlayerCharacter, level: number) {
+        SpellSlotFactory.applySpellSlotsAtLevel(pc, level, "SECONDARY");
+    }
+
     level1(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushPaladinFeatures(pc, "1");
+        this.pushPaladinFeatures(pc, 1);
         pc.addResourceTraits( { title: "Lay on Hands", description: "Number of hit points you can restore with Lay on Hands", resourceMax: {value: 5} } )
     }
 
     level2(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushPaladinFeatures(pc, "2");
-        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
-        const lvl1Slots = SpellSlotFactory.getSpellSlots(1, 2);
-        pc.addResourceTraits(lvl1Slots);
+        this.applyPaladinSpellSlots(pc, 2);
+        this.upgradeLayOnHands(pc);
+        this.pushPaladinFeatures(pc, 2);
     }
 
     level3(pc: PlayerCharacter, params: LevelingParams): void {
+        this.applyPaladinSpellSlots(pc, 3);
         this.paladinOath = params.archetypeSelection[0].archetype;
-        this.pushPaladinFeatures(pc, "2");
-        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
-
-        PaladinArchetype.archetypeHelper[this.paladinOath]["3"](pc, params);
-        SpellSlotFactory.findPlayerSpellSlots(pc, 1).resourceMax.value++;
+        this.upgradeLayOnHands(pc);
+        PaladinArchetype.archetypeHelper[this.paladinOath][3](pc, params);
+        this.pushPaladinFeatures(pc, 3);
     }
     
     level4(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushPaladinFeatures(pc, "4");
-        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
         pc.improveAbilityScores(params.abilityScoreImprovement);
+        this.upgradeLayOnHands(pc);
+        this.pushPaladinFeatures(pc, 4);
     }
 
     level5(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushPaladinFeatures(pc, "5");
-        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
-
-        const lvl2Slots = SpellSlotFactory.getSpellSlots(2, 2);
-        pc.addResourceTraits(lvl2Slots);
-        SpellSlotFactory.findPlayerSpellSlots(pc, 1).resourceMax.value++;    }
+        this.applyPaladinSpellSlots(pc, 5);
+        this.upgradeLayOnHands(pc);
+        this.pushPaladinFeatures(pc, 5);
+    }
 
     level6(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushPaladinFeatures(pc, "6");
-        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
+        this.upgradeLayOnHands(pc);
+        this.pushPaladinFeatures(pc, 6);
     }
 
     level7(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
-        PaladinArchetype.archetypeHelper[this.paladinOath]["7"](pc, params);
-        
-        SpellSlotFactory.findPlayerSpellSlots(pc, 2).resourceMax.value++;
+        this.applyPaladinSpellSlots(pc, 7);
+        this.upgradeLayOnHands(pc);
+        PaladinArchetype.archetypeHelper[this.paladinOath][7](pc, params);        
     }
 
     level8(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
         pc.improveAbilityScores(params.abilityScoreImprovement);
+        this.upgradeLayOnHands(pc);
     }
 
     level9(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
-        
-        const lvl3Slots = SpellSlotFactory.getSpellSlots(3, 2);
-        pc.addResourceTraits(lvl3Slots);
+        this.applyPaladinSpellSlots(pc, 9);
+        this.upgradeLayOnHands(pc);        
     }
 
     level10(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushPaladinFeatures(pc, "10");
-        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
+        this.upgradeLayOnHands(pc);        
+        this.pushPaladinFeatures(pc, 10);
     }
 
     level11(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushPaladinFeatures(pc, "11");
-        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
+        this.upgradeLayOnHands(pc);        
+        this.applyPaladinSpellSlots(pc, 11);
+        this.pushPaladinFeatures(pc, 11);
 
-        SpellSlotFactory.findPlayerSpellSlots(pc, 3).resourceMax.value++;
     }
 
     level12(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
         pc.improveAbilityScores(params.abilityScoreImprovement);
+        this.upgradeLayOnHands(pc);        
     }
 
     level13(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
-
-        const lvl4Slots = SpellSlotFactory.getSpellSlots(4, 1);
-        pc.addResourceTraits(lvl4Slots);
+        this.applyPaladinSpellSlots(pc, 13);
+        this.upgradeLayOnHands(pc);        
     }
 
     level14(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushPaladinFeatures(pc, "15");
-        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
+        this.upgradeLayOnHands(pc);        
+        this.pushPaladinFeatures(pc, 15);
     }
 
     level15(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
-        PaladinArchetype.archetypeHelper[this.paladinOath]["15"](pc, params);
-
-        SpellSlotFactory.findPlayerSpellSlots(pc, 4).resourceMax.value++;
+        this.applyPaladinSpellSlots(pc, 15);
+        PaladinArchetype.archetypeHelper[this.paladinOath][15](pc, params);
+        this.upgradeLayOnHands(pc);        
     }
 
     level16(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
         pc.improveAbilityScores(params.abilityScoreImprovement);
+        this.upgradeLayOnHands(pc);        
     }
 
     level17(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
-
-
-        const lvl5Slots = SpellSlotFactory.getSpellSlots(5, 1);
-        pc.addResourceTraits(lvl5Slots);
-        SpellSlotFactory.findPlayerSpellSlots(pc, 4).resourceMax.value++;
+        this.applyPaladinSpellSlots(pc, 17);
+        this.upgradeLayOnHands(pc);        
     }
 
     level18(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
+        this.upgradeLayOnHands(pc);        
     }
 
     level19(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
+        this.applyPaladinSpellSlots(pc, 19);
+        this.upgradeLayOnHands(pc);        
         pc.improveAbilityScores(params.abilityScoreImprovement);
-
-        SpellSlotFactory.findPlayerSpellSlots(pc, 5).resourceMax.value++;
-
     }
 
     level20(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
-        PaladinArchetype.archetypeHelper[this.paladinOath]["20"](pc, params);
+        this.upgradeLayOnHands(pc);        
+        PaladinArchetype.archetypeHelper[this.paladinOath][20](pc, params);
     }
     
 }

@@ -63,84 +63,84 @@ export class Monk extends PlayerClass {
         "20": this.level20,
     }
 
-    pushMonkFeatures(pc: PlayerCharacter, level: string) {
+    private pushMonkFeatures(pc: PlayerCharacter, level: number) {
         this.pushClassFeatures(pc, level, "MONK");
     }
 
     level1(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushMonkFeatures(pc, "1");
+        this.pushMonkFeatures(pc, 1);
         pc.armorClasses.push({ name: "Unarmored Defense", base: 0, modifier: {value: 1}, bonus: {value: 0}}) // TWO STATS
 
     }
 
     level2(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushMonkFeatures(pc, "2");
+        this.pushMonkFeatures(pc, 2);
         // ADD 10 TO SPEED FOR UNARMORED MOVEMENT
         pc.traits.resources.push( { title: "Ki Points", description: "Number of times you can use Ki Abilities", resourceMax: {value: 2} } )
     }
 
     level3(pc: PlayerCharacter, params: LevelingParams): void {
         this.monasticTradition = params.archetypeSelection[0].archetype
-        this.pushMonkFeatures(pc, "3")
+        this.pushMonkFeatures(pc, 3)
         pc.findResourceTraitByName("Ki Points").resourceMax.value++
 
         MonkArchetype.archetypeHelper[this.monasticTradition]["3"](pc, params);
     }
     
     level4(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushMonkFeatures(pc, "4")
+        this.pushMonkFeatures(pc, 4)
         pc.findResourceTraitByName("Ki Points").resourceMax.value++
         pc.improveAbilityScores(params.abilityScoreImprovement);
     }
 
     level5(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushMonkFeatures(pc, "5")
+        this.pushMonkFeatures(pc, 5)
         pc.findResourceTraitByName("Ki Points").resourceMax.value++
     }
 
     level6(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushMonkFeatures(pc, "6")
+        this.pushMonkFeatures(pc, 6)
         pc.findResourceTraitByName("Ki Points").resourceMax.value++
 
         MonkArchetype.archetypeHelper[this.monasticTradition]["6"](pc, params);
     }
 
     level7(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushMonkFeatures(pc, "7")
+        this.pushMonkFeatures(pc, 7)
         pc.findResourceTraitByName("Ki Points").resourceMax.value++
     }
 
     level8(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushMonkFeatures(pc, "8")
+        this.pushMonkFeatures(pc, 8)
         pc.findResourceTraitByName("Ki Points").resourceMax.value++
         pc.improveAbilityScores(params.abilityScoreImprovement);
     }
 
     level9(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushMonkFeatures(pc, "9")
+        this.pushMonkFeatures(pc, 9)
         pc.findResourceTraitByName("Ki Points").resourceMax.value++
     }
 
     level10(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushMonkFeatures(pc, "10")
+        this.pushMonkFeatures(pc, 10)
         pc.findResourceTraitByName("Ki Points").resourceMax.value++
     }
 
     level11(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushMonkFeatures(pc, "11")
+        this.pushMonkFeatures(pc, 11)
         pc.findResourceTraitByName("Ki Points").resourceMax.value++
 
         MonkArchetype.archetypeHelper[this.monasticTradition]["11"](pc, params);
     }
 
     level12(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushMonkFeatures(pc, "12")
+        this.pushMonkFeatures(pc, 12)
         pc.findResourceTraitByName("Ki Points").resourceMax.value++
         pc.improveAbilityScores(params.abilityScoreImprovement);
     }
 
     level13(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushMonkFeatures(pc, "13")
+        this.pushMonkFeatures(pc, 13)
         pc.findResourceTraitByName("Ki Points").resourceMax.value++
  
         // TONGUE OF SUN AND MOON
@@ -150,7 +150,7 @@ export class Monk extends PlayerClass {
     }
 
     level14(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushMonkFeatures(pc, "14")
+        this.pushMonkFeatures(pc, 14)
         pc.findResourceTraitByName("Ki Points").resourceMax.value++
 
         // Diamond Soul
@@ -160,7 +160,7 @@ export class Monk extends PlayerClass {
     }
 
     level15(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushMonkFeatures(pc, "15")
+        this.pushMonkFeatures(pc, 15)
         pc.findResourceTraitByName("Ki Points").resourceMax.value++
     }
 
@@ -175,7 +175,7 @@ export class Monk extends PlayerClass {
     }
 
     level18(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushMonkFeatures(pc, "18")
+        this.pushMonkFeatures(pc, 18)
         pc.findResourceTraitByName("Ki Points").resourceMax.value++    
     }
 
@@ -185,7 +185,7 @@ export class Monk extends PlayerClass {
     }
 
     level20(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushMonkFeatures(pc, "20")
+        this.pushMonkFeatures(pc, 20)
         pc.findResourceTraitByName("Ki Points").resourceMax.value++
     }   
 }

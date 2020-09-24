@@ -512,7 +512,12 @@
         "17": {},
         "18": {},
         "19": {},
-        "20": {}
+        "20": {
+            "SORCEROUS RESTORATION": {
+                "title": "Sorcerous Restoration",
+                "description": "At 20th level, you regain 4 expended sorcery points whenever you finish a short rest."
+            }
+        }
     },
     "WARLOCK": {
         "1": {},

@@ -61,17 +61,17 @@ export class Fighter extends PlayerClass {
         "20": this.level20,
     }
 
-    pushFighterFeatures(pc: PlayerCharacter, level: string) {
+    private pushFighterFeatures(pc: PlayerCharacter, level: number) {
         this.pushClassFeatures(pc, level, "FIGHTER");
     }
 
     level1(pc: PlayerCharacter, params: LevelingParams): void {
         pc.addFeatures(FightingStyles[params.fightingStyle[0]])
-        this.pushFighterFeatures(pc, "1");
+        this.pushFighterFeatures(pc, 1);
     }
 
     level2(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushFighterFeatures(pc, "2");
+        this.pushFighterFeatures(pc, 2);
         pc.addResourceTraits( { title: "Action Surge", description: "Number of times you can Action Surge.", resourceMax: {value: 1} } )
     }
 
@@ -85,7 +85,7 @@ export class Fighter extends PlayerClass {
     }
 
     level5(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushFighterFeatures(pc, "5");
+        this.pushFighterFeatures(pc, 5);
         pc.addResourceTraits( { title: "Extra Attack", description: "Number of Extra Attacks you can make.", resourceMax: {value: 1} } )
     }
 

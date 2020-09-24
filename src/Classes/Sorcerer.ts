@@ -1,27 +1,27 @@
-import { PlayerClass, LevelingParams, SpellSlotFactory } from './PlayerClass';
+import { PlayerClass, SpellSlotFactory, LevelingParams } from './PlayerClass';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
-import { ResourceTrait } from '../Base/Interfaces';
-import * as SpellList from '../../Assets/SpellList.json';
-import { PaladinArchetype } from './Archetypes';
+import * as SpellCastingAbility from '../../Assets/SpellcastingAbility.json';
+import * as Metamagic from '../../Assets/Metamagic.json';
+import { SorcererArchetype } from './Archetypes';
 
 export class Sorcerer extends PlayerClass {
 
-    constructor(skillProficiencies: string[], weapons: string[], armor: string[], params: LevelingParams, equipmentPack: string){ 
+    constructor(skillProficiencies: string[], weapons: string[], params: SorcererLevelingParams, equipmentPack: string){ 
         super(
             "Paladin",
             [],
             skillProficiencies, 
-            ["Simple", "Martial"],
-            ["Light", "Medium", "Heavy", "Shield"],
+            ["Dagger", "Dart", "Sling", "Quarterstaff", "Crossbow, light"],
             [],
-            weapons,
-            armor,
+            [],
+            [...weapons, "DAGGER", "DAGGER"],
+            [],
             [],
             [],
             params,
-            "d10",
-            10,
-            ["wisdom", "charisma"]
+            "d6",
+            6,
+            ["constitution", "charisma"]
         );
 
         this.equipmentPack = equipmentPack
@@ -33,10 +33,11 @@ export class Sorcerer extends PlayerClass {
     }
 
     /** TODO
-     * FIGHTING STYLE LVL2
+     * ARCANE FOCUS OR COMPONENT POUCH
      */
 
-	paladinOath: string;
+    sorcererousOrigin: string;
+    metaMagicAbilities: string[];
 
     abilitiesAtLevels = {
         "1": this.level1,
@@ -61,88 +62,157 @@ export class Sorcerer extends PlayerClass {
         "20": this.level20,
     }
 
-    pushPaladinFeatures(pc: PlayerCharacter, level: string) {
-        this.pushClassFeatures(pc, level, "PALADIN");
+    pushSorcererFeatures(pc: PlayerCharacter, level: number) {
+        this.pushClassFeatures(pc, level, "SORCERER");
     }
 
-    level1(pc: PlayerCharacter, params: LevelingParams): void {
-        
+    private handleSorcererSpellSelections(pc: PlayerCharacter, params: LevelingParams): void {
+        this.handleSpellSelections(pc, params, SpellCastingAbility["SORCEROR"]);
     }
 
-    level2(pc: PlayerCharacter, params: LevelingParams): void {
-        
+    private applySorcererSpellSlots(pc: PlayerCharacter, level: number) {
+        SpellSlotFactory.applySpellSlotsAtLevel(pc, level, "PRIMARY");
     }
 
-    level3(pc: PlayerCharacter, params: LevelingParams): void {
-        
+    private addMetaMagic(pc: PlayerCharacter, metaMagicSelection: string[]) {
+        for(const metaMagic of metaMagicSelection) {
+            pc.addFeatures(Metamagic[metaMagic]);
+        }
+    }
+
+    level1(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        // spell replacements can happen at any level
+        this.handleSorcererSpellSelections(pc, params);
+        this.applySorcererSpellSlots(pc, 1);
+        this.sorcererousOrigin = params.archetypeSelection[0].archetype;
+        SorcererArchetype.archetypeHelper[this.sorcererousOrigin][1](pc, params);
+    }
+
+    level2(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        this.handleSorcererSpellSelections(pc, params);
+        this.applySorcererSpellSlots(pc, 2);
+        pc.addResourceTraits( { title: "Sorcery Points", description: "Number of Sorcery Points you have.", resourceMax: {value: 2} } )
+    }
+
+    level3(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        this.handleSorcererSpellSelections(pc, params);
+        this.applySorcererSpellSlots(pc, 3);
+        pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
+        this.addMetaMagic(pc, params.metaMagic);
     }
     
-    level4(pc: PlayerCharacter, params: LevelingParams): void {
-       
+    level4(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        this.handleSorcererSpellSelections(pc, params);
+        this.applySorcererSpellSlots(pc, 4);
+        pc.improveAbilityScores(params.abilityScoreImprovement);
+        pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     }
 
-    level5(pc: PlayerCharacter, params: LevelingParams): void {
-        
+    level5(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        this.handleSorcererSpellSelections(pc, params);
+        this.applySorcererSpellSlots(pc, 5);
+        pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     }
 
-    level6(pc: PlayerCharacter, params: LevelingParams): void {
-        
+    level6(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        this.handleSorcererSpellSelections(pc, params);
+        this.applySorcererSpellSlots(pc, 6);
+        SorcererArchetype.archetypeHelper[this.sorcererousOrigin][6](pc, params);
+        pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     }
 
-    level7(pc: PlayerCharacter, params: LevelingParams): void {
-       
+    level7(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        this.handleSorcererSpellSelections(pc, params);
+        this.applySorcererSpellSlots(pc, 7);
+        pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     }
 
-    level8(pc: PlayerCharacter, params: LevelingParams): void {
-        
+    level8(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        this.handleSorcererSpellSelections(pc, params);
+        this.applySorcererSpellSlots(pc, 8);
+        pc.improveAbilityScores(params.abilityScoreImprovement);    
+        pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     }
 
-    level9(pc: PlayerCharacter, params: LevelingParams): void {
-        
+    level9(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        this.handleSorcererSpellSelections(pc, params);
+        this.applySorcererSpellSlots(pc, 9);
+        pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     }
 
-    level10(pc: PlayerCharacter, params: LevelingParams): void {
-        
+    level10(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        this.handleSorcererSpellSelections(pc, params);
+        this.applySorcererSpellSlots(pc, 10);
+        pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
+        this.addMetaMagic(pc, params.metaMagic);
     }
 
-    level11(pc: PlayerCharacter, params: LevelingParams): void {
-        
+    level11(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        this.handleSorcererSpellSelections(pc, params);
+        this.applySorcererSpellSlots(pc, 11);
+        pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     }
 
-    level12(pc: PlayerCharacter, params: LevelingParams): void {
-        
+    level12(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        this.handleSorcererSpellSelections(pc, params);
+        pc.improveAbilityScores(params.abilityScoreImprovement);
+        pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     }
 
-    level13(pc: PlayerCharacter, params: LevelingParams): void {
-        
+    level13(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        this.handleSorcererSpellSelections(pc, params);
+        this.applySorcererSpellSlots(pc, 13);
+        pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     }
 
-    level14(pc: PlayerCharacter, params: LevelingParams): void {
-        
+    level14(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        this.handleSorcererSpellSelections(pc, params);
+        SorcererArchetype.archetypeHelper[this.sorcererousOrigin][14](pc, params);
+        pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     }
 
-    level15(pc: PlayerCharacter, params: LevelingParams): void {
-        
+    level15(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        this.handleSorcererSpellSelections(pc, params);
+        this.applySorcererSpellSlots(pc, 15);
+        pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     }
 
-    level16(pc: PlayerCharacter, params: LevelingParams): void {
-        
+    level16(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        this.handleSorcererSpellSelections(pc, params);
+        pc.improveAbilityScores(params.abilityScoreImprovement);
+        pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     }
 
-    level17(pc: PlayerCharacter, params: LevelingParams): void {
-        
+    level17(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        this.handleSorcererSpellSelections(pc, params);
+        this.applySorcererSpellSlots(pc, 17);
+        pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
+        this.addMetaMagic(pc, params.metaMagic);
     }
 
-    level18(pc: PlayerCharacter, params: LevelingParams): void {
-        
+    level18(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        this.handleSorcererSpellSelections(pc, params);
+        this.applySorcererSpellSlots(pc, 18);
+        SorcererArchetype.archetypeHelper[this.sorcererousOrigin][18](pc, params);
+        pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     }
 
-    level19(pc: PlayerCharacter, params: LevelingParams): void {
-        
+    level19(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        this.handleSorcererSpellSelections(pc, params);
+        this.applySorcererSpellSlots(pc, 19);
+        pc.improveAbilityScores(params.abilityScoreImprovement);
+        pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     }
 
-    level20(pc: PlayerCharacter, params: LevelingParams): void {
-        
+    level20(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+        this.handleSorcererSpellSelections(pc, params);
+        this.applySorcererSpellSlots(pc, 20);
+        pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
+        this.pushSorcererFeatures(pc, 20);
     }
     
+}
+
+interface SorcererLevelingParams extends LevelingParams {
+    metaMagic?: string[];
 }

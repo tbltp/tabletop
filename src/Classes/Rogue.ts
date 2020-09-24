@@ -61,30 +61,28 @@ export class Rogue extends PlayerClass {
         "20": this.level20,
     }
 
-    pushRogueFeatures(pc: PlayerCharacter, level: string) {
+    pushRogueFeatures(pc: PlayerCharacter, level: number) {
         this.pushClassFeatures(pc, level, "ROGUE");
     }
 
     level1(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushRogueFeatures(pc, "1");
-        PlayerClass.pushCustomizedClassFeature(pc, "1", "ROGUE", "EXPERTISE", params.proficiencySelection)
-        
+        PlayerClass.pushCustomizedClassFeature(pc, 1, "ROGUE", "EXPERTISE", params.proficiencySelection)
         // Expertise
         for(const proficiency of params.proficiencySelection){
             pc.skills[proficiency].expertise = true;
         }
-
         // Sneak Attack
         pc.addScalingTraits({title: "Sneak Attack", description: "Dice used for Sneak Attack", dice: "1d6"});
+        this.pushRogueFeatures(pc, 1);
     }
 
     level2(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushRogueFeatures(pc, "2");
+        this.pushRogueFeatures(pc, 2);
     }
 
     level3(pc: PlayerCharacter, params: LevelingParams): void {
         this.roguishArchetype = params.archetypeSelection[0].archetype;
-        RogueArchetype.archetypeHelper[this.roguishArchetype]["3"](pc, params);
+        RogueArchetype.archetypeHelper[this.roguishArchetype][3](pc, params);
 
         pc.findScalingTraitByName("Sneak Attack").dice = "2d6";
     }
@@ -94,7 +92,7 @@ export class Rogue extends PlayerClass {
     }
 
     level5(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushRogueFeatures(pc, "5");
+        this.pushRogueFeatures(pc, 5);
         pc.findScalingTraitByName("Sneak Attack").dice = "3d6";
     }
 
@@ -108,7 +106,7 @@ export class Rogue extends PlayerClass {
     }
 
     level7(pc: PlayerCharacter, params: LevelingParams): void {
-       this.pushRogueFeatures(pc, "7");
+       this.pushRogueFeatures(pc, 7);
        pc.findScalingTraitByName("Sneak Attack").dice = "4d6";
     }
 
@@ -118,7 +116,7 @@ export class Rogue extends PlayerClass {
 
     level9(pc: PlayerCharacter, params: LevelingParams): void {
         pc.findScalingTraitByName("Sneak Attack").dice = "5d6";
-        RogueArchetype.archetypeHelper[this.roguishArchetype]["9"](pc, params);
+        RogueArchetype.archetypeHelper[this.roguishArchetype][9](pc, params);
     }
 
     level10(pc: PlayerCharacter, params: LevelingParams): void {
@@ -126,7 +124,7 @@ export class Rogue extends PlayerClass {
     }
 
     level11(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushRogueFeatures(pc, "11");
+        this.pushRogueFeatures(pc, 11);
         pc.findScalingTraitByName("Sneak Attack").dice = "6d6";
     }
 
@@ -136,15 +134,15 @@ export class Rogue extends PlayerClass {
 
     level13(pc: PlayerCharacter, params: LevelingParams): void {
         pc.findScalingTraitByName("Sneak Attack").dice = "7d6";
-        RogueArchetype.archetypeHelper[this.roguishArchetype]["13"](pc, params);
+        RogueArchetype.archetypeHelper[this.roguishArchetype][13](pc, params);
     }
 
     level14(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushRogueFeatures(pc, "14");
+        this.pushRogueFeatures(pc, 14);
     }
 
     level15(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushRogueFeatures(pc, "15");
+        this.pushRogueFeatures(pc, 15);
         // Slippery Mind
         pc.abilityScores.wisdom.savingThrowProficiency = true;
         pc.findScalingTraitByName("Sneak Attack").dice = "8d6";
@@ -156,11 +154,11 @@ export class Rogue extends PlayerClass {
 
     level17(pc: PlayerCharacter, params: LevelingParams): void {
         pc.findScalingTraitByName("Sneak Attack").dice = "9d6";
-        RogueArchetype.archetypeHelper[this.roguishArchetype]["17"](pc, params);
+        RogueArchetype.archetypeHelper[this.roguishArchetype][17](pc, params);
     }
 
     level18(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushRogueFeatures(pc, "18");
+        this.pushRogueFeatures(pc, 18);
     }
 
     level19(pc: PlayerCharacter, params: LevelingParams): void {
@@ -169,7 +167,7 @@ export class Rogue extends PlayerClass {
     }
 
     level20(pc: PlayerCharacter, params: LevelingParams): void {
-        this.pushRogueFeatures(pc, "20");
+        this.pushRogueFeatures(pc, 20);
     }
     
 }
