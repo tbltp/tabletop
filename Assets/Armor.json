@@ -1,227 +1,227 @@
 {
-    "PADDED": {
-        "name": "Padded",
-        "armorType": "Light",
-        "cost": "5 gp",
-        "AC": {"base": 11, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 0,
-        "stealthDisadvantage": true,
-        "weight": "8 lb"
-    },
-    "LEATHER": {
-        "name": "Leather",
-        "armorType": "Light",
-        "cost": "10 gp",
-        "AC": {"base": 11, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 0,
-        "stealthDisadvantage": false,
-        "weight": "10 lb"
-    },
-    "STUDDED LEATHER": {
-        "name": "Studded leather",
-        "armorType": "Light",
-        "cost": "45 gp",
-        "AC": {"base": 12, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 0,
-        "stealthDisadvantage": false,
-        "weight": "13 lb"
-    },
-    "HIDE": {
-        "name": "Hide",
-        "armorType": "Medium",
-        "cost": "10",
-        "AC": {"base": 12, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 0,
-        "stealthDisadvantage": false,
-        "weight": "12 lb"
-    },
-    "CHAIN SHIRT": {
-        "name": "Chain shirt",
-        "armorType": "Medium",
-        "cost": "50 gp",
-        "AC": {"base": 13, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 0,
-        "stealthDisadvantage": false,
-        "weight": "20 lb"
-    },
-    "SCALE MAIL": {
-        "name": "Scale mail",
-        "armorType": "Medium",
-        "cost": "50 gp",
-        "AC": {"base": 14, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 0,
-        "stealthDisadvantage": true,
-        "weight": "45 lb"
-    },
-    "BREASTPLATE": {
-        "name": "Breastplate",
-        "armorType": "Medium",
-        "cost": "400 gp",
-        "AC": {"base": 14, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 0,
-        "stealthDisadvantage": false,
-        "weight": "20 lb"
-    },
-    "HALF PLATE": {
-        "name": "Half plate",
-        "armorType": "Medium",
-        "cost": "750 gp",
-        "AC": {"base": 15, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 0,
-        "stealthDisadvantage": true,
-        "weight": "40 lb"
-    },
-    "RING MAIL": {
-        "name": "Ring mail",
-        "armorType": "Heavy",
-        "cost": "30 gp",
-        "AC": {"base": 14, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 0,
-        "stealthDisadvantage": true,
-        "weight": "40 lb"
-    },
-    "CHAIN MAIL": {
-        "name": "Chain mail",
-        "armorType": "Heavy",
-        "cost": "75 gp",
-        "AC": {"base": 16, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 13,
-        "stealthDisadvantage": true,
-        "weight": "55 lb"
-    },
-    "SPLINT": {
-        "name": "Splint",
-        "armorType": "Heavy",
-        "cost": "200 gp",
-        "AC": {"base": 17, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 15,
-        "stealthDisadvantage": true,
-        "weight": "60 lb"
-    },
-    "PLATE": {
-        "name": "Plate",
-        "armorType": "Heavy",
-        "cost": "1500 gp",
-        "AC": {"base": 18, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 15,
-        "stealthDisadvantage": true,
-        "weight": "65 lb"
-    },
-    "SHIELD": {
-        "name": "Shield",
-        "armorType": "Shield",
-        "cost": "10 gp",
-        "AC": {"base": 10, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 0,
-        "stealthDisadvantage": false,
-        "weight": "6 lb"
-    },
-    "BARDING, PADDED": {
-        "name": "Barding, padded",
-        "armorType": "Barding",
-        "cost": "20 gp",
-        "AC": {"base": 11, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 0,
-        "stealthDisadvantage": true,
-        "weight": "16 lb"
-    },
-    "BARDING, LEATHER": {
-        "name": "Barding, leather",
-        "armorType": "Barding",
-        "cost": "40 gp",
-        "AC": {"base": 11, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 0,
-        "stealthDisadvantage": false,
-        "weight": "20 lb"
-    },
-    "BARDING, STUDDED LEATHER": {
-        "name": "Barding, studded leather",
-        "armorType": "Barding",
-        "cost": "180 gp",
-        "AC": {"base": 12, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 0,
-        "stealthDisadvantage": false,
-        "weight": "26 lb"
-    },
-    "BARDING, HIDE": {
-        "name": "Barding, hide",
-        "armorType": "Barding",
-        "cost": "40 gp",
-        "AC": {"base": 12, "modifier": 2, "bonus": {"value": 0}},
-        "strengthPrequisite": 0,
-        "stealthDisadvantage": false,
-        "weight": "24 lb"
-    },
-    "BARDING, CHAIN SHIRT": {
-        "name": "Barding, chain shirt",
-        "armorType": "Barding",
-        "cost": "200 gp",
-        "AC": {"base": 13, "modifier": 2, "bonus": {"value": 0}},
-        "strengthPrequisite": 0,
-        "stealthDisadvantage": false,
-        "weight": "40 lb"
-    },
-    "BARDING, SCALE MAIL": {
-        "name": "Barding, scale mail",
-        "armorType": "Barding",
-        "cost": "200 gp",
-        "AC": {"base": 14, "modifier": 2, "bonus": {"value": 0}},
-        "strengthPrequisite": 0,
-        "stealthDisadvantage": true,
-        "weight": "90 lb"
-    },
-    "BARDING, BREASTPLATE": {
-        "name": "Barding, breastplate",
-        "armorType": "Barding",
-        "cost": "1600 gp",
-        "AC": {"base": 14, "modifier": 2, "bonus": {"value": 0}},
-        "strengthPrequisite": 0,
-        "stealthDisadvantage": false,
-        "weight": "40 lb"
-    },
-    "BARDING, HALF PLATE": {
-        "name": "Barding, half plate",
-        "armorType": "Barding",
-        "cost": "3000 gp",
-        "AC": {"base": 15, "modifier": 2, "bonus": {"value": 0}},
-        "strengthPrequisite": 0,
-        "stealthDisadvantage": true,
-        "weight": "80 lb"
-    },
-    "BARDING, RING MAIL": {
-        "name": "Barding, ring mail",
-        "armorType": "Barding",
-        "cost": "120 gp",
-        "AC": {"base": 14, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 0,
-        "stealthDisadvantage": true,
-        "weight": "80 lb"
-    },
-    "BARDING, CHAIN MAIL": {
-        "name": "Barding, chain mail",
-        "armorType": "Barding",
-        "cost": "300 gp",
-        "AC": {"base": 16, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 13,
-        "stealthDisadvantage": true,
-        "weight": "110 lb"
-    },
-    "BARDING, SPLINT": {
-        "name": "Barding, splint",
-        "armorType": "Barding",
-        "cost": "800 gp",
-        "AC": {"base": 17, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 15,
-        "stealthDisadvantage": true,
-        "weight": "120 lb"
-    },
-    "BARDING, PLATE": {
-        "name": "Barding, plate",
-        "armorType": "Barding",
-        "cost": "6000 gp",
-        "AC": {"base": 18, "modifier": null, "bonus": {"value": 0}},
-        "strengthPrequisite": 15,
-        "stealthDisadvantage": true,
-        "weight": "130 lb"
-    }
+  "PADDED": {
+    "name": "Padded",
+    "armorType": "Light",
+    "cost": "5 gp",
+    "AC": { "base": 11, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 0,
+    "stealthDisadvantage": true,
+    "weight": "8 lb"
+  },
+  "LEATHER": {
+    "name": "Leather",
+    "armorType": "Light",
+    "cost": "10 gp",
+    "AC": { "base": 11, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 0,
+    "stealthDisadvantage": false,
+    "weight": "10 lb"
+  },
+  "STUDDED LEATHER": {
+    "name": "Studded leather",
+    "armorType": "Light",
+    "cost": "45 gp",
+    "AC": { "base": 12, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 0,
+    "stealthDisadvantage": false,
+    "weight": "13 lb"
+  },
+  "HIDE": {
+    "name": "Hide",
+    "armorType": "Medium",
+    "cost": "10",
+    "AC": { "base": 12, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 0,
+    "stealthDisadvantage": false,
+    "weight": "12 lb"
+  },
+  "CHAIN SHIRT": {
+    "name": "Chain shirt",
+    "armorType": "Medium",
+    "cost": "50 gp",
+    "AC": { "base": 13, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 0,
+    "stealthDisadvantage": false,
+    "weight": "20 lb"
+  },
+  "SCALE MAIL": {
+    "name": "Scale mail",
+    "armorType": "Medium",
+    "cost": "50 gp",
+    "AC": { "base": 14, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 0,
+    "stealthDisadvantage": true,
+    "weight": "45 lb"
+  },
+  "BREASTPLATE": {
+    "name": "Breastplate",
+    "armorType": "Medium",
+    "cost": "400 gp",
+    "AC": { "base": 14, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 0,
+    "stealthDisadvantage": false,
+    "weight": "20 lb"
+  },
+  "HALF PLATE": {
+    "name": "Half plate",
+    "armorType": "Medium",
+    "cost": "750 gp",
+    "AC": { "base": 15, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 0,
+    "stealthDisadvantage": true,
+    "weight": "40 lb"
+  },
+  "RING MAIL": {
+    "name": "Ring mail",
+    "armorType": "Heavy",
+    "cost": "30 gp",
+    "AC": { "base": 14, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 0,
+    "stealthDisadvantage": true,
+    "weight": "40 lb"
+  },
+  "CHAIN MAIL": {
+    "name": "Chain mail",
+    "armorType": "Heavy",
+    "cost": "75 gp",
+    "AC": { "base": 16, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 13,
+    "stealthDisadvantage": true,
+    "weight": "55 lb"
+  },
+  "SPLINT": {
+    "name": "Splint",
+    "armorType": "Heavy",
+    "cost": "200 gp",
+    "AC": { "base": 17, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 15,
+    "stealthDisadvantage": true,
+    "weight": "60 lb"
+  },
+  "PLATE": {
+    "name": "Plate",
+    "armorType": "Heavy",
+    "cost": "1500 gp",
+    "AC": { "base": 18, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 15,
+    "stealthDisadvantage": true,
+    "weight": "65 lb"
+  },
+  "SHIELD": {
+    "name": "Shield",
+    "armorType": "Shield",
+    "cost": "10 gp",
+    "AC": { "base": 10, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 0,
+    "stealthDisadvantage": false,
+    "weight": "6 lb"
+  },
+  "BARDING, PADDED": {
+    "name": "Barding, padded",
+    "armorType": "Barding",
+    "cost": "20 gp",
+    "AC": { "base": 11, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 0,
+    "stealthDisadvantage": true,
+    "weight": "16 lb"
+  },
+  "BARDING, LEATHER": {
+    "name": "Barding, leather",
+    "armorType": "Barding",
+    "cost": "40 gp",
+    "AC": { "base": 11, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 0,
+    "stealthDisadvantage": false,
+    "weight": "20 lb"
+  },
+  "BARDING, STUDDED LEATHER": {
+    "name": "Barding, studded leather",
+    "armorType": "Barding",
+    "cost": "180 gp",
+    "AC": { "base": 12, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 0,
+    "stealthDisadvantage": false,
+    "weight": "26 lb"
+  },
+  "BARDING, HIDE": {
+    "name": "Barding, hide",
+    "armorType": "Barding",
+    "cost": "40 gp",
+    "AC": { "base": 12, "modifier": 2, "bonus": { "value": 0 } },
+    "strengthPrequisite": 0,
+    "stealthDisadvantage": false,
+    "weight": "24 lb"
+  },
+  "BARDING, CHAIN SHIRT": {
+    "name": "Barding, chain shirt",
+    "armorType": "Barding",
+    "cost": "200 gp",
+    "AC": { "base": 13, "modifier": 2, "bonus": { "value": 0 } },
+    "strengthPrequisite": 0,
+    "stealthDisadvantage": false,
+    "weight": "40 lb"
+  },
+  "BARDING, SCALE MAIL": {
+    "name": "Barding, scale mail",
+    "armorType": "Barding",
+    "cost": "200 gp",
+    "AC": { "base": 14, "modifier": 2, "bonus": { "value": 0 } },
+    "strengthPrequisite": 0,
+    "stealthDisadvantage": true,
+    "weight": "90 lb"
+  },
+  "BARDING, BREASTPLATE": {
+    "name": "Barding, breastplate",
+    "armorType": "Barding",
+    "cost": "1600 gp",
+    "AC": { "base": 14, "modifier": 2, "bonus": { "value": 0 } },
+    "strengthPrequisite": 0,
+    "stealthDisadvantage": false,
+    "weight": "40 lb"
+  },
+  "BARDING, HALF PLATE": {
+    "name": "Barding, half plate",
+    "armorType": "Barding",
+    "cost": "3000 gp",
+    "AC": { "base": 15, "modifier": 2, "bonus": { "value": 0 } },
+    "strengthPrequisite": 0,
+    "stealthDisadvantage": true,
+    "weight": "80 lb"
+  },
+  "BARDING, RING MAIL": {
+    "name": "Barding, ring mail",
+    "armorType": "Barding",
+    "cost": "120 gp",
+    "AC": { "base": 14, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 0,
+    "stealthDisadvantage": true,
+    "weight": "80 lb"
+  },
+  "BARDING, CHAIN MAIL": {
+    "name": "Barding, chain mail",
+    "armorType": "Barding",
+    "cost": "300 gp",
+    "AC": { "base": 16, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 13,
+    "stealthDisadvantage": true,
+    "weight": "110 lb"
+  },
+  "BARDING, SPLINT": {
+    "name": "Barding, splint",
+    "armorType": "Barding",
+    "cost": "800 gp",
+    "AC": { "base": 17, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 15,
+    "stealthDisadvantage": true,
+    "weight": "120 lb"
+  },
+  "BARDING, PLATE": {
+    "name": "Barding, plate",
+    "armorType": "Barding",
+    "cost": "6000 gp",
+    "AC": { "base": 18, "modifier": null, "bonus": { "value": 0 } },
+    "strengthPrequisite": 15,
+    "stealthDisadvantage": true,
+    "weight": "130 lb"
+  }
 }

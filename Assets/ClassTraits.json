@@ -1,566 +1,566 @@
 {
-    "BARBARIAN": {
-        "1": {
-            "RAGE": {
-                "title": "Rage", 
-                "description": "In battle, you fight with primal ferocity. On your turn you can enter a rage as a bonus action.\nWhile raging, you gain the following benefits if you aren't wearing any heavy armor:\n- You have advantage on Strength checks and Strength saving throws.\n- When you make a melee weapon attack using Strength, yuo gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.\n- You have resistance to bludgeoning, piercing, and slashing damage.\nIf you are able to cast spells, you can't cast them or concentrate on them while raging.\nYour rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on youor turn as a bonus action.\nOnce you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again."
-            },
-            "UNARMORED DEFENSE": {
-                "title": "Unarmored Defense",
-                "description": "While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit."
-            }
-        },
-        "2": {
-            "RECKLESS ATTACK": {
-                "title": "Reckless Attack", 
-                "description": "You can throw aside all concern for defense to attack with fierce desperation. When you make your first attack on your turn, you can decide to attack recklessly. Doing so give you advantage on the melee weapon attack rolls using Strength during this turn, but attack rolls against your have advantage until your next turn."
-            },
-            "DANGER SENSE": {
-                "title": "Danger Sense", 
-                "description": "You gain an uncanny sense of when things nearby aren't as they should be, giving you an edge when you dodge away from danger.\nYou have advantage on Dexterity saving throws againist effects that you can see, such as traps and spells. To gain this benefit, you can't be blinded, deafened, or incapacitated."
-            }
-        },
-        "5": {
-            "EXTRA ATTACK": {
-                "title": "Extra Attack", 
-                "description": "You can attack twice, instead of once, whenever you take the Attack action on your turn."
-            },
-            "FAST MOVEMENT": {
-                "title": "Fast Movement", 
-                "description": "Your speed increases by 10 feet while you aren't wearing heavy armor."
-            }
-        },
-        "7": {
-            "FERAL INSTINCT": {
-                "title": "Feral Instinct", 
-                "description": "Your instincts are so honed that you have advantage on initiative rolls.\nAdditionally, if you are surprised at the beginning of combat and aren't incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn."
-            }
-        },
-        "9": {
-            "BRUTAL CRITICAL": {
-                "title": "Brutal Critical", 
-                "description": "You can roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack.\nThis increases to two additional dice at 13th level and three additional dice at 17th level."
-            }
-        },
-        "11": {
-            "RELENTLESS RAGE": {
-                "title": "Relentless Rage", 
-                "description": "Your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you're raging and don't die outright, you can make a DC 10 Constitution saving throw. If you succeed, you can drop to 1 hit point instead.\nEach time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10."
-            }
-        },
-        "15": {
-            "PERSISTENT RAGE": {
-                "title": "Persistent Rage", 
-                "description": "Your rage is so fierce that it ends early only if you fall unconscious or choose to end it."
-            } 
-        },
-        "18": {
-            "INDOMITABLE MIGHT": {
-                "title": "Indomitable Might", 
-                "description": "If your total for a strength check is less than your Strength score, you can use that score in place of the total."
-            }
-        },
-        "20": {
-            "PRIMAL CHAMPION": {
-                "title": "Primal Champion", 
-                "description": "You embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24."
-            }
-        }
-    }, 
-    "BARD": {
-        "1": {
-            "BARDIC INSPIRATION": {
-                "title": "Bardic Inspiration",
-                "description": "You can inspire others through stirring words or music. To do so, you use a bonus action your turn to choose one creature other than yourself within 60 feat of you who can hear you. That creature gains one Bardic Inspiration die, a d6.\nOnce within the next ten minutes, the creature can roll the die and add the number rolled to one ability check, attack  roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide before the DM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time.\nYou can use this feature a number of times equal to your Charisma modifier (minimum of once). You regain any expended uses when you finish a long rest.\nYour Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level."
-            }
-        },
-        "2": {
-            "JACK OF ALL TRADES": {
-                "title": "Jack of All Trades",
-                "description": "You can add half your proficiency bonus, rounded down, to any ability check you make that doesn't already include your proficiency bonus."
-            },
-            "SONG OF REST": {
-                "title": "Song of Rest",
-                "description": "You can use soothing music or oration to help revitalize your wounded allies during a short rest. If you or any friendly creatures who can hear your performance regain hit points at the end of the short rest, each of those creatures regains an extra 1d6 hit points.\nThe extra hit points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at 13th level, and to 1d12 at 17th level."
-            }
-        },
-        "3": {
-            "EXPERTISE": {
-                "title": "Expertise",
-                "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any abiility check you make that uses either of the chosen proficiencies.\nAt 10th level, you choose another two skill proficiencies to gain this benefit."
-            }
-        },
-        "5": {
-            "FONT OF INSPIRATION": {
-                "title": "Font of Inspiration",
-                "description": "You regain all your expended uses of Bardic Inspiration when you finish a short or long rest."
-            }
-        },
-        "6": {
-            "COUNTERCHARM": {
-                "title": "Countercharm",
-                "description": "You gain the ability to use musical notes or words of power to disrupt mind-influencing effects. As an action, you can start a performance that lasts until the end of your next turn. During that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against being frightened or charmed. A creature must be able to hear you to gain this benefit.  The performance ends early if you are incapacitated or silenced if you voluntarily end it (no action requred)."
-            }
-        },
-        "10": {
-            "MAGICAL SECRETS": {
-                "title": "Magical Secrets",
-                "description": "You have plundered magical knowledge from a wide spectrum of disciplines.  Choose two spells from any class, including this one. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip.\nThe chosen spells count as a bard spells for you and are included in the number in the Spells Known column of the Bard table.\nYou learn two additional spells from any class at 14th level and again at 18th level."
-            }
-        },
-        "20": {
-            "SUPERIOR INSPIRATION": {
-                "title": "Superior Inspiration",
-                "description": "When you roll initiative and have no uses of Bardic Inspiration left, you regain one use."
-            }
-        }
+  "BARBARIAN": {
+    "1": {
+      "RAGE": {
+        "title": "Rage",
+        "description": "In battle, you fight with primal ferocity. On your turn you can enter a rage as a bonus action.\nWhile raging, you gain the following benefits if you aren't wearing any heavy armor:\n- You have advantage on Strength checks and Strength saving throws.\n- When you make a melee weapon attack using Strength, yuo gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.\n- You have resistance to bludgeoning, piercing, and slashing damage.\nIf you are able to cast spells, you can't cast them or concentrate on them while raging.\nYour rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on youor turn as a bonus action.\nOnce you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again."
+      },
+      "UNARMORED DEFENSE": {
+        "title": "Unarmored Defense",
+        "description": "While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit."
+      }
     },
-    "CLERIC": {
-        "2": {
-            "CHANNEL DIVINITY": {
-                "title": "Channel Divinity", 
-                "description": "You gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description.\nWhen you use your Channel Divinity, you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again.\nSome Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your cleric spell save DC.\nBeginning at 6th level, you can use your Channel Divinity twice between rests, and beginning at 18th level you can use it three times between rests. When you finish a short or long rest, you regain your expended uses."
-            },
-            "CHANNEL DIVINITY: TURN UNDEAD": {
-                "title": "Channel Divinity: Turn Undead",
-                "description": "As an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.\nA turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also cant take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action."
-            }
-        },
-        "5": {
-            "DESTROY UNDEAD": {
-                "title":  "Destroy Undead",
-                "description": "When an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed if its challenge rating is at or below a certain threshold, as shown in the Destroy Undead table."
-            }
-        },
-        "10": {
-            "DIVINE INTERVENTION": {
-                "title": "Divine Intervention",
-                "description": "You can call on your deity to intervene on your behalf when your need is great.\nImploring your deity’s aid requires you to use your action. Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your cleric level, your deity intervenes. The DM chooses the nature of the intervention; the effect of any cleric spell or cleric domain spell would be appropriate.\nIf your deity intervenes, you can't use this feature again for 7 days. Otherwise, you can use it again after you finish a long rest.\nAt 20th level, your call for intervention succeeds automatically, no roll required."
-            }
-        }
+    "2": {
+      "RECKLESS ATTACK": {
+        "title": "Reckless Attack",
+        "description": "You can throw aside all concern for defense to attack with fierce desperation. When you make your first attack on your turn, you can decide to attack recklessly. Doing so give you advantage on the melee weapon attack rolls using Strength during this turn, but attack rolls against your have advantage until your next turn."
+      },
+      "DANGER SENSE": {
+        "title": "Danger Sense",
+        "description": "You gain an uncanny sense of when things nearby aren't as they should be, giving you an edge when you dodge away from danger.\nYou have advantage on Dexterity saving throws againist effects that you can see, such as traps and spells. To gain this benefit, you can't be blinded, deafened, or incapacitated."
+      }
     },
-    "DRUID": {
-        "1": {
-            "DRUIDIC": {
-                "title": "Druidic",
-                "description": "You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a message. Others spot the message's presence with a successful DC 15 Wisdom (Perception) check but can't decipher it without magic."
-            }
-        },
-        "2": {
-            "WILD SHAPE": {
-                "title": "Wild Shape",
-                "description": "Starting at 2nd level, you can use your action to magically assume the shape of a beast that you have seen before. You can use this feature twice. You regain expended uses when you finish a short or long rest.\nYour druid level determines the beasts you can transform into, as shown in the Beast Shapes table. At 2nd level, for example, you can transform into any beast that has a challenge rating of 1/4 or lower that doesn't have a flying or swimming speed.\nYou can stay in a beast shape for a number of hours equal to half your druid level (rounded down). You then revert to your normal form unless you expend another use of this feature. You can revert to your normal from earlier by using a bonus action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die.\nWhile you are transformed, the following rules apply:\nYour game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature. If the creature has the same proficiency as you and the bonus in its stat block is higher than yours, use the creature's bonus instead of yours. If the creature has any legendary or lair actions, you can't use them.\nWhen you transform, you assume the beasts hit points and hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage Carries over to your normal form. For example, if you take 10 damage in animal form and have only 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.\nYou can't cast spells, and your ability to speak or take any action that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a spell you've already cast, however, or prevent you from taking actions that are part of a spell, such as call lightning, that you've already cast.\nYou retain the benefit of any features from your class, race, or other source and can use them if the new form is physically capable of doing so. However. you can't use any of your special senses, such as darkvision, unless your new form also has that sense.\nYou choose whether your equipment falls to the ground in your space, merges into your new form, or is worn by it. Worn equipment functions as normal, but the DM decides whether it is practical for the new form to wear a piece of equipment. based on the creature’s shape and size. Your equipment doesn’t change size or shape to match the new form, and any equipment that the new form can’t wear must either fall to the ground or merge with it. Equipment that merges with the form has no effect until you leave the form." 
-            }
-        },
-        "18": {
-            "TIMELESS BODY": {
-                "title": "Timeless Body",
-                "description": "Starting at 18th level, the primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year."
-            },
-            "BEAST SPELLS": {
-                "title": "Beast Spells",
-                "description": "Beginning at 18th level, you can cast many of your druid spells in any shape you assume using Wild Shape. You can perform the somatic and verbal components of a druid spell while in a beast shape, but you arent able to provide material components."
-            }
-        },
-        "20": {
-            "ARCHDRUID": {
-                "title": "Archdruid",
-                "description": "At 20th level, you can use your Wild Shape an unlimited number of times."
-            }
-        }
+    "5": {
+      "EXTRA ATTACK": {
+        "title": "Extra Attack",
+        "description": "You can attack twice, instead of once, whenever you take the Attack action on your turn."
+      },
+      "FAST MOVEMENT": {
+        "title": "Fast Movement",
+        "description": "Your speed increases by 10 feet while you aren't wearing heavy armor."
+      }
     },
-    "FIGHTER": {
-        "1": {
-            "SECOND WIND": {
-                "title": "Second Wind",
-                "description": "You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level.\nOnce you use this feature, you must finish a short or long rest before you can use it again."
-            }
-        },
-        "2": {
-            "ACTION SURGE": {
-                "title": "Action Surge",
-                "description": "Starting at 2nd level, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action.\nOnce you use this feature, you must finish a short or long rest before you can use it again. Starting at 17th level, you can use it twice before a rest, but only once on the same turn."
-            }
-        },
-        "5": {
-            "EXTRA ATTACK": {
-                "title": "Extra Attack",
-                "description": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.\nThe number of attacks increases to three when you reach 11th level in this class and to four when you reach 20th level in this class."
-            }
-        },
-        "9": {
-            "INDOMITABLE": {
-                "title": "Indomitable",
-                "description": "Beginning at 9th level, you can reroll a saving throw that you fail. If you do so, you must use the new roll, and you cant use this feature again until you finish a long rest.\nYou can use this feature twice between long rests starting at 13th level and three times between long rests starting at 17th level."
-            }
-        }
+    "7": {
+      "FERAL INSTINCT": {
+        "title": "Feral Instinct",
+        "description": "Your instincts are so honed that you have advantage on initiative rolls.\nAdditionally, if you are surprised at the beginning of combat and aren't incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn."
+      }
     },
-    "MONK": {
-        "1": {
-            "UNARMORED DEFENSE": {
-                "title": "Unarmored Defense",
-                "description": "Beginning at 1st level, while you are wearing no armor and not wielding a shield, your AC equals 10 + your Dexterity modifier + your Wisdom modifier. "
-            },
-            "MARTIAL ARTS": {
-                "title": "Martial Arts",
-                "description": "At 1st level, your practice of martial arts gives you mastery of combat styles that use unarmed strikes and monk weapons, which are shortswords and any simple melee weapons that don't have the two-handed or heavy property.\nYou gain the following benefits while you are unarmed or wielding only monk weapons and you aren't wearing armor or wielding a shield:\nYou can use Dexterity instead of Strength for the attack and damage rolls of your unarmed strikes and monk weapons.\nYou can roll a d4 in place of the normal damage of your unarmed strike or monk weapon. This die changes as you gain monk levels, as shown in the Martial Arts column of the Monk table.\nWhen you use the Attack action with an unarmed strike or a monk weapon on your turn, you can make one unarmed strike as a bonus action. For example, if you take the Attack action and attack with a quarterstaff, you can also make an unarmed strike as a bonus action, assuming you haven't already taken a bonus action this turn.\nCertain monasteries use specialized forms of the monk weapons. For example, you might use a club that is two lengths of wood connected by a short chain (called a nunchaku) or a sickle with a shorter, straighter blade (called a Kama). Whatever name you use for a monk weapon, you can use the game statistics provided for the weapon in chapter 5."
-            }
-        },
-        "2": {
-            "KI": {
-                "title": "Ki",
-                "description": "Starting at 2nd level, your training allows you to harness the mystic energy of ki. Your access to this energy is represented by a number of ki points. Your monk level determines the number of points you have, as shown in the Ki Points column of the Monk table.\nYou can spend these points to fuel various ki features. You start knowing three such features: Flurry of Blows, Patient Defense, and Step of the Wind. You learn more ki features as you gain levels in this class.\nWhen you spend a ki point, it is unavailable until you finish a short or long rest, at the end of which you draw all of your expended ki back into yourself. You must spend at least 30 minutes of the rest meditating to regain your ki points.\nSome of your ki features require your target to make a saving throw to resist the feature’s effects. The saving throw DC is calculated as follows:\nKi save DC = 8 + your proficiency bonus + your Wisdom modifier"
-            },
-            "FLURRY OF BLOWS": {
-                "title": "Flurry of Blows",
-                "description": "Immediately after you take the Attack action on your turn, you can spend 1 ki point to make two unarmed strikes as a bonus action."
-            },
-            "PATIENT DEFENSE": {
-                "title": "Patient Defense",
-                "description": "You can spend 1 ki point to take the Dodge action as a bonus action on your turn."
-            },
-            "STEP OF THE WIND": {
-                "title": "Step of the Wind",
-                "description": "You can spend 1 ki point to take the Disengage or Dash action as a bonus action on your turn, and your jump distance is doubled for the turn."
-            },
-            "UNARMORED MOVEMENT": {
-                "title": "Unarmored Movement",
-                "description": "Starting at 2nd level, your speed increases by 10 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk table.\nAt 9th level, you gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move."
-            }
-        },
-        "3": {
-            "DEFLECT MISSILES": {
-                "title": "Deflect Missiles",
-                "description": "Starting at 3rd level, you can use your reaction to deflect or catch the missile when you are hit by a ranged weapon attack. When you do so, the damage you take from the attack is reduced by 1d10 + your Dexterity modifier + your monk level.\nIf you reduce the damage to 0, you can catch the missile if it is small enough for you to hold in one hand and you have at least one hand free. If you catch a missile in this way, you can spend 1 ki point to make a ranged attack with the weapon or piece of ammunition you just caught, as part of the same reaction. You make this attack with proficiency, regardless of your weapon proficiencies, and the missile counts as a monk weapon tor the attack."
-            }
-        },
-        "4": {
-            "SLOW FALL": {
-                "title": "Slow Fall",
-                "description": "Beginning at 4th level, you can use your reaction when you fall to reduce any falling damage you take by an amount equal to five times your monk level."
-            }
-        },
-        "5": {
-            "EXTRA ATTACK": {
-                "title": "Extra Attack",
-                "description": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
-            },
-            "STUNNING STRIKE": {
-                "title": "Stunning Strike",
-                "description": "Starting at 5th level, you can interfere with the flow of ki in an opponent’s body. When you hit another creature with a melee weapon attack, you can spend 1 ki point to attempt a stunning strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn."
-            }
-        },
-        "6": {
-            "KI-EMPOWERED STRIKES": {
-                "title": "Ki-empowered Strike",
-                "description": "Starting at 6th level, your unarmed strikes count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage."
-            }
-        },
-        "7": {
-            "EVASION": {
-                "title": "Evasion",
-                "description": "At 7th level, your instinctive agility lets you dodge out of the way of certain area effects, such as a blue dragon's lightning breath or a fireball spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail."
-            },
-            "STILLNESS OF MIND": {
-                "title": "Stillness of Mind",
-                "description": "Starting at 7th level, you can use your action to end one effect on yourself that is causing you to be charmed or frightened."
-            }
-        },
-        "10": {
-            "PURITY OF BODY": {
-                "title": "Purity of Body",
-                "description": "At 10th level, your mastery of the ki flowing through you makes you immune to disease and poison."
-            }
-        },
-        "13": {
-            "TONGUE OF THE SUN AND MOON": {
-                "title": "Tongue of the Sun and Moon",
-                "description": "Starting at 13th level, you learn to touch the ki of other minds so that you understand all spoken languages. Moreover, any creature that can understand a language can understand what you say."
-            }
-        },
-        "14": {
-            "DIAMOND SOUL": {
-                "title": "Diamond Soul",
-                "description": "Beginning at 14th level, your mastery of ki grants you proficiency in all saving throws.\nAdditionally, whenever you make a saving throw and fail, you can spend 1 ki point to reroll it and take the second result."
-            }
-        },
-        "15": {
-            "TIMELESS BODY": {
-                "title": "Timeless Body",
-                "description": "At 15th level, your ki sustains you so that you suffer none of the frailty of old age, and you can't be aged magically. You can still die of old age, however. In addition, you no longer need food or water."
-            }
-        },
-        "18": {
-            "EMPTY BODY": {
-                "title": "Empty Body",
-                "description": "Beginning at 15th level, you can use your action to spend 4 ki points to become invisible for 1 minute. During that time, you also have resistance to all damage but force damage.\nAdditionally, you can spend 8 ki points to cast the astral projection spell, without needing material components. When you do so, you cant take any other creatures with you."
-            }
-        },
-        "20": {
-            "PERFECT SELF": {
-                "title": "Perfect Self",
-                "description": "At 20th level, when you roll for initiative and have no ki points remaining, you regain 4 ki points."
-            }
-        }
+    "9": {
+      "BRUTAL CRITICAL": {
+        "title": "Brutal Critical",
+        "description": "You can roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack.\nThis increases to two additional dice at 13th level and three additional dice at 17th level."
+      }
     },
-    "PALADIN": {
-        "1": {
-            "DIVINE SENSE": {
-                "title": "Divine Sense",
-                "description": "The presence of strong evil registers on your senses like a noxious odor, and powerful good rings like heavenly music in your ears. As an action, you can open your awareness to detect such forces. Until the end of your next turn, you Know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover. You know the type (celestial, fiend, or undead) of any being whose presence you sense, but not its identity (the vampire Count Strahd von Zarovich, for instance). Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the hallow spell.\nYou can use this feature a number of times equal to 1 + your Charisma modifier. When you finish a long rest, you regain all expended uses."
-            },
-            "LAY ON HANDS": {
-                "title": "Lay on Hands",
-                "description": "Your blessed touch can heal wounds. You have a pool of healing power that replenishes when you take a long rest. With that pool, you can restore a total number of hit points equal to your paladin level x 5.\nAs an action, you can touch a creature and draw power from the pool to restore a number of hit points to that creature, up to the maximum amount remaining in your pool.\nAlternatively, you can expend 5 hit points from your pool of healing to cure the target of one disease or neutralize one poison affecting it. You can cure multiple diseases and neutralize multiple poisons with a single use of Lay on Hands, expending hit points separately for each one.\nThis feature has no effect on undead and constructs."
-            }
-        },
-        "2": {
-            "DIVINE SMITE": {
-                "title": "Divine Smite",
-                "description": "Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one paladin spell slot to deal radiant damage to the target, in addition to the weapon’s damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st, to a maximum of 5d8. The damage increases by 1d8 if the target is an undead or a fiend.\nBy 11th level, you are so suffused with righteous might that all your melee weapon strikes carry divine power with them. Whenever you hit a creature with a melee weapon, the creature takes an extra 1d8 radiant damage. If you also use your Divine Smite with an attack, you add this damage to the extra damage of your Divine Smite."
-            }
-        },
-        "3": {
-            "DIVINE HEALTH": {
-                "title": "Divine Health",
-                "description": "By 3rd level, the divine magic flowing through you makes you immune to disease."
-            }
-        },
-        "5": {
-            "EXTRA ATTACK": {
-                "title": "Extra Attack",
-                "description": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
-            }
-        },
-        "6": {
-            "AURA OF PROTECTION": {
-                "title": "Aura of Protection",
-                "description": "Starting at 6th level, whenever you or a friendly creature within 10 feet of you must make a saving throw, the creature gains a bonus to the saving throw equal to your Charisma modifier (with a minimum bonus of +1). You must be conscious to grant this bonus.\nAt 18th level, the range of this aura increases to 30 feet."
-            }
-        },
-        "10": {
-            "AURA OF COURAGE": {
-                "title": "Aura of Courage",
-                "description": "Starting at 10th level, you and friendly creatures within 10 feet of you can't be frightened while you are conscious.\nAt 18th level, the range of this aura increases to 30 feet."
-            }
-        },
-        "14": {
-            "CLEANSING TOUCH": {
-                "title": "Cleansing Touch",
-                "description": "Beginning at 14th level, you can use your action to end one spell on yourself or on one willing creature that you touch.\nYou can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain expended uses when you finish a long rest."
-            }
-        }
+    "11": {
+      "RELENTLESS RAGE": {
+        "title": "Relentless Rage",
+        "description": "Your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you're raging and don't die outright, you can make a DC 10 Constitution saving throw. If you succeed, you can drop to 1 hit point instead.\nEach time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10."
+      }
     },
-    "RANGER": {
-        "1": {
-            "FAVORED ENEMY": {
-                "title": "Favored Enemy", 
-                "description": "Beginning at 1st level, you have significant experience studying, tracking, hunting, and even talking to a certain type of enemy. Choose a type of favored enemy. You have advantage on Wisdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them. When you gain this feature, you also learn one language of your choice that is spoken by your favored enemies, if they speak one at all."
-            },
-            "NATURAL EXPLORER": {
-                "title": "Natural Explorer", 
-                "description": "You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. Choose one type of favored terrain. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in. While traveling for an hour or more in your favored terrain, you gain the following benefits:  - Difficult terrain doesn’t slow your group’s travel.  - Your group can’t become lost except by magical means.  -  Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.  - If you are traveling alone, you can move stealthily at a normal pace.  -  When you forage, you find twice as much food as you normally would.  - While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area."
-            }
-        },
-        "2": {},
-        "3": {
-            "PRIMEVAL AWARENESS": {
-                "title": "",
-                "description": ""
-            }
-        },
-        "4": {},
-        "5": {
-            "EXTRA ATTACK": {
-                "title": "",
-                "description": ""
-            }
-        },
-        "6": {},
-        "7": {},
-        "8": {
-            "LAND'S STRIDE": {
-                "title": "",
-                "description": ""
-            }
-        },
-        "9": {},
-        "10": {
-            "HIDE IN PLAIN SIGHT": {
-                "title": "",
-                "description": ""
-            }
-        },
-        "11": {},
-        "12": {},
-        "13": {},
-        "14": {
-            "VANISH": {
-                "title": "",
-                "description": ""
-            }
-        },
-        "15": {},
-        "16": {},
-        "17": {},
-        "18": {
-            "FERAL SENSES": {
-                "title": "",
-                "description": ""
-            }
-        },
-        "19": {},
-        "20": {
-            "FOE SLAYER": {
-                "title": "",
-                "description": ""
-            }
-        }
+    "15": {
+      "PERSISTENT RAGE": {
+        "title": "Persistent Rage",
+        "description": "Your rage is so fierce that it ends early only if you fall unconscious or choose to end it."
+      }
     },
-    "ROGUE": {
-        "1": {
-            "EXPERTISE": {
-                "title": "",
-                "description": ""
-            },
-            "SNEAK ATTACK": {
-                "title": "",
-                "description": ""
-            },
-            "THIEVES' CANT": {
-                "title": "",
-                "description": ""
-            }
-        },
-        "2": {
-            "CUNNING ACTION": {
-                "title": "",
-                "description": ""
-            }
-        },
-        "3": {},
-        "4": {},
-        "5": {
-            "UNCANNY DODGE": {
-                "title": "",
-                "description": ""
-            }
-        },
-        "6": {},
-        "7": {
-            "EVASION": {
-                "title": "",
-                "description": ""
-            }
-        },
-        "8": {},
-        "9": {},
-        "10": {},
-        "11": {
-            "RELIABLE TALENT": {
-                "title": "",
-                "description": ""
-            }
-        },
-        "12": {},
-        "13": {},
-        "14": {
-            "BLINDSENSE": {
-                "title": "",
-                "description": ""
-            }
-        },
-        "15": {
-            "SLIPPERY MIND": {
-                "title": "",
-                "description": ""
-            }
-        },
-        "16": {},
-        "17": {},
-        "18": {
-            "ELUSIVE": {
-                "title": "",
-                "description": ""
-            }
-        },
-        "19": {},
-        "20": {
-            "STROKE OF LUCK": {
-                "title": "",
-                "description": ""
-            }
-        }
+    "18": {
+      "INDOMITABLE MIGHT": {
+        "title": "Indomitable Might",
+        "description": "If your total for a strength check is less than your Strength score, you can use that score in place of the total."
+      }
     },
-    "SORCERER": {
-        "1": {},
-        "2": {},
-        "3": {},
-        "4": {},
-        "5": {},
-        "6": {},
-        "7": {},
-        "8": {},
-        "9": {},
-        "10": {},
-        "11": {},
-        "12": {},
-        "13": {},
-        "14": {},
-        "15": {},
-        "16": {},
-        "17": {},
-        "18": {},
-        "19": {},
-        "20": {
-            "SORCEROUS RESTORATION": {
-                "title": "Sorcerous Restoration",
-                "description": "At 20th level, you regain 4 expended sorcery points whenever you finish a short rest."
-            }
-        }
-    },
-    "WARLOCK": {
-        "1": {},
-        "2": {},
-        "3": {},
-        "4": {},
-        "5": {},
-        "6": {},
-        "7": {},
-        "8": {},
-        "9": {},
-        "10": {},
-        "11": {},
-        "12": {},
-        "13": {},
-        "14": {},
-        "15": {},
-        "16": {},
-        "17": {},
-        "18": {},
-        "19": {},
-        "20": {}
-    },
-    "WIZARD": {
-        "1": {},
-        "2": {},
-        "3": {},
-        "4": {},
-        "5": {},
-        "6": {},
-        "7": {},
-        "8": {},
-        "9": {},
-        "10": {},
-        "11": {},
-        "12": {},
-        "13": {},
-        "14": {},
-        "15": {},
-        "16": {},
-        "17": {},
-        "18": {},
-        "19": {},
-        "20": {}
+    "20": {
+      "PRIMAL CHAMPION": {
+        "title": "Primal Champion",
+        "description": "You embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24."
+      }
     }
+  },
+  "BARD": {
+    "1": {
+      "BARDIC INSPIRATION": {
+        "title": "Bardic Inspiration",
+        "description": "You can inspire others through stirring words or music. To do so, you use a bonus action your turn to choose one creature other than yourself within 60 feat of you who can hear you. That creature gains one Bardic Inspiration die, a d6.\nOnce within the next ten minutes, the creature can roll the die and add the number rolled to one ability check, attack  roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide before the DM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time.\nYou can use this feature a number of times equal to your Charisma modifier (minimum of once). You regain any expended uses when you finish a long rest.\nYour Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level."
+      }
+    },
+    "2": {
+      "JACK OF ALL TRADES": {
+        "title": "Jack of All Trades",
+        "description": "You can add half your proficiency bonus, rounded down, to any ability check you make that doesn't already include your proficiency bonus."
+      },
+      "SONG OF REST": {
+        "title": "Song of Rest",
+        "description": "You can use soothing music or oration to help revitalize your wounded allies during a short rest. If you or any friendly creatures who can hear your performance regain hit points at the end of the short rest, each of those creatures regains an extra 1d6 hit points.\nThe extra hit points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at 13th level, and to 1d12 at 17th level."
+      }
+    },
+    "3": {
+      "EXPERTISE": {
+        "title": "Expertise",
+        "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any abiility check you make that uses either of the chosen proficiencies.\nAt 10th level, you choose another two skill proficiencies to gain this benefit."
+      }
+    },
+    "5": {
+      "FONT OF INSPIRATION": {
+        "title": "Font of Inspiration",
+        "description": "You regain all your expended uses of Bardic Inspiration when you finish a short or long rest."
+      }
+    },
+    "6": {
+      "COUNTERCHARM": {
+        "title": "Countercharm",
+        "description": "You gain the ability to use musical notes or words of power to disrupt mind-influencing effects. As an action, you can start a performance that lasts until the end of your next turn. During that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against being frightened or charmed. A creature must be able to hear you to gain this benefit.  The performance ends early if you are incapacitated or silenced if you voluntarily end it (no action requred)."
+      }
+    },
+    "10": {
+      "MAGICAL SECRETS": {
+        "title": "Magical Secrets",
+        "description": "You have plundered magical knowledge from a wide spectrum of disciplines.  Choose two spells from any class, including this one. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip.\nThe chosen spells count as a bard spells for you and are included in the number in the Spells Known column of the Bard table.\nYou learn two additional spells from any class at 14th level and again at 18th level."
+      }
+    },
+    "20": {
+      "SUPERIOR INSPIRATION": {
+        "title": "Superior Inspiration",
+        "description": "When you roll initiative and have no uses of Bardic Inspiration left, you regain one use."
+      }
+    }
+  },
+  "CLERIC": {
+    "2": {
+      "CHANNEL DIVINITY": {
+        "title": "Channel Divinity",
+        "description": "You gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description.\nWhen you use your Channel Divinity, you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again.\nSome Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your cleric spell save DC.\nBeginning at 6th level, you can use your Channel Divinity twice between rests, and beginning at 18th level you can use it three times between rests. When you finish a short or long rest, you regain your expended uses."
+      },
+      "CHANNEL DIVINITY: TURN UNDEAD": {
+        "title": "Channel Divinity: Turn Undead",
+        "description": "As an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.\nA turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also cant take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action."
+      }
+    },
+    "5": {
+      "DESTROY UNDEAD": {
+        "title": "Destroy Undead",
+        "description": "When an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed if its challenge rating is at or below a certain threshold, as shown in the Destroy Undead table."
+      }
+    },
+    "10": {
+      "DIVINE INTERVENTION": {
+        "title": "Divine Intervention",
+        "description": "You can call on your deity to intervene on your behalf when your need is great.\nImploring your deity’s aid requires you to use your action. Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your cleric level, your deity intervenes. The DM chooses the nature of the intervention; the effect of any cleric spell or cleric domain spell would be appropriate.\nIf your deity intervenes, you can't use this feature again for 7 days. Otherwise, you can use it again after you finish a long rest.\nAt 20th level, your call for intervention succeeds automatically, no roll required."
+      }
+    }
+  },
+  "DRUID": {
+    "1": {
+      "DRUIDIC": {
+        "title": "Druidic",
+        "description": "You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a message. Others spot the message's presence with a successful DC 15 Wisdom (Perception) check but can't decipher it without magic."
+      }
+    },
+    "2": {
+      "WILD SHAPE": {
+        "title": "Wild Shape",
+        "description": "Starting at 2nd level, you can use your action to magically assume the shape of a beast that you have seen before. You can use this feature twice. You regain expended uses when you finish a short or long rest.\nYour druid level determines the beasts you can transform into, as shown in the Beast Shapes table. At 2nd level, for example, you can transform into any beast that has a challenge rating of 1/4 or lower that doesn't have a flying or swimming speed.\nYou can stay in a beast shape for a number of hours equal to half your druid level (rounded down). You then revert to your normal form unless you expend another use of this feature. You can revert to your normal from earlier by using a bonus action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die.\nWhile you are transformed, the following rules apply:\nYour game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature. If the creature has the same proficiency as you and the bonus in its stat block is higher than yours, use the creature's bonus instead of yours. If the creature has any legendary or lair actions, you can't use them.\nWhen you transform, you assume the beasts hit points and hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage Carries over to your normal form. For example, if you take 10 damage in animal form and have only 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.\nYou can't cast spells, and your ability to speak or take any action that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a spell you've already cast, however, or prevent you from taking actions that are part of a spell, such as call lightning, that you've already cast.\nYou retain the benefit of any features from your class, race, or other source and can use them if the new form is physically capable of doing so. However. you can't use any of your special senses, such as darkvision, unless your new form also has that sense.\nYou choose whether your equipment falls to the ground in your space, merges into your new form, or is worn by it. Worn equipment functions as normal, but the DM decides whether it is practical for the new form to wear a piece of equipment. based on the creature’s shape and size. Your equipment doesn’t change size or shape to match the new form, and any equipment that the new form can’t wear must either fall to the ground or merge with it. Equipment that merges with the form has no effect until you leave the form."
+      }
+    },
+    "18": {
+      "TIMELESS BODY": {
+        "title": "Timeless Body",
+        "description": "Starting at 18th level, the primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year."
+      },
+      "BEAST SPELLS": {
+        "title": "Beast Spells",
+        "description": "Beginning at 18th level, you can cast many of your druid spells in any shape you assume using Wild Shape. You can perform the somatic and verbal components of a druid spell while in a beast shape, but you arent able to provide material components."
+      }
+    },
+    "20": {
+      "ARCHDRUID": {
+        "title": "Archdruid",
+        "description": "At 20th level, you can use your Wild Shape an unlimited number of times."
+      }
+    }
+  },
+  "FIGHTER": {
+    "1": {
+      "SECOND WIND": {
+        "title": "Second Wind",
+        "description": "You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level.\nOnce you use this feature, you must finish a short or long rest before you can use it again."
+      }
+    },
+    "2": {
+      "ACTION SURGE": {
+        "title": "Action Surge",
+        "description": "Starting at 2nd level, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action.\nOnce you use this feature, you must finish a short or long rest before you can use it again. Starting at 17th level, you can use it twice before a rest, but only once on the same turn."
+      }
+    },
+    "5": {
+      "EXTRA ATTACK": {
+        "title": "Extra Attack",
+        "description": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.\nThe number of attacks increases to three when you reach 11th level in this class and to four when you reach 20th level in this class."
+      }
+    },
+    "9": {
+      "INDOMITABLE": {
+        "title": "Indomitable",
+        "description": "Beginning at 9th level, you can reroll a saving throw that you fail. If you do so, you must use the new roll, and you cant use this feature again until you finish a long rest.\nYou can use this feature twice between long rests starting at 13th level and three times between long rests starting at 17th level."
+      }
+    }
+  },
+  "MONK": {
+    "1": {
+      "UNARMORED DEFENSE": {
+        "title": "Unarmored Defense",
+        "description": "Beginning at 1st level, while you are wearing no armor and not wielding a shield, your AC equals 10 + your Dexterity modifier + your Wisdom modifier. "
+      },
+      "MARTIAL ARTS": {
+        "title": "Martial Arts",
+        "description": "At 1st level, your practice of martial arts gives you mastery of combat styles that use unarmed strikes and monk weapons, which are shortswords and any simple melee weapons that don't have the two-handed or heavy property.\nYou gain the following benefits while you are unarmed or wielding only monk weapons and you aren't wearing armor or wielding a shield:\nYou can use Dexterity instead of Strength for the attack and damage rolls of your unarmed strikes and monk weapons.\nYou can roll a d4 in place of the normal damage of your unarmed strike or monk weapon. This die changes as you gain monk levels, as shown in the Martial Arts column of the Monk table.\nWhen you use the Attack action with an unarmed strike or a monk weapon on your turn, you can make one unarmed strike as a bonus action. For example, if you take the Attack action and attack with a quarterstaff, you can also make an unarmed strike as a bonus action, assuming you haven't already taken a bonus action this turn.\nCertain monasteries use specialized forms of the monk weapons. For example, you might use a club that is two lengths of wood connected by a short chain (called a nunchaku) or a sickle with a shorter, straighter blade (called a Kama). Whatever name you use for a monk weapon, you can use the game statistics provided for the weapon in chapter 5."
+      }
+    },
+    "2": {
+      "KI": {
+        "title": "Ki",
+        "description": "Starting at 2nd level, your training allows you to harness the mystic energy of ki. Your access to this energy is represented by a number of ki points. Your monk level determines the number of points you have, as shown in the Ki Points column of the Monk table.\nYou can spend these points to fuel various ki features. You start knowing three such features: Flurry of Blows, Patient Defense, and Step of the Wind. You learn more ki features as you gain levels in this class.\nWhen you spend a ki point, it is unavailable until you finish a short or long rest, at the end of which you draw all of your expended ki back into yourself. You must spend at least 30 minutes of the rest meditating to regain your ki points.\nSome of your ki features require your target to make a saving throw to resist the feature’s effects. The saving throw DC is calculated as follows:\nKi save DC = 8 + your proficiency bonus + your Wisdom modifier"
+      },
+      "FLURRY OF BLOWS": {
+        "title": "Flurry of Blows",
+        "description": "Immediately after you take the Attack action on your turn, you can spend 1 ki point to make two unarmed strikes as a bonus action."
+      },
+      "PATIENT DEFENSE": {
+        "title": "Patient Defense",
+        "description": "You can spend 1 ki point to take the Dodge action as a bonus action on your turn."
+      },
+      "STEP OF THE WIND": {
+        "title": "Step of the Wind",
+        "description": "You can spend 1 ki point to take the Disengage or Dash action as a bonus action on your turn, and your jump distance is doubled for the turn."
+      },
+      "UNARMORED MOVEMENT": {
+        "title": "Unarmored Movement",
+        "description": "Starting at 2nd level, your speed increases by 10 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk table.\nAt 9th level, you gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move."
+      }
+    },
+    "3": {
+      "DEFLECT MISSILES": {
+        "title": "Deflect Missiles",
+        "description": "Starting at 3rd level, you can use your reaction to deflect or catch the missile when you are hit by a ranged weapon attack. When you do so, the damage you take from the attack is reduced by 1d10 + your Dexterity modifier + your monk level.\nIf you reduce the damage to 0, you can catch the missile if it is small enough for you to hold in one hand and you have at least one hand free. If you catch a missile in this way, you can spend 1 ki point to make a ranged attack with the weapon or piece of ammunition you just caught, as part of the same reaction. You make this attack with proficiency, regardless of your weapon proficiencies, and the missile counts as a monk weapon tor the attack."
+      }
+    },
+    "4": {
+      "SLOW FALL": {
+        "title": "Slow Fall",
+        "description": "Beginning at 4th level, you can use your reaction when you fall to reduce any falling damage you take by an amount equal to five times your monk level."
+      }
+    },
+    "5": {
+      "EXTRA ATTACK": {
+        "title": "Extra Attack",
+        "description": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
+      },
+      "STUNNING STRIKE": {
+        "title": "Stunning Strike",
+        "description": "Starting at 5th level, you can interfere with the flow of ki in an opponent’s body. When you hit another creature with a melee weapon attack, you can spend 1 ki point to attempt a stunning strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn."
+      }
+    },
+    "6": {
+      "KI-EMPOWERED STRIKES": {
+        "title": "Ki-empowered Strike",
+        "description": "Starting at 6th level, your unarmed strikes count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage."
+      }
+    },
+    "7": {
+      "EVASION": {
+        "title": "Evasion",
+        "description": "At 7th level, your instinctive agility lets you dodge out of the way of certain area effects, such as a blue dragon's lightning breath or a fireball spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail."
+      },
+      "STILLNESS OF MIND": {
+        "title": "Stillness of Mind",
+        "description": "Starting at 7th level, you can use your action to end one effect on yourself that is causing you to be charmed or frightened."
+      }
+    },
+    "10": {
+      "PURITY OF BODY": {
+        "title": "Purity of Body",
+        "description": "At 10th level, your mastery of the ki flowing through you makes you immune to disease and poison."
+      }
+    },
+    "13": {
+      "TONGUE OF THE SUN AND MOON": {
+        "title": "Tongue of the Sun and Moon",
+        "description": "Starting at 13th level, you learn to touch the ki of other minds so that you understand all spoken languages. Moreover, any creature that can understand a language can understand what you say."
+      }
+    },
+    "14": {
+      "DIAMOND SOUL": {
+        "title": "Diamond Soul",
+        "description": "Beginning at 14th level, your mastery of ki grants you proficiency in all saving throws.\nAdditionally, whenever you make a saving throw and fail, you can spend 1 ki point to reroll it and take the second result."
+      }
+    },
+    "15": {
+      "TIMELESS BODY": {
+        "title": "Timeless Body",
+        "description": "At 15th level, your ki sustains you so that you suffer none of the frailty of old age, and you can't be aged magically. You can still die of old age, however. In addition, you no longer need food or water."
+      }
+    },
+    "18": {
+      "EMPTY BODY": {
+        "title": "Empty Body",
+        "description": "Beginning at 15th level, you can use your action to spend 4 ki points to become invisible for 1 minute. During that time, you also have resistance to all damage but force damage.\nAdditionally, you can spend 8 ki points to cast the astral projection spell, without needing material components. When you do so, you cant take any other creatures with you."
+      }
+    },
+    "20": {
+      "PERFECT SELF": {
+        "title": "Perfect Self",
+        "description": "At 20th level, when you roll for initiative and have no ki points remaining, you regain 4 ki points."
+      }
+    }
+  },
+  "PALADIN": {
+    "1": {
+      "DIVINE SENSE": {
+        "title": "Divine Sense",
+        "description": "The presence of strong evil registers on your senses like a noxious odor, and powerful good rings like heavenly music in your ears. As an action, you can open your awareness to detect such forces. Until the end of your next turn, you Know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover. You know the type (celestial, fiend, or undead) of any being whose presence you sense, but not its identity (the vampire Count Strahd von Zarovich, for instance). Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the hallow spell.\nYou can use this feature a number of times equal to 1 + your Charisma modifier. When you finish a long rest, you regain all expended uses."
+      },
+      "LAY ON HANDS": {
+        "title": "Lay on Hands",
+        "description": "Your blessed touch can heal wounds. You have a pool of healing power that replenishes when you take a long rest. With that pool, you can restore a total number of hit points equal to your paladin level x 5.\nAs an action, you can touch a creature and draw power from the pool to restore a number of hit points to that creature, up to the maximum amount remaining in your pool.\nAlternatively, you can expend 5 hit points from your pool of healing to cure the target of one disease or neutralize one poison affecting it. You can cure multiple diseases and neutralize multiple poisons with a single use of Lay on Hands, expending hit points separately for each one.\nThis feature has no effect on undead and constructs."
+      }
+    },
+    "2": {
+      "DIVINE SMITE": {
+        "title": "Divine Smite",
+        "description": "Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one paladin spell slot to deal radiant damage to the target, in addition to the weapon’s damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st, to a maximum of 5d8. The damage increases by 1d8 if the target is an undead or a fiend.\nBy 11th level, you are so suffused with righteous might that all your melee weapon strikes carry divine power with them. Whenever you hit a creature with a melee weapon, the creature takes an extra 1d8 radiant damage. If you also use your Divine Smite with an attack, you add this damage to the extra damage of your Divine Smite."
+      }
+    },
+    "3": {
+      "DIVINE HEALTH": {
+        "title": "Divine Health",
+        "description": "By 3rd level, the divine magic flowing through you makes you immune to disease."
+      }
+    },
+    "5": {
+      "EXTRA ATTACK": {
+        "title": "Extra Attack",
+        "description": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
+      }
+    },
+    "6": {
+      "AURA OF PROTECTION": {
+        "title": "Aura of Protection",
+        "description": "Starting at 6th level, whenever you or a friendly creature within 10 feet of you must make a saving throw, the creature gains a bonus to the saving throw equal to your Charisma modifier (with a minimum bonus of +1). You must be conscious to grant this bonus.\nAt 18th level, the range of this aura increases to 30 feet."
+      }
+    },
+    "10": {
+      "AURA OF COURAGE": {
+        "title": "Aura of Courage",
+        "description": "Starting at 10th level, you and friendly creatures within 10 feet of you can't be frightened while you are conscious.\nAt 18th level, the range of this aura increases to 30 feet."
+      }
+    },
+    "14": {
+      "CLEANSING TOUCH": {
+        "title": "Cleansing Touch",
+        "description": "Beginning at 14th level, you can use your action to end one spell on yourself or on one willing creature that you touch.\nYou can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain expended uses when you finish a long rest."
+      }
+    }
+  },
+  "RANGER": {
+    "1": {
+      "FAVORED ENEMY": {
+        "title": "Favored Enemy",
+        "description": "Beginning at 1st level, you have significant experience studying, tracking, hunting, and even talking to a certain type of enemy. Choose a type of favored enemy. You have advantage on Wisdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them. When you gain this feature, you also learn one language of your choice that is spoken by your favored enemies, if they speak one at all."
+      },
+      "NATURAL EXPLORER": {
+        "title": "Natural Explorer",
+        "description": "You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. Choose one type of favored terrain. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in. While traveling for an hour or more in your favored terrain, you gain the following benefits:  - Difficult terrain doesn’t slow your group’s travel.  - Your group can’t become lost except by magical means.  -  Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.  - If you are traveling alone, you can move stealthily at a normal pace.  -  When you forage, you find twice as much food as you normally would.  - While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area."
+      }
+    },
+    "2": {},
+    "3": {
+      "PRIMEVAL AWARENESS": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "4": {},
+    "5": {
+      "EXTRA ATTACK": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "6": {},
+    "7": {},
+    "8": {
+      "LAND'S STRIDE": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "9": {},
+    "10": {
+      "HIDE IN PLAIN SIGHT": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "11": {},
+    "12": {},
+    "13": {},
+    "14": {
+      "VANISH": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "15": {},
+    "16": {},
+    "17": {},
+    "18": {
+      "FERAL SENSES": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "19": {},
+    "20": {
+      "FOE SLAYER": {
+        "title": "",
+        "description": ""
+      }
+    }
+  },
+  "ROGUE": {
+    "1": {
+      "EXPERTISE": {
+        "title": "",
+        "description": ""
+      },
+      "SNEAK ATTACK": {
+        "title": "",
+        "description": ""
+      },
+      "THIEVES' CANT": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "2": {
+      "CUNNING ACTION": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "3": {},
+    "4": {},
+    "5": {
+      "UNCANNY DODGE": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "6": {},
+    "7": {
+      "EVASION": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "8": {},
+    "9": {},
+    "10": {},
+    "11": {
+      "RELIABLE TALENT": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "12": {},
+    "13": {},
+    "14": {
+      "BLINDSENSE": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "15": {
+      "SLIPPERY MIND": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "16": {},
+    "17": {},
+    "18": {
+      "ELUSIVE": {
+        "title": "",
+        "description": ""
+      }
+    },
+    "19": {},
+    "20": {
+      "STROKE OF LUCK": {
+        "title": "",
+        "description": ""
+      }
+    }
+  },
+  "SORCERER": {
+    "1": {},
+    "2": {},
+    "3": {},
+    "4": {},
+    "5": {},
+    "6": {},
+    "7": {},
+    "8": {},
+    "9": {},
+    "10": {},
+    "11": {},
+    "12": {},
+    "13": {},
+    "14": {},
+    "15": {},
+    "16": {},
+    "17": {},
+    "18": {},
+    "19": {},
+    "20": {
+      "SORCEROUS RESTORATION": {
+        "title": "Sorcerous Restoration",
+        "description": "At 20th level, you regain 4 expended sorcery points whenever you finish a short rest."
+      }
+    }
+  },
+  "WARLOCK": {
+    "1": {},
+    "2": {},
+    "3": {},
+    "4": {},
+    "5": {},
+    "6": {},
+    "7": {},
+    "8": {},
+    "9": {},
+    "10": {},
+    "11": {},
+    "12": {},
+    "13": {},
+    "14": {},
+    "15": {},
+    "16": {},
+    "17": {},
+    "18": {},
+    "19": {},
+    "20": {}
+  },
+  "WIZARD": {
+    "1": {},
+    "2": {},
+    "3": {},
+    "4": {},
+    "5": {},
+    "6": {},
+    "7": {},
+    "8": {},
+    "9": {},
+    "10": {},
+    "11": {},
+    "12": {},
+    "13": {},
+    "14": {},
+    "15": {},
+    "16": {},
+    "17": {},
+    "18": {},
+    "19": {},
+    "20": {}
+  }
 }

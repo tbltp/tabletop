@@ -7,10 +7,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
@@ -24,11 +21,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "8 hours",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a tiny strip of white cloth",
     "minimumLevel": "2",
     "ritual": false,
@@ -42,11 +35,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "8 hours",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a tiny bell and a piece of fine silver wire",
     "minimumLevel": "1",
     "ritual": true,
@@ -60,10 +49,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
@@ -77,11 +63,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "24 hours",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a morsel of food",
     "minimumLevel": "1",
     "ritual": false,
@@ -95,11 +77,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "24 hours",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a morsel of food",
     "minimumLevel": "2",
     "ritual": true,
@@ -113,10 +91,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to 24 hours",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "8",
     "ritual": false,
@@ -130,11 +105,7 @@
     "range": "10 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a drop of blood, a piece of flesh, and a pinch of bone dust",
     "minimumLevel": "3",
     "ritual": false,
@@ -148,10 +119,7 @@
     "range": "120 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
@@ -165,10 +133,7 @@
     "range": "Self (10-foot radius)",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
@@ -182,11 +147,7 @@
     "range": "Self (10-foot-radius sphere)",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a pinch of powdered iron or iron filings",
     "minimumLevel": "8",
     "ritual": false,
@@ -200,11 +161,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "10 days",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "cither a lump of alum soaked in vinegar for the antipathy effect or a drop of honey for the sympathy effect",
     "minimumLevel": "8",
     "ritual": false,
@@ -218,11 +175,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a bit of bat fur",
     "minimumLevel": "4",
     "ritual": false,
@@ -236,10 +189,7 @@
     "range": "500 feet",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
@@ -253,11 +203,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Until dispelled",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "gold dust worth at least 2S gp, which the spell consumes",
     "minimumLevel": "2",
     "ritual": false,
@@ -269,11 +215,7 @@
     "school": "evocation",
     "castTime": "1 action or 8 hours",
     "range": "60 feet",
-    "components": [
-      "V", 
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a miniature platinum sword with a grip and pommel of copper and zinc, worth 250 gp",
     "minimumLevel": "7",
     "ritual": false,
@@ -287,11 +229,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a cup of water",
     "minimumLevel": "1",
     "ritual": false,
@@ -305,10 +243,7 @@
     "range": "Self (10-foot radius)",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -322,11 +257,7 @@
     "range": "10 feet",
     "concentration": false,
     "duration": "Special",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "for each creature you affect with this spell, you must provide one jacinth worth at least 1,000 gp and one ornately carved bar of silver worth at least 100 gp, all of which the spell consumes",
     "minimumLevel": "9",
     "ritual": false,
@@ -340,11 +271,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "specially marked sticks, bones, or similar tokens worth at least 2S gp",
     "minimumLevel": "2",
     "ritual": true,
@@ -358,9 +285,7 @@
     "range": "Self (30-foot radius)",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
@@ -374,9 +299,7 @@
     "range": "Self (30-foot radius)",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
@@ -390,9 +313,7 @@
     "range": "Self (30-foot radius)",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -406,11 +327,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "an agate worth at least 1,000 gp, which the spell consumes",
     "minimumLevel": "5",
     "ritual": false,
@@ -424,11 +341,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a drop of blood",
     "minimumLevel": "1",
     "ritual": false,
@@ -442,9 +355,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
@@ -458,11 +369,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "an item distasteful to the target",
     "minimumLevel": "4",
     "ritual": false,
@@ -476,11 +383,7 @@
     "range": "Touch",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a handful of oak bark",
     "minimumLevel": "2",
     "ritual": false,
@@ -494,10 +397,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -511,9 +411,7 @@
     "range": "Touch",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "S"
-    ],
+    "components": ["S"],
     "material": "",
     "minimumLevel": "2",
     "ritual": true,
@@ -527,10 +425,7 @@
     "range": "Touch",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -544,11 +439,7 @@
     "range": "120 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "an eggshell and a snakeskin glove",
     "minimumLevel": "5",
     "ritual": false,
@@ -562,10 +453,7 @@
     "range": "90 feet",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
@@ -579,10 +467,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "1 round",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
@@ -596,11 +481,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a sprinkling of holy water",
     "minimumLevel": "1",
     "ritual": false,
@@ -614,10 +495,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
@@ -631,9 +509,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -647,9 +523,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "1 minute",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
@@ -663,10 +537,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -680,9 +551,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
@@ -696,9 +565,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
@@ -712,10 +579,7 @@
     "range": "Self (15-foot cone)",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -729,10 +593,7 @@
     "range": "120 feet Componenis: V,S ",
     "concentration": false,
     "duration": "Concentration. up to 10 minutes",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -746,10 +607,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
@@ -763,11 +621,7 @@
     "range": "150 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a bit of fur; a piece of amber, glass, or a crystal rod; and three silver pins",
     "minimumLevel": "6",
     "ritual": false,
@@ -781,10 +635,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "| hour",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -798,10 +649,7 @@
     "range": "120 feet",
     "concentration": false,
     "duration": "1 round",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
@@ -815,11 +663,7 @@
     "range": "90 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a diamond worth at least S0 gp",
     "minimumLevel": "1",
     "ritual": false,
@@ -833,11 +677,7 @@
     "range": "150 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "the powder of a crushed black pearl worth at least S00 gp",
     "minimumLevel": "6",
     "ritual": false,
@@ -851,9 +691,7 @@
     "range": "Self (30-foot radius)",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
@@ -867,11 +705,7 @@
     "range": "| mile",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a focus worth at least 100 gp, cither a jeweled horn for hearing or a glass eye for seeing",
     "minimumLevel": "3",
     "ritual": false,
@@ -885,11 +719,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a diamond worth at least 1,000 gp and at least 1 cubic inch of flesh of the creature that is to be cloned, which the spell consumes, and a vessel worth at least 2,000 gp that has a sealable lid and is large enough to hold a Medium creature, such as a huge urn, coffin, mud-filled cyst in the ground, or erystal container filled with salt water",
     "minimumLevel": "5",
     "ritual": false,
@@ -903,11 +733,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a sliver of glass",
     "minimumLevel": "2",
     "ritual": false,
@@ -921,10 +747,7 @@
     "range": "120 feet",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
@@ -938,11 +761,7 @@
     "range": "Self (15-foot cone)",
     "concentration": false,
     "duration": "1 round",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a pinch of powder or sand that is colored red, yellow, and blue",
     "minimumLevel": "1",
     "ritual": false,
@@ -956,9 +775,7 @@
     "range": "60 fect",
     "concentration": false,
     "duration": "1 round",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -972,11 +789,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "incense and a vial of holy or unholy water",
     "minimumLevel": "5",
     "ritual": true,
@@ -990,10 +803,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "5",
     "ritual": true,
@@ -1007,9 +817,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -1023,11 +831,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a pinch of soot and salt",
     "minimumLevel": "1",
     "ritual": true,
@@ -1041,10 +845,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
@@ -1058,11 +859,7 @@
     "range": "Self (60-foot cone)",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a small crystal or glass cone",
     "minimumLevel": "5",
     "ritual": false,
@@ -1076,11 +873,7 @@
     "range": "90 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "three nut shells",
     "minimumLevel": "4",
     "ritual": false,
@@ -1094,9 +887,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -1110,11 +901,7 @@
     "range": "Self (60-foot cone)",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "one piece of ammunition or a thrown weapon",
     "minimumLevel": "3",
     "ritual": false,
@@ -1128,10 +915,7 @@
     "range": "90 feet",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "7",
     "ritual": false,
@@ -1145,11 +929,7 @@
     "range": "90 feet",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "burning incense for air, soft clay for earth, sulfur and phosphorus for fire, or water and sand for water",
     "minimumLevel": "5",
     "ritual": false,
@@ -1163,10 +943,7 @@
     "range": "90 feet",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
@@ -1180,10 +957,7 @@
     "range": "90 feet",
     "concentration": false,
     "duration": "Concentration. up to 1 hour",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
@@ -1197,9 +971,7 @@
     "range": "150 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "M"
-    ],
+    "components": ["M"],
     "material": "one piece of ammunition or one thrown weapon",
     "minimumLevel": "5",
     "ritual": false,
@@ -1213,11 +985,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "one holly berry per creature summoned",
     "minimumLevel": "4",
     "ritual": false,
@@ -1231,9 +999,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "] minute",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "5",
     "ritual": true,
@@ -1247,9 +1013,7 @@
     "range": "Touch Component: V,S ",
     "concentration": false,
     "duration": "7 days",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
@@ -1263,11 +1027,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "10 days",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a statuette of yourself carved from ivory and decorated with gems worth at least 1,S00 gp",
     "minimumLevel": "6",
     "ritual": false,
@@ -1281,11 +1041,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Until dispelled",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "ruby dust worth S0 gp, which the spell consumes",
     "minimumLevel": "2",
     "ritual": false,
@@ -1299,9 +1055,7 @@
     "range": "300 feet",
     "concentration": false,
     "duration": "Concentration. up to 10 minutes",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "a drop of water anda pinch of dust",
     "minimumLevel": "4",
     "ritual": false,
@@ -1315,11 +1069,7 @@
     "range": "Self (5-mile radius)",
     "concentration": true,
     "duration": "up to 8 hours",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "burning incense and bits of earth and wood mixed in water",
     "minimumLevel": "8",
     "ritual": false,
@@ -1333,11 +1083,7 @@
     "range": "5 feet",
     "concentration": false,
     "duration": "8 hours",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "four or more arrows or bolts",
     "minimumLevel": "2",
     "ritual": false,
@@ -1351,9 +1097,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "S"
-    ],
+    "components": ["S"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -1367,10 +1111,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -1384,11 +1125,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a drop of water if creating water or a few grains of sand if destroying it",
     "minimumLevel": "1",
     "ritual": false,
@@ -1402,11 +1139,7 @@
     "range": "10 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "one clay pot filled with grave dirt, one clay pot filled with brackish water, and one 1S0 gp black onyx stone for each corpse) Duration; Instantaneous You can cast this spell only at night. Choose up to three corpses of Medium or Small humanoids within range. Each corpse becomes a ghoul under your control.",
     "minimumLevel": "6",
     "ritual": false,
@@ -1420,11 +1153,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "Special",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a tiny piece of matter of the same type of the item you plan to create",
     "minimumLevel": "5",
     "ritual": false,
@@ -1438,10 +1167,7 @@
     "range": "120 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
@@ -1455,9 +1181,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -1471,10 +1195,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -1488,11 +1209,7 @@
     "range": "120 feet",
     "concentration": false,
     "duration": "Concentration. up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a bit of phosphorus or wychwood. or a glowworm",
     "minimumLevel": "0",
     "ritual": false,
@@ -1506,10 +1223,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "M"
-    ],
+    "components": ["V", "M"],
     "material": "bat fur and a drop of pitch or piece of coal",
     "minimumLevel": "2",
     "ritual": false,
@@ -1523,11 +1237,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "\u00a7 hours",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "either a pinch of dried carrot or an agate",
     "minimumLevel": "2",
     "ritual": false,
@@ -1541,10 +1251,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "1 hour",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -1558,10 +1265,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "8 hours",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
@@ -1575,11 +1279,7 @@
     "range": "150 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a tiny ball of bat guano and sulfur",
     "minimumLevel": "7",
     "ritual": false,
@@ -1593,9 +1293,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "1 hour",
-    "components": [
-      "S"
-    ],
+    "components": ["S"],
     "material": "",
     "minimumLevel": "8",
     "ritual": false,
@@ -1609,9 +1307,7 @@
     "range": "Self (30-foot radius)",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
@@ -1625,10 +1321,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -1642,10 +1335,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": true,
@@ -1659,11 +1349,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a yew leaf",
     "minimumLevel": "1",
     "ritual": true,
@@ -1677,11 +1363,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a copper piece",
     "minimumLevel": "2",
     "ritual": false,
@@ -1695,9 +1377,7 @@
     "range": "500 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
@@ -1711,10 +1391,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "1 hour",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -1728,11 +1405,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a lodestone and a pinch of dust",
     "minimumLevel": "6",
     "ritual": false,
@@ -1746,11 +1419,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "holy water or powdered silver and iron",
     "minimumLevel": "5",
     "ritual": false,
@@ -1764,10 +1433,7 @@
     "range": "| 120 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -1781,9 +1447,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "} Instantaneous",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -1797,11 +1461,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "incense and a sacrificial offering appropriate to your religion, together worth at least 2S gp, which the spell consumes",
     "minimumLevel": "4",
     "ritual": true,
@@ -1815,10 +1475,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -1832,9 +1489,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "7",
     "ritual": false,
@@ -1848,10 +1503,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
@@ -1865,10 +1517,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "8",
     "ritual": false,
@@ -1882,10 +1531,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
@@ -1899,11 +1545,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Until dispelled",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a sapphire worth 1,000 gp",
     "minimumLevel": "6",
     "ritual": true,
@@ -1917,11 +1559,7 @@
     "range": "Special",
     "concentration": false,
     "duration": "8 hours",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a handful of sand, a dab of ink, and a writing quill plucked from a sleeping bird",
     "minimumLevel": "5",
     "ritual": false,
@@ -1935,10 +1573,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
@@ -1952,11 +1587,7 @@
     "range": "500 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a pinch of dirt, a piece of rock, and a lump of clay",
     "minimumLevel": "8",
     "ritual": false,
@@ -1970,10 +1601,7 @@
     "range": "120 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
@@ -1987,10 +1615,7 @@
     "range": "Touch",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -2004,11 +1629,7 @@
     "range": "Touch",
     "concentration": true,
     "duration": "up to 1 hour.",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "fur or a feather from a beast",
     "minimumLevel": "2",
     "ritual": false,
@@ -2022,10 +1643,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "S",
-      "M"
-    ],
+    "components": ["S", "M"],
     "material": "a pinch of powdered iron",
     "minimumLevel": "2",
     "ritual": false,
@@ -2039,9 +1657,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -2055,10 +1671,7 @@
     "range": "90 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -2072,10 +1685,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
@@ -2089,10 +1699,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "Up to 8 hours",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "7",
     "ritual": false,
@@ -2106,11 +1713,7 @@
     "range": "90 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a piece of tentacle from a giant octopus or a giant squid",
     "minimumLevel": "4",
     "ritual": false,
@@ -2124,10 +1727,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -2141,10 +1741,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
@@ -2158,10 +1755,7 @@
     "range": "120 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
@@ -2175,9 +1769,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -2191,9 +1783,7 @@
     "range": "SELF Componenets: V,S,M (a small amount of alcohol or distilled spirits) ",
     "concentration": false,
     "duration": "1 hours",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -2207,11 +1797,7 @@
     "range": "Self (30 foot cone)",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a white feather or the heart of a hen",
     "minimumLevel": "3",
     "ritual": false,
@@ -2225,10 +1811,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "1 minute",
-    "components": [
-      "V",
-      "M"
-    ],
+    "components": ["V", "M"],
     "material": "a small feather or piece of down",
     "minimumLevel": "1",
     "ritual": false,
@@ -2242,11 +1825,7 @@
     "range": "150 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a handful of clay, crystal, glass, or mineral spheres",
     "minimumLevel": "8",
     "ritual": false,
@@ -2260,11 +1839,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a pinch of graveyard dirt",
     "minimumLevel": "3",
     "ritual": true,
@@ -2278,11 +1853,7 @@
     "range": "10 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "10 gp worth of charcoal, incense, and herbs that must be consumed by fire ina brass brazier",
     "minimumLevel": "1",
     "ritual": true,
@@ -2296,10 +1867,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "[Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
@@ -2313,11 +1881,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 day",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a set of divinatory tools\u2014such as bones, ivory sticks, cards, teeth, or carved runes\u2014 worth 100 gp and an object from the location you wish to find",
     "minimumLevel": "6",
     "ritual": false,
@@ -2331,10 +1895,7 @@
     "range": "120 feet",
     "concentration": false,
     "duration": "[Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
@@ -2348,10 +1909,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "7",
     "ritual": false,
@@ -2365,11 +1923,7 @@
     "range": "150 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a tiny ball of bat guano and sulfur",
     "minimumLevel": "3",
     "ritual": false,
@@ -2383,9 +1937,7 @@
     "range": "120 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
@@ -2399,11 +1951,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "10 minutes",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a bit of phosphorus or a firefly",
     "minimumLevel": "4",
     "ritual": false,
@@ -2417,10 +1965,7 @@
     "range": "150 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "7",
     "ritual": false,
@@ -2434,11 +1979,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "leaf of sumac",
     "minimumLevel": "2",
     "ritual": false,
@@ -2452,11 +1993,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "pinch of sulfur",
     "minimumLevel": "5",
     "ritual": false,
@@ -2470,11 +2007,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a bit of tallow, a pinch of brimstone, and a dusting of powdered iron",
     "minimumLevel": "2",
     "ritual": false,
@@ -2488,11 +2021,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a pinch of lime, water, and earth",
     "minimumLevel": "6",
     "ritual": false,
@@ -2506,11 +2035,7 @@
     "range": "Touch",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a wing feather from any bird",
     "minimumLevel": "3",
     "ritual": false,
@@ -2524,10 +2049,7 @@
     "range": "120 feet",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -2541,11 +2063,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "1 day",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a sprinkling of holy water, rare incense, and powdered ruby worth at least 1,000 gp",
     "minimumLevel": "6",
     "ritual": true,
@@ -2559,9 +2077,7 @@
     "range": "100 feet",
     "concentration": false,
     "duration": "i hour",
-    "components": [
-      "M"
-    ],
+    "components": ["M"],
     "material": "ruby dust worth 1,S00 gp",
     "minimumLevel": "7",
     "ritual": false,
@@ -2575,11 +2091,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "8 hours",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a hummingbird feather",
     "minimumLevel": "9",
     "ritual": false,
@@ -2593,11 +2105,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a leather strap, bound around the arm or a similar appendage",
     "minimumLevel": "4",
     "ritual": false,
@@ -2611,10 +2119,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "S",
-      "M"
-    ],
+    "components": ["S", "M"],
     "material": "a small amount of makeup applied to the face as this spell is cast",
     "minimumLevel": "0",
     "ritual": false,
@@ -2628,11 +2133,7 @@
     "range": "Touch",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a bit of gauze and a wisp of smoke",
     "minimumLevel": "3",
     "ritual": false,
@@ -2646,11 +2147,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a diamond worth at least S,000 gp",
     "minimumLevel": "9",
     "ritual": false,
@@ -2664,9 +2161,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "30 days",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
@@ -2680,11 +2175,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "10 days",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a pinch of salt and one copper piece placed on each of the corpse's eyes, which must remain there for the duration",
     "minimumLevel": "2",
     "ritual": true,
@@ -2698,10 +2189,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
@@ -2715,9 +2203,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "1 hour",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "8",
     "ritual": false,
@@ -2731,11 +2217,7 @@
     "range": "Self (10-foot radius)",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a glass or crystal bead that shatters when the spell ends",
     "minimumLevel": "6",
     "ritual": false,
@@ -2749,11 +2231,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Until dispelled or triggered",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "incense and powdered diamond worth at least 200 gp, which the spell consumes",
     "minimumLevel": "3",
     "ritual": false,
@@ -2767,11 +2245,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a sprig of mistlctoe",
     "minimumLevel": "1",
     "ritual": false,
@@ -2785,10 +2259,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
@@ -2802,11 +2273,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "| minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a bit of pork rind or butter",
     "minimumLevel": "1",
     "ritual": false,
@@ -2820,10 +2287,7 @@
     "range": "Touch",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
@@ -2837,11 +2301,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "diamond dust worth at least 100 gp, which the spell consumes",
     "minimumLevel": "5",
     "ritual": false,
@@ -2855,9 +2315,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "\u00a7 hours",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
@@ -2871,11 +2329,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "24 hours",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "burning incense, a small measure of brimstone and oil, a knotted string, a small amount of umber hulk blood, and a small silver rod worth at least 10 gp",
     "minimumLevel": "6",
     "ritual": false,
@@ -2889,10 +2343,7 @@
     "range": "Touch",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
@@ -2906,10 +2357,7 @@
     "range": "120 feet",
     "concentration": false,
     "duration": "1 round",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -2923,11 +2371,7 @@
     "range": "Self (60-foot line)",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a legume seed",
     "minimumLevel": "2",
     "ritual": false,
@@ -2941,9 +2385,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -2957,11 +2399,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Until dispelled",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "herbs, oils, and incense worth at least 1,000 gp, which the spell consumes",
     "minimumLevel": "5",
     "ritual": false,
@@ -2975,11 +2413,7 @@
     "range": "300 feet",
     "concentration": false,
     "duration": "24 hours",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a stone, a twig, and a bit of green plant",
     "minimumLevel": "4",
     "ritual": false,
@@ -2993,10 +2427,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
@@ -3010,11 +2441,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a shaving of licorice root",
     "minimumLevel": "3",
     "ritual": false,
@@ -3028,10 +2455,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
@@ -3045,9 +2469,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -3061,11 +2483,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a piece of iron and a flame",
     "minimumLevel": "2",
     "ritual": false,
@@ -3079,10 +2497,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -3096,10 +2511,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "M"
-    ],
+    "components": ["V", "M"],
     "material": "a gem-encrusted bowl worth at least 1,000 gp, which the spell consumes",
     "minimumLevel": "6",
     "ritual": false,
@@ -3113,10 +2525,7 @@
     "range": "Touch",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -3130,11 +2539,7 @@
     "range": "90 feet",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "the petrified eye of a newt",
     "minimumLevel": "1",
     "ritual": false,
@@ -3148,11 +2553,7 @@
     "range": "90 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a small, straight piece of iron",
     "minimumLevel": "5",
     "ritual": false,
@@ -3166,11 +2567,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a small, straight piece of iron",
     "minimumLevel": "2",
     "ritual": false,
@@ -3184,11 +2581,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a tiny reliquary worth at least 1,000 gp containing a sacred relic, such as a scrap of cloth from a saint's robe or a piece of parchment from a religious text",
     "minimumLevel": "8",
     "ritual": false,
@@ -3202,11 +2595,7 @@
     "range": "150 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a pickied octopus tentacle",
     "minimumLevel": "3",
     "ritual": false,
@@ -3220,9 +2609,7 @@
     "range": "90 feet",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -3236,10 +2623,7 @@
     "range": "120 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "S",
-      "M"
-    ],
+    "components": ["S", "M"],
     "material": "a glowing stick of incense or a erystal vial filled with phosphorescent material",
     "minimumLevel": "3",
     "ritual": false,
@@ -3253,11 +2637,7 @@
     "range": "300 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a pinch of dust and a few drops of water",
     "minimumLevel": "4",
     "ritual": false,
@@ -3271,11 +2651,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantancous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a pearl worth at least 100 gp and an owl feather",
     "minimumLevel": "1",
     "ritual": true,
@@ -3289,10 +2665,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "10 days",
-    "components": [
-      "S",
-      "M"
-    ],
+    "components": ["S", "M"],
     "material": "a lead-based ink worth at least 10 gp. which the spell consumes",
     "minimumLevel": "1",
     "ritual": true,
@@ -3306,11 +2679,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "Until dispelled",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a vellum depiction or a carved statuette in the likeness of the target, and a special component that varies according to the version of the spell you choose, worth at least S00 gp per Hit Die of the target",
     "minimumLevel": "9",
     "ritual": false,
@@ -3324,10 +2693,7 @@
     "range": "150 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "8",
     "ritual": false,
@@ -3341,10 +2707,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "| Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -3358,11 +2721,7 @@
     "range": "300 feet",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a few grains of sugar, some kernels of grain, and a smear of fat",
     "minimumLevel": "5",
     "ritual": false,
@@ -3376,11 +2735,7 @@
     "range": "Touch",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "an eyelash encased in gum arabic",
     "minimumLevel": "2",
     "ritual": false,
@@ -3394,11 +2749,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a grasshopper's hind leg",
     "minimumLevel": "1",
     "ritual": false,
@@ -3412,9 +2763,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
@@ -3428,11 +2777,7 @@
     "range": "Scif",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "incense worth at least 2S0 gp, which the spell consumes, and four ivory strips worth at least S0 gp each",
     "minimumLevel": "5",
     "ritual": false,
@@ -3446,11 +2791,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "an exquisite chest, 3 feet by 2 feet by 2 feet, constructed from rare materials worth at least S,000 gp, and a Tiny replica made from the same materials worth at least S0 gp",
     "minimumLevel": "4",
     "ritual": false,
@@ -3464,10 +2805,7 @@
     "range": "Self (10-foot-radius hemisphere)",
     "concentration": false,
     "duration": "8 hours",
-    "components": [
-      "V",
-      "M"
-    ],
+    "components": ["V", "M"],
     "material": "a small crystal bead",
     "minimumLevel": "3",
     "ritual": true,
@@ -3481,10 +2819,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
@@ -3498,9 +2833,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "either a small leather loop or a piece of golden wire bent into a cup shape with a long shank on one end",
     "minimumLevel": "2",
     "ritual": false,
@@ -3514,10 +2847,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "1 hour",
-    "components": [
-      "V",
-      "M"
-    ],
+    "components": ["V", "M"],
     "material": "a firefly or phosphorescent moss",
     "minimumLevel": "0",
     "ritual": false,
@@ -3531,10 +2861,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -3548,11 +2875,7 @@
     "range": "Self (100-foot line)",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a bit of fur and a rod of amber, crystal, or glass",
     "minimumLevel": "3",
     "ritual": false,
@@ -3566,11 +2889,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a bit of fur from a bloodhound",
     "minimumLevel": "2",
     "ritual": true,
@@ -3584,11 +2903,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a bit of fur from a bloodhound",
     "minimumLevel": "4",
     "ritual": false,
@@ -3602,11 +2917,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a forked twig",
     "minimumLevel": "2",
     "ritual": false,
@@ -3620,11 +2931,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "| hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a pinch of dirt",
     "minimumLevel": "1",
     "ritual": false,
@@ -3638,11 +2945,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "8 hours",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a piece of cured leather",
     "minimumLevel": "1",
     "ritual": false,
@@ -3656,10 +2959,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
@@ -3673,11 +2973,7 @@
     "range": "10 feet",
     "concentration": false,
     "duration": "1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "holy water or powdered silver and iron worth at least 100 gp, which the spell consumes",
     "minimumLevel": "3",
     "ritual": false,
@@ -3691,11 +2987,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "Until dispelled",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a gem, crystal. reliquary, or some other ornamental container worth at least S00 gp",
     "minimumLevel": "6",
     "ritual": false,
@@ -3709,10 +3001,7 @@
     "range": "120 fect",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -3726,11 +3015,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "Until dispelled",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a small bit of honeycomb and jade dust worth at least 10 gp, which the spell consumes",
     "minimumLevel": "2",
     "ritual": true,
@@ -3744,9 +3029,7 @@
     "range": "Touch",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
@@ -3760,11 +3043,7 @@
     "range": "120 feet",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a bit of fleece",
     "minimumLevel": "3",
     "ritual": false,
@@ -3778,10 +3057,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
@@ -3795,10 +3071,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "9",
     "ritual": false,
@@ -3812,9 +3085,7 @@
     "range": "60 fect",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -3828,10 +3099,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "24 hours",
-    "components": [
-      "V",
-      "M"
-    ],
+    "components": ["V", "M"],
     "material": "a snake's tongue and either a bit of honeycomb or a drop of sweet oil",
     "minimumLevel": "6",
     "ritual": false,
@@ -3845,10 +3113,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
@@ -3862,10 +3127,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "8 hours",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "3",
     "ritual": true,
@@ -3879,11 +3141,7 @@
     "range": "90 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "powdered rhubarb leaf and an adder's stomach",
     "minimumLevel": "2",
     "ritual": false,
@@ -3911,11 +3169,7 @@
     "range": "120 feet",
     "concentration": false,
     "duration": "1 round",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a short piece of copper wire",
     "minimumLevel": "0",
     "ritual": false,
@@ -3943,9 +3197,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "8",
     "ritual": false,
@@ -3959,10 +3211,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "| minute",
-    "components": [
-      "S",
-      "M"
-    ],
+    "components": ["S", "M"],
     "material": "a bit of fleece",
     "minimumLevel": "0",
     "ritual": false,
@@ -3976,10 +3225,7 @@
     "range": "Sight",
     "concentration": false,
     "duration": "10 days",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "7",
     "ritual": false,
@@ -3993,10 +3239,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "| minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
@@ -4010,9 +3253,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "S"
-    ],
+    "components": ["S"],
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
@@ -4026,9 +3267,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
@@ -4042,10 +3281,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
@@ -4059,11 +3295,7 @@
     "range": "120 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "several seeds of any moonseed plant and a piece of opalescent feldspar",
     "minimumLevel": "2",
     "ritual": false,
@@ -4077,11 +3309,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "\u00a7 hours",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a tiny silver whistle, a piece of bone, and a thread",
     "minimumLevel": "4",
     "ritual": false,
@@ -4095,11 +3323,7 @@
     "range": "300 feet",
     "concentration": false,
     "duration": "24 hours",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a miniature portal carved from ivory, a small piece of polished marble, and a tiny silver spoon, each item worth at least S gp",
     "minimumLevel": "7",
     "ritual": false,
@@ -4113,9 +3337,7 @@
     "range": "120 feet",
     "concentration": false,
     "duration": "24 hours",
-    "components": [
-      "M"
-    ],
+    "components": ["M"],
     "material": "a thin sheet of lead, a piece of opaque glass, a wad of cotton or cloth, and powdered chrysolite",
     "minimumLevel": "4",
     "ritual": false,
@@ -4157,11 +3379,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "8 hours",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "A pinch of diamond dust worth 25 gp sprinkled over the target, which the spell consumes",
     "minimumLevel": "3",
     "ritual": false,
@@ -4175,11 +3393,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "24 hours",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a small square of silk",
     "minimumLevel": "2",
     "ritual": false,
@@ -4193,11 +3407,7 @@
     "range": "300 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a small crystal sphere",
     "minimumLevel": "6",
     "ritual": false,
@@ -4211,11 +3421,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a hemispherical piece of clear crystal and a matching hemispherical piece of gum arabic",
     "minimumLevel": "4",
     "ritual": false,
@@ -4229,9 +3435,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
@@ -4245,11 +3449,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "ashes from a burned leaf of mistletoe and a sprig of spruce",
     "minimumLevel": "2",
     "ritual": false,
@@ -4263,11 +3463,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a pinch of sesame seeds",
     "minimumLevel": "5",
     "ritual": false,
@@ -4281,11 +3477,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a bit of fleece",
     "minimumLevel": "2",
     "ritual": false,
@@ -4299,10 +3491,7 @@
     "range": "120 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
@@ -4316,10 +3505,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "1 hour",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "3",
     "ritual": true,
@@ -4333,10 +3519,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
@@ -4350,11 +3533,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "24 hours",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a jewel worth at least 1,000 gp, which the spell consumes",
     "minimumLevel": "5",
     "ritual": false,
@@ -4368,11 +3547,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a forked, metal rod worth at least 2S0 gp, attuned to a particular plane of existence",
     "minimumLevel": "7",
     "ritual": false,
@@ -4386,10 +3561,7 @@
     "range": "150 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -4403,10 +3575,7 @@
     "range": "10 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
@@ -4420,11 +3589,7 @@
     "range": "60 fect",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a caterpillar cocoon",
     "minimumLevel": "4",
     "ritual": false,
@@ -4438,10 +3603,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "9",
     "ritual": false,
@@ -4455,9 +3617,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "9",
     "ritual": false,
@@ -4471,9 +3631,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "8",
     "ritual": false,
@@ -4487,9 +3645,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
@@ -4503,10 +3659,7 @@
     "range": "10 feet",
     "concentration": false,
     "duration": "Up to 1 hour",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
@@ -4520,10 +3673,7 @@
     "range": "Self (60-foot cone)",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "7",
     "ritual": false,
@@ -4537,9 +3687,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "10 minutes",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "9",
     "ritual": false,
@@ -4553,10 +3701,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "10 minutes",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
@@ -4570,11 +3715,7 @@
     "range": "120 feet",
     "concentration": false,
     "duration": "Until dispelled",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a bit of fleece and jade dust worth at least 2S gp",
     "minimumLevel": "6",
     "ritual": false,
@@ -4588,11 +3729,7 @@
     "range": "500 miles",
     "concentration": true,
     "duration": "up to 1 day",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a small replica of you made from materials worth at least S gp",
     "minimumLevel": "7",
     "ritual": false,
@@ -4606,10 +3743,7 @@
     "range": "500 miles",
     "concentration": true,
     "duration": "up to | hour",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -4623,11 +3757,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Concentration up to 10 minutes",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "holy water or powdered silver and iron, which the spell consumes",
     "minimumLevel": "1",
     "ritual": false,
@@ -4641,10 +3771,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "| hour",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
@@ -4658,10 +3785,7 @@
     "range": "10 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": true,
@@ -4675,11 +3799,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a diamond worth at least S00 gp, which the spell consumes",
     "minimumLevel": "5",
     "ritual": false,
@@ -4693,11 +3813,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "| hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "pieces of eggshell from two different kinds of creatures",
     "minimumLevel": "5",
     "ritual": true,
@@ -4711,10 +3827,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
@@ -4728,10 +3841,7 @@
     "range": "60 fect",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
@@ -4745,10 +3855,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -4762,11 +3869,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a prayer wheel and holy water",
     "minimumLevel": "7",
     "ritual": false,
@@ -4780,11 +3883,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "rare oils and unguents worth at least 1,000 gp, which the spell consumes",
     "minimumLevel": "5",
     "ritual": false,
@@ -4798,10 +3897,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -4815,11 +3911,7 @@
     "range": "Touch",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a miniature cloak",
     "minimumLevel": "0",
     "ritual": false,
@@ -4833,11 +3925,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a diamond worth at least 1,000 gp, which the spell consumes",
     "minimumLevel": "7",
     "ritual": false,
@@ -4851,11 +3939,7 @@
     "range": "100 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a lodestone and iron filings",
     "minimumLevel": "7",
     "ritual": false,
@@ -4869,11 +3953,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "diamonds worth 300 gp, which the spell consumes",
     "minimumLevel": "3",
     "ritual": false,
@@ -4887,11 +3967,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "powdered corn extract and a twisted loop of parchment",
     "minimumLevel": "2",
     "ritual": false,
@@ -4905,10 +3981,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
@@ -4922,11 +3995,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a small silver mirror",
     "minimumLevel": "1",
     "ritual": false,
@@ -4940,10 +4009,7 @@
     "range": "120 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
@@ -4957,11 +4023,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a focus worth at least 1,000 gp. such as a crystal ball, a silver mirror, or a font filled with holy water",
     "minimumLevel": "5",
     "ritual": false,
@@ -4975,9 +4037,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -4991,11 +4051,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a pinch of tale and a small sprinkling of powdered silver",
     "minimumLevel": "2",
     "ritual": false,
@@ -5009,10 +4065,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "8 hours",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
@@ -5026,11 +4079,7 @@
     "range": "Unlimited",
     "concentration": false,
     "duration": "| round",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a short piece of fine copper wire",
     "minimumLevel": "3",
     "ritual": false,
@@ -5044,11 +4093,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Until dispelled",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a powder composed of diamond, emerald, ruby, and sapphire dust worth at least S,000 gp, which the spell consumes",
     "minimumLevel": "7",
     "ritual": false,
@@ -5062,11 +4107,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a jade circlet worth at least 1,S00 gp, which you must place on your head before you cast the spell",
     "minimumLevel": "9",
     "ritual": false,
@@ -5080,11 +4121,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a chip of mica",
     "minimumLevel": "2",
     "ritual": false,
@@ -5098,10 +4135,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "1 round",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -5115,11 +4149,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a small parchment with a bit of holy text written on it",
     "minimumLevel": "1",
     "ritual": false,
@@ -5133,9 +4163,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "| minute",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "mistletoe, a shamrock leaf, and a club or quarterstaff",
     "minimumLevel": "0",
     "ritual": false,
@@ -5149,10 +4177,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
@@ -5166,10 +4191,7 @@
     "range": "120 feet",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "2",
     "ritual": true,
@@ -5183,11 +4205,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a bit of fleece",
     "minimumLevel": "1",
     "ritual": false,
@@ -5201,11 +4219,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Until dispelled",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "snow or ice in quantities sufficient to made a life-size copy of the duplicated creature; some hair, fingernail clippings, or other piece of that creature's body placed inside the snow or ice; and powdered ruby worth 1,S00 gp, sprinkled over the duplicate and consumed by the spell",
     "minimumLevel": "7",
     "ritual": false,
@@ -5219,11 +4233,7 @@
     "range": "90 feet",
     "concentration": false,
     "duration": "| minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a pinch of fine sand, rose petals, or a cricket",
     "minimumLevel": "1",
     "ritual": false,
@@ -5237,11 +4247,7 @@
     "range": "150 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a pinch of dust and a few drops of water",
     "minimumLevel": "3",
     "ritual": false,
@@ -5255,11 +4261,7 @@
     "range": "120 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a drop of molasses",
     "minimumLevel": "3",
     "ritual": false,
@@ -5273,10 +4275,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
@@ -5290,10 +4289,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "10 minutes",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": true,
@@ -5307,11 +4303,7 @@
     "range": "10 feet",
     "concentration": false,
     "duration": "10 minutes",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "burning incense",
     "minimumLevel": "3",
     "ritual": false,
@@ -5325,10 +4317,7 @@
     "range": "Self (30-foot radius)",
     "concentration": false,
     "duration": "10 minutes",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -5342,11 +4331,7 @@
     "range": "Touch",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a drop of bitumen and a spider",
     "minimumLevel": "2",
     "ritual": false,
@@ -5360,11 +4345,7 @@
     "range": "150 feet",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "seven sharp thorns or seven small twigs, each sharpened to a point",
     "minimumLevel": "2",
     "ritual": false,
@@ -5378,11 +4359,7 @@
     "range": "Self (15-foot radius)",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a holy symbol",
     "minimumLevel": "3",
     "ritual": false,
@@ -5396,10 +4373,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "| minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
@@ -5413,9 +4387,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
@@ -5429,11 +4401,7 @@
     "range": "90 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a rotten egg or several skunk cabbage leaves",
     "minimumLevel": "3",
     "ritual": false,
@@ -5447,11 +4415,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "soft clay, which must be worked into roughly the desired shape of the stone object",
     "minimumLevel": "4",
     "ritual": false,
@@ -5465,11 +4429,7 @@
     "range": "Touch",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "diamond dust worth 100 gp, which the spell consumes",
     "minimumLevel": "4",
     "ritual": false,
@@ -5483,10 +4443,7 @@
     "range": "Sight",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "9",
     "ritual": false,
@@ -5500,10 +4457,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to 8 hours",
-    "components": [
-      "V",
-      "M"
-    ],
+    "components": ["V", "M"],
     "material": "a snake's tongue and either a bit of honeycomb or a drop of sweet oil",
     "minimumLevel": "2",
     "ritual": false,
@@ -5517,11 +4471,7 @@
     "range": "Self (60-foot line)",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a magnifying glass",
     "minimumLevel": "6",
     "ritual": false,
@@ -5535,11 +4485,7 @@
     "range": "150 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "fire and a piece of sunstone",
     "minimumLevel": "8",
     "ritual": false,
@@ -5553,11 +4499,7 @@
     "range": "Touch",
     "concentration": true,
     "duration": "up to | minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a quiver containing at least one piece of ammunition",
     "minimumLevel": "5",
     "ritual": false,
@@ -5571,10 +4513,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Until dispelled or triggered",
-    "components": [
-      "V",
-      "M"
-    ],
+    "components": ["V", "M"],
     "material": "mercury, phosphorus, and powdered diamond and opal with a total value of at least 1,000 gp, which the spell consumes",
     "minimumLevel": "7",
     "ritual": false,
@@ -5588,11 +4527,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "tiny tarts and a feather that is waved in the air",
     "minimumLevel": "1",
     "ritual": false,
@@ -5606,10 +4541,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
@@ -5623,11 +4555,7 @@
     "range": "Unlimited",
     "concentration": false,
     "duration": "24 hours",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a pair of linked silver rings",
     "minimumLevel": "5",
     "ritual": false,
@@ -5641,9 +4569,7 @@
     "range": "10 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "7",
     "ritual": false,
@@ -5657,10 +4583,7 @@
     "range": "10 feet",
     "concentration": false,
     "duration": "1 round",
-    "components": [
-      "V",
-      "M"
-    ],
+    "components": ["V", "M"],
     "material": "rare chalks and inks infused with precious gems with S0 gp, which the spell consumes",
     "minimumLevel": "5",
     "ritual": false,
@@ -5674,11 +4597,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "| hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a drop of mercury",
     "minimumLevel": "1",
     "ritual": true,
@@ -5692,9 +4611,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "Up to 1 minute",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
@@ -5708,11 +4625,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "the stem of a plant with thorns",
     "minimumLevel": "0",
     "ritual": false,
@@ -5726,9 +4639,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -5742,10 +4653,7 @@
     "range": "Self (15-foot cube)",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -5759,9 +4667,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "9",
     "ritual": false,
@@ -5775,10 +4681,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "1 hour",
-    "components": [
-      "V",
-      "M"
-    ],
+    "components": ["V", "M"],
     "material": "a small clay model of a ziggurat",
     "minimumLevel": "1",
     "ritual": false,
@@ -5792,10 +4695,7 @@
     "range": "10 feet",
     "concentration": false,
     "duration": "1 round",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
@@ -5809,10 +4709,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
@@ -5826,11 +4723,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a drop of mercury, a dollop of gum arabic, and a wisp of smoke",
     "minimumLevel": "9",
     "ritual": false,
@@ -5844,11 +4737,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a sprinkle of holy water and diamonds worth at least 2S,000 gp, which the spell consumes",
     "minimumLevel": "9",
     "ritual": false,
@@ -5862,11 +4751,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "an ointment for the eyes that costs 2S gp; is made from mushroom powder, saffron, and fat; and is consumed by the spell",
     "minimumLevel": "6",
     "ritual": false,
@@ -5880,9 +4765,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to 1 round",
-    "components": [
-      "S"
-    ],
+    "components": ["S"],
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
@@ -5896,10 +4779,7 @@
     "range": "Sight",
     "concentration": true,
     "duration": "up to 6 rounds",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "8",
     "ritual": false,
@@ -5913,11 +4793,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a piece of string and a bit of wood",
     "minimumLevel": "1",
     "ritual": true,
@@ -5931,10 +4807,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
@@ -5948,9 +4821,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
@@ -5964,11 +4835,7 @@
     "range": "120 feet",
     "concentration": false,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a small piece of phosphorus",
     "minimumLevel": "4",
     "ritual": false,
@@ -5982,11 +4849,7 @@
     "range": "120 feet",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a pinch of powder made by crushing a clear gemstone",
     "minimumLevel": "5",
     "ritual": false,
@@ -6000,11 +4863,7 @@
     "range": "120 feet",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a small piece of quartz",
     "minimumLevel": "6",
     "ritual": false,
@@ -6018,11 +4877,7 @@
     "range": "120 feet",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a smal! block of granite",
     "minimumLevel": "5",
     "ritual": false,
@@ -6036,11 +4891,7 @@
     "range": "120 feet",
     "concentration": true,
     "duration": "up to 10 minutes",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a handful of thorns",
     "minimumLevel": "6",
     "ritual": false,
@@ -6054,11 +4905,7 @@
     "range": "Touch",
     "concentration": false,
     "duration": "1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a pair of platinum rings worth at least S0 gp each, which you and the target must wear for the duration",
     "minimumLevel": "2",
     "ritual": false,
@@ -6072,11 +4919,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "24 hours",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a short reed or piece of straw",
     "minimumLevel": "3",
     "ritual": true,
@@ -6090,11 +4933,7 @@
     "range": "30 feet",
     "concentration": false,
     "duration": "| hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a piece of cork",
     "minimumLevel": "3",
     "ritual": true,
@@ -6108,11 +4947,7 @@
     "range": "60 feet",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a bit of spiderweb",
     "minimumLevel": "2",
     "ritual": false,
@@ -6126,9 +4961,7 @@
     "range": "120 feet",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "9",
     "ritual": false,
@@ -6142,11 +4975,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to one minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "fire and holy water",
     "minimumLevel": "6",
     "ritual": false,
@@ -6160,11 +4989,7 @@
     "range": "120 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a tiny fan and a feather of exotic origin",
     "minimumLevel": "3",
     "ritual": false,
@@ -6178,9 +5003,7 @@
     "range": "Self",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "9",
     "ritual": false,
@@ -6194,11 +5017,7 @@
     "range": "30 feet",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": [
-      "V",
-      "S",
-      "M"
-    ],
+    "components": ["V", "S", "M"],
     "material": "a twig from a tree that has been struck by lightning",
     "minimumLevel": "1",
     "ritual": false,
@@ -6212,9 +5031,7 @@
     "range": "5 feet",
     "concentration": false,
     "duration": "Instantaneous",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
@@ -6228,9 +5045,7 @@
     "range": "Self",
     "concentration": true,
     "duration": "up to | minute",
-    "components": [
-      "V"
-    ],
+    "components": ["V"],
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
@@ -6244,10 +5059,7 @@
     "range": "60 feet",
     "concentration": false,
     "duration": "10 minutes",
-    "components": [
-      "V",
-      "S"
-    ],
+    "components": ["V", "S"],
     "material": "",
     "minimumLevel": "2",
     "ritual": false,

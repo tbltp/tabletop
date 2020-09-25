@@ -1,9 +1,9 @@
 {
-    "compilerOptions": {
-        "target": "ES2015",
-        "module": "commonjs",
-        "resolveJsonModule": true,
-        "outDir": "dist", 
-        "baseUrl": "src"
-    }
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "commonjs",
+    "resolveJsonModule": true,
+    "outDir": "dist",
+    "baseUrl": "src"
+  }
 }
