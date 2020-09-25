@@ -42,7 +42,7 @@ export class Acolyte extends Background {
     constructor(languages: string[], holySymbol: string){
         super(
             "Acolyte",
-            ["Insight", "Religion"],
+            ["insight", "religion"],
             languages,
             [],
             ["CLOTHES, COMMON", holySymbol],
@@ -57,7 +57,7 @@ export class Charlatan extends Background {
     constructor(){
         super(
             "Charlatan",
-            ["Deception", "Sleight of Hand"],
+            ["deception", "sleight of hand"],
             [],
             ["Disguise Kit", "Forgery Kit"],
             ["CLOTHES, FINE"],
@@ -72,7 +72,7 @@ export class Criminal extends Background {
     constructor(gamingSet: string){
         super(
             "Criminal",
-            ["Deception", "Stealth"],
+            ["deception", "stealth"],
             [],
             ["Thieves' Tools", gamingSet],
             ["CROWBAR", "CLOTHES, COMMON"],
@@ -87,7 +87,7 @@ export class Entertainer extends Background {
     constructor(musicalInstrumentProficiency: string, musicalInstrument: string){
         super(
             "Entertainer",
-            ["Acrobatics", "Performance"],
+            ["acrobatics", "performance"],
             [],
             ["Disguise Kit", musicalInstrumentProficiency],
             ["CLOTHES, COSTUME"],
@@ -102,7 +102,7 @@ export class FolkHero extends Background {
     constructor(artisansToolProficiency: string, artisansTool: string){
         super(
             "Folk Hero",
-            ["Animal Handling", "Survival"],
+            ["animal handling", "survival"],
             [],
             ["Vehicles, land", artisansToolProficiency],
             [],
@@ -117,7 +117,7 @@ export class GuildArtisan extends Background {
     constructor(artisansToolProficiency: string, artisansTool: string, language: string){
         super(
             "Guild Artisan",
-            ["Insight", "Persuasion"],
+            ["insight", "persuasion"],
             [language],
             [artisansToolProficiency],
             ["CLOTHES, TRAVELER'S"],
@@ -132,7 +132,7 @@ export class Hermit extends Background {
     constructor(language: string){
         super(
             "Hermit",
-            ["Medicine", "Religion"],
+            ["medicine", "religion"],
             [language],
             ["Herbalism Kit"],
             ["CLOTHES, COMMON", "BLANKET"],
@@ -147,7 +147,7 @@ export class Noble extends Background {
     constructor(gamingSet: string, language: string){
         super(
             "Noble",
-            ["History", "Persuasion"],
+            ["history", "persuasion"],
             [language],
             [gamingSet],
             ["CLOTHES, FINE", "SIGNET RING"],
@@ -167,7 +167,7 @@ export class Outlander extends Background {
     constructor(musicalInstrument: string, language: string){
         super(
             "Outlander",
-            ["Athletics", "Survival"],
+            ["athletics", "survival"],
             [language],
             [musicalInstrument],
             ["STAFF", "HUNTING TRAP", "CLOTHES, TRAVELER'S"],
@@ -182,7 +182,7 @@ export class Sage extends Background {
     constructor(languages: string[]){
         super(
             "Sage",
-            ["Arcana", "History"],
+            ["arcana", "history"],
             languages,
             [],
             ["INK (1 OUNCE BOTTLE)", "INK PEN", "CLOTHES, COMMON"],
@@ -197,7 +197,7 @@ export class Sailor extends Background {
     constructor(){
         super(
             "Sailor",
-            ["Athletics", "Perpection"],
+            ["athletics", "perpection"],
             [],
             ["Navigator's tools, Vehicles, water"],
             ["ROPE, SILK (50 FEET)", "CLOTHES, COMMON"],
@@ -217,7 +217,7 @@ export class Soldier extends Background {
     constructor(gamingSet: string){
         super(
             "Soldier",
-            ["Athletics", "Intimidation"],
+            ["athletics", "intimidation"],
             [],
             ["Vehicles, land", gamingSet],
             ["CLOTHES, COMMON"],
@@ -232,7 +232,7 @@ export class Urchin extends Background {
     constructor(){
         super(
             "Urchin",
-            ["Sleight of Hand", "Stealth"],
+            ["sleight of hand", "stealth"],
             [],
             ["Disguise Kit", "Thieves' Tools"],
             ["CLOTHES, COMMON"],

@@ -33,9 +33,6 @@ export class Bard extends PlayerClass {
         }
     }
 
-    // 8 + Constitution Modifier HP Max
-    // DIPLOMAT'S PACK OR ENTERTAINER'S PACK, MUSICAL INSTRUMENT,-
-    // RESOURCEMAX OF BARDIC INSPIRATION, BONUS FOR JACK OF ALL TRADES, CHANGE WITH LEVELS / ABILITY SCORE IMPROVEMENTS.
     // What should happen if a bard switches out a magical secret spell
 
     bardCollege: string = "";

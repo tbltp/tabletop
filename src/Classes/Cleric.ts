@@ -62,7 +62,6 @@ export class Cleric extends PlayerClass {
     }
 
     /** TODO:
-     * FIGURE OUT HOW TO REPRESENT NUMBER OF PREPARED SPELLS.
      * HOLY SYMBOL IN INVENTORY - NOT A REAL ITEM
      * PRIESTS PACK CONTAINS NOT REAL ITEMS
      */
@@ -82,6 +81,8 @@ export class Cleric extends PlayerClass {
     level1(pc: PlayerCharacter, params: LevelingParams): void {
         pc.addSpells([...params.spellSelection, ...SpellList["Cleric"][1]], SpellcastingAbility["CLERIC"]);
         this.applyClericSpellSlots(pc, 1);
+        let clericPreparedSpells = {title: "Cleric", level: this.level, modifier: pc.abilityScores.wisdom.modifier};
+        (pc.preparedSpells) ? pc.preparedSpells.push(clericPreparedSpells) : pc.preparedSpells = [clericPreparedSpells];
         // divine domain 
         this.clericDomain = params.archetypeSelection[0].archetype;
         ClericArchetype.archetypeHelper[this.clericDomain][1](pc, params);

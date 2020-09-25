@@ -63,6 +63,7 @@ export abstract class PlayerClass {
     hpBase: number;
     savingThrowProficiencies: string[];
     features: Trait[];
+    level: {value: number} = {value: 1};
     
     //TODO: wtf is a Path
     //path: Path;

@@ -31,9 +31,8 @@ export class Barbarian extends PlayerClass {
 
     }
     /** TODO
-     * UNARMORED DEFENSE and FAST MOVEMENT depends on equipped armor.
+     * FAST MOVEMENT depends on equipped armor.
      * EXTRA ATTACK should be represented in action economy.
-     * FIGHTING STYLE
      */
 
     primalPath: string = "";
@@ -66,9 +65,11 @@ export class Barbarian extends PlayerClass {
     }
 
     level1(pc: PlayerCharacter, params: LevelingParams): void {
-        const rage: ResourceTrait = {title: "Rage", description: "Number of times you can go into a Rage.  Bonus applies to attack damage while in a rage.", resourceMax: {value: 2}, bonus: 2}; 
+        const rage: ResourceTrait = {title: "Rage", description: "Number of times you can go into a Rage.  Bonus applies to attack damage while in a rage.", resourceMax: {value: 2} };
+        const rageDamage: ScalingTrait = {title: "Rage Damage", description: "Amount of damage added to an attack while you're in a Rage.", bonus: 2}; 
         pc.addResourceTraits(rage);
         this.pushBarbarianFeatures(pc, 1);
+        pc.armorClasses.push({name: "Unarmored Defense", base: 10, modifier: [pc.abilityScores.dexterity.modifier, pc.abilityScores.constitution.modifier], bonus: {value: 0} });
     }
 
     level2(pc: PlayerCharacter, params: LevelingParams): void {
@@ -105,7 +106,7 @@ export class Barbarian extends PlayerClass {
     level9(pc: PlayerCharacter, params: LevelingParams): void {
         const brutalCritical: ScalingTrait = {title: "Brutal Critical", "description": "Number of extra damage dice on a critical hit.", dice: "1dx"};
         pc.addScalingTraits(brutalCritical);
-        pc.findResourceTraitByName('Rage').bonus = 3;
+        pc.findScalingTraitByName('Rage Damage').bonus = 3;
         this.pushBarbarianFeatures(pc, 9);
     }
 
@@ -124,8 +125,6 @@ export class Barbarian extends PlayerClass {
 
     level13(pc: PlayerCharacter, params: LevelingParams): void {
         pc.findScalingTraitByName('Brutal Critical').dice = "2dx";
-        //pc.traits.features.push( {title: "Brutal Critical (Level 13)", description: "You now roll 2 additional damage dice on critical hits."} )    
-        //^I'd prefer to not add more features with the same name if the functionality is unchanged
     }
 
     level14(pc: PlayerCharacter, params: LevelingParams): void {
@@ -138,12 +137,11 @@ export class Barbarian extends PlayerClass {
 
     level16(pc: PlayerCharacter, params: LevelingParams): void {
         pc.improveAbilityScores(params.abilityScoreImprovement);
-        pc.findResourceTraitByName('Rage').bonus = 4;
+        pc.findScalingTraitByName('Rage Damage').bonus = 4;
     }
 
     level17(pc: PlayerCharacter, params: LevelingParams): void {
         pc.findScalingTraitByName('Brutal Critical').dice = "3dx";
-        //pc.traits.features.push( {title: "Brutal Critical (Level 17)", description: "You now roll 3 additional damage dice on critical hits."} )
         pc.findResourceTraitByName('Rage').resourceMax.value++;
     }
 

@@ -148,16 +148,16 @@ export class Inventory {
 
     static lightArmor(pc: PlayerCharacter, armor: Armor): PCArmorClass  {
         armor.AC.modifier = pc.abilityScores.dexterity.modifier;
-        return {name: armor.name, ...armor.AC};
+        return {name: armor.name, base: armor.AC.base, modifier: [armor.AC.modifier], bonus: armor.AC.bonus};
     }
 
     static mediumArmor(pc: PlayerCharacter, armor: Armor): PCArmorClass {
         armor.AC.modifier = pc.abilityScores.dexterity.modifier.value > 2 ? {value: 2} : pc.abilityScores.dexterity.modifier;
-        return {name: armor.name, ...armor.AC};
+        return {name: armor.name, base: armor.AC.base, modifier: [armor.AC.modifier], bonus: armor.AC.bonus};
     }
 
     static heavyArmor(pc: PlayerCharacter, armor: Armor): PCArmorClass {
-        return {name: armor.name, ...armor.AC};
+        return {name: armor.name, base: armor.AC.base, modifier: [armor.AC.modifier], bonus: armor.AC.bonus};
     }
 
     // Add Shield

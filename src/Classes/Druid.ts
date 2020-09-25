@@ -35,9 +35,6 @@ export class Druid extends PlayerClass {
     }
 
     /** TODO
-     * FIGURE OUT HOW TO REPRESENT NUMBER OF PREPARED SPELLS.
-     * MISSING CLASS FEATURES AFTER LEVEL 1
-     * MISSING CIRCLE OF LAND SPELLS, REPRESENTING CIRCLE OF LAND TERRAIN
      */
 
     druidCircle: string = "";
@@ -82,6 +79,8 @@ export class Druid extends PlayerClass {
         pc.addSpells([...params.spellSelection, ...SpellList["Druid"][1]], SpellcastingAbility["DRUID"]);
         this.applyDruidSpellSlots(pc, 1);
         this.pushDruidFeatures(pc, 1);
+        let druidPreparedSpells = {title: "Druid", level: this.level, modifier: pc.abilityScores.wisdom.modifier};
+        (pc.preparedSpells) ? pc.preparedSpells.push(druidPreparedSpells) : pc.preparedSpells = [druidPreparedSpells];
     }
 
     level2(pc: PlayerCharacter, params: LevelingParams): void {

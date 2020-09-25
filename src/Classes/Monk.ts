@@ -33,9 +33,6 @@ export class Monk extends PlayerClass {
     }
 
     /** TODO
-     * MONASTIC TRADITION IMPLEMENTATION
-     * UNARMORED MOVEMENT (NEED LIST OF SPEEDS IN PC)
-     * MARTIAL ARTS DIE SCALING TRAIT
      */
 
 	monasticTradition: string;
@@ -69,13 +66,13 @@ export class Monk extends PlayerClass {
 
     level1(pc: PlayerCharacter, params: LevelingParams): void {
         this.pushMonkFeatures(pc, 1);
-        pc.armorClasses.push({ name: "Unarmored Defense", base: 0, modifier: {value: 1}, bonus: {value: 0}}) // TWO STATS
-
+        pc.armorClasses.push({ name: "Unarmored Defense", base: 0, modifier: [pc.abilityScores.dexterity.modifier, pc.abilityScores.wisdom.modifier], bonus: {value: 0}}) // TWO STATS
+        pc.addScalingTraits({title: "Martial Arts", description: "Damage die used for Unarmed Strikes.", dice: "1d4"})
     }
 
     level2(pc: PlayerCharacter, params: LevelingParams): void {
         this.pushMonkFeatures(pc, 2);
-        // ADD 10 TO SPEED FOR UNARMORED MOVEMENT
+        pc.speeds.push({name: "Unarmored Movement", base: pc.speed, bonus: {value: 10}});
         pc.traits.resources.push( { title: "Ki Points", description: "Number of times you can use Ki Abilities", resourceMax: {value: 2} } )
     }
 
@@ -96,6 +93,7 @@ export class Monk extends PlayerClass {
     level5(pc: PlayerCharacter, params: LevelingParams): void {
         this.pushMonkFeatures(pc, 5)
         pc.findResourceTraitByName("Ki Points").resourceMax.value++
+        pc.findScalingTraitByName("Martial Arts").dice = "1d6";
     }
 
     level6(pc: PlayerCharacter, params: LevelingParams): void {
@@ -129,6 +127,7 @@ export class Monk extends PlayerClass {
     level11(pc: PlayerCharacter, params: LevelingParams): void {
         this.pushMonkFeatures(pc, 11)
         pc.findResourceTraitByName("Ki Points").resourceMax.value++
+        pc.findScalingTraitByName("Martial Arts").dice = "1d8";
 
         MonkArchetype.archetypeHelper[this.monasticTradition]["11"](pc, params);
     }
@@ -172,6 +171,7 @@ export class Monk extends PlayerClass {
     level17(pc: PlayerCharacter, params: LevelingParams): void {
         pc.findResourceTraitByName("Ki Points").resourceMax.value++
         MonkArchetype.archetypeHelper[this.monasticTradition]["17"](pc, params);
+        pc.findScalingTraitByName("Martial Arts").dice = "1d10";
     }
 
     level18(pc: PlayerCharacter, params: LevelingParams): void {

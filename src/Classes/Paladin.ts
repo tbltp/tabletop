@@ -82,6 +82,8 @@ export class Paladin extends PlayerClass {
     level1(pc: PlayerCharacter, params: LevelingParams): void {
         this.pushPaladinFeatures(pc, 1);
         pc.addResourceTraits( { title: "Lay on Hands", description: "Number of hit points you can restore with Lay on Hands", resourceMax: {value: 5} } )
+        let paladinPreparedSpells = {title: "Paladin", level: this.level, modifier: pc.abilityScores.charisma.modifier};
+        (pc.preparedSpells) ? pc.preparedSpells.push(paladinPreparedSpells) : pc.preparedSpells = [paladinPreparedSpells];
     }
 
     level2(pc: PlayerCharacter, params: LevelingParams): void {

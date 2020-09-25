@@ -16,7 +16,9 @@ export class PlayerCharacter extends BaseCharacter {
 
     hitDie: string;
     attacks: PCAttack[] = [];
-    armorClasses: PCArmorClass[] = [ {name: "Base", ...this.baseStats.baseArmorClass} ];
+    armorClasses: PCArmorClass[] = [ {name: "Base", base: this.baseStats.baseArmorClass.base, modifier: [this.baseStats.baseArmorClass.modifier], bonus: this.baseStats.baseArmorClass.bonus } ];
+    speeds: PCSpeed[] = [{name: "Base Speed", base: this.speed, bonus:{value: 0}}];
+    preparedSpells?: {title: string, level: {value: number}, modifier: {value: number}}[];
 
     private findTraitByName(traitType: string, name: string): Trait | null {
         const results = this.traits[traitType].filter(trait => trait.title == name);
@@ -113,7 +115,7 @@ export class PlayerCharacter extends BaseCharacter {
 export interface PCArmorClass {
     name: string, 
     base: number, 
-    modifier: {value: number}, 
+    modifier: {value: number}[], 
     bonus: {value: number}
 }
 
@@ -127,4 +129,10 @@ export interface PCAttack {
     dice: string, 
     damageType: string, 
     damageBonus: {value: number}
+}
+
+export interface PCSpeed {
+    name: string,
+    base: {value: number},
+    bonus: {value: number}
 }

@@ -26,7 +26,7 @@ export abstract class BaseCharacter {
         
         this.skills = {
             "acrobatics": { ability: "dexterity", modifier: this.abilityScores['dexterity'].modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(dex), + proficiency (Class Dependent);
-            "animal Handling": { ability: "wisdom", modifier: this.abilityScores['wisdom'].modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(wis), + proficiency (Class Dependent);
+            "animal handling": { ability: "wisdom", modifier: this.abilityScores['wisdom'].modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(wis), + proficiency (Class Dependent);
             "arcana": { ability: "intelligence", modifier: this.abilityScores['intelligence'].modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(int), + proficiency (Class Dependent);
             "athletics": { ability: "strength", modifier: this.abilityScores['strength'].modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(str), + proficiency (Class Dependent);
             "deception": { ability: "charisma", modifier: this.abilityScores['charisma'].modifier, proficient: false, expertise: false, bonus: { value: 0} }, //--> f(cha), + proficiency (Class Dependent);

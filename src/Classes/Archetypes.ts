@@ -658,6 +658,10 @@ export class FighterArchetype extends Archetype {
             "18": FighterArchetype.eldritchKnight18
         }
     }
+    
+    static getFeature(archetypeName: string, level: string, featureName: string) {
+        return Archetype.getFeature("FIGHTER", archetypeName, level, featureName);
+    }
 
     static champion3(pc: PlayerCharacter, params: LevelingParams) {}
 

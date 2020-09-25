@@ -610,7 +610,72 @@
         }
     },
     "MONK": {
-
+        "WAY OF THE OPEN HAND": {
+            "title": "Way of the Open Hand",
+            "description": "Monks of the Way of the Open Hand are the ultimate masters of martial arts combat, whether armed or unarmed. They learn techniques to push and trip their opponents, manipulate ki to heal damage to their bodies, and practice advanced meditation that can protect them from harm.",
+            "3": {
+                "OPEN HAND TECHNIQUE": {
+                    "title": "Open Hand Technique",
+                    "description": "Starting when you choose this tradition at 3rd level, you can manipulate your enemy's ki when you harness your own. Whenever you hit a creature with one of the attacks granted by your Flurry of Blows, you can impose one of the following effects on that target:\nIt must succeed on a Dexterity saving throw or be knocked prone.\nIt must make a Strength saving throw. If it fails, you can push it up to 15 feet away from you.\nIt can't take reactions until the end of your next turn."
+                }
+            },
+            "6": {
+                "WHOLENESS OF BODY": {
+                    "title": "Wholeness of Body",
+                    "description": "At 6th level, you gain the ability to heal yourself. As an action, you can regain hit points equal to three times your monk level. You must finish a long rest before you can use this feature again"
+                }
+            },
+            "11": {
+                "TRANQUILITY": {
+                    "title": "Tranquility",
+                    "description": "Beginning at 11th level, you can enter a special meditation that surrounds you with an aura of peace. At the end of a long rest, you gain the effect of a sanctuary spell that lasts until the start of your next long rest (the spell can end early as normal). The saving throw DC for the spell equals 8 + your Wisdom modifier + your proficiency bonus."
+                }
+            },
+            "17": {
+                "QUIVERING PALM": {
+                    "title": "Quivering Palm",
+                    "description": "At 17th level, you gain the ability to set up lethal vibrations in someone's body. When you hit a creature with an unarmed strike, you can spend 3 ki points to start these imperceptible vibrations, which last for a number of days equal to your monk level. The vibrations are harmless unless you use your action to end them. To do so, you and the target must be on the same plane of existence. When you use this action, the creature must make a Constitution saving throw. If it fails, it is reduced to 0 hit points. If it succeeds, it takes 10d10 necrotic damage\nYou can have only one creature under the effect of this feature at a time. You can choose to end the vibrations harmlessly without using an action."
+                }
+            }
+        },
+        "WAY OF SHADOW": {
+            "title": "Way of Shadow",
+            "description": "Monks of the Way of Shadow follow a tradition that values stealth and subterfuge. These monks might be called ninjas or shadowdancers, and they serve as Spies and assassins. Sometimes the members of a ninja monastery are family members, forming a clan sworn to secrecy about their arts and missions. Other monasteries are more like thieves guilds, hiring out their services to nobles, rich merchants, or anyone else who can pay their fees. Regardless of their methods, the heads of these monasteries expect the unquestioning obedience oft their students",
+            "3": {
+                "SHADOW ARTS": {
+                    "title": "Shadow Arts",
+                    "description": "Starting when you choose this tradition at 3rd level, you can use your ki to duplicate the effects of certain spells. As an action, you can spend 2 ki points to cast darkness, darkvision, pass without trace, or silence, without providing material components. Additionally, you gain the minor illusion cantrip if you don't already know it."
+                }
+            },
+            "6": {
+                "SHADOW STEP": {
+                    "title": "Shadow Step",
+                    "description": "At 6th level, you gain the ability to step from one shadow into another. When you are in dim light or darkness, as a bonus action you can teleport up to 60 feet to an unoccupied space you can see that is also in dim light or darkness. You then have advantage on the first melee attack you make before the end of the turn."
+                }
+            },
+            "11": {
+                "CLOAK OF SHADOWS": {
+                    "title": "Cloak of Shadows",
+                    "description": "By 11th level, you have learned to become one with the shadows. When you are in an area of dim light or darkness, you can use your action to become invisible. You remain invisible until you make an attack, cast a spell, or are in an area of bright light."
+                }
+            },
+            "17": {
+                "OPPORTUNIST": {
+                    "title": "Opportunist",
+                    "description": "At 17th level, you can exploit a creature's momentary distraction when it is hit by an attack. Whenever a creature within 5 feet of you is hit by an attack made by a creature other than you, you can use your reaction to make a melee attack against that creature."
+                }
+            }
+        },
+        "WAY OF THE FOUR ELEMENTS": {
+            "title": "Way of the Four Elements",
+            "description": "You follow a monastic tradition that teaches you to harness the elements. When you focus your ki, you can align yourself with the forces of creation and bend the four elements to your will, using them as an extension of your body. Some members of this tradition dedicate themselves to a single element, but others weave the elements together.\nMany monks of this tradition tattoo their bodies with representations of their ki powers, commonly imagined as coiling dragons, but also as phoenixes, fish, plants, mountains, and cresting waves.",
+            "3": {
+                "DISCIPLE OF THE ELEMENTS": {
+                    "title": "Disciple of the Elements", 
+                    "description": "When you choose this tradition at 3rd level, you learn magical disciplines that harness the power of the four elements. A discipline requires you to spend ki points each time you use it.\nYou know the Elemental Attunement discipline and one other elemental discipline of your choice, which are detailed in the “Elemental Disciplines” section below. You learn one additional elemental discipline of your choice at 6th, 11th, and 17th level.\nWhenever you learn a new elemental discipline, you can also replace one elemental discipline that you already know with a different discipline.\nCasting Elemental Spells: Some elemental disciplines allow you to cast spells. See chapter 10 for the general rules of spellcasting. To cast one of these spells, you use its casting time and other rules, but you don't need to provide material components for it.\nOnce you reach 5th level in this class, you can spend additional ki points to increase the level of an elemental discipline spell that you cast, provided that the spell has an enhanced effect at a higher level, as burning hands does. The spells level increases by 1 for each additional ki point you spend. For example, if you are a 5th-level monk and use Sweeping Cinder Strike to cast burning hands, you can spend 3 ki points to cast it as a 2nd-level spell (the discipline’s base cost of 2 ki points plus 1).\nThe maximum number of ki points you can spend to cast a spell in this way (including its base ki point cost and any additional ki potnts you spend to increase its level) is determined by your monk level, as shown in the spells and Ki Points table."
+                }
+            }
+        }
     },
     "PALADIN": {
 
