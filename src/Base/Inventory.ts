@@ -11,6 +11,7 @@ export class Inventory {
     EXPLORER: Inventory.explorer,
     PRIEST: Inventory.priest,
     SCHOLAR: Inventory.scholar,
+    NONE: Inventory.none
   };
 
   static burglar(): Item[] {
@@ -179,6 +180,10 @@ export class Inventory {
     parchement.quantity = 10;
 
     return [backpack, book, ink, inkPen, parchement];
+  }
+
+  static none(): Item[] {
+      return [];
   }
 
   static acFromArmorType: {

@@ -78,7 +78,7 @@ export abstract class Race {
     this.addWeaponProficiencies(pc);
     this.addArmorProficiencies(pc);
     this.addToolProficiencies(pc);
-    pc.speed = { value: this.speed };
+    pc.speed.value = this.speed;
     pc.size = this.size;
 
     if (Object.keys(this.abilitiesAtLevels).indexOf("1") != -1) {

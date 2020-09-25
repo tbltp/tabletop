@@ -669,10 +669,71 @@
       }
     }
   },
-  "PALADIN": {},
+  "PALADIN": {
+    "OATH OF DEVOTION": {
+      "title": "Oath of Devotion",
+      "description": "The Oath of Devotion binds a paladin to the loftiest ideals of justice, virtue, and order. Sometimes called cavaliers, white knights, or holy warriors, these paladins meet the ideal of the knight in shining armor, acting with honor in pursuit of justice and the greater good. They hold themselves to the highest standards of conduct, and some, for better or worse, hold the rest of the world to the same standards. Many who swear this oath are devoted to gods of law and good and use their gods’ tenets as the measure of their devotion. They hold angels—the perfect servants of good—as their ideals, and incorporate images of angelic wings into their helmets or coats of arms.\nTenets of Devotion: Though the exact words and strictures of the Oath of Devotion vary, paladins of this oath share these tenets.\nHonesty: Dont lie or cheat. Let your word be your promise.\nCourage: Never fear to act, though caution is wise.\nCompassion: Aid others, protect the weak, and punish those who threaten them. Show mercy to your foes, but temper it with wisdom.\nHonor: Treat others with fairness, and let your honorable deeds be an example to them. Do as much good as possible while causing the least amount of harm.\nDuty: Be responsible for your actions and their consequences, protect those entrusted to your care. and obey those who have just authority over you.",
+      "3": {
+        "CHANNEL DIVINITY: SACRED WEAPON": {
+          "title": "Channel Divinity: Sacred Weapon",
+          "description": "As an action, you can imbue one weapon that you are holding with positive energy, using your Channel Divinity. For 1 minute, you add your Charisma modifier to attack rolls made with that weapon (with a minimum bonus of +1). The weapon also emits bright light in a 20-foot radius and dim light 20 feet beyond that. If the weapon is not already magical, it becomes magical for the duration.\nYou can end this effect on your turn as part of any other action. If you are no longer holding or carrying this weapon, or if you fall unconscious, this effect ends."
+        }, 
+        "CHANNEL DIVINITY: TURN THE UNHOLY": {
+          "title": "Channel Divinity: Turn the Unholy",
+          "description": "As an action, you present your holy symbol and speak a prayer censuring fiends and undead, using your Channel Divinity. Each fiend or undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes damage.\nA turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also can’t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action."
+        }
+      },
+      "7": {
+        "AURA OF DEVOTION": {
+          "title": "Aura of Devotion", 
+          "description": "Starting at 7th level, you and friendly creatures within 10 feet of you can't be charmed while you are conscious. At 18th level, the range of this aura increases to 30 feet."
+        }
+      },
+      "15": {
+        "PURITY OF SPIRIT": {
+          "title": "Purity of Spirit",
+          "description": "Beginning at 15th level, you are always under the effects of a protection from evil and good spell."
+        }
+      },
+      "20": {
+        "HOLY NIMBUS": {
+          "title": "Holy Nimbus",
+          "description": "At 20th level, as an action, you can emanate an aura of sunlight. For 1 minute, bright light shines from you in a 30-foot radius, and dim light shines 30 feet beyond that.\nWhenever an enemy creature starts its turn in the bright light, the creature takes 10 radiant damage.\nIn addition, for the duration, you have advantage on saving throws against spells cast by fiends or undead.\nOnce you use this feature, you can’t use it again until you finish a long rest."
+        }
+      }
+    },
+    "OATH OF THE ANCIENTS": {
+      "title": "Oath of the Ancients",
+      "description": "The Oath of the Ancients is as old as the race of elves and the rituals of the druids. Sometimes called fey knights, green knights, or horned knights, paladins who swear this oath cast their lot with the side of the light in the cosmic struggle against darkness because they love the beautiful and life-giving things of the world, not necessarily because they believe in principles of honor, courage, and justice. They adorn their armor and clothing with images of growing things—leaves, antlers, or flowers—to reflect their commitment to preserving life and light in the world.\nTenets of the Ancients: The tenets of the Oath of the Ancients have been preserved for uncounted centuries. This oath emphasizes the principles of good above any concerns of law or chaos. Its four central principles are simple.\nKindle the Light: Through your acts of mercy, kindness, and forgiveness, kindle the light of hope in the world, beating back despair.\nShelter the Light: Where there is good, beauty, love, and laughter in the world, stand against the wickedness that would swallow it. Where life flourishes, stand against the forces that would render it barren.\nPreserve Your Own Light: Delight in song and laughter, in beauty and art. If you allow the light to die in your own heart, you cant preserve it in the world.\nBe the Light: Be a glorious beacon for all who live in despair. Let the light of your joy and courage shine forth in all your deeds.",
+      "3": {
+        "CHANNEL DIVINITY: NATURE'S WRATH": {
+          "title": "Channel Divinity: Nature's Wrath",
+          "description": "You can use your Channel Divinity to invoke primeval forces to ensnare a foe. As an action, you Can cause spectral vines to spring up and reach for a creature within 10 feet of you that you can see. The creature must succeed on a Strength or Dexterity saving throw (its choice) or be restrained. While restrained by the vines, the creature repeats the saving throw at the end of each of its turns. On a success, it frees itself and the vines vanish."
+        },
+        "CHANNEL DIVINITY: TURN THE FAITHLESS": {
+          "title": "Channel Divinity: Turn the Faithless",
+          "description": "You can use your Channel Divinity to utter ancient words that are painful for fey and fiends to hear. As an action, you present your holy symbol, and each fey or fiend within 30 feet of you that can hear you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage.\nA turned creature must spend its turns trying to move as far away from you as it can, and it cant willingly move to a space within 30 feet of you. It also cant take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.\nIf the creature’s true form is concealed by an illusion, shapeshifting, or other effect, that form is revealed while it is turned."
+        }
+      },
+      "7": {
+        "AURA OF WARDING": {
+          "title": "Aura of Warding",
+          "description": "Beginning at 7th level, ancient magic lies so heavily upon you that it forms an eldritch ward. You and friendly creatures within 10 feet of you have resistance to damage from spells. At 18th level, the range of this aura increases to 30 feet."
+        }
+      },
+      "UNDYING SENTINEL": {
+        "title": "Undying Sentinel",
+        "description": "Starting at 15th level, when you are reduced to O hit points and are not killed outright, you can choose to drop to 1 hit point instead. Once you use this ability, you can't use it again until you finish a long rest.\nAdditionally, you suffer none of the drawbacks of old age, and you cant be aged magically."
+      }
+    },
+    "OATH OF VENGEANCE": {
+      "title": "",
+      "description": ""
+    }
+  },
   "RANGER": {},
   "ROGUE": {},
-  "SORCEROR": {},
+  "SORCERER": {},
   "WARLOCK": {},
   "WIZARD": {}
 }

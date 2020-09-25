@@ -1,18 +1,19 @@
 import { PlayerClass, LevelingParams } from "./PlayerClass";
 import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { ResourceTrait } from "../Base/Interfaces";
-import * as SpellList from "../../Assets/SpellList.json";
-import { PaladinArchetype } from "./Archetypes";
+import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
+import * as PactBoon from "../../Assets/PactBoon.json";
+import { WarlockArchetype } from "./Archetypes";
 
 export class Warlock extends PlayerClass {
   constructor(
     skillProficiencies: string[],
     weapons: string[],
-    params: LevelingParams,
+    params: WarlockLevelingParams,
     equipmentPack: string
   ) {
     super(
-      "Paladin",
+      "Warlock",
       [],
       skillProficiencies,
       ["Simple"],
@@ -38,9 +39,12 @@ export class Warlock extends PlayerClass {
 
   /** TODO
    * ARCANE FOCUS / COMPONENT POUCH
+   * ELDRITCH INVOCATIONS JSON
+   * ELDRITCH INVOCATIONS FUNCTIONS FOR TRANSFORMATIONS
+   * ELDRITCH INVOCATIONS REPLACEMENTS
    */
 
-  paladinOath: string;
+  otherworldlyPatron: string;
 
   abilitiesAtLevels = {
     "1": this.level1,
@@ -65,47 +69,147 @@ export class Warlock extends PlayerClass {
     "20": this.level20,
   };
 
-  pushPaladinFeatures(pc: PlayerCharacter, level: number) {
+  pushWarlockFeatures(pc: PlayerCharacter, level: number) {
     this.pushClassFeatures(pc, level, "WARLOCK");
   }
 
-  level1(pc: PlayerCharacter, params: LevelingParams): void {}
+  private handleWarlockSpellSelections( pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    this.handleSpellSelections(pc, params, SpellcastingAbility["WARLOCK"]);
+  }
 
-  level2(pc: PlayerCharacter, params: LevelingParams): void {}
+  private pactBoonHandler(pc:PlayerCharacter, pactBoon: WarlockLevelingParams["pactBoon"]){
+    switch(pactBoon.boon) {
+      case 'CHAIN':
+        pc.addFeatures(PactBoon["CHAIN"])
+        pc.addSpells(["FIND FAMILIAR"], "charisma")
+      case 'BLADE':
+        pc.addFeatures(PactBoon["BLADE"])
+      case 'TOME':
+        pc.addFeatures({...PactBoon["TOME"], choices: pactBoon.options})
+        pc.addSpells(pactBoon.options, "charisma")
+    }
+  }
 
-  level3(pc: PlayerCharacter, params: LevelingParams): void {}
+  level1(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    this.handleWarlockSpellSelections(pc, params);
+    const pactMagic: PactMagicSlots  =  {title: "Pact Magic", description:  "Number of spell slots you have for Warlock spells.", resourceMax: {value: 1}, level: 1};
+    pc.addResourceTraits(pactMagic);
+    this.otherworldlyPatron = params.archetypeSelection[0].archetype;
+    WarlockArchetype.archetypeHelper[this.otherworldlyPatron]["1"](pc, params);
+  }
 
-  level4(pc: PlayerCharacter, params: LevelingParams): void {}
+  level2(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    this.handleWarlockSpellSelections(pc, params);
+    pc.findResourceTraitByName("Pact Magic").resourceMax.value++;
+    // ELDRITCH INVOCATIONS HERE
+  }
 
-  level5(pc: PlayerCharacter, params: LevelingParams): void {}
+  level3(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    this.handleWarlockSpellSelections(pc, params);
+    let pactMagicSlots: PactMagicSlots = pc.findResourceTraitByName("Pact Magic") as PactMagicSlots;
+    pactMagicSlots.level++;
+    this.pactBoonHandler(pc, params.pactBoon)
+  }
 
-  level6(pc: PlayerCharacter, params: LevelingParams): void {}
+  level4(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    this.handleWarlockSpellSelections(pc, params);
+    pc.improveAbilityScores(params.abilityScoreImprovement);
+  }
 
-  level7(pc: PlayerCharacter, params: LevelingParams): void {}
+  level5(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    this.handleWarlockSpellSelections(pc, params);
+    let pactMagicSlots: PactMagicSlots = pc.findResourceTraitByName("Pact Magic") as PactMagicSlots;
+    pactMagicSlots.level++;
+    // ELDRITCH INVOCATIONS HERE
+  }
 
-  level8(pc: PlayerCharacter, params: LevelingParams): void {}
+  level6(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    this.handleWarlockSpellSelections(pc, params);
+    WarlockArchetype.archetypeHelper[this.otherworldlyPatron]["6"](pc, params);
+  }
 
-  level9(pc: PlayerCharacter, params: LevelingParams): void {}
+  level7(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    this.handleWarlockSpellSelections(pc, params);
+    let pactMagicSlots: PactMagicSlots = pc.findResourceTraitByName("Pact Magic") as PactMagicSlots;
+    pactMagicSlots.level++;
+    // ELDRITCH INVOCATIONS HERE
+  }
 
-  level10(pc: PlayerCharacter, params: LevelingParams): void {}
+  level8(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    this.handleWarlockSpellSelections(pc, params);
+    pc.improveAbilityScores(params.abilityScoreImprovement);
+  }
 
-  level11(pc: PlayerCharacter, params: LevelingParams): void {}
+  level9(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    this.handleWarlockSpellSelections(pc, params);
+    let pactMagicSlots: PactMagicSlots = pc.findResourceTraitByName("Pact Magic") as PactMagicSlots;
+    pactMagicSlots.level++;
+    // ELDRITCH INVOCATIONS HERE
+  }
 
-  level12(pc: PlayerCharacter, params: LevelingParams): void {}
+  level10(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    this.handleWarlockSpellSelections(pc, params);
+    WarlockArchetype.archetypeHelper[this.otherworldlyPatron]["10"](pc, params);
+  }
 
-  level13(pc: PlayerCharacter, params: LevelingParams): void {}
+  level11(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    this.handleWarlockSpellSelections(pc, params);
+    pc.findResourceTraitByName("Pact Magic").resourceMax.value++;
+    PlayerClass.pushCustomizedClassFeature(pc, 11, "WARLOCK", "MYSTIC ARCANUM", [params.mysticArcanum]);
+  }
 
-  level14(pc: PlayerCharacter, params: LevelingParams): void {}
+  level12(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    pc.improveAbilityScores(params.abilityScoreImprovement);
+    // ELDRITCH INVOCATIONS HERE
+  }
 
-  level15(pc: PlayerCharacter, params: LevelingParams): void {}
+  level13(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    this.handleWarlockSpellSelections(pc, params);
+    pc.findFeatureTraitByName("MYSTIC ARCANUM").choices.push(params.mysticArcanum);
+  }
 
-  level16(pc: PlayerCharacter, params: LevelingParams): void {}
+  level14(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    WarlockArchetype.archetypeHelper[this.otherworldlyPatron]["14"](pc, params);
+  }
 
-  level17(pc: PlayerCharacter, params: LevelingParams): void {}
+  level15(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    this.handleWarlockSpellSelections(pc, params);
+    pc.findFeatureTraitByName("MYSTIC ARCANUM").choices.push(params.mysticArcanum);
+    // ELDRITCH INVOCATIONS HERE
+  }
 
-  level18(pc: PlayerCharacter, params: LevelingParams): void {}
+  level16(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    pc.improveAbilityScores(params.abilityScoreImprovement);
+  }
 
-  level19(pc: PlayerCharacter, params: LevelingParams): void {}
+  level17(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    this.handleWarlockSpellSelections(pc, params);
+    pc.findResourceTraitByName("Pact Magic").resourceMax.value++;
+    pc.findFeatureTraitByName("MYSTIC ARCANUM").choices.push(params.mysticArcanum);
+  }
 
-  level20(pc: PlayerCharacter, params: LevelingParams): void {}
+  level18(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    // ELDRITCH INVOCATIONS HERE
+  }
+
+  level19(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    pc.improveAbilityScores(params.abilityScoreImprovement);
+    this.handleWarlockSpellSelections(pc, params);
+  }
+
+  level20(pc: PlayerCharacter, params: WarlockLevelingParams): void {
+    this.pushWarlockFeatures(pc, 20);
+  }
+}
+
+interface PactMagicSlots extends ResourceTrait  {
+  level?: number;
+}
+
+interface WarlockLevelingParams extends LevelingParams {
+  pactBoon: {
+    boon: string;
+    options?: []
+  },
+  mysticArcanum: string
 }
