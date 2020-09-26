@@ -38,7 +38,7 @@ export class Tiefling extends Race {
   }
 
   level3(pc: PlayerCharacter) {
-    let ispell: ISpell = Spells["DARKNESS"];
+    let ispell: ISpell = Spells["HELLISH REBUKE"];
     const spell = { ...ispell, spellcastingAbility: "charisma" };
     pc.spells["1"].push(spell);
   }

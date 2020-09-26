@@ -15,7 +15,8 @@ const pclass = new Ranger(
     favoredEnemy: "Enemies of Nature",
     favoredTerrain: "Forest",
   },
-  "EXPLORER"
+  "EXPLORER",
+  false
 );
 const background = new FolkHero(
   "Leatherworker's Tools,",
