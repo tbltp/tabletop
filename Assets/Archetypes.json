@@ -151,13 +151,13 @@
           }
         },
         "2": {
-          "CHANNEL DIVINITY: THE KNOWLEDGE OF THE AGES": {
+          "THE KNOWLEDGE OF THE AGES": {
             "title": "Channel Divinity: The Knowledge of the Ages",
             "description": "You can use your Channel Divinity to tap into a divine well of knowledge. As an action, you choose one skill or tool. For 10 minutes, you have proficiency with the chosen skill or tool."
           }
         },
         "6": {
-          "CHANNEL DIVINITY: READ THOUGHTS": {
+          "READ THOUGHTS": {
             "title": "Channel Divinity: Read Thoughts",
             "description": "You can use your Channel Divinity to read a creature's thoughts. You can then use your access to the creature's mind to command it.\nAs an action, choose one creature that you can see within 60 feet of you. That creature must make a Wisdom saving throw. If the creature succeeds on the saving throw, you can't use this feature on it again until you finish a long rest.\nIf the creature fails its save, you can read its surface throughts (those foremost in its mind, reflecting its current emotions and what it is actively thinking about_ when it is within 60 feet of you. This effect lasts for 1 minute.\nDuring that time, you can use your action to end this effect and cast the suggestion spell on the creature without expending a spell slot. The target automatically fails its saving throw against the spell."
           }
@@ -191,7 +191,7 @@
           }
         },
         "2": {
-          "CHANNEL DIVINITY: PRESERVE LIFE": {
+          "PRESERVE LIFE": {
             "title": "Channel Divinity: Preserve Life",
             "description": "You can use your Channel Divinity to heal the badly injured.\nAs an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can't use this feature on an undead or a construct."
           }
@@ -231,7 +231,7 @@
           }
         },
         "2": {
-          "CHANNEL DIVINITY: RADIANCE OF THE DAWN": {
+          "RADIANCE OF THE DAWN": {
             "title": "Channel Divinity: Radiance of the Dawn",
             "description": "You can use your Channel Divinity to harness sunlight, banishing darkness and dealing radiant damage to your foes.\nAs an action, you present your holy symbol, and any magical darkness within 30 feet of you is dispelled. Additionally, each hostile creature within 30 feet of you must make a Constitution saving throw. A creature takes radiant damage equal to 2d10 + your cleric level on a failed saving throw, and half as much damage on a successful one. A creature that has total cover from you is not affected."
           }
@@ -271,7 +271,7 @@
           }
         },
         "2": {
-          "CHANNEL DIVINITY: CHARM ANIMALS AND PLANTS": {
+          "CHARM ANIMALS AND PLANTS": {
             "title": "Channel Divinity: Charm Animals and Plants",
             "description": "You can use your Channel Divinity to charm animals and plants. As an action, you present your holy symbol and invoke the name of our deity. Each beast or plant creature that can see you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is charmed by you for 1 minute or until it takes damage. While it is charmed by you, it is friendly to you and other creatures you designate."
           }
@@ -311,7 +311,7 @@
           }
         },
         "2": {
-          "CHANNEL DIVINITY: DESTRUCTIVE WRATH": {
+          "DESTRUCTIVE WRATH": {
             "title": "Channel Divinity: Destructive Wrath",
             "description": "You can use your Channel Divinity to wield the power of the storm with unchecked ferocity.\nWhen you roll lightning or thunder damage, you can use your Channel Divinity to deal maximum damage, instead of rolling."
           }
@@ -347,13 +347,13 @@
           }
         },
         "2": {
-          "CHANNEL DIVINITY: INVOKE DUPLICITY": {
+          "INVOKE DUPLICITY": {
             "title": "Channel Divinity: Invoke Duplicity",
             "description": "You can use your Channel Divinity to create an illusory duplicate of yourself.\nAs an action, you create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell). The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but it must remain within 120 feet of you.\nFor the duration, you can cast spells as though you were in the illusion’s space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how distracting the illusion is to the target."
           }
         },
         "6": {
-          "CHANNEL DIVINITY: CLOAK OF SHADOWS": {
+          "CLOAK OF SHADOWS": {
             "title": "Channel Divinity: Cloak of Shadows",
             "description": "You can use your Channel Divinity to vanish.\nAs an action, you become invisible until the end of your next turn. You become visible if you attack or cast a spell."
           }
@@ -387,13 +387,13 @@
           }
         },
         "2": {
-          "CHANNEL DIVINITY: GUIDED STRIKE": {
+          "GUIDED STRIKE": {
             "title": "Channel Divinity: Guided Strike",
             "description": "You can use your Channel Divinity to strike with supernatural accuracy. When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You can make this choice after you see the roll, but before the DM says whether the attack hits or misses."
           }
         },
         "6": {
-          "CHANNEL DIVINITY: WAR GOD'S BLESSING": {
+          "WAR GOD'S BLESSING": {
             "title": "Channel Divinity: War God's Blessing",
             "description": "When a creature within 30 feet of you makes an attack roll, you can use your reaction to grant that creature a +10 bonus to the roll, using your Channel Divinity. You make this choice after you see the roll, but before the DM says whether the attack hits or misses."
           }
@@ -674,18 +674,18 @@
       "title": "Oath of Devotion",
       "description": "The Oath of Devotion binds a paladin to the loftiest ideals of justice, virtue, and order. Sometimes called cavaliers, white knights, or holy warriors, these paladins meet the ideal of the knight in shining armor, acting with honor in pursuit of justice and the greater good. They hold themselves to the highest standards of conduct, and some, for better or worse, hold the rest of the world to the same standards. Many who swear this oath are devoted to gods of law and good and use their gods’ tenets as the measure of their devotion. They hold angels—the perfect servants of good—as their ideals, and incorporate images of angelic wings into their helmets or coats of arms.\nTenets of Devotion: Though the exact words and strictures of the Oath of Devotion vary, paladins of this oath share these tenets.\nHonesty: Dont lie or cheat. Let your word be your promise.\nCourage: Never fear to act, though caution is wise.\nCompassion: Aid others, protect the weak, and punish those who threaten them. Show mercy to your foes, but temper it with wisdom.\nHonor: Treat others with fairness, and let your honorable deeds be an example to them. Do as much good as possible while causing the least amount of harm.\nDuty: Be responsible for your actions and their consequences, protect those entrusted to your care. and obey those who have just authority over you.",
       "3": {
-        "CHANNEL DIVINITY: SACRED WEAPON": {
+        "SACRED WEAPON": {
           "title": "Channel Divinity: Sacred Weapon",
           "description": "As an action, you can imbue one weapon that you are holding with positive energy, using your Channel Divinity. For 1 minute, you add your Charisma modifier to attack rolls made with that weapon (with a minimum bonus of +1). The weapon also emits bright light in a 20-foot radius and dim light 20 feet beyond that. If the weapon is not already magical, it becomes magical for the duration.\nYou can end this effect on your turn as part of any other action. If you are no longer holding or carrying this weapon, or if you fall unconscious, this effect ends."
-        }, 
-        "CHANNEL DIVINITY: TURN THE UNHOLY": {
+        },
+        "TURN THE UNHOLY": {
           "title": "Channel Divinity: Turn the Unholy",
           "description": "As an action, you present your holy symbol and speak a prayer censuring fiends and undead, using your Channel Divinity. Each fiend or undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes damage.\nA turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also can’t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action."
         }
       },
       "7": {
         "AURA OF DEVOTION": {
-          "title": "Aura of Devotion", 
+          "title": "Aura of Devotion",
           "description": "Starting at 7th level, you and friendly creatures within 10 feet of you can't be charmed while you are conscious. At 18th level, the range of this aura increases to 30 feet."
         }
       },
@@ -706,11 +706,11 @@
       "title": "Oath of the Ancients",
       "description": "The Oath of the Ancients is as old as the race of elves and the rituals of the druids. Sometimes called fey knights, green knights, or horned knights, paladins who swear this oath cast their lot with the side of the light in the cosmic struggle against darkness because they love the beautiful and life-giving things of the world, not necessarily because they believe in principles of honor, courage, and justice. They adorn their armor and clothing with images of growing things—leaves, antlers, or flowers—to reflect their commitment to preserving life and light in the world.\nTenets of the Ancients: The tenets of the Oath of the Ancients have been preserved for uncounted centuries. This oath emphasizes the principles of good above any concerns of law or chaos. Its four central principles are simple.\nKindle the Light: Through your acts of mercy, kindness, and forgiveness, kindle the light of hope in the world, beating back despair.\nShelter the Light: Where there is good, beauty, love, and laughter in the world, stand against the wickedness that would swallow it. Where life flourishes, stand against the forces that would render it barren.\nPreserve Your Own Light: Delight in song and laughter, in beauty and art. If you allow the light to die in your own heart, you cant preserve it in the world.\nBe the Light: Be a glorious beacon for all who live in despair. Let the light of your joy and courage shine forth in all your deeds.",
       "3": {
-        "CHANNEL DIVINITY: NATURE'S WRATH": {
+        "NATURE'S WRATH": {
           "title": "Channel Divinity: Nature's Wrath",
           "description": "You can use your Channel Divinity to invoke primeval forces to ensnare a foe. As an action, you Can cause spectral vines to spring up and reach for a creature within 10 feet of you that you can see. The creature must succeed on a Strength or Dexterity saving throw (its choice) or be restrained. While restrained by the vines, the creature repeats the saving throw at the end of each of its turns. On a success, it frees itself and the vines vanish."
         },
-        "CHANNEL DIVINITY: TURN THE FAITHLESS": {
+        "TURN THE FAITHLESS": {
           "title": "Channel Divinity: Turn the Faithless",
           "description": "You can use your Channel Divinity to utter ancient words that are painful for fey and fiends to hear. As an action, you present your holy symbol, and each fey or fiend within 30 feet of you that can hear you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage.\nA turned creature must spend its turns trying to move as far away from you as it can, and it cant willingly move to a space within 30 feet of you. It also cant take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.\nIf the creature’s true form is concealed by an illusion, shapeshifting, or other effect, that form is revealed while it is turned."
         }
@@ -721,19 +721,564 @@
           "description": "Beginning at 7th level, ancient magic lies so heavily upon you that it forms an eldritch ward. You and friendly creatures within 10 feet of you have resistance to damage from spells. At 18th level, the range of this aura increases to 30 feet."
         }
       },
-      "UNDYING SENTINEL": {
-        "title": "Undying Sentinel",
-        "description": "Starting at 15th level, when you are reduced to O hit points and are not killed outright, you can choose to drop to 1 hit point instead. Once you use this ability, you can't use it again until you finish a long rest.\nAdditionally, you suffer none of the drawbacks of old age, and you cant be aged magically."
+      "15": {
+        "UNDYING SENTINEL": {
+          "title": "Undying Sentinel",
+          "description": "Starting at 15th level, when you are reduced to O hit points and are not killed outright, you can choose to drop to 1 hit point instead. Once you use this ability, you can't use it again until you finish a long rest.\nAdditionally, you suffer none of the drawbacks of old age, and you cant be aged magically."
+        }
+      },
+      "20": {
+        "ELDER CHAMPION": {
+          "title": "Elder Champion",
+          "description": "At 20th level, you can assume the form of an ancient force of nature, taking on an appearance you choose. For example, your skin might turn green or take on a bark-like texture, your hair might become leafy or mosslike, or you might sprout antlers or a lion-like mane.\nUsing your action, you undergo a transformation. For 1 minute, you gain the following benefits:\nAt the start of each of your turns, you regain 10 hit points.\nWhenever you cast a paladin spell that has a casting time of 1 action, you can cast it using a bonus action instead.\nEnemy creatures within 10 feet of you have disadvantage on saving throws against your paladin spells and Channel Divinity options.\nOnce you use this feature, you can't use it again until you finish a long rest."
+        }
       }
     },
     "OATH OF VENGEANCE": {
-      "title": "",
-      "description": ""
+      "title": "Oath of Vengeance",
+      "description": "The Oath of Vengeance is a solemn commitment to punish those who have committed a grievous sin. When evil forces slaughter helpless villagers, when an entire people turns against the will of the gods, when a thieves’ guild grows too violent and powerful, when a dragon rampages through the countryside—at times like these, paladins arise and swear an Oath of Vengeance to set right that which has gone wrong. To these paladins— sometimes called avengers or dark knights—their own purity is not as important as delivering justice.\nTenets of Vengeance: The tenets of the Oath of Vengeance vary by paladin, but all the tenets revolve around punishing wrongdoers by any means necessary. Paladins who uphold these tenets are willing to sacrifice even their own righteousness to mete out justice upon those who do evil, so the paladins are often neutral or lawful neutral in alignment. The core principles of the tenets are brutally simple.\nFight the Greater Evil: Faced with a choice of fighting my sworn foes or combating a lesser evil. I choose the greater evil.\nNo Mercy for the Wicked: Ordinary foes might win my mercy, but my sworn enemies do not.\nBy Any Means Necessary: My qualms can't get in the way of exterminating my foes.\nRestitution: If my foes wreak ruin on the world, it is because I failed to stop them. I must help those harmed by their misdeeds.",
+      "3": {
+        "ABJURE ENEMY": {
+          "title": "Channel Divinity: Abjure Enemy", 
+          "description": "As an action, you present your holy symbol and speak a prayer of denunciation, using your Channel Divinity. Choose one creature within 60 feet of you that you can see. That creature must make a Wisdom saving throw, unless it is immune to being frightened. Fiends and undead have disadvantage on this saving throw.\nOn a failed save, the creature is frightened for 1 minute or until it takes any damage. While frightened, the creature's speed is O, and it can't benefit from any bonus to its speed.\nOn a successful save, the creature's speed is halved for 1 minute or until the creature takes any damage."
+        },
+        "VOW OF ENMITY": {
+          "title": "Channel Divinity: Vow of Enmity",
+          "description": "As a bonus action, you can utter a vow of enmity against a creature you can see within 10 feet of you, using your Channel Divinity. You gain advantage on attack rolls against the creature for 1 minute or until it drops to 0 hit points or falls unconscious."
+        }
+      },
+      "7": {
+        "RELENTLESS AVENGER": {
+          "title": "Relentless Avenger",
+          "description": "By 7th level, your supernatural focus helps you close off a foe's retreat. When you hit a creature with an Opportunity attack, you can move up to half your speed immediately after the attack and as part of the same reaction. This movement doesn’t provoke opportunity attacks."
+        }
+      },
+      "15": {
+        "SOUL OF VENGEANCE": {
+          "title": "Soul of Vengeance",
+          "description": "Starting at 15th level, the authority with which you speak your Vow of Enmity gives you greater power over your foe. When a creature under the effect of your Vow of Enmity makes an attack, you can use your reaction to make a melee weapon attack against that creature if it is within range."
+        }
+      },
+      "20": {
+        "AVENGING ANGEL": {
+          "title": "Avenging Angel",
+          "description": "At 20th level, you can assume the form of an angelic avenger. Using your action, you undergo a transformation. For 1 hour, you gain the following benefits:\nWings sprout from your back and grant you a flying speed of 60 feet.\nYou emanate an aura of menace in a 30-foot radius. The first time any enemy creature enters the aura or starts its turn there during a battle, the creature must succeed on a Wisdom saving throw or become frightened of you for 1 minute or until it takes any damage. Attack rolls against the frightened creature have advantage.\nOnce you use this feature, you can’t use it again until you finish a long rest."
+        }
+      }
     }
   },
-  "RANGER": {},
-  "ROGUE": {},
-  "SORCERER": {},
-  "WARLOCK": {},
-  "WIZARD": {}
+  "RANGER": {
+    "HUNTER": {
+      "title": "Hunter",
+      "description": "Emulating the Hunter archetype means accepting your place as a bulwark between civilization and the terrors of the wilderness. As you walk the Hunter’s path, you learn specialized techniques for fighting the threats you face, from rampaging ogres and hordes of orcs to towering giants and terrifying dragons.",
+      "3": {
+        "COLUSSUS SLAYER": {
+          "title": "Colussus Slayer", 
+          "description": "Your tenacity can wear down the most potent foes. When you hit a creature with a weapon attack, the creature takes an extra 1d8 damage if it's below its hit point maximum. You can deal this extra damage only once per turn."
+        },
+        "GIANT KILLER": {
+          "title": "Giant Killer", 
+          "description": "When a Large or larger creature within 5 feet of you hits or misses you with an attack, you can use your reaction to attack that creature immediately after its attack, provided that you can see the creature."
+        },
+        "HORDE BREAKER": {
+          "title": "Horde Breaker",
+          "description": "Once on each of your turns when you make a weapon attack, you can make another attack with the same weapon against a different creature that is within 5 feet of the original target and within range of your weapon."
+        }
+      },
+      "7": {
+        "ESCAPE THE HORDE": {
+          "title": "Escape the Horde",
+          "description": "Opportunity attacks against you are made with disadvantage."
+        },
+        "MULTIATTACK DEFENSE": {
+          "title": "Multiattack Defense",
+          "description": "When a creature hits you with an attack, you gain a +4 bonus to AC against all subsequent attacks made by that creature for the rest of the turn."
+        },
+        "STEEL WILL": {
+          "title": "Steel Will",
+          "description": "You have advantage on saving throws against being frightened."
+        }
+      },
+      "11": {
+        "VOLLEY": {
+          "title": "Volley",
+          "description": "You can use your action to make a ranged attack against any number of creatures within 10 feet of a point you can see within your weapon’s range. You must have ammunition for each target, as normal, and you make a separate attack roll for each target."
+        },
+        "WHIRLWIND ATTACK": {
+          "title": "Whirlwind Attack",
+          "description": "You can use your action to make a melee attack against any number of creatures within 5 feet of you, with a separate attack roll for each target."
+        }
+      },
+      "15": {
+        "EVASION": {
+          "title": "Evasion",
+          "description": "You can nimbly dodge out of the way of certain area effects, such as a red dragon's fiery breath or a lightning bolt spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail."
+        },
+        "STAND AGAINST THE TIDE": {
+          "title": "Stand Against the Tide",
+          "description": "When a hostile creature misses you with a melee attack, you can use your reaction to force that creature to repeat the same attack against another creature (other than itself) of your choice."
+        },
+        "UNCANNY DODGE": {
+          "title": "Uncanny Dodge",
+          "description": "When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack’s damage against you."
+        }
+      }
+    },
+    "BEAST MASTER": {
+      "title": "Beast Master",
+      "description": "The Beast Master archetype embodies a friendship between the civilized races and the beasts of the world. United in focus, beast and ranger work as one to fight the monstrous foes that threaten civilization and the wilderness alike. Emulating the Beast Master archetype means committing yourself to this ideal, working in partnership with an animal as its companion and friend.",
+      "3": {
+        "RANGER'S COMPANION": {
+          "title": "Ranger's Companion",
+          "description": "At 3rd level, you gain a beast companion that accompanies you on your adventures and is trained to fight alongside you. Choose a beast that is no larger than Medium and that has a challenge rating of 1/4 or lower (appendix D presents statistics for the hawk, mastiff, and panther as examples). Add your proficiency bonus to the beast's AC, attack rolls, and damage rolls, as well as to any saving throws and skills it is proficient in. Its hit point maximum equals its normal maximum or four times your ranger level, whichever is higher.\nThe beast obeys your commands as best as it can. It takes its turn on your initiative, though it doesn't take an action unless you command it to. On your turn, you can verbally command the beast where to move (no action required by you). You can use your action to verbally command it to take the Attack, Dash, Disengage, Dodge, or Help action. Once you have the Extra Attack feature, you can make one weapon attack yourself when you command the beast to take the Attack action.\nWhile traveling through your favored terrain with only the beast, you can move stealthily at a normal pace.\nIf the beast dies, you can obtain another one by spending 8 hours magically bonding with another beast that isn’t hostile to you, either the same type of beast as before or a different one."
+        }
+      },
+      "7": {
+        "EXCEPTIONAL TRAINING": {
+          "title": "Exceptional Training",
+          "description": "Beginning at 7th level, on any of your turns when your beast companion doesn’t attack, you can use a bonus action to command the beast to take the Dash, Disengage, Dodge, or Help action on its turn."
+        }
+      },
+      "11": {
+        "BEAST FURY": {
+          "title": "Beast Fury",
+          "description": "Starting at 11th level, your beast companion can make two attacks when you command it to use the Attack action."
+        }
+      },
+      "15": {
+        "SHARE SPELLS": {
+          "title": "Share Spells",
+          "description": "Beginning at 15th level, when you cast a spell targeting yourself, you can also affect your beast companion with the spell if the beast is within 30 feet of you."
+        }
+      }
+    }
+  },
+  "ROGUE": {
+    "THIEF": {
+      "title": "",
+      "description": "",
+      "3": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "9": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "13": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "17": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      }
+    },
+    "ASSASSIN": {
+      "title": "",
+      "description": "",
+      "3": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "9": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "13": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "17": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      }
+    },
+    "ARCANE TRICKSTER": {
+      "title": "",
+      "description": "",
+      "3": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "9": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "13": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "17": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      }
+    }
+  },
+  "SORCERER": {
+    "DRACONIC BLOODLINE": {
+      "title": "",
+      "description": "",
+      "1": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "6": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "14": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "18": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      }
+    },
+    "WILD MAGIC": {
+      "title": "",
+      "description": "",
+      "1": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "6": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "14": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "18": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      }
+    }
+  },
+  "WARLOCK": {
+    "THE ARCHFEY": {
+      "title": "",
+      "description": "",
+      "1": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "6": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "10": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "14": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      }
+    },
+    "THE FIEND": {
+      "title": "",
+      "description": "",
+      "1": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "6": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "10": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "14": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      }
+    },
+    "THE GREAT OLD ONE": {
+      "title": "",
+      "description": "",
+      "1": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "6": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "10": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "14": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      }
+    }
+  },
+  "WIZARD": {
+    "ABJURATION": {
+      "title": "",
+      "description": "",
+      "2": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "6": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "10": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "14": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      }
+    },
+    "CONJURATION": {
+      "title": "",
+      "description": "",
+      "2": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "6": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "10": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "14": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      }
+    },
+    "ENCHANTMENT": {
+      "title": "",
+      "description": "",
+      "2": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "6": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "10": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "14": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      }
+    },
+    "EVOCATION": {
+      "title": "",
+      "description": "",
+      "2": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "6": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "10": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "14": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      }
+    },
+    "ILLUSION": {
+      "title": "",
+      "description": "",
+      "2": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "6": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "10": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "14": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      }
+    },
+    "NECROMANCY": {
+      "title": "",
+      "description": "",
+      "2": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "6": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "10": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "14": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      }
+    },
+    "TRANSMUTATION": {
+      "title": "",
+      "description": "",
+      "2": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "6": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "10": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "14": {
+        "": {
+          "title": "",
+          "description": ""
+        }
+      }
+    }
+  }
 }

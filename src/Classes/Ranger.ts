@@ -31,10 +31,12 @@ export class Ranger extends PlayerClass {
       10,
       ["strength", "dexterity"]
     );
-    
+
     this.equipmentPack = equipmentPack;
-    
-    if(!multiclass){ this.weapons.push("LONGBOW")}
+
+    if (!multiclass) {
+      this.weapons.push("LONGBOW");
+    }
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];

@@ -813,15 +813,25 @@ export class FighterArchetype extends Archetype {
     return Archetype.getFeature("FIGHTER", archetypeName, level, featureName);
   }
 
-  static champion3(pc: PlayerCharacter, params: LevelingParams) {}
+  static champion3(pc: PlayerCharacter, params: LevelingParams) {
+    pc.addFeatures(FighterArchetype.getFeature("CHAMPION", "3", "IMPROVED CRITICAL"));
+  }
 
-  static champion7(pc: PlayerCharacter, params: LevelingParams) {}
+  static champion7(pc: PlayerCharacter, params: LevelingParams) {
+    pc.addFeatures(FighterArchetype.getFeature("CHAMPION", "7", "REMARKABLE ATHLETE"));
+  }
 
-  static champion10(pc: PlayerCharacter, params: LevelingParams) {}
+  static champion10(pc: PlayerCharacter, params: LevelingParams) {
+    pc.addFeatures(FighterArchetype.getFeature("CHAMPION", "10", "ADDITIONAL FIGHTING STYLE"));
+  }
 
-  static champion15(pc: PlayerCharacter, params: LevelingParams) {}
+  static champion15(pc: PlayerCharacter, params: LevelingParams) {
+    pc.addFeatures(FighterArchetype.getFeature("CHAMPION", "15", "SUPERIOR CRITICAL"));
+  }
 
-  static champion18(pc: PlayerCharacter, params: LevelingParams) {}
+  static champion18(pc: PlayerCharacter, params: LevelingParams) {
+    pc.addFeatures(FighterArchetype.getFeature("CHAMPION", "18", "SURVIVOR"));
+  }
 
   static battleMaster3(pc: PlayerCharacter, params: LevelingParams) {}
 
@@ -1052,50 +1062,50 @@ export class SorcererArchetype extends Archetype {
 }
 
 export class WarlockArchetype extends Archetype {
-    static archetypeHelper = {
-        "ARCHFEY": {
-          "1": WarlockArchetype.archfey1,
-          "6": WarlockArchetype.archfey6,
-          "10": WarlockArchetype.archfey10,
-          "14": WarlockArchetype.archfey14
-        },
-        "FIEND": {
-            "1": WarlockArchetype.fiend1,
-            "6": WarlockArchetype.fiend6,
-            "10": WarlockArchetype.fiend10,
-            "14": WarlockArchetype.fiend14
-        },
-        "GREAT OLD ONE": {
-            "1": WarlockArchetype.greatOldOne1,
-            "6": WarlockArchetype.greatOldOne6,
-            "10": WarlockArchetype.greatOldOne10,
-            "14": WarlockArchetype.greatOldOne14
-        },
-      };
-    
-      static archfey1(pc: PlayerCharacter, params: LevelingParams) {}
+  static archetypeHelper = {
+    ARCHFEY: {
+      "1": WarlockArchetype.archfey1,
+      "6": WarlockArchetype.archfey6,
+      "10": WarlockArchetype.archfey10,
+      "14": WarlockArchetype.archfey14,
+    },
+    FIEND: {
+      "1": WarlockArchetype.fiend1,
+      "6": WarlockArchetype.fiend6,
+      "10": WarlockArchetype.fiend10,
+      "14": WarlockArchetype.fiend14,
+    },
+    "GREAT OLD ONE": {
+      "1": WarlockArchetype.greatOldOne1,
+      "6": WarlockArchetype.greatOldOne6,
+      "10": WarlockArchetype.greatOldOne10,
+      "14": WarlockArchetype.greatOldOne14,
+    },
+  };
 
-      static archfey6(pc: PlayerCharacter, params: LevelingParams) {}
-      
-      static archfey10(pc: PlayerCharacter, params: LevelingParams) {}
-      
-      static archfey14(pc: PlayerCharacter, params: LevelingParams) {}
+  static archfey1(pc: PlayerCharacter, params: LevelingParams) {}
 
-      static fiend1(pc: PlayerCharacter, params: LevelingParams) {}
-      
-      static fiend6(pc: PlayerCharacter, params: LevelingParams) {}
-      
-      static fiend10(pc: PlayerCharacter, params: LevelingParams) {}
-      
-      static fiend14(pc: PlayerCharacter, params: LevelingParams) {}
+  static archfey6(pc: PlayerCharacter, params: LevelingParams) {}
 
-      static greatOldOne1(pc: PlayerCharacter, params: LevelingParams) {}
-      
-      static greatOldOne6(pc: PlayerCharacter, params: LevelingParams) {}
-      
-      static greatOldOne10(pc: PlayerCharacter, params: LevelingParams) {}
-      
-      static greatOldOne14(pc: PlayerCharacter, params: LevelingParams) {}
+  static archfey10(pc: PlayerCharacter, params: LevelingParams) {}
+
+  static archfey14(pc: PlayerCharacter, params: LevelingParams) {}
+
+  static fiend1(pc: PlayerCharacter, params: LevelingParams) {}
+
+  static fiend6(pc: PlayerCharacter, params: LevelingParams) {}
+
+  static fiend10(pc: PlayerCharacter, params: LevelingParams) {}
+
+  static fiend14(pc: PlayerCharacter, params: LevelingParams) {}
+
+  static greatOldOne1(pc: PlayerCharacter, params: LevelingParams) {}
+
+  static greatOldOne6(pc: PlayerCharacter, params: LevelingParams) {}
+
+  static greatOldOne10(pc: PlayerCharacter, params: LevelingParams) {}
+
+  static greatOldOne14(pc: PlayerCharacter, params: LevelingParams) {}
 }
 
 export class WizardArchetype extends Archetype {}

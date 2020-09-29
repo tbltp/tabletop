@@ -11,7 +11,7 @@ export class Inventory {
     EXPLORER: Inventory.explorer,
     PRIEST: Inventory.priest,
     SCHOLAR: Inventory.scholar,
-    NONE: Inventory.none
+    NONE: Inventory.none,
   };
 
   static burglar(): Item[] {
@@ -183,7 +183,7 @@ export class Inventory {
   }
 
   static none(): Item[] {
-      return [];
+    return [];
   }
 
   static acFromArmorType: {

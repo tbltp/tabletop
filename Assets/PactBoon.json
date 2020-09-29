@@ -1,14 +1,14 @@
 {
-    "CHAIN": {
-        "title": "",
-        "description": ""
-    },
-    "BLADE": {
-        "title": "",
-        "description": ""
-    },
-    "TOME": {
-        "title": "",
-        "description": ""
-    }
+  "CHAIN": {
+    "title": "",
+    "description": ""
+  },
+  "BLADE": {
+    "title": "",
+    "description": ""
+  },
+  "TOME": {
+    "title": "",
+    "description": ""
+  }
 }
