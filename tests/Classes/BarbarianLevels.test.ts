@@ -36,6 +36,12 @@ describe("Barbarian Class", () => {
       expect(pc.findResourceTraitByName("Rage")).toBeTruthy();
     });
 
+    test("gains the Rage Damage scaling trait", () => {
+      bnClass = new Barbarian([], []);
+      bnClass.apply(pc);
+      expect(pc.findScalingTraitByName("Rage Damage")).toBeTruthy();
+    });
+
     test("gains proficiency in Simple and Martial weapons", () => {
       bnClass = new Barbarian([], []);
       bnClass.apply(pc);
@@ -493,16 +499,12 @@ describe("Barbarian Class", () => {
         PlayerClass.quickClassLevelUp(pc, bnClass, bnArgs, 9);
       });
 
-      test("gains the Brutal Critical feature trait", () => {
-        expect(pc.findFeatureTraitByName("Brutal Critical")).toBeTruthy();
-      });
-
       test("gains the Brutal Critical scaling trait", () => {
         expect(pc.findScalingTraitByName("Brutal Critical")).toBeTruthy();
       });
 
       test("upgrades Rage bonus damage to 3", () => {
-        expect(pc.findResourceTraitByName("Rage").bonus).toBe(3);
+        expect(pc.findScalingTraitByName("Rage Damage").bonus).toBe(3);
       });
     });
 
@@ -687,7 +689,7 @@ describe("Barbarian Class", () => {
       });
 
       test("upgrades Rage bonus damage to 4", () => {
-        expect(pc.findResourceTraitByName("Rage").bonus).toBe(4);
+        expect(pc.findScalingTraitByName("Rage Damage").bonus).toBe(4);
       });
     });
 

@@ -77,6 +77,7 @@ export class Barbarian extends PlayerClass {
       bonus: 2,
     };
     pc.addResourceTraits(rage);
+    pc.addScalingTraits(rageDamage);
     this.pushBarbarianFeatures(pc, 1);
     pc.armorClasses.push({
       name: "Unarmored Defense",
