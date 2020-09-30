@@ -14,6 +14,7 @@ export interface Weapon {
   readonly damageType: string;
   readonly weight: string;
   readonly properties: string[];
+  fightingStyles?: string[];
 }
 
 export interface Armor {
@@ -28,6 +29,7 @@ export interface Armor {
   readonly strengthPrerequisite: number;
   readonly stealthDisadvantage: boolean;
   readonly weight: string;
+  fightingStyles?: string[];
 }
 
 export interface Item {

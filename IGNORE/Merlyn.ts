@@ -27,4 +27,6 @@ prace.apply(pc);
 pclass.apply(pc);
 pbackground.apply(pc);
 
+pclass.abilitiesAtLevels["2"](pc, {isNoInput: true});
+
 Jsonify.dumpToJSON(pc, "Merlyn");

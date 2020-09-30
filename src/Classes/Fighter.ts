@@ -41,7 +41,7 @@ export class Fighter extends PlayerClass {
    * FIGHTING STYLE
    */
 
-  fighterArchetype: string;
+  martialArchetype: string;
 
   abilitiesAtLevels = {
     "1": this.level1,
@@ -71,22 +71,31 @@ export class Fighter extends PlayerClass {
   }
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.addFeatures(FightingStyles[params.fightingStyle[0]]);
+    //fighting style
+    PlayerClass.addFightingStyle(pc, params.fightingStyle[0]);
+    //second wind
+    pc.addResourceTraits({
+      title: "Second Wind",
+      description: "Number of times you can Second Wind.",
+      resourceMax: { value: 1 },
+    });
     this.pushFighterFeatures(pc, 1);
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
-    this.pushFighterFeatures(pc, 2);
+    //action surge
     pc.addResourceTraits({
       title: "Action Surge",
       description: "Number of times you can Action Surge.",
       resourceMax: { value: 1 },
     });
+    this.pushFighterFeatures(pc, 2);
   }
 
-  level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.fighterArchetype = params.archetypeSelection[0].archetype;
-    FighterArchetype.archetypeHelper[this.fighterArchetype]["3"](pc, params);
+  level3(pc: PlayerCharacter, params: FighterLevelingParams): void {
+    //martial archetype
+    this.martialArchetype = params.archetypeSelection[0].archetype;
+    FighterArchetype.archetypeHelper[this.martialArchetype]["3"](pc, params);
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
@@ -107,7 +116,7 @@ export class Fighter extends PlayerClass {
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
-    FighterArchetype.archetypeHelper[this.fighterArchetype]["7"](pc, params);
+    FighterArchetype.archetypeHelper[this.martialArchetype]["7"](pc, params);
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
@@ -123,7 +132,7 @@ export class Fighter extends PlayerClass {
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
-    FighterArchetype.archetypeHelper[this.fighterArchetype]["10"](pc, params);
+    FighterArchetype.archetypeHelper[this.martialArchetype]["10"](pc, params);
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
@@ -143,7 +152,7 @@ export class Fighter extends PlayerClass {
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
-    FighterArchetype.archetypeHelper[this.fighterArchetype]["15"](pc, params);
+    FighterArchetype.archetypeHelper[this.martialArchetype]["15"](pc, params);
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
@@ -156,7 +165,7 @@ export class Fighter extends PlayerClass {
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {
-    FighterArchetype.archetypeHelper[this.fighterArchetype]["18"](pc, params);
+    FighterArchetype.archetypeHelper[this.martialArchetype]["18"](pc, params);
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
@@ -166,4 +175,8 @@ export class Fighter extends PlayerClass {
   level20(pc: PlayerCharacter, params: LevelingParams): void {
     pc.findResourceTraitByName("Extra Attack").resourceMax.value++;
   }
+}
+
+export interface FighterLevelingParams extends LevelingParams {
+  artisanToolProficiency?: string
 }

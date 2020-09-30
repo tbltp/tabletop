@@ -1,32 +1,32 @@
 import { PlayerClass, LevelingParams } from "./PlayerClass";
 import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { ResourceTrait } from "../Base/Interfaces";
-import * as SpellList from "../../Assets/SpellList.json";
-import { PaladinArchetype } from "./Archetypes";
+import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
+import { SpellSlotFactory } from "./SpellSlotFactory";
+import { WizardArchetype } from "./Archetypes";
 
 export class Wizard extends PlayerClass {
   constructor(
     skillProficiencies: string[],
     weapons: string[],
     armor: string[],
-    params: LevelingParams,
+    params: WizardLevelingParams,
     equipmentPack: string
   ) {
     super(
-      "Paladin",
+      "Wiizard",
       [],
       skillProficiencies,
-      ["Simple", "Martial"],
-      ["Light", "Medium", "Heavy", "Shield"],
+      ["Dagger", "Dart", "Sling", "Quarterstaff", "Crossbow, hand"],
+      [],
       [],
       weapons,
-      armor,
+      [],
       [],
       [],
       params,
-      "d10",
-      10,
-      ["wisdom", "charisma"]
+      "d6",
+      6,
+      ["intelligence", "wisdom"]
     );
 
     this.equipmentPack = equipmentPack;
@@ -38,10 +38,11 @@ export class Wizard extends PlayerClass {
   }
 
   /** TODO
-   * FIGHTING STYLE LVL2
+   * Component Pouch or Arcane Focus, Spellbook
+   * Figure out how to differentiate between spellbook spells and spells learned by leveling up, and add both to known spells.
    */
 
-  paladinOath: string;
+  arcaneTradition: string;
 
   abilitiesAtLevels = {
     "1": this.level1,
@@ -66,47 +67,139 @@ export class Wizard extends PlayerClass {
     "20": this.level20,
   };
 
-  pushPaladinFeatures(pc: PlayerCharacter, level: number) {
+  pushWizardFeatures(pc: PlayerCharacter, level: number) {
     this.pushClassFeatures(pc, level, "WIZARD");
   }
 
-  level1(pc: PlayerCharacter, params: LevelingParams): void {}
+  private handleWizardSpellSelections(
+    pc: PlayerCharacter,
+    params: WizardLevelingParams
+  ) {
+    this.handleSpellSelections(pc, params, SpellcastingAbility["WIZARD"]);
+  }
 
-  level2(pc: PlayerCharacter, params: LevelingParams): void {}
+  private applyWizardSpellSlots(pc: PlayerCharacter, level: number) {
+    SpellSlotFactory.applySpellSlotsAtLevel(pc, level, "PRIMARY");
+  }
 
-  level3(pc: PlayerCharacter, params: LevelingParams): void {}
+  level1(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 1);
+    this.pushWizardFeatures(pc, 1);
+    PlayerClass.pushCustomizedClassFeature(pc, 1, "WIZARD", "SPELLBOOK", params.spellBookSpells)
+  }
 
-  level4(pc: PlayerCharacter, params: LevelingParams): void {}
+  level2(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 2);
+    this.pushWizardFeatures(pc, 2);
+    this.arcaneTradition = params.archetypeSelection[0].archetype;
 
-  level5(pc: PlayerCharacter, params: LevelingParams): void {}
+    WizardArchetype.archetypeHelper[this.arcaneTradition]["2"](pc, params);
+  }
 
-  level6(pc: PlayerCharacter, params: LevelingParams): void {}
+  level3(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 3);
+  }
 
-  level7(pc: PlayerCharacter, params: LevelingParams): void {}
+  level4(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 4);
+    pc.improveAbilityScores(params.abilityScoreImprovement);
+  }
 
-  level8(pc: PlayerCharacter, params: LevelingParams): void {}
+  level5(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 5);
+  }
 
-  level9(pc: PlayerCharacter, params: LevelingParams): void {}
+  level6(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 6);
+    WizardArchetype.archetypeHelper[this.arcaneTradition]["6"](pc, params);
+  }
 
-  level10(pc: PlayerCharacter, params: LevelingParams): void {}
+  level7(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 7);
+  }
 
-  level11(pc: PlayerCharacter, params: LevelingParams): void {}
+  level8(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 8);
+    pc.improveAbilityScores(params.abilityScoreImprovement);
+  }
 
-  level12(pc: PlayerCharacter, params: LevelingParams): void {}
+  level9(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 9);
+  }
 
-  level13(pc: PlayerCharacter, params: LevelingParams): void {}
+  level10(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 10);
+    WizardArchetype.archetypeHelper[this.arcaneTradition]["10"](pc, params);
+  }
 
-  level14(pc: PlayerCharacter, params: LevelingParams): void {}
+  level11(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 11);
+  }
 
-  level15(pc: PlayerCharacter, params: LevelingParams): void {}
+  level12(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 12);
+    pc.improveAbilityScores(params.abilityScoreImprovement);
+  }
 
-  level16(pc: PlayerCharacter, params: LevelingParams): void {}
+  level13(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 13);
+  }
 
-  level17(pc: PlayerCharacter, params: LevelingParams): void {}
+  level14(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 14);
+    WizardArchetype.archetypeHelper[this.arcaneTradition]["14"](pc, params);
+  }
 
-  level18(pc: PlayerCharacter, params: LevelingParams): void {}
+  level15(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 15);
+  }
 
-  level19(pc: PlayerCharacter, params: LevelingParams): void {}
+  level16(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 6);
+    pc.improveAbilityScores(params.abilityScoreImprovement);
+  }
 
-  level20(pc: PlayerCharacter, params: LevelingParams): void {}
+  level17(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 17);
+  }
+
+  level18(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 18);
+    this.pushWizardFeatures(pc, 18)
+  }
+
+  level19(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 19);
+    pc.improveAbilityScores(params.abilityScoreImprovement);
+  }
+
+  level20(pc: PlayerCharacter, params: WizardLevelingParams): void {
+    this.handleWizardSpellSelections(pc, params);
+    this.applyWizardSpellSlots(pc, 20);
+    PlayerClass.pushCustomizedClassFeature(pc, 20, "WIZARD", "SIGNATURE SPELLS", params.signatureSpells);
+  }
+}
+
+interface WizardLevelingParams extends LevelingParams {
+  spellBookSpells: string[]
+  signatureSpells: string[]
 }

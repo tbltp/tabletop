@@ -44,10 +44,6 @@ export class Ranger extends PlayerClass {
     }
   }
 
-  /** TODO
-   * FIGHTING STYLE
-   */
-
   rangerArchetype: string;
 
   abilitiesAtLevels = {
@@ -104,8 +100,7 @@ export class Ranger extends PlayerClass {
   level2(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
     this.applyRangerSpellSlots(pc, 2);
-
-    // TO DO FIGHTING STYLE
+    PlayerClass.addFightingStyle(pc, params.fightingStyle[0]);
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {

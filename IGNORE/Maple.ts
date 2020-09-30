@@ -9,9 +9,9 @@ let pc: PlayerCharacter = new PlayerCharacter(8, 14, 12, 10, 15, 13);
 const prace = new HalfElf(
   "Elvish",
   ["wisdom", "charisma"],
-  ["Persuasion", "Investigation"]
+  ["persuasion", "investigation"]
 );
-const pclass = new Druid(["Insight", "Perception"], ["SCIMITAR"], ["SHIELD"], {
+const pclass = new Druid(["insight", "perception"], ["SCIMITAR"], ["SHIELD"], {
   isNoInput: false,
   spellSelection: ["POISON SPRAY", "PRODUCE FLAME"],
 });
@@ -20,5 +20,7 @@ const pbackground = new Criminal("Playing Card Set");
 prace.apply(pc);
 pclass.apply(pc);
 pbackground.apply(pc);
+
+pclass.abilitiesAtLevels["2"](pc, {isNoInput: false, archetypeSelection: [{archetype: "MOON"}]})
 
 Jsonify.dumpToJSON(pc, "Maple");

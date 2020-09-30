@@ -7,7 +7,7 @@ import { Jsonify } from "./Jsonify";
 let pc: PlayerCharacter = new PlayerCharacter(8, 16, 14, 14, 15, 13);
 const race = new WoodElf("Sylvan");
 const pclass = new Ranger(
-  ["Insight", "Perception", "Stealth"],
+  ["insight", "perception", "stealth"],
   ["DAGGER", "SPEAR"],
   ["LEATHER"],
   {
@@ -25,5 +25,7 @@ const background = new FolkHero(
 race.apply(pc);
 pclass.apply(pc);
 background.apply(pc);
+
+pclass.abilitiesAtLevels["2"](pc, {isNoInput: false, fightingStyle: ["ARCHERY"], spellSelection: ["HAIL OF THORNS", "HUNTER'S MARK"]})
 
 Jsonify.dumpToJSON(pc, "Faendal");

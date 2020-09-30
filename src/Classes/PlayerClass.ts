@@ -4,7 +4,7 @@ import * as ClassTraits from "../../Assets/ClassTraits.json";
 import * as Languages from "../../Assets/Languages.json";
 import * as Gear from "../../Assets/Gear.json";
 import * as ToolKits from "../../Assets/Tools.json";
-import * as Spells from "../../Assets/Spells.json";
+import * as FightingStyle from "../../Assets/FightingStyles.json";
 import * as Armor from "../../Assets/Armor.json";
 import * as Weapons from "../../Assets/Weapons.json";
 import { Inventory } from "../Base/Inventory";
@@ -76,7 +76,6 @@ export abstract class PlayerClass {
 
   protected addSkillProficiencies(pc: PlayerCharacter): void {
     for (let skill of this.skillProficiencies) {
-      console.log(skill);
       pc.skills[skill].proficient = true;
     }
   }
@@ -213,7 +212,25 @@ export abstract class PlayerClass {
       pclass.abilitiesAtLevels[i](pc, argsAry[i - 1]);
     }
   }
+  public static addFightingStyle(
+      pc: PlayerCharacter,
+      fightingStyle: string
+    ): void {
+        pc.addFeatures(FightingStyle[fightingStyle]);
+        /* FIGHTING STYLE TAGS / EFFECTS: SHOULD BE DONE, PROBABLY IN OWN FILE FOR EXTENSIBILITY / HOMEBREW.
+        switch(fightingStyle){
+            case 'ARCHERY':
+            case 'DEFENSE':
+            case 'DUELING':
+            case 'GREAT WEAPON FIGHTING':
+            case 'PROTECTION':
+            case 'TWO-WEAPON FIGHTING':
+        }
+        */
+  }
 }
+
+
 
 export interface LevelingParams {
   isNoInput: boolean;

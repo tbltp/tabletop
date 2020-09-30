@@ -16,4 +16,6 @@ race.apply(pc);
 background.apply(pc);
 pclass.apply(pc);
 
+pclass.abilitiesAtLevels["2"](pc, {isNoInput: true});
+
 Jsonify.dumpToJSON(pc, "Bunsen");

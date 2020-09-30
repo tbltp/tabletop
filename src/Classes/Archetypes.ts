@@ -5,6 +5,7 @@ import * as Archetypes from "../../Assets/Archetypes.json";
 import * as Spells from "../../Assets/Spells.json";
 import * as Languages from "../../Assets/Languages.json";
 import { Barbarian } from "./Barbarian";
+import { FighterLevelingParams } from "./Fighter";
 
 abstract class Archetype {
   static archetypeHelper: {
@@ -267,7 +268,7 @@ export class ClericArchetype extends Archetype {
       ClericArchetype.getFeature(
         "KNOWLEDGE",
         "2",
-        "CHANNEL DIVINITY: KNOWLEDGE OF THE AGES"
+        "CHANNEL DIVINITY: THE KNOWLEDGE OF THE AGES"
       )
     );
   }
@@ -767,10 +768,13 @@ export class DruidArchetype extends Archetype {
 
   static moon2(pc: PlayerCharacter, params: LevelingParams) {
     pc.addFeatures(DruidArchetype.getFeature("MOON", "2", "COMBAT WILD SHAPE"));
+    pc.addFeatures(DruidArchetype.getFeature("MOON", "2", "CIRCLE FORMS"));
+    pc.findScalingTraitByName("Wild Shape").challengeRating = 1;
   }
 
   static moon6(pc: PlayerCharacter, params: LevelingParams) {
     pc.addFeatures(DruidArchetype.getFeature("MOON", "6", "PRIMAL STRIKE"));
+    // NEED TO BOX CHALLENGE RATING FOR WILD SHAPE - IT'S MATH.FLOOR(druidLevel / 3).
   }
 
   static moon10(pc: PlayerCharacter, params: LevelingParams) {
@@ -833,7 +837,19 @@ export class FighterArchetype extends Archetype {
     pc.addFeatures(FighterArchetype.getFeature("CHAMPION", "18", "SURVIVOR"));
   }
 
-  static battleMaster3(pc: PlayerCharacter, params: LevelingParams) {}
+  static battleMaster3(pc: PlayerCharacter, params: FighterLevelingParams) {
+    // superiority dice
+    const superiorityDice: ResourceTrait = {
+      title: "Superiority Dice",
+      description: "Number of superiority dice you can use for maneuvers",
+      resourceMax: { value: 4 }
+    };
+    // artisan tool proficiency
+    pc.addFeatures(
+      FighterArchetype.getFeature("BATTLE MASTER", "3", "COMBAT SUPERIORITY"),
+      FighterArchetype.getFeature("BATTLE MASTER", "3", "STUDENT OF WAR")
+    );
+  }
 
   static battleMaster7(pc: PlayerCharacter, params: LevelingParams) {}
 

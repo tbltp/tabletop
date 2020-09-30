@@ -16,6 +16,7 @@ export class PlayerCharacter extends BaseCharacter {
 
   hitDie: string;
   attacks: PCAttack[] = [];
+  
   armorClasses: PCArmorClass[] = [
     {
       name: "Base",
@@ -24,9 +25,11 @@ export class PlayerCharacter extends BaseCharacter {
       bonus: this.baseStats.baseArmorClass.bonus,
     },
   ];
+
   speeds: PCSpeed[] = [
     { name: "Base Speed", base: this.speed, bonus: { value: 0 } },
   ];
+
   preparedSpells?: {
     title: string;
     level: { value: number };
