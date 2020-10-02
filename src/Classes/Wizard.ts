@@ -2,7 +2,7 @@ import { PlayerClass, LevelingParams } from "./PlayerClass";
 import { PlayerCharacter } from "../Base/PlayerCharacter";
 import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
 import { SpellSlotFactory } from "./SpellSlotFactory";
-import { WizardArchetype } from "./Archetypes";
+import { WizardArchetype } from "./Archetypes/WizardArchetype";
 
 export class Wizard extends PlayerClass {
   constructor(

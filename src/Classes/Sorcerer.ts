@@ -2,7 +2,7 @@ import { PlayerClass, LevelingParams } from "./PlayerClass";
 import { PlayerCharacter } from "../Base/PlayerCharacter";
 import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
 import * as Metamagic from "../../Assets/Metamagic.json";
-import { SorcererArchetype } from "./Archetypes";
+import { SorcererArchetype } from "./Archetypes/SorcererArchetype";
 import { SpellSlotFactory } from "./SpellSlotFactory";
 
 export class Sorcerer extends PlayerClass {

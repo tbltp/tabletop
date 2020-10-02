@@ -211,7 +211,7 @@
         "17": {
           "SUPREME HEALING": {
             "title": "Supreme Healer",
-            "description": "When you would normally roll one or more dice to restore hit points with a spell,you instead use the highest number possible for each die. For example, instead of restoring 2d6 hit points to a creature, you restore 12. "
+            "description": "When you would normally roll one or more dice to restore hit points with a spell,you instead use the highest number possible for each die. For example, instead of restoring 2d6 hit points to a creature, you restore 12."
           }
         }
       }
@@ -407,7 +407,7 @@
         "17": {
           "AVATAR OF BATTLE": {
             "title": "Avatar of Battle",
-            "description": "You gain resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons. "
+            "description": "You gain resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons."
           }
         }
       }
@@ -887,400 +887,476 @@
       }
     },
     "ASSASSIN": {
-      "title": "",
-      "description": "",
+      "title": "Assassin",
+      "description": "You focus your training on the grim art of death. Those who adhere to this archetype are diverse: hired killers, spies, bounty hunters, and even specially anointed priests trained to exterminate the enemies of their deity. Stealth, poison, and disguise help you eliminate your foes with deadly efficiency.",
       "3": {
-        "": {
-          "title": "",
-          "description": ""
+        "BONUS PROFICIENCIES": {
+          "title": "Bonus Proficiencies",
+          "description": "When you choose this archetype at 3rd level, you gain proficiency with the disguise kit and the poisoner’s kit."
+        },
+        "ASSASSINATE": {
+          "title": "Assassinate",
+          "description": "Starting at 3rd level, you are at your deadliest when you get the drop on your enemies. You have advantage on attack rolls against any creature that hasn’t taken a turn in the com bat yet. In addition, any hit you score against a creature that is surprised is a critical hit."
         }
       },
       "9": {
-        "": {
-          "title": "",
-          "description": ""
+        "INFILTRATION EXPERTISE": {
+          "title": "Infiltration Expertise",
+          "description": "Starting at 9th level, you can unfailingly create false identities for yourself. You must spend seven days and 25 gp to establish the history, profession, and affiliations for an identity. You can’t establish an identity that belongs to someone else. For example, you might acquire appropriate clothing, letters of introduction, and official looking certification to establish yourself as a member of a trading house from a remote city so you can insinuate yourself into the company of other wealthy merchants.\nThereafter, if you adopt the new identity as a disguise, other creatures believe you to be that person until given an obvious reason not to."
         }
       },
       "13": {
-        "": {
-          "title": "",
-          "description": ""
+        "IMPOSTER": {
+          "title": "Imposter",
+          "description": "At 13th level, you gain the ability to unerringly mimic another person’s speech, writing, and behavior. You must spend at least three hours studying these three components of the person’s behavior, listening to speech, examining handwriting, and observing mannerisms.\nYour ruse is indiscernible to the casual observer. If a wary creature suspects something is amiss, you have advantage on any Charisma (Deception) check you make to avoid detection."
         }
       },
       "17": {
-        "": {
-          "title": "",
-          "description": ""
+        "DEATH STRIKE": {
+          "title": "Death Strike",
+          "description": "Starting at 17th level, you become a master of instant death. W hen you attack and hit a creature that is surprised, it must make a Constitution saving throw (DC 8 + your Dexterity modifier + your proficiency bonus). On a failed save, double the damage of your attack against the creature."
         }
       }
     },
     "ARCANE TRICKSTER": {
-      "title": "",
-      "description": "",
+      "title": "Arcane Trickster",
+      "description": "Some rogues enhance their fine-honed skills of stealth and agility with magic, learning tricks of enchantment and illusion. These rogues include pickpockets and burglars, but also pranksters, mischief-makers, and a significant number of adventurers.",
       "3": {
-        "": {
-          "title": "",
-          "description": ""
+        "SPELLCASTING": {
+          "title": "Spellcasting",
+          "description": "When you reach 3rd level, you gain the ability to cast spells. See chapter 10 for the general rules of spellcasting and chapter 11 for the wizard spell list.\nCantrips: You learn three cantrips: mage hand and two other cantrips of your choice from the wizard spell list. You learn another wizard cantrip of your choice at 10th level.\nSpell Slots: The Arcane Trickster Spellcasting table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest. For example, if you know the 1st-level spell charm person and have a 1st-level and a 2nd-level spell slot available, you can cast charm person using either slot.\nSpells Known of 1st-Level and Higher: You know three 1st-level wizard spells of your choice, two of which you must choose from the enchantment and illusion spells on the wizard spell list. The Spells Known column of the Arcane Trickster Spellcasting table shows when you learn more wizard spells of 1st level or higher. Each of these spells must be an enchantment or illusion spell of your choice, and must be of a level for which you have spell slots. For instance, when you reach 7th level in this class, you can learn one new spell of 1st or 2nd level. The spells you learn at 8th, 14th, and 20th level can come from any school of magic. Whenever you gain a level in this class, you can replace one of the wizard spells you know with another spell of your choice from the wizard spell list. The new spell must be of a level for which you have spell slots, and it must be an enchantment or illusion spell, unless you’re replacing the spell you gained at 8th, 14th, or 20th level.\nSpellcasting Ability: Intelligence is your spellcasting ability for your wizard spells, since you learn your spells through dedicated study and memorization."
+        }, 
+        "MAGE HAND LEGERDEMAIN": {
+          "title": "Mage Hand Legerdemain",
+          "description": "Starting at 3rd level, when you cast Mage Hand, you can make the spectral hand invisible, and you can perform the following additional tasks with it:\nYou can stow one object the hand is holding in a container worn or carried by another creature.\nYou can retrieve an object in a container worn or carried by another creature.\nYou can use thieves’ tools to pick locks and disarm traps at range.\nYou can perform one of these tasks without being noticed by a creature if you succeed on a Dexterity (Sleight of Hand) check contested by the creature’s Wisdom (Perception) check.\nIn addition, you can use the bonus action granted by your Cunning Action to control the hand."
         }
       },
       "9": {
-        "": {
-          "title": "",
-          "description": ""
+        "MAGICAL AMBUSH": {
+          "title": "Magical Ambush",
+          "description": "Starting at 9th level, if you are hidden from a creature when you cast a spell on it, the creature has disadvantage on any saving throw it makes against the spell this turn."
         }
       },
       "13": {
-        "": {
-          "title": "",
-          "description": ""
+        "VERSATILE TRICKSTER": {
+          "title": "Versatile Trickster",
+          "description": "At 13th level, you gain the ability to distract targets with your Mage Hand. As a bonus action on your turn, you can designate a creature within 5 feet of the spectral hand created by the spell. Doing so gives you advantage on attack rolls against that creature until the end of the turn."
         }
       },
       "17": {
-        "": {
-          "title": "",
-          "description": ""
+        "SPELL THIEF": {
+          "title": "Spell Thief",
+          "description": "At 17th level, you gain the ability to magically steal the knowledge of how to cast a spell from another spellcaster.\n Immediately after a creature casts a spell that targets you or includes you in its area of effect, you can use your reaction to force the creature to make a saving throw with its spellcasting ability modifier. The DC equals your spell save DC. On a failed save, you negate the spell’s effect against you, and you steal the knowledge of the spell if it is at least 1st level and of a level you can cast (it doesn’t need to be a w izard spell). For the next 8 hours, you know the spell and can cast it using your spell slots. The creature can’t cast that spell until the 8 hours have passed.\n Once you use this feature, you can’t use it again until you finish a long rest."
         }
       }
     }
   },
   "SORCERER": {
     "DRACONIC BLOODLINE": {
-      "title": "",
-      "description": "",
+      "title": "Draconic Bloodline",
+      "description": "Your innate magic comes from draconic magic that was mingled with your blood or that o f your ancestors. Most often, sorcerers with this origin trace their descent back to a mighty sorcerer of ancient times w ho made a bargain with a dragon or who might even have claimed a dragon parent. Some of these bloodlines are well established in the world, but most are obscure. Any given sorcerer could be the first of a new bloodline, as a result of a pact or some other exceptional circumstance.",
       "1": {
-        "": {
-          "title": "",
-          "description": ""
+        "DRAGON ANCESTOR": {
+          "title": "Dragon Ancestor",
+          "description": "At 1st level, you choose one type of dragon as your ancestor. The damage type associated with each dragon is used by features you gain later.\nYou can speak, read, and write Draconic. Additionally, whenever you make a Charisma check when interacting with dragons, your proficiency bonus is doubled if it applies to the check."
+        },
+        "DRACONIC RESILIENCE": {
+          "title": "Draconic Resilience", 
+          "description": "As magic flows through your body, it causes physical traits of your dragon ancestors to emerge. At 1st level, your hit point maximum increases by 1 and increases by 1 again whenever you gain a level in this class.\nAdditionally, parts of your skin are covered by a thin sheen of dragon-like scales. When you aren’t wearing armor, your AC equals 13 + your Dexterity modifier."
         }
       },
       "6": {
-        "": {
-          "title": "",
-          "description": ""
+        "ELEMENTAL AFFINITY": {
+          "title": "Elemental Affinity",
+          "description": "Starting at 6th level, when you cast a spell that deals damage of the type associated with your draconic ancestry, add your Charisma modifier to that damage. At the same time, you can spend 1 sorcery point to gain resistance to that damage type for 1 hour."
         }
       },
       "14": {
-        "": {
-          "title": "",
-          "description": ""
+        "DRAGON WINGS": {
+          "title": "Dragon Wings",
+          "description": "At 14th level, you gain the ability to sprout a pair of dragon wings from your back, gaining a flying speed equal to your current speed. You can create these wings as a bonus action on your turn. They last until you dismiss them as a bonus action on your turn.\nYou can’t manifest your wings while wearing armor unless the arm or is made to accommodate them, and clothing not made to accommodate your wings might be destroyed when you manifest them."
         }
       },
       "18": {
-        "": {
-          "title": "",
-          "description": ""
+        "DRACONIC PRESENCE": {
+          "title": "Draconic Presence",
+          "description": "Beginning at 18th level, you can channel the dread presence of your dragon ancestor, causing those around you to become awestruck or frightened. As an action, you can spend 5 sorcery points to draw on this power and exude an aura of awe or fear (your choice) to a distance of 60 feet. For 1 minute or until you lose your concentration (as if you were casting a concentration spell), each hostile creature that starts its turn in this aura must succeed on a Wisdom saving throw or be charmed (if you chose awe) or frightened (if you chose fear) until the aura ends. A creature that succeeds on this saving throw is immune to your aura for 24 hours."
         }
       }
     },
     "WILD MAGIC": {
-      "title": "",
-      "description": "",
+      "title": "Wild Magic",
+      "description": "Your innate magic comes from the wild forces of chaos that underlie the order of creation. You might have endured exposure to some form of raw magic, perhaps through a planar portal leading to Limbo, the Elemental Planes, or the mysterious Far Realm. Perhaps you were blessed by a powerful fey creature or marked by a demon. Or your magic could be a fluke of your birth, with no apparent cause or reason. However it came to be, this chaotic magic churns within you, waiting for any outlet.",
       "1": {
-        "": {
-          "title": "",
-          "description": ""
+        "WILD MAGIC SURGE": {
+          "title": "Wild Magic Surge",
+          "description": "Starting w hen you choose this origin at 1st level, your spellcasting can unleash surges of untamed magic. Immediately after you cast a sorcerer spell of 1st level or higher, the DM can have you roll a d20. If you roll a 1, roll on the Wild Magic Surge table to create a random magical effect."
+        },
+        "TIDES OF CHAOS": {
+          "title": "Tides of Chaos",
+          "description": "Starting at 1st level, you can manipulate the forces of chance and chaos to gain advantage on one attack roll, ability check, or saving throw. Once you do so, you must finish a long rest before you can use this feature again.\nAny time before you regain the use of this feature, the DM can have you roll on the Wild Magic Surge table immediately after you cast a sorcerer spell of 1st level or higher. You then regain the use of this feature."
         }
       },
       "6": {
-        "": {
-          "title": "",
-          "description": ""
+        "BEND LUCK": {
+          "title": "Bend Luck",
+          "description": "Starting at 6th level, you have the ability to twist fate using your wild magic. When another creature you can see makes an attack roll, an ability check, or a saving throw, you can use your reaction and spend 2 sorcery points to roll 1d4 and apply the number rolled as a bonus or penalty (your choice) to the creature’s roll. You can do so after the creature rolls but before any effects of the roll occur."
         }
       },
       "14": {
-        "": {
-          "title": "",
-          "description": ""
+        "CONTROLLED CHAOS": {
+          "title": "Controlled Chaos",
+          "description": "At 14th level, you gain a modicum of control over the surges of your wild magic. Whenever you roll on the Wild Magic Surge table, you can roll twice and use either number."
         }
       },
       "18": {
-        "": {
-          "title": "",
-          "description": ""
+        "SPELL BOMBARDMENT": {
+          "title": "Spell Bombardment",
+          "description": "Beginning at 18th level, the harmful energy of your spells intensifies. When you roll damage for a spell and roll the highest number possible on any of the dice, choose one of those dice, roll it again and add that roll to the damage. You can use the feature only once per turn."
         }
       }
     }
   },
   "WARLOCK": {
     "THE ARCHFEY": {
-      "title": "",
-      "description": "",
+      "title": "The Archfey",
+      "description": "Your patron is a lord or lady of the fey, a creature of legend who holds secrets that w ere forgotten before the mortal races w ere born. This being’s motivations are often inscrutable, and sometimes whimsical, and might involve a striving for greater magical power or the settling of age-old grudges. Beings of this sort include the Prince of Frost; the Queen of Air and Darkness, ruler of the Gloaming Court; Titania of the Summer Court; her consort Oberon, the Green Lord; Hyrsam, the Prince of Fools; and ancient hags.",
       "1": {
-        "": {
-          "title": "",
-          "description": ""
+        "FEY PRESENCE": {
+          "title": "Fey Presence",
+          "description": "Starting at 1st level, your patron bestows upon you the ability to project the beguiling and fearsome presence of the fey. As an action, you can cause each creature in a 10-foot cube originating from you to make a Wisdom saving throw against your warlock spell save DC. The creatures that fail their saving throws are all charmed or frightened by you (your choice) until the end of your next turn.\nOnce you use this feature, you can’t use it again until you finish a short or long rest"
         }
       },
       "6": {
-        "": {
-          "title": "",
-          "description": ""
+        "MISTY ESCAPE": {
+          "title": "Misty Escape",
+          "description": "Starting at 6th level, you can vanish in a puff of mist in response to harm. W hen you take damage, you can use your reaction to turn invisible and teleport up to 60 feet to an unoccupied space you can see. You remain invisible until the start of your next turn or until you attack or cast a spell.\nOnce you use this feature, you can't use it again until you finish a short or long rest."
         }
       },
       "10": {
-        "": {
-          "title": "",
-          "description": ""
+        "BEGUILING DEFENSES": {
+          "title": "Beguiling Defenses",
+          "description": "Beginning at 10th level, your patron teaches you how to turn the mind-affecting magic of your enemies against them. You are immune to being charmed, and when another creature attempts to charm you, you can use your reaction to attempt to turn the charm back on that creature. The creature must succeed on a Wisdom saving throw against your warlock spell save DC or be charmed by you for 1 minute or until the creature takes any damage."
         }
       },
       "14": {
-        "": {
-          "title": "",
-          "description": ""
+        "DARK DELIRIUM": {
+          "title": "Dark Delirium",
+          "description": "Starting at 14th level, you can plunge a creature into an illusory realm. As an action, choose a creature that you can see within 60 feet of you. It must make a W isdom saving throw against your w arlock spell save DC. On a failed save, it is charm ed or frightened by you (your choice) for 1 minute or until your concentration is broken (as if you are concentrating on a spell). This effect ends early if the creature takes any damage.\nUntil this illusion ends, the creature thinks it is lost in a misty realm, the appearance of which you choose. The creature can see and hear only itself, you, and the illusion.\nYou must finish a short or long rest before you can use this feature again."
         }
       }
     },
     "THE FIEND": {
-      "title": "",
-      "description": "",
+      "title": "The Fiend",
+      "description": "You have made a pact with a fiend from the lower planes of existence, a being w hose aims are evil, even if you strive against those aims. Such beings desire the corruption or destruction of all things, ultimately including you. Fiends powerful enough to forge a pact include demon lords such as Demogorgon, Orcus, Fraz’Urb-luu, and Baphomet; archdevils such as Asmodeus, Dispater, Mephistopheles, and Belial; pit fiends and balors that are especially mighty; and ultroloths and other lords of the yugoloths.",
       "1": {
-        "": {
-          "title": "",
-          "description": ""
+        "DARK ONE'S BLESSING": {
+          "title": "Dark One's Blessing",
+          "description": "Starting at 1st level, when you reduce a hostile creature to 0 hit points, you gain temporary hit points equal to your Charisma modifier + your warlock level (minimum of 1)."
         }
       },
       "6": {
-        "": {
-          "title": "",
-          "description": ""
+        "DARK ONE'S OWN LUCK": {
+          "title": "Dark One's Own Luck",
+          "description": "Starting at 6th level, you can call on your patron to alter fate in your favor. When you make an ability check or a saving throw, you can use this feature to add a d 10 to your roll. You can do so after seeing the initial roll but before any o f the roll’s effects occur.\nOnce you use this feature, you can’t use it again until you finish a short or long rest."
         }
       },
       "10": {
-        "": {
-          "title": "",
-          "description": ""
+        "FIENDISH RESILIENCE": {
+          "title": "Fiendish Resilience",
+          "description": "Starting at 10th level, you can choose one damage type when you finish a short or long rest. You gain resistance to that damage type until you choose a different one with this feature. Dam age from magical weapons or silver weapons ignores this resistance."
         }
       },
       "14": {
-        "": {
-          "title": "",
-          "description": ""
+        "HURL THROUGH HELL": {
+          "title": "Hurl Through Hell",
+          "description": "Starting at 14th level, when you hit a creature with an attack, you can use this feature to instantly transport the target through the lower planes. The creature disappears and hurtles through a nightmare landscape.\nAt the end of your next turn, the target returns to the space it previously occupied, or the nearest unoccupied space. If the target is not a fiend, it takes 10d10 psychic damage as it reels from its horrific experience.\nOnce you use this feature, you can’t use it again until you finish a long rest."
         }
       }
     },
     "THE GREAT OLD ONE": {
-      "title": "",
-      "description": "",
+      "title": "The Great Old Onee",
+      "description": "Your patron is a mysterious entity w hose nature is utterly foreign to the fabric of reality. It might come from the Far Realm, the space beyond reality, or it could be one of the elder gods known only in legends. Its motives are incomprehensible to mortals, and its knowledge so immense and ancient that even the greatest libraries pale in comparison to the vast secrets it holds. The Great Old One might be unaware of your existence or entirely indifferent to you, but the secrets you have learned allow you to draw your magic from it.\nEntities of this type include Ghaunadar, called That Which Lurks; Tharizdun, the Chained God; Dendar, the Night Serpent; Zargon, the Returner; Great Cthulhu; and other unfathomable beings.",
       "1": {
-        "": {
-          "title": "",
-          "description": ""
+        "AWAKENED MIND": {
+          "title": "Awakened Mind",
+          "description": "Starting at 1st level, your alien knowledge gives you the ability to touch the minds of other creatures. You can communicate telepathically with any creature you can see within 30 feet of you. You don’t need to share a language with the creature for it to understand your telepathic utterances, but the creature must be able to understand at least one language."
         }
       },
       "6": {
-        "": {
-          "title": "",
-          "description": ""
+        "ENTROPIC WARD": {
+          "title": "Entropic Ward",
+          "description": "At 6th level, you learn to magically ward yourself against attack and to turn an enem y’s failed strike into good luck for yourself. When a creature makes an attack roll against you, you can use your reaction to impose disadvantage on that roll. If the attack misses you, your next attack roll against the creature has advantage if you make it before the end of your next turn.\nOnce you use this feature, you can’t use it again until you finish a short or long rest."
         }
       },
       "10": {
-        "": {
-          "title": "",
-          "description": ""
+        "THOUGHT SHIELD": {
+          "title": "Thought Shield",
+          "description": "Starting at 10th level, your thoughts can’t be read by telepathy or other means unless you allow it. You also have resistance to psychic damage, and whenever a creature deals psychic damage to you, that creature takes the same amount of damage that you do."
         }
       },
       "14": {
-        "": {
-          "title": "",
-          "description": ""
+        "CREATE THRALL": {
+          "title": "Create Thrall",
+          "description": "At 14th level, you gain the ability to infect a humanoid’s mind with the alien magic of your patron. You can use your action to touch an incapacitated humanoid. That creature is then charmed by you until a remove curse spell is cast on it, the charm ed condition is removed from it, or you use this feature again.\nYou can communicate telepathically with the charmed creature as long as the two of you are on the same plane of existence."
         }
       }
     }
   },
   "WIZARD": {
     "ABJURATION": {
-      "title": "",
-      "description": "",
+      "title": "School of Abjuration",
+      "description": "The School of Abjuration emphasizes magic that blocks, banishes, or protects. Detractors of this school say that its tradition is about denial, negation rather than positive assertion. You understand, however, that ending harmful effects, protecting the weak, and banishing evil influences is anything but a philosophical void. It is a proud and respected vocation.\nCalled abjurers, members of this school are sought when baleful spirits require exorcism , when important locations must be guarded against magical spying, and when portals to other planes of existence must be closed.",
       "2": {
-        "": {
-          "title": "",
-          "description": ""
+        "ABJURATION SAVANT": {
+          "title": "Abjuration Savant",
+          "description": "Beginning when you select this school at 2nd level, the gold and time you must spend to copy an abjuration spell into your spellbook is halved."
+        },
+        "ARCANE WARD": {
+          "title": "Arcane Ward",
+          "description": "Starting at 2nd level, you can weave magic around yourself for protection. W hen you cast an abjuration spell of 1st level or higher, you can simultaneously use a strand of the spell’s magic to create a magical ward on yourself that lasts until you finish a long rest. The ward has hit points equal to twice your wizard level + your Intelligence modifier. Whenever you take damage, the ward takes the damage instead. If this damage reduces the ward to 0 hit points, you take any remaining damage.\nWhile the ward has 0 hit points, it can’t absorb damage, but its magic remains. Whenever you cast an abjuration spell of 1st level or higher, the ward regains a number of hit points equal to twice the level of the spell.\nOnce you create the ward, you can't create it again until you finish a long rest."
         }
       },
       "6": {
-        "": {
-          "title": "",
-          "description": ""
+        "PROJECTED WARD": {
+          "title": "Projected Ward",
+          "description": "Starting at 6th level, when a creature that you can see within 30 feet of you takes damage, you can use your reaction to cause your Arcane Ward to absorb that damage. If this damage reduces the ward to 0 hit points, the warded creature takes any remaining damage."
         }
       },
       "10": {
-        "": {
-          "title": "",
-          "description": ""
+        "IMPROVED ABJURATION": {
+          "title": "Improved Abjuration",
+          "description": "Beginning at 10th level, when you cast an abjuration spell that requires you to make an ability check as a part of casting that spell (as in Counterspell and Dispel magic), you add your proficiency bonus to that ability check."
         }
       },
       "14": {
-        "": {
-          "title": "",
-          "description": ""
+        "SPELL RESISTANCE": {
+          "title": "Spell Resistance",
+          "description": "Starting at 14th level, you have advantage on saving throws against spells.\nFurthermore, you have resistance against the damage of spells."
         }
       }
     },
     "CONJURATION": {
-      "title": "",
-      "description": "",
+      "title": "School of Conjuration",
+      "description": "As a conjurer, you favor spells that produce objects and creatures out o f thin air. You can conjure billowing clouds of killing fog or summon creatures from elsewhere to fight on your behalf. As your mastery grows, you learn spells of transportation and can teleport yourself across vast distances, even to other planes of existence, in an instant.",
       "2": {
-        "": {
-          "title": "",
-          "description": ""
+        "CONJURATION SAVANT": {
+          "title": "Conjuration Savant",
+          "description": "Beginning when you select this school at 2nd level, the gold and time you must spend to copy a conjuration spell into your spellbook is halved."
+        },
+        "MINOR CONJURATION": {
+          "title": "Minor Conjuration",
+          "description": "Starting at 2nd level when you select this school, you can use your action to conjure up an inanimate object in your hand or on the ground in an unoccupied space that you can see within 10 feet of you. This object can be no larger than 3 feet on a side and weigh no m ore than 10 pounds, and its form must be that of a nonmagical object that you have seen. The object is visibly magical, radiating dim light out to 5 feet.\nThe object disappears after 1 hour, when you use this feature again, or if it takes any damage."
         }
       },
       "6": {
-        "": {
-          "title": "",
-          "description": ""
+        "BENIGN TRANSPOSITION": {
+          "title": "Benign Transposition",
+          "description": "Starting at 6th level, you can use your action to teleport up to 30 feet to an unoccupied space that you can see. Alternatively, you can choose a space within range that is occupied by a Small or Medium creature. If that creature is willing, you both teleport, swapping places.\nOnce you use this feature, you can’t use it again until you finish a long rest or you cast a conjuration spell of 1st level or higher."
         }
       },
       "10": {
-        "": {
-          "title": "",
-          "description": ""
+        "FOCUSED CONJURATION": {
+          "title": "Focused Conjuration",
+          "description": "Beginning at 10th level, while you are concentrating on a conjuration spell, your concentration can’t be broken as a result of taking damage."
         }
       },
       "14": {
-        "": {
-          "title": "",
-          "description": ""
+        "DURABLE SUMMONS": {
+          "title": "Durable Summons",
+          "description": "Starting at 14th level, any creature that you summon or create with a conjuration spell has 30 temporary hit points."
+        }
+      }
+    },
+    "DIVINATION": {
+      "title": "School of Divination",
+      "description": "The counsel of a diviner is sought by royalty and commoners alike, for all seek a clearer understanding of the past, present, and future. As a diviner, you strive to part the veils of space, time, and consciousness so that you can see clearly. You work to master spells of discernment, remote viewing, supernatural knowledge, and foresight.",
+      "2": {
+        "DIVINATION SAVANT": {
+          "title": "Divination Savant",
+          "description": "Beginning when you select this school at 2nd level, the gold and time you must spend to copy a divination spell into your spellbook is halved."
+        },
+        "PORTENT": {
+          "title": "Portent",
+          "description": "Starting at 2nd level when you choose this school, glimpses of the future begin to press in on your awareness. When you finish a long rest, roll two d20s and record the numbers rolled. You can replace any attack roll, saving throw, or ability check made by you or a creature that you can see with one of these foretelling rolls. You must choose to do so before the roll, and you can replace a roll in this way only once per turn.\nEach foretelling roll can be used only once. W hen you finish a long rest, you lose any unused foretelling rolls."
+        }
+      },
+      "6": {
+        "EXPERT DIVINATION": {
+          "title": "Expert Divination",
+          "description": "Beginning at 6th level, casting divination spells comes so easily to you that it expends only a fraction of your spellcasting efforts. When you cast a divination spell of 2nd level or higher using a spell slot, you regain one expended spell slot. The slot you regain must be of a level lower than the spell you cast and can’t be higher than 5th level."
+        }
+      },
+      "10": {
+        "THE THIRD EYE": {
+          "title": "The Third Eye",
+          "description": "Starting at 10th level, you can use your action to increase your powers of perception. W hen you do so, choose one of the following benefits, which lasts until you are incapacitated or you take a short or long rest. You can’t use the feature again until you finish a rest.\nDarkvision: You gain darkvision out to a range of 60 feet, as described in chapter 8.\nEthereal Sight: You can see into the Ethereal Plane within 60 feet of you.\nGreater Comprehension: You can read any language.\nSee Invisibility: You can see invisible creatures and objects within 10 feet of you that are within line of sight."
+        }
+      },
+      "14": {
+        "GREATER PORTENT": {
+          "title": "Greater Portent",
+          "description": "Starting at 14th level, the visions in your dreams intensify and paint a m ore accurate picture in your mind of what is to come. You roll three d20s for your Portent feature, rather than two."
         }
       }
     },
     "ENCHANTMENT": {
-      "title": "",
-      "description": "",
+      "title": "School of Enchantment",
+      "description": "As a member of the Sch ool of Enchantment, you have honed your ability to magically entrance and beguile other people and monsters. Some enchanters are peacemakers w ho bewitch the violent to lay down their arms and charm the cruel into showing mercy. Others are tyrants w ho magically bind the unwilling into their service. Most enchanters fall somewhere in between.",
       "2": {
-        "": {
-          "title": "",
-          "description": ""
+        "ENCHANTMENT SAVANT": {
+          "title": "Enchantment Savant",
+          "description": "Beginning when you select this school at 2nd level, the gold and time you must spend to copy an enchantment spell into your spellbook is halved."
+        },
+        "HYPNOTIC GAZE": {
+          "title": "Hypnotic Gaze",
+          "description": "Starting at 2nd level when you choose this school, your soft words and enchanting gaze can magically enthrall another creature. As an action, choose one creature that you can see within 5 feet of you. If the target can see or hear you, it must succeed on a Wisdom saving throw against your wizard spell save DC or be charmed by you until the end of your next turn. The charmed creature’s speed drops to 0, and the creature is incapacitated and visibly dazed.\nOn subsequent turns, you can use your action to maintain this effect, extending its duration until the end of your next turn. However, the effect ends if you move m ore than 5 feet away from the creature, if the creature can neither see nor hear you, or if the creature takes damage.\nOnce the effect ends, or if the creature succeeds on its initial saving throw against this effect, you can’t use this feature on that creature again until you finish a long rest."
         }
       },
       "6": {
-        "": {
-          "title": "",
-          "description": ""
+        "INSTINCTIVE CHARM": {
+          "title": "Instinctive Charm",
+          "description": "Beginning at 6th level, when a creature you can see within 30 feet of you makes an attack roll against you, you can use your reaction to divert the attack, provided that another creature is within the attack’s range. The attacker must make a Wisdom saving throw against your wizard spell save DC. On a failed save, the attacker must target the creature that is closest to it, not including you or itself. If multiple creatures are closest, the attacker chooses which one to target. On a successful save, you can’t use this feature on the attacker again until you finish a long rest.\nYou must choose to use this feature before knowing whether the attack hits or misses. Creatures that can’t be charmed are immune to this effect."
         }
       },
       "10": {
-        "": {
-          "title": "",
-          "description": ""
+        "SPLIT ENCHANTMENT": {
+          "title": "Split Enchantment",
+          "description": "Starting at 10th level, when you cast an enchantment spell of 1st level or higher that targets only one creature, you can have it target a second creature."
         }
       },
       "14": {
-        "": {
-          "title": "",
-          "description": ""
+        "ALTER MEMORIES": {
+          "title": "Alter Memories",
+          "description": "At 14th level, you gain the ability to make a creature unaware of your magical influence on it. W hen you cast an enchantment spell to charm one or m ore creatures, you can alter one creature’s understanding so that it remains unaware of being charmed.\nAdditionally, once before the spell expires, you can use your action to try to make the chosen creature forget some of the time it spent charm ed. The creature must succeed on an Intelligence saving throw against your w izard spell save DC or lose a number of hours of its memories equal to 1 + your Charisma modifier (minimum 1). You can make the creature forget less time, and the amount of time can’t exceed the duration of your enchantment spell."
         }
       }
     },
     "EVOCATION": {
-      "title": "",
-      "description": "",
+      "title": "School of Evocation",
+      "description": "You focus your study on magic that creates powerful elemental effects such as bitter cold, searing flame, rolling thunder, crackling lightning, and burning acid. Some evokers find employment in military forces, serving as artillery to blast enemy armies from afar. Others use their spectacular power to protect the weak, while some seek their own gain as bandits, adventurers, or aspiring tyrants.",
       "2": {
-        "": {
-          "title": "",
-          "description": ""
+        "EVOCATION SAVANT": {
+          "title": "Evocation Savant",
+          "description": "Beginning when you select this school at 2nd level, the gold and time you must spend to copy an evocation spell into your spellbook is halved."
+        },
+        "SCULPT SPELLS": {
+          "title": "Sculpt Spells",
+          "description": "Beginning at 2nd level, you can create pockets of relative safety within the effects of your evocation spells. When you cast an evocation spell that affects other creatures that you can see, you can choose a number of them equal to 1 + the spell’s level. The chosen creatures automatically succeed on their saving throws against the spell, and they take no damage if they would normally take half damage on a successful save."
         }
       },
       "6": {
-        "": {
-          "title": "",
-          "description": ""
+        "POTENT CANTRIP": {
+          "title": "Potent Cantrip",
+          "description": "Starting at 6th level, your damaging cantrips affect even creatures that avoid the brunt of the effect. W hen a creature succeeds on a saving throw against your cantrip, the creature takes half the cantrip’s damage (if any) but suffers no additional effect from the cantrip."
         }
       },
       "10": {
-        "": {
-          "title": "",
-          "description": ""
+        "EMPOWERED EVOCATION": {
+          "title": "Empowered Evocation",
+          "description": "Beginning at 10th level, you can add your Intelligence modifier to the damage roll of any wizard evocation spell you cast."
         }
       },
       "14": {
-        "": {
-          "title": "",
-          "description": ""
+        "OVERCHANNEL": {
+          "title": "Overchannel",
+          "description": "Starting at 14th level, you can increase the power of your simpler spells. When you cast a w izard spell of 5th level or lower that deals damage, you can deal maximum damage with that spell.\nThe first time you do so, you suffer no adverse effect. If you use this feature again before you finish a long rest, you take 2d 12 necrotic dam age for each level of the spell, immediately after you cast it. Each time you use this feature again before finishing a long rest, the necrotic damage per spell level increases by 1d12. This damage ignores resistance and immunity."
         }
       }
     },
     "ILLUSION": {
-      "title": "",
-      "description": "",
+      "title": "School of Illusion",
+      "description": "You focus your studies on magic that dazzles the senses, befuddles the mind, and tricks even the wisest folk. Your magic is subtle, but the illusions crafted by your keen mind make the impossible seem real. Some illusionists—including many gnome wizards—are benign tricksters w ho use their spells to entertain. Others are m ore sinister masters of deception, using their illusions to frighten and fool others for their personal gain.",
       "2": {
-        "": {
-          "title": "",
-          "description": ""
+        "ILLUSION SAVANT": {
+          "title": "Illusion Savant",
+          "description": "Beginning when you select this school at 2nd level, the gold and time you must spend to copy an illusion spell into your spellbook is halved."
+        },
+        "IMPROVED MINOR ILLUSION": {
+          "title": "Improved Minor Illusion",
+          "description": "W hen you choose this school at 2nd level, you learn the Minor Illusion cantrip. If you already know this cantrip, you learn a different wizard cantrip of your choice. The cantrip doesn’t count against your number of cantrips known. When you cast Minor Illusion, you can create both a sound and an image with a single casting of the spell."
         }
       },
       "6": {
-        "": {
-          "title": "",
-          "description": ""
+        "MALLEABLE ILLUSIONS": {
+          "title": "Malleable Illusions",
+          "description": "Starting at 6th level, when you cast an illusion spell that has a duration of 1 minute or longer, you can use your action to change the nature of that illusion (using the spell’s norm al parameters for the illusion), provided that you can see the illusion."
         }
       },
       "10": {
-        "": {
-          "title": "",
-          "description": ""
+        "ILLUSORY SELF": {
+          "title": "Illusory Self",
+          "description": "Beginning at 10th level, you can create an illusory duplicate of yourself as an instant, almost instinctual reaction to danger. W hen a creature makes an attack roll against you, you can use your reaction to interpose the illusory duplicate between the attacker and yourself. The attack automatically misses you, then the illusion dissipates.\nOnce you use this feature, you can’t use it again until you finish a short or long rest."
         }
       },
       "14": {
-        "": {
-          "title": "",
-          "description": ""
+        "ILLUSORY REALITY": {
+          "title": "Illusory Reality",
+          "description": "By 14th level, you have learned the secret of weaving shadow m agic into your illusions to give them a sem ireality. W hen you cast an illusion spell of 1st level or higher, you can choose one inanimate, nonm agical object that is part of the illusion and make that object real. You can do this on your turn as a bonus action while the spell is ongoing. The object remains real for 1 minute. For example, you can create an illusion of a bridge over a chasm and then make it real long enough for your allies to cross.\nThe object can’t deal damage or otherwise directly harm anyone."
         }
       }
     },
     "NECROMANCY": {
-      "title": "",
-      "description": "",
+      "title": "Necromancy",
+      "description": "The School of Necromancy explores the cosmic forces of life, death, and undeath. As you focus your studies in this tradition, you learn to manipulate the energy that animates all living things. As you progress, you learn to sap the life force from a creature as your magic destroys its body, transforming that vital energy into magical power you can manipulate.\nMost people see necromancers as menacing, or even villainous, due to the close association with death. Not all necromancers are evil, but the forces they manipulate are considered taboo by many societies.",
       "2": {
-        "": {
-          "title": "",
-          "description": ""
+        "NECROMANCY SAVANT": {
+          "title": "Necromany Savant",
+          "description": "Beginning when you select this school at 2nd level, the gold and time you must spend to copy a necromancy spell into your spellbook is halved."
+        },
+        "GRIM HARVEST": {
+          "title": "Grim Harvest",
+          "description": "At 2nd level, you gain the ability to reap life energy from creatures you kill with your spells. Once per turn when you kill one or m ore creatures with a spell of 1st level or higher, you regain hit points equal to twice the spell’s level, or three times its level if the spell belongs to the School of Necromancy. You don’t gain this benefit for killing constructs or undead."
         }
       },
       "6": {
-        "": {
-          "title": "",
-          "description": ""
+        "UNDEAD THRALLS": {
+          "title": "Undead Thralls", 
+          "description": "At 6th level, you add the Animate Dead spell to your spellbook if it is not there already. When you cast Animate Dead, you can target one additional corpse or pile of bones, creating another zombie or skeleton, as appropriate.\nWhenever you create an undead using a necromancy spell, it has additional benefits:\nThe creature’s hit point maximum is increased by an amount equal to your wizard level.\nThe creature adds your proficiency bonus to its weapon damage rolls."
         }
       },
       "10": {
-        "": {
-          "title": "",
-          "description": ""
+        "INJURED TO UNDEATH": {
+          "title": "Injured to Undeath",
+          "description": "Beginning at 10th level, you have resistance to necrotic damage, and your hit point maximum can't be reduced. You have spent so much time dealing with undead and the forces that animate them that you have become inured to some of their worst effects."
         }
       },
       "14": {
-        "": {
-          "title": "",
-          "description": ""
+        "COMMAND UNDEAD": {
+          "title": "Command Undead",
+          "description": "Starting at 14th level, you can use magic to bring undead under your control, even those created by other wizards. As an action, you can choose one undead that you can see within 60 feet of you. That creature must make a Charisma saving throw against your wizard spell save DC. If it succeeds, you can’t use this feature on it again. If it fails, it becomes friendly to you and obeys your com m ands until you use this feature again.\nIntelligent undead are harder to control in this way. If the target has an Intelligence of 8 or higher, it has advantage on the saving throw. If it fails the saving throw and has an Intelligence of 12 or higher, it can repeat the saving throw at the end of every hour until it succeeds and breaks free."
         }
       }
     },
     "TRANSMUTATION": {
-      "title": "",
-      "description": "",
+      "title": "School of Transmutation",
+      "description": "You are a student of spells that modify energy and matter. To you, the world is not a fixed thing, but eminently mutable, and you delight in being an agent of change. You wield the raw stuff of creation and learn to alter both physical forms and mental qualities. Your magic gives you the tools to become a smith on reality’s forge.\nSome transmuters are tinkerers and pranksters, turning people into toads and transforming copper into silver for fun and occasional profit. Others pursue their magical studies with deadly seriousness, seeking the power of the gods to make and destroy worlds.",
       "2": {
-        "": {
-          "title": "",
-          "description": ""
+        "TRANSMUTATION SAVANT": {
+          "title": "Transmutation Savant",
+          "description": "Beginning when you select this school at 2nd level, the gold and time you must spend to copy a transmutation spell into your spellbook is halved."
+        },
+        "MINOR ALCHEMY": {
+          "title": "Minor Alchemy",
+          "description": "Starting at 2nd level when you select this school, you can temporarily alter the physical properties of one nonmagical object, changing it from one substance into another. You perform a special alchemical procedure on one object com posed entirely of wood, stone (but not a gemstone), iron, copper, or silver, transforming it into a different one of those materials. For each 10 minutes you spend performing the procedure, you can transform up to 1 cubic foot of material. After 1 hour, or until you lose your concentration (as if you were concentrating on a spell), the material reverts to its original substance."
         }
       },
       "6": {
-        "": {
-          "title": "",
-          "description": ""
+        "TRANSMUTER'S STONE": {
+          "title": "Transmuter's Stone",
+          "description": "Starting at 6th level, you can spend 8 hours creating a transmuter’s stone that stores transmutation magic. You can benefit from the stone yourself or give it to another creature. A creature gains a benefit of your choice as long as the stone is in the creature’s possession. When you create the stone, choose the benefit from the following options:\nDarkvision out to a range of 60 feet, as described in chapter 8\nAn increase to speed of 10 feet while the creature is unencumbered\nProficiency in Constitution saving throws\nResistance to acid, cold, fire, lightning, or thunder damage (your choice whenever you choose this benefit)\nEach time you cast a transmutation spell of 1st level or higher, you can change the effect of your stone if the stone is on your person.\nIf you create a new transmuter’s stone, the previous one ceases to function."
         }
       },
       "10": {
-        "": {
-          "title": "",
-          "description": ""
+        "SHAPECHANGER": {
+          "title": "Shapechanger",
+          "description": "At 10th level, you add the Polymorph spell to your spellbook, if it is not there already. You can cast Polymorph without expending a spell slot. When you do so, you can target only yourself and transform into a beast whose challenge rating is 1 or lower.\nOnce you cast Polymorph in this way, you can’t do so again until you finish a short or long rest, though you can still cast it normally using an available spell slot."
         }
       },
       "14": {
-        "": {
-          "title": "",
-          "description": ""
+        "MASTER TRANSMUTER": {
+          "title": "Master Transmuter",
+          "description": "Starting at 14th level, you can use your action to consume the reserve of transmutation magic stored within your transmuter’s stone in a single burst. When you do so, choose one of the following effects. Your transmuter’s stone is destroyed and can’t be remade until you finish a long rest.\nMajor Transformation: You can transmute one nonmagical object—no larger than a 5-foot cube—into another nonmagical object of similar size and m ass and of equal or lesser value. You must spend 10 minutes handling the object to transform it.\n Panacea: You remove all curses, diseases, and poisons affecting a creature that you touch with the transmuter’s stone. The creature also regains all its hit points.\n Restore Life: You cast the raise dead spell on a creature you touch with the transmuter’s stone, without expending a spell slot or needing to have the spell in your spellbook.\nRestore Youth: You touch the transmuter’s stone to a willing creature, and that creature’s apparent age is reduced by 3d10 years, to a minimum of 13 years. This effect doesn’t extend the creature’s lifespan."
         }
       }
     }

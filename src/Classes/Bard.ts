@@ -1,7 +1,7 @@
 import { PlayerClass, LevelingParams } from "./PlayerClass";
 import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { ResourceTrait, ScalingTrait } from "../Base/Interfaces";
-import { BardArchetype } from "./Archetypes";
+import { BardArchetype } from "./Archetypes/BardArchetype";
 import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
 import { SpellSlotFactory } from "./SpellSlotFactory";
 

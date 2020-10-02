@@ -3,7 +3,7 @@ import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { ISpell, Spell, ResourceTrait, ScalingTrait } from "../Base/Interfaces";
 import * as ClassTraits from "../../Assets/ClassTraits.json";
 import * as Spells from "../../Assets/Spells.json";
-import { ClericArchetype } from "./Archetypes";
+import { ClericArchetype } from "./Archetypes/ClericArchetype";
 import * as SpellList from "../../Assets/SpellList.json";
 import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
 import { SpellSlotFactory } from "./SpellSlotFactory";

@@ -1,7 +1,7 @@
 import { PlayerClass, LevelingParams } from "./PlayerClass";
 import { ResourceTrait, Trait, ScalingTrait } from "../Base/Interfaces";
 import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { BarbarianArchetype } from "./Archetypes";
+import { BarbarianArchetype } from "./Archetypes/BarbarianArchetype";
 
 export class Barbarian extends PlayerClass {
   constructor(skillProficiencies: string[], weapons: string[]) {

@@ -3,7 +3,7 @@ import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { ResourceTrait, ScalingTrait } from "../Base/Interfaces";
 import * as SpellList from "../../Assets/SpellList.json";
 import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
-import { DruidArchetype } from "./Archetypes";
+import { DruidArchetype } from "./Archetypes/DruidArchetype";
 import { SpellSlotFactory } from "./SpellSlotFactory";
 
 export class Druid extends PlayerClass {

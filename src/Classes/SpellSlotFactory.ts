@@ -46,7 +46,15 @@ export class SpellSlotFactory {
       "17": [4, 3, 3, 3, 1],
       "19": [4, 3, 3, 3, 2],
     },
-    TERTIARY: {},
+    TERTIARY: {
+      "3": [2, 0, 0, 0],
+      "4": [3, 0, 0, 0],
+      "7": [4, 2, 0, 0],
+      "10": [4, 3, 0, 0],
+      "13": [4, 3, 2, 0],
+      "16": [4, 3, 3, 0],
+      "19": [4, 3, 3, 1],
+    },
   };
 
   private static spellSlotsByLevelSecondary: { [key: string]: number[] } = {};

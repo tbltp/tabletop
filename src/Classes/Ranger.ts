@@ -3,7 +3,7 @@ import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { ResourceTrait } from "../Base/Interfaces";
 import * as SpellList from "../../Assets/SpellList.json";
 import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
-import { RangerArchetype } from "./Archetypes";
+import { RangerArchetype } from "./Archetypes/RangerArchetype";
 import { SpellSlotFactory } from "./SpellSlotFactory";
 
 export class Ranger extends PlayerClass {

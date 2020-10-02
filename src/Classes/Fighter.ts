@@ -2,7 +2,7 @@ import { PlayerClass, LevelingParams } from "./PlayerClass";
 import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { ResourceTrait } from "../Base/Interfaces";
 import * as FightingStyles from "../../Assets/FightingStyles.json";
-import { FighterArchetype } from "./Archetypes";
+import { FighterArchetype } from "./Archetypes/FighterArchetype";
 
 export class Fighter extends PlayerClass {
   constructor(
@@ -38,7 +38,7 @@ export class Fighter extends PlayerClass {
   }
 
   /** TODO
-   * FIGHTING STYLE
+   * ELDRITCH KNIGHT SPELLS LEARNED AT LEVELS 3, 4, 7, 8, 10, 11, 13, 14, 16, 19, 20, ADD TERTIARY SPELL SLOTS
    */
 
   martialArchetype: string;

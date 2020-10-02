@@ -2,7 +2,7 @@ import { PlayerClass, LevelingParams } from "./PlayerClass";
 import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { ResourceTrait } from "../Base/Interfaces";
 import * as Languages from "../../Assets/Languages.json";
-import { RangerArchetype, MonkArchetype } from "./Archetypes";
+import { MonkArchetype } from "./Archetypes/MonkArchetype";
 
 export class Monk extends PlayerClass {
   constructor(
@@ -50,6 +50,7 @@ export class Monk extends PlayerClass {
   }
 
   /** TODO
+   *  WAY OF THE FOUR ELEMENTS - Add Elemental Disciplines, Max Key Point Leveling at lvl 5, 9, 13, 17
    */
 
   monasticTradition: string;

@@ -16,7 +16,7 @@ export class PlayerCharacter extends BaseCharacter {
 
   hitDie: string;
   attacks: PCAttack[] = [];
-  
+
   armorClasses: PCArmorClass[] = [
     {
       name: "Base",

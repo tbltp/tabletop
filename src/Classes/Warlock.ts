@@ -3,7 +3,7 @@ import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { ResourceTrait } from "../Base/Interfaces";
 import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
 import * as PactBoon from "../../Assets/PactBoon.json";
-import { WarlockArchetype } from "./Archetypes";
+import { WarlockArchetype } from "./Archetypes/WarlockArchetype";
 
 export class Warlock extends PlayerClass {
   constructor(

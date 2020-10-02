@@ -2,7 +2,7 @@ import { PlayerClass, LevelingParams } from "./PlayerClass";
 import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { ResourceTrait } from "../Base/Interfaces";
 import * as SpellList from "../../Assets/SpellList.json";
-import { PaladinArchetype, RogueArchetype } from "./Archetypes";
+import { RogueArchetype } from "./Archetypes/RogueArchetype";
 
 export class Rogue extends PlayerClass {
   constructor(
