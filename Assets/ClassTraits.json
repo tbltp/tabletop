@@ -362,133 +362,110 @@
         "description": "You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. Choose one type of favored terrain. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in. While traveling for an hour or more in your favored terrain, you gain the following benefits:  - Difficult terrain doesn’t slow your group’s travel.  - Your group can’t become lost except by magical means.  -  Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.  - If you are traveling alone, you can move stealthily at a normal pace.  -  When you forage, you find twice as much food as you normally would.  - While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area."
       }
     },
-    "2": {},
     "3": {
       "PRIMEVAL AWARENESS": {
-        "title": "",
-        "description": ""
+        "title": "Primeval Awareness",
+        "description": "Beginning at 3rd level, you can use your action and expend one ranger spell slot to focus your awareness on the region around you. For 1 minute per level of the spell slot you expend, you can sense whether the following types of creatures are present within 1 mile of you (or within up to 6 miles if you are in your favored terrain): aberrations, celestials, dragons, elementals, fey, fiends, and undead. This feature doesn’t reveal the creatures’ location or number."
       }
     },
-    "4": {},
     "5": {
       "EXTRA ATTACK": {
-        "title": "",
-        "description": ""
+        "title": "Extra Attack",
+        "description": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn. "
       }
     },
-    "6": {},
-    "7": {},
     "8": {
       "LAND'S STRIDE": {
-        "title": "",
-        "description": ""
+        "title": "Land's Stride",
+        "description": "Starting at 8th level, moving through nonmagical difficult terrain costs you no extra movement. You can also pass through nonmagical plants without being slowed by them and without taking damage from them if they have thorns, spines, or a similar hazard.\nIn addition, you have advantage on saving throws against plants that are magically created or manipulated to impede movement, such those created by the Entangle spell."
       }
     },
-    "9": {},
     "10": {
       "HIDE IN PLAIN SIGHT": {
-        "title": "",
-        "description": ""
+        "title": "Hide in Plain Sight",
+        "description": "Starting at 10th level, you can spend 1 minute creating camouflage for yourself. You must have access to fresh mud, dirt, plants, soot, and other naturally occurring materials with which to create your camouflage.\nOnce you are camouflaged in this way, you can try to hide by pressing yourself up against a solid surface, such as a tree or wall, that is at least as tall and w ide as you are. You gain a +10 bonus to Dexterity (Stealth) checks as long as you remain there without moving or taking actions. Once you move or take an action or a reaction, you must camouflage yourself again to gain this benefit."
       }
     },
-    "11": {},
-    "12": {},
-    "13": {},
     "14": {
       "VANISH": {
-        "title": "",
-        "description": ""
+        "title": "Vanish",
+        "description": "Starting at 14th level, you can use the Hide action as a bonus action on your turn. Also, you can’t be tracked by nonm agical means, unless you choose to leave a trail."
       }
     },
-    "15": {},
-    "16": {},
-    "17": {},
     "18": {
       "FERAL SENSES": {
-        "title": "",
-        "description": ""
+        "title": "Feral Senses",
+        "description": "At 18th level, you gain preternatural senses that help you fight creatures you can’t see. When you attack a creature you can’t see, your inability to see it doesn’t impose disadvantage on your attack rolls against it.\nYou are also aware of the location of any invisible creature within 30 feet of you, provided that the creature isn’t hidden from you and you aren’t blinded or deafened."
       }
     },
-    "19": {},
     "20": {
       "FOE SLAYER": {
-        "title": "",
-        "description": ""
+        "title": "Foe Slayer",
+        "description": "At 20th level, you becom e an unparalleled hunter of your enemies. O nce on each of your turns, you can add your W isdom modifier to the attack roll or the damage roll of an attack you make against one o f your favored enemies. You can choose to use this feature before or after the roll, but before any effects of the roll are applied."
       }
     }
   },
   "ROGUE": {
     "1": {
       "EXPERTISE": {
-        "title": "",
-        "description": ""
+        "title": "Expertise",
+        "description": "At 1st level, choose two of your skill proficiencies, or one of your skill proficiencies and your proficiency with thieves’ tools. Your proficiency bonus is doubled for any ability check you m ake that uses either of the chosen proficiencies.\nAt 6th level, you can choose two more of your proficiencies (in skills or with thieves’ tools) to gain this benefit."
       },
       "SNEAK ATTACK": {
-        "title": "",
-        "description": ""
+        "title": "Sneak Attack",
+        "description": "Beginning at 1st level, you know how to strike subtly and exploit a foe’s distraction. Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.\nYou don’t need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn’t incapacitated, and you don’t have disadvantage on the attack roll.\nThe amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack colum n of the Rogue table."
       },
       "THIEVES' CANT": {
-        "title": "",
-        "description": ""
+        "title": "Thieves' Cant",
+        "description": "During your rogue training you learned thieves’ cant, a secret m ix of dialect, jargon, and code that allows you to hide messages in seemingly norm al conversation. Only another creature that knows thieves’ cant understands such messages. It takes four times longer to convey such a message than it does to speak the same idea plainly.\nIn addition, you understand a set of secret signs and symbols used to convey short, simple messages, such as whether an area is dangerous or the territory of a thieves’ guild, whether loot is nearby, or whether the people in an area are easy marks or will provide a safe house for thieves on the run."
       }
     },
     "2": {
       "CUNNING ACTION": {
-        "title": "",
-        "description": ""
+        "title": "Cunning Action",
+        "description": "Starting at 2nd level, your quick thinking and agility allow you to move and act quickly. You can take a bonus action on each of your turns in combat. This action can be used only to take the Dash, Disengage, or Hide action."
       }
     },
-    "3": {},
-    "4": {},
     "5": {
       "UNCANNY DODGE": {
-        "title": "",
-        "description": ""
+        "title": "Uncanny Dodge",
+        "description": "Starting at 5th level, when an attacker that you can see hits you with an attack, you can use your reaction to halve the attack’s damage against you."
       }
     },
-    "6": {},
     "7": {
       "EVASION": {
-        "title": "",
-        "description": ""
+        "title": "Evasion",
+        "description": "Beginning at 7th level, you can nimbly dodge out of the way of certain area effects, such as a red dragon’s fiery breath or an Ice Storm spell. When you are subjected to an effect that allows you to m ake a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail."
       }
     },
-    "8": {},
-    "9": {},
-    "10": {},
     "11": {
       "RELIABLE TALENT": {
-        "title": "",
-        "description": ""
+        "title": "Reliable Talent",
+        "description": "By 11th level, you have refined your chosen skills until they approach perfection. Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10."
       }
     },
-    "12": {},
-    "13": {},
     "14": {
       "BLINDSENSE": {
-        "title": "",
-        "description": ""
+        "title": "Blindsense",
+        "description": "Starting at 14th level, if you are able to hear, you are aware of the location of any hidden or invisible creature within 10 feet of you."
       }
     },
     "15": {
       "SLIPPERY MIND": {
-        "title": "",
-        "description": ""
+        "title": "Slippery Mind",
+        "description": "By 15th level, you have acquired greater mental strength. You gain proficiency in Wisdom saving throws."
       }
     },
-    "16": {},
-    "17": {},
     "18": {
       "ELUSIVE": {
-        "title": "",
-        "description": ""
+        "title": "Elusive",
+        "description": "Beginning at 18th level, you are so evasive that attackers rarely gain the upper hand against you. No attack roll has advantage against you while you aren’t incapacitated."
       }
     },
-    "19": {},
     "20": {
       "STROKE OF LUCK": {
-        "title": "",
-        "description": ""
+        "title": "Stroke of Luck",
+        "description": "At 20th level, you have an uncanny knack for succeeding when you need to. If your attack misses a target within range, you can turn the miss into a hit. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20.\nOnce you use this feature, you can’t use it again until you finish a short or long rest."
       }
     }
   },
