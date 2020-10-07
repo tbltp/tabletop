@@ -23,6 +23,10 @@ export class WarlockArchetype extends Archetype {
         "14": WarlockArchetype.greatOldOne14,
       },
     };
+
+    static getFeature(archetypeName: string, level: string, featureName: string) {
+      return Archetype.getFeature("WARLOCK", archetypeName, level, featureName);
+    }
   
     static archfey1(pc: PlayerCharacter, params: LevelingParams) {}
   
@@ -40,9 +44,13 @@ export class WarlockArchetype extends Archetype {
   
     static fiend14(pc: PlayerCharacter, params: LevelingParams) {}
   
-    static greatOldOne1(pc: PlayerCharacter, params: LevelingParams) {}
+    static greatOldOne1(pc: PlayerCharacter, params: LevelingParams) {
+      
+    }
   
-    static greatOldOne6(pc: PlayerCharacter, params: LevelingParams) {}
+    static greatOldOne6(pc: PlayerCharacter, params: LevelingParams) {
+
+    }
   
     static greatOldOne10(pc: PlayerCharacter, params: LevelingParams) {}
   

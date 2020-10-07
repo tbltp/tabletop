@@ -86,7 +86,7 @@ export class Monk extends PlayerClass {
     this.pushMonkFeatures(pc, 1);
     pc.armorClasses.push({
       name: "Unarmored Defense",
-      base: 0,
+      base: 10,
       modifier: [
         pc.abilityScores.dexterity.modifier,
         pc.abilityScores.wisdom.modifier,

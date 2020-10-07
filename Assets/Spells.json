@@ -4113,6 +4113,20 @@
     "ritual": false,
     "spellAttack": false
   },
+  "SHAPE WATER": {
+    "name": "Shape Water",
+    "description": "You choose an area of water that you can see within range and that fits within a 5-foot cube. You manipulate it in one of the following ways:\n• You instantaneously move or otherwise change the flow of the water as you direct, up to 5 feet in any direction. This movement doesn’t have enough force to cause damage. \n • You cause the water to form into simple shapes and animate at your direction. This change lasts for 1 hour. \n • You change the water’s color or opacity. The water must be changed in the same way throughout. This change lasts for 1 hour. \n • You freeze the water, provided that there are no creatures in it. The water unfreezes in 1 hour. If you cast this spell multiple times, you can have no more than two of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action.",
+    "school": "transmutation",
+    "castTime": "1 action",
+    "range": "30 feet",
+    "concentration": false,
+    "duration": "Instantaneous, up to 1 hour",
+    "components": ["S"],
+    "material": "",
+    "minimumLevel": "0",
+    "ritual": false,
+    "spellAttack": false
+  },
   "SHATTER": {
     "name": "Shatter",
     "description": "A sudden loud ringing noise, painfully intense, erupts from a point of your choice within range. Each creature in a 10-foot-radius sphere centered on that point must make a Constitution saving throw. A creature takes 3d8 thunder damage on a failed save, or half as much damage on a successful one. A creature made of inorganic material such as stone, crystal, or metal has disadvantage on this saving throw. A nonmagical object that isn't being worn or carried also takes the damage if it's in the spell's area. At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for cach slot level above 2nd.",

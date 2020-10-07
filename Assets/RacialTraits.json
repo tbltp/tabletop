@@ -114,5 +114,21 @@
   "REACH TO THE BLAZE": {
     "title": "Reach to the Blaze",
     "description": "You know the produce flame cantrip. Once you reach 3rd level, you can cast the burning hands spell once with this trait as a 1st-level spell, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for these spells."
+  },
+  "ACID RESISTANCE": {
+    "title": "Acid Resistance",
+    "description": "You have resistance to acid damage."
+  },
+  "AMPHIBIOUS": {
+    "title": "Amphibious",
+    "description": "You can breathe air and water."
+  },
+  "SWIM": {
+    "title": "Swim",
+    "description": "You have a swimming speed of 30 feet."
+  },
+  "CALL TO THE WAVE": {
+    "title": "Call to the Wave",
+    "description": "You know the shape water cantrip. When you reach 3rd level, you can cast the create or destroy water spell as a 2nd-level spell once with this trait, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for these spells."
   }
 }

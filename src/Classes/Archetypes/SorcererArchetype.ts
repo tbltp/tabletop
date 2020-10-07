@@ -21,6 +21,7 @@ export class SorcererArchetype extends Archetype {
     /** TO DO
      * Draconic Resilience: HpMax++ every level, add armor class
      * Dragon Ancestor: Figure out how to reflect choice, and damage in one line.
+     * Wild Magic Surge: DM Tool, Nice-To-Have, WildMagicSurge.json, + roller.
      */
 
     static getFeature(archetypeName: string, level: string, featureName: string) {
@@ -56,7 +57,7 @@ export class SorcererArchetype extends Archetype {
     }
   
     static wildMagic18(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addFeatures(SorcererArchetype.getFeature("WILD MAGIC", "3", "SPELL BOMBARDMENT"))
+      pc.addFeatures(SorcererArchetype.getFeature("WILD MAGIC", "17", "SPELL BOMBARDMENT"))
     }
 }
   

@@ -55,7 +55,7 @@ export class RogueArchetype extends Archetype {
     }
   
     static assassin13(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addFeatures(RogueArchetype.getFeature("ASSASSIN", "13", "IMPOSTOR"));
+      pc.addFeatures(RogueArchetype.getFeature("ASSASSIN", "13", "IMPOSTER"));
     }
   
     static assassin17(pc: PlayerCharacter, params: LevelingParams) {
