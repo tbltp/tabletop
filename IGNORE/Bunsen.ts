@@ -17,5 +17,6 @@ background.apply(pc);
 pclass.apply(pc);
 
 pclass.abilitiesAtLevels["2"](pc, {isNoInput: true});
+pclass.abilitiesAtLevels["3"](pc, {isNoInput: false, archetypeSelection: [{archetype: "BERSERKER"}]});
 
 Jsonify.dumpToJSON(pc, "Bunsen");

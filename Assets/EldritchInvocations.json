@@ -1,0 +1,268 @@
+{
+    "AGONIZING BLAST": {
+        "title": "Agonizing Blast",
+        "description": "When you cast Eldritch Blast, add your charisma modifier to the damage it deals on a hit.",
+        "prereqs": [
+            { 
+                "type": "Cantrip",
+                "value": "Eldritch Blast"
+            }
+        ]
+    },
+    "ARMOR OF SHADOWS": {
+        "title": "Agonizing Blast",
+        "description": "You can cast Mage Armor on yourself at will, without expending a spell slot or material components."
+    },
+    "ASCENDANT STEP": {
+        "title": "Ascendant Step",
+        "description": "You can Levitate on yourself at will, without expending a spell slot or material components.",
+        "prereqs": [
+            {
+                "type": "Level",
+                "value": "9"
+            }
+        ]
+    },
+    "BEAST SPEECH": {
+        "title": "Beast Speech",
+        "description": "You can cast Speak With Animals at will, without expending a spell slot."
+    },
+    "BEGUILING INFLUENCE": {
+        "title": "Beguiling Influence",
+        "description": "You gain proficiency in the Deception and Persuasion skills"
+    },
+    "BEWITCHING WHISPERS": {
+        "title": "Bewitching Whispers",
+        "description": "You can cast Compulsion once using a warlock spell slot. You can't do so again until you finish a long rest.",
+        "prereqs": [
+            {
+                "type": "Level",
+                "value": "7"
+            }
+        ]
+    },
+    "BOOK OF ANCIENT SECRETS": {
+        "title": "Book of Ancient Secrets",
+        "description": "You can now inscribe magical rituals in your Book of Shadows. Choose two 1st-level spells that have the ritual tag from any class’s spell list. The spells appear in the book and don’t count against the number of spells you know. With your Book of Shadows in hand, you can cast the chosen spells as rituals. You can’t cast the spells except as rituals, unless you’ve learned them by some other means. You can also cast a warlock spell you know as a ritual if it has the ritual tag\nOn your adventures, you can add other ritual spells to your Book of Shadows. W hen you find such a spell, you can add it to the book if the spell’s level is equal to or less than half your warlock level (rounded up) and if you can spare the time to transcribe the spell. For each level o f the spell, the transcription process takes 2 hours and costs 50 gp for the rare inks needed to inscribe it.",
+        "prereqs": [
+            {
+                "type": "Feature",
+                "value": "Pact of the Tome"
+            }
+        ]
+    },
+    "CHAINS OF CARCERI": {
+        "title": "Chains of Carceri",
+        "description": "You can cast Hold Monster at will—targeting a celestial, fiend, or elemental—without expending a spell slot or material components. You must finish a long rest before you can use this invocation on the same creature again.",
+        "prereqs": [
+            {
+                "type": "Level",
+                "value": "15"
+            },
+            {
+                "type": "Feature",
+                "value": "Pact of the Chain"
+            }
+        ]
+    },
+    "DEVIL'S SIGHT": {
+        "title": "Devil's Sight",
+        "description": "You can see normally in darkness, both magical and nonmagical, to a distance of 120 feet."
+    },
+    "DREADFUL WORD": {
+        "title": "Dreadful Word",
+        "description": "You can cast Confusion once using a warlock spell slot.  You can't do so again until you finish a long rest.",
+        "prereqs": [
+            {
+                "type": "Level",
+                "value": "7"
+            }
+        ]
+    },
+    "ELDRITCH SIGHT": {
+        "title": "Eldritch Sight",
+        "description": "You can Detect Magic at wil, without expending a spell slot."
+    },
+    "ELDRITCH SPEAR": {
+        "title": "Eldritch Spear",
+        "description": "When you cast Elditch Blast, its range is 300 feet.",
+        "prereqs": [
+            {
+                "type": "Cantrip",
+                "value": "Eldritch Blast"
+            }
+        ]
+    },
+    "EYES OF THE RUNE KEEPER": {
+        "title": "Eyes of the Rune Keeper",
+        "description": "You can read all writing."
+    },
+    "FIENDISH VIGOR": {
+        "title": "Fiendish Vigor",
+        "description": "You can cast False Life on yourself at will as a 1st-level spell, without expending a spell slot or material components."
+    },
+    "GAZE OF TWO MINDS": {
+        "title": "Gaze of Two Minds",
+        "description": "You can use your action to touch a willing humanoid and perceive through its senses until the end of your next turn. As long as the creature is on the same plane of existence as you, you can use your action on subsequent turns to maintain this connection, extending the duration until the end of your next turn. While perceiving through the other creature’s senses, you benefit from any special senses possessed by that creature, and you are blinded and deafened to your own surroundings."
+    },
+    "LIFEDRINKER": {
+        "title": "Lifedrinker",
+        "description": "When you hit a creature with your pact weapon, the creature takes extra necrotic damage equal to your Charisma modifier (minimum 1).",
+        "prereqs": [
+            {
+                "type": "Level",
+                "value": "12"
+            },
+            {
+                "type": "Feature",
+                "value": "Pact of the Blade"
+            }
+        ]
+    },
+    "MASK OF MANY FACES": {
+        "title": "Mask of Many Faces",
+        "description": "You can cast Disguise Self at will, without expending a spell slot."
+    },
+    "MASTER OF MYRIAD FORMS": {
+        "title": "Master of Myriad Forms",
+        "description": "You can cast Alter Self at will, without expending a spell slot.",
+        "prereqs": [
+            {
+                "type": "Level",
+                "value": "15"
+            }
+        ]
+    },
+    "MINIONS OF CHAOS": {
+        "title": "Minions of Chaos",
+        "description": "You can cast Conjure Elemental once using a warlock spell slot.  You can't do so again until you finish a long rest.",
+        "prereqs": [
+            {
+                "type": "Level",
+                "value": "9"
+            }
+        ]
+    },
+    "MIRE THE MIND": {
+        "title": "Mire the Mind",
+        "description": "You can cast Slow once using a warlock spell slot.  You can't do so again until you finish a long rest.",
+        "prereqs": [
+            {
+                "type": "Level",
+                "value": "5"
+            }
+        ]
+    },
+    "MISTY VISIONS": {
+        "title": "Misty Visions",
+        "description": "You can cast Silent Image at will, without expending a spell slot or material components."
+    },
+    "ONE WITH SHADOWS": {
+        "title": "One With Shadows",
+        "description": "When you are in an area of dim light or darkness, you can use your action to become invisible until you move or take an action or a reaction.",
+        "prereqs": [
+            {
+                "type": "Level",
+                "value": "5"
+            }
+        ]
+    },
+    "OTHERWORDLY LEAP": {
+        "title": "Otherwordly Leap",
+        "description": "You can cast jump",
+        "prereqs": [
+            {
+                "type": "Level",
+                "value": "9"
+            }
+        ]
+    },
+    "REPELLING BLAST": {
+        "title": "Repellling Blast",
+        "description": "When you hit a creature with Eldritch Blast, you can push the creature up to 10 feet away from you in a straight line.",
+        "prereqs": [
+            {
+                "type": "Cantrip",
+                "value": "Eldritch Blast"
+            }
+        ]        
+    },
+    "SCULPTOR OF FLESH": {
+        "title": "Sculptor of Flesh",
+        "description": "You can cast Polymorph once using a warlock spell slot.  You can't do so again until you finish a long rest.",
+        "prereqs": [
+            {
+                "type": "Level",
+                "value": "7"
+            }
+        ] 
+    },
+    "SIGN OF ILL OMEN": {
+        "title": "Sign of Ill Omen",
+        "description": "You can cast Bestow Curse once using a warlock spell slot. You can't do so again until you finish a long rest.",
+        "prereqs": [
+            {
+                "type": "Level",
+                "value": "5"
+            }
+        ] 
+    },
+    "THIEF OF FIVE FATES": {
+        "title": "Thief of Five Fates",
+        "description": "You can cast Bane once using a warlock spell slot.  You can't do so again until you finish a long rest."
+    },
+    "THIRSTING BLADE": {
+        "title": "Thirsting Blade",
+        "description": "You can attack with your pact weapon twice, instead of once, whenever you take the Attack action on your turn.",
+        "prereqs": [
+            {
+                "type": "Level",
+                "value": "5"
+            },
+            {
+                "type": "Feature",
+                "value": "Pact of the Blade"
+            }
+        ] 
+    },
+    "VISIONS OF DISTANT REALMS": {
+        "title": "Visions of Distant Realms",
+        "description": "You can cast Arcane Eye at will, without expending a spell slot.",
+        "prereqs": [
+            {
+                "type": "Level",
+                "value": "15"
+            }
+        ] 
+    },
+    "VOICE OF THE CHAIN MASTER": {
+        "title": "Voice of the Chain Master",
+        "description": "You can communicate telepathically with your familiar and perceive through your familiar’s senses as long as you are on the same plane of existence. Additionally, while perceiving through your familiar’s senses, you can also speak through your familiar in your own voice, even if your familiar is normally incapable of speech.",
+        "prereqs": [
+            {
+                "type": "Feature",
+                "value": "Pact of the Chain"
+            }
+        ] 
+    },
+    "WHISPERS OF THE GRAVE": {
+        "title": "Whipspers of the Grave",
+        "description": "You can cast Speak With Dead at will, without expending a spell slot.",
+        "prereqs": [
+            {
+                "type": "Level",
+                "value": "9"
+            }
+        ]
+    },
+    "WITCH SIGHT": {
+        "title": "Witch Sight",
+        "description": "You can see the true form of any shapechanger or creature concealed by illusion or transmutation magic while the creature is within 30 feet of you and within line of sight.",
+        "prereqs": [
+            {
+                "type": "Level",
+                "value": "15"
+            }
+        ]
+    }
+}

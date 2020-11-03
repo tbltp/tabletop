@@ -27,5 +27,6 @@ pclass.apply(pc);
 background.apply(pc);
 
 pclass.abilitiesAtLevels["2"](pc, {isNoInput: false, fightingStyle: ["ARCHERY"], spellSelection: ["HAIL OF THORNS", "HUNTER'S MARK"]})
+pclass.abilitiesAtLevels["3"](pc, {isNoInput: false, archetypeSelection: [ { archetype: "HUNTER", options: ["HORDE BREAKER"] }], spellSelection: ["CURE WOUNDS"]})
 
 Jsonify.dumpToJSON(pc, "Faendal");

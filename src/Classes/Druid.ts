@@ -112,12 +112,7 @@ export class Druid extends PlayerClass {
   level2(pc: PlayerCharacter, params: LevelingParams): void {
     this.applyDruidSpellSlots(pc, 2);
     // druid circle
-    this.druidCircle = params.archetypeSelection[0].archetype;
-    DruidArchetype.archetypeHelper[this.druidCircle][2](pc, params);
-    // terrain selection
-    if (this.druidCircle == "LAND") {
-      this.terrain = params.archetypeSelection[0].options[0];
-    }
+    
     // wild shape
     const wildShapeRes: ResourceTrait = {
       title: "Wild Shape",
@@ -132,6 +127,18 @@ export class Druid extends PlayerClass {
     };
     pc.addResourceTraits(wildShapeRes);
     pc.addScalingTraits(wildShapeScale);
+
+    this.druidCircle = params.archetypeSelection[0].archetype;
+    DruidArchetype.archetypeHelper[this.druidCircle][2](pc, params);
+    // terrain selection
+    if (this.druidCircle == "LAND") {
+      this.terrain = params.archetypeSelection[0].options[0];
+    }
+
+    pc.addSpells(
+      [...SpellList["Druid"][2]],
+      SpellcastingAbility["DRUID"]
+    );
 
     this.pushDruidFeatures(pc, 2);
   }

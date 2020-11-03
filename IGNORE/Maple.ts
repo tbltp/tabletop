@@ -22,5 +22,6 @@ pclass.apply(pc);
 pbackground.apply(pc);
 
 pclass.abilitiesAtLevels["2"](pc, {isNoInput: false, archetypeSelection: [{archetype: "MOON"}]})
+pclass.abilitiesAtLevels["3"](pc, {isNoInput: true})
 
 Jsonify.dumpToJSON(pc, "Maple");

@@ -1,6 +1,7 @@
 import { PlayerClass, LevelingParams } from "./PlayerClass";
 import { PlayerCharacter } from "../Base/PlayerCharacter";
 import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
+import * as FightingStyle from "../../Assets/FightingStyles.json";
 import { PaladinArchetype } from "./Archetypes/PaladinArchetype";
 import { SpellSlotFactory } from "./SpellSlotFactory";
 
@@ -106,6 +107,7 @@ export class Paladin extends PlayerClass {
     this.applyPaladinSpellSlots(pc, 2);
     this.upgradeLayOnHands(pc);
     this.pushPaladinFeatures(pc, 2);
+    pc.addFeatures(FightingStyle[params.fightingStyle[0]]);
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
