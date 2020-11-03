@@ -5,6 +5,11 @@
   "scripts": {
     "test": "jest"
   },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "jest-extended"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alimohamad/tabletop.git"
@@ -17,6 +22,7 @@
   "devDependencies": {
     "@types/jest": "^26.0.10",
     "jest": "^26.4.2",
+    "jest-extended": "^0.11.5",
     "ts-jest": "^26.3.0",
     "typescript": "^4.0.2"
   }

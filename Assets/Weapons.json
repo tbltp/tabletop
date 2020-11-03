@@ -6,9 +6,7 @@
     "damage": "1d4",
     "damageType": "Bludgeoning",
     "weight": "2lb",
-    "properties": [
-      "Light"
-    ]
+    "properties": ["Light"]
   },
   "DAGGER": {
     "name": "Dagger",
@@ -31,9 +29,7 @@
     "damage": "1d8",
     "damageType": "Bludgeoning",
     "weight": "10lb",
-    "properties": [
-      "Two-Handed"
-    ]
+    "properties": ["Two-Handed"]
   },
   "HANDAXE": {
     "name": "Handaxe",
@@ -42,11 +38,7 @@
     "damage": "1d6",
     "damageType": "Slashing",
     "weight": "2lb",
-    "properties": [
-      "Light",
-      "Thrown",
-      "Range 20ft / 60ft Disadvantage"
-    ]
+    "properties": ["Light", "Thrown", "Range 20ft / 60ft Disadvantage"]
   },
   "JAVELIN": {
     "name": "Javelin",
@@ -55,10 +47,7 @@
     "damage": "1d6",
     "damageType": "Piercing",
     "weight": "2lb",
-    "properties": [
-      "Thrown",
-      "Range 30ft / 120ft Disadvantage"
-    ]
+    "properties": ["Thrown", "Range 30ft / 120ft Disadvantage"]
   },
   "LIGHT HAMMER": {
     "name": "Light Hammer",
@@ -67,11 +56,7 @@
     "damage": "1d4",
     "damageType": "Bludgeoning",
     "weight": "2lb",
-    "properties": [
-      "Light",
-      "Thrown",
-      "Range 20ft / 60ft Disadvantage"
-    ]
+    "properties": ["Light", "Thrown", "Range 20ft / 60ft Disadvantage"]
   },
   "MACE": {
     "name": "Mace",
@@ -89,10 +74,7 @@
     "damage": "1d6",
     "damageType": "Bludgeoning",
     "weight": "4lb",
-    "properties": [
-      "Versatile",
-      "1d8 damage if two-hand wielded."
-    ]
+    "properties": ["Versatile", "1d8 damage if two-hand wielded."]
   },
   "SICKLE": {
     "name": "Sickle",
@@ -101,9 +83,7 @@
     "damage": "1d4",
     "damageType": "Slashing",
     "weight": "2lb",
-    "properties": [
-      "Light"
-    ]
+    "properties": ["Light"]
   },
   "SPEAR": {
     "name": "Spear",
@@ -149,11 +129,7 @@
     "damage": "1d4",
     "damageType": "Piercing",
     "weight": "1/4lb",
-    "properties": [
-      "Finesse",
-      "Thrown",
-      "Range 20ft / 60ft Disadvantage"
-    ]
+    "properties": ["Finesse", "Thrown", "Range 20ft / 60ft Disadvantage"]
   },
   "SHORTBOW": {
     "name": "Shortbow",
@@ -175,10 +151,7 @@
     "damage": "1d4",
     "damageType": "Bludgeoning",
     "weight": "--",
-    "properties": [
-      "Ammunition",
-      "Range 30ft / 120 ft Disadvantage"
-    ]
+    "properties": ["Ammunition", "Range 30ft / 120 ft Disadvantage"]
   },
   "BATTLEAXE": {
     "name": "Battleaxe",
@@ -187,10 +160,7 @@
     "damage": "1d8",
     "damageType": "Slashing",
     "weight": "4lb",
-    "properties": [
-      "Versatile",
-      "1d10 damage if two-hand wielded."
-    ]
+    "properties": ["Versatile", "1d10 damage if two-hand wielded."]
   },
   "FLAIL": {
     "name": "Flail",
@@ -208,11 +178,7 @@
     "damage": "1d10",
     "damageType": "Slashing",
     "weight": "6lb",
-    "properties": [
-      "Heavy",
-      "Reach",
-      "Two-Handed"
-    ]
+    "properties": ["Heavy", "Reach", "Two-Handed"]
   },
   "GREATAXE": {
     "name": "Greataxe",
@@ -221,10 +187,7 @@
     "damage": "1d12",
     "damageType": "Slashing",
     "weight": "7lb",
-    "properties": [
-      "Heavy",
-      "Two-Handed"
-    ]
+    "properties": ["Heavy", "Two-Handed"]
   },
   "GREATSWORD": {
     "name": "Greatsword",
@@ -233,10 +196,7 @@
     "damage": "2d6",
     "damageType": "Slashing",
     "weight": "6lb",
-    "properties": [
-      "Heavy",
-      "Two-Handed"
-    ]
+    "properties": ["Heavy", "Two-Handed"]
   },
   "HALBERD": {
     "name": "Halberd",
@@ -245,11 +205,7 @@
     "damage": "1d10",
     "damageType": "Slashing",
     "weight": "6lb",
-    "properties": [
-      "Heavy",
-      "Reach",
-      "Two-Handed"
-    ]
+    "properties": ["Heavy", "Reach", "Two-Handed"]
   },
   "LANCE": {
     "name": "Lance",
@@ -271,10 +227,7 @@
     "damage": "1d8",
     "damageType": "Slashing",
     "weight": "3lb",
-    "properties": [
-      "Versatile",
-      "1d10 damage if two-hand wielded."
-    ]
+    "properties": ["Versatile", "1d10 damage if two-hand wielded."]
   },
   "MAUL": {
     "name": "Maul",
@@ -283,10 +236,7 @@
     "damage": "2d6",
     "damageType": "Bludgeoning",
     "weight": "10lb",
-    "properties": [
-      "Heavy",
-      "Two-Handed"
-    ]
+    "properties": ["Heavy", "Two-Handed"]
   },
   "MORNINGSTAR": {
     "name": "Morningstar",
@@ -304,11 +254,7 @@
     "damage": "1d10",
     "damageType": "Piercing",
     "weight": "18lb",
-    "properties": [
-      "Heavy",
-      "Reach",
-      "Two-Handed"
-    ]
+    "properties": ["Heavy", "Reach", "Two-Handed"]
   },
   "RAPIER": {
     "name": "Rapier",
@@ -317,9 +263,7 @@
     "damage": "1d8",
     "damageType": "Piercing",
     "weight": "2lb",
-    "properties": [
-      "Finesse"
-    ]
+    "properties": ["Finesse"]
   },
   "SCIMITAR": {
     "name": "Scimitar",
@@ -328,10 +272,7 @@
     "damage": "1d6",
     "damageType": "Slashing",
     "weight": "3lb",
-    "properties": [
-      "Finesse",
-      "Light"
-    ]
+    "properties": ["Finesse", "Light"]
   },
   "SHORTSWORD": {
     "name": "Shortsword",
@@ -340,10 +281,7 @@
     "damage": "1d6",
     "damageType": "Piercing",
     "weight": "2lb",
-    "properties": [
-      "Finesse",
-      "Light"
-    ]
+    "properties": ["Finesse", "Light"]
   },
   "TRIDENT": {
     "name": "Trident",
@@ -375,10 +313,7 @@
     "damage": "1d8",
     "damageType": "Bludgeoning",
     "weight": "2lb",
-    "properties": [
-      "Versatile",
-      "1d10 damage if two-hand wielded."
-    ]
+    "properties": ["Versatile", "1d10 damage if two-hand wielded."]
   },
   "WHIP": {
     "name": "Whip",
@@ -387,10 +322,7 @@
     "damage": "1d4",
     "damageType": "Slashing",
     "weight": "3lb",
-    "properties": [
-      "Finesse",
-      "Reach"
-    ]
+    "properties": ["Finesse", "Reach"]
   },
   "BLOWGUN": {
     "name": "Blowgun",
@@ -399,11 +331,7 @@
     "damage": "1",
     "damageType": "Piercing",
     "weight": "1lb",
-    "properties": [
-      "Ammunition",
-      "Range 25ft / 100 ft Disadvantage",
-      "Loading"
-    ]
+    "properties": ["Ammunition", "Range 25ft / 100 ft Disadvantage", "Loading"]
   },
   "CROSSBOW, HAND": {
     "name": "Crossbow, hand",

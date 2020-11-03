@@ -3,5 +3,6 @@ node_modules/
 *.py
 .vscode
 dist/
-output
+output*
 .DS_Store
+IGNORE/*.json

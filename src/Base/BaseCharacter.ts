@@ -1,177 +1,321 @@
-import {Inventory, Trait, ResourceTrait, Spell} from './Interfaces';
+import {
+  Inventory,
+  Trait,
+  ResourceTrait,
+  Spell,
+  ScalingTrait,
+} from "./Interfaces";
 
 export abstract class BaseCharacter {
-    
-    constructor(str: number, dex: number, con: number, int: number, wis: number, cha: number) {
-        this.abilityScores = {
-            "strength": new BaseAbility("Str", str, ["Athletics"]),
-            "dexterity": new BaseAbility("Dex", dex, ["Acrobatics", "Sleight of Hand", "Stealth"]),
-            "constitution": new BaseAbility("Con", con, []),
-            "intelligence": new BaseAbility("Int", int, ["Arcana", "History", "Investigation", "Nature", "Religion"]),
-            "wisdom": new BaseAbility("Wis", wis, ["Animal Handling", "Insight", "Medicine", "Perception", "Survival"]),
-            "charisma": new BaseAbility("Cha", cha, ["Deception", "Intimidation", "Performance", "Persuasion"])
-        };
-
-        this.proficiencyBonus = Math.floor((this.totalLevel + 7) / 4);
-
-        this.baseStats = {
-            "initiativeBonus": {base: 0, ability: this.abilityScores["dexterity"], bonus: 0},
-            "baseArmorClass": {base: 10, ability: this.abilityScores["dexterity"], bonus: 0},
-            "hpMax": {base: 8, ability: this.abilityScores["constitution"], bonus: 0},
-            "passivePerception": {base: 10, ability: this.abilityScores["wisdom"], bonus: 0},
-            "passiveInvestigation": {base: 10, ability: this.abilityScores["intelligence"], bonus: 0},
-            "passiveInsight": {base: 10, ability: this.abilityScores["wisdom"], bonus: 0}
-        }
-        
-        this.skills = {
-            "Acrobatics": this.abilityScores["dexterity"].skills["Acrobatics"], //--> f(dex), + proficiency (Class Dependent);
-            "Animal Handling": this.abilityScores["wisdom"].skills["Animal Handling"], //--> f(wis), + proficiency (Class Dependent);
-            "Arcana": this.abilityScores["intelligence"].skills["Arcana"],  //--> f(int), + proficiency (Class Dependent);
-            "Athletics": this.abilityScores["strength"].skills["Athletics"],  //--> f(str), + proficiency (Class Dependent);
-            "Deception": this.abilityScores["charisma"].skills["Deception"], //--> f(cha), + proficiency (Class Dependent);
-            "History": this.abilityScores["intelligence"].skills["History"],  //--> f(int), + proficiency (Class Dependent);
-            "Insight": this.abilityScores["wisdom"].skills["Insight"],  //--> f(wis), + proficiency (Class Dependent);
-            "Intimidation": this.abilityScores["charisma"].skills["Intimidation"],  //--> f(cha), + proficiency (Class Dependent);
-            "Investigation": this.abilityScores["intelligence"].skills["Investigation"],  //--> f(int), + proficiency (Class Dependent);
-            "Medicine": this.abilityScores["wisdom"].skills["Medicine"],  //--> f(wis), + proficiency (Class Dependent);
-            "Nature": this.abilityScores["intelligence"].skills["Nature"],  //--> f(int), + proficiency (Class Dependent);
-            "Perception": this.abilityScores["wisdom"].skills["Perception"],  //--> f(wis), + proficiency (Class Dependent);
-            "Performance": this.abilityScores["charisma"].skills["Performance"],  //--> f(cha), + proficiency (Class Dependent);
-            "Persuasion": this.abilityScores["charisma"].skills["Persuasion"],  //--> f(cha), + proficiency (Class Dependent);
-            "Religion": this.abilityScores["intelligence"].skills["Religion"],  //--> f(int), + proficiency (Class Dependent);
-            "Sleight of Hand": this.abilityScores["dexterity"].skills["Sleight of Hand"],  //--> f(dex), + proficiency (Class Dependent);
-            "Stealth": this.abilityScores["dexterity"].skills["Stealth"], //--> f(dex), + proficiency (Class Dependent);
-            "Survival": this.abilityScores["wisdom"].skills["Survival"]  //--> f(wis), + proficiency (Class Dependent);
-        }
-    }
-
-    // Base Stats
-    totalLevel: number = 1;
-    proficiencyBonus: number;
-    baseStats: {[key: string]: {base: number, ability: BaseAbility, bonus: number}};
-    speed: number;
-    size: string;
-
-    // Base Ability Scores
-    abilityScores: { 
-        "strength": BaseAbility;
-        "dexterity": BaseAbility;
-        "constitution": BaseAbility;
-        "intelligence": BaseAbility;
-        "wisdom": BaseAbility;
-        "charisma": BaseAbility;
-    }
-    // Adventuring Gear, Weapons, Armor
-    inventory: Inventory = {
-        weapons: [],
-        armor: [],
-        toolKits: [],
-        items: [],
-        gp: 0
+  constructor(
+    str: number,
+    dex: number,
+    con: number,
+    int: number,
+    wis: number,
+    cha: number
+  ) {
+    this.abilityScores = {
+      strength: new BaseAbility("Str", str),
+      dexterity: new BaseAbility("Dex", dex),
+      constitution: new BaseAbility("Con", con),
+      intelligence: new BaseAbility("Int", int),
+      wisdom: new BaseAbility("Wis", wis),
+      charisma: new BaseAbility("Cha", cha),
     };
 
-    // Skill Check Modifiers
-    skills: {[key: string]: Skill};
+    this.proficiency = new BaseProficiency(this.level.totalLevel);
 
-    // Traits (Class Features, Racial Traits, Feats)
-    traits: { armorProficiencies: string[], weaponProficiencies: string[], toolProficiencies: string[], languages: Trait[], features: Trait[], resources: ResourceTrait[] } = {
-        armorProficiencies: [], 
-        weaponProficiencies: [], 
-        toolProficiencies: [], 
-        languages: [], 
-        features: [], 
-        resources: []
+    this.baseStats = {
+      initiativeBonus: {
+        base: 0,
+        modifier: this.abilityScores["dexterity"].modifier,
+        bonus: { value: 0 },
+      },
+      baseArmorClass: {
+        base: 10,
+        modifier: this.abilityScores["dexterity"].modifier,
+        bonus: { value: 0 },
+      },
+      hpMax: {
+        base: undefined,
+        modifier: this.abilityScores["constitution"].modifier,
+        bonus: { value: 0 },
+      },
+      passivePerception: {
+        base: 10,
+        modifier: this.abilityScores["wisdom"].modifier,
+        bonus: { value: 0 },
+      },
+      passiveInvestigation: {
+        base: 10,
+        modifier: this.abilityScores["intelligence"].modifier,
+        bonus: { value: 0 },
+      },
+      passiveInsight: {
+        base: 10,
+        modifier: this.abilityScores["wisdom"].modifier,
+        bonus: { value: 0 },
+      },
     };
 
-
-    // Known Spells 
-    spells: { "0": Spell[], "1": Spell[], "2": Spell[], "3": Spell[], "4": Spell[], "5": Spell[], "6": Spell[], "7": Spell[], "8": Spell[], "9": Spell[]} = {
-        "0": [],
-        "1": [],
-        "2": [],
-        "3": [],
-        "4": [],
-        "5": [],
-        "6": [],
-        "7": [],
-        "8": [],
-        "9": []
+    this.skills = {
+      acrobatics: {
+        ability: "dexterity",
+        modifier: this.abilityScores["dexterity"].modifier,
+        proficient: false,
+        expertise: false,
+        bonus: { value: 0 },
+      }, //--> f(dex), + proficiency (Class Dependent);
+      "animal handling": {
+        ability: "wisdom",
+        modifier: this.abilityScores["wisdom"].modifier,
+        proficient: false,
+        expertise: false,
+        bonus: { value: 0 },
+      }, //--> f(wis), + proficiency (Class Dependent);
+      arcana: {
+        ability: "intelligence",
+        modifier: this.abilityScores["intelligence"].modifier,
+        proficient: false,
+        expertise: false,
+        bonus: { value: 0 },
+      }, //--> f(int), + proficiency (Class Dependent);
+      athletics: {
+        ability: "strength",
+        modifier: this.abilityScores["strength"].modifier,
+        proficient: false,
+        expertise: false,
+        bonus: { value: 0 },
+      }, //--> f(str), + proficiency (Class Dependent);
+      deception: {
+        ability: "charisma",
+        modifier: this.abilityScores["charisma"].modifier,
+        proficient: false,
+        expertise: false,
+        bonus: { value: 0 },
+      }, //--> f(cha), + proficiency (Class Dependent);
+      history: {
+        ability: "intelligence",
+        modifier: this.abilityScores["intelligence"].modifier,
+        proficient: false,
+        expertise: false,
+        bonus: { value: 0 },
+      }, //--> f(int), + proficiency (Class Dependent);
+      insight: {
+        ability: "wisdom",
+        modifier: this.abilityScores["wisdom"].modifier,
+        proficient: false,
+        expertise: false,
+        bonus: { value: 0 },
+      }, //--> f(wis), + proficiency (Class Dependent);
+      intimidation: {
+        ability: "charisma",
+        modifier: this.abilityScores["charisma"].modifier,
+        proficient: false,
+        expertise: false,
+        bonus: { value: 0 },
+      }, //--> f(cha), + proficiency (Class Dependent);
+      investigation: {
+        ability: "intelligence",
+        modifier: this.abilityScores["intelligence"].modifier,
+        proficient: false,
+        expertise: false,
+        bonus: { value: 0 },
+      }, //--> f(int), + proficiency (Class Dependent);
+      medicine: {
+        ability: "wisdom",
+        modifier: this.abilityScores["wisdom"].modifier,
+        proficient: false,
+        expertise: false,
+        bonus: { value: 0 },
+      }, //--> f(wis), + proficiency (Class Dependent);
+      nature: {
+        ability: "intelligence",
+        modifier: this.abilityScores["intelligence"].modifier,
+        proficient: false,
+        expertise: false,
+        bonus: { value: 0 },
+      }, //--> f(int), + proficiency (Class Dependent);
+      perception: {
+        ability: "wisdom",
+        modifier: this.abilityScores["wisdom"].modifier,
+        proficient: false,
+        expertise: false,
+        bonus: { value: 0 },
+      }, //--> f(wis), + proficiency (Class Dependent);
+      performance: {
+        ability: "charisma",
+        modifier: this.abilityScores["charisma"].modifier,
+        proficient: false,
+        expertise: false,
+        bonus: { value: 0 },
+      }, //--> f(cha), + proficiency (Class Dependent);
+      persuasion: {
+        ability: "charisma",
+        modifier: this.abilityScores["charisma"].modifier,
+        proficient: false,
+        expertise: false,
+        bonus: { value: 0 },
+      }, //--> f(cha), + proficiency (Class Dependent);
+      religion: {
+        ability: "intelligence",
+        modifier: this.abilityScores["intelligence"].modifier,
+        proficient: false,
+        expertise: false,
+        bonus: { value: 0 },
+      }, //--> f(int), + proficiency (Class Dependent);
+      "sleight of hand": {
+        ability: "dexterity",
+        modifier: this.abilityScores["dexterity"].modifier,
+        proficient: false,
+        expertise: false,
+        bonus: { value: 0 },
+      }, //--> f(dex), + proficiency (Class Dependent);
+      stealth: {
+        ability: "dexterity",
+        modifier: this.abilityScores["dexterity"].modifier,
+        proficient: false,
+        expertise: false,
+        bonus: { value: 0 },
+      }, //--> f(dex), + proficiency (Class Dependent);
+      survival: {
+        ability: "wisdom",
+        modifier: this.abilityScores["wisdom"].modifier,
+        proficient: false,
+        expertise: false,
+        bonus: { value: 0 },
+      }, //--> f(wis), + proficiency (Class Dependent);
     };
+  }
 
-    // Obtain total modifier
-    public getSkillTotal(skill: string): number {
-        return this.skills[skill].bonus + this.skills[skill].modifier;
-    } 
+  // Base Stats
+  proficiency: BaseProficiency;
+  level: { totalLevel: number } = { totalLevel: 1 };
+  baseStats: {
+    [key: string]: {
+      base: number;
+      modifier: { value: number };
+      bonus: { value: number };
+    };
+  };
+  speed: { value: number } = { value: 0 };
+  size: string;
 
-    // Base Stats Getters
-    get initiativeBonus(): number {
-        return this.retrieveStatVal('initiativeBonus');
-    }
+  // Base Ability Scores
+  abilityScores: {
+    strength: BaseAbility;
+    dexterity: BaseAbility;
+    constitution: BaseAbility;
+    intelligence: BaseAbility;
+    wisdom: BaseAbility;
+    charisma: BaseAbility;
+  };
+  // Adventuring Gear, Weapons, Armor
+  inventory: Inventory = {
+    weapons: [],
+    armor: [],
+    toolKits: [],
+    items: [],
+    gp: 0,
+  };
 
-    get baseArmorClass(): number {
-        return this.retrieveStatVal('baseArmorClass');
-    }
+  // Skill Check Modifiers
+  skills: { [key: string]: Skill };
 
-    get hpMax(): number {
-        return this.retrieveStatVal('hpMax');
-    }
+  // Traits (Class Features, Racial Traits, Feats)
+  traits: {
+    armorProficiencies: string[];
+    weaponProficiencies: string[];
+    toolProficiencies: string[];
+    languages: Trait[];
+    features: Trait[];
+    resources: ResourceTrait[];
+    scalingEffects: ScalingTrait[];
+  } = {
+    armorProficiencies: [],
+    weaponProficiencies: [],
+    toolProficiencies: [],
+    languages: [],
+    features: [],
+    resources: [],
+    scalingEffects: [],
+  };
 
-    get passivePerception(): number {
-        return this.retrieveStatVal('passivePerception');
-    }
+  // Known Spells
+  spells: {
+    "0": Spell[];
+    "1": Spell[];
+    "2": Spell[];
+    "3": Spell[];
+    "4": Spell[];
+    "5": Spell[];
+    "6": Spell[];
+    "7": Spell[];
+    "8": Spell[];
+    "9": Spell[];
+  } = {
+    "0": [],
+    "1": [],
+    "2": [],
+    "3": [],
+    "4": [],
+    "5": [],
+    "6": [],
+    "7": [],
+    "8": [],
+    "9": [],
+  };
 
-    get passiveInvestigation(): number {
-        return this.retrieveStatVal('passiveInvestigation');
-    }
-
-    get passiveInsight(): number {
-        return this.retrieveStatVal('passiveInsight');
-    }
-
-    // Private method for retrieving values of base stats
-    private retrieveStatVal(stat: string) {
-
-        const bstat = this.baseStats[stat];
-        //Disgusting.  I hate passive checks
-        if(stat.startsWith('passive')) {
-
-            const skillName = stat.replace('passive', '');
-            return bstat.base + bstat.ability.modifier + 
-                bstat.ability.skills[skillName].bonus + bstat.bonus;
-        }
-        return bstat.base + bstat.ability.modifier + bstat.bonus;
-    }
-
+  // Obtain total modifier
+  public getSkillTotal(skill: string): number {
+    return (
+      this.skills[skill].bonus.value * (this.skills[skill].expertise ? 2 : 1) +
+      this.skills[skill].modifier.value
+    );
+  }
 }
 
-class BaseAbility {
-    constructor(name: string, score: number, skills: string[]) {
-        this.name = name;
-        this.score = score;
-        this.modifier = Math.floor((this.score - 10) / 2);
+export class BaseAbility {
+  constructor(name: string, score: number) {
+    this.name = name;
+    this.score = score;
+    this.scoreMax = 20;
+    this.modifier = { value: Math.floor((this.score - 10) / 2) };
+  }
 
-        for(const skill of skills){
-            this.skills[skill] = { ability: this.name, modifier: this.modifier, proficient: false, expertise: false, bonus: 0 }
-        }
-    }
-    
-    name: string;
-    score: number;
-    modifier: number;
-    savingThrowProficiency: boolean = false;
-    skills: {[key:string]: Skill} = {};
+  name: string;
+  score: number;
+  scoreMax: number;
+  modifier: { value: number };
+  savingThrowProficiency: boolean = false;
 
-    update(bonus: number) {
-        this.score = this.score + bonus > 20 ? 20: this.score + bonus;
-        this.modifier = Math.floor((this.score - 10) / 2);
-        for(const skill in this.skills) { this.skills[skill].modifier = this.modifier; }
-    }
+  update(bonus: number) {
+    this.score =
+      this.score + bonus > this.scoreMax ? this.scoreMax : this.score + bonus;
+    this.modifier.value = Math.floor((this.score - 10) / 2);
+  }
+}
+
+export class BaseProficiency {
+  constructor(level: number) {
+    this.baseBonus = { value: Math.floor((level + 7) / 4) };
+    this.halfBonus = { value: Math.floor(this.baseBonus.value / 2) };
+  }
+
+  baseBonus: { value: number };
+  halfBonus: { value: number };
+
+  levelUp(level: number) {
+    this.baseBonus.value = Math.floor((level + 7) / 4);
+    this.halfBonus.value = Math.floor(this.baseBonus.value / 2);
+  }
 }
 
 interface Skill {
-    readonly ability: string;
-    modifier: number;
-    proficient: boolean;
-    expertise: boolean;
-    bonus: number;
+  readonly ability: string;
+  modifier: { value: number };
+  proficient: boolean;
+  expertise: boolean;
+  bonus: { value: number };
 }

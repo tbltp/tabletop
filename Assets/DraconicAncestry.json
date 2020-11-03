@@ -1,12 +1,52 @@
 {
-    "Black": {"Dragon": "Black", "Damage Type": "Acid" , "Breath Weapon": "5 by 30 ft. line (Dex. save)"},
-    "Blue": {"Dragon": "Blue", "Damage Type": "Lightning", "Breath Weapon": "5 by 30 ft. line (Dex. save)"},
-    "Brass": {"Dragon": "Brass", "Damage Type": "Fire", "Breath Weapon": "5 by 30 ft. line (Dex. save)"},
-    "Bronze": {"Dragon": "Bronze", "Damage Type": "Lightning", "Breath Weapon": "5 by 30 ft. line (Dex. save)"},
-    "Copper": {"Dragon": "Copper", "Damage Type": "Acid", "Breath Weapon": "5 by 30 ft. line (Dex. save)"},
-    "Gold": {"Dragon": "Gold", "Damage Type": "Fire", "Breath Weapon": "15 ft. cone (Dex. save)"},
-    "Green": {"Dragon": "Green", "Damage Type": "Poison", "Breath Weapon": "15 ft. cone (Con. save)"},
-    "Red": {"Dragon": "Red", "Damage Type": "Fire", "Breath Weapon": "15 ft. cone (Dex. save)"},
-    "Silver": {"Dragon": "Silver", "Damage Type": "Cold", "Breath Weapon": "15 ft. cone (Con. save)"},
-    "White": {"Dragon": "White", "Damage Type": "Cold", "Breath Weapon": "15 ft. cone (Con. save)"}
+  "Black": {
+    "Dragon": "Black",
+    "Damage Type": "Acid",
+    "Breath Weapon": "5 by 30 ft. line (Dex. save)"
+  },
+  "Blue": {
+    "Dragon": "Blue",
+    "Damage Type": "Lightning",
+    "Breath Weapon": "5 by 30 ft. line (Dex. save)"
+  },
+  "Brass": {
+    "Dragon": "Brass",
+    "Damage Type": "Fire",
+    "Breath Weapon": "5 by 30 ft. line (Dex. save)"
+  },
+  "Bronze": {
+    "Dragon": "Bronze",
+    "Damage Type": "Lightning",
+    "Breath Weapon": "5 by 30 ft. line (Dex. save)"
+  },
+  "Copper": {
+    "Dragon": "Copper",
+    "Damage Type": "Acid",
+    "Breath Weapon": "5 by 30 ft. line (Dex. save)"
+  },
+  "Gold": {
+    "Dragon": "Gold",
+    "Damage Type": "Fire",
+    "Breath Weapon": "15 ft. cone (Dex. save)"
+  },
+  "Green": {
+    "Dragon": "Green",
+    "Damage Type": "Poison",
+    "Breath Weapon": "15 ft. cone (Con. save)"
+  },
+  "Red": {
+    "Dragon": "Red",
+    "Damage Type": "Fire",
+    "Breath Weapon": "15 ft. cone (Dex. save)"
+  },
+  "Silver": {
+    "Dragon": "Silver",
+    "Damage Type": "Cold",
+    "Breath Weapon": "15 ft. cone (Con. save)"
+  },
+  "White": {
+    "Dragon": "White",
+    "Damage Type": "Cold",
+    "Breath Weapon": "15 ft. cone (Con. save)"
+  }
 }

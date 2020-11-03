@@ -1,186 +1,186 @@
 {
-    "CAMEL": {
-        "name": "Camel",
-        "vehicleType": "Animal",
-        "cost": "50 gp",
-        "speed": "50 ft",
-        "capacity": "480 lb",
-        "weight": ""
-    },
-    "DONKEY/MULE": {
-        "name": "Donkey or mule",
-        "vehicleType": "Animal",
-        "cost": "8 gp",
-        "speed": "40 ft",
-        "capacity": "420 lb",
-        "weight": ""
-    },
-    "ELEPHANT": {
-        "name": "Elephant",
-        "vehicleType": "Animal",
-        "cost": "200 gp",
-        "speed": "40 ft",
-        "capacity": "1320 lb",
-        "weight": ""
-    },
-    "HORSE, DRAFT": {
-        "name": "Horse, draft",
-        "vehicleType": "Animal",
-        "cost": "50 gp",
-        "speed": "40 ft",
-        "capacity": "540 lb",
-        "weight": ""
-    },
-    "HORSE, RIDING": {
-        "name": "Horse, riding",
-        "vehicleType": "Animal",
-        "cost": "75 gp",
-        "speed": "60 ft",
-        "capacity": "480 lb",
-        "weight": ""
-    },
-    "MASTIFF": {
-        "name": "Mastiff",
-        "vehicletype": "Animal",
-        "cost": "25 gp",
-        "speed": "40 ft",
-        "capacity": "195 lb",
-        "weight": ""
-    },
-    "PONY": {
-        "name": "Pony", 
-        "vehicleType": "Animal",
-        "cost": "30 gp",
-        "speed": "40 ft",
-        "capacity": "225 lb",
-        "weight": ""
-    },
-    "WARHORSE": {
-        "name": "Warhorse", 
-        "vehicleType": "Animal",
-        "cost": "400 gp",
-        "speed": "60 ft",
-        "capacity": "540 lb",
-        "weight": ""
-    },
-    "CARRIAGE": {
-        "name": "Carriage", 
-        "vehicleType": "Drawn",
-        "cost": "100 gp",
-        "speed": "",
-        "capacity": "",
-        "weight": "600 lb"
-    },
-    "CART": {
-        "name": "Cart", 
-        "vehicleType": "Drawn",
-        "cost": "15 gp",
-        "speed": "",
-        "capacity": "",
-        "weight": "200 lb"
-    },
-    "CHARIOT": {
-        "name": "Chariot", 
-        "vehicleType": "Drawn",
-        "cost": "250 gp",
-        "speed": "",
-        "capacity": "",
-        "weight": "100 lb"
-    },
-    "SADDLE, EXOTIC": {
-        "name": "Saddle, exotic",
-        "vehicleType": "Saddle",
-        "cost": "60 gp",
-        "speed": "",
-        "capacity": "",
-        "weight": "40 lb"
-    },
-    "SADDLE, MILITARY": {
-        "name": "Saddle, military",
-        "vehicleType": "Saddle",
-        "cost": "20 gp",
-        "speed": "",
-        "capacity": "",
-        "weight": "30 lb"
-    },
-    "SADDLE, PACK": {
-        "name": "Saddle, pack",
-        "vehicleType": "Saddle",
-        "cost": "5 gp",
-        "speed": "",
-        "capacity": "",
-        "weight": "15 lb"
-    },
-    "SADDLE, RIDING": {
-        "name": "Saddle, riding",
-        "vehicleType": "Saddle",
-        "cost": "10 gp",
-        "speed": "",
-        "capacity": "",
-        "weight": "25 lb"
-    },
-    "SLED": {
-        "name": "Sled",
-        "vehicleType": "Drawn",
-        "cost": "20 gp",
-        "speed": "",
-        "capacity": "",
-        "weight": "300 lb"
-    },
-    "WAGON": {
-        "name": "Wagon",
-        "vehicleType": "Drawn",
-        "cost": "35 gp",
-        "speed": "",
-        "capacity": "",
-        "weight": "400 lb"
-    },
-    "GALLEY": {
-        "name": "Galley",
-        "vehicleType": "Waterborne",
-        "cost": "30000 gp",
-        "speed": "4 mph",
-        "capacity": "",
-        "weight": ""
-    },
-    "KEELBOAT": {
-        "name": "Keelboat", 
-        "vehicleType": "Waterborne",
-        "cost": "3000 gp",
-        "speed": "1 mph",
-        "capacity": "",
-        "weight": ""
-    },
-    "LONGSHIP": {
-        "name": "Longship", 
-        "vehicleType": "Waterborne",
-        "cost": "10000 gp",
-        "speed": "3 mph",
-        "capacity": "",
-        "weight": ""
-    },
-    "ROWBOAT": {
-        "name": "Rowboat", 
-        "vehicleType": "Waterborne",
-        "cost": "50 gp",
-        "speed": "1.5 mph",
-        "capacity": "",
-        "weight": ""
-    },
-    "SAILING SHIP": {
-        "name": "Sailing ship", 
-        "vehicleType": "Waterborne",
-        "cost": "10000 gp",
-        "speed": "2 mph",
-        "capacity": "",
-        "weight": ""
-    },
-    "WARSHIP": {
-        "name": "Warship", 
-        "vehicleType": "Waterborne",
-        "cost": "25000 gp",
-        "speed": "2.5 mph",
-        "capacity": "",
-        "weight": ""
-    }
+  "CAMEL": {
+    "name": "Camel",
+    "vehicleType": "Animal",
+    "cost": "50 gp",
+    "speed": "50 ft",
+    "capacity": "480 lb",
+    "weight": ""
+  },
+  "DONKEY/MULE": {
+    "name": "Donkey or mule",
+    "vehicleType": "Animal",
+    "cost": "8 gp",
+    "speed": "40 ft",
+    "capacity": "420 lb",
+    "weight": ""
+  },
+  "ELEPHANT": {
+    "name": "Elephant",
+    "vehicleType": "Animal",
+    "cost": "200 gp",
+    "speed": "40 ft",
+    "capacity": "1320 lb",
+    "weight": ""
+  },
+  "HORSE, DRAFT": {
+    "name": "Horse, draft",
+    "vehicleType": "Animal",
+    "cost": "50 gp",
+    "speed": "40 ft",
+    "capacity": "540 lb",
+    "weight": ""
+  },
+  "HORSE, RIDING": {
+    "name": "Horse, riding",
+    "vehicleType": "Animal",
+    "cost": "75 gp",
+    "speed": "60 ft",
+    "capacity": "480 lb",
+    "weight": ""
+  },
+  "MASTIFF": {
+    "name": "Mastiff",
+    "vehicletype": "Animal",
+    "cost": "25 gp",
+    "speed": "40 ft",
+    "capacity": "195 lb",
+    "weight": ""
+  },
+  "PONY": {
+    "name": "Pony",
+    "vehicleType": "Animal",
+    "cost": "30 gp",
+    "speed": "40 ft",
+    "capacity": "225 lb",
+    "weight": ""
+  },
+  "WARHORSE": {
+    "name": "Warhorse",
+    "vehicleType": "Animal",
+    "cost": "400 gp",
+    "speed": "60 ft",
+    "capacity": "540 lb",
+    "weight": ""
+  },
+  "CARRIAGE": {
+    "name": "Carriage",
+    "vehicleType": "Drawn",
+    "cost": "100 gp",
+    "speed": "",
+    "capacity": "",
+    "weight": "600 lb"
+  },
+  "CART": {
+    "name": "Cart",
+    "vehicleType": "Drawn",
+    "cost": "15 gp",
+    "speed": "",
+    "capacity": "",
+    "weight": "200 lb"
+  },
+  "CHARIOT": {
+    "name": "Chariot",
+    "vehicleType": "Drawn",
+    "cost": "250 gp",
+    "speed": "",
+    "capacity": "",
+    "weight": "100 lb"
+  },
+  "SADDLE, EXOTIC": {
+    "name": "Saddle, exotic",
+    "vehicleType": "Saddle",
+    "cost": "60 gp",
+    "speed": "",
+    "capacity": "",
+    "weight": "40 lb"
+  },
+  "SADDLE, MILITARY": {
+    "name": "Saddle, military",
+    "vehicleType": "Saddle",
+    "cost": "20 gp",
+    "speed": "",
+    "capacity": "",
+    "weight": "30 lb"
+  },
+  "SADDLE, PACK": {
+    "name": "Saddle, pack",
+    "vehicleType": "Saddle",
+    "cost": "5 gp",
+    "speed": "",
+    "capacity": "",
+    "weight": "15 lb"
+  },
+  "SADDLE, RIDING": {
+    "name": "Saddle, riding",
+    "vehicleType": "Saddle",
+    "cost": "10 gp",
+    "speed": "",
+    "capacity": "",
+    "weight": "25 lb"
+  },
+  "SLED": {
+    "name": "Sled",
+    "vehicleType": "Drawn",
+    "cost": "20 gp",
+    "speed": "",
+    "capacity": "",
+    "weight": "300 lb"
+  },
+  "WAGON": {
+    "name": "Wagon",
+    "vehicleType": "Drawn",
+    "cost": "35 gp",
+    "speed": "",
+    "capacity": "",
+    "weight": "400 lb"
+  },
+  "GALLEY": {
+    "name": "Galley",
+    "vehicleType": "Waterborne",
+    "cost": "30000 gp",
+    "speed": "4 mph",
+    "capacity": "",
+    "weight": ""
+  },
+  "KEELBOAT": {
+    "name": "Keelboat",
+    "vehicleType": "Waterborne",
+    "cost": "3000 gp",
+    "speed": "1 mph",
+    "capacity": "",
+    "weight": ""
+  },
+  "LONGSHIP": {
+    "name": "Longship",
+    "vehicleType": "Waterborne",
+    "cost": "10000 gp",
+    "speed": "3 mph",
+    "capacity": "",
+    "weight": ""
+  },
+  "ROWBOAT": {
+    "name": "Rowboat",
+    "vehicleType": "Waterborne",
+    "cost": "50 gp",
+    "speed": "1.5 mph",
+    "capacity": "",
+    "weight": ""
+  },
+  "SAILING SHIP": {
+    "name": "Sailing ship",
+    "vehicleType": "Waterborne",
+    "cost": "10000 gp",
+    "speed": "2 mph",
+    "capacity": "",
+    "weight": ""
+  },
+  "WARSHIP": {
+    "name": "Warship",
+    "vehicleType": "Waterborne",
+    "cost": "25000 gp",
+    "speed": "2.5 mph",
+    "capacity": "",
+    "weight": ""
+  }
 }

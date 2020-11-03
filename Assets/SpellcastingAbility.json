@@ -1,10 +1,10 @@
 {
-    "Bard": "charisma",
-    "Cleric": "wisdom",
-    "Druid": "wisdom",
-    "Paladin": "charisma",
-    "Ranger": "wisdom",
-    "Sorcerer": "charisma",
-    "Warlock": "charisma",
-    "Wizard": "intelligence"
+  "BARD": "charisma",
+  "CLERIC": "wisdom",
+  "DRUID": "wisdom",
+  "PALADIN": "charisma",
+  "RANGER": "wisdom",
+  "SORCEROR": "charisma",
+  "WARLOCK": "charisma",
+  "WIZARD": "intelligence"
 }
