@@ -1,8 +1,7 @@
 import { PlayerCharacter } from "../src/Base/PlayerCharacter";
 import { Tiefling } from "../src/Races/Tiefling";
 import { Charlatan } from "../src/Backgrounds/Background";
-import { Bard } from "../src/Classes/Bard";
-import { Ranger } from "../src/Classes/Ranger";
+import { Bard } from "../src/Classes/Bard/Bard";
 
 import { Jsonify } from "./Jsonify";
 
@@ -27,14 +26,7 @@ const bard = new Bard(
     ],
   }
 );
-const ranger = new Ranger(
-  ["perception"],
-  [],
-  [],
-  { isNoInput: false, favoredEnemy: "Werewolves", favoredTerrain: "Forest" },
-  "NONE",
-  true
-);
+
 race.apply(pc);
 background.apply(pc);
 bard.apply(pc);
@@ -49,6 +41,5 @@ bard.abilitiesAtLevels[3](pc, {
   archetypeSelection: [{ archetype: "VALOR" }],
 });
 race.abilitiesAtLevels["3"](pc);
-ranger.apply(pc);
 
 Jsonify.dumpToJSON(pc, "Alaiyo");

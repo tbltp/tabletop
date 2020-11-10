@@ -1,6 +1,6 @@
 import { PlayerCharacter } from "../src/Base/PlayerCharacter";
 import { MountainGnome } from "../src/Races/Gnome";
-import { Cleric } from "../src/Classes/Cleric";
+import { Cleric } from "../src/Classes/Cleric/Cleric";
 import { FolkHero } from "../src/Backgrounds/Background";
 import { Jsonify } from "./Jsonify";
 
@@ -29,5 +29,6 @@ pbackground.apply(pc);
 
 pclass.abilitiesAtLevels["2"](pc, {isNoInput: true});
 pclass.abilitiesAtLevels["3"](pc, {isNoInput: true});
+pclass.abilitiesAtLevels["4"](pc, {isNoInput: false, abilityScoreImprovement: [{"ability": "wisdom", "improvement": 2}], spellSelection: ["RESISTANCE"]});
 
 Jsonify.dumpToJSON(pc, "Merlyn");

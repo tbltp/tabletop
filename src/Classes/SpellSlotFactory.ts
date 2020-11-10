@@ -1,5 +1,5 @@
-import { ResourceTrait } from "Base/Interfaces";
-import { PlayerCharacter } from "Base/PlayerCharacter";
+import { ResourceTrait } from "../Base/Interfaces";
+import { PlayerCharacter } from "../Base/PlayerCharacter";
 
 export class SpellSlotFactory {
   private static levelStringDict: { [key: string]: string } = {

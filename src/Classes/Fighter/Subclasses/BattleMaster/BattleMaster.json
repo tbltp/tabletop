@@ -1,0 +1,34 @@
+{
+  "title": "Battle Master", 
+  "description": "Those who emulate the archetypal Battle Master employ martial techniques passed down through generations. To a Battle Master, combat is an academic field, sometimes including subjects beyond battle such as weaponsmithing and calligraphy. Not every fighter absorbs the lessons of history, theory, and artistry that are reflected in the Battle Master archetype, but those who do are well-rounded fighters of great skill and knowledge.", 
+  "features": {
+    "3": {
+      "COMBAT SUPERIORITY": {
+        "title": "Combat Superiority", 
+        "description": "When you choose this archetype, you learn maneuvers that are fueled by special dice called Superiority dice.\nManeuvers: You learn three maneuvers of your choice, which are detailed under \u201cManeuvers\u201d below. Many maneuvers enhance an attack in some way. You can use only one maneuver per attack.\nYou learn two additional maneuvers of your choice at 7th, 10th, and 15th Level. Each time you learn new maneuvers, you can also replace one maneuver you know with a different one.\nSuperiority Dice: You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest.\nYou gain another superiority die at 7th level and one more at 15th level.\nSaving Throws: Some of your maneuvers require your target to make a saving throw to resist the maneuver's effects. The saving throw DC is calculated as follows: Maneuver save DC = 8 + your proficiency bonus + your Strength or Dexterity modifier (your choice)."
+      }, 
+      "STUDENT OF WAR": {
+        "title": "Student of War", 
+        "description": "You gain proficiency with one type of artisan's tools of your choice."
+      }
+    }, 
+    "7": {
+      "KNOW YOUR ENEMY": {
+        "title": "Know Your Enemy", 
+        "description": "If you spend at least 1 minute observing or interacting with another creature outside combat, you can learn certain information about its capabilities compared to your own. The DM tells you if the creature is your equal, superior, or inferior in regard to two of the following characteristics of your choice:\nStrength score\nDexterity score\nConstitution score\nArmor class\nCurrent hit points\nTotal class levels (if any)\nFighter class levels (if any)"
+      }
+    }, 
+    "10": {
+      "IMPROVED COMBAT SUPERIORITY": {
+        "title": "Improved Combat Superiority", 
+        "description": "At 10th level, your superiority dice turn into d10s. At 18th level, they turn into d12s."
+      }
+    }, 
+    "15": {
+      "RELENTLESS": {
+        "title": "Relentless", 
+        "description": "When you roll initiative and have no superiority dice remaining, you regain 1 superiority die."
+      }
+    }
+  }
+}

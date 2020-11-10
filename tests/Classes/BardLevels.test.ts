@@ -3,7 +3,7 @@ import "jest-extended";
 import { PlayerClass } from "../../src/Classes/PlayerClass";
 import { PlayerCharacter } from "../../src/Base/PlayerCharacter";
 import { BardArchetype } from "../../src/Classes/Archetypes/BardArchetype";
-import { Bard, BardLevelingParams } from "../../src/Classes/Bard";
+import { Bard, BardLevelingParams } from "../../src/Classes/Bard/Bard";
 
 import * as ClassTraits from "../../Assets/ClassTraits.json";
 import { SpellSlotFactory } from "../../src/Classes/SpellSlotFactory";

@@ -1,6 +1,6 @@
 import { Race } from "./Race";
 import { PlayerCharacter } from "../Base/PlayerCharacter";
-import * as DraconicAncestry from "../../Assets/DraconicAncestry.json";
+import * as DraconicAncestry from "../../Assets/DraconicBloodline.json";
 import * as languages from "../../Assets/Languages.json";
 
 export class Dragonborn extends Race {

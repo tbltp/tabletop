@@ -1,0 +1,32 @@
+{
+  "title": "Oath of Devotion", 
+  "description": "The Oath of Devotion binds a paladin to the loftiest ideals of justice, virtue, and order. Sometimes called cavaliers, white knights, or holy warriors, these paladins meet the ideal of the knight in shining armor, acting with honor in pursuit of justice and the greater good. They hold themselves to the highest standards of conduct, and some, for better or worse, hold the rest of the world to the same standards. Many who swear this oath are devoted to gods of law and good and use their gods\u2019 tenets as the measure of their devotion. They hold angels\u2014the perfect servants of good\u2014as their ideals, and incorporate images of angelic wings into their helmets or coats of arms.\nTenets of Devotion: Though the exact words and strictures of the Oath of Devotion vary, paladins of this oath share these tenets.\nHonesty: Dont lie or cheat. Let your word be your promise.\nCourage: Never fear to act, though caution is wise.\nCompassion: Aid others, protect the weak, and punish those who threaten them. Show mercy to your foes, but temper it with wisdom.\nHonor: Treat others with fairness, and let your honorable deeds be an example to them. Do as much good as possible while causing the least amount of harm.\nDuty: Be responsible for your actions and their consequences, protect those entrusted to your care. and obey those who have just authority over you.", 
+  "3": {
+    "SACRED WEAPON": {
+      "title": "Channel Divinity: Sacred Weapon", 
+      "description": "As an action, you can imbue one weapon that you are holding with positive energy, using your Channel Divinity. For 1 minute, you add your Charisma modifier to attack rolls made with that weapon (with a minimum bonus of +1). The weapon also emits bright light in a 20-foot radius and dim light 20 feet beyond that. If the weapon is not already magical, it becomes magical for the duration.\nYou can end this effect on your turn as part of any other action. If you are no longer holding or carrying this weapon, or if you fall unconscious, this effect ends."
+    }, 
+    "TURN THE UNHOLY": {
+      "title": "Channel Divinity: Turn the Unholy", 
+      "description": "As an action, you present your holy symbol and speak a prayer censuring fiends and undead, using your Channel Divinity. Each fiend or undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes damage.\nA turned creature must spend its turns trying to move as far away from you as it can, and it can\u2019t willingly move to a space within 30 feet of you. It also can\u2019t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there\u2019s nowhere to move, the creature can use the Dodge action."
+    }
+  }, 
+  "7": {
+    "AURA OF DEVOTION": {
+      "title": "Aura of Devotion", 
+      "description": "Starting at 7th level, you and friendly creatures within 10 feet of you can't be charmed while you are conscious. At 18th level, the range of this aura increases to 30 feet."
+    }
+  }, 
+  "15": {
+    "PURITY OF SPIRIT": {
+      "title": "Purity of Spirit", 
+      "description": "Beginning at 15th level, you are always under the effects of a protection from evil and good spell."
+    }
+  }, 
+  "20": {
+    "HOLY NIMBUS": {
+      "title": "Holy Nimbus", 
+      "description": "At 20th level, as an action, you can emanate an aura of sunlight. For 1 minute, bright light shines from you in a 30-foot radius, and dim light shines 30 feet beyond that.\nWhenever an enemy creature starts its turn in the bright light, the creature takes 10 radiant damage.\nIn addition, for the duration, you have advantage on saving throws against spells cast by fiends or undead.\nOnce you use this feature, you can\u2019t use it again until you finish a long rest."
+    }
+  }
+}

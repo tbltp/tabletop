@@ -1,8 +1,8 @@
 node_modules/
 *lock.json
-*.py
 .vscode
 dist/
 output*
 .DS_Store
-IGNORE/*.json
+*.test.ts
+*.js

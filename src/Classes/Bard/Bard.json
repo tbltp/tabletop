@@ -1,0 +1,48 @@
+{
+  "10": {
+    "MAGICAL SECRETS": {
+      "description": "You have plundered magical knowledge from a wide spectrum of disciplines.  Choose two spells from any class, including this one. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip.\nThe chosen spells count as a bard spells for you and are included in the number in the Spells Known column of the Bard table.\nYou learn two additional spells from any class at 14th level and again at 18th level.",
+      "title": "Magical Secrets"
+    }
+  },
+  "20": {
+    "SUPERIOR INSPIRATION": {
+      "description": "When you roll initiative and have no uses of Bardic Inspiration left, you regain one use.",
+      "title": "Superior Inspiration"
+    }
+  },
+  "1": {
+    "BARDIC INSPIRATION": {
+      "description": "You can inspire others through stirring words or music. To do so, you use a bonus action your turn to choose one creature other than yourself within 60 feat of you who can hear you. That creature gains one Bardic Inspiration die, a d6.\nOnce within the next ten minutes, the creature can roll the die and add the number rolled to one ability check, attack  roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide before the DM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time.\nYou can use this feature a number of times equal to your Charisma modifier (minimum of once). You regain any expended uses when you finish a long rest.\nYour Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level.",
+      "title": "Bardic Inspiration"
+    }
+  },
+  "3": {
+    "EXPERTISE": {
+      "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any abiility check you make that uses either of the chosen proficiencies.\nAt 10th level, you choose another two skill proficiencies to gain this benefit.",
+      "title": "Expertise"
+    }
+  },
+  "2": {
+    "JACK OF ALL TRADES": {
+      "description": "You can add half your proficiency bonus, rounded down, to any ability check you make that doesn't already include your proficiency bonus.",
+      "title": "Jack of All Trades"
+    },
+    "SONG OF REST": {
+      "description": "You can use soothing music or oration to help revitalize your wounded allies during a short rest. If you or any friendly creatures who can hear your performance regain hit points at the end of the short rest, each of those creatures regains an extra 1d6 hit points.\nThe extra hit points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at 13th level, and to 1d12 at 17th level.",
+      "title": "Song of Rest"
+    }
+  },
+  "5": {
+    "FONT OF INSPIRATION": {
+      "description": "You regain all your expended uses of Bardic Inspiration when you finish a short or long rest.",
+      "title": "Font of Inspiration"
+    }
+  },
+  "6": {
+    "COUNTERCHARM": {
+      "description": "You gain the ability to use musical notes or words of power to disrupt mind-influencing effects. As an action, you can start a performance that lasts until the end of your next turn. During that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against being frightened or charmed. A creature must be able to hear you to gain this benefit.  The performance ends early if you are incapacitated or silenced if you voluntarily end it (no action requred).",
+      "title": "Countercharm"
+    }
+  }
+}

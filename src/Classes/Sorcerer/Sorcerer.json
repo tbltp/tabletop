@@ -1,0 +1,20 @@
+{
+  "2": {
+    "FONT OF MAGIC": {
+      "title": "Font of Magic", 
+      "description": "At 2nd level, you tap into a deep wellspring of magic within yourself. This wellspring is represented by sorcery points, which allow you to create a variety of magical effects\nSorcery Points: You have 2 sorcery points, and you gain more as you reach higher levels, as shown in the Sorcery Points column of the Sorcerer table. You can never have m ore sorcery points than shown on the table for your level. You regain all spent sorcery points when you finish a long rest.\nFlexible Casting: You can use your sorcery points to gain additional spell slots, or sacrifice spell slots to gain additional sorcery points. You learn other ways to use your sorcery points as you reach higher levels.\nCreating Spell Slots: You can transform unexpended sorcery points into one spell slot as a bonus action on your turn. The Creating Spell Slots table show s the cost of creating a spell slot of a given level. You can create spell slots no higher in level than 5th.\nConverting a Spell Slot to Sorcery Points: As a bonus action on your turn, you can expend one spell slot and gain a number of sorcery points equal to the slot\u2019s level."
+    }
+  }, 
+  "3": {
+    "METAMAGIC": {
+      "title": "Metamagic", 
+      "description": "At 3rd level, you gain the ability to twist your spells to suit your needs. You gain two Metamagic options of your choice. You gain another one at 10th and 17th level.\nYou can use only one Metamagic option on a spell when you cast it, unless otherwise noted."
+    }
+  }, 
+  "20": {
+    "SORCEROUS RESTORATION": {
+      "title": "Sorcerous Restoration", 
+      "description": "At 20th level, you regain 4 expended sorcery points whenever you finish a short rest."
+    }
+  }
+}

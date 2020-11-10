@@ -72,8 +72,8 @@ import {
   WarCaster,
   WeaponMaster,
 } from "./src/Feats/Feat";
-import { Barbarian } from "./src/Classes/Barbarian";
-import { Bard } from "./src/Classes/Bard";
+import { Barbarian } from "./src/Classes/Barbarian/Barbarian";
+import { Bard } from "./src/Classes/Bard/Bard";
 import { PlayerClass } from "./src/Classes/PlayerClass";
 
 const pc = new PlayerCharacter(12, 12, 12, 12, 12, 12);

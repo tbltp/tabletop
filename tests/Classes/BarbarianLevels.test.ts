@@ -2,7 +2,7 @@ import "jest-extended";
 
 import { PlayerCharacter } from "../../src/Base/PlayerCharacter";
 import { BarbarianArchetype } from "../../src/Classes/Archetypes/BarbarianArchetype";
-import { Barbarian } from "../../src/Classes/Barbarian";
+import { Barbarian } from "../../src/Classes/Barbarian/Barbarian";
 
 import * as ClassTraits from "../../Assets/ClassTraits.json";
 import * as ArchetypeTraits from "../../Assets/Archetypes.json";

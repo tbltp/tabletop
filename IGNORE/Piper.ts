@@ -1,7 +1,7 @@
 import { PlayerCharacter } from "../src/Base/PlayerCharacter";
 import { WaterGenasi } from "../src/Races/Genasi";
 import { Sage } from "../src/Backgrounds/Background";
-import { Monk } from "../src/Classes/Monk";
+import { Monk } from "../src/Classes/Monk/Monk";
 
 import { Jsonify } from "./Jsonify";
 
