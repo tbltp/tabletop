@@ -4,38 +4,46 @@ import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { BarbarianSubclass } from "./Subclasses/BarbarianSubclass";
 
 export class Barbarian extends PlayerClass {
-  constructor(skillProficiencies: string[], weapons: string[]) {
+  constructor(multiclass: boolean, skillProficiencies?: string[], weapons?: string[]) {
     super(
       "Barbarian",
       [],
-      skillProficiencies,
-      ["Simple", "Martial"],
-      ["Light", "Medium", "Shield"],
       [],
-      [...weapons, "JAVELIN", "JAVELIN", "JAVELIN", "JAVELIN"],
+      ["Simple", "Martial"],
+      ["Shield"],
+      [],
+      [],
       [],
       [],
       [],
       { isNoInput: true },
       "d12",
       12,
-      ["strength", "constitution"]
+      []
     );
 
-    this.equipmentPack = "EXPLORER";
+    this.characterStart(multiclass, skillProficiencies, weapons);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
       this.abilitiesAtLevels[level] = func.bind(this);
     }
   }
+
+  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[]){
+    if(!multiclass){
+      this.skillProficiencies.push(...skillProficiencies)
+      this.armorProficiencies.push("Light", "Medium");
+      this.weapons.push(...weapons, "JAVELIN", "JAVELIN", "JAVELIN", "JAVELIN");
+      this.equipmentPack = "EXPLORER";
+      this.savingThrowProficiencies = ["strength", "constitution"];
+    }
+  }
+
   /** TODO
    * FAST MOVEMENT depends on equipped armor.
    * EXTRA ATTACK should be represented in action economy.
    */
-
-  primalPath: string = "";
-
   abilitiesAtLevels = {
     "1": this.level1,
     "2": this.level2,
@@ -95,8 +103,8 @@ export class Barbarian extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.primalPath = params.archetypeSelection[0].archetype;
-    BarbarianSubclass.subclassDictionary[this.primalPath][3](pc, params);
+    this.subclass = params.archetypeSelection[0].archetype;
+    BarbarianSubclass.subclassDictionary[this.subclass][3](pc, params);
     pc.findResourceTraitByName("Rage").resourceMax.value++;
   }
 
@@ -109,7 +117,7 @@ export class Barbarian extends PlayerClass {
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
-    BarbarianSubclass.subclassDictionary[this.primalPath][6](pc, params);
+    BarbarianSubclass.subclassDictionary[this.subclass][6](pc, params);
     pc.findResourceTraitByName("Rage").resourceMax.value++;
   }
 
@@ -133,7 +141,7 @@ export class Barbarian extends PlayerClass {
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
-    BarbarianSubclass.subclassDictionary[this.primalPath][10](pc, params);
+    BarbarianSubclass.subclassDictionary[this.subclass][10](pc, params);
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
@@ -150,7 +158,7 @@ export class Barbarian extends PlayerClass {
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
-    BarbarianSubclass.subclassDictionary[this.primalPath][14](pc, params);
+    BarbarianSubclass.subclassDictionary[this.subclass][14](pc, params);
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {

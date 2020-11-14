@@ -2,24 +2,23 @@ import { PlayerCharacter } from "../src/Base/PlayerCharacter";
 import { FireGenasi } from "../src/Races/Genasi";
 import { Sage } from "../src/Backgrounds/Background";
 import { Barbarian } from "../src/Classes/Barbarian/Barbarian";
+import { CharacterSheet } from "../src/Base/CharacterSheet";
 
 import { Jsonify } from "./Jsonify";
 
-let pc: PlayerCharacter = new PlayerCharacter(18, 15, 15, 14, 6, 17);
-const race = new FireGenasi();
-const background = new Sage(["Gnomish", "Elvish"]);
-const pclass = new Barbarian(
-  ["athletics", "nature"],
-  ["GREATAXE", "HANDAXE", "HANDAXE"]
-);
-race.apply(pc);
-background.apply(pc);
-pclass.apply(pc);
+let pc = new CharacterSheet(
+  new PlayerCharacter(18, 15, 15, 14, 6, 17),
+  new FireGenasi(),
+  new Barbarian(
+    false,
+    ["athletics", "nature"],
+    ["GREATAXE", "HANDAXE", "HANDAXE"]
+  ),
+  new Sage(["Gnomish", "Elvish"])
+)
 
-race.abilitiesAtLevels[3](pc);
+pc.levelUp("Barbarian", {isNoInput: true});
+pc.levelUp("Barbarian", {isNoInput: false, archetypeSelection: [{archetype: "BERSERKER"}]});
+pc.levelUp("Barbarian", {isNoInput: false, abilityScoreImprovement: [{"ability": "dexterity", "improvement": 1}, {"ability": "constitution", "improvement": 1}]});
 
-pclass.abilitiesAtLevels["2"](pc, {isNoInput: true});
-pclass.abilitiesAtLevels["3"](pc, {isNoInput: false, archetypeSelection: [{archetype: "BERSERKER"}]});
-pclass.abilitiesAtLevels["4"](pc, {isNoInput: false, abilityScoreImprovement: [{"ability": "dexterity", "improvement": 1}, {"ability": "constitution", "improvement": 1}]});
-
-Jsonify.dumpToJSON(pc, "Bunsen");
+Jsonify.dumpToJSON(pc.character, "Bunsen");

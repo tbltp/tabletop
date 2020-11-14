@@ -1,5 +1,7 @@
 import { ResourceTrait } from "../Base/Interfaces";
 import { PlayerCharacter } from "../Base/PlayerCharacter";
+import { CharacterSheet } from "../Base/CharacterSheet";
+import { PlayerClass } from "./PlayerClass";
 
 export class SpellSlotFactory {
   private static levelStringDict: { [key: string]: string } = {
@@ -43,7 +45,6 @@ export class SpellSlotFactory {
       "11": [4, 3, 3, 0, 0],
       "13": [4, 3, 3, 1, 0],
       "15": [4, 3, 3, 2, 0],
-      "17": [4, 3, 3, 3, 1],
       "19": [4, 3, 3, 3, 2],
     },
     TERTIARY: {
@@ -57,7 +58,23 @@ export class SpellSlotFactory {
     },
   };
 
-  private static spellSlotsByLevelSecondary: { [key: string]: number[] } = {};
+  public static spellcastingClassRanks: { [key: string]: string } = {
+    "Barbarian": "NONE",
+    "Bard": "PRIMARY",
+    "Cleric": "PRIMARY",
+    "Druid": "PRIMARY",
+    "Monk": "NONE",
+    "Paladin": "SECONDARY",
+    "Ranger": "SECONDARY",
+    "Sorcerer": "PRIMARY",
+    "Warlock": "NONE",
+    "Wizard": "PRIMARY"
+  }
+
+  public static spellcastingSubclasses: { [key: string]: string } = {
+    "Eldritch Knight": "TERTIARY",
+    "Arcane Trickster": "TERTIARY"
+  }
 
   private static getLevelString(level: number): string {
     return SpellSlotFactory.levelStringDict[String(level)];
@@ -88,11 +105,14 @@ export class SpellSlotFactory {
     return pc.findResourceTraitByName(resourceTitle);
   }
 
-  public static applySpellSlotsAtLevel(
+  public static applyClassSpellSlotsAtLevel(
     pc: PlayerCharacter,
-    level: number,
-    rank: string
+    rank: string,
+    level: number
   ): void {
+
+    if(rank == "NONE"){ return; }
+
     if (
       !Object.keys(SpellSlotFactory.spellSlotsByLevel[rank]).includes(
         String(level)

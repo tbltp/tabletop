@@ -77,7 +77,7 @@ import { Bard } from "./src/Classes/Bard/Bard";
 import { PlayerClass } from "./src/Classes/PlayerClass";
 
 const pc = new PlayerCharacter(12, 12, 12, 12, 12, 12);
-const bdclass = new Bard([], [], [], "", "ENTERTAINER", {
+const bdclass = new Bard(false, [], [], {
   isNoInput: false,
   spellSelection: [
     "VICIOUS MOCKERY",
@@ -87,7 +87,8 @@ const bdclass = new Bard([], [], [], "", "ENTERTAINER", {
     "HEALING WORD",
     "THUNDERWAVE",
   ],
-});
+},
+ [], "");
 
 const bardArgs = [
   {

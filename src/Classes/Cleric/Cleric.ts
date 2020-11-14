@@ -10,30 +10,31 @@ import { SpellSlotFactory } from "../SpellSlotFactory";
 
 export class Cleric extends PlayerClass {
   constructor(
-    skillProficiencies: string[],
-    weapons: string[],
-    armor: string[],
+    multiclass: boolean,
     clericParams: LevelingParams,
-    equipmentPack: string
+    skillProficiencies?: string[],
+    weapons?: string[],
+    armor?: string[],
+    equipmentPack?: string
   ) {
     super(
       "Cleric",
       [],
-      skillProficiencies,
-      ["Simple"],
+      [],
+      [],
       ["Light", "Medium", "Shield"],
       [],
-      weapons,
-      armor,
+      [],
+      [],
       [],
       [],
       clericParams,
       "d8",
       8,
-      ["wisdom", "charisma"]
+      []
     );
-
-    this.equipmentPack = equipmentPack;
+    
+    this.characterStart(multiclass, skillProficiencies, weapons, armor, equipmentPack)
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -41,7 +42,16 @@ export class Cleric extends PlayerClass {
     }
   }
 
-  clericDomain: string = "";
+  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], armor: string[], equipmentPack: string){
+    if(!multiclass){
+      this.skillProficiencies = skillProficiencies;
+      this.weaponProficiencies.push("Simple");
+      this.weapons = weapons;
+      this.armor = armor;
+      this.equipmentPack = equipmentPack;
+      this.savingThrowProficiencies = ["wisdom", "charisma"];
+    }
+  }
 
   abilitiesAtLevels = {
     "1": this.level1,
@@ -82,16 +92,11 @@ export class Cleric extends PlayerClass {
     this.handleSpellSelections(pc, params, SpellcastingAbility["CLERIC"]);
   }
 
-  private applyClericSpellSlots(pc: PlayerCharacter, level: number) {
-    SpellSlotFactory.applySpellSlotsAtLevel(pc, level, "PRIMARY");
-  }
-
   level1(pc: PlayerCharacter, params: LevelingParams): void {
     pc.addSpells(
       [...params.spellSelection, ...SpellList["Cleric"][1]],
       SpellcastingAbility["CLERIC"]
     );
-    this.applyClericSpellSlots(pc, 1);
     let clericPreparedSpells = {
       title: "Cleric",
       level: this.level,
@@ -101,12 +106,11 @@ export class Cleric extends PlayerClass {
       ? pc.preparedSpells.push(clericPreparedSpells)
       : (pc.preparedSpells = [clericPreparedSpells]);
     // divine domain
-    this.clericDomain = params.archetypeSelection[0].archetype;
-    ClericSubclass.subclassDictionary[this.clericDomain][1](pc, params);
+    this.subclass = params.archetypeSelection[0].archetype;
+    ClericSubclass.subclassDictionary[this.subclass][1](pc, params);
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyClericSpellSlots(pc, 2);
     // channel divinity
     const channelDivinity: ResourceTrait = {
       title: "Channel Divinity",
@@ -115,26 +119,23 @@ export class Cleric extends PlayerClass {
     };
     pc.addResourceTraits(channelDivinity);
     // divine domain
-    ClericSubclass.subclassDictionary[this.clericDomain][2](pc, params);
+    ClericSubclass.subclassDictionary[this.subclass][2](pc, params);
     this.pushClericFeatures(pc, 2);
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyClericSpellSlots(pc, 3);
     // divine domain spells
-    ClericSubclass.subclassDictionary[this.clericDomain][3](pc, params);
+    ClericSubclass.subclassDictionary[this.subclass][3](pc, params);
     pc.addSpells([...SpellList["Cleric"][2]], SpellcastingAbility["CLERIC"]);
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     // cantrip
     this.handleClericSpellSelections(pc, params);
-    this.applyClericSpellSlots(pc, 4);
     pc.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyClericSpellSlots(pc, 5);
     // destroy undead
     const destroyUndead: ScalingTrait = {
       title: "Destroy Undead",
@@ -143,43 +144,38 @@ export class Cleric extends PlayerClass {
       challengeRating: 0.5,
     };
     // divine domain spells
-    ClericSubclass.subclassDictionary[this.clericDomain][5](pc, params);
+    ClericSubclass.subclassDictionary[this.subclass][5](pc, params);
     this.pushClericFeatures(pc, 5);
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyClericSpellSlots(pc, 6);
     // channel divinity
     pc.findResourceTraitByName("Channel Divinity").resourceMax.value++;
     // divine domain
-    ClericSubclass.subclassDictionary[this.clericDomain][6](pc, params);
+    ClericSubclass.subclassDictionary[this.subclass][6](pc, params);
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyClericSpellSlots(pc, 7);
     // divine domain spells
-    ClericSubclass.subclassDictionary[this.clericDomain][7](pc, params);
+    ClericSubclass.subclassDictionary[this.subclass][7](pc, params);
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyClericSpellSlots(pc, 8);
     pc.improveAbilityScores(params.abilityScoreImprovement);
     // destroy undead
     pc.findScalingTraitByName("Destroy Undead").challengeRating = 1;
     // divine domain
-    ClericSubclass.subclassDictionary[this.clericDomain][8](pc, params);
+    ClericSubclass.subclassDictionary[this.subclass][8](pc, params);
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyClericSpellSlots(pc, 9);
     // divine domain spells
-    ClericSubclass.subclassDictionary[this.clericDomain][9](pc, params);
+    ClericSubclass.subclassDictionary[this.subclass][9](pc, params);
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
     // cantrip
     this.handleClericSpellSelections(pc, params);
-    this.applyClericSpellSlots(pc, 10);
     // divine intervention
     const divineIntervention: ResourceTrait = {
       title: "Divine Intervention",
@@ -192,7 +188,6 @@ export class Cleric extends PlayerClass {
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyClericSpellSlots(pc, 11);
     // destroy undead
     pc.findScalingTraitByName("Destroy Undead").challengeRating++;
   }
@@ -202,12 +197,11 @@ export class Cleric extends PlayerClass {
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyClericSpellSlots(pc, 13);
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
     // divine strike improvement where applicable
-    if (!["KNOWLEDGE", "LIGHT"].includes(this.clericDomain)) {
+    if (!["KNOWLEDGE", "LIGHT"].includes(this.subclass)) {
       pc.findScalingTraitByName("Divine Strike").dice = "2d8";
     }
     // destroy undead
@@ -215,7 +209,6 @@ export class Cleric extends PlayerClass {
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyClericSpellSlots(pc, 15);
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
@@ -223,25 +216,21 @@ export class Cleric extends PlayerClass {
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyClericSpellSlots(pc, 17);
     // destroy undead
     pc.findScalingTraitByName("Destroy Undead").challengeRating++;
     // divine domain
-    ClericSubclass.subclassDictionary[this.clericDomain][17](pc, params);
+    ClericSubclass.subclassDictionary[this.subclass][17](pc, params);
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyClericSpellSlots(pc, 18);
     // channel divinity
     pc.findResourceTraitByName("Channel Divinity").resourceMax.value++;
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyClericSpellSlots(pc, 19);
     pc.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyClericSpellSlots(pc, 20);
   }
 }

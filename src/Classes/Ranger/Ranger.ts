@@ -8,12 +8,12 @@ import { SpellSlotFactory } from "../SpellSlotFactory";
 
 export class Ranger extends PlayerClass {
   constructor(
+    multiclass: boolean,
     skillProficiencies: string[],
-    weapons: string[],
-    armor: string[],
     rangerParams: RangerLevelingParams,
-    equipmentPack: string,
-    multiclass: boolean
+    weapons?: string[],
+    armor?: string[],
+    equipmentPack?: string,
   ) {
     super(
       "Ranger",
@@ -22,21 +22,17 @@ export class Ranger extends PlayerClass {
       ["Simple", "Martial"],
       ["Light", "Medium", "Shield"],
       [],
-      [...weapons],
-      armor,
+      [],
+      [],
       [],
       [],
       rangerParams,
       "d10",
       10,
-      ["strength", "dexterity"]
+      []
     );
 
-    this.equipmentPack = equipmentPack;
-
-    if (!multiclass) {
-      this.weapons.push("LONGBOW");
-    }
+    this.characterStart(multiclass, weapons, armor, equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -44,7 +40,15 @@ export class Ranger extends PlayerClass {
     }
   }
 
-  rangerArchetype: string;
+  characterStart(multiclass: boolean, weapons: string[], armor: string[], equipmentPack: string){
+    if(!multiclass){
+      this.weapons = [...weapons, "LONGBOW"];
+      this.armor = armor;
+      this.equipmentPack = equipmentPack;
+      this.savingThrowProficiencies = ["strength", "dexterity"];
+    }
+  }
+
 
   abilitiesAtLevels = {
     "1": this.level1,
@@ -80,10 +84,6 @@ export class Ranger extends PlayerClass {
     this.handleSpellSelections(pc, params, SpellcastingAbility["RANGER"]);
   }
 
-  private applyRangerSpellSlots(pc: PlayerCharacter, level: number) {
-    SpellSlotFactory.applySpellSlotsAtLevel(pc, level, "SECONDARY");
-  }
-
   level1(pc: PlayerCharacter, params: RangerLevelingParams): void {
     PlayerClass.pushCustomizedClassFeature(pc, 1, "RANGER", "FAVORED ENEMY", [
       params.favoredEnemy,
@@ -99,27 +99,23 @@ export class Ranger extends PlayerClass {
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    this.applyRangerSpellSlots(pc, 2);
     PlayerClass.addFightingStyle(pc, params.fightingStyle[0]);
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    this.applyRangerSpellSlots(pc, 3);
-    this.rangerArchetype = params.archetypeSelection[0].archetype;
-    RangerSubclass.subclassDictionary[this.rangerArchetype][3](pc, params);
+    this.subclass = params.archetypeSelection[0].archetype;
+    RangerSubclass.subclassDictionary[this.subclass][3](pc, params);
     this.pushRangerFeatures(pc, 3);
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyRangerSpellSlots(pc, 4);
     pc.improveAbilityScores(params.abilityScoreImprovement);
     this.pushRangerFeatures(pc, 4);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    this.applyRangerSpellSlots(pc, 5);
     this.pushRangerFeatures(pc, 5);
   }
 
@@ -135,8 +131,7 @@ export class Ranger extends PlayerClass {
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    this.applyRangerSpellSlots(pc, 7);
-    RangerSubclass.subclassDictionary[this.rangerArchetype][7](pc, params);
+    RangerSubclass.subclassDictionary[this.subclass][7](pc, params);
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
@@ -146,7 +141,6 @@ export class Ranger extends PlayerClass {
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    this.applyRangerSpellSlots(pc, 9);
   }
 
   level10(pc: PlayerCharacter, params: RangerLevelingParams): void {
@@ -158,8 +152,7 @@ export class Ranger extends PlayerClass {
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    this.applyRangerSpellSlots(pc, 11);
-    RangerSubclass.subclassDictionary[this.rangerArchetype][11](pc, params);
+    RangerSubclass.subclassDictionary[this.subclass][11](pc, params);
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
@@ -168,7 +161,6 @@ export class Ranger extends PlayerClass {
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    this.applyRangerSpellSlots(pc, 13);
   }
 
   level14(pc: PlayerCharacter, params: RangerLevelingParams): void {
@@ -180,8 +172,7 @@ export class Ranger extends PlayerClass {
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    this.applyRangerSpellSlots(pc, 15);
-    RangerSubclass.subclassDictionary[this.rangerArchetype][15](pc, params);
+    RangerSubclass.subclassDictionary[this.subclass][15](pc, params);
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
@@ -190,7 +181,6 @@ export class Ranger extends PlayerClass {
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    this.applyRangerSpellSlots(pc, 17);
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {
@@ -199,7 +189,6 @@ export class Ranger extends PlayerClass {
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    this.applyRangerSpellSlots(pc, 19);
     pc.improveAbilityScores(params.abilityScoreImprovement);
   }
 

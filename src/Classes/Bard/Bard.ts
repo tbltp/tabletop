@@ -7,31 +7,32 @@ import { SpellSlotFactory } from "../SpellSlotFactory";
 
 export class Bard extends PlayerClass {
   constructor(
+    multiclass: boolean,
     skillProficiencies: string[],
-    weapons: string[],
     instrumentProficiencies: string[],
-    instrument: string,
-    equipmentPack: string,
-    bardParams: LevelingParams
+    bardParams: LevelingParams,
+    weapons?: string[],
+    instrument?: string,
+    equipmentPack?: string,
   ) {
     super(
       "Bard",
       [],
       skillProficiencies,
-      ["Simple", "Crossbow, hand", "Longsword", "Rapier", "Shortsword"],
+      [],
       ["Light"],
       instrumentProficiencies,
-      [...weapons, "DAGGER"],
-      ["LEATHER"],
       [],
-      [instrument],
+      [],
+      [],
+      [],
       bardParams,
       "d8",
       8,
-      ["dexterity", "charisma"]
+      []
     );
 
-    this.equipmentPack = equipmentPack;
+    this.characterStart(multiclass, weapons, instrument, equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -39,9 +40,18 @@ export class Bard extends PlayerClass {
     }
   }
 
-  // What should happen if a bard switches out a magical secret spell
+  characterStart(multiclass: boolean, weapons: string[], instrument: string, equipmentPack: string){
+    if(!multiclass){
+      this.weaponProficiencies.push("Simple", "Crossbow, hand", "Longsword", "Rapier", "Shortsword");
+      this.weapons.push(...weapons, "DAGGER");
+      this.armor.push("LEATHER");
+      this.toolKits.push(instrument)
+      this.equipmentPack = equipmentPack;
+      this.savingThrowProficiencies = ["dexterity", "charisma"];
+    }
+  }
 
-  bardCollege: string = "";
+  // What should happen if a bard switches out a magical secret spell
 
   abilitiesAtLevels = {
     "1": this.level1,
@@ -83,14 +93,9 @@ export class Bard extends PlayerClass {
     this.handleSpellSelections(pc, params, SpellcastingAbility["BARD"]);
   }
 
-  private applyBardSpellSlots(pc: PlayerCharacter, level: number) {
-    SpellSlotFactory.applySpellSlotsAtLevel(pc, level, "PRIMARY");
-  }
-
   level1(pc: PlayerCharacter, params: LevelingParams): void {
     // spell additions at most levels, replacements can be done at every level
     this.handleBardSpellSelections(pc, params);
-    this.applyBardSpellSlots(pc, 1);
     // bardic inspiration
     const bardicInspiration: ResourceTrait = {
       title: "Bardic Inspiration",
@@ -118,16 +123,14 @@ export class Bard extends PlayerClass {
         pc.skills[skill].bonus = pc.proficiency.halfBonus;
       }
     }
-    this.applyBardSpellSlots(pc, 2);
     this.pushBardFeatures(pc, 2);
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    this.applyBardSpellSlots(pc, 3);
     // college
-    this.bardCollege = params.archetypeSelection[0].archetype;
-    BardSubclass.subclassDictionary[this.bardCollege][3](pc, params);
+    this.subclass = params.archetypeSelection[0].archetype;
+    BardSubclass.subclassDictionary[this.subclass][3](pc, params);
     // expertise
     for (let skill of params.proficiencySelection) {
       pc.skills[skill].expertise = true;
@@ -143,13 +146,11 @@ export class Bard extends PlayerClass {
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    this.applyBardSpellSlots(pc, 4);
     pc.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    this.applyBardSpellSlots(pc, 5);
     // bardic inspiration
     pc.findResourceTraitByName("Bardic Inspiration").dice = "1d8";
     this.pushBardFeatures(pc, 5);
@@ -157,33 +158,28 @@ export class Bard extends PlayerClass {
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    this.applyBardSpellSlots(pc, 6);
     // college
-    BardSubclass.subclassDictionary[this.bardCollege][6](pc, params);
+    BardSubclass.subclassDictionary[this.subclass][6](pc, params);
     this.pushBardFeatures(pc, 6);
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    this.applyBardSpellSlots(pc, 7);
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    this.applyBardSpellSlots(pc, 8);
     pc.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    this.applyBardSpellSlots(pc, 9);
     // song of rest
     pc.findScalingTraitByName("Song of Rest").dice = "1d8";
   }
 
   level10(pc: PlayerCharacter, params: BardLevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    this.applyBardSpellSlots(pc, 10);
     // expertise
     for (let skill of params.proficiencySelection) {
       pc.skills[skill].expertise = true;
@@ -209,7 +205,6 @@ export class Bard extends PlayerClass {
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    this.applyBardSpellSlots(pc, 11);
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
@@ -219,7 +214,6 @@ export class Bard extends PlayerClass {
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    this.applyBardSpellSlots(pc, 13);
     // song of rest
     pc.findScalingTraitByName("Song of Rest").dice = "1d10";
   }
@@ -235,12 +229,11 @@ export class Bard extends PlayerClass {
       ...params.magicalSecretsSpellSelection
     );
     // college
-    BardSubclass.subclassDictionary[this.bardCollege][14](pc, params);
+    BardSubclass.subclassDictionary[this.subclass][14](pc, params);
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    this.applyBardSpellSlots(pc, 15);
     // bardic inspiration
     pc.findResourceTraitByName("Bardic Inspiration").dice = "1d12";
   }
@@ -252,14 +245,12 @@ export class Bard extends PlayerClass {
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    this.applyBardSpellSlots(pc, 17);
     // song of rest
     pc.findScalingTraitByName("Song of Rest").dice = "1d12";
   }
 
   level18(pc: PlayerCharacter, params: BardLevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    this.applyBardSpellSlots(pc, 18);
     // magical secrets
     pc.addSpells(
       params.magicalSecretsSpellSelection,
@@ -272,13 +263,11 @@ export class Bard extends PlayerClass {
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    this.applyBardSpellSlots(pc, 19);
     pc.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    this.applyBardSpellSlots(pc, 20);
     this.pushBardFeatures(pc, 20);
   }
 }

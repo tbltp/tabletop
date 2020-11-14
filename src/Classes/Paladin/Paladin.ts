@@ -7,30 +7,31 @@ import { SpellSlotFactory } from "../SpellSlotFactory";
 
 export class Paladin extends PlayerClass {
   constructor(
-    skillProficiencies: string[],
-    weapons: string[],
-    armor: string[],
+    multiclass: boolean,
     params: LevelingParams,
-    equipmentPack: string
+    skillProficiencies?: string[],    
+    weapons?: string[],
+    armor?: string[],
+    equipmentPack?: string
   ) {
     super(
       "Paladin",
       [],
-      skillProficiencies,
-      ["Simple", "Martial"],
-      ["Light", "Medium", "Heavy", "Shield"],
       [],
-      weapons,
-      armor,
+      ["Simple", "Martial"],
+      ["Light", "Medium", "Shield"],
+      [],
+      [],
+      [],
       [],
       [],
       params,
       "d10",
       10,
-      ["wisdom", "charisma"]
+      []
     );
 
-    this.equipmentPack = equipmentPack;
+    this.characterStart(multiclass, skillProficiencies, weapons, armor, equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -38,7 +39,16 @@ export class Paladin extends PlayerClass {
     }
   }
 
-  paladinOath: string;
+  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], armor: string[], equipmentPack: string){
+    if(!multiclass){
+      this.skillProficiencies = skillProficiencies;
+      this.armorProficiencies.push("Heavy");
+      this.weapons = weapons;
+      this.armor = armor;
+      this.equipmentPack = equipmentPack;
+      this.savingThrowProficiencies = ["wisdom", "charisma"];
+    }
+  }
 
   abilitiesAtLevels = {
     "1": this.level1,
@@ -78,10 +88,6 @@ export class Paladin extends PlayerClass {
     this.handleSpellSelections(pc, params, SpellcastingAbility["PALADIN"]);
   }
 
-  private applyPaladinSpellSlots(pc: PlayerCharacter, level: number) {
-    SpellSlotFactory.applySpellSlotsAtLevel(pc, level, "SECONDARY");
-  }
-
   level1(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushPaladinFeatures(pc, 1);
     pc.addResourceTraits({
@@ -100,17 +106,15 @@ export class Paladin extends PlayerClass {
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyPaladinSpellSlots(pc, 2);
     this.upgradeLayOnHands(pc);
     this.pushPaladinFeatures(pc, 2);
     pc.addFeatures(FightingStyle[params.fightingStyle[0]]);
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyPaladinSpellSlots(pc, 3);
-    this.paladinOath = params.archetypeSelection[0].archetype;
+    this.subclass = params.archetypeSelection[0].archetype;
     this.upgradeLayOnHands(pc);
-    PaladinSubclass.subclassDictionary[this.paladinOath][3](pc, params);
+    PaladinSubclass.subclassDictionary[this.subclass][3](pc, params);
     this.pushPaladinFeatures(pc, 3);
   }
 
@@ -121,7 +125,6 @@ export class Paladin extends PlayerClass {
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyPaladinSpellSlots(pc, 5);
     this.upgradeLayOnHands(pc);
     this.pushPaladinFeatures(pc, 5);
   }
@@ -132,9 +135,8 @@ export class Paladin extends PlayerClass {
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyPaladinSpellSlots(pc, 7);
     this.upgradeLayOnHands(pc);
-    PaladinSubclass.subclassDictionary[this.paladinOath][7](pc, params);
+    PaladinSubclass.subclassDictionary[this.subclass][7](pc, params);
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
@@ -143,7 +145,6 @@ export class Paladin extends PlayerClass {
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyPaladinSpellSlots(pc, 9);
     this.upgradeLayOnHands(pc);
   }
 
@@ -154,7 +155,6 @@ export class Paladin extends PlayerClass {
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
-    this.applyPaladinSpellSlots(pc, 11);
     this.pushPaladinFeatures(pc, 11);
   }
 
@@ -164,7 +164,6 @@ export class Paladin extends PlayerClass {
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyPaladinSpellSlots(pc, 13);
     this.upgradeLayOnHands(pc);
   }
 
@@ -174,8 +173,7 @@ export class Paladin extends PlayerClass {
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyPaladinSpellSlots(pc, 15);
-    PaladinSubclass.subclassDictionary[this.paladinOath][15](pc, params);
+    PaladinSubclass.subclassDictionary[this.subclass][15](pc, params);
     this.upgradeLayOnHands(pc);
   }
 
@@ -185,7 +183,6 @@ export class Paladin extends PlayerClass {
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyPaladinSpellSlots(pc, 17);
     this.upgradeLayOnHands(pc);
   }
 
@@ -194,13 +191,12 @@ export class Paladin extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyPaladinSpellSlots(pc, 19);
     this.upgradeLayOnHands(pc);
     pc.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
-    PaladinSubclass.subclassDictionary[this.paladinOath][20](pc, params);
+    PaladinSubclass.subclassDictionary[this.subclass][20](pc, params);
   }
 }

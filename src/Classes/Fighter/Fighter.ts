@@ -6,30 +6,31 @@ import { FighterSubclass } from "./Subclasses/FighterSubclass";
 
 export class Fighter extends PlayerClass {
   constructor(
-    skillProficiencies: string[],
-    weapons: string[],
-    armor: string[],
+    multiclass: boolean,
     params: LevelingParams,
-    equipmentPack: string
+    skillProficiencies?: string[],
+    weapons?: string[],
+    armor?: string[],
+    equipmentPack?: string
   ) {
     super(
       "Fighter",
       [],
-      skillProficiencies,
-      ["Simple", "Martial"],
-      ["Light", "Medium", "Heavy", "Shield"],
       [],
-      weapons,
-      armor,
+      ["Simple", "Martial"],
+      ["Light", "Medium", "Shield"],
+      [],
+      [],
+      [],
       [],
       [],
       params,
       "d10",
       10,
-      ["strength", "constitution"]
+      []
     );
 
-    this.equipmentPack = equipmentPack;
+    this.characterStart(multiclass, skillProficiencies, weapons, armor, equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -37,11 +38,21 @@ export class Fighter extends PlayerClass {
     }
   }
 
+  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], armor: string[], equipmentPack: string){
+    if(!multiclass) {
+      this.armorProficiencies.push( "Heavy");
+      this.skillProficiencies = skillProficiencies;
+      this.weaponProficiencies = weapons;
+      this.armor = armor;
+      this.equipmentPack = equipmentPack;
+      this.savingThrowProficiencies = ["strength", "constitution"];
+    }
+  }
+
   /** TODO
    * ELDRITCH KNIGHT SPELLS LEARNED AT LEVELS 3, 4, 7, 8, 10, 11, 13, 14, 16, 19, 20, ADD TERTIARY SPELL SLOTS
    */
 
-  martialArchetype: string;
 
   abilitiesAtLevels = {
     "1": this.level1,
@@ -94,8 +105,8 @@ export class Fighter extends PlayerClass {
 
   level3(pc: PlayerCharacter, params: FighterLevelingParams): void {
     //martial archetype
-    this.martialArchetype = params.archetypeSelection[0].archetype;
-    FighterSubclass.subclassDictionary[this.martialArchetype]["3"](pc, params);
+    this.subclass = params.archetypeSelection[0].archetype;
+    FighterSubclass.subclassDictionary[this.subclass]["3"](pc, params);
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
@@ -116,7 +127,7 @@ export class Fighter extends PlayerClass {
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
-    FighterSubclass.subclassDictionary[this.martialArchetype]["7"](pc, params);
+    FighterSubclass.subclassDictionary[this.subclass]["7"](pc, params);
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
@@ -132,7 +143,7 @@ export class Fighter extends PlayerClass {
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
-    FighterSubclass.subclassDictionary[this.martialArchetype]["10"](pc, params);
+    FighterSubclass.subclassDictionary[this.subclass]["10"](pc, params);
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
@@ -152,7 +163,7 @@ export class Fighter extends PlayerClass {
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
-    FighterSubclass.subclassDictionary[this.martialArchetype]["15"](pc, params);
+    FighterSubclass.subclassDictionary[this.subclass]["15"](pc, params);
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
@@ -165,7 +176,7 @@ export class Fighter extends PlayerClass {
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {
-    FighterSubclass.subclassDictionary[this.martialArchetype]["18"](pc, params);
+    FighterSubclass.subclassDictionary[this.subclass]["18"](pc, params);
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {

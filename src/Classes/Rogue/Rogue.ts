@@ -6,29 +6,30 @@ import { RogueSubclass } from "./Subclasses/RogueSubclass";
 
 export class Rogue extends PlayerClass {
   constructor(
+    multiclass: boolean,
     skillProficiencies: string[],
-    weapons: string[],
     params: LevelingParams,
-    equipmentPack: string
+    weapons?: string[],
+    equipmentPack?: string
   ) {
     super(
       "Paladin",
       [],
       skillProficiencies,
-      ["Simple", "Crossbow, hand", "Longsword", "Rapier", "Shortsword"],
+      [],
       ["Light"],
       ["Thieves' Tools"],
-      [...weapons, "DAGGER", "DAGGER"],
-      ["LEATHER"],
       [],
-      ["THIEVES' TOOLS"],
+      [],
+      [],
+      [],
       params,
       "d8",
       8,
-      ["dexterity", "intelligence"]
+      []
     );
 
-    this.equipmentPack = equipmentPack;
+    this.characterStart(multiclass, weapons, equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -36,11 +37,21 @@ export class Rogue extends PlayerClass {
     }
   }
 
+  characterStart(multiclass: boolean, weapons: string[], equipmentPack: string){
+    if(!multiclass){
+      this.weaponProficiencies.push("Simple", "Crossbow, hand", "Longsword", "Rapier", "Shortsword");
+      this.weapons = [...weapons, "DAGGER", "DAGGER"];
+      this.armor = ["LEATHER"];
+      this.toolKits = ["THIEVES' TOOLS"];
+      this.equipmentPack = equipmentPack;
+      this.savingThrowProficiencies = ["dexterity", "intelligence"];
+
+    }
+  }
+
   /** TODO
    *
    */
-
-  roguishArchetype: string;
 
   abilitiesAtLevels = {
     "1": this.level1,
@@ -95,8 +106,8 @@ export class Rogue extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.roguishArchetype = params.archetypeSelection[0].archetype;
-    RogueSubclass.subclassDictionary[this.roguishArchetype][3](pc, params);
+    this.subclass = params.archetypeSelection[0].archetype;
+    RogueSubclass.subclassDictionary[this.subclass][3](pc, params);
 
     pc.findScalingTraitByName("Sneak Attack").dice = "2d6";
   }
@@ -132,7 +143,7 @@ export class Rogue extends PlayerClass {
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
     pc.findScalingTraitByName("Sneak Attack").dice = "5d6";
-    RogueSubclass.subclassDictionary[this.roguishArchetype][9](pc, params);
+    RogueSubclass.subclassDictionary[this.subclass][9](pc, params);
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
@@ -150,7 +161,7 @@ export class Rogue extends PlayerClass {
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
     pc.findScalingTraitByName("Sneak Attack").dice = "7d6";
-    RogueSubclass.subclassDictionary[this.roguishArchetype][13](pc, params);
+    RogueSubclass.subclassDictionary[this.subclass][13](pc, params);
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
@@ -170,7 +181,7 @@ export class Rogue extends PlayerClass {
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
     pc.findScalingTraitByName("Sneak Attack").dice = "9d6";
-    RogueSubclass.subclassDictionary[this.roguishArchetype][17](pc, params);
+    RogueSubclass.subclassDictionary[this.subclass][17](pc, params);
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {

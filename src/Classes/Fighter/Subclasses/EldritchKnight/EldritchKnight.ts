@@ -11,7 +11,6 @@ export class EldritchKnight {
 
     static eldritchKnight3(pc: PlayerCharacter, params: LevelingParams) {
         pc.addSpells(params.spellSelection, "intelligence");
-        SpellSlotFactory.applySpellSlotsAtLevel(pc, 3, "TERTIARY")
         pc.addFeatures(EldritchKnight.getFeature( "3", "WEAPON BOND"))
     
       }

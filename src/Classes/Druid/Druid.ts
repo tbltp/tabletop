@@ -8,39 +8,30 @@ import { SpellSlotFactory } from "../SpellSlotFactory";
 
 export class Druid extends PlayerClass {
   constructor(
-    skillProficiencies: string[],
-    weapons: string[],
-    armor: string[],
-    druidParams: LevelingParams
+    multiclass: boolean,
+    druidParams: LevelingParams,
+    skillProficiencies?: string[],
+    weapons?: string[],
+    armor?: string[]
   ) {
     super(
       "Druid",
       [],
-      skillProficiencies,
-      [
-        "Club",
-        "Darts",
-        "Javelin",
-        "Mace",
-        "Quarterstaff",
-        "Scimitar",
-        "Sickle",
-        "Sling",
-        "Spear",
-      ],
+      [],
+      [],
       ["Light", "Medium", "Shield"],
-      ["Herbalism Kit"],
-      weapons,
-      [...armor, "LEATHER"],
+      [],
+      [],
+      [],
       [],
       [],
       druidParams,
       "d8",
       8,
-      ["intelligence", "wisdom"]
+      []
     );
 
-    this.equipmentPack = "EXPLORER";
+    this.characterStart(multiclass, skillProficiencies, weapons, armor);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -48,10 +39,18 @@ export class Druid extends PlayerClass {
     }
   }
 
-  /** TODO
-   */
-
-  druidCircle: string = "";
+  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], armor: string[], ){
+    if(!multiclass) {  
+      this.skillProficiencies = skillProficiencies;
+      this.weaponProficiencies.push("Club", "Darts", "Javelin", "Mace", "Quarterstaff", "Scimitar", "Sickle", "Sling", "Spear");
+      this.toolProficiencies.push("Herbalism Kit")
+      this.weapons = weapons;
+      this.armor = [...armor, "LEATHER"];
+      this.equipmentPack = "EXPLORER";
+      this.savingThrowProficiencies = ["intelligence", "wisdom"];
+    }
+  }
+  
   terrain?: string | null = null;
 
   abilitiesAtLevels = {
@@ -88,16 +87,11 @@ export class Druid extends PlayerClass {
     this.handleSpellSelections(pc, params, SpellcastingAbility["DRUID"]);
   }
 
-  private applyDruidSpellSlots(pc: PlayerCharacter, level: number) {
-    SpellSlotFactory.applySpellSlotsAtLevel(pc, level, "PRIMARY");
-  }
-
   level1(pc: PlayerCharacter, params: LevelingParams): void {
     pc.addSpells(
       [...params.spellSelection, ...SpellList["Druid"][1]],
       SpellcastingAbility["DRUID"]
     );
-    this.applyDruidSpellSlots(pc, 1);
     this.pushDruidFeatures(pc, 1);
     let druidPreparedSpells = {
       title: "Druid",
@@ -110,7 +104,6 @@ export class Druid extends PlayerClass {
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyDruidSpellSlots(pc, 2);
     // druid circle
     
     // wild shape
@@ -128,10 +121,10 @@ export class Druid extends PlayerClass {
     pc.addResourceTraits(wildShapeRes);
     pc.addScalingTraits(wildShapeScale);
 
-    this.druidCircle = params.archetypeSelection[0].archetype;
-    DruidSubclass.subclassDictionary[this.druidCircle][2](pc, params);
+    this.subclass = params.archetypeSelection[0].archetype;
+    DruidSubclass.subclassDictionary[this.subclass][2](pc, params);
     // terrain selection
-    if (this.druidCircle == "LAND") {
+    if (this.subclass == "LAND") {
       this.terrain = params.archetypeSelection[0].options[0];
     }
 
@@ -144,17 +137,15 @@ export class Druid extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyDruidSpellSlots(pc, 3);
     // terrain spells
-    if (this.druidCircle == "LAND") {
-      DruidSubclass.subclassDictionary[this.druidCircle][3];
-      DruidSubclass.subclassSpells[this.druidCircle](pc, this.terrain, "7");
+    if (this.subclass == "LAND") {
+      DruidSubclass.subclassDictionary[this.subclass][3];
+      DruidSubclass.subclassSpells[this.subclass](pc, this.terrain, "7");
     }
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleDruidSpellSelections(pc, params);
-    this.applyDruidSpellSlots(pc, 4);
     pc.improveAbilityScores(params.abilityScoreImprovement);
     // wild shape
     const wildShapeScale: ScalingTrait = pc.findScalingTraitByName(
@@ -166,29 +157,25 @@ export class Druid extends PlayerClass {
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyDruidSpellSlots(pc, 5);
     // terrain spells
-    if (this.druidCircle == "LAND") {
-      DruidSubclass.subclassSpells[this.druidCircle](pc, this.terrain, "7");
+    if (this.subclass == "LAND") {
+      DruidSubclass.subclassSpells[this.subclass](pc, this.terrain, "7");
     }
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyDruidSpellSlots(pc, 6);
     // druid circle
-    DruidSubclass.subclassDictionary[this.druidCircle][6](pc, params);
+    DruidSubclass.subclassDictionary[this.subclass][6](pc, params);
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyDruidSpellSlots(pc, 7);
     // terrain spells
-    if (this.druidCircle == "LAND") {
-      DruidSubclass.subclassSpells[this.druidCircle](pc, this.terrain, "7");
+    if (this.subclass == "LAND") {
+      DruidSubclass.subclassSpells[this.subclass](pc, this.terrain, "7");
     }
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyDruidSpellSlots(pc, 8);
     pc.improveAbilityScores(params.abilityScoreImprovement);
     // wild shape
     const wildShapeScale: ScalingTrait = pc.findScalingTraitByName(
@@ -200,21 +187,18 @@ export class Druid extends PlayerClass {
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyDruidSpellSlots(pc, 9);
     // terrain spells
-    if (this.druidCircle == "LAND") {
-      DruidSubclass.subclassSpells[this.druidCircle](pc, this.terrain, "7");
+    if (this.subclass == "LAND") {
+      DruidSubclass.subclassSpells[this.subclass](pc, this.terrain, "7");
     }
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyDruidSpellSlots(pc, 10);
     // druid circle
-    DruidSubclass.subclassDictionary[this.druidCircle][10](pc, params);
+    DruidSubclass.subclassDictionary[this.subclass][10](pc, params);
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyDruidSpellSlots(pc, 11);
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
@@ -222,16 +206,14 @@ export class Druid extends PlayerClass {
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyDruidSpellSlots(pc, 13);
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
     // druid circle
-    DruidSubclass.subclassDictionary[this.druidCircle][14](pc, params);
+    DruidSubclass.subclassDictionary[this.subclass][14](pc, params);
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyDruidSpellSlots(pc, 15);
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
@@ -239,20 +221,16 @@ export class Druid extends PlayerClass {
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyDruidSpellSlots(pc, 17);
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyDruidSpellSlots(pc, 18);
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyDruidSpellSlots(pc, 19);
     pc.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
-    this.applyDruidSpellSlots(pc, 20);
     // archdruid
     pc.findResourceTraitByName("Wild Shape").resourceMax.value = Infinity;
     this.pushDruidFeatures(pc, 20);

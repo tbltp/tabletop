@@ -7,33 +7,44 @@ import { WarlockSubclass } from "./Subclasses/WarlockSubclass";
 
 export class Warlock extends PlayerClass {
   constructor(
-    skillProficiencies: string[],
-    weapons: string[],
+    multiclass: boolean,
     params: WarlockLevelingParams,
-    equipmentPack: string
+    skillProficiencies?: string[],
+    weapons?: string[],
+    equipmentPack?: string
   ) {
     super(
       "Warlock",
       [],
-      skillProficiencies,
+      [],
       ["Simple"],
       ["Light"],
       [],
-      [...weapons, "DAGGER", "DAGGER"],
-      ["LEATHER"],
+      [],
+      [],
       [],
       [],
       params,
       "d8",
       8,
-      ["wisdom", "charisma"]
+      []
     );
 
-    this.equipmentPack = equipmentPack;
+    this.characterStart(multiclass, skillProficiencies, weapons, equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
       this.abilitiesAtLevels[level] = func.bind(this);
+    }
+  }
+
+  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], equipmentPack: string){
+    if(!multiclass){
+      this.skillProficiencies = skillProficiencies;
+      this.weapons = [...weapons, "DAGGER", "DAGGER"];
+      this.armor = ["LEATHER"];
+      this.equipmentPack = equipmentPack;
+      this.savingThrowProficiencies = ["wisdom", "charisma"];
     }
   }
 
@@ -44,7 +55,6 @@ export class Warlock extends PlayerClass {
    * ELDRITCH INVOCATIONS REPLACEMENTS
    */
 
-  otherworldlyPatron: string;
 
   abilitiesAtLevels = {
     "1": this.level1,
@@ -105,8 +115,8 @@ export class Warlock extends PlayerClass {
       level: 1,
     };
     pc.addResourceTraits(pactMagic);
-    this.otherworldlyPatron = params.archetypeSelection[0].archetype;
-    WarlockSubclass.subclassDictionary[this.otherworldlyPatron]["1"](pc, params);
+    this.subclass = params.archetypeSelection[0].archetype;
+    WarlockSubclass.subclassDictionary[this.subclass]["1"](pc, params);
   }
 
   level2(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -140,7 +150,7 @@ export class Warlock extends PlayerClass {
 
   level6(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    WarlockSubclass.subclassDictionary[this.otherworldlyPatron]["6"](pc, params);
+    WarlockSubclass.subclassDictionary[this.subclass]["6"](pc, params);
   }
 
   level7(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -168,7 +178,7 @@ export class Warlock extends PlayerClass {
 
   level10(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    WarlockSubclass.subclassDictionary[this.otherworldlyPatron]["10"](pc, params);
+    WarlockSubclass.subclassDictionary[this.subclass]["10"](pc, params);
   }
 
   level11(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -196,7 +206,7 @@ export class Warlock extends PlayerClass {
   }
 
   level14(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    WarlockSubclass.subclassDictionary[this.otherworldlyPatron]["14"](pc, params);
+    WarlockSubclass.subclassDictionary[this.subclass]["14"](pc, params);
   }
 
   level15(pc: PlayerCharacter, params: WarlockLevelingParams): void {

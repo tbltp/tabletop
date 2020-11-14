@@ -43,7 +43,9 @@ export abstract class PlayerClass {
     this.hpBase = hpBase;
   }
 
+
   name: string;
+  subclass: string;
   languages: string[];
   skillProficiencies: string[];
   weaponProficiencies: string[];
@@ -60,6 +62,7 @@ export abstract class PlayerClass {
   savingThrowProficiencies: string[];
   features: Trait[];
   level: { value: number } = { value: 1 };
+  
 
   //TODO: wtf is a Path
   //path: Path;
@@ -126,12 +129,14 @@ export abstract class PlayerClass {
   }
 
   protected addEquipment(pc: PlayerCharacter): void {
-    for (const item of Inventory.equipmentPacks[this.equipmentPack]()) {
-      pc.inventory.items.push(item);
-    }
+    if(this.equipmentPack){
+      for (const item of Inventory.equipmentPacks[this.equipmentPack]()) {
+        pc.inventory.items.push(item);
+      }
 
-    for (const item of this.equipment) {
-      pc.inventory.items.push(Gear[item]);
+      for (const item of this.equipment) {
+        pc.inventory.items.push(Gear[item]);
+      }
     }
   }
 

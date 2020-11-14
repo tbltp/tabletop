@@ -8,9 +8,7 @@ let pc: PlayerCharacter = new PlayerCharacter(14, 8, 13, 10, 15, 12);
 
 const prace = new MountainGnome();
 const pclass = new Cleric(
-  ["persuasion", "insight"],
-  ["MACE", "GREATCLUB"],
-  ["LEATHER", "SHIELD"],
+  false,
   {
     isNoInput: false,
     spellSelection: ["LIGHT", "MENDING", "SPARE THE DYING"],
@@ -19,6 +17,9 @@ const pclass = new Cleric(
       { archetype: "KNOWLEDGE", options: ["Sylvan", "Elvish"] },
     ],
   },
+  ["persuasion", "insight"],
+  ["MACE", "GREATCLUB"],
+  ["LEATHER", "SHIELD"],
   "EXPLORER"
 );
 const pbackground = new FolkHero("Mason's tools", "TINKER'S TOOLS");

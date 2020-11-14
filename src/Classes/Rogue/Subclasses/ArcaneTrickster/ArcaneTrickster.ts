@@ -12,7 +12,6 @@ export class ArcaneTrickster {
 
     static arcaneTrickster3(pc: PlayerCharacter, params: LevelingParams) {
         pc.addSpells(params.spellSelection, "intelligence")
-        SpellSlotFactory.applySpellSlotsAtLevel(pc, 3, "TERTIARY")
         pc.addFeatures(ArcaneTrickster.getFeature("3", "MAGE HAND LEGERDEMAIN"));
       }
     

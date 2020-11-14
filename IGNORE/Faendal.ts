@@ -7,16 +7,16 @@ import { Jsonify } from "./Jsonify";
 let pc: PlayerCharacter = new PlayerCharacter(8, 16, 14, 14, 15, 13);
 const race = new WoodElf("Sylvan");
 const pclass = new Ranger(
+  false,
   ["insight", "perception", "stealth"],
-  ["DAGGER", "SPEAR"],
-  ["LEATHER"],
   {
     isNoInput: false,
     favoredEnemy: "Enemies of Nature",
     favoredTerrain: "Forest",
   },
-  "EXPLORER",
-  false
+  ["DAGGER", "SPEAR"],
+  ["LEATHER"],
+  "EXPLORER"
 );
 const background = new FolkHero(
   "Leatherworker's Tools,",

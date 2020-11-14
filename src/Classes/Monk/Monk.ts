@@ -6,42 +6,31 @@ import { MonkSubclass } from "./Subclasses/MonkSubclass";
 
 export class Monk extends PlayerClass {
   constructor(
-    skillProficiencies: string[],
-    weapons: string[],
-    toolKitProficiency: string[],
+    multiclass: boolean,
     levelingParams: LevelingParams,
-    equipmentPack: string
+    skillProficiencies?: string[],
+    weapons?: string[],
+    toolKitProficiency?: string[],
+    equipmentPack?: string
   ) {
     super(
       "Monk",
       [],
-      skillProficiencies,
+      [],
       ["Simple", "Shortsword"],
       [],
-      toolKitProficiency,
-      [
-        ...weapons,
-        "DART",
-        "DART",
-        "DART",
-        "DART",
-        "DART",
-        "DART",
-        "DART",
-        "DART",
-        "DART",
-        "DART",
-      ],
+      [],
+      [],
       [],
       [],
       [],
       levelingParams,
       "d8",
       8,
-      ["strength", "dexterity"]
+      []
     );
 
-    this.equipmentPack = equipmentPack;
+    this.characterStart(multiclass, skillProficiencies, weapons, toolKitProficiency, equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -49,11 +38,20 @@ export class Monk extends PlayerClass {
     }
   }
 
+  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], toolKitProficiency: string[], equipmentPack: string){
+    if(!multiclass){
+      this.skillProficiencies = skillProficiencies;
+      this.weapons.push(...weapons, "DART", "DART", "DART", "DART", "DART", "DART", "DART", "DART", "DART", "DART");
+      this.toolProficiencies = toolKitProficiency;
+      this.equipmentPack = equipmentPack;
+      this.savingThrowProficiencies = ["strength", "dexterity"];
+    }
+  }
+
   /** TODO
    *  WAY OF THE FOUR ELEMENTS - Add Elemental Disciplines, Max Key Point Leveling at lvl 5, 9, 13, 17
    */
 
-  monasticTradition: string;
 
   abilitiesAtLevels = {
     "1": this.level1,
@@ -115,11 +113,11 @@ export class Monk extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.monasticTradition = params.archetypeSelection[0].archetype;
+    this.subclass = params.archetypeSelection[0].archetype;
     this.pushMonkFeatures(pc, 3);
     pc.findResourceTraitByName("Ki Points").resourceMax.value++;
 
-    MonkSubclass.subclassDictionary[this.monasticTradition]["3"](pc, params);
+    MonkSubclass.subclassDictionary[this.subclass]["3"](pc, params);
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
@@ -138,7 +136,7 @@ export class Monk extends PlayerClass {
     this.pushMonkFeatures(pc, 6);
     pc.findResourceTraitByName("Ki Points").resourceMax.value++;
 
-    MonkSubclass.subclassDictionary[this.monasticTradition]["6"](pc, params);
+    MonkSubclass.subclassDictionary[this.subclass]["6"](pc, params);
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
@@ -167,7 +165,7 @@ export class Monk extends PlayerClass {
     pc.findResourceTraitByName("Ki Points").resourceMax.value++;
     pc.findScalingTraitByName("Martial Arts").dice = "1d8";
 
-    MonkSubclass.subclassDictionary[this.monasticTradition]["11"](pc, params);
+    MonkSubclass.subclassDictionary[this.subclass]["11"](pc, params);
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
@@ -208,7 +206,7 @@ export class Monk extends PlayerClass {
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
     pc.findResourceTraitByName("Ki Points").resourceMax.value++;
-    MonkSubclass.subclassDictionary[this.monasticTradition]["17"](pc, params);
+    MonkSubclass.subclassDictionary[this.subclass]["17"](pc, params);
     pc.findScalingTraitByName("Martial Arts").dice = "1d10";
   }
 

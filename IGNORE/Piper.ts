@@ -9,10 +9,11 @@ let pc: PlayerCharacter = new PlayerCharacter(13, 16, 11, 10, 13, 11);
 const race = new WaterGenasi();
 const background = new Sage(["Gnomish", "Elvish"]);
 const pclass = new Monk(
+  false,
+  {isNoInput: true},
   ["acrobatics", "insight"],
   ["QUARTERSTAFF"],
   [],
-  {isNoInput: true},
   "EXPLORER"
 );
 race.apply(pc);
