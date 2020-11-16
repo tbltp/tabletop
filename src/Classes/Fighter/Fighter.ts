@@ -2,6 +2,7 @@ import { PlayerClass, LevelingParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ResourceTrait } from "../../Base/Interfaces";
 import * as FightingStyles from "../../../Assets/FightingStyles.json";
+import * as FighterClassTraits from "./Fighter.json";
 import { FighterSubclass } from "./Subclasses/FighterSubclass";
 
 export class Fighter extends PlayerClass {
@@ -78,7 +79,7 @@ export class Fighter extends PlayerClass {
   };
 
   private pushFighterFeatures(pc: PlayerCharacter, level: number) {
-    this.pushClassFeatures(pc, level, "FIGHTER");
+    this.pushClassFeatures(pc, level, FighterClassTraits);
   }
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
@@ -105,7 +106,7 @@ export class Fighter extends PlayerClass {
 
   level3(pc: PlayerCharacter, params: FighterLevelingParams): void {
     //martial archetype
-    this.subclass = params.archetypeSelection[0].archetype;
+    this.subclass = params.subclassSelection.subclass;
     FighterSubclass.subclassDictionary[this.subclass]["3"](pc, params);
   }
 

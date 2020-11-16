@@ -3,6 +3,7 @@ import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ResourceTrait, ScalingTrait } from "../../Base/Interfaces";
 import * as SpellList from "../../../Assets/SpellList.json";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
+import * as DruidClassTraits from "./Druid.json";
 import { DruidSubclass } from "./Subclasses/DruidSubclass";
 import { SpellSlotFactory } from "../SpellSlotFactory";
 
@@ -77,7 +78,7 @@ export class Druid extends PlayerClass {
   };
 
   private pushDruidFeatures(pc: PlayerCharacter, level: number) {
-    this.pushClassFeatures(pc, level, "DRUID");
+    this.pushClassFeatures(pc, level, DruidClassTraits);
   }
 
   private handleDruidSpellSelections(
@@ -121,11 +122,11 @@ export class Druid extends PlayerClass {
     pc.addResourceTraits(wildShapeRes);
     pc.addScalingTraits(wildShapeScale);
 
-    this.subclass = params.archetypeSelection[0].archetype;
+    this.subclass = params.subclassSelection.subclass;
     DruidSubclass.subclassDictionary[this.subclass][2](pc, params);
     // terrain selection
     if (this.subclass == "LAND") {
-      this.terrain = params.archetypeSelection[0].options[0];
+      this.subclass = params.subclassSelection.options[0];
     }
 
     pc.addSpells(
@@ -157,6 +158,11 @@ export class Druid extends PlayerClass {
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
+    pc.addSpells(
+      [...SpellList["Druid"][3]],
+      SpellcastingAbility["DRUID"]
+    );
+    
     // terrain spells
     if (this.subclass == "LAND") {
       DruidSubclass.subclassSpells[this.subclass](pc, this.terrain, "7");

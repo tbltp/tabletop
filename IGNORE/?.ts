@@ -1,7 +1,7 @@
 import { CharacterSheet} from "../src/Base/CharacterSheet";
 import { PlayerCharacter } from "Base/PlayerCharacter";
 
-import { Tiefling } from "Races/Tiefling";
+import { Tiefling } from "Races/Tiefling/Tiefling";
 import { Barbarian } from "Classes/Barbarian/Barbarian";
 import { Charlatan } from "Backgrounds/Background";
 

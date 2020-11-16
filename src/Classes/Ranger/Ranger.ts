@@ -3,6 +3,7 @@ import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ResourceTrait } from "../../Base/Interfaces";
 import * as SpellList from "../../../Assets/SpellList.json";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
+import * as RangerClassTraits from "./Ranger.json";
 import { RangerSubclass } from "./Subclasses/RangerSubclass";
 import { SpellSlotFactory } from "../SpellSlotFactory";
 
@@ -74,7 +75,7 @@ export class Ranger extends PlayerClass {
   };
 
   private pushRangerFeatures(pc: PlayerCharacter, level: number) {
-    this.pushClassFeatures(pc, level, "RANGER");
+    this.pushClassFeatures(pc, level, RangerClassTraits);
   }
 
   private handleRangerSpellSelections(
@@ -85,13 +86,17 @@ export class Ranger extends PlayerClass {
   }
 
   level1(pc: PlayerCharacter, params: RangerLevelingParams): void {
-    PlayerClass.pushCustomizedClassFeature(pc, 1, "RANGER", "FAVORED ENEMY", [
-      params.favoredEnemy,
-    ]);
+    PlayerClass.pushCustomizedClassFeature(
+      pc, 
+      1, 
+      RangerClassTraits, 
+      "FAVORED ENEMY", 
+      [params.favoredEnemy]
+    );
     PlayerClass.pushCustomizedClassFeature(
       pc,
       1,
-      "RANGER",
+      RangerClassTraits,
       "NATURAL EXPLORER",
       [params.favoredTerrain]
     );
@@ -104,7 +109,7 @@ export class Ranger extends PlayerClass {
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    this.subclass = params.archetypeSelection[0].archetype;
+    this.subclass = params.subclassSelection.subclass;
     RangerSubclass.subclassDictionary[this.subclass][3](pc, params);
     this.pushRangerFeatures(pc, 3);
   }

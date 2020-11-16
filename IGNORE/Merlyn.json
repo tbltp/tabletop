@@ -1,5 +1,5 @@
 {
-  "level": { "totalLevel": 1 },
+  "level": { "totalLevel": 5 },
   "speed": { "value": 25 },
   "inventory": {
     "weapons": [
@@ -177,26 +177,41 @@
       {
         "title": "Channel Divinity: Turn Undead",
         "description": "As an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.\nA turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also cant take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action."
+      },
+      {
+        "title": "Destroy Undead",
+        "description": "When an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed if its challenge rating is at or below a certain threshold, as shown in the Destroy Undead table."
       }
     ],
     "resources": [
-      {
-        "title": "First Level Spell Slots",
-        "description": "Number of first level spells you can cast",
-        "resourceMax": { "value": 4 }
-      },
       {
         "title": "Channel Divinity",
         "description": "Number of times you can use a Channel Divinity ability.",
         "resourceMax": { "value": 1 }
       },
       {
+        "title": "First Level Spell Slots",
+        "description": "Number of first level spells you can cast",
+        "resourceMax": { "value": 4 }
+      },
+      {
         "title": "Second Level Spell Slots",
         "description": "Number of second level spells you can cast",
         "resourceMax": { "value": 3 }
+      },
+      {
+        "title": "Third Level Spell Slots",
+        "description": "Number of third level spells you can cast",
+        "resourceMax": { "value": 2 }
       }
     ],
-    "scalingEffects": []
+    "scalingEffects": [
+      {
+        "title": "Destroy Undead",
+        "description": "Challenge rating threshold for destroying undead that fail the saving throw against Turn Undead",
+        "challengeRating": 0.5
+      }
+    ]
   },
   "spells": {
     "0": [
@@ -516,6 +531,21 @@
         "ritual": true,
         "spellAttack": false,
         "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Tongues",
+        "description": "This spell grants the creature you touch the ability to understand any spoken language it hears. Moreover, when the target speaks, any creature that knows at least one language and can hear the target understands what it says.",
+        "school": "divination",
+        "castTime": "1 action",
+        "range": "Touch",
+        "concentration": false,
+        "duration": "1 hour",
+        "components": ["V", "M"],
+        "material": "a small clay model of a ziggurat",
+        "minimumLevel": "1",
+        "ritual": false,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
       }
     ],
     "2": [
@@ -805,7 +835,323 @@
         "spellcastingAbility": "wisdom"
       }
     ],
-    "3": [],
+    "3": [
+      {
+        "name": "Dispel Magic",
+        "description": "Choose one creature, object, or magical effect within range. Any spell of 3rd level or lower on the target ends. For each spell of 4th level or higher on the target, make an ability check using your spellcasting ability. The DC equals 10 + the spell's level. On a successful check, | the spell ends. } At Higher Levels. When you cast this spell using a | spell slot of 4th level or higher, you automatically end | the effects of a spell on the target if the spell's level is | | equal to or less than the level of the spell slot you used.",
+        "school": "abjuration",
+        "castTime": "1 action",
+        "range": "| 120 feet",
+        "concentration": false,
+        "duration": "Instantaneous",
+        "components": ["V", "S"],
+        "material": "",
+        "minimumLevel": "3",
+        "ritual": false,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Clairvoyance",
+        "description": "You create an invisible sensor within range in a location familiar to you (a place you have visited or seen before) or in an obvious location that is unfamiliar to you (such as behind a door, around a corner, or in a grove of trees). The sensor remains in place for the duration, and it can't be attacked or otherwise interacted with. When you cast the spell, you choose seeing or hearing. You can use the chosen sense through the sensor as if you were in its space. As your action, you can switch between secing and hearing. A creature that can see the sensor (such as a creature benefiting from see invisibility or truesight) sees a luminous, intangible orb about the size of your fist.",
+        "school": "divination",
+        "castTime": "10 minutcs",
+        "range": "| mile",
+        "concentration": true,
+        "duration": "up to 10 minutes",
+        "components": ["V", "S", "M"],
+        "material": "a focus worth at least 100 gp, cither a jeweled horn for hearing or a glass eye for seeing",
+        "minimumLevel": "3",
+        "ritual": false,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Sending",
+        "description": "You send a short message of twenty-five words or less to a creature with which you are familiar. The creature hears the message in its mind, recognizes you as the sender if it knows you, and can answer ina like manner immediately. The spell enables creatures with Intelligence scores of at least 1 to understand the meaning of your message. You can send the message across any distance and even to other planes of existence, but if the target is on a different plane than you, there is a 5 percent chance that the message doesn't arrive.",
+        "school": "evocation",
+        "castTime": "1 action",
+        "range": "Unlimited",
+        "concentration": false,
+        "duration": "| round",
+        "components": ["V", "S", "M"],
+        "material": "a short piece of fine copper wire",
+        "minimumLevel": "3",
+        "ritual": false,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Glyph Of Warding",
+        "description": "When you cast this spell, you inscribe a glyph that harms other creatures, either upon a surface (such as a table or a section of floor or wall) or within an object that can be closed (such as a book, a scroll, or a treasure chest) to conceal the glyph. If you choose a surface, the glyph can cover an area of the surface no larger than 10 feet in diameter. If you choose an object, that object must remain in its place; if the object is moved more than 10 feet from where you cast this spell, the glyph is broken, and the spell ends without being triggered. The glyph is nearly invisible and requires a successful Intelligence (Investigation) check against your spell save DC to be found. You decide what triggers the glyph when you cast the spell. For glyphs inscribed on a surface, the most typical triggers include touching or standing on the glyph, removing another object covering the glyph, approaching within a certain distance of the glyph, or manipulating the object on which the glyph is inscribed. For glyphs inscribed within an object, the most common triggers include opening that object, approaching within a certain distance of the object, or seeing or reading the glyph. Once a glyph is triggered, this spell ends. You can further refine the trigger so the spell activates only under certain circumstances or according to physical characteristics (such as height or weight), creature kind (for example, the ward could be set to affect aberrations or drow), or alignment. You can also set conditions for creatures that don't trigger the glyph, such as those who say a certain password. When you inscribe the glyph, choose explosive runes or a spell glyph. Explosive Runes. When triggered, the glyph erupts with magical energy in a 20-foot-radius sphere centered on the glyph. The sphere spreads around corners. Each creature in the area must make a Dexterity saving throw. A creature takes 5d8 acid, cold, fire, lightning, or thunder damage on a failed saving throw (your choice when you create the glyph), or half as much damage ona successful one. Spell Glyph. You can store a prepared spell of 3rd level or lower in the glyph by casting it as part of creating the glyph. The spell must target a single creature or an area. The spell being stored has no immediate effect when cast in this way. When the glyph is triggered, the stored spell is cast. If the spell has a target, it targets the creature that triggered the glyph. Ifthe spell affects an area, the area is centered on that creature. If the spell summons hostile creatures or creates harmful objects or traps, they appear as close as possible to the intruder and attack it. If the spell requires concentration, it lasts until the end of its full duration. At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the damage of an explosive runes glyph increases by 1d8 for each slot level above 3rd. If you create a spell glyph, you can store any spell of up to the same level as the slot you use for the glyph of warding.",
+        "school": "abjuration",
+        "castTime": "1 hour",
+        "range": "Touch",
+        "concentration": false,
+        "duration": "Until dispelled or triggered",
+        "components": ["V", "S", "M"],
+        "material": "incense and powdered diamond worth at least 200 gp, which the spell consumes",
+        "minimumLevel": "3",
+        "ritual": false,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Feign Death",
+        "description": "You touch a willing creature and put it into a cataleptic state that is indistinguishable from death. For the spell's duration, or until you use an action to touch the target and dismiss the spell. the target appears dead to all outward inspection and to spells used to determine the target's status. The target is blinded and incapacitated, and its speed drops to 0. The target has resistance to all damage except psychic damage. If the target is diseased or poisoned when you cast the spell, or becomes diseased or poisoned while under the spell's effect, the disease and poison have no effect until the spell ends.",
+        "school": "necromancy",
+        "castTime": "1 action",
+        "range": "Touch",
+        "concentration": false,
+        "duration": "1 hour",
+        "components": ["V", "S", "M"],
+        "material": "a pinch of graveyard dirt",
+        "minimumLevel": "3",
+        "ritual": true,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Bestow Curse",
+        "description": "You touch a creature, and that creature must succeed on a Wisdom saving throw or become cursed for the duration of the spell. When you cast this spell, choose the nature of the curse from the following options: Choose one ability score. While cursed, the target has disadvantage on ability checks and saving throws made with that ability score. While cursed, the target has disadvantage on attack rolls against you. While cursed, the target must make a Wisdom sav- ing throw at the start of each of its turns. If it fails, it wastes its action that turn doing nothing. While the target is cursed, your attacks and spells deal an extra 1d8 necrotic damage to the target. * . A remove curse spell ends this effect. At the DM's option, you may choose an alternative curse effect, but it should be no more powerful than those described above. The DM has final say on such a curse's effect. At Higher Levels. If you cast this spell using a spell slot of 4th level or higher, the duration is concentration, up to 10 minutes. If you use a spell slot of 5th level or higher, the duration is 8 hours. If you use a spell slot of 7th level or higher, the duration is 24 hours. If you use a 9th level spell slot, the spell lasts until it is dispelled. Using a spell slot of 5th level or higher grants a duration that doesn't require concentration.",
+        "school": "necromancy",
+        "castTime": "1 action",
+        "range": "Touch",
+        "concentration": true,
+        "duration": "up to 1 minute",
+        "components": ["V", "S"],
+        "material": "",
+        "minimumLevel": "3",
+        "ritual": false,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Speak With Dead",
+        "description": "You grant the semblance of life and intelligence to a corpse of your choice within range, allowing it to answer the questions you pose. The corpse must still have a mouth and can't be undead. The spell fails if the corpse was the target of this spell within the last 10 days. Until the spell ends, you can ask the corpse up to five questions. The corpse knows only what it knew in life, including the languages it knew. Answers are usually brief, cryptic, or repetitive, and the corpse is under no compulsion to offer a truthful answer if you are hostile to it or it recognizes you as an enemy. This spell doesn't return the creature's soul to its body, only its animating spirit. Thus, the corpse can't learn new information, doesn't comprehend anything that has happened since it died, and can't speculate about future events.",
+        "school": "necromancy",
+        "castTime": "1 action",
+        "range": "10 feet",
+        "concentration": false,
+        "duration": "10 minutes",
+        "components": ["V", "S", "M"],
+        "material": "burning incense",
+        "minimumLevel": "3",
+        "ritual": false,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Animate Dead",
+        "description": "This spell creates an undead servant. Choose a pile of bones or a corpse of a Medium or Small humanoid within range. Your spell imbues the target with a foul mimicry of life, raising it as an undead creature. The target becomes a skeleton if you chose bones or a zombie if you chose a corpse (the DM has the creature's game statistics). On each of your turns, you can use a bonus action to mentally command any creature you made with this spell if the creature is within 60 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete. The creature is under your control for 24 hours, after which it stops obeying any command you've given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature again before the current 24-hour period ends. This use of the spell reasserts your control over up to four creatures you have animated with this spell, rather than animating a new one. At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, you animate or reassert control over two additional undead creatures for each slot level above 3rd. Each of the creatures must come from a different corpse or pile of bones.",
+        "school": "necromancy",
+        "castTime": "1 minute",
+        "range": "10 feet",
+        "concentration": false,
+        "duration": "Instantaneous",
+        "components": ["V", "S", "M"],
+        "material": "a drop of blood, a piece of flesh, and a pinch of bone dust",
+        "minimumLevel": "3",
+        "ritual": false,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Beacon Of Hope",
+        "description": "This spell bestows hope and vitality. Choose any number of creatures within range. For the duration, each target has advantage on Wisdom saving throws and death saving throws, and regains the maximum number of hit points possible from any healing.",
+        "school": "abjuration",
+        "castTime": "1 action",
+        "range": "30 feet",
+        "concentration": true,
+        "duration": "up to 1 minute",
+        "components": ["V", "S"],
+        "material": "",
+        "minimumLevel": "3",
+        "ritual": false,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Create Foop And Water",
+        "description": "You create 45 pounds of food and 30 gallons of water on the ground or in containers within range, enough to sustain up to fifteen humanoids or five steeds for 24 hours. The food is bland but nourishing, and spoils if uneaten after 24 hours. The water is clean and doesn't go bad.",
+        "school": "conjuration",
+        "castTime": "1 action",
+        "range": "30 feet",
+        "concentration": false,
+        "duration": "Instantaneous",
+        "components": ["V", "S"],
+        "material": "",
+        "minimumLevel": "3",
+        "ritual": false,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Daylight",
+        "description": "A 60-foot-radius sphere of light spreads out from a point you choose within range. The sphere is bright light and sheds dim light for an additional 60 feet. If you chose a point on an object you are holding or one that isn't being worn or carried, the light shines from the object and moves with it. Completely covering the affected object with an opaque object, such as a bowl or a helm, blocks the light. If any of this spell's area overlaps with an area of darkness created by a spell of 3rd level or lower, the spell that created the darkness is dispelled.",
+        "school": "evocation",
+        "castTime": "1 action",
+        "range": "60 feet",
+        "concentration": false,
+        "duration": "1 hour",
+        "components": ["V", "S"],
+        "material": "",
+        "minimumLevel": "3",
+        "ritual": false,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Magic Circle",
+        "description": "You create a 10-foot-radius, 20-foot-tall cylinder of magical energy centered on a point on the ground that you can see within range. Glowing runes appear wherever the cylinder intersects with the floor or other surface. Choose one or more of the following types of creatures: celestials, elementals, fey, fiends, or undead. The circle affects a creature of the chosen type in the following ways: The creature can't willingly enter the cylinder by nonmagical means, If the creature tries to use tele- portation or interplanar travel to do so, it must first succeed on a Charisma saving throw. The creature has disadvantage on attack rolls against targets within the cylinder. Targets within the cylinder can't be charmed, fright- ened, or possessed by the creature. When you cast this spell, you can elect to cause its magic to operate in the reverse direction, preventing a creature of the specified type from leaving the cylinder and protecting targets outside it. At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the duration increases by 1 hour for each slot level above 3rd.",
+        "school": "abjuration",
+        "castTime": "1 minute",
+        "range": "10 feet",
+        "concentration": false,
+        "duration": "1 hour",
+        "components": ["V", "S", "M"],
+        "material": "holy water or powdered silver and iron worth at least 100 gp, which the spell consumes",
+        "minimumLevel": "3",
+        "ritual": false,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Mass Healing Word",
+        "description": "As you call out words of restoration, up to six creatures of your choice that you can see within range regain hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs. At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the healing increases by 1d4 for each slot level above 3rd.",
+        "school": "evocation",
+        "castTime": "1 bonus action",
+        "range": "60 fect",
+        "concentration": false,
+        "duration": "Instantaneous",
+        "components": ["V"],
+        "material": "",
+        "minimumLevel": "3",
+        "ritual": false,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Meld Into Stone",
+        "description": "You step into a stone object or surface large enough to fully contain your body, melding yourself and all the equipment you carry with the stone for the duration. Using your movement, you step into the stone at a point you can touch. Nothing of your presence remains visible or otherwise detectable by nonmagical senses. While merged with the stone, you can't see what occurs outside it, and any Wisdom (Perception) checks you make to hear sounds outside it are made with disadvantage. You remain aware of the passage of time and can cast spells on yourself while merged in the stone. You can use your movement to leave the stone where you entered it, which ends the spell. You otherwise can't move. Minor physical damage to the stone doesn't harm you, but its partial destruction or a change in its shape (to the extent that you no longer fit within it) expels you and deals 6d6 bludgeoning damage to you. The stone's complete destruction (or transmutation into a different substance) expels you and deals 50 bludgeoning damage to you. If expelled, you fall prone in an unoccupied space closest to where you first entered.",
+        "school": "transmutation",
+        "castTime": "1 action",
+        "range": "Touch",
+        "concentration": false,
+        "duration": "8 hours",
+        "components": ["V", "S"],
+        "material": "",
+        "minimumLevel": "3",
+        "ritual": true,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Protection From Energy",
+        "description": "For the duration, the willing creature you touch has resistance to one damage type of your choice: acid, cold, fire, lightning, or thunder.",
+        "school": "abjuration",
+        "castTime": "1 action Range; Touch ",
+        "range": "500 miles",
+        "concentration": true,
+        "duration": "up to | hour",
+        "components": ["V", "S"],
+        "material": "",
+        "minimumLevel": "3",
+        "ritual": false,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Remove Curse",
+        "description": "At your touch, all curses affecting one creature or object end. If the object is a cursed magic item, its curse remains, but the spell breaks its owner's attunement to the object so it can be removed or discarded.",
+        "school": "abjuration",
+        "castTime": "1 action",
+        "range": "Touch",
+        "concentration": false,
+        "duration": "Instantaneous",
+        "components": ["V", "S"],
+        "material": "",
+        "minimumLevel": "3",
+        "ritual": false,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Revivify",
+        "description": "You touch a creature that has died within the last minute. That creature returns to life with 1 hit point. This spell can't return to life a creature that has died of old age, nor can it restore any missing body parts.",
+        "school": "conjuration",
+        "castTime": "1 action",
+        "range": "Touch",
+        "concentration": false,
+        "duration": "Instantaneous",
+        "components": ["V", "S", "M"],
+        "material": "diamonds worth 300 gp, which the spell consumes",
+        "minimumLevel": "3",
+        "ritual": false,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Spirit Guardians",
+        "description": "‘You call forth spirits to protect you. They flit around you to a distance of 15 feet for the duration. If you are good or neutral, their spectral form appears angelic or fey (your choice), If you are evil, they appear fiendish. When you cast this spell, you can designate any number of creatures you can see to be unaffected by it. An affected creature's speed is halved in the area, and when the creature enters the area for the first time on a turn or Starts its turn there, it must make a Wisdom saving throw. On a failed save, the creature takes 3d8 radiant damage (if you are good or neutral) or 3d8 necrotic damage (if you are evil). On a successful save, the creature takes half as much damage. At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
+        "school": "conjuration",
+        "castTime": "1 action",
+        "range": "Self (15-foot radius)",
+        "concentration": true,
+        "duration": "up to 10 minutes",
+        "components": ["V", "S", "M"],
+        "material": "a holy symbol",
+        "minimumLevel": "3",
+        "ritual": false,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Water Walk",
+        "description": "This spell grants the ability to move across any liquid surface—such as water, acid, mud, snow, quicksand, or lava—as if it were harmless solid ground (creatures crossing molten lava can still take damage from the heat). Up to ten willing creatures you can see within range gain this ability for the duration. If you target a creature submerged in a liquid, the spell carries the target to the surface of the liquid at a rate of 60 feet per round.",
+        "school": "transmutation",
+        "castTime": "1 action",
+        "range": "30 feet",
+        "concentration": false,
+        "duration": "| hour",
+        "components": ["V", "S", "M"],
+        "material": "a piece of cork",
+        "minimumLevel": "3",
+        "ritual": true,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Nondetection",
+        "description": "For the duration, you hide a target that you touch from divination magic. The target can be a willing creature or a place or an object no larger than 10 feet in any dimension. The target can’t be targeted by any divination magic or perceived through magical scrying sensors.",
+        "school": "abjuration",
+        "castTime": "1 action",
+        "range": "Touch",
+        "concentration": false,
+        "duration": "8 hours",
+        "components": ["V", "S", "M"],
+        "material": "A pinch of diamond dust worth 25 gp sprinkled over the target, which the spell consumes",
+        "minimumLevel": "3",
+        "ritual": false,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      },
+      {
+        "name": "Speak With Dead",
+        "description": "You grant the semblance of life and intelligence to a corpse of your choice within range, allowing it to answer the questions you pose. The corpse must still have a mouth and can't be undead. The spell fails if the corpse was the target of this spell within the last 10 days. Until the spell ends, you can ask the corpse up to five questions. The corpse knows only what it knew in life, including the languages it knew. Answers are usually brief, cryptic, or repetitive, and the corpse is under no compulsion to offer a truthful answer if you are hostile to it or it recognizes you as an enemy. This spell doesn't return the creature's soul to its body, only its animating spirit. Thus, the corpse can't learn new information, doesn't comprehend anything that has happened since it died, and can't speculate about future events.",
+        "school": "necromancy",
+        "castTime": "1 action",
+        "range": "10 feet",
+        "concentration": false,
+        "duration": "10 minutes",
+        "components": ["V", "S", "M"],
+        "material": "burning incense",
+        "minimumLevel": "3",
+        "ritual": false,
+        "spellAttack": false,
+        "spellcastingAbility": "wisdom"
+      }
+    ],
     "4": [],
     "5": [],
     "6": [],
@@ -857,7 +1203,7 @@
       "modifier": { "value": 1 }
     }
   },
-  "proficiency": { "baseBonus": { "value": 2 }, "halfBonus": { "value": 1 } },
+  "proficiency": { "baseBonus": { "value": 3 }, "halfBonus": { "value": 1 } },
   "baseStats": {
     "initiativeBonus": {
       "base": 0,
@@ -1063,7 +1409,7 @@
   ],
   "size": "Small",
   "preparedSpells": [
-    { "title": "Cleric", "level": { "value": 1 }, "modifier": { "value": 3 } }
+    { "title": "Cleric", "level": { "value": 5 }, "modifier": { "value": 3 } }
   ],
   "hitDie": "d8"
 }

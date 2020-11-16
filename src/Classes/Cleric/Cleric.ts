@@ -1,7 +1,7 @@
 import { PlayerClass, LevelingParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ISpell, Spell, ResourceTrait, ScalingTrait } from "../../Base/Interfaces";
-import * as ClassTraits from "../../../Assets/ClassTraits.json";
+import * as ClericClassTraits from "./Cleric.json";
 import * as Spells from "../../../Assets/Spells.json";
 import { ClericSubclass } from "./Subclasses/ClericSubclass";
 import * as SpellList from "../../../Assets/SpellList.json";
@@ -82,7 +82,7 @@ export class Cleric extends PlayerClass {
    */
 
   private pushClericFeatures(pc: PlayerCharacter, level: number) {
-    this.pushClassFeatures(pc, level, "CLERIC");
+    this.pushClassFeatures(pc, level, ClericClassTraits);
   }
 
   private handleClericSpellSelections(
@@ -106,18 +106,21 @@ export class Cleric extends PlayerClass {
       ? pc.preparedSpells.push(clericPreparedSpells)
       : (pc.preparedSpells = [clericPreparedSpells]);
     // divine domain
-    this.subclass = params.archetypeSelection[0].archetype;
+    this.subclass = params.subclassSelection.subclass;
     ClericSubclass.subclassDictionary[this.subclass][1](pc, params);
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
     // channel divinity
-    const channelDivinity: ResourceTrait = {
-      title: "Channel Divinity",
-      description: "Number of times you can use a Channel Divinity ability.",
-      resourceMax: { value: 1 },
-    };
-    pc.addResourceTraits(channelDivinity);
+    if(PlayerClass.multiClassCheck(pc, "Channel Divinity")){
+      const channelDivinity: ResourceTrait = {
+        title: "Channel Divinity",
+        description: "Number of times you can use a Channel Divinity ability.",
+        resourceMax: { value: 1 },
+      };
+      pc.addResourceTraits(channelDivinity);
+    }
+    
     // divine domain
     ClericSubclass.subclassDictionary[this.subclass][2](pc, params);
     this.pushClericFeatures(pc, 2);
@@ -136,6 +139,11 @@ export class Cleric extends PlayerClass {
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
+    pc.addSpells(
+      [...SpellList["Cleric"][3]],
+      SpellcastingAbility["CLERIC"]
+    );
+    
     // destroy undead
     const destroyUndead: ScalingTrait = {
       title: "Destroy Undead",
@@ -143,6 +151,7 @@ export class Cleric extends PlayerClass {
         "Challenge rating threshold for destroying undead that fail the saving throw against Turn Undead",
       challengeRating: 0.5,
     };
+    pc.addScalingTraits(destroyUndead);
     // divine domain spells
     ClericSubclass.subclassDictionary[this.subclass][5](pc, params);
     this.pushClericFeatures(pc, 5);

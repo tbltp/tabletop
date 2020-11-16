@@ -14,7 +14,7 @@ export class TotemWarrior {
           TotemWarrior.getFeature("3", "SPIRIT SEEKER"),
           TotemWarrior.getFeature(
             "3",
-            params.archetypeSelection[0].options[0]
+            params.subclassSelection.options[0]
           )
         );
       }
@@ -23,7 +23,7 @@ export class TotemWarrior {
         pc.addFeatures(
           TotemWarrior.getFeature(
             "6",
-            params.archetypeSelection[0].options[0]
+            params.subclassSelection.options[0]
           )
         );
       }
@@ -39,7 +39,7 @@ export class TotemWarrior {
         pc.addFeatures(
           TotemWarrior.getFeature(
             "14",
-            params.archetypeSelection[0].options[0]
+            params.subclassSelection.options[0]
           )
         );
       }

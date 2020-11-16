@@ -16,9 +16,9 @@ export class CollegeOfLore {
     static lore6(pc: PlayerCharacter, params: LevelingParams) {
       const lore6Trait: Trait = {
         ...CollegeOfLore.getFeature("6", "ADDITIONAL MAGICAL SECRETS"),
-        choices: params.archetypeSelection[0].options,
+        choices: params.subclassSelection.options,
       };
-      pc.addSpells(params.archetypeSelection[0].options, "charisma");
+      pc.addSpells(params.subclassSelection.options, "charisma");
       pc.addFeatures(lore6Trait);
     }
   

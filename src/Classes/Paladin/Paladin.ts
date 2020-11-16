@@ -2,8 +2,10 @@ import { PlayerClass, LevelingParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import * as FightingStyle from "../../../Assets/FightingStyles.json";
+import * as PaladinClassTraits from "./Paladin.json";
 import { PaladinSubclass } from "./Subclasses/PaladinSubclass";
 import { SpellSlotFactory } from "../SpellSlotFactory";
+import { ResourceTrait } from "Base/Interfaces";
 
 export class Paladin extends PlayerClass {
   constructor(
@@ -74,7 +76,7 @@ export class Paladin extends PlayerClass {
   };
 
   private pushPaladinFeatures(pc: PlayerCharacter, level: number) {
-    this.pushClassFeatures(pc, level, "PALADIN");
+    this.pushClassFeatures(pc, level, PaladinClassTraits);
   }
 
   private upgradeLayOnHands(pc: PlayerCharacter): void {
@@ -112,10 +114,21 @@ export class Paladin extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.subclass = params.archetypeSelection[0].archetype;
+    this.subclass = params.subclassSelection.subclass;
     this.upgradeLayOnHands(pc);
     PaladinSubclass.subclassDictionary[this.subclass][3](pc, params);
+
+    if(PlayerClass.multiClassCheck(pc, "Channel Divinity")){
+      const channelDivinity: ResourceTrait = {
+        title: "Channel Divinity",
+        description: "Number of times you can use a Channel Divinity ability.",
+        resourceMax: { value: 1 },
+      };
+      pc.addResourceTraits(channelDivinity);
+    }
+
     this.pushPaladinFeatures(pc, 3);
+    
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {

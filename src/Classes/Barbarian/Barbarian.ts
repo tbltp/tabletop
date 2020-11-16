@@ -1,5 +1,6 @@
 import { PlayerClass, LevelingParams } from "../PlayerClass";
 import { ResourceTrait, Trait, ScalingTrait } from "../../Base/Interfaces";
+import * as BarbarianClassTraits from "./Barbarian.json"
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { BarbarianSubclass } from "./Subclasses/BarbarianSubclass";
 
@@ -68,7 +69,7 @@ export class Barbarian extends PlayerClass {
   };
 
   private pushBarbarianFeatures(pc: PlayerCharacter, level: number) {
-    this.pushClassFeatures(pc, level, "BARBARIAN");
+    this.pushClassFeatures(pc, level, BarbarianClassTraits);
   }
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
@@ -86,16 +87,21 @@ export class Barbarian extends PlayerClass {
     };
     pc.addResourceTraits(rage);
     pc.addScalingTraits(rageDamage);
+
+    if(PlayerClass.multiClassCheck(pc, "Unarmored Defense")){
+      pc.armorClasses.push({
+        name: "Unarmored Defense",
+        base: 10,
+        modifier: [
+          pc.abilityScores.dexterity.modifier,
+          pc.abilityScores.constitution.modifier,
+        ],
+        bonus: { value: 0 },
+      });
+    }
+
     this.pushBarbarianFeatures(pc, 1);
-    pc.armorClasses.push({
-      name: "Unarmored Defense",
-      base: 10,
-      modifier: [
-        pc.abilityScores.dexterity.modifier,
-        pc.abilityScores.constitution.modifier,
-      ],
-      bonus: { value: 0 },
-    });
+
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
@@ -103,7 +109,7 @@ export class Barbarian extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.subclass = params.archetypeSelection[0].archetype;
+    this.subclass = params.subclassSelection.subclass;
     BarbarianSubclass.subclassDictionary[this.subclass][3](pc, params);
     pc.findResourceTraitByName("Rage").resourceMax.value++;
   }

@@ -14,7 +14,7 @@ export class CharacterSheet {
     this.race.apply(this.character);
     //apply class
     this.playerClasses[playerClass.name] = playerClass;
-    this.levels[playerClass.name] = 1;
+    this.levels[playerClass.name] = playerClass["level"];
     playerClass.apply(this.character);
     this.background.apply(this.character);
   }
@@ -22,7 +22,7 @@ export class CharacterSheet {
   character: PlayerCharacter;
   race: Race;
   playerClasses: { [key: string]: PlayerClass } = {};
-  levels: { [key: string]: number } = {};
+  levels: { [key: string]: PlayerClass["level"] } = {};
   feats: Feat[];
   background: Background;
 
@@ -33,7 +33,7 @@ export class CharacterSheet {
   //this is dumb but it's ok.
   multiClass(newClass: PlayerClass): void {
     this.playerClasses[newClass.name] = newClass;
-    this.levels[newClass.name] = 1;
+    this.levels[newClass.name] = newClass["level"];
     this.character.level.totalLevel++;
     newClass.apply(this.character);
 
@@ -41,8 +41,9 @@ export class CharacterSheet {
 
   levelUp(levelingClass: string, params: LevelingParams): void {
     this.character.level.totalLevel++;
-    const level = ++this.levels[levelingClass];
+    const level = ++this.playerClasses[levelingClass].level.value;
 
+    this.character.proficiency.levelUp(level);
     
     //level up race
     if(this.race.abilitiesAtLevels[level.toString()]) {
@@ -80,9 +81,9 @@ export class CharacterSheet {
       
       // Run through and sum the weighted class levels for spell slots.
       for(let playerClass of Object.keys(this.levels)){
-        if(SpellSlotFactory.spellcastingClassRanks[playerClass] == "PRIMARY"){ multiclassSpellcasterLevel += this.levels[playerClass] }
-        else if(SpellSlotFactory.spellcastingClassRanks[playerClass] == "SECONDARY"){ multiclassSpellcasterLevel += this.levels[playerClass] / 2 }  
-        else if(SpellSlotFactory.spellcastingSubclasses[this.playerClasses[playerClass].subclass]) { multiclassSpellcasterLevel += this.levels[playerClass] / 3 }  
+        if(SpellSlotFactory.spellcastingClassRanks[playerClass] == "PRIMARY"){ multiclassSpellcasterLevel += this.levels[playerClass].value }
+        else if(SpellSlotFactory.spellcastingClassRanks[playerClass] == "SECONDARY"){ multiclassSpellcasterLevel += this.levels[playerClass].value / 2 }  
+        else if(SpellSlotFactory.spellcastingSubclasses[this.playerClasses[playerClass].subclass]) { multiclassSpellcasterLevel += this.levels[playerClass].value / 3 }  
       }
 
       SpellSlotFactory.applyClassSpellSlotsAtLevel(this.character, "PRIMARY", Math.floor(multiclassSpellcasterLevel))

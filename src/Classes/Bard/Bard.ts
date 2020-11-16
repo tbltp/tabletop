@@ -3,6 +3,7 @@ import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ResourceTrait, ScalingTrait } from "../../Base/Interfaces";
 import { BardSubclass } from "./Subclasses/BardSubclass";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
+import * as BardClassTraits from "./Bard.json";
 import { SpellSlotFactory } from "../SpellSlotFactory";
 
 export class Bard extends PlayerClass {
@@ -83,7 +84,7 @@ export class Bard extends PlayerClass {
   ) {}
 
   private pushBardFeatures(pc: PlayerCharacter, level: number) {
-    this.pushClassFeatures(pc, level, "BARD");
+    this.pushClassFeatures(pc, level, BardClassTraits);
   }
 
   private handleBardSpellSelections(
@@ -129,7 +130,7 @@ export class Bard extends PlayerClass {
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
     // college
-    this.subclass = params.archetypeSelection[0].archetype;
+    this.subclass = params.subclassSelection.subclass;
     BardSubclass.subclassDictionary[this.subclass][3](pc, params);
     // expertise
     for (let skill of params.proficiencySelection) {
@@ -138,7 +139,7 @@ export class Bard extends PlayerClass {
     PlayerClass.pushCustomizedClassFeature(
       pc,
       3,
-      "BARD",
+      BardClassTraits,
       "EXPERTISE",
       params.proficiencySelection
     );
@@ -197,7 +198,7 @@ export class Bard extends PlayerClass {
     PlayerClass.pushCustomizedClassFeature(
       pc,
       10,
-      "BARD",
+      BardClassTraits,
       "MAGICAL SECRETS",
       params.magicalSecretsSpellSelection
     );

@@ -30,6 +30,7 @@ export class PlayerCharacter extends BaseCharacter {
     { name: "Base Speed", base: this.speed, bonus: { value: 0 } },
   ];
 
+  // # of prepared spells is wrong reference, doesnt update 
   preparedSpells?: {
     title: string;
     level: { value: number };

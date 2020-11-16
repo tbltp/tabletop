@@ -1,6 +1,7 @@
 import { PlayerClass, LevelingParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
+import * as SorcererClassTraits from "./Sorcerer.json";
 import * as Metamagic from "../../../Assets/Metamagic.json";
 import { SorcererSubclass } from "./Subclasses/SorcererSubclass";
 import { SpellSlotFactory } from "../SpellSlotFactory";
@@ -78,7 +79,7 @@ export class Sorcerer extends PlayerClass {
   };
 
   pushSorcererFeatures(pc: PlayerCharacter, level: number) {
-    this.pushClassFeatures(pc, level, "SORCERER");
+    this.pushClassFeatures(pc, level, SorcererClassTraits);
   }
 
   private handleSorcererSpellSelections(
@@ -97,7 +98,7 @@ export class Sorcerer extends PlayerClass {
   level1(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     // spell replacements can happen at any level
     this.handleSorcererSpellSelections(pc, params);
-    this.subclass = params.archetypeSelection[0].archetype;
+    this.subclass = params.subclassSelection.subclass
     SorcererSubclass.subclassDictionary[this.subclass][1](pc, params);
   }
 

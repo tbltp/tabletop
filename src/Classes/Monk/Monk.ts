@@ -2,6 +2,7 @@ import { PlayerClass, LevelingParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ResourceTrait } from "../../Base/Interfaces";
 import * as Languages from "../../../Assets/Languages.json";
+import * as MonkClassTraits from "./Monk.json";
 import { MonkSubclass } from "./Subclasses/MonkSubclass";
 
 export class Monk extends PlayerClass {
@@ -77,25 +78,31 @@ export class Monk extends PlayerClass {
   };
 
   private pushMonkFeatures(pc: PlayerCharacter, level: number) {
-    this.pushClassFeatures(pc, level, "MONK");
+    this.pushClassFeatures(pc, level, MonkClassTraits);
   }
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
-    this.pushMonkFeatures(pc, 1);
-    pc.armorClasses.push({
-      name: "Unarmored Defense",
-      base: 10,
-      modifier: [
-        pc.abilityScores.dexterity.modifier,
-        pc.abilityScores.wisdom.modifier,
-      ],
-      bonus: { value: 0 },
-    }); // TWO STATS
+    
+    if(PlayerClass.multiClassCheck(pc, "Unarmored Defense")){
+      pc.armorClasses.push({
+        name: "Unarmored Defense",
+        base: 10,
+        modifier: [
+          pc.abilityScores.dexterity.modifier,
+          pc.abilityScores.wisdom.modifier,
+        ],
+        bonus: { value: 0 },
+      });
+    }
+    
     pc.addScalingTraits({
       title: "Martial Arts",
       description: "Damage die used for Unarmed Strikes.",
       dice: "1d4",
     });
+
+    this.pushMonkFeatures(pc, 1);
+
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
@@ -113,7 +120,7 @@ export class Monk extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.subclass = params.archetypeSelection[0].archetype;
+    this.subclass = params.subclassSelection.subclass;
     this.pushMonkFeatures(pc, 3);
     pc.findResourceTraitByName("Ki Points").resourceMax.value++;
 

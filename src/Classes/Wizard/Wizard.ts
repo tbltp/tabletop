@@ -1,7 +1,7 @@
 import { PlayerClass, LevelingParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
-import { SpellSlotFactory } from "../SpellSlotFactory";
+import * as WizardClassTraits from './Wizard.json';
 import { WizardSubclass } from "./Subclasses/WizardSubclass";
 
 export class Wizard extends PlayerClass {
@@ -77,7 +77,7 @@ export class Wizard extends PlayerClass {
   };
 
   pushWizardFeatures(pc: PlayerCharacter, level: number) {
-    this.pushClassFeatures(pc, level, "WIZARD");
+    this.pushClassFeatures(pc, level, WizardClassTraits);
   }
 
   private handleWizardSpellSelections(
@@ -90,13 +90,13 @@ export class Wizard extends PlayerClass {
   level1(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
     this.pushWizardFeatures(pc, 1);
-    PlayerClass.pushCustomizedClassFeature(pc, 1, "WIZARD", "SPELLBOOK", params.spellBookSpells)
+    PlayerClass.pushCustomizedClassFeature(pc, 1, WizardClassTraits, "SPELLBOOK", params.spellBookSpells)
   }
 
   level2(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
     this.pushWizardFeatures(pc, 2);
-    this.subclass = params.archetypeSelection[0].archetype;
+    this.subclass = params.subclassSelection.subclass;
 
     WizardSubclass.subclassDictionary[this.subclass]["2"](pc, params);
   }
@@ -179,7 +179,7 @@ export class Wizard extends PlayerClass {
 
   level20(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
-    PlayerClass.pushCustomizedClassFeature(pc, 20, "WIZARD", "SIGNATURE SPELLS", params.signatureSpells);
+    PlayerClass.pushCustomizedClassFeature(pc, 20, WizardClassTraits, "SIGNATURE SPELLS", params.signatureSpells);
   }
 }
 

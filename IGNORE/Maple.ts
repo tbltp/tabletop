@@ -1,7 +1,7 @@
 import { CharacterSheet} from "../src/Base/CharacterSheet";
 import { PlayerCharacter } from "../src/Base/PlayerCharacter";
 
-import { HalfElf } from "../src/Races/HalfElf";
+import { HalfElf } from "../src/Races/Half Elf/HalfElf";
 import { Druid } from "../src/Classes/Druid/Druid";
 import { Criminal } from "../src/Backgrounds/Background";
 
@@ -29,9 +29,9 @@ let pc: CharacterSheet = new CharacterSheet(
     new Criminal("Playing Card Set")
 )
 
-pc.levelUp("Druid", {isNoInput: false, archetypeSelection: [{archetype: "MOON"}]});
+pc.levelUp("Druid", {isNoInput: false, subclassSelection: {subclass: "MOON"}});
 pc.levelUp("Druid", {isNoInput: true})
 pc.levelUp("Druid", {isNoInput: false, abilityScoreImprovement: [{"ability": "wisdom", "improvement": 2}], spellSelection: ["RESISTANCE"]});
-
+pc.levelUp("Druid", {isNoInput: true})
 
 Jsonify.dumpToJSON(pc.character, "Maple");

@@ -1,6 +1,5 @@
 import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { Spell, Trait, ResourceTrait } from "../Base/Interfaces";
-import * as ClassTraits from "../../Assets/ClassTraits.json";
 import * as Languages from "../../Assets/Languages.json";
 import * as Gear from "../../Assets/Gear.json";
 import * as ToolKits from "../../Assets/Tools.json";
@@ -103,6 +102,7 @@ export abstract class PlayerClass {
 
   protected addFeatures(pc: PlayerCharacter): void {
     for (let trait of this.features) {
+
       pc.traits.features.push(trait);
     }
   }
@@ -173,10 +173,19 @@ export abstract class PlayerClass {
   protected pushClassFeatures(
     pc: PlayerCharacter,
     level: number,
-    className: string
+    classTraits: object
   ) {
-    for (let key in ClassTraits[className][level]) {
-      pc.addFeatures(ClassTraits[className][level][key]);
+
+    let riskTraits = {
+      "Extra Attack": pc.findFeatureTraitByName("Extra Attack") ? true : false,
+      "Unarmored Defense": pc.findFeatureTraitByName("Unarmored Defense") ? true : false
+    }
+
+    for (let key in classTraits[level]) {
+    
+      let feature: Trait = classTraits[level][key]
+      if(Object.keys(riskTraits).includes(feature["title"]) && riskTraits[feature["title"]]) { continue; }
+      pc.addFeatures(feature);
     }
   }
 
@@ -196,12 +205,12 @@ export abstract class PlayerClass {
   public static pushCustomizedClassFeature(
     pc: PlayerCharacter,
     level: number,
-    className: string,
+    classTraits: object,
     feature: string,
     choices: string[]
   ) {
     const customFeature: Trait = {
-      ...ClassTraits[className][level][feature],
+      ...classTraits[level][feature],
       choices: choices,
     };
     pc.addFeatures(customFeature);
@@ -233,7 +242,20 @@ export abstract class PlayerClass {
         }
         */
   }
+  
+  public static multiClassCheck(pc: PlayerCharacter, trait: string){
+    
+    let riskTraits = {
+      "Channel Divinity": pc.findResourceTraitByName("Channel Divinity") ? true : false,
+      "Unarmored Defense": pc.findFeatureTraitByName("Unarmored Defense") ? true : false
+    }
+    
+    if (riskTraits[trait]) { return false; }
+
+    return true;
+  }
 }
+
 
 
 
@@ -249,8 +271,8 @@ export interface LevelingParams {
   };
   proficiencySelection?: string[];
   fightingStyle?: string[];
-  archetypeSelection?: {
-    archetype: string; //school/oath/patron/etc
+  subclassSelection?: {
+    subclass: string; //school/oath/patron/etc
     options?: string[]; //totems/maneuvers/elements/beast companions/etc
-  }[];
+  };
 }

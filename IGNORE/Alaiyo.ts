@@ -1,5 +1,5 @@
 import { PlayerCharacter } from "../src/Base/PlayerCharacter";
-import { Tiefling } from "../src/Races/Tiefling";
+import { Tiefling } from "../src/Races/Tiefling/Tiefling";
 import { Charlatan } from "../src/Backgrounds/Background";
 import { Bard } from "../src/Classes/Bard/Bard";
 import { CharacterSheet } from "../src/Base/CharacterSheet";
@@ -46,11 +46,10 @@ pc.levelUp(
   isNoInput: false,
   spellSelection: ["DETECT THOUGHTS"],
   proficiencySelection: ["history", "insight"],
-  archetypeSelection: [{ archetype: "VALOR" }],
+  subclassSelection: { subclass: "VALOR" },
 });
 
 pc.multiClass(new Ranger(true, ["perception"], {isNoInput: false, favoredEnemy: "White People", favoredTerrain: "Cities"}));
 
-pc.levelUp("Ranger", {isNoInput: false, fightingStyle: ["ARCHERY"], spellSelection: ["HAIL OF THORNS", "HUNTER'S MARK"]});
 
 Jsonify.dumpToJSON(pc.character, "Alaiyo");

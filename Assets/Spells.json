@@ -417,8 +417,8 @@
     "ritual": true,
     "spellAttack": false
   },
-  "BEESTOW CURSE": {
-    "name": "Beestow Curse",
+  "BESTOW CURSE": {
+    "name": "Bestow Curse",
     "description": "You touch a creature, and that creature must succeed on a Wisdom saving throw or become cursed for the duration of the spell. When you cast this spell, choose the nature of the curse from the following options: Choose one ability score. While cursed, the target has disadvantage on ability checks and saving throws made with that ability score. While cursed, the target has disadvantage on attack rolls against you. While cursed, the target must make a Wisdom sav- ing throw at the start of each of its turns. If it fails, it wastes its action that turn doing nothing. While the target is cursed, your attacks and spells deal an extra 1d8 necrotic damage to the target. * . A remove curse spell ends this effect. At the DM's option, you may choose an alternative curse effect, but it should be no more powerful than those described above. The DM has final say on such a curse's effect. At Higher Levels. If you cast this spell using a spell slot of 4th level or higher, the duration is concentration, up to 10 minutes. If you use a spell slot of 5th level or higher, the duration is 8 hours. If you use a spell slot of 7th level or higher, the duration is 24 hours. If you use a 9th level spell slot, the spell lasts until it is dispelled. Using a spell slot of 5th level or higher grants a duration that doesn't require concentration.",
     "school": "necromancy",
     "castTime": "1 action",
@@ -1103,7 +1103,7 @@
     "ritual": false,
     "spellAttack": false
   },
-  "CREATE FOOP AND WATER": {
+  "CREATE FOOD AND WATER": {
     "name": "Create Foop And Water",
     "description": "You create 45 pounds of food and 30 gallons of water on the ground or in containers within range, enough to sustain up to fifteen humanoids or five steeds for 24 hours. The food is bland but nourishing, and spoils if uneaten after 24 hours. The water is clean and doesn't go bad.",
     "school": "conjuration",
@@ -2965,8 +2965,8 @@
     "ritual": false,
     "spellAttack": false
   },
-  "MACIC CIRCLE": {
-    "name": "Macic Circle",
+  "MAGIC CIRCLE": {
+    "name": "Magic Circle",
     "description": "You create a 10-foot-radius, 20-foot-tall cylinder of magical energy centered on a point on the ground that you can see within range. Glowing runes appear wherever the cylinder intersects with the floor or other surface. Choose one or more of the following types of creatures: celestials, elementals, fey, fiends, or undead. The circle affects a creature of the chosen type in the following ways: The creature can't willingly enter the cylinder by nonmagical means, If the creature tries to use tele- portation or interplanar travel to do so, it must first succeed on a Charisma saving throw. The creature has disadvantage on attack rolls against targets within the cylinder. Targets within the cylinder can't be charmed, fright- ened, or possessed by the creature. When you cast this spell, you can elect to cause its magic to operate in the reverse direction, preventing a creature of the specified type from leaving the cylinder and protecting targets outside it. At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the duration increases by 1 hour for each slot level above 3rd.",
     "school": "abjuration",
     "castTime": "1 minute",
@@ -2979,8 +2979,8 @@
     "ritual": false,
     "spellAttack": false
   },
-  "MACIC JAR": {
-    "name": "Macic Jar",
+  "MAGIC JAR": {
+    "name": "Magic Jar",
     "description": "Your body falls into a catatonic state as your soul leaves it and enters the container you used for the spell's material component. While your soul inhabits the container, you are aware of your surroundings as if you were in the container's space. You can't move or use reactions. The only action you can take is to project your soul up to 100 feet out of the container, either returning to your living body (and ending the spell) or attempting to possess a humanoids body. You can attempt to possess any humanoid within 100 feet of you that you can see (creatures warded by a protection from evil and good or magic circle spell can't be possessed). The target must make a Charisma saving throw. On a failure, your soul moves into the target's body, and the target's soul becomes trapped in the container, On a success, the target resists your efforts to possess it, and you can't attempt to possess it again for 24 hours. Once you possess a creature's body, you control it. Your game statistics are replaced by the statistics of the creature, though you retain your alignment and your Intelligence, Wisdom, and Charisma scores. You retain the benefit of your own class features. If the target has any class levels, you can't use any of its class features. Meanwhile, the possessed creature's soul can perceive from the container using its own senses, but it can't move or take actions at all. While possessing a body, you can use your action to ' return from the host body to the container if it is within 100 feet of you, returning the host creature's soul to its body. If the host body dies while you're in it, the creature dies, and you must make a Charisma saving throw against your own spellcasting DC. On a success, you return to the container if it is within 100 feet of you. Otherwise, you die. If the container is destroyed or the spell ends, your soul immediately returns to your body. If your body is more than 100 feet away from you or if your body is dead when you attempt to return to it, you die, If another creature's soul is in the container when it is destroyed, the creature's soul returns to its body if the body is alive I and within 100 feet. Otherwise, that creature dies. When the spell ends, the container is destroyed.",
     "school": "necromancy",
     "castTime": "1 minute",
@@ -2993,8 +2993,8 @@
     "ritual": false,
     "spellAttack": false
   },
-  "MACIC MISSILE": {
-    "name": "Macic Missile",
+  "MAGIC MISSILE": {
+    "name": "Magic Missile",
     "description": "You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4 + 1 force damage to its target. The darts all strike simultaneously, and you can direct them to hit one creature or several. At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot level above 1st.",
     "school": "evocation",
     "castTime": "1 action",
@@ -3007,8 +3007,8 @@
     "ritual": false,
     "spellAttack": false
   },
-  "MACIC MOUTH": {
-    "name": "Macic Mouth",
+  "MAGIC MOUTH": {
+    "name": "Magic Mouth",
     "description": "You implant a message within an object in range, a message that is uttered when a trigger condition is met. Choose an object that you can see and that isn't being worn or carried by another creature. Then speak the message, which must be 25 words or less, though it can be delivered over as long as 10 minutes. Finally, determine the circumstance that will trigger the spell to deliver your message. When that circumstance occurs, a magical mouth appears on the object and recites the message in your voice and at the same volume you spoke. If the object you chose has a mouth or something that looks like a mouth (for example, the mouth of a statue), the magical mouth appears there so that the words appear to come from the object's mouth. When you cast this spell, you can have the spel! end after it delivers its message, or it can remain and repeat its message whenever the | trigger occurs. The triggering circumstance can be as general or as detailed as you like, though it must be based on visual or audible conditions that occur within 30 feet of the object. For example, you could instruct the mouth to speak when any creature moves within 30 feet of the object or when a silver bell rings within 30 feet of it.",
     "school": "illusion",
     "castTime": "1 minute",
@@ -3021,8 +3021,8 @@
     "ritual": true,
     "spellAttack": false
   },
-  "MACIC WEAPON": {
-    "name": "Macic Weapon",
+  "MAGIC WEAPON": {
+    "name": "Magic Weapon",
     "description": "You touch a nonmagical weapon. Until the spell ends, | that weapon becomes a magic weapon with a +1 bonus to attack rolls and damage rolls. At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the bonus increases to +2. When you use a spell slot of 6th level or higher, the bonus increases to +3.",
     "school": "transmutation",
     "castTime": "1 bonus action",

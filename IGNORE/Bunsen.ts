@@ -1,5 +1,5 @@
 import { PlayerCharacter } from "../src/Base/PlayerCharacter";
-import { FireGenasi } from "../src/Races/Genasi";
+import { FireGenasi } from "../src/Races/Genasi/Genasi";
 import { Sage } from "../src/Backgrounds/Background";
 import { Barbarian } from "../src/Classes/Barbarian/Barbarian";
 import { CharacterSheet } from "../src/Base/CharacterSheet";
@@ -18,7 +18,8 @@ let pc = new CharacterSheet(
 )
 
 pc.levelUp("Barbarian", {isNoInput: true});
-pc.levelUp("Barbarian", {isNoInput: false, archetypeSelection: [{archetype: "BERSERKER"}]});
+pc.levelUp("Barbarian", {isNoInput: false, subclassSelection: {subclass: "BERSERKER"}});
 pc.levelUp("Barbarian", {isNoInput: false, abilityScoreImprovement: [{"ability": "dexterity", "improvement": 1}, {"ability": "constitution", "improvement": 1}]});
+pc.levelUp("Barbarian", {isNoInput: true});
 
 Jsonify.dumpToJSON(pc.character, "Bunsen");

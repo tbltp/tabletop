@@ -1,5 +1,5 @@
 import { PlayerCharacter } from "../src/Base/PlayerCharacter";
-import { WaterGenasi } from "../src/Races/Genasi";
+import { WaterGenasi } from "../src/Races/Genasi/Genasi";
 import { Sage } from "../src/Backgrounds/Background";
 import { Monk } from "../src/Classes/Monk/Monk";
 
@@ -21,7 +21,7 @@ background.apply(pc);
 pclass.apply(pc);
 
 pclass.abilitiesAtLevels["2"](pc, {isNoInput: true});
-pclass.abilitiesAtLevels["3"](pc, {isNoInput: false, archetypeSelection: [{archetype: "OPEN HAND"}]});
+pclass.abilitiesAtLevels["3"](pc, {isNoInput: false, subclassSelection: {subclass: "OPEN HAND"}});
 race.abilitiesAtLevels["3"](pc);
 
 Jsonify.dumpToJSON(pc, "Piper");

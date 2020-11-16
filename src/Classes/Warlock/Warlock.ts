@@ -3,6 +3,7 @@ import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ResourceTrait } from "../../Base/Interfaces";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import * as PactBoon from "../../../Assets/PactBoon.json";
+import * as WarlockClassTraits from "./Warlock.json";
 import { WarlockSubclass } from "./Subclasses/WarlockSubclass";
 
 export class Warlock extends PlayerClass {
@@ -80,7 +81,7 @@ export class Warlock extends PlayerClass {
   };
 
   pushWarlockFeatures(pc: PlayerCharacter, level: number) {
-    this.pushClassFeatures(pc, level, "WARLOCK");
+    this.pushClassFeatures(pc, level, WarlockClassTraits);
   }
 
   private handleWarlockSpellSelections(
@@ -115,7 +116,7 @@ export class Warlock extends PlayerClass {
       level: 1,
     };
     pc.addResourceTraits(pactMagic);
-    this.subclass = params.archetypeSelection[0].archetype;
+    this.subclass = params.subclassSelection.subclass;
     WarlockSubclass.subclassDictionary[this.subclass]["1"](pc, params);
   }
 
@@ -187,7 +188,7 @@ export class Warlock extends PlayerClass {
     PlayerClass.pushCustomizedClassFeature(
       pc,
       11,
-      "WARLOCK",
+      WarlockClassTraits,
       "MYSTIC ARCANUM",
       [params.mysticArcanum]
     );

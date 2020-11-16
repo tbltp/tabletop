@@ -12,7 +12,7 @@ export class Hunter {
         pc.addFeatures(
             Hunter.getFeature(
             "3",
-            params.archetypeSelection[0].options[0]
+            params.subclassSelection.options[0]
           )
         );
       }
@@ -21,7 +21,7 @@ export class Hunter {
         pc.addFeatures(
             Hunter.getFeature(
             "7",
-            params.archetypeSelection[0].options[0]
+            params.subclassSelection.options[0]
           )
         );
       }
@@ -30,7 +30,7 @@ export class Hunter {
         pc.addFeatures(
             Hunter.getFeature(
             "11",
-            params.archetypeSelection[0].options[0]
+            params.subclassSelection.options[0]
           )
         );
       }
@@ -39,7 +39,7 @@ export class Hunter {
         pc.addFeatures(
             Hunter.getFeature(
             "15",
-            params.archetypeSelection[0].options[0]
+            params.subclassSelection.options[0]
           )
         );
       }

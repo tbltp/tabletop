@@ -1,14 +1,14 @@
 import { PlayerCharacter } from "./src/Base/PlayerCharacter";
 
-import { HillDwarf, MountainDwarf } from "./src/Races/Dwarf";
-import { HighElf, WoodElf, DarkElf } from "./src/Races/Elf";
-import { Lightfoot, Stout } from "./src/Races/Halfling";
-import { ForestGnome, MountainGnome } from "./src/Races/Gnome";
-import { Dragonborn } from "./src/Races/Dragonborn";
-import { HalfElf } from "./src/Races/HalfElf";
-import { BaseHuman, VariantHuman } from "./src/Races/Human";
-import { HalfOrc } from "./src/Races/HalfOrc";
-import { Tiefling } from "./src/Races/Tiefling";
+import { HillDwarf, MountainDwarf } from "./src/Races/Dwarf/Dwarf";
+import { HighElf, WoodElf, DarkElf } from "./src/Races/Elf/Elf";
+import { Lightfoot, Stout } from "./src/Races/Halfling/Halfling";
+import { ForestGnome, MountainGnome } from "./src/Races/Gnome/Gnome";
+import { Dragonborn } from "./src/Races/Dragonborn/Dragonborn";
+import { HalfElf } from "./src/Races/Half Elf/HalfElf";
+import { BaseHuman, VariantHuman } from "./src/Races/Human/Human";
+import { HalfOrc } from "./src/Races/Half Orc/HalfOrc";
+import { Tiefling } from "./src/Races/Tiefling/Tiefling";
 
 import {
   Acolyte,

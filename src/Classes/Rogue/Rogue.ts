@@ -2,6 +2,7 @@ import { PlayerClass, LevelingParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ResourceTrait } from "../../Base/Interfaces";
 import * as SpellList from "../../../Assets/SpellList.json";
+import * as RogueClassTraits from "./Rogue.json";
 import { RogueSubclass } from "./Subclasses/RogueSubclass";
 
 export class Rogue extends PlayerClass {
@@ -77,14 +78,14 @@ export class Rogue extends PlayerClass {
   };
 
   pushRogueFeatures(pc: PlayerCharacter, level: number) {
-    this.pushClassFeatures(pc, level, "ROGUE");
+    this.pushClassFeatures(pc, level, RogueClassTraits);
   }
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
     PlayerClass.pushCustomizedClassFeature(
       pc,
       1,
-      "ROGUE",
+      RogueClassTraits,
       "EXPERTISE",
       params.proficiencySelection
     );
@@ -106,7 +107,7 @@ export class Rogue extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.subclass = params.archetypeSelection[0].archetype;
+    this.subclass = params.subclassSelection.subclass;
     RogueSubclass.subclassDictionary[this.subclass][3](pc, params);
 
     pc.findScalingTraitByName("Sneak Attack").dice = "2d6";
