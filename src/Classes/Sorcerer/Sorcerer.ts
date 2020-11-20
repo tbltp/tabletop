@@ -98,8 +98,11 @@ export class Sorcerer extends PlayerClass {
   level1(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     // spell replacements can happen at any level
     this.handleSorcererSpellSelections(pc, params);
-    this.subclass = params.subclassSelection.subclass
-    SorcererSubclass.subclassDictionary[this.subclass][1](pc, params);
+    this.addSpellcasting(pc, "SORCERER");
+    this.subclass = new SorcererSubclass(params.subclassSelection.subclass)
+    this.subclassDriver(pc, "1", params);
+
+
   }
 
   level2(pc: PlayerCharacter, params: SorcererLevelingParams): void {
@@ -109,95 +112,112 @@ export class Sorcerer extends PlayerClass {
       description: "Number of Sorcery Points you have.",
       resourceMax: { value: 2 },
     });
+
+    this.subclassDriver(pc, "2", params);
+
   }
 
   level3(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
     pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.addMetaMagic(pc, params.metaMagic);
+    this.subclassDriver(pc, "3", params);
+
   }
 
   level4(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
     pc.improveAbilityScores(params.abilityScoreImprovement);
     pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
+    this.subclassDriver(pc, "4", params);
   }
 
   level5(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
     pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
+    this.subclassDriver(pc, "5", params);
   }
 
   level6(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
-    SorcererSubclass.subclassDictionary[this.subclass][6](pc, params);
+    this.subclassDriver(pc, "6", params);
     pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
   }
 
   level7(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
     pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
+    this.subclassDriver(pc, "7", params);
   }
 
   level8(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
     pc.improveAbilityScores(params.abilityScoreImprovement);
     pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
+    this.subclassDriver(pc, "8", params);
   }
 
   level9(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
     pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
+    this.subclassDriver(pc, "9", params);
   }
 
   level10(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
     pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.addMetaMagic(pc, params.metaMagic);
+    this.subclassDriver(pc, "10", params);
   }
 
   level11(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
     pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
+    this.subclassDriver(pc, "11", params);
   }
 
   level12(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
     pc.improveAbilityScores(params.abilityScoreImprovement);
     pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
+    this.subclassDriver(pc, "12", params);
   }
 
   level13(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
     pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
+    this.subclassDriver(pc, "13", params);
   }
 
   level14(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
-    SorcererSubclass.subclassDictionary[this.subclass][14](pc, params);
+    this.subclassDriver(pc, "14", params);
     pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
   }
 
   level15(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
     pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
+    this.subclassDriver(pc, "15", params);
   }
 
   level16(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
     pc.improveAbilityScores(params.abilityScoreImprovement);
     pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
+    this.subclassDriver(pc, "16", params);
   }
 
   level17(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
     pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.addMetaMagic(pc, params.metaMagic);
+    this.subclassDriver(pc, "17", params);
   }
 
   level18(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
-    SorcererSubclass.subclassDictionary[this.subclass][18](pc, params);
+    this.subclassDriver(pc, "18", params);
     pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
   }
 
@@ -205,12 +225,14 @@ export class Sorcerer extends PlayerClass {
     this.handleSorcererSpellSelections(pc, params);
     pc.improveAbilityScores(params.abilityScoreImprovement);
     pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
+    this.subclassDriver(pc, "19", params);
   }
 
   level20(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
     pc.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.pushSorcererFeatures(pc, 20);
+    this.subclassDriver(pc, "20", params);
   }
 }
 

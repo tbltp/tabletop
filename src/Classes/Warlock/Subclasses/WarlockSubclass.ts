@@ -4,8 +4,11 @@ import { Fiend } from "./Fiend/Fiend";
 import { GreatOldOne } from "./GreatOldOne/GreatOldOne";
 
 export class WarlockSubclass extends Subclass {
+  constructor(subclass: string){
+    super(subclass);
+  }
 
-    static archetypeHelper = {
+  subclassDictionary = {
         ARCHFEY: {
           "1": Archfey.archfey1,
           "6": Archfey.archfey6,

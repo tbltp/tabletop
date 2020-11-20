@@ -6,6 +6,7 @@ import { Barbarian } from "Classes/Barbarian/Barbarian";
 import { Charlatan } from "Backgrounds/Background";
 
 let pc: CharacterSheet = new CharacterSheet(
+    "?",
     new PlayerCharacter(0, 0, 0, 0, 0, 0),
     new Tiefling(),
     new Barbarian(false),

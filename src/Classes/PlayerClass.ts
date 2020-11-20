@@ -4,9 +4,11 @@ import * as Languages from "../../Assets/Languages.json";
 import * as Gear from "../../Assets/Gear.json";
 import * as ToolKits from "../../Assets/Tools.json";
 import * as FightingStyle from "../../Assets/FightingStyles.json";
+import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
 import * as Armor from "../../Assets/Armor.json";
 import * as Weapons from "../../Assets/Weapons.json";
 import { Inventory } from "../Base/Inventory";
+import { Subclass } from "./Subclass";
 
 export abstract class PlayerClass {
   constructor(
@@ -44,7 +46,7 @@ export abstract class PlayerClass {
 
 
   name: string;
-  subclass: string;
+  subclass: Subclass;
   languages: string[];
   skillProficiencies: string[];
   weaponProficiencies: string[];
@@ -61,10 +63,6 @@ export abstract class PlayerClass {
   savingThrowProficiencies: string[];
   features: Trait[];
   level: { value: number } = { value: 1 };
-  
-
-  //TODO: wtf is a Path
-  //path: Path;
 
   abstract abilitiesAtLevels: {
     [key: string]: (pc: PlayerCharacter, params: LevelingParams) => void;
@@ -226,6 +224,47 @@ export abstract class PlayerClass {
       pclass.abilitiesAtLevels[i](pc, argsAry[i - 1]);
     }
   }
+
+  addSpellcasting(pc: PlayerCharacter, className: string){
+    
+    const preparedSpells = {
+      level: this.level,
+      modifier: pc.abilityScores[SpellcastingAbility[className]].modifier
+    }
+    
+    const spellAttack = {
+      proficiency: pc.proficiency.baseBonus,
+      modifier: pc.abilityScores[SpellcastingAbility[className]].modifier
+    }
+
+    const spellSave = {
+      base: 8,
+      proficiency: pc.proficiency.baseBonus,
+      modifier: pc.abilityScores[SpellcastingAbility[className]].modifier
+    }
+
+    let spellcasting = ["CLERIC", "DRUID", "PALADIN", "WIZARD"].includes(className) ? 
+    {
+      title: className,
+      preparedSpells: preparedSpells,
+      spellSave: spellSave,
+      spellAttack : spellAttack
+    } :
+    {
+      title: className,
+      spellSave: spellSave,
+      spellAttack : spellAttack
+    }
+
+    pc.spellcasting
+      ? pc.spellcasting.push(spellcasting)
+      : (pc.spellcasting = [spellcasting]);
+  }
+
+  subclassDriver(pc: PlayerCharacter, level: string, params: LevelingParams){
+    this.subclass.subclassDriver(pc, level, this.subclass.title, params);
+  }
+  
   public static addFightingStyle(
       pc: PlayerCharacter,
       fightingStyle: string

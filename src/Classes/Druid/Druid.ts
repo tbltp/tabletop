@@ -5,7 +5,6 @@ import * as SpellList from "../../../Assets/SpellList.json";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import * as DruidClassTraits from "./Druid.json";
 import { DruidSubclass } from "./Subclasses/DruidSubclass";
-import { SpellSlotFactory } from "../SpellSlotFactory";
 
 export class Druid extends PlayerClass {
   constructor(
@@ -94,14 +93,9 @@ export class Druid extends PlayerClass {
       SpellcastingAbility["DRUID"]
     );
     this.pushDruidFeatures(pc, 1);
-    let druidPreparedSpells = {
-      title: "Druid",
-      level: this.level,
-      modifier: pc.abilityScores.wisdom.modifier,
-    };
-    pc.preparedSpells
-      ? pc.preparedSpells.push(druidPreparedSpells)
-      : (pc.preparedSpells = [druidPreparedSpells]);
+    
+    this.addSpellcasting(pc, "DRUID");
+
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
@@ -122,12 +116,14 @@ export class Druid extends PlayerClass {
     pc.addResourceTraits(wildShapeRes);
     pc.addScalingTraits(wildShapeScale);
 
-    this.subclass = params.subclassSelection.subclass;
-    DruidSubclass.subclassDictionary[this.subclass][2](pc, params);
-    // terrain selection
-    if (this.subclass == "LAND") {
-      this.subclass = params.subclassSelection.options[0];
+    // This kinda sucks depending on expansion subclasses :( if they have parameters / subchoices this breaks, but we'll see.
+    if(params.subclassSelection.options){
+      this.subclass = new DruidSubclass(params.subclassSelection.subclass, params.subclassSelection.options[0]);
     }
+    else{
+      this.subclass = new DruidSubclass(params.subclassSelection.subclass);
+    }
+    this.subclassDriver(pc, "2", params);    
 
     pc.addSpells(
       [...SpellList["Druid"][2]],
@@ -138,11 +134,9 @@ export class Druid extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    // terrain spells
-    if (this.subclass == "LAND") {
-      DruidSubclass.subclassDictionary[this.subclass][3];
-      DruidSubclass.subclassSpells[this.subclass](pc, this.terrain, "7");
-    }
+    // Terrain spells
+    this.subclassDriver(pc, "3", params);    
+
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
@@ -152,9 +146,10 @@ export class Druid extends PlayerClass {
     const wildShapeScale: ScalingTrait = pc.findScalingTraitByName(
       "Wild Shape"
     );
-    wildShapeScale.challengeRating = 0.5;
     wildShapeScale.description =
       "Max challenge rating of beasts you can Wild Shape into (No flying speed).";
+
+    this.subclassDriver(pc, "4", params);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
@@ -164,21 +159,19 @@ export class Druid extends PlayerClass {
     );
     
     // terrain spells
-    if (this.subclass == "LAND") {
-      DruidSubclass.subclassSpells[this.subclass](pc, this.terrain, "7");
-    }
+    this.subclassDriver(pc, "5", params);    
+
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
     // druid circle
-    DruidSubclass.subclassDictionary[this.subclass][6](pc, params);
+    this.subclassDriver(pc, "6", params);    
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
     // terrain spells
-    if (this.subclass == "LAND") {
-      DruidSubclass.subclassSpells[this.subclass](pc, this.terrain, "7");
-    }
+    this.subclassDriver(pc, "7", params);    
+
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
@@ -187,21 +180,21 @@ export class Druid extends PlayerClass {
     const wildShapeScale: ScalingTrait = pc.findScalingTraitByName(
       "Wild Shape"
     );
-    wildShapeScale.challengeRating = 1;
     wildShapeScale.description =
       "Max challenge rating of beasts you can Wild Shape into.";
+
+    this.subclassDriver(pc, "8", params);
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
     // terrain spells
-    if (this.subclass == "LAND") {
-      DruidSubclass.subclassSpells[this.subclass](pc, this.terrain, "7");
-    }
+    this.subclassDriver(pc, "9", params);    
+
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
     // druid circle
-    DruidSubclass.subclassDictionary[this.subclass][10](pc, params);
+    this.subclassDriver(pc, "10", params);    
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
@@ -216,7 +209,7 @@ export class Druid extends PlayerClass {
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
     // druid circle
-    DruidSubclass.subclassDictionary[this.subclass][14](pc, params);
+    this.subclassDriver(pc, "14", params);    
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {

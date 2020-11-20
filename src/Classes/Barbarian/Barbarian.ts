@@ -41,10 +41,6 @@ export class Barbarian extends PlayerClass {
     }
   }
 
-  /** TODO
-   * FAST MOVEMENT depends on equipped armor.
-   * EXTRA ATTACK should be represented in action economy.
-   */
   abilitiesAtLevels = {
     "1": this.level1,
     "2": this.level2,
@@ -109,8 +105,8 @@ export class Barbarian extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.subclass = params.subclassSelection.subclass;
-    BarbarianSubclass.subclassDictionary[this.subclass][3](pc, params);
+    this.subclass = new BarbarianSubclass(params.subclassSelection.subclass);
+    this.subclassDriver(pc, "3", params);
     pc.findResourceTraitByName("Rage").resourceMax.value++;
   }
 
@@ -120,10 +116,17 @@ export class Barbarian extends PlayerClass {
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushBarbarianFeatures(pc, 5);
+    pc.speeds.push(
+      {
+        name: "Fast Movement",
+        base: pc.speed,
+        bonus: {value: 10}
+      }
+    )
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
-    BarbarianSubclass.subclassDictionary[this.subclass][6](pc, params);
+    this.subclassDriver(pc, "6", params);
     pc.findResourceTraitByName("Rage").resourceMax.value++;
   }
 
@@ -147,7 +150,7 @@ export class Barbarian extends PlayerClass {
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
-    BarbarianSubclass.subclassDictionary[this.subclass][10](pc, params);
+    this.subclassDriver(pc, "10", params);
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
@@ -164,7 +167,7 @@ export class Barbarian extends PlayerClass {
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
-    BarbarianSubclass.subclassDictionary[this.subclass][14](pc, params);
+    this.subclassDriver(pc, "14", params);
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {

@@ -4,7 +4,11 @@ import { TotemWarrior } from "./TotemWarrior/TotemWarrior";
 
 export class BarbarianSubclass extends Subclass {
 
-  static subclassDictionary = {
+  constructor(subclass: string){
+    super(subclass);
+  }
+
+  subclassDictionary = {
     BERSERKER: {
       "3": Berserker.berserker3,
       "6": Berserker.berserker6,

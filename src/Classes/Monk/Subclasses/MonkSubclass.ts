@@ -4,8 +4,11 @@ import { Shadow } from "./Shadow/Shadow"
 import { FourElements } from "./FourElements/FourElements"
 
 export class MonkSubclass extends Subclass {
-
-    static subclassDictionary = {
+    constructor(subclass: string){
+      super(subclass);
+    }
+    
+    subclassDictionary = {
         "OPEN HAND": {
           "3": OpenHand.openHand3,
           "6": OpenHand.openHand6,

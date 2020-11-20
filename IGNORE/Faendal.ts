@@ -1,13 +1,14 @@
 import { CharacterSheet } from "../src/Base/CharacterSheet";
 import { PlayerCharacter } from "../src/Base/PlayerCharacter";
 
-import { WoodElf } from "../src/Races/Elf/Elf";
+import { WoodElf } from "../src/Races/Elf/Subrace/WoodElf";
 import { Ranger } from "../src/Classes/Ranger/Ranger";
 import { FolkHero } from "../src/Backgrounds/Background";
 
 import { Jsonify } from "./Jsonify";
 
 let pc: CharacterSheet = new CharacterSheet(
+  "Faendal",
   new PlayerCharacter(8, 16, 14, 14, 15, 13),
   new WoodElf("Sylvan"),
   new Ranger(

@@ -5,7 +5,11 @@ import { BattleMaster } from "./BattleMaster/BattleMaster"
 import { EldritchKnight } from "./EldritchKnight/EldritchKnight"
 
 export class FighterSubclass extends Subclass {
-    static subclassDictionary = {
+  constructor(subclass: string){
+    super(subclass);
+  }
+    
+  subclassDictionary = {
         CHAMPION: {
           "3": Champion.champion3,
           "7": Champion.champion7,

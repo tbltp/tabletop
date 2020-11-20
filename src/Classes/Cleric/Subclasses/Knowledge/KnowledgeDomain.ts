@@ -71,6 +71,10 @@ export class KnowledgeDomain {
         pc.addSpells(["LEGEND LORE", "SCRYING"], "wisdom");
       }
     
+      static knowledge14(pc: PlayerCharacter, params: LevelingParams) {
+        pc.findScalingTraitByName("Divine Strike").dice = "2d8";
+      }
+    
       static knowledge17(pc: PlayerCharacter, params: LevelingParams) {
         pc.addFeatures(
             KnowledgeDomain.getFeature("17", "VISION OF THE PAST")

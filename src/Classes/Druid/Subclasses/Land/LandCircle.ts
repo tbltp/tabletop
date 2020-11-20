@@ -1,3 +1,4 @@
+import { ScalingTrait } from "Base/Interfaces";
 import { PlayerCharacter } from "Base/PlayerCharacter";
 import { LevelingParams } from "Classes/PlayerClass";
 import * as LandCircleDict from "./Land.json";
@@ -20,10 +21,37 @@ export class LandCircle {
     
       static land3(pc: PlayerCharacter, params: LevelingParams) {
         pc.addFeatures(LandCircle.getFeature("3", "CIRCLE SPELLS"));
+        LandCircle.getTerrainSpells(pc, params.subclassSelection.options[0], "3");
+      }
+
+      static land4(pc, params: LevelingParams){
+        const wildShapeScale: ScalingTrait = pc.findScalingTraitByName(
+          "Wild Shape"
+        );
+        wildShapeScale.challengeRating = 0.5;
+      }
+
+      static land5(pc: PlayerCharacter, params: LevelingParams){
+        LandCircle.getTerrainSpells(pc, params.subclassSelection.options[0], "5");
       }
     
       static land6(pc: PlayerCharacter, params: LevelingParams) {
         pc.addFeatures(LandCircle.getFeature("6", "LAND'S STRIDE"));
+      }
+
+      static land7(pc: PlayerCharacter, params: LevelingParams){
+        LandCircle.getTerrainSpells(pc, params.subclassSelection.options[0], "7");
+      }
+
+      static land8(pc: PlayerCharacter, params: LevelingParams){
+        const wildShapeScale: ScalingTrait = pc.findScalingTraitByName(
+          "Wild Shape"
+        );
+        wildShapeScale.challengeRating = 1;
+      }
+
+      static land9(pc: PlayerCharacter, params: LevelingParams){
+        LandCircle.getTerrainSpells(pc, params.subclassSelection.options[0], "5");
       }
     
       static land10(pc: PlayerCharacter, params: LevelingParams) {

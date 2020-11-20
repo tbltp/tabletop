@@ -10,7 +10,11 @@ import { WarDomain } from "./War/WarDomain";
 
 export class ClericSubclass extends Subclass {
 
-  static subclassDictionary = {
+  constructor(subclass: string){
+    super(subclass);
+  }
+
+  subclassDictionary = {
     KNOWLEDGE: {
         "1": KnowledgeDomain.knowledge1,
         "2": KnowledgeDomain.knowledge2,
@@ -20,6 +24,7 @@ export class ClericSubclass extends Subclass {
         "7": KnowledgeDomain.knowledge7,
         "8": KnowledgeDomain.knowledge8,
         "9": KnowledgeDomain.knowledge9,
+        "14": KnowledgeDomain.knowledge14,
         "17": KnowledgeDomain.knowledge17
       },
       LIFE: {
@@ -42,6 +47,7 @@ export class ClericSubclass extends Subclass {
         "7": LightDomain.light7,
         "8": LightDomain.light8,
         "9": LightDomain.light9,
+        "14": LightDomain.light14,
         "17": LightDomain.light17
       },
       NATURE: {

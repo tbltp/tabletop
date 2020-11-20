@@ -1,6 +1,6 @@
 import { Race } from "../Race";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
-import * as traits from "../../../Assets/RacialTraits.json";
+import * as traits from "./HalfOrc.json";
 import * as languages from "../../../Assets/Languages.json";
 
 export class HalfOrc extends Race {

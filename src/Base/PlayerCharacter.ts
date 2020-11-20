@@ -31,11 +31,22 @@ export class PlayerCharacter extends BaseCharacter {
   ];
 
   // # of prepared spells is wrong reference, doesnt update 
-  preparedSpells?: {
-    title: string;
-    level: { value: number };
-    modifier: { value: number };
-  }[];
+  spellcasting?: {
+    title: string,
+    preparedSpells?: {
+      level: { value: number };
+      modifier: { value: number };
+    },
+    spellSave: {
+      base: number;
+      proficiency: { value: number };
+      modifier: { value: number };
+    },
+    spellAttack: {
+      proficiency: { value: number };
+      modifier: { value: number };
+    }
+  }[]
 
   private findTraitByName(traitType: string, name: string): Trait | null {
     const results = this.traits[traitType].filter(

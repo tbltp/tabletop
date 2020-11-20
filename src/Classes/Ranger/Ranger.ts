@@ -100,6 +100,9 @@ export class Ranger extends PlayerClass {
       "NATURAL EXPLORER",
       [params.favoredTerrain]
     );
+
+    this.addSpellcasting(pc, "RANGER");
+
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
@@ -109,8 +112,8 @@ export class Ranger extends PlayerClass {
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    this.subclass = params.subclassSelection.subclass;
-    RangerSubclass.subclassDictionary[this.subclass][3](pc, params);
+    this.subclass = new RangerSubclass(params.subclassSelection.subclass);
+    this.subclassDriver(pc, "3", params);
     this.pushRangerFeatures(pc, 3);
   }
 
@@ -136,7 +139,7 @@ export class Ranger extends PlayerClass {
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    RangerSubclass.subclassDictionary[this.subclass][7](pc, params);
+    this.subclassDriver(pc, "7", params);
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
@@ -157,7 +160,7 @@ export class Ranger extends PlayerClass {
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    RangerSubclass.subclassDictionary[this.subclass][11](pc, params);
+    this.subclassDriver(pc, "11", params);
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
@@ -177,7 +180,7 @@ export class Ranger extends PlayerClass {
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    RangerSubclass.subclassDictionary[this.subclass][15](pc, params);
+    this.subclassDriver(pc, "15", params);
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {

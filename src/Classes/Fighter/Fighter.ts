@@ -50,11 +50,6 @@ export class Fighter extends PlayerClass {
     }
   }
 
-  /** TODO
-   * ELDRITCH KNIGHT SPELLS LEARNED AT LEVELS 3, 4, 7, 8, 10, 11, 13, 14, 16, 19, 20, ADD TERTIARY SPELL SLOTS
-   */
-
-
   abilitiesAtLevels = {
     "1": this.level1,
     "2": this.level2,
@@ -106,11 +101,12 @@ export class Fighter extends PlayerClass {
 
   level3(pc: PlayerCharacter, params: FighterLevelingParams): void {
     //martial archetype
-    this.subclass = params.subclassSelection.subclass;
-    FighterSubclass.subclassDictionary[this.subclass]["3"](pc, params);
+    this.subclass = new FighterSubclass(params.subclassSelection.subclass);
+    this.subclassDriver(pc, "3", params);    
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
+    this.subclassDriver(pc, "4", params);    
     pc.improveAbilityScores(params.abilityScoreImprovement);
   }
 
@@ -128,11 +124,12 @@ export class Fighter extends PlayerClass {
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
-    FighterSubclass.subclassDictionary[this.subclass]["7"](pc, params);
+    this.subclassDriver(pc, "7", params);    
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
     pc.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "8", params);
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
@@ -144,11 +141,12 @@ export class Fighter extends PlayerClass {
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
-    FighterSubclass.subclassDictionary[this.subclass]["10"](pc, params);
+    this.subclassDriver(pc, "10", params);    
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
     pc.findResourceTraitByName("Extra Attack").resourceMax.value++;
+    this.subclassDriver(pc, "11", params);
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
@@ -157,18 +155,21 @@ export class Fighter extends PlayerClass {
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
     pc.findResourceTraitByName("Indomitable").resourceMax.value++;
+    this.subclassDriver(pc, "13", params);
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
     pc.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "14", params);
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
-    FighterSubclass.subclassDictionary[this.subclass]["15"](pc, params);
+    this.subclassDriver(pc, "15", params);    
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
     pc.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "16", params);
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
@@ -177,15 +178,17 @@ export class Fighter extends PlayerClass {
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {
-    FighterSubclass.subclassDictionary[this.subclass]["18"](pc, params);
+    this.subclassDriver(pc, "18", params);    
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
     pc.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "19", params);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
     pc.findResourceTraitByName("Extra Attack").resourceMax.value++;
+    this.subclassDriver(pc, "20", params);
   }
 }
 

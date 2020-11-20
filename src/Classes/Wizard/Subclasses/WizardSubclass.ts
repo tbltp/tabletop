@@ -9,7 +9,12 @@ import { Necromancy } from "./Necromancy/Necromancy";
 import { Transmutation } from "./Transmutation/Transmutation";
 
 export class WizardSubclass extends Subclass {
-    static subclassDictionary = {
+
+    constructor(subclass: string){
+        super(subclass);
+    }
+    
+    subclassDictionary = {
         ABJURATION: {
             "2": Abjuration.abjuration2,
             "6": Abjuration.abjuration6,

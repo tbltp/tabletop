@@ -4,7 +4,11 @@ import { CollegeOfValor } from "./Valor/CollegeOfValor";
 
 export class BardSubclass extends Subclass {
 
-  static subclassDictionary = {
+  constructor(subclass: string){
+    super(subclass);
+  }
+
+  subclassDictionary = {
     LORE: {
       "3": CollegeOfLore.lore3,
       "6": CollegeOfLore.lore6,

@@ -50,10 +50,6 @@ export class Rogue extends PlayerClass {
     }
   }
 
-  /** TODO
-   *
-   */
-
   abilitiesAtLevels = {
     "1": this.level1,
     "2": this.level2,
@@ -107,8 +103,8 @@ export class Rogue extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.subclass = params.subclassSelection.subclass;
-    RogueSubclass.subclassDictionary[this.subclass][3](pc, params);
+    this.subclass = new RogueSubclass(params.subclassSelection.subclass);
+    this.subclassDriver(pc, "3", params);    
 
     pc.findScalingTraitByName("Sneak Attack").dice = "2d6";
   }
@@ -144,7 +140,7 @@ export class Rogue extends PlayerClass {
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
     pc.findScalingTraitByName("Sneak Attack").dice = "5d6";
-    RogueSubclass.subclassDictionary[this.subclass][9](pc, params);
+    this.subclassDriver(pc, "9", params);    
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
@@ -162,7 +158,7 @@ export class Rogue extends PlayerClass {
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
     pc.findScalingTraitByName("Sneak Attack").dice = "7d6";
-    RogueSubclass.subclassDictionary[this.subclass][13](pc, params);
+    this.subclassDriver(pc, "13", params);    
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
@@ -182,7 +178,7 @@ export class Rogue extends PlayerClass {
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
     pc.findScalingTraitByName("Sneak Attack").dice = "9d6";
-    RogueSubclass.subclassDictionary[this.subclass][17](pc, params);
+    this.subclassDriver(pc, "17", params);    
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {

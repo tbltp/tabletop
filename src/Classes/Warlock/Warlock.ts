@@ -116,8 +116,11 @@ export class Warlock extends PlayerClass {
       level: 1,
     };
     pc.addResourceTraits(pactMagic);
-    this.subclass = params.subclassSelection.subclass;
-    WarlockSubclass.subclassDictionary[this.subclass]["1"](pc, params);
+    this.subclass = new WarlockSubclass(params.subclassSelection.subclass);
+    this.subclassDriver(pc, "1", params);
+
+    this.addSpellcasting(pc, "WARLOCK");
+
   }
 
   level2(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -151,7 +154,7 @@ export class Warlock extends PlayerClass {
 
   level6(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    WarlockSubclass.subclassDictionary[this.subclass]["6"](pc, params);
+    this.subclassDriver(pc, "6", params);
   }
 
   level7(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -179,7 +182,7 @@ export class Warlock extends PlayerClass {
 
   level10(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    WarlockSubclass.subclassDictionary[this.subclass]["10"](pc, params);
+    this.subclassDriver(pc, "10", params);
   }
 
   level11(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -207,7 +210,7 @@ export class Warlock extends PlayerClass {
   }
 
   level14(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    WarlockSubclass.subclassDictionary[this.subclass]["14"](pc, params);
+    this.subclassDriver(pc, "14", params);
   }
 
   level15(pc: PlayerCharacter, params: WarlockLevelingParams): void {

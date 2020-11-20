@@ -97,17 +97,11 @@ export class Cleric extends PlayerClass {
       [...params.spellSelection, ...SpellList["Cleric"][1]],
       SpellcastingAbility["CLERIC"]
     );
-    let clericPreparedSpells = {
-      title: "Cleric",
-      level: this.level,
-      modifier: pc.abilityScores.wisdom.modifier,
-    };
-    pc.preparedSpells
-      ? pc.preparedSpells.push(clericPreparedSpells)
-      : (pc.preparedSpells = [clericPreparedSpells]);
+    this.addSpellcasting(pc, "CLERIC");
+
     // divine domain
-    this.subclass = params.subclassSelection.subclass;
-    ClericSubclass.subclassDictionary[this.subclass][1](pc, params);
+    this.subclass = new ClericSubclass(params.subclassSelection.subclass);
+    this.subclassDriver(pc, "1", params);
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
@@ -122,13 +116,13 @@ export class Cleric extends PlayerClass {
     }
     
     // divine domain
-    ClericSubclass.subclassDictionary[this.subclass][2](pc, params);
+    this.subclassDriver(pc, "2", params);
     this.pushClericFeatures(pc, 2);
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     // divine domain spells
-    ClericSubclass.subclassDictionary[this.subclass][3](pc, params);
+    this.subclassDriver(pc, "3", params);
     pc.addSpells([...SpellList["Cleric"][2]], SpellcastingAbility["CLERIC"]);
   }
 
@@ -153,7 +147,7 @@ export class Cleric extends PlayerClass {
     };
     pc.addScalingTraits(destroyUndead);
     // divine domain spells
-    ClericSubclass.subclassDictionary[this.subclass][5](pc, params);
+    this.subclassDriver(pc, "5", params);
     this.pushClericFeatures(pc, 5);
   }
 
@@ -161,12 +155,12 @@ export class Cleric extends PlayerClass {
     // channel divinity
     pc.findResourceTraitByName("Channel Divinity").resourceMax.value++;
     // divine domain
-    ClericSubclass.subclassDictionary[this.subclass][6](pc, params);
+    this.subclassDriver(pc, "6", params);
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
     // divine domain spells
-    ClericSubclass.subclassDictionary[this.subclass][7](pc, params);
+    this.subclassDriver(pc, "7", params);
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
@@ -174,12 +168,12 @@ export class Cleric extends PlayerClass {
     // destroy undead
     pc.findScalingTraitByName("Destroy Undead").challengeRating = 1;
     // divine domain
-    ClericSubclass.subclassDictionary[this.subclass][8](pc, params);
+    this.subclassDriver(pc, "8", params);
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
     // divine domain spells
-    ClericSubclass.subclassDictionary[this.subclass][9](pc, params);
+    this.subclassDriver(pc, "9", params);
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
@@ -209,10 +203,7 @@ export class Cleric extends PlayerClass {
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
-    // divine strike improvement where applicable
-    if (!["KNOWLEDGE", "LIGHT"].includes(this.subclass)) {
-      pc.findScalingTraitByName("Divine Strike").dice = "2d8";
-    }
+    this.subclassDriver(pc, "14", params);
     // destroy undead
     pc.findScalingTraitByName("Destroy Undead").challengeRating++;
   }
@@ -228,7 +219,7 @@ export class Cleric extends PlayerClass {
     // destroy undead
     pc.findScalingTraitByName("Destroy Undead").challengeRating++;
     // divine domain
-    ClericSubclass.subclassDictionary[this.subclass][17](pc, params);
+    this.subclassDriver(pc, "17", params);
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {

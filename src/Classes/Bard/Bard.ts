@@ -106,6 +106,9 @@ export class Bard extends PlayerClass {
       dice: "1d6",
     };
     pc.addResourceTraits(bardicInspiration);
+
+    this.addSpellcasting(pc, "BARD");
+
     this.pushBardFeatures(pc, 1);
   }
 
@@ -130,8 +133,8 @@ export class Bard extends PlayerClass {
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
     // college
-    this.subclass = params.subclassSelection.subclass;
-    BardSubclass.subclassDictionary[this.subclass][3](pc, params);
+    this.subclass = new BardSubclass(params.subclassSelection.subclass);
+    this.subclassDriver(pc, "3", params);
     // expertise
     for (let skill of params.proficiencySelection) {
       pc.skills[skill].expertise = true;
@@ -160,7 +163,7 @@ export class Bard extends PlayerClass {
   level6(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
     // college
-    BardSubclass.subclassDictionary[this.subclass][6](pc, params);
+    this.subclassDriver(pc, "6", params);
     this.pushBardFeatures(pc, 6);
   }
 
@@ -230,7 +233,7 @@ export class Bard extends PlayerClass {
       ...params.magicalSecretsSpellSelection
     );
     // college
-    BardSubclass.subclassDictionary[this.subclass][14](pc, params);
+    this.subclassDriver(pc, "14", params);
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {

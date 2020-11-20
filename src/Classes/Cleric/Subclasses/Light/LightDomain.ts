@@ -59,6 +59,10 @@ export class LightDomain {
       pc.addSpells(["FLAME STRIKE", "SCRYING"], "wisdom");
     }
   
+    static light14(pc: PlayerCharacter, params: LevelingParams) {
+      pc.findScalingTraitByName("Divine Strike").dice = "2d8";
+    }
+  
     static light17(pc: PlayerCharacter, params: LevelingParams) {
       pc.addFeatures(
         LightDomain.getFeature("17", "CORONA OF LIGHT")

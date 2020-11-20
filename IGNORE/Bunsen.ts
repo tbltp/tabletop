@@ -1,5 +1,5 @@
 import { PlayerCharacter } from "../src/Base/PlayerCharacter";
-import { FireGenasi } from "../src/Races/Genasi/Genasi";
+import { FireGenasi } from "../src/Races/Genasi/Subrace/FireGenasi";
 import { Sage } from "../src/Backgrounds/Background";
 import { Barbarian } from "../src/Classes/Barbarian/Barbarian";
 import { CharacterSheet } from "../src/Base/CharacterSheet";
@@ -7,6 +7,7 @@ import { CharacterSheet } from "../src/Base/CharacterSheet";
 import { Jsonify } from "./Jsonify";
 
 let pc = new CharacterSheet(
+  "Bunsen",
   new PlayerCharacter(18, 15, 15, 14, 6, 17),
   new FireGenasi(),
   new Barbarian(

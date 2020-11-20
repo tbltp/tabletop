@@ -1,6 +1,6 @@
 import { Race } from "../Race";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
-import * as traits from "../../../Assets/RacialTraits.json";
+import * as traits from "./Tiefling.json";
 import * as languages from "../../../Assets/Languages.json";
 import * as Spells from "../../../Assets/Spells.json";
 import { ISpell, Spell } from "../../Base/Interfaces";
@@ -22,7 +22,6 @@ export class Tiefling extends Race {
       [], // Armor Proficiencies
       [] // Tool Proficiences
     );
-    // TODO: FIGURE OUT HOW TO REPRESENT SPELL LISTS IN BASECHARACTER - INFERNAL LEGACY SPELLS
   }
 
   abilitiesAtLevels = {

@@ -1,8 +1,6 @@
 import { PlayerCharacter } from "Base/PlayerCharacter";
 import { LevelingParams } from "Classes/PlayerClass";
-import { SpellSlotFactory } from "Classes/SpellSlotFactory";
 import * as ArcaneTricksterArchetypeDict from "./ArcaneTrickster.json"
-
 
 export class ArcaneTrickster {
 
@@ -11,6 +9,11 @@ export class ArcaneTrickster {
     }
 
     static arcaneTrickster3(pc: PlayerCharacter, params: LevelingParams) {
+
+      // l0l FUCK
+      // this.addSpellcasting(pc, "ROGUE (ARCANE TRICKSTER)");
+
+
         pc.addSpells(params.spellSelection, "intelligence")
         pc.addFeatures(ArcaneTrickster.getFeature("3", "MAGE HAND LEGERDEMAIN"));
       }

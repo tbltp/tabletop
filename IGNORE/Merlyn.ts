@@ -1,11 +1,12 @@
 import { CharacterSheet } from "../src/Base/CharacterSheet";
 import { PlayerCharacter } from "../src/Base/PlayerCharacter";
-import { MountainGnome } from "../src/Races/Gnome/Gnome";
+import { MountainGnome } from "../src/Races/Gnome/Subrace/MountainGnome";
 import { Cleric } from "../src/Classes/Cleric/Cleric";
 import { FolkHero } from "../src/Backgrounds/Background";
 import { Jsonify } from "./Jsonify";
 
 let pc: CharacterSheet = new CharacterSheet(
+  "Merlyn",
   new PlayerCharacter(14, 8, 13, 10, 15, 12),
   new MountainGnome(),
   new Cleric(

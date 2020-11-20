@@ -6,5 +6,5 @@
     "outDir": "dist",
     "baseUrl": "src"
   },
-  "exclude": ["tests"]
+  "exclude": ["tests", "Driver.ts"]
 }

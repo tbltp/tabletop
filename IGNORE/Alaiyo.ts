@@ -8,6 +8,7 @@ import { Jsonify } from "./Jsonify";
 import { Ranger } from "../src/Classes/Ranger/Ranger";
 
 let pc: CharacterSheet = new CharacterSheet(
+  "Alaiyo",
   new PlayerCharacter(14, 17, 10, 11, 15, 18),
   new Tiefling(),
   new Bard(

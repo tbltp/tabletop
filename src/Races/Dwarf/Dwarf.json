@@ -1,0 +1,18 @@
+{
+    "DARKVISION": {
+        "title": "Darkvision",
+        "description": "You can see in dim light within 60 feet of you as if it were bright light, and within darkness as if it was dim light."
+    },
+    "DWARVEN RESILIENCE": {
+        "title": "Dwarven Resilience",
+        "description": "You have advantage on saving throws againist poison, and you have resistance against poison damage."
+    },
+    "STONECUNNING": {
+        "title": "Stonecunning",
+        "description": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus."
+    },
+    "DWARVEN TOUGHNESS": {
+        "title": "Dwarven Toughness",
+        "description": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
+    }    
+}

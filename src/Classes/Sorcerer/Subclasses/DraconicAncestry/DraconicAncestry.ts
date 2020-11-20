@@ -11,21 +11,34 @@ export class DraconicAncestry {
     }
 
     static draconicAncestry1(pc: PlayerCharacter, params: LevelingParams) {
-        /** TO DO
-         * Draconic Resilience: HpMax++ every level, add armor class
-         * Dragon Ancestor: Figure out how to reflect choice, and damage in one line.
-         */
+
+      pc.armorClasses.push({
+        name: "Draconic Resilience",
+        base: 13,
+        modifier: [pc.abilityScores.dexterity.modifier],
+        bonus: {value: 0}
+      })
+
+      pc.baseStats.HpMax.bonus.value++;
+
     }
-  
+
     static draconicAncestry6(pc: PlayerCharacter, params: LevelingParams) {
       pc.addFeatures(DraconicAncestry.getFeature("6", "ELEMENTAL AFFINITY"))
+      pc.baseStats.HpMax.bonus.value++;
     }
   
     static draconicAncestry14(pc: PlayerCharacter, params: LevelingParams) {
       pc.addFeatures(DraconicAncestry.getFeature("14", "DRAGON WINGS"))
+      pc.baseStats.HpMax.bonus.value++;
     }
   
     static draconicAncestry18(pc: PlayerCharacter, params: LevelingParams) {
       pc.addFeatures(DraconicAncestry.getFeature("18", "DRACONIC PRESENCE"))
+      pc.baseStats.HpMax.bonus.value++;
+    }
+
+    static draconicResilienceHpBonus(pc: PlayerCharacter, params: LevelingParams){
+      pc.baseStats.HpMax.bonus.value++;
     }
 }

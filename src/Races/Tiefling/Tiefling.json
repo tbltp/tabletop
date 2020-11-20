@@ -1,0 +1,14 @@
+{
+    "DARKVISION": {
+        "title": "Darkvision",
+        "description": "You can see in dim light within 60 feet of you as if it were bright light, and within darkness as if it was dim light."
+    },
+    "HELLISH RESISTANCE": {
+        "title": "Hellish Resistance",
+        "description": "You have resistance to fire damage."
+    },
+    "INFERNAL LEGACY": {
+        "title": "Infernal Legacy",
+        "description": "You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell once per day as a 2nd-level spell. Once you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells."
+    }
+}

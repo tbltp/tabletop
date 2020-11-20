@@ -91,14 +91,17 @@ export class Wizard extends PlayerClass {
     this.handleWizardSpellSelections(pc, params);
     this.pushWizardFeatures(pc, 1);
     PlayerClass.pushCustomizedClassFeature(pc, 1, WizardClassTraits, "SPELLBOOK", params.spellBookSpells)
+
+    this.addSpellcasting(pc, "WIZARD");
+
   }
 
   level2(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
     this.pushWizardFeatures(pc, 2);
-    this.subclass = params.subclassSelection.subclass;
+    this.subclass = new WizardSubclass(params.subclassSelection.subclass);
 
-    WizardSubclass.subclassDictionary[this.subclass]["2"](pc, params);
+    this.subclassDriver(pc, "2", params);
   }
 
   level3(pc: PlayerCharacter, params: WizardLevelingParams): void {
@@ -116,7 +119,7 @@ export class Wizard extends PlayerClass {
 
   level6(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
-    WizardSubclass.subclassDictionary[this.subclass]["6"](pc, params);
+    this.subclassDriver(pc, "6", params);
   }
 
   level7(pc: PlayerCharacter, params: WizardLevelingParams): void {
@@ -134,7 +137,7 @@ export class Wizard extends PlayerClass {
 
   level10(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
-    WizardSubclass.subclassDictionary[this.subclass]["10"](pc, params);
+    this.subclassDriver(pc, "10", params);
   }
 
   level11(pc: PlayerCharacter, params: WizardLevelingParams): void {
@@ -152,7 +155,7 @@ export class Wizard extends PlayerClass {
 
   level14(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
-    WizardSubclass.subclassDictionary[this.subclass]["14"](pc, params);
+    this.subclassDriver(pc, "14", params);
   }
 
   level15(pc: PlayerCharacter, params: WizardLevelingParams): void {

@@ -120,11 +120,11 @@ export class Monk extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.subclass = params.subclassSelection.subclass;
+    this.subclass = new MonkSubclass(params.subclassSelection.subclass);
     this.pushMonkFeatures(pc, 3);
     pc.findResourceTraitByName("Ki Points").resourceMax.value++;
 
-    MonkSubclass.subclassDictionary[this.subclass]["3"](pc, params);
+    this.subclassDriver(pc, "3", params);    
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
@@ -143,7 +143,7 @@ export class Monk extends PlayerClass {
     this.pushMonkFeatures(pc, 6);
     pc.findResourceTraitByName("Ki Points").resourceMax.value++;
 
-    MonkSubclass.subclassDictionary[this.subclass]["6"](pc, params);
+    this.subclassDriver(pc, "6", params);    
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
@@ -172,7 +172,7 @@ export class Monk extends PlayerClass {
     pc.findResourceTraitByName("Ki Points").resourceMax.value++;
     pc.findScalingTraitByName("Martial Arts").dice = "1d8";
 
-    MonkSubclass.subclassDictionary[this.subclass]["11"](pc, params);
+    this.subclassDriver(pc, "11", params);    
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
@@ -213,7 +213,7 @@ export class Monk extends PlayerClass {
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
     pc.findResourceTraitByName("Ki Points").resourceMax.value++;
-    MonkSubclass.subclassDictionary[this.subclass]["17"](pc, params);
+    this.subclassDriver(pc, "17", params);    
     pc.findScalingTraitByName("Martial Arts").dice = "1d10";
   }
 

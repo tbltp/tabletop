@@ -1,0 +1,10 @@
+{
+    "DARKVISION": {
+        "title": "Darkvision",
+        "description": "You can see in dim light within 60 feet of you as if it were bright light, and within darkness as if it was dim light."
+    },
+    "FEY ANCESTRY": {
+        "title": "Fey Ancestry",
+        "description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+    }
+}

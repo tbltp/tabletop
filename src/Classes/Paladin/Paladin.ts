@@ -97,14 +97,9 @@ export class Paladin extends PlayerClass {
       description: "Number of hit points you can restore with Lay on Hands",
       resourceMax: { value: 5 },
     });
-    let paladinPreparedSpells = {
-      title: "Paladin",
-      level: this.level,
-      modifier: pc.abilityScores.charisma.modifier,
-    };
-    pc.preparedSpells
-      ? pc.preparedSpells.push(paladinPreparedSpells)
-      : (pc.preparedSpells = [paladinPreparedSpells]);
+
+    this.addSpellcasting(pc, "PALADIN");
+
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
@@ -114,9 +109,9 @@ export class Paladin extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.subclass = params.subclassSelection.subclass;
+    this.subclass = new PaladinSubclass(params.subclassSelection.subclass);
     this.upgradeLayOnHands(pc);
-    PaladinSubclass.subclassDictionary[this.subclass][3](pc, params);
+    this.subclassDriver(pc, "3", params);
 
     if(PlayerClass.multiClassCheck(pc, "Channel Divinity")){
       const channelDivinity: ResourceTrait = {
@@ -149,7 +144,7 @@ export class Paladin extends PlayerClass {
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
-    PaladinSubclass.subclassDictionary[this.subclass][7](pc, params);
+    this.subclassDriver(pc, "7", params);
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
@@ -186,7 +181,7 @@ export class Paladin extends PlayerClass {
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
-    PaladinSubclass.subclassDictionary[this.subclass][15](pc, params);
+    this.subclassDriver(pc, "15", params);
     this.upgradeLayOnHands(pc);
   }
 
@@ -210,6 +205,6 @@ export class Paladin extends PlayerClass {
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
-    PaladinSubclass.subclassDictionary[this.subclass][20](pc, params);
+    this.subclassDriver(pc, "20", params);
   }
 }
