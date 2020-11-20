@@ -9,23 +9,23 @@ export class Archfey {
     }
 
     static getPatronSpells(pc: PlayerCharacter, patron: string, level: string) {
-        pc.addSpells(Archfey.patronSpells[level], "charisma");
+        pc.pcHelper.addSpells(Archfey.patronSpells[level], "charisma");
     }
 
     static archfey1(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Archfey.getFeature("1", "FEY PRESENCE"));
+        pc.pcHelper.addFeatures(Archfey.getFeature("1", "FEY PRESENCE"));
       }
   
       static archfey6(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Archfey.getFeature("6", "MISTY ESCAPE"));
+        pc.pcHelper.addFeatures(Archfey.getFeature("6", "MISTY ESCAPE"));
       }
     
       static archfey10(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Archfey.getFeature("10", "BEGUILING DEFENSES"));
+        pc.pcHelper.addFeatures(Archfey.getFeature("10", "BEGUILING DEFENSES"));
       }
     
       static archfey14(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Archfey.getFeature("14", "DARK DELIRIUM"));
+        pc.pcHelper.addFeatures(Archfey.getFeature("14", "DARK DELIRIUM"));
       }
 
     static patronSpells = {

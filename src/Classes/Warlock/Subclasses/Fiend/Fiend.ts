@@ -9,23 +9,23 @@ export class Fiend {
     }
 
     static getPatronSpells(pc: PlayerCharacter, patron: string, level: string) {
-        pc.addSpells(Fiend.patronSpells[level], "charisma");
+        pc.pcHelper.addSpells(Fiend.patronSpells[level], "charisma");
     }
 
     static fiend1(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Fiend.getFeature("1", "DARK ONE'S BLESSING"));
+        pc.pcHelper.addFeatures(Fiend.getFeature("1", "DARK ONE'S BLESSING"));
       }
   
       static fiend6(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Fiend.getFeature("6", "DARK ONE'S OWN LUCK"));
+        pc.pcHelper.addFeatures(Fiend.getFeature("6", "DARK ONE'S OWN LUCK"));
       }
     
       static fiend10(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Fiend.getFeature("10", "FIENDISH RESILIENCE"));
+        pc.pcHelper.addFeatures(Fiend.getFeature("10", "FIENDISH RESILIENCE"));
       }
     
       static fiend14(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Fiend.getFeature("14", "HURL THROUGH HELL"));
+        pc.pcHelper.addFeatures(Fiend.getFeature("14", "HURL THROUGH HELL"));
       }
 
     static patronSpells = {

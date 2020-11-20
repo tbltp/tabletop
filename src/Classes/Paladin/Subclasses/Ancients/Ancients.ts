@@ -9,11 +9,11 @@ export class Ancients {
       }
   
       static addArchetypeSpells(pc: PlayerCharacter, level: string){
-        pc.addSpells(this.oathSpells[level], "charisma");
+        pc.pcHelper.addSpells(this.oathSpells[level], "charisma");
       }
 
       static ancients3(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
             Ancients.getFeature("3", "NATURE'S WRATH"),
             Ancients.getFeature("3", "TURN THE FAITHLESS")
         )
@@ -27,7 +27,7 @@ export class Ancients {
       }
   
       static ancients7(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Ancients.getFeature("7", "AURA OF WARDING"))
+        pc.pcHelper.addFeatures(Ancients.getFeature("7", "AURA OF WARDING"))
       }
   
       static ancients9(pc: PlayerCharacter, params: LevelingParams) {
@@ -39,7 +39,7 @@ export class Ancients {
       }
   
       static ancients15(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Ancients.getFeature("15", "UNDYING SENTINEL"))
+        pc.pcHelper.addFeatures(Ancients.getFeature("15", "UNDYING SENTINEL"))
       }
     
       static ancients17(pc: PlayerCharacter, params: LevelingParams) {
@@ -47,7 +47,7 @@ export class Ancients {
       }
   
       static ancients20(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Ancients.getFeature("20", "ELDER CHAMPION"))
+        pc.pcHelper.addFeatures(Ancients.getFeature("20", "ELDER CHAMPION"))
       }
 
     static oathSpells = {

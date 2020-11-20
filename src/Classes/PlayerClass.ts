@@ -176,15 +176,15 @@ export abstract class PlayerClass {
   ) {
 
     let riskTraits = {
-      "Extra Attack": pc.findFeatureTraitByName("Extra Attack") ? true : false,
-      "Unarmored Defense": pc.findFeatureTraitByName("Unarmored Defense") ? true : false
+      "Extra Attack": pc.pcHelper.findFeatureTraitByName("Extra Attack") ? true : false,
+      "Unarmored Defense": pc.pcHelper.findFeatureTraitByName("Unarmored Defense") ? true : false
     }
 
     for (let key in classTraits[level]) {
     
       let feature: Trait = classTraits[level][key]
       if(Object.keys(riskTraits).includes(feature["title"]) && riskTraits[feature["title"]]) { continue; }
-      pc.addFeatures(feature);
+      pc.pcHelper.addFeatures(feature);
     }
   }
 
@@ -194,10 +194,10 @@ export abstract class PlayerClass {
     ability: string
   ) {
     if (params.spellSelection) {
-      pc.addSpells(params.spellSelection, ability);
+      pc.pcHelper.addSpells(params.spellSelection, ability);
     }
     if (params.spellReplacement) {
-      pc.replaceSpells(params.spellReplacement, ability);
+      pc.pcHelper.replaceSpells(params.spellReplacement, ability);
     }
   }
 
@@ -212,18 +212,7 @@ export abstract class PlayerClass {
       ...classTraits[level][feature],
       choices: choices,
     };
-    pc.addFeatures(customFeature);
-  }
-
-  public static quickClassLevelUp(
-    pc: PlayerCharacter,
-    pclass: PlayerClass,
-    argsAry: LevelingParams[],
-    level: number
-  ): void {
-    for (let i = 2; i <= level; i++) {
-      pclass.abilitiesAtLevels[i](pc, argsAry[i - 1]);
-    }
+    pc.pcHelper.addFeatures(customFeature);
   }
 
   addSpellcasting(pc: PlayerCharacter, className: string){
@@ -270,7 +259,7 @@ export abstract class PlayerClass {
       pc: PlayerCharacter,
       fightingStyle: string
     ): void {
-        pc.addFeatures(FightingStyle[fightingStyle]);
+        pc.pcHelper.addFeatures(FightingStyle[fightingStyle]);
         /* FIGHTING STYLE TAGS / EFFECTS: SHOULD BE DONE, PROBABLY IN OWN FILE FOR EXTENSIBILITY / HOMEBREW.
         switch(fightingStyle){
             case 'ARCHERY':
@@ -286,8 +275,8 @@ export abstract class PlayerClass {
   public static multiClassCheck(pc: PlayerCharacter, trait: string){
     
     let riskTraits = {
-      "Channel Divinity": pc.findResourceTraitByName("Channel Divinity") ? true : false,
-      "Unarmored Defense": pc.findFeatureTraitByName("Unarmored Defense") ? true : false
+      "Channel Divinity": pc.pcHelper.findResourceTraitByName("Channel Divinity") ? true : false,
+      "Unarmored Defense": pc.pcHelper.findFeatureTraitByName("Unarmored Defense") ? true : false
     }
     
     if (riskTraits[trait]) { return false; }

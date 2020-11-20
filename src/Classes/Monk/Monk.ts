@@ -95,7 +95,7 @@ export class Monk extends PlayerClass {
       });
     }
     
-    pc.addScalingTraits({
+    pc.pcHelper.addScalingTraits({
       title: "Martial Arts",
       description: "Damage die used for Unarmed Strikes.",
       dice: "1d4",
@@ -122,69 +122,69 @@ export class Monk extends PlayerClass {
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     this.subclass = new MonkSubclass(params.subclassSelection.subclass);
     this.pushMonkFeatures(pc, 3);
-    pc.findResourceTraitByName("Ki Points").resourceMax.value++;
+    pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
 
     this.subclassDriver(pc, "3", params);    
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 4);
-    pc.findResourceTraitByName("Ki Points").resourceMax.value++;
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 5);
-    pc.findResourceTraitByName("Ki Points").resourceMax.value++;
-    pc.findScalingTraitByName("Martial Arts").dice = "1d6";
+    pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
+    pc.pcHelper.findScalingTraitByName("Martial Arts").dice = "1d6";
     this.subclassDriver(pc, "5", params);
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 6);
-    pc.findResourceTraitByName("Ki Points").resourceMax.value++;
+    pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
     this.subclassDriver(pc, "6", params);    
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 7);
-    pc.findResourceTraitByName("Ki Points").resourceMax.value++;
+    pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 8);
-    pc.findResourceTraitByName("Ki Points").resourceMax.value++;
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 9);
-    pc.findResourceTraitByName("Ki Points").resourceMax.value++;
+    pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
     this.subclassDriver(pc, "9", params);
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 10);
-    pc.findResourceTraitByName("Ki Points").resourceMax.value++;
+    pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 11);
-    pc.findResourceTraitByName("Ki Points").resourceMax.value++;
-    pc.findScalingTraitByName("Martial Arts").dice = "1d8";
+    pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
+    pc.pcHelper.findScalingTraitByName("Martial Arts").dice = "1d8";
 
     this.subclassDriver(pc, "11", params);    
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 12);
-    pc.findResourceTraitByName("Ki Points").resourceMax.value++;
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 13);
-    pc.findResourceTraitByName("Ki Points").resourceMax.value++;
+    pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
     this.subclassDriver(pc, "13", params);
     // TONGUE OF SUN AND MOON
     for (const language of Object.keys(Languages)) {
@@ -194,7 +194,7 @@ export class Monk extends PlayerClass {
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 14);
-    pc.findResourceTraitByName("Ki Points").resourceMax.value++;
+    pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
 
     // Diamond Soul
     for (const ability of Object.keys(pc.abilityScores)) {
@@ -204,32 +204,32 @@ export class Monk extends PlayerClass {
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 15);
-    pc.findResourceTraitByName("Ki Points").resourceMax.value++;
+    pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.findResourceTraitByName("Ki Points").resourceMax.value++;
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.findResourceTraitByName("Ki Points").resourceMax.value++;
+    pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
     this.subclassDriver(pc, "17", params);    
-    pc.findScalingTraitByName("Martial Arts").dice = "1d10";
+    pc.pcHelper.findScalingTraitByName("Martial Arts").dice = "1d10";
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 18);
-    pc.findResourceTraitByName("Ki Points").resourceMax.value++;
+    pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.findResourceTraitByName("Ki Points").resourceMax.value++;
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 20);
-    pc.findResourceTraitByName("Ki Points").resourceMax.value++;
+    pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
   }
 }

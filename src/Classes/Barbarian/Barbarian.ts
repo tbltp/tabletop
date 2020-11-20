@@ -81,8 +81,8 @@ export class Barbarian extends PlayerClass {
         "Amount of damage added to an attack while you're in a Rage.",
       bonus: 2,
     };
-    pc.addResourceTraits(rage);
-    pc.addScalingTraits(rageDamage);
+    pc.pcHelper.addResourceTraits(rage);
+    pc.pcHelper.addScalingTraits(rageDamage);
 
     if(PlayerClass.multiClassCheck(pc, "Unarmored Defense")){
       pc.armorClasses.push({
@@ -107,11 +107,11 @@ export class Barbarian extends PlayerClass {
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     this.subclass = new BarbarianSubclass(params.subclassSelection.subclass);
     this.subclassDriver(pc, "3", params);
-    pc.findResourceTraitByName("Rage").resourceMax.value++;
+    pc.pcHelper.findResourceTraitByName("Rage").resourceMax.value++;
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
@@ -127,7 +127,7 @@ export class Barbarian extends PlayerClass {
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
     this.subclassDriver(pc, "6", params);
-    pc.findResourceTraitByName("Rage").resourceMax.value++;
+    pc.pcHelper.findResourceTraitByName("Rage").resourceMax.value++;
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
@@ -135,7 +135,7 @@ export class Barbarian extends PlayerClass {
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
@@ -144,8 +144,8 @@ export class Barbarian extends PlayerClass {
       description: "Number of extra damage dice on a critical hit.",
       dice: "1dx",
     };
-    pc.addScalingTraits(brutalCritical);
-    pc.findScalingTraitByName("Rage Damage").bonus = 3;
+    pc.pcHelper.addScalingTraits(brutalCritical);
+    pc.pcHelper.findScalingTraitByName("Rage Damage").bonus = 3;
     this.pushBarbarianFeatures(pc, 9);
   }
 
@@ -158,12 +158,12 @@ export class Barbarian extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
-    pc.findResourceTraitByName("Rage").resourceMax.value++;
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.findResourceTraitByName("Rage").resourceMax.value++;
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.findScalingTraitByName("Brutal Critical").dice = "2dx";
+    pc.pcHelper.findScalingTraitByName("Brutal Critical").dice = "2dx";
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
@@ -175,13 +175,13 @@ export class Barbarian extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
-    pc.findScalingTraitByName("Rage Damage").bonus = 4;
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.findScalingTraitByName("Rage Damage").bonus = 4;
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.findScalingTraitByName("Brutal Critical").dice = "3dx";
-    pc.findResourceTraitByName("Rage").resourceMax.value++;
+    pc.pcHelper.findScalingTraitByName("Brutal Critical").dice = "3dx";
+    pc.pcHelper.findResourceTraitByName("Rage").resourceMax.value++;
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {
@@ -189,13 +189,13 @@ export class Barbarian extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushBarbarianFeatures(pc, 20);
-    pc.changeAbilityScoreMaxes(["strength", "constitution"], 24);
-    pc.improveAbilityScores([
+    pc.pcHelper.changeAbilityScoreMaxes(["strength", "constitution"], 24);
+    pc.pcHelper.improveAbilityScores([
       {
         ability: "strength",
         improvement: 4,
@@ -205,6 +205,6 @@ export class Barbarian extends PlayerClass {
         improvement: 4,
       },
     ]);
-    pc.findResourceTraitByName("Rage").resourceMax.value = Infinity;
+    pc.pcHelper.findResourceTraitByName("Rage").resourceMax.value = Infinity;
   }
 }

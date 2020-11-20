@@ -30,9 +30,9 @@ let pc: CharacterSheet = new CharacterSheet(
 );
 
 
-pc.levelUp("Ranger", {isNoInput: false, fightingStyle: ["ARCHERY"], spellSelection: ["HAIL OF THORNS", "HUNTER'S MARK"]});
-pc.levelUp("Ranger", {isNoInput: false, subclassSelection: { subclass: "HUNTER", options: ["HORDE BREAKER"] }, spellSelection: ["CURE WOUNDS"]});
-pc.levelUp("Ranger", {isNoInput: false, abilityScoreImprovement: [{"ability": "dexterity", "improvement": 2}]});
-pc.levelUp("Ranger", {isNoInput: false, spellSelection: ["SPIKE GROWTH"]})
+pc.levelUp("Ranger", 8, {isNoInput: false, fightingStyle: ["ARCHERY"], spellSelection: ["HAIL OF THORNS", "HUNTER'S MARK"]});
+pc.levelUp("Ranger", 8, {isNoInput: false, subclassSelection: { subclass: "HUNTER", options: ["HORDE BREAKER"] }, spellSelection: ["CURE WOUNDS"]});
+pc.levelUp("Ranger", 8, {isNoInput: false, abilityScoreImprovement: [{"ability": "dexterity", "improvement": 2}]});
+pc.levelUp("Ranger", 9, {isNoInput: false, spellSelection: ["SPIKE GROWTH"]})
 
 Jsonify.dumpToJSON(pc.character, "Faendal");

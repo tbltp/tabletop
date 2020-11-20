@@ -9,18 +9,18 @@ export class Berserker {
     }
 
     static berserker3(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addFeatures(Berserker.getFeature("3", "FRENZY"));
+      pc.pcHelper.addFeatures(Berserker.getFeature("3", "FRENZY"));
     }
   
     static berserker6(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addFeatures(Berserker.getFeature("6", "MINDLESS RAGE"));
+      pc.pcHelper.addFeatures(Berserker.getFeature("6", "MINDLESS RAGE"));
     }
   
     static berserker10(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addFeatures(Berserker.getFeature("10", "INTIMIDATING PRESENCE"));
+      pc.pcHelper.addFeatures(Berserker.getFeature("10", "INTIMIDATING PRESENCE"));
     }
   
     static berserker14(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addFeatures(Berserker.getFeature("14", "RETALIATION"));
+      pc.pcHelper.addFeatures(Berserker.getFeature("14", "RETALIATION"));
     }
 }

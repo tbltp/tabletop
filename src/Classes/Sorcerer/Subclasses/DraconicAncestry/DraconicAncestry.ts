@@ -24,17 +24,17 @@ export class DraconicAncestry {
     }
 
     static draconicAncestry6(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addFeatures(DraconicAncestry.getFeature("6", "ELEMENTAL AFFINITY"))
+      pc.pcHelper.addFeatures(DraconicAncestry.getFeature("6", "ELEMENTAL AFFINITY"))
       pc.baseStats.HpMax.bonus.value++;
     }
   
     static draconicAncestry14(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addFeatures(DraconicAncestry.getFeature("14", "DRAGON WINGS"))
+      pc.pcHelper.addFeatures(DraconicAncestry.getFeature("14", "DRAGON WINGS"))
       pc.baseStats.HpMax.bonus.value++;
     }
   
     static draconicAncestry18(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addFeatures(DraconicAncestry.getFeature("18", "DRACONIC PRESENCE"))
+      pc.pcHelper.addFeatures(DraconicAncestry.getFeature("18", "DRACONIC PRESENCE"))
       pc.baseStats.HpMax.bonus.value++;
     }
 

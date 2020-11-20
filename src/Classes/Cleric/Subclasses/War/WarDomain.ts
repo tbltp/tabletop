@@ -10,38 +10,38 @@ export class WarDomain {
     }
 
     static war1(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["DIVINE FAVOR", "SHIELD OF FAITH"], "wisdom");
+        pc.pcHelper.addSpells(["DIVINE FAVOR", "SHIELD OF FAITH"], "wisdom");
         // war priest needs to have a minimum of one use available
         const warPriest: ResourceTrait = {
           title: "War Priest",
           description: "Number of times you can use War Priest per long rest.",
           resourceMax: pc.abilityScores.wisdom.modifier,
         };
-        pc.addResourceTraits(warPriest);
+        pc.pcHelper.addResourceTraits(warPriest);
         pc.traits.weaponProficiencies.push("Martial");
         pc.traits.armorProficiencies.push("Heavy");
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
             WarDomain.getFeature("1", "WAR PRIEST"),
             WarDomain.getFeature("1", "BONUS PROFICIENCIES")
         );
       }
     
       static war2(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
             WarDomain.getFeature("2", "CHANNEL DIVINITY: GUIDED STRIKE")
         );
       }
     
       static war3(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["MAGIC WEAPON", "SPIRITUAL WEAPON"], "wisdom");
+        pc.pcHelper.addSpells(["MAGIC WEAPON", "SPIRITUAL WEAPON"], "wisdom");
       }
     
       static war5(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["CRUSADER'S MANTLE", "SPIRIT GUARDIAN"], "wisdom");
+        pc.pcHelper.addSpells(["CRUSADER'S MANTLE", "SPIRIT GUARDIAN"], "wisdom");
       }
     
       static war6(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
             WarDomain.getFeature(
             "6",
             "CHANNEL DIVINITY: WAR GOD'S BLESSING"
@@ -50,7 +50,7 @@ export class WarDomain {
       }
     
       static war7(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["FREEDOM OF MOVEMENT", "STONESKIN"], "wisdom");
+        pc.pcHelper.addSpells(["FREEDOM OF MOVEMENT", "STONESKIN"], "wisdom");
       }
     
       static war8(pc: PlayerCharacter, params: LevelingParams) {
@@ -59,15 +59,15 @@ export class WarDomain {
           description: "Dice used for Divine Strike (extra weapon damage).",
           dice: "1d8",
         };
-        pc.addScalingTraits(divineStrike);
-        pc.addFeatures(WarDomain.getFeature("8", "DIVINE STRIKE"));
+        pc.pcHelper.addScalingTraits(divineStrike);
+        pc.pcHelper.addFeatures(WarDomain.getFeature("8", "DIVINE STRIKE"));
       }
     
       static war9(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["FLAME STRIKE", "HOLD MONSTER"], "wisdom");
+        pc.pcHelper.addSpells(["FLAME STRIKE", "HOLD MONSTER"], "wisdom");
       }
     
       static war17(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(WarDomain.getFeature("17", "AVATAR OF BATTLE"));
+        pc.pcHelper.addFeatures(WarDomain.getFeature("17", "AVATAR OF BATTLE"));
       }
 }

@@ -81,7 +81,7 @@ export class Paladin extends PlayerClass {
   }
 
   private upgradeLayOnHands(pc: PlayerCharacter): void {
-    pc.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
+    pc.pcHelper.findResourceTraitByName("Lay on Hands").resourceMax.value += 5;
   }
 
   private handlePaladinSpellSelections(
@@ -93,7 +93,7 @@ export class Paladin extends PlayerClass {
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushPaladinFeatures(pc, 1);
-    pc.addResourceTraits({
+    pc.pcHelper.addResourceTraits({
       title: "Lay on Hands",
       description: "Number of hit points you can restore with Lay on Hands",
       resourceMax: { value: 5 },
@@ -106,8 +106,8 @@ export class Paladin extends PlayerClass {
   level2(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
     this.pushPaladinFeatures(pc, 2);
-    pc.addFeatures(FightingStyle[params.fightingStyle[0]]);
-    pc.addSpells([...SpellList["Paladin"][1]], SpellcastingAbility["PALADIN"]);
+    pc.pcHelper.addFeatures(FightingStyle[params.fightingStyle[0]]);
+    pc.pcHelper.addSpells([...SpellList["Paladin"][1]], SpellcastingAbility["PALADIN"]);
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
@@ -121,7 +121,7 @@ export class Paladin extends PlayerClass {
         description: "Number of times you can use a Channel Divinity ability.",
         resourceMax: { value: 1 },
       };
-      pc.addResourceTraits(channelDivinity);
+      pc.pcHelper.addResourceTraits(channelDivinity);
     }
 
     this.pushPaladinFeatures(pc, 3);
@@ -129,7 +129,7 @@ export class Paladin extends PlayerClass {
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.upgradeLayOnHands(pc);
     this.pushPaladinFeatures(pc, 4);
   }
@@ -137,7 +137,7 @@ export class Paladin extends PlayerClass {
   level5(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
     this.pushPaladinFeatures(pc, 5);
-    pc.addSpells([...SpellList["Paladin"][2]], SpellcastingAbility["PALADIN"]);
+    pc.pcHelper.addSpells([...SpellList["Paladin"][2]], SpellcastingAbility["PALADIN"]);
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
@@ -151,13 +151,13 @@ export class Paladin extends PlayerClass {
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.upgradeLayOnHands(pc);
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
-    pc.addSpells([...SpellList["Paladin"][3]], SpellcastingAbility["PALADIN"]);
+    pc.pcHelper.addSpells([...SpellList["Paladin"][3]], SpellcastingAbility["PALADIN"]);
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
@@ -171,13 +171,13 @@ export class Paladin extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.upgradeLayOnHands(pc);
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
-    pc.addSpells([...SpellList["Paladin"][4]], SpellcastingAbility["PALADIN"]);
+    pc.pcHelper.addSpells([...SpellList["Paladin"][4]], SpellcastingAbility["PALADIN"]);
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
@@ -191,13 +191,13 @@ export class Paladin extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.upgradeLayOnHands(pc);
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
-    pc.addSpells([...SpellList["Paladin"][5]], SpellcastingAbility["PALADIN"]);
+    pc.pcHelper.addSpells([...SpellList["Paladin"][5]], SpellcastingAbility["PALADIN"]);
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {
@@ -206,7 +206,7 @@ export class Paladin extends PlayerClass {
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {

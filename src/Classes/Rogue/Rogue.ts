@@ -90,7 +90,7 @@ export class Rogue extends PlayerClass {
       pc.skills[proficiency].expertise = true;
     }
     // Sneak Attack
-    pc.addScalingTraits({
+    pc.pcHelper.addScalingTraits({
       title: "Sneak Attack",
       description: "Dice used for Sneak Attack",
       dice: "1d6",
@@ -106,21 +106,21 @@ export class Rogue extends PlayerClass {
     this.subclass = new RogueSubclass(params.subclassSelection.subclass);
     this.subclassDriver(pc, "3", params);    
 
-    pc.findScalingTraitByName("Sneak Attack").dice = "2d6";
+    pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "2d6";
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     this.subclassDriver(pc, "4", params);
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushRogueFeatures(pc, 5);
-    pc.findScalingTraitByName("Sneak Attack").dice = "3d6";
+    pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "3d6";
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.findFeatureTraitByName("EXPERTISE").choices.push(
+    pc.pcHelper.findFeatureTraitByName("EXPERTISE").choices.push(
       ...params.proficiencySelection
     );
 
@@ -132,37 +132,37 @@ export class Rogue extends PlayerClass {
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushRogueFeatures(pc, 7);
-    pc.findScalingTraitByName("Sneak Attack").dice = "4d6";
+    pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "4d6";
     this.subclassDriver(pc, "7", params);
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "8", params);
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.findScalingTraitByName("Sneak Attack").dice = "5d6";
+    pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "5d6";
     this.subclassDriver(pc, "9", params);    
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "10", params);
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushRogueFeatures(pc, 11);
-    pc.findScalingTraitByName("Sneak Attack").dice = "6d6";
+    pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "6d6";
     this.subclassDriver(pc, "11", params);
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.findScalingTraitByName("Sneak Attack").dice = "7d6";
+    pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "7d6";
     this.subclassDriver(pc, "13", params);    
   }
 
@@ -175,16 +175,16 @@ export class Rogue extends PlayerClass {
     this.pushRogueFeatures(pc, 15);
     // Slippery Mind
     pc.abilityScores.wisdom.savingThrowProficiency = true;
-    pc.findScalingTraitByName("Sneak Attack").dice = "8d6";
+    pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "8d6";
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "16", params);
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.findScalingTraitByName("Sneak Attack").dice = "9d6";
+    pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "9d6";
     this.subclassDriver(pc, "17", params);    
   }
 
@@ -193,8 +193,8 @@ export class Rogue extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
-    pc.findScalingTraitByName("Sneak Attack").dice = "10d6";
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "10d6";
     this.subclassDriver(pc, "19", params);
   }
 

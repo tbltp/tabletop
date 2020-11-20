@@ -9,7 +9,7 @@ export class Hunter {
     }
     
     static hunter3(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
             Hunter.getFeature(
             "3",
             params.subclassSelection.options[0]
@@ -18,7 +18,7 @@ export class Hunter {
       }
     
       static hunter7(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
             Hunter.getFeature(
             "7",
             params.subclassSelection.options[0]
@@ -27,7 +27,7 @@ export class Hunter {
       }
     
       static hunter11(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
             Hunter.getFeature(
             "11",
             params.subclassSelection.options[0]
@@ -36,7 +36,7 @@ export class Hunter {
       }
     
       static hunter15(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
             Hunter.getFeature(
             "15",
             params.subclassSelection.options[0]

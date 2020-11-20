@@ -110,7 +110,7 @@ export class Wizard extends PlayerClass {
 
   level4(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: WizardLevelingParams): void {
@@ -128,7 +128,7 @@ export class Wizard extends PlayerClass {
 
   level8(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level9(pc: PlayerCharacter, params: WizardLevelingParams): void {
@@ -146,7 +146,7 @@ export class Wizard extends PlayerClass {
 
   level12(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level13(pc: PlayerCharacter, params: WizardLevelingParams): void {
@@ -177,7 +177,7 @@ export class Wizard extends PlayerClass {
 
   level19(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: WizardLevelingParams): void {

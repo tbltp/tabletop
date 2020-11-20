@@ -9,19 +9,19 @@ export class Conjuration {
     }
 
     static conjuration2(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Conjuration.getFeature("2", "CONJURATION SAVANT"), Conjuration.getFeature("2", "MINOR CONJURATION"))
+        pc.pcHelper.addFeatures(Conjuration.getFeature("2", "CONJURATION SAVANT"), Conjuration.getFeature("2", "MINOR CONJURATION"))
     }
     
     static conjuration6(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Conjuration.getFeature("6", "BENIGN TRANSPOSITION"))
+        pc.pcHelper.addFeatures(Conjuration.getFeature("6", "BENIGN TRANSPOSITION"))
     }
 
     static conjuration10(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Conjuration.getFeature("10", "FOCUSED CONJURATION"))
+        pc.pcHelper.addFeatures(Conjuration.getFeature("10", "FOCUSED CONJURATION"))
     }
 
     static conjuration14(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Conjuration.getFeature("14", "DURABLE SUMMONS"))
+        pc.pcHelper.addFeatures(Conjuration.getFeature("14", "DURABLE SUMMONS"))
     }
 
 }

@@ -105,7 +105,7 @@ export class Bard extends PlayerClass {
       resourceMax: pc.abilityScores.charisma.modifier,
       dice: "1d6",
     };
-    pc.addResourceTraits(bardicInspiration);
+    pc.pcHelper.addResourceTraits(bardicInspiration);
 
     this.addSpellcasting(pc, "BARD");
 
@@ -120,7 +120,7 @@ export class Bard extends PlayerClass {
       description: "Dice used for Song of Rest.",
       dice: "1d6",
     };
-    pc.addScalingTraits(songOfRest);
+    pc.pcHelper.addScalingTraits(songOfRest);
     // jack of all trades
     for (let skill of Object.keys(pc.skills)) {
       if (!pc.skills[skill].proficient) {
@@ -150,13 +150,13 @@ export class Bard extends PlayerClass {
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
     // bardic inspiration
-    pc.findResourceTraitByName("Bardic Inspiration").dice = "1d8";
+    pc.pcHelper.findResourceTraitByName("Bardic Inspiration").dice = "1d8";
     this.pushBardFeatures(pc, 5);
   }
 
@@ -173,13 +173,13 @@ export class Bard extends PlayerClass {
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
     // song of rest
-    pc.findScalingTraitByName("Song of Rest").dice = "1d8";
+    pc.pcHelper.findScalingTraitByName("Song of Rest").dice = "1d8";
   }
 
   level10(pc: PlayerCharacter, params: BardLevelingParams): void {
@@ -188,13 +188,13 @@ export class Bard extends PlayerClass {
     for (let skill of params.proficiencySelection) {
       pc.skills[skill].expertise = true;
     }
-    pc.findFeatureTraitByName("Expertise").choices.push(
+    pc.pcHelper.findFeatureTraitByName("Expertise").choices.push(
       ...params.proficiencySelection
     );
     // bardic inspiration
-    pc.findResourceTraitByName("Bardic Inspiration").dice = "1d10";
+    pc.pcHelper.findResourceTraitByName("Bardic Inspiration").dice = "1d10";
     // magical secrets
-    pc.addSpells(
+    pc.pcHelper.addSpells(
       params.magicalSecretsSpellSelection,
       SpellcastingAbility["BARD"]
     );
@@ -213,23 +213,23 @@ export class Bard extends PlayerClass {
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
     // song of rest
-    pc.findScalingTraitByName("Song of Rest").dice = "1d10";
+    pc.pcHelper.findScalingTraitByName("Song of Rest").dice = "1d10";
   }
 
   level14(pc: PlayerCharacter, params: BardLevelingParams): void {
     this.handleBardSpellSelections(pc, params);
     // magical secrets
-    pc.addSpells(
+    pc.pcHelper.addSpells(
       params.magicalSecretsSpellSelection,
       SpellcastingAbility["BARD"]
     );
-    pc.findFeatureTraitByName("Magical Secrets").choices.push(
+    pc.pcHelper.findFeatureTraitByName("Magical Secrets").choices.push(
       ...params.magicalSecretsSpellSelection
     );
     // college
@@ -239,35 +239,35 @@ export class Bard extends PlayerClass {
   level15(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
     // bardic inspiration
-    pc.findResourceTraitByName("Bardic Inspiration").dice = "1d12";
+    pc.pcHelper.findResourceTraitByName("Bardic Inspiration").dice = "1d12";
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
     // song of rest
-    pc.findScalingTraitByName("Song of Rest").dice = "1d12";
+    pc.pcHelper.findScalingTraitByName("Song of Rest").dice = "1d12";
   }
 
   level18(pc: PlayerCharacter, params: BardLevelingParams): void {
     this.handleBardSpellSelections(pc, params);
     // magical secrets
-    pc.addSpells(
+    pc.pcHelper.addSpells(
       params.magicalSecretsSpellSelection,
       SpellcastingAbility["BARD"]
     );
-    pc.findFeatureTraitByName("Magical Secrets").choices.push(
+    pc.pcHelper.findFeatureTraitByName("Magical Secrets").choices.push(
       ...params.magicalSecretsSpellSelection
     );
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {

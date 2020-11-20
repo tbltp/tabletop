@@ -25,9 +25,9 @@ let pc: CharacterSheet = new CharacterSheet(
   new FolkHero("Mason's tools", "TINKER'S TOOLS")
 )
 
-pc.levelUp("Cleric", {isNoInput: true});
-pc.levelUp("Cleric", {isNoInput: true});
-pc.levelUp("Cleric", {isNoInput: false, abilityScoreImprovement: [{"ability": "wisdom", "improvement": 2}], spellSelection: ["RESISTANCE"]});
-pc.levelUp("Cleric", {isNoInput: true});
+pc.levelUp("Cleric", 1, {isNoInput: true});
+pc.levelUp("Cleric", 1, {isNoInput: true});
+pc.levelUp("Cleric", 1, {isNoInput: false, abilityScoreImprovement: [{"ability": "wisdom", "improvement": 2}], spellSelection: ["RESISTANCE"]});
+pc.levelUp("Cleric", 1, {isNoInput: true});
 
 Jsonify.dumpToJSON(pc.character, "Merlyn");

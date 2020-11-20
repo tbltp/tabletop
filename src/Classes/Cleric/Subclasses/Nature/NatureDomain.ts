@@ -10,12 +10,12 @@ export class NatureDomain {
     }
 
     static nature1(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(
+        pc.pcHelper.addSpells(
           [...params.spellSelection, "ANIMAL FRIENDSHIP", "SPEAK WITH ANIMALS"],
           "wisdom"
         );
         pc.traits.armorProficiencies.push("Heavy");
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
           {
             ...NatureDomain.getFeature("1", "ACOLYTE OF NATURE"),
             choices: params.spellSelection,
@@ -25,7 +25,7 @@ export class NatureDomain {
       }
     
       static nature2(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
             NatureDomain.getFeature(
             "2",
             "CHANNEL DIVINITY: CHARM ANIMALS AND PLANTS"
@@ -34,21 +34,21 @@ export class NatureDomain {
       }
     
       static nature3(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["BARKSKIN", "SPIKE GROWTH"], "wisdom");
+        pc.pcHelper.addSpells(["BARKSKIN", "SPIKE GROWTH"], "wisdom");
       }
     
       static nature5(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["PLANT GROWTH", "WIND WALL"], "wisdom");
+        pc.pcHelper.addSpells(["PLANT GROWTH", "WIND WALL"], "wisdom");
       }
     
       static nature6(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
             NatureDomain.getFeature("6", "DAMPEN ELEMENTS")
         );
       }
     
       static nature7(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["DOMINATE BEAST", "GRASPING VINE"], "wisdom");
+        pc.pcHelper.addSpells(["DOMINATE BEAST", "GRASPING VINE"], "wisdom");
       }
     
       static nature8(pc: PlayerCharacter, params: LevelingParams) {
@@ -58,16 +58,16 @@ export class NatureDomain {
             "Dice used for Divine Strike (cold, fire, or lightning damage).",
           dice: "1d8",
         };
-        pc.addScalingTraits(divineStrike);
-        pc.addFeatures(NatureDomain.getFeature("8", "DIVINE STRIKE"));
+        pc.pcHelper.addScalingTraits(divineStrike);
+        pc.pcHelper.addFeatures(NatureDomain.getFeature("8", "DIVINE STRIKE"));
       }
     
       static nature9(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["INSECT PLAGUE", "TREE STRIDE"], "wisdom");
+        pc.pcHelper.addSpells(["INSECT PLAGUE", "TREE STRIDE"], "wisdom");
       }
     
       static nature17(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
             NatureDomain.getFeature("17", "MASTER OF NATURE")
         );
       }

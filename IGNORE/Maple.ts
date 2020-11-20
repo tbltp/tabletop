@@ -30,9 +30,9 @@ let pc: CharacterSheet = new CharacterSheet(
   new Criminal("Playing Card Set")
 )
 
-pc.levelUp("Druid", {isNoInput: false, subclassSelection: {subclass: "MOON"}});
-pc.levelUp("Druid", {isNoInput: true})
-pc.levelUp("Druid", {isNoInput: false, abilityScoreImprovement: [{"ability": "wisdom", "improvement": 2}], spellSelection: ["RESISTANCE"]});
-pc.levelUp("Druid", {isNoInput: true})
+pc.levelUp("Druid", 5, {isNoInput: false, subclassSelection: {subclass: "MOON"}});
+pc.levelUp("Druid", 5, {isNoInput: true})
+pc.levelUp("Druid", 5, {isNoInput: false, abilityScoreImprovement: [{"ability": "wisdom", "improvement": 2}], spellSelection: ["RESISTANCE"]});
+pc.levelUp("Druid", 5, {isNoInput: true})
 
 Jsonify.dumpToJSON(pc.character, "Maple");

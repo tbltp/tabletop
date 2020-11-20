@@ -45,7 +45,7 @@ export class CharacterSheet {
 
   }
 
-  levelUp(levelingClass: string, params: LevelingParams): void {
+  levelUp(levelingClass: string, hp: number, params: LevelingParams): void {
     this.character.level.totalLevel++;
     const level = ++this.playerClasses[levelingClass].level.value;
 
@@ -67,6 +67,7 @@ export class CharacterSheet {
     } else {
       
     }
+    this.character.baseStats.hpMax.bonus.value += hp;
 
     this.applySpellSlotsAtLevelUp();
   }

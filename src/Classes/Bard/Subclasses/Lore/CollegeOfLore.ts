@@ -10,7 +10,7 @@ export class CollegeOfLore {
     }
   
     static lore3(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addFeatures(CollegeOfLore.getFeature("3", "CUTTING WORDS"));
+      pc.pcHelper.addFeatures(CollegeOfLore.getFeature("3", "CUTTING WORDS"));
     }
   
     static lore6(pc: PlayerCharacter, params: LevelingParams) {
@@ -18,11 +18,11 @@ export class CollegeOfLore {
         ...CollegeOfLore.getFeature("6", "ADDITIONAL MAGICAL SECRETS"),
         choices: params.subclassSelection.options,
       };
-      pc.addSpells(params.subclassSelection.options, "charisma");
-      pc.addFeatures(lore6Trait);
+      pc.pcHelper.addSpells(params.subclassSelection.options, "charisma");
+      pc.pcHelper.addFeatures(lore6Trait);
     }
   
     static lore14(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addFeatures(CollegeOfLore.getFeature("14", "PEERLESS SKILL"));
+      pc.pcHelper.addFeatures(CollegeOfLore.getFeature("14", "PEERLESS SKILL"));
     }  
 }

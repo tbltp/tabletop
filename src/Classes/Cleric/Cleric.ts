@@ -93,7 +93,7 @@ export class Cleric extends PlayerClass {
   }
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.addSpells(
+    pc.pcHelper.addSpells(
       [...params.spellSelection, ...SpellList["Cleric"][1]],
       SpellcastingAbility["CLERIC"]
     );
@@ -112,7 +112,7 @@ export class Cleric extends PlayerClass {
         description: "Number of times you can use a Channel Divinity ability.",
         resourceMax: { value: 1 },
       };
-      pc.addResourceTraits(channelDivinity);
+      pc.pcHelper.addResourceTraits(channelDivinity);
     }
     
     // divine domain
@@ -123,17 +123,17 @@ export class Cleric extends PlayerClass {
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     // divine domain spells
     this.subclassDriver(pc, "3", params);
-    pc.addSpells([...SpellList["Cleric"][2]], SpellcastingAbility["CLERIC"]);
+    pc.pcHelper.addSpells([...SpellList["Cleric"][2]], SpellcastingAbility["CLERIC"]);
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     // cantrip
     this.handleClericSpellSelections(pc, params);
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.addSpells(
+    pc.pcHelper.addSpells(
       [...SpellList["Cleric"][3]],
       SpellcastingAbility["CLERIC"]
     );
@@ -145,7 +145,7 @@ export class Cleric extends PlayerClass {
         "Challenge rating threshold for destroying undead that fail the saving throw against Turn Undead",
       challengeRating: 0.5,
     };
-    pc.addScalingTraits(destroyUndead);
+    pc.pcHelper.addScalingTraits(destroyUndead);
     // divine domain spells
     this.subclassDriver(pc, "5", params);
     this.pushClericFeatures(pc, 5);
@@ -153,7 +153,7 @@ export class Cleric extends PlayerClass {
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
     // channel divinity
-    pc.findResourceTraitByName("Channel Divinity").resourceMax.value++;
+    pc.pcHelper.findResourceTraitByName("Channel Divinity").resourceMax.value++;
     // divine domain
     this.subclassDriver(pc, "6", params);
   }
@@ -161,14 +161,14 @@ export class Cleric extends PlayerClass {
   level7(pc: PlayerCharacter, params: LevelingParams): void {
     // divine domain spells
     this.subclassDriver(pc, "7", params);
-    pc.addSpells([...SpellList["Cleric"][4]], SpellcastingAbility["CLERIC"]);
+    pc.pcHelper.addSpells([...SpellList["Cleric"][4]], SpellcastingAbility["CLERIC"]);
 
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     // destroy undead
-    pc.findScalingTraitByName("Destroy Undead").challengeRating = 1;
+    pc.pcHelper.findScalingTraitByName("Destroy Undead").challengeRating = 1;
     // divine domain
     this.subclassDriver(pc, "8", params);
   }
@@ -176,7 +176,7 @@ export class Cleric extends PlayerClass {
   level9(pc: PlayerCharacter, params: LevelingParams): void {
     // divine domain spells
     this.subclassDriver(pc, "9", params);
-    pc.addSpells([...SpellList["Cleric"][5]], SpellcastingAbility["CLERIC"]);
+    pc.pcHelper.addSpells([...SpellList["Cleric"][5]], SpellcastingAbility["CLERIC"]);
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
@@ -189,53 +189,53 @@ export class Cleric extends PlayerClass {
         "Number of times your deity can intervene through a successful Divine Intervention. (Once per 7 days and a long rest)",
       resourceMax: { value: 1 },
     };
-    pc.addResourceTraits(divineIntervention);
+    pc.pcHelper.addResourceTraits(divineIntervention);
     this.pushClericFeatures(pc, 10);
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
     // destroy undead
-    pc.findScalingTraitByName("Destroy Undead").challengeRating++;
-    pc.addSpells([...SpellList["Cleric"][6]], SpellcastingAbility["CLERIC"]);
+    pc.pcHelper.findScalingTraitByName("Destroy Undead").challengeRating++;
+    pc.pcHelper.addSpells([...SpellList["Cleric"][6]], SpellcastingAbility["CLERIC"]);
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.addSpells([...SpellList["Cleric"][7]], SpellcastingAbility["CLERIC"]);
+    pc.pcHelper.addSpells([...SpellList["Cleric"][7]], SpellcastingAbility["CLERIC"]);
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
     this.subclassDriver(pc, "14", params);
     // destroy undead
-    pc.findScalingTraitByName("Destroy Undead").challengeRating++;
+    pc.pcHelper.findScalingTraitByName("Destroy Undead").challengeRating++;
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.addSpells([...SpellList["Cleric"][8]], SpellcastingAbility["CLERIC"]);
+    pc.pcHelper.addSpells([...SpellList["Cleric"][8]], SpellcastingAbility["CLERIC"]);
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
     // destroy undead
-    pc.findScalingTraitByName("Destroy Undead").challengeRating++;
+    pc.pcHelper.findScalingTraitByName("Destroy Undead").challengeRating++;
     // divine domain
     this.subclassDriver(pc, "17", params);
-    pc.addSpells([...SpellList["Cleric"][9]], SpellcastingAbility["CLERIC"]);
+    pc.pcHelper.addSpells([...SpellList["Cleric"][9]], SpellcastingAbility["CLERIC"]);
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {
     // channel divinity
-    pc.findResourceTraitByName("Channel Divinity").resourceMax.value++;
+    pc.pcHelper.findResourceTraitByName("Channel Divinity").resourceMax.value++;
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {

@@ -10,22 +10,22 @@ export class LightDomain {
     }
 
     static light1(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addSpells(["BURNING HANDS", "FAERIE FIRE", "LIGHT"], "wisdom");
+      pc.pcHelper.addSpells(["BURNING HANDS", "FAERIE FIRE", "LIGHT"], "wisdom");
       // warding flare needs to have a minimum of one use available
       const wardingFlare: ResourceTrait = {
         title: "Warding Flare",
         description: "Number of times you can use Warding Flare per long rest.",
         resourceMax: pc.abilityScores.wisdom.modifier,
       };
-      pc.addResourceTraits(wardingFlare);
-      pc.addFeatures(
+      pc.pcHelper.addResourceTraits(wardingFlare);
+      pc.pcHelper.addFeatures(
         LightDomain.getFeature("1", "WARDING FLARE"),
         LightDomain.getFeature("1", "BONUS CANTRIP")
       );
     }
   
     static light2(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addFeatures(
+      pc.pcHelper.addFeatures(
         LightDomain.getFeature(
           "2",
           "CHANNEL DIVINITY: RADIANCE OF THE DAWN"
@@ -34,37 +34,37 @@ export class LightDomain {
     }
   
     static light3(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addSpells(["FLAMING SPHERE", "SCORCHING RAY"], "wisdom");
+      pc.pcHelper.addSpells(["FLAMING SPHERE", "SCORCHING RAY"], "wisdom");
     }
   
     static light5(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addSpells(["DAYLIGHT", "FIREBALL"], "wisdom");
+      pc.pcHelper.addSpells(["DAYLIGHT", "FIREBALL"], "wisdom");
     }
   
     static light6(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addFeatures(LightDomain.getFeature("6", "IMPROVED FLARE"));
+      pc.pcHelper.addFeatures(LightDomain.getFeature("6", "IMPROVED FLARE"));
     }
   
     static light7(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addSpells(["GUARDIAN OF FAITH", "WALL OF FIRE"], "wisdom");
+      pc.pcHelper.addSpells(["GUARDIAN OF FAITH", "WALL OF FIRE"], "wisdom");
     }
   
     static light8(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addFeatures(
+      pc.pcHelper.addFeatures(
         LightDomain.getFeature("8", "POTENT SPELLCASTING")
       );
     }
   
     static light9(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addSpells(["FLAME STRIKE", "SCRYING"], "wisdom");
+      pc.pcHelper.addSpells(["FLAME STRIKE", "SCRYING"], "wisdom");
     }
   
     static light14(pc: PlayerCharacter, params: LevelingParams) {
-      pc.findScalingTraitByName("Divine Strike").dice = "2d8";
+      pc.pcHelper.findScalingTraitByName("Divine Strike").dice = "2d8";
     }
   
     static light17(pc: PlayerCharacter, params: LevelingParams) {
-      pc.addFeatures(
+      pc.pcHelper.addFeatures(
         LightDomain.getFeature("17", "CORONA OF LIGHT")
       );
     }

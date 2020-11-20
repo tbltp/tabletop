@@ -8,11 +8,11 @@ export class Devotion {
       }
   
       static addArchetypeSpells(pc: PlayerCharacter, level: string){
-        pc.addSpells(this.oathSpells[level], "charisma");
+        pc.pcHelper.addSpells(this.oathSpells[level], "charisma");
       }
     
     static devotion3(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
             Devotion.getFeature("3", "SACRED WEAPON"), 
             Devotion.getFeature("3", "TURN THE UNHOLY") 
         )
@@ -26,7 +26,7 @@ export class Devotion {
     
     
       static devotion7(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Devotion.getFeature("7", "AURA OF DEVOTION")) 
+        pc.pcHelper.addFeatures(Devotion.getFeature("7", "AURA OF DEVOTION")) 
       }
     
       static devotion9(pc: PlayerCharacter, params: LevelingParams) {
@@ -38,7 +38,7 @@ export class Devotion {
       }
   
       static devotion15(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Devotion.getFeature("15", "PURITY OF SPIRIT"))
+        pc.pcHelper.addFeatures(Devotion.getFeature("15", "PURITY OF SPIRIT"))
       }
   
       static devotion19(pc: PlayerCharacter, params: LevelingParams) {
@@ -46,7 +46,7 @@ export class Devotion {
       }
     
       static devotion20(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Devotion.getFeature("20", "HOLY NIMBUS"))
+        pc.pcHelper.addFeatures(Devotion.getFeature("20", "HOLY NIMBUS"))
       }
 
     static oathSpells = {

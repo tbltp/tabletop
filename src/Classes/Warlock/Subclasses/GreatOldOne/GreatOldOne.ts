@@ -9,23 +9,23 @@ export class GreatOldOne {
     }
 
     static getPatronSpells(pc: PlayerCharacter, patron: string, level: string) {
-        pc.addSpells(GreatOldOne.patronSpells[level], "charisma");
+        pc.pcHelper.addSpells(GreatOldOne.patronSpells[level], "charisma");
     }
 
     static greatOldOne1(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(GreatOldOne.getFeature("1", "AWAKENED MIND"));
+        pc.pcHelper.addFeatures(GreatOldOne.getFeature("1", "AWAKENED MIND"));
     }
     
       static greatOldOne6(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(GreatOldOne.getFeature("6", "ENTROPIC WARD"));
+        pc.pcHelper.addFeatures(GreatOldOne.getFeature("6", "ENTROPIC WARD"));
       }
     
       static greatOldOne10(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(GreatOldOne.getFeature("10", "THOUGHT SHIELD"));
+        pc.pcHelper.addFeatures(GreatOldOne.getFeature("10", "THOUGHT SHIELD"));
       }
     
       static greatOldOne14(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(GreatOldOne.getFeature("14", "CREATE THRALL"));
+        pc.pcHelper.addFeatures(GreatOldOne.getFeature("14", "CREATE THRALL"));
       }
     
 

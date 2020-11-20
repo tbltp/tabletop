@@ -9,19 +9,19 @@ export class BeastMaster {
     }
 
     static beastMaster3(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(BeastMaster.getFeature("3", "RANGER'S COMPANION"));
+        pc.pcHelper.addFeatures(BeastMaster.getFeature("3", "RANGER'S COMPANION"));
       }
     
       static beastMaster7(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(BeastMaster.getFeature("7", "EXCEPTIONAL TRAINING"));
+        pc.pcHelper.addFeatures(BeastMaster.getFeature("7", "EXCEPTIONAL TRAINING"));
       }
     
       static beastMaster11(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(BeastMaster.getFeature("11", "BESTIAL FURY"));
+        pc.pcHelper.addFeatures(BeastMaster.getFeature("11", "BESTIAL FURY"));
       }
     
       static beastMaster15(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(BeastMaster.getFeature("15", "SHARE SPELLS"));
+        pc.pcHelper.addFeatures(BeastMaster.getFeature("15", "SHARE SPELLS"));
       }
 
 }

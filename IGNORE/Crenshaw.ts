@@ -20,6 +20,6 @@ let pc: CharacterSheet = new CharacterSheet(
     new Charlatan()
 );
 
-pc.levelUp("Barbarian", {isNoInput: true});
+pc.levelUp("Barbarian", 1, {isNoInput: true});
 
 Jsonify.dumpToJSON(pc.character, "Crenshaw");

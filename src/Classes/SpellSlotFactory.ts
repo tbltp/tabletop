@@ -102,7 +102,7 @@ export class SpellSlotFactory {
       slotLevelString.charAt(0).toUpperCase() +
       slotLevelString.slice(1) +
       " Level Spell Slots";
-    return pc.findResourceTraitByName(resourceTitle);
+    return pc.pcHelper.findResourceTraitByName(resourceTitle);
   }
 
   public static applyClassSpellSlotsAtLevel(
@@ -136,7 +136,7 @@ export class SpellSlotFactory {
             i + 1,
             slotMax
           );
-          pc.addResourceTraits(slot);
+          pc.pcHelper.addResourceTraits(slot);
         } else {
           existingSlot.resourceMax.value = slotMax;
         }

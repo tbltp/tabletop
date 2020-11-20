@@ -19,7 +19,7 @@ export class BattleMaster {
           dice: "d8"
         };
         // artisan tool proficiency
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
             BattleMaster.getFeature("3", "COMBAT SUPERIORITY"),
             BattleMaster.getFeature("3", "STUDENT OF WAR")
         );
@@ -29,19 +29,19 @@ export class BattleMaster {
       }
     
       static battleMaster7(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(BattleMaster.getFeature("7", "KNOW YOUR ENEMY"))
+        pc.pcHelper.addFeatures(BattleMaster.getFeature("7", "KNOW YOUR ENEMY"))
       }
     
       static battleMaster10(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(BattleMaster.getFeature("7", "IMPROVED COMBAT SUPERIORITY"))
-        pc.findResourceTraitByName("Superiority Dice").dice = "d10";
+        pc.pcHelper.addFeatures(BattleMaster.getFeature("7", "IMPROVED COMBAT SUPERIORITY"))
+        pc.pcHelper.findResourceTraitByName("Superiority Dice").dice = "d10";
       }
     
       static battleMaster15(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(BattleMaster.getFeature("7", "RELENTLESS"))
+        pc.pcHelper.addFeatures(BattleMaster.getFeature("7", "RELENTLESS"))
       }
     
       static battleMaster18(pc: PlayerCharacter, params: LevelingParams) {
-        pc.findResourceTraitByName("Superiority Dice").dice = "d12";
+        pc.pcHelper.findResourceTraitByName("Superiority Dice").dice = "d12";
       }
 }

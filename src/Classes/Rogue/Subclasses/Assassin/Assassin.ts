@@ -9,20 +9,20 @@ export class Assassin {
     }
 
     static assassin3(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Assassin.getFeature("3", "BONUS PROFICIENCIES"), Assassin.getFeature("3", "ASSASSINATE"));
+        pc.pcHelper.addFeatures(Assassin.getFeature("3", "BONUS PROFICIENCIES"), Assassin.getFeature("3", "ASSASSINATE"));
         pc.traits.toolProficiencies.push("Poisoner's Kit", "Disguise Kit")
       }
     
       static assassin9(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Assassin.getFeature("9", "INFILTRATION EXPERTISE"));
+        pc.pcHelper.addFeatures(Assassin.getFeature("9", "INFILTRATION EXPERTISE"));
       }
     
       static assassin13(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Assassin.getFeature("13", "IMPOSTER"));
+        pc.pcHelper.addFeatures(Assassin.getFeature("13", "IMPOSTER"));
       }
     
       static assassin17(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Assassin.getFeature("17", "DEATH STRIKE"));
+        pc.pcHelper.addFeatures(Assassin.getFeature("17", "DEATH STRIKE"));
       }
     
 }

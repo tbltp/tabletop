@@ -36,6 +36,7 @@ let pc: CharacterSheet = new CharacterSheet(
 
 pc.levelUp(
   "Bard",
+  1,
   {
   isNoInput: false,
   spellSelection: ["UNSEEN SERVANT"],
@@ -43,6 +44,7 @@ pc.levelUp(
 
 pc.levelUp(
   "Bard",
+  1,
   {
   isNoInput: false,
   spellSelection: ["DETECT THOUGHTS"],

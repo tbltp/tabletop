@@ -9,19 +9,19 @@ export class Necromancy {
     }
 
     static necromancy2(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Necromancy.getFeature("2", "NECROMANCY SAVANT"), Necromancy.getFeature("2", "GRIM HARVEST"))
+        pc.pcHelper.addFeatures(Necromancy.getFeature("2", "NECROMANCY SAVANT"), Necromancy.getFeature("2", "GRIM HARVEST"))
     }
     
     static necromancy6(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Necromancy.getFeature("6", "UNDEAD THRALLS"))
+        pc.pcHelper.addFeatures(Necromancy.getFeature("6", "UNDEAD THRALLS"))
     }
 
     static necromancy10(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Necromancy.getFeature( "10", "INJURED TO UNDEATH"))
+        pc.pcHelper.addFeatures(Necromancy.getFeature( "10", "INJURED TO UNDEATH"))
     }
 
     static necromancy14(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Necromancy.getFeature("14", "COMMAND UNDEAD"))
+        pc.pcHelper.addFeatures(Necromancy.getFeature("14", "COMMAND UNDEAD"))
     }
 
 }

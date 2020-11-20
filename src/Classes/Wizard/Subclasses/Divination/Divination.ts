@@ -9,19 +9,19 @@ export class Divination {
     }
 
     static divination2(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Divination.getFeature("2", "DIVINATION SAVANT"), Divination.getFeature("2", "PORTENT"))
+        pc.pcHelper.addFeatures(Divination.getFeature("2", "DIVINATION SAVANT"), Divination.getFeature("2", "PORTENT"))
     }
     
     static divination6(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Divination.getFeature("6", "EXPERT DIVINATION"))
+        pc.pcHelper.addFeatures(Divination.getFeature("6", "EXPERT DIVINATION"))
     }
 
     static divination10(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Divination.getFeature("10", "THE THIRD EYE"))
+        pc.pcHelper.addFeatures(Divination.getFeature("10", "THE THIRD EYE"))
     }
 
     static divination14(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Divination.getFeature("14", "GREATER PORTENT"))
+        pc.pcHelper.addFeatures(Divination.getFeature("14", "GREATER PORTENT"))
     }
 
 }

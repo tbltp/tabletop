@@ -7,7 +7,7 @@ import * as LandCircleDict from "./Land.json";
 export class LandCircle {
     
       static getTerrainSpells(pc: PlayerCharacter, terrain: string, level: string) {
-        pc.addSpells(LandCircle.landSpells[terrain][level], "wisdom");
+        pc.pcHelper.addSpells(LandCircle.landSpells[terrain][level], "wisdom");
       }
     
       static getFeature(level: string, featureName: string) {
@@ -15,12 +15,12 @@ export class LandCircle {
     }
     
       static land2(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(params.spellSelection, "wisdom");
-        pc.addFeatures(LandCircle.getFeature("2", "NATURAL RECOVERY"));
+        pc.pcHelper.addSpells(params.spellSelection, "wisdom");
+        pc.pcHelper.addFeatures(LandCircle.getFeature("2", "NATURAL RECOVERY"));
       }
     
       static land3(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(LandCircle.getFeature("3", "CIRCLE SPELLS"));
+        pc.pcHelper.addFeatures(LandCircle.getFeature("3", "CIRCLE SPELLS"));
         LandCircle.getTerrainSpells(pc, params.subclassSelection.options[0], "3");
       }
 
@@ -36,7 +36,7 @@ export class LandCircle {
       }
     
       static land6(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(LandCircle.getFeature("6", "LAND'S STRIDE"));
+        pc.pcHelper.addFeatures(LandCircle.getFeature("6", "LAND'S STRIDE"));
       }
 
       static land7(pc: PlayerCharacter, params: LevelingParams){
@@ -44,7 +44,7 @@ export class LandCircle {
       }
 
       static land8(pc: PlayerCharacter, params: LevelingParams){
-        const wildShapeScale: ScalingTrait = pc.findScalingTraitByName(
+        const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName(
           "Wild Shape"
         );
         wildShapeScale.challengeRating = 1;
@@ -55,11 +55,11 @@ export class LandCircle {
       }
     
       static land10(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(LandCircle.getFeature("10", "NATURE'S WARD"));
+        pc.pcHelper.addFeatures(LandCircle.getFeature("10", "NATURE'S WARD"));
       }
     
       static land14(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(LandCircle.getFeature("2", "NATURE SANCTUARY"));
+        pc.pcHelper.addFeatures(LandCircle.getFeature("2", "NATURE SANCTUARY"));
       }
 
       static landSpells = {

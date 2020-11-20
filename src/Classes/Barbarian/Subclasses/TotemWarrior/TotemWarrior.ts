@@ -9,8 +9,8 @@ export class TotemWarrior {
     }
 
     static totemWarrior3(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["BEAST SENSE", "SPEAK WITH ANIMALS"], "None");
-        pc.addFeatures(
+        pc.pcHelper.addSpells(["BEAST SENSE", "SPEAK WITH ANIMALS"], "None");
+        pc.pcHelper.addFeatures(
           TotemWarrior.getFeature("3", "SPIRIT SEEKER"),
           TotemWarrior.getFeature(
             "3",
@@ -20,7 +20,7 @@ export class TotemWarrior {
       }
     
       static totemWarrior6(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
           TotemWarrior.getFeature(
             "6",
             params.subclassSelection.options[0]
@@ -29,14 +29,14 @@ export class TotemWarrior {
       }
     
       static totemWarrior10(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["COMMUNE WITH NATURE"], "None");
-        pc.addFeatures(
+        pc.pcHelper.addSpells(["COMMUNE WITH NATURE"], "None");
+        pc.pcHelper.addFeatures(
           TotemWarrior.getFeature("10", "SPIRIT WALKER")
         );
       }
     
       static totemWarrior14(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
           TotemWarrior.getFeature(
             "14",
             params.subclassSelection.options[0]

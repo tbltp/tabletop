@@ -9,11 +9,11 @@ export class Vengeance {
       }
   
       static addArchetypeSpells(pc: PlayerCharacter, level: string){
-        pc.addSpells(this.oathSpells[level], "charisma");
+        pc.pcHelper.addSpells(this.oathSpells[level], "charisma");
       }
       
       static vengeance3(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
           Vengeance.getFeature("3", "ABJURE ENEMY"),
           Vengeance.getFeature("3", "VOW OF ENMITY")
         )
@@ -26,7 +26,7 @@ export class Vengeance {
       }
     
       static vengeance7(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Vengeance.getFeature("7", "RELENTLESS AVENGER"))
+        pc.pcHelper.addFeatures(Vengeance.getFeature("7", "RELENTLESS AVENGER"))
       }
     
       static vengeance9(pc: PlayerCharacter, params: LevelingParams) {
@@ -38,7 +38,7 @@ export class Vengeance {
       }
   
       static vengeance15(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Vengeance.getFeature("15", "SOUL OF VENGEANCE"))
+        pc.pcHelper.addFeatures(Vengeance.getFeature("15", "SOUL OF VENGEANCE"))
       }
   
       static vengeance17(pc: PlayerCharacter, params: LevelingParams) {
@@ -46,7 +46,7 @@ export class Vengeance {
       }
     
       static vengeance20(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Vengeance.getFeature("20", "AVENGING ANGEL"))
+        pc.pcHelper.addFeatures(Vengeance.getFeature("20", "AVENGING ANGEL"))
       }
 
     static oathSpells = {

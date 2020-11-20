@@ -97,13 +97,13 @@ export class Warlock extends PlayerClass {
   ) {
     switch (pactBoon.boon) {
       case "CHAIN":
-        pc.addFeatures(PactBoon["CHAIN"]);
-        pc.addSpells(["FIND FAMILIAR"], "charisma");
+        pc.pcHelper.addFeatures(PactBoon["CHAIN"]);
+        pc.pcHelper.addSpells(["FIND FAMILIAR"], "charisma");
       case "BLADE":
-        pc.addFeatures(PactBoon["BLADE"]);
+        pc.pcHelper.addFeatures(PactBoon["BLADE"]);
       case "TOME":
-        pc.addFeatures({ ...PactBoon["TOME"], choices: pactBoon.options });
-        pc.addSpells(pactBoon.options, "charisma");
+        pc.pcHelper.addFeatures({ ...PactBoon["TOME"], choices: pactBoon.options });
+        pc.pcHelper.addSpells(pactBoon.options, "charisma");
     }
   }
 
@@ -115,7 +115,7 @@ export class Warlock extends PlayerClass {
       resourceMax: { value: 1 },
       level: 1,
     };
-    pc.addResourceTraits(pactMagic);
+    pc.pcHelper.addResourceTraits(pactMagic);
     this.subclass = new WarlockSubclass(params.subclassSelection.subclass);
     this.subclassDriver(pc, "1", params);
 
@@ -125,13 +125,13 @@ export class Warlock extends PlayerClass {
 
   level2(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    pc.findResourceTraitByName("Pact Magic").resourceMax.value++;
+    pc.pcHelper.findResourceTraitByName("Pact Magic").resourceMax.value++;
     // ELDRITCH INVOCATIONS HERE
   }
 
   level3(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    let pactMagicSlots: PactMagicSlots = pc.findResourceTraitByName(
+    let pactMagicSlots: PactMagicSlots = pc.pcHelper.findResourceTraitByName(
       "Pact Magic"
     ) as PactMagicSlots;
     pactMagicSlots.level++;
@@ -140,12 +140,12 @@ export class Warlock extends PlayerClass {
 
   level4(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    let pactMagicSlots: PactMagicSlots = pc.findResourceTraitByName(
+    let pactMagicSlots: PactMagicSlots = pc.pcHelper.findResourceTraitByName(
       "Pact Magic"
     ) as PactMagicSlots;
     pactMagicSlots.level++;
@@ -159,7 +159,7 @@ export class Warlock extends PlayerClass {
 
   level7(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    let pactMagicSlots: PactMagicSlots = pc.findResourceTraitByName(
+    let pactMagicSlots: PactMagicSlots = pc.pcHelper.findResourceTraitByName(
       "Pact Magic"
     ) as PactMagicSlots;
     pactMagicSlots.level++;
@@ -168,12 +168,12 @@ export class Warlock extends PlayerClass {
 
   level8(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level9(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    let pactMagicSlots: PactMagicSlots = pc.findResourceTraitByName(
+    let pactMagicSlots: PactMagicSlots = pc.pcHelper.findResourceTraitByName(
       "Pact Magic"
     ) as PactMagicSlots;
     pactMagicSlots.level++;
@@ -187,7 +187,7 @@ export class Warlock extends PlayerClass {
 
   level11(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    pc.findResourceTraitByName("Pact Magic").resourceMax.value++;
+    pc.pcHelper.findResourceTraitByName("Pact Magic").resourceMax.value++;
     PlayerClass.pushCustomizedClassFeature(
       pc,
       11,
@@ -198,13 +198,13 @@ export class Warlock extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     // ELDRITCH INVOCATIONS HERE
   }
 
   level13(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    pc.findFeatureTraitByName("MYSTIC ARCANUM").choices.push(
+    pc.pcHelper.findFeatureTraitByName("MYSTIC ARCANUM").choices.push(
       params.mysticArcanum
     );
   }
@@ -215,20 +215,20 @@ export class Warlock extends PlayerClass {
 
   level15(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    pc.findFeatureTraitByName("MYSTIC ARCANUM").choices.push(
+    pc.pcHelper.findFeatureTraitByName("MYSTIC ARCANUM").choices.push(
       params.mysticArcanum
     );
     // ELDRITCH INVOCATIONS HERE
   }
 
   level16(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level17(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    pc.findResourceTraitByName("Pact Magic").resourceMax.value++;
-    pc.findFeatureTraitByName("MYSTIC ARCANUM").choices.push(
+    pc.pcHelper.findResourceTraitByName("Pact Magic").resourceMax.value++;
+    pc.pcHelper.findFeatureTraitByName("MYSTIC ARCANUM").choices.push(
       params.mysticArcanum
     );
   }
@@ -238,7 +238,7 @@ export class Warlock extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.handleWarlockSpellSelections(pc, params);
   }
 

@@ -16,7 +16,7 @@ export class HighElf extends Elf {
         },
         {
           title: "Extra Language",
-          description: `You can speak, read, and write one extra language of your chotce. - ${language}`,
+          description: `You can speak, read, and write one extra language of your choice. - ${language}`,
         }
       );
       this.weaponProficiencies.push(

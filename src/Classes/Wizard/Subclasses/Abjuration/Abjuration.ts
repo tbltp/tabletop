@@ -9,19 +9,19 @@ export class Abjuration {
     }
 
     static abjuration2(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Abjuration.getFeature("2", "ABJURATION SAVANT"), Abjuration.getFeature("2", "ARCANE WARD"))
+        pc.pcHelper.addFeatures(Abjuration.getFeature("2", "ABJURATION SAVANT"), Abjuration.getFeature("2", "ARCANE WARD"))
     }
     
     static abjuration6(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Abjuration.getFeature("6", "PROJECTED WARD"))
+        pc.pcHelper.addFeatures(Abjuration.getFeature("6", "PROJECTED WARD"))
     }
 
     static abjuration10(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Abjuration.getFeature("10", "IMPROVED ABJURATION"))
+        pc.pcHelper.addFeatures(Abjuration.getFeature("10", "IMPROVED ABJURATION"))
     }
 
     static abjuration14(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Abjuration.getFeature("14", "SPELL RESISTANCE"))
+        pc.pcHelper.addFeatures(Abjuration.getFeature("14", "SPELL RESISTANCE"))
     }
 
 }

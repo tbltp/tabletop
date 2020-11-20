@@ -9,19 +9,19 @@ export class Transmutation {
     }
 
     static transmutation2(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Transmutation.getFeature("2", "TRANSMUTATION SAVANT"), Transmutation.getFeature("2", "MINOR ALCHEMY"))
+        pc.pcHelper.addFeatures(Transmutation.getFeature("2", "TRANSMUTATION SAVANT"), Transmutation.getFeature("2", "MINOR ALCHEMY"))
     }
     
     static transmutation6(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Transmutation.getFeature("6", "TRANSMUTER'S STONE"))
+        pc.pcHelper.addFeatures(Transmutation.getFeature("6", "TRANSMUTER'S STONE"))
     }
 
     static transmutation10(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Transmutation.getFeature("10", "SHAPECHANGER"))
+        pc.pcHelper.addFeatures(Transmutation.getFeature("10", "SHAPECHANGER"))
     }
 
     static transmutation14(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Transmutation.getFeature( "14", "MASTER TRANSMUTER"))
+        pc.pcHelper.addFeatures(Transmutation.getFeature( "14", "MASTER TRANSMUTER"))
     }
 
 }

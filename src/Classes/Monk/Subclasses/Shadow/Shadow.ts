@@ -9,19 +9,19 @@ export class Shadow {
     }
 
     static shadow3(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Shadow.getFeature("3", "SHADOW ARTS"))
-        pc.addSpells(["DARKNESS", "DARKVISION", "PASS WITHOUT TRACE", "SILENCE", "MINOR ILLUSION"], "wisdom")
+        pc.pcHelper.addFeatures(Shadow.getFeature("3", "SHADOW ARTS"))
+        pc.pcHelper.addSpells(["DARKNESS", "DARKVISION", "PASS WITHOUT TRACE", "SILENCE", "MINOR ILLUSION"], "wisdom")
       }
     
       static shadow6(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Shadow.getFeature("6", "SHADOW STEP"))
+        pc.pcHelper.addFeatures(Shadow.getFeature("6", "SHADOW STEP"))
       }
     
       static shadow11(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Shadow.getFeature("11", "CLOAK OF SHADOWS"))
+        pc.pcHelper.addFeatures(Shadow.getFeature("11", "CLOAK OF SHADOWS"))
       }
     
       static shadow17(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(Shadow.getFeature("17", "OPPORTUNIST"))
+        pc.pcHelper.addFeatures(Shadow.getFeature("17", "OPPORTUNIST"))
       }
 }

@@ -76,6 +76,18 @@ import { Barbarian } from "./src/Classes/Barbarian/Barbarian";
 import { Bard } from "./src/Classes/Bard/Bard";
 import { PlayerClass } from "./src/Classes/PlayerClass";
 
+  // ?
+  public static quickClassLevelUp(
+    pc: PlayerCharacter,
+    pclass: PlayerClass,
+    argsAry: LevelingParams[],
+    level: number
+  ): void {
+    for (let i = 2; i <= level; i++) {
+      pclass.abilitiesAtLevels[i](pc, argsAry[i - 1]);
+    }
+  }
+
 const pc = new PlayerCharacter(12, 12, 12, 12, 12, 12);
 const bdclass = new Bard(false, [], [], {
   isNoInput: false,

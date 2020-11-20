@@ -7,7 +7,7 @@ export class FourElements {
     static fourElements3(pc: PlayerCharacter, params: LevelingParams) {
         // New elemental discipline learned, plus Elemental Attunement discipline.
         
-        pc.addScalingTraits({
+        pc.pcHelper.addScalingTraits({
             title: "Elemental Discipline Ki Points",
             description: "Maximum number of Ki Points you can spend to cast a spell with the Way of the Four Elements.",
             points: 2
@@ -15,7 +15,7 @@ export class FourElements {
     }
   
     static fourElements5(pc: PlayerCharacter, params: LevelingParams) {
-        pc.findScalingTraitByName("Elemental Discipline Ki Points").points++;
+        pc.pcHelper.findScalingTraitByName("Elemental Discipline Ki Points").points++;
     }
 
     static fourElements6(pc: PlayerCharacter, params: LevelingParams) {
@@ -23,7 +23,7 @@ export class FourElements {
     }
 
     static fourElements9(pc: PlayerCharacter, params: LevelingParams) {
-        pc.findScalingTraitByName("Elemental Discipline Ki Points").points++;
+        pc.pcHelper.findScalingTraitByName("Elemental Discipline Ki Points").points++;
     }
   
     static fourElements11(pc: PlayerCharacter, params: LevelingParams) {
@@ -31,11 +31,11 @@ export class FourElements {
     }
 
     static fourElements13(pc: PlayerCharacter, params: LevelingParams) {
-        pc.findScalingTraitByName("Elemental Discipline Ki Points").points++;
+        pc.pcHelper.findScalingTraitByName("Elemental Discipline Ki Points").points++;
     }
   
     static fourElements17(pc: PlayerCharacter, params: LevelingParams) {
         // New elemental discipline learned, ED replacements.
-        pc.findScalingTraitByName("Elemental Discipline Ki Points").points++;
+        pc.pcHelper.findScalingTraitByName("Elemental Discipline Ki Points").points++;
     }
 }

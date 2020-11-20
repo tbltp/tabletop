@@ -118,7 +118,7 @@ export class Ranger extends PlayerClass {
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.pushRangerFeatures(pc, 4);
   }
 
@@ -128,10 +128,10 @@ export class Ranger extends PlayerClass {
   }
 
   level6(pc: PlayerCharacter, params: RangerLevelingParams): void {
-    pc.findFeatureTraitByName("Favored Enemy").choices.push(
+    pc.pcHelper.findFeatureTraitByName("Favored Enemy").choices.push(
       params.favoredEnemy
     );
-    pc.findFeatureTraitByName("Natural Explorer").choices.push(
+    pc.pcHelper.findFeatureTraitByName("Natural Explorer").choices.push(
       params.favoredTerrain
     );
     this.pushRangerFeatures(pc, 6);
@@ -143,7 +143,7 @@ export class Ranger extends PlayerClass {
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.pushRangerFeatures(pc, 8);
   }
 
@@ -153,7 +153,7 @@ export class Ranger extends PlayerClass {
 
   level10(pc: PlayerCharacter, params: RangerLevelingParams): void {
     this.pushRangerFeatures(pc, 10);
-    pc.findFeatureTraitByName("Natural Explorer").choices.push(
+    pc.pcHelper.findFeatureTraitByName("Natural Explorer").choices.push(
       params.favoredTerrain
     );
   }
@@ -164,7 +164,7 @@ export class Ranger extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
@@ -172,7 +172,7 @@ export class Ranger extends PlayerClass {
   }
 
   level14(pc: PlayerCharacter, params: RangerLevelingParams): void {
-    pc.findFeatureTraitByName("Favored Enemy").choices.push(
+    pc.pcHelper.findFeatureTraitByName("Favored Enemy").choices.push(
       params.favoredEnemy
     );
     this.pushRangerFeatures(pc, 14);
@@ -184,7 +184,7 @@ export class Ranger extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
@@ -197,7 +197,7 @@ export class Ranger extends PlayerClass {
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    pc.improveAbilityScores(params.abilityScoreImprovement);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {

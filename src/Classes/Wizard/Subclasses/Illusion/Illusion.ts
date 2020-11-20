@@ -9,19 +9,19 @@ export class Illusion {
     }
 
     static illusion2(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Illusion.getFeature("2", "ILLUSION SAVANT"), Illusion.getFeature("2", "IMPROVED MINOR ILLUSION"))
+        pc.pcHelper.addFeatures(Illusion.getFeature("2", "ILLUSION SAVANT"), Illusion.getFeature("2", "IMPROVED MINOR ILLUSION"))
     }
     
     static illusion6(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Illusion.getFeature("6", "MALLEABLE ILLUSIONS"))
+        pc.pcHelper.addFeatures(Illusion.getFeature("6", "MALLEABLE ILLUSIONS"))
     }
 
     static illusion10(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Illusion.getFeature("10", "ILLUSORY SELF"))
+        pc.pcHelper.addFeatures(Illusion.getFeature("10", "ILLUSORY SELF"))
     }
 
     static illusion14(pc: PlayerCharacter, params: LevelingParams): void {
-        pc.addFeatures(Illusion.getFeature("14", "ILLUSORY REALITY"))
+        pc.pcHelper.addFeatures(Illusion.getFeature("14", "ILLUSORY REALITY"))
     }
 
 }

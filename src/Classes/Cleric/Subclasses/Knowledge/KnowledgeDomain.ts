@@ -10,7 +10,7 @@ export class KnowledgeDomain {
     }
   
     static knowledge1(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["COMMAND", "IDENTIFY"], "wisdom");
+        pc.pcHelper.addSpells(["COMMAND", "IDENTIFY"], "wisdom");
     
         // Languages
         pc.traits.languages.push(
@@ -22,7 +22,7 @@ export class KnowledgeDomain {
           pc.skills[skill].proficient = true;
           pc.skills[skill].expertise = true;
         }
-        pc.addFeatures({
+        pc.pcHelper.addFeatures({
           ...KnowledgeDomain.getFeature("1", "BLESSINGS OF KNOWLEDGE"),
           choices: [
             ...params.subclassSelection.options,
@@ -32,7 +32,7 @@ export class KnowledgeDomain {
       }
     
       static knowledge2(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
             KnowledgeDomain.getFeature(
             "2",
             "THE KNOWLEDGE OF THE AGES"
@@ -41,15 +41,15 @@ export class KnowledgeDomain {
       }
     
       static knowledge3(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["AUGURY", "SUGGESTION"], "wisdom");
+        pc.pcHelper.addSpells(["AUGURY", "SUGGESTION"], "wisdom");
       }
     
       static knowledge5(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["NONDETECTION", "SPEAK WITH DEAD"], "wisdom");
+        pc.pcHelper.addSpells(["NONDETECTION", "SPEAK WITH DEAD"], "wisdom");
       }
     
       static knowledge6(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
             KnowledgeDomain.getFeature(
             "6",
             "CHANNEL DIVINITY: READ THOUGHTS"
@@ -58,25 +58,25 @@ export class KnowledgeDomain {
       }
     
       static knowledge7(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["ARCANE EYE", "CONFUSION"], "wisdom");
+        pc.pcHelper.addSpells(["ARCANE EYE", "CONFUSION"], "wisdom");
       }
     
       static knowledge8(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
             KnowledgeDomain.getFeature("8", "POTENT SPELLCASTING")
         );
       }
     
       static knowledge9(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["LEGEND LORE", "SCRYING"], "wisdom");
+        pc.pcHelper.addSpells(["LEGEND LORE", "SCRYING"], "wisdom");
       }
     
       static knowledge14(pc: PlayerCharacter, params: LevelingParams) {
-        pc.findScalingTraitByName("Divine Strike").dice = "2d8";
+        pc.pcHelper.findScalingTraitByName("Divine Strike").dice = "2d8";
       }
     
       static knowledge17(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
             KnowledgeDomain.getFeature("17", "VISION OF THE PAST")
         );
       }  

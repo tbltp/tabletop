@@ -10,14 +10,14 @@ export class TrickeryDomain {
     }
 
     static trickery1(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["CHARM PERSON", "DISGUISE SELF"], "wisdom");
-        pc.addFeatures(
+        pc.pcHelper.addSpells(["CHARM PERSON", "DISGUISE SELF"], "wisdom");
+        pc.pcHelper.addFeatures(
           TrickeryDomain.getFeature("1", "BLESSING OF THE TRICKSTER")
         );
       }
     
       static trickery2(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
           TrickeryDomain.getFeature(
             "2",
             "CHANNEL DIVINITY: INVOKE DUPLICITY"
@@ -26,15 +26,15 @@ export class TrickeryDomain {
       }
     
       static trickery3(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["MIRROR IMAGE", "PASS WITHOUT TRACE"], "wisdom");
+        pc.pcHelper.addSpells(["MIRROR IMAGE", "PASS WITHOUT TRACE"], "wisdom");
       }
     
       static trickery5(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["BLINK", "DISPEL MAGIC"], "wisdom");
+        pc.pcHelper.addSpells(["BLINK", "DISPEL MAGIC"], "wisdom");
       }
     
       static trickery6(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
           TrickeryDomain.getFeature(
             "6",
             "CHANNEL DIVINITY: CLOAK OF SHADOWS"
@@ -43,7 +43,7 @@ export class TrickeryDomain {
       }
     
       static trickery7(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["DIMENSION DOOR", "POLYMOPRH"], "wisdom");
+        pc.pcHelper.addSpells(["DIMENSION DOOR", "POLYMOPRH"], "wisdom");
       }
     
       static trickery8(pc: PlayerCharacter, params: LevelingParams) {
@@ -52,18 +52,18 @@ export class TrickeryDomain {
           description: "Dice used for Divine Strike (poison damage).",
           dice: "1d8",
         };
-        pc.addScalingTraits(divineStrike);
-        pc.addFeatures(
+        pc.pcHelper.addScalingTraits(divineStrike);
+        pc.pcHelper.addFeatures(
           TrickeryDomain.getFeature("8", "DIVINE STRIKE")
         );
       }
     
       static trickery9(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addSpells(["DOMINATE PERSON", "MODIFY MEMORY"], "wisdom");
+        pc.pcHelper.addSpells(["DOMINATE PERSON", "MODIFY MEMORY"], "wisdom");
       }
     
       static trickery17(pc: PlayerCharacter, params: LevelingParams) {
-        pc.addFeatures(
+        pc.pcHelper.addFeatures(
           TrickeryDomain.getFeature("17", "IMPROVED DUPLICITY")
         );
       }
