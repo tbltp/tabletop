@@ -28,6 +28,7 @@ export class CharacterSheet {
   race: Race;
   playerClasses: { [key: string]: PlayerClass } = {};
   levels: { [key: string]: PlayerClass["level"] } = {};
+  featLevels: number[] = [4, 8, 12, 16, 19];
   feats: Feat[];
   background: Background;
 
@@ -60,8 +61,14 @@ export class CharacterSheet {
       params
     );
 
+    //feat logic vs ability score improvement?
+    if(this.featLevels.includes(level) && params.featChoice) {
+      this.feats.push(params.featChoice);
+    } else {
+      
+    }
+
     this.applySpellSlotsAtLevelUp();
-    //logic for levels 4, 8, 12, 16, 19 - either level as normal or pick a feat
   }
 
   applySpellSlotsAtLevelUp(){
