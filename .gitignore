@@ -6,3 +6,4 @@ output*
 .DS_Store
 *.test.ts
 *.js
+*.py
