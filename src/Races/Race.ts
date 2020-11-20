@@ -86,7 +86,6 @@ export abstract class Race {
     this.addWeaponProficiencies(pc);
     this.addArmorProficiencies(pc);
     this.addToolProficiencies(pc);
-    this.addFeatures(pc);
     pc.speed.value = this.speed;
     pc.size = this.size;
 
