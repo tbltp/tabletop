@@ -14,19 +14,56 @@ export class ArcaneTrickster {
       // this.addSpellcasting(pc, "ROGUE (ARCANE TRICKSTER)");
 
 
-        pc.addSpells(params.spellSelection, "intelligence")
+        pc.addSpells([...params.spellSelection, "MAGE HAND"], "intelligence")
         pc.addFeatures(ArcaneTrickster.getFeature("3", "MAGE HAND LEGERDEMAIN"));
       }
+      
+      static arcaneTrickster4(pc: PlayerCharacter, params: LevelingParams){
+        pc.addSpells(params.spellSelection, "intelligence")
+      }
+
+      static arcaneTrickster7(pc: PlayerCharacter, params: LevelingParams){
+        pc.addSpells(params.spellSelection, "intelligence")
+      }
     
+      static arcaneTrickster8(pc: PlayerCharacter, params: LevelingParams){
+        pc.addSpells(params.spellSelection, "intelligence")
+      }
+
       static arcaneTrickster9(pc: PlayerCharacter, params: LevelingParams) {
         pc.addFeatures(ArcaneTrickster.getFeature("9", "MAGICAL AMBUSH"));
       }
     
-      static arcaneTrickster13(pc: PlayerCharacter, params: LevelingParams) {
+      static arcaneTrickster10(pc: PlayerCharacter, params: LevelingParams) {
+        pc.addSpells(params.spellSelection, "intelligence")
+      }
+
+      static arcaneTrickster11(pc: PlayerCharacter, params: LevelingParams){
+        pc.addSpells(params.spellSelection, "intelligence")
+      }
+
+      static arcaneTrickster13(pc: PlayerCharacter, params: LevelingParams){
         pc.addFeatures(ArcaneTrickster.getFeature("13", "VERSATILE TRICKSTER"));
+        pc.addSpells(params.spellSelection, "intelligence")
+      }
+
+      static arcaneTrickster14(pc: PlayerCharacter, params: LevelingParams){
+        pc.addSpells(params.spellSelection, "intelligence")
+      }
+
+      static arcaneTrickster16(pc: PlayerCharacter, params: LevelingParams){
+        pc.addSpells(params.spellSelection, "intelligence")
       }
     
       static arcaneTrickster17(pc: PlayerCharacter, params: LevelingParams) {
         pc.addFeatures(ArcaneTrickster.getFeature("17", "SPELL THIEF"));
+      }
+
+      static arcaneTrickster19(pc: PlayerCharacter, params: LevelingParams){
+        pc.addSpells(params.spellSelection, "intelligence")
+      }
+
+      static arcaneTrickster20(pc: PlayerCharacter, params: LevelingParams){
+        pc.addSpells(params.spellSelection, "intelligence")
       }
 }

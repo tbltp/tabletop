@@ -26,10 +26,18 @@ export class FighterSubclass extends Subclass {
         },
         "ELDRITCH KNIGHT": {
           "3": EldritchKnight.eldritchKnight3,
+          "4": EldritchKnight.eldritchKnight4,
           "7": EldritchKnight.eldritchKnight7,
+          "8": EldritchKnight.eldritchKnight8,
           "10": EldritchKnight.eldritchKnight10,
+          "11": EldritchKnight.eldritchKnight11,
+          "13": EldritchKnight.eldritchKnight13,
+          "14": EldritchKnight.eldritchKnight14,
           "15": EldritchKnight.eldritchKnight15,
+          "16": EldritchKnight.eldritchKnight16,
           "18": EldritchKnight.eldritchKnight18,
+          "19": EldritchKnight.eldritchKnight19,
+          "20": EldritchKnight.eldritchKnight20,
         },
       };
 }

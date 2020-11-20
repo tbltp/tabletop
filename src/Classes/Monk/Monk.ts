@@ -50,7 +50,7 @@ export class Monk extends PlayerClass {
   }
 
   /** TODO
-   *  WAY OF THE FOUR ELEMENTS - Add Elemental Disciplines, Max Key Point Leveling at lvl 5, 9, 13, 17
+   *  WAY OF THE FOUR ELEMENTS - Add Elemental Disciplines
    */
 
 
@@ -137,12 +137,12 @@ export class Monk extends PlayerClass {
     this.pushMonkFeatures(pc, 5);
     pc.findResourceTraitByName("Ki Points").resourceMax.value++;
     pc.findScalingTraitByName("Martial Arts").dice = "1d6";
+    this.subclassDriver(pc, "5", params);
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 6);
     pc.findResourceTraitByName("Ki Points").resourceMax.value++;
-
     this.subclassDriver(pc, "6", params);    
   }
 
@@ -160,6 +160,7 @@ export class Monk extends PlayerClass {
   level9(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 9);
     pc.findResourceTraitByName("Ki Points").resourceMax.value++;
+    this.subclassDriver(pc, "9", params);
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
@@ -184,7 +185,7 @@ export class Monk extends PlayerClass {
   level13(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 13);
     pc.findResourceTraitByName("Ki Points").resourceMax.value++;
-
+    this.subclassDriver(pc, "13", params);
     // TONGUE OF SUN AND MOON
     for (const language of Object.keys(Languages)) {
       pc.traits.languages.push(Languages[language]);

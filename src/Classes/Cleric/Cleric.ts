@@ -161,6 +161,8 @@ export class Cleric extends PlayerClass {
   level7(pc: PlayerCharacter, params: LevelingParams): void {
     // divine domain spells
     this.subclassDriver(pc, "7", params);
+    pc.addSpells([...SpellList["Cleric"][4]], SpellcastingAbility["CLERIC"]);
+
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
@@ -174,6 +176,7 @@ export class Cleric extends PlayerClass {
   level9(pc: PlayerCharacter, params: LevelingParams): void {
     // divine domain spells
     this.subclassDriver(pc, "9", params);
+    pc.addSpells([...SpellList["Cleric"][5]], SpellcastingAbility["CLERIC"]);
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
@@ -193,6 +196,7 @@ export class Cleric extends PlayerClass {
   level11(pc: PlayerCharacter, params: LevelingParams): void {
     // destroy undead
     pc.findScalingTraitByName("Destroy Undead").challengeRating++;
+    pc.addSpells([...SpellList["Cleric"][6]], SpellcastingAbility["CLERIC"]);
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
@@ -200,6 +204,7 @@ export class Cleric extends PlayerClass {
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
+    pc.addSpells([...SpellList["Cleric"][7]], SpellcastingAbility["CLERIC"]);
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
@@ -209,6 +214,7 @@ export class Cleric extends PlayerClass {
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
+    pc.addSpells([...SpellList["Cleric"][8]], SpellcastingAbility["CLERIC"]);
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
@@ -220,6 +226,7 @@ export class Cleric extends PlayerClass {
     pc.findScalingTraitByName("Destroy Undead").challengeRating++;
     // divine domain
     this.subclassDriver(pc, "17", params);
+    pc.addSpells([...SpellList["Cleric"][9]], SpellcastingAbility["CLERIC"]);
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {

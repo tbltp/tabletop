@@ -23,8 +23,11 @@ export class MonkSubclass extends Subclass {
         },
         "FOUR ELEMENTS": {
           "3": FourElements.fourElements3,
+          "5": FourElements.fourElements5,
           "6": FourElements.fourElements6,
+          "9": FourElements.fourElements9,
           "11": FourElements.fourElements11,
+          "13": FourElements.fourElements13,
           "17": FourElements.fourElements17
         }
     }

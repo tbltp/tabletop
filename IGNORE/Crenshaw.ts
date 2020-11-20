@@ -9,6 +9,7 @@ import { Jsonify } from "./Jsonify";
 
 
 let pc: CharacterSheet = new CharacterSheet(
+    "Crenshaw",
     new PlayerCharacter(14, 14, 14, 14, 14, 14),
     new Tiefling(),
     new Barbarian(

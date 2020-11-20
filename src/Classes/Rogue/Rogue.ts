@@ -110,6 +110,7 @@ export class Rogue extends PlayerClass {
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
+    this.subclassDriver(pc, "4", params);
     pc.improveAbilityScores(params.abilityScoreImprovement);
   }
 
@@ -132,10 +133,12 @@ export class Rogue extends PlayerClass {
   level7(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushRogueFeatures(pc, 7);
     pc.findScalingTraitByName("Sneak Attack").dice = "4d6";
+    this.subclassDriver(pc, "7", params);
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
     pc.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "8", params);
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
@@ -145,11 +148,13 @@ export class Rogue extends PlayerClass {
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
     pc.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "10", params);
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushRogueFeatures(pc, 11);
     pc.findScalingTraitByName("Sneak Attack").dice = "6d6";
+    this.subclassDriver(pc, "11", params);
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
@@ -163,6 +168,7 @@ export class Rogue extends PlayerClass {
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushRogueFeatures(pc, 14);
+    this.subclassDriver(pc, "14", params);
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
@@ -174,6 +180,7 @@ export class Rogue extends PlayerClass {
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
     pc.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "16", params);
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
@@ -188,9 +195,11 @@ export class Rogue extends PlayerClass {
   level19(pc: PlayerCharacter, params: LevelingParams): void {
     pc.improveAbilityScores(params.abilityScoreImprovement);
     pc.findScalingTraitByName("Sneak Attack").dice = "10d6";
+    this.subclassDriver(pc, "19", params);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushRogueFeatures(pc, 20);
+    this.subclassDriver(pc, "20", params);
   }
 }

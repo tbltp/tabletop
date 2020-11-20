@@ -1,6 +1,7 @@
 import { PlayerClass, LevelingParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
+import * as SpellList from "../../../Assets/SpellList.json";
 import * as FightingStyle from "../../../Assets/FightingStyles.json";
 import * as PaladinClassTraits from "./Paladin.json";
 import { PaladinSubclass } from "./Subclasses/PaladinSubclass";
@@ -106,6 +107,7 @@ export class Paladin extends PlayerClass {
     this.upgradeLayOnHands(pc);
     this.pushPaladinFeatures(pc, 2);
     pc.addFeatures(FightingStyle[params.fightingStyle[0]]);
+    pc.addSpells([...SpellList["Paladin"][1]], SpellcastingAbility["PALADIN"]);
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
@@ -135,6 +137,7 @@ export class Paladin extends PlayerClass {
   level5(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
     this.pushPaladinFeatures(pc, 5);
+    pc.addSpells([...SpellList["Paladin"][2]], SpellcastingAbility["PALADIN"]);
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
@@ -154,6 +157,7 @@ export class Paladin extends PlayerClass {
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
+    pc.addSpells([...SpellList["Paladin"][3]], SpellcastingAbility["PALADIN"]);
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
@@ -173,6 +177,7 @@ export class Paladin extends PlayerClass {
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
+    pc.addSpells([...SpellList["Paladin"][4]], SpellcastingAbility["PALADIN"]);
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
@@ -192,6 +197,7 @@ export class Paladin extends PlayerClass {
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
+    pc.addSpells([...SpellList["Paladin"][5]], SpellcastingAbility["PALADIN"]);
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {

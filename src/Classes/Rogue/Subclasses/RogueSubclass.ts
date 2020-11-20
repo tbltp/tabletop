@@ -24,9 +24,18 @@ export class RogueSubclass extends Subclass {
     },
     "ARCANE TRICKSTER": {
       "3": ArcaneTrickster.arcaneTrickster3,
+      "4": ArcaneTrickster.arcaneTrickster4,
+      "7": ArcaneTrickster.arcaneTrickster7,
+      "8": ArcaneTrickster.arcaneTrickster8,
       "9": ArcaneTrickster.arcaneTrickster9,
+      "10": ArcaneTrickster.arcaneTrickster10,
+      "11": ArcaneTrickster.arcaneTrickster11,
       "13": ArcaneTrickster.arcaneTrickster13,
+      "14": ArcaneTrickster.arcaneTrickster14,
+      "16": ArcaneTrickster.arcaneTrickster16,
       "17": ArcaneTrickster.arcaneTrickster17,
+      "19": ArcaneTrickster.arcaneTrickster19,
+      "20": ArcaneTrickster.arcaneTrickster20
     }
   };
 }

@@ -125,17 +125,16 @@ export class Druid extends PlayerClass {
     }
     this.subclassDriver(pc, "2", params);    
 
-    pc.addSpells(
-      [...SpellList["Druid"][2]],
-      SpellcastingAbility["DRUID"]
-    );
-
     this.pushDruidFeatures(pc, 2);
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     // Terrain spells
-    this.subclassDriver(pc, "3", params);    
+    this.subclassDriver(pc, "3", params); 
+    pc.addSpells(
+      [...SpellList["Druid"][2]],
+      SpellcastingAbility["DRUID"]
+    );   
 
   }
 
@@ -171,7 +170,10 @@ export class Druid extends PlayerClass {
   level7(pc: PlayerCharacter, params: LevelingParams): void {
     // terrain spells
     this.subclassDriver(pc, "7", params);    
-
+    pc.addSpells(
+      [...SpellList["Druid"][4]],
+      SpellcastingAbility["DRUID"]
+    );
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
@@ -189,7 +191,10 @@ export class Druid extends PlayerClass {
   level9(pc: PlayerCharacter, params: LevelingParams): void {
     // terrain spells
     this.subclassDriver(pc, "9", params);    
-
+    pc.addSpells(
+      [...SpellList["Druid"][5]],
+      SpellcastingAbility["DRUID"]
+    );
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
@@ -198,6 +203,10 @@ export class Druid extends PlayerClass {
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
+    pc.addSpells(
+      [...SpellList["Druid"][6]],
+      SpellcastingAbility["DRUID"]
+    );
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
@@ -205,6 +214,10 @@ export class Druid extends PlayerClass {
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
+    pc.addSpells(
+      [...SpellList["Druid"][7]],
+      SpellcastingAbility["DRUID"]
+    );
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
@@ -213,6 +226,10 @@ export class Druid extends PlayerClass {
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
+    pc.addSpells(
+      [...SpellList["Druid"][8]],
+      SpellcastingAbility["DRUID"]
+    );
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
@@ -220,6 +237,10 @@ export class Druid extends PlayerClass {
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
+    pc.addSpells(
+      [...SpellList["Druid"][9]],
+      SpellcastingAbility["DRUID"]
+    );
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {

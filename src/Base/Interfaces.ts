@@ -65,6 +65,7 @@ export interface ScalingTrait extends Trait {
   bonus?: number;
   dice?: string;
   challengeRating?: number;
+  points?: number;
 }
 
 export interface ISpell {
