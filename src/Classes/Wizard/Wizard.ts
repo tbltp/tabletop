@@ -186,7 +186,13 @@ export class Wizard extends PlayerClass {
   }
 }
 
+export class DSWizard extends Wizard {
+  constructor(){
+    super(true, {isNoInput: true});
+  }
+}
+
 interface WizardLevelingParams extends LevelingParams {
-  spellBookSpells: string[]
-  signatureSpells: string[]
+  spellBookSpells?: string[]
+  signatureSpells?: string[]
 }

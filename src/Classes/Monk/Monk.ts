@@ -233,3 +233,9 @@ export class Monk extends PlayerClass {
     pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
   }
 }
+
+export class DSMonk extends Monk {
+  constructor(){
+    super(true, {isNoInput: true});
+  }
+}

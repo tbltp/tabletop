@@ -1,6 +1,5 @@
-import { PlayerCharacter } from "Base/PlayerCharacter";
-import { LevelingParams } from "Classes/PlayerClass";
-import { SpellSlotFactory } from "Classes/SpellSlotFactory";
+import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { LevelingParams } from "../../../../Classes/PlayerClass";
 import * as EldritchKnightArchetype from "./EldritchKnight.json"
 
 export class EldritchKnight {

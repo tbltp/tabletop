@@ -41,4 +41,10 @@ export class WaterGenasi extends Genasi {
     }
   
   }
+
+  export class DSWaterGenasi extends WaterGenasi {
+    constructor(){
+      super()
+    }
+  }
   

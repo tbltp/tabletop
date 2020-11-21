@@ -192,6 +192,12 @@ export class Fighter extends PlayerClass {
   }
 }
 
+export class DSFighter extends Fighter {
+  constructor(){
+    super(true, {isNoInput: true});
+  }
+}
+
 export interface FighterLevelingParams extends LevelingParams {
   artisanToolProficiency?: string
 }

@@ -1,5 +1,5 @@
-import { PlayerCharacter } from "Base/PlayerCharacter";
-import { LevelingParams } from "Classes/PlayerClass";
+import { PlayerCharacter } from "../../../Base/PlayerCharacter";
+import { LevelingParams } from "../../../Classes/PlayerClass";
 import { Subclass } from "../../Subclass";
 import { LandCircle } from "./Land/LandCircle"
 import { MoonCircle } from "./Moon/MoonCircle"

@@ -1,5 +1,5 @@
-import { PlayerCharacter } from "Base/PlayerCharacter";
-import { LevelingParams, PlayerClass } from "Classes/PlayerClass";
+import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { LevelingParams, PlayerClass } from "../../../../Classes/PlayerClass";
 import * as ChampionArchetype from "./Champion.json"
 
 export class Champion {

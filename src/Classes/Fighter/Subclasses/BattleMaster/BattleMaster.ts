@@ -1,6 +1,6 @@
-import { ResourceTrait } from "Base/Interfaces";
-import { PlayerCharacter } from "Base/PlayerCharacter";
-import { LevelingParams } from "Classes/PlayerClass";
+import { ResourceTrait } from "../../../../Base/Interfaces";
+import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { LevelingParams } from "../../../../Classes/PlayerClass";
 import { FighterLevelingParams } from "../../Fighter";
 import * as BattleMasterDict from "./BattleMaster.json"
 

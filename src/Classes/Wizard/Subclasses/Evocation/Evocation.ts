@@ -1,5 +1,5 @@
-import { PlayerCharacter } from "Base/PlayerCharacter";
-import { LevelingParams } from "Classes/PlayerClass";
+import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { LevelingParams } from "../../../../Classes/PlayerClass";
 import * as EvocationSchoolDict from "./Evocation.json"
 
 export class Evocation {

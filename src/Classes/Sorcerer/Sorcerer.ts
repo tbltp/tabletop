@@ -53,8 +53,6 @@ export class Sorcerer extends PlayerClass {
    * ARCANE FOCUS OR COMPONENT POUCH
    */
 
-  metaMagicAbilities: string[];
-
   abilitiesAtLevels = {
     "1": this.level1,
     "2": this.level2,
@@ -233,6 +231,12 @@ export class Sorcerer extends PlayerClass {
     pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.pushSorcererFeatures(pc, 20);
     this.subclassDriver(pc, "20", params);
+  }
+}
+
+export class DSSorcerer extends Sorcerer {
+  constructor(){
+    super(true, {isNoInput: true});
   }
 }
 

@@ -1,6 +1,6 @@
-import { ScalingTrait } from "Base/Interfaces";
-import { PlayerCharacter } from "Base/PlayerCharacter";
-import { LevelingParams } from "Classes/PlayerClass";
+import { ScalingTrait } from "../../../../Base/Interfaces";
+import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { LevelingParams } from "../../../../Classes/PlayerClass";
 import * as LandCircleDict from "./Land.json";
 
 

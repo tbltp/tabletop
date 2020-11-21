@@ -214,5 +214,4 @@ export class DSBarbarian extends Barbarian {
   constructor(){
     super(true);
   }
-
 }

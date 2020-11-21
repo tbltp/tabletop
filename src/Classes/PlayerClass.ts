@@ -286,8 +286,6 @@ export abstract class PlayerClass {
 }
 
 
-
-
 export interface LevelingParams {
   isNoInput: boolean;
   abilityScoreImprovement?: {

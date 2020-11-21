@@ -244,6 +244,6 @@ export class Cleric extends PlayerClass {
 
 export class DSCleric extends Cleric {
   constructor(){
-    super(false, {isNoInput: true});
+    super(true, {isNoInput: true});
   }
 }

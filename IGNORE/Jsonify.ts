@@ -3,17 +3,12 @@ import * as fs from "fs";
 import { PlayerCharacter } from "../src/Base/PlayerCharacter";
 import { Race } from "../src/Races/Race";
 import { PlayerClass } from "../src/Classes/PlayerClass";
-import { Background, DSSage } from "../src/Backgrounds/Background";
-import { DSFireGenasi } from "../src/Races/Genasi/Subrace/FireGenasi";
-import { DSBarbarian } from "../src/Classes/Barbarian/Barbarian";
+import { Background, DSBackground } from "../src/Backgrounds/Background";
 import { BarbarianSubclass } from "../src/Classes/Barbarian/Subclasses/BarbarianSubclass";
+import { Deserialize } from './Deserialize';
 
 export class Jsonify {
   static dumpToJSON(sheet: CharacterSheet, filename: string) {
-    if(filename === 'NewBunsen') {
-      console.log(sheet.character);
-      console.log(sheet);
-    }
     fs.writeFileSync(`./IGNORE/${filename}.json`, JSON.stringify(sheet, 
     
     (key, value) => {
@@ -53,55 +48,31 @@ export class Jsonify {
     let pc: PlayerCharacter = new PlayerCharacter(...abilityScores);
     pc = this.buildCharacter(pc, jsonSheet);
 
-    let race: Race = Jsonify.deserializeRace(jsonSheet['race']['name'])
+    let race: Race = Deserialize.deserializeRace(jsonSheet['race']['name'])
     race = this.buildRace(race, jsonSheet);
 
-    const pclasses: PlayerClass[] = Jsonify.deserializePlayerClasses(Object.keys(jsonSheet['playerClasses']));
-    const barbClass: PlayerClass = Jsonify.buildClass(pclasses[0], jsonSheet);
+    const pclassesEmpty: PlayerClass[] = Deserialize.deserializePlayerClasses(Object.keys(jsonSheet['playerClasses']));
+    const pclasses: PlayerClass[] = Jsonify.buildClasses(pclassesEmpty, jsonSheet);
+    const pclass: PlayerClass = pclasses[0];
 
-    let bg: Background = Jsonify.deserializeBackground(jsonSheet['background']['name']);
+    let bg: Background = new DSBackground();
     bg = this.buildBackground(bg, jsonSheet);
 
-    const charSheet = new CharacterSheet(name, pc, race, barbClass, bg, true);
+    const charSheet = new CharacterSheet(name, pc, race, pclass, bg, true);
+    
+    for(const pclass of pclasses) {
+      charSheet.playerClasses[pclass.name] = pclass;
+    }
+
     console.log("Object has been created from file");
     return charSheet;
-  }
- 
-  static deserializePlayerClasses(classNames: string[]): PlayerClass[] {
-    
-    let classes = []
-    
-    for( const className of classNames) {
-      switch(className) {
-        case "Barbarian":
-          classes.push(new DSBarbarian());
-      }
-    }
-    
-    return classes;
-  }
-
-  static deserializeRace(race: string): Race {
-    switch(race) {
-      case "Fire Genasi":
-        return new DSFireGenasi();
-    }
-  }
-
-  static deserializeBackground(background: string): Background {
-    switch(background) {
-      case "Sage":
-        return new DSSage();
-    }
   }
 
   static buildCharacter(emptyCharacter: PlayerCharacter, jsonSheet: object): PlayerCharacter {
     for(const property of Object.getOwnPropertyNames(jsonSheet['character'])){
       
       if(property === "abilityScores"){
-        console.log("!")
         for( const ability in jsonSheet['character'][property]){ 
-          console.log(ability)
           emptyCharacter.abilityScores[ability].savingThrowProficiency = jsonSheet['character'][property][ability]["savingThrowProficiency"]
         }
       }
@@ -123,18 +94,23 @@ export class Jsonify {
     return dsRace;
   }
   
-  static buildClass(dsClass: PlayerClass, jsonSheet: object): PlayerClass {
+  static buildClasses(dsClasses: PlayerClass[], jsonSheet: object): PlayerClass[] {
     
-    for(const property of Object.getOwnPropertyNames(dsClass)){
-      if(property === 'abilitiesAtLevels') { continue; }
-      dsClass[property] = jsonSheet['playerClasses'][dsClass.name][property];
-      
+    for(const dsClass of dsClasses){
+
+      for(const property of Object.getOwnPropertyNames(dsClass)){
+        if(property === 'abilitiesAtLevels') { continue; }
+        dsClass[property] = jsonSheet['playerClasses'][dsClass.name][property];
+      }
+
+      // Fucking Druid Terrains Death to Circle of Land
+      if(jsonSheet['playerClasses'][dsClass.name]["subclass"]){
+        if(jsonSheet['playerClasses'][dsClass.name]['subclass']['title'] == "LAND") { dsClass.subclass = Deserialize.deserializeSubclass(jsonSheet['playerClasses'][dsClass.name], jsonSheet['playerClasses'][dsClass.name]["subclass"]["title"], jsonSheet['playerClasses'][dsClass.name]['subclass']['terrain']) }
+        else { dsClass.subclass = Deserialize.deserializeSubclass(dsClass.name, jsonSheet['playerClasses'][dsClass.name]["subclass"]["title"]) }
+      }
     }
 
-    if(jsonSheet['playerClasses'][dsClass.name]["subclass"]){
-      dsClass.subclass = new BarbarianSubclass(jsonSheet['playerClasses'][dsClass.name]["subclass"]["title"])
-    }
-    return dsClass;
+    return dsClasses;
   }
 
   static buildBackground(dsBg: Background, jsonSheet: object): Background {
@@ -143,9 +119,6 @@ export class Jsonify {
     }
     return dsBg;
   }
-
-
-
 
   static extractAbilityScores(jsonSheet: object): [ number, number, number, number, number, number ] {
     
@@ -157,56 +130,4 @@ export class Jsonify {
     return outputScores;
   }
 
-
-
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 }

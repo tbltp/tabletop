@@ -94,3 +94,15 @@ export abstract class Race {
     }
   }
 }
+
+export class DSRace extends Race {
+  constructor(){
+    super("", "", -1, "", [], [], [], [], []);
+  }
+
+  abilitiesAtLevels = {}
+
+  proficiencies(){}
+
+  abilityIncrease(){}
+}

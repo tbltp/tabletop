@@ -279,3 +279,9 @@ export class Bard extends PlayerClass {
 export interface BardLevelingParams extends LevelingParams {
   magicalSecretsSpellSelection?: string[];
 }
+
+export class DSBard extends Bard {
+  constructor(){
+    super(true, [], [], {isNoInput: true});
+  }
+}

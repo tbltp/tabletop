@@ -6,6 +6,7 @@ import { CharacterSheet } from "../src/Base/CharacterSheet";
 
 import { Jsonify } from "./Jsonify";
 import { Ranger } from "../src/Classes/Ranger/Ranger";
+import { Barbarian } from "../src/Classes/Barbarian/Barbarian";
 
 let pc: CharacterSheet = new CharacterSheet(
   "Alaiyo",
@@ -52,7 +53,16 @@ pc.levelUp(
   subclassSelection: { subclass: "VALOR" },
 });
 
+
 pc.multiClass(new Ranger(true, ["perception"], {isNoInput: false, favoredEnemy: "White People", favoredTerrain: "Cities"}));
+
+//pc.multiClass(new Barbarian(true));
 
 
 Jsonify.dumpToJSON(pc, "Alaiyo");
+
+let newsheet: CharacterSheet = Jsonify.dumpFromLocal(`./IGNORE/Alaiyo.json`);
+console.log(newsheet.playerClasses["Bard"].subclass)
+newsheet.levelUp("Ranger", 10, {isNoInput: false, spellSelection: ["AID"], fightingStyle: ["ARCHERY"]});
+
+Jsonify.dumpToJSON(newsheet, "Alaiyo");

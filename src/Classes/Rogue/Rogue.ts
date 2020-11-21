@@ -203,3 +203,9 @@ export class Rogue extends PlayerClass {
     this.subclassDriver(pc, "20", params);
   }
 }
+
+export class DSRogue extends Rogue {
+  constructor(){
+    super(true, [], {isNoInput: true});
+  }
+}

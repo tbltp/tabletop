@@ -247,14 +247,20 @@ export class Warlock extends PlayerClass {
   }
 }
 
+export class DSWarlock extends Warlock {
+  constructor(){
+    super(true, {isNoInput: true});
+  }
+}
+
 interface PactMagicSlots extends ResourceTrait {
   level?: number;
 }
 
 interface WarlockLevelingParams extends LevelingParams {
-  pactBoon: {
+  pactBoon?: {
     boon: string;
     options?: [];
   };
-  mysticArcanum: string;
+  mysticArcanum?: string;
 }

@@ -57,3 +57,9 @@ export class Tiefling extends Race {
     return;
   }
 }
+
+export class DSTiefling extends Tiefling {
+  constructor(){
+    super()
+  }
+}

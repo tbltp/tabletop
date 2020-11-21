@@ -52,3 +52,8 @@ export class DarkElf extends Elf {
     }
   }
   
+  export class DSDarkElf extends DarkElf {
+    constructor(){
+      super("")
+    }
+  }

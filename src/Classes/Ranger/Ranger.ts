@@ -205,6 +205,12 @@ export class Ranger extends PlayerClass {
   }
 }
 
+export class DSRanger extends Ranger {
+  constructor(){
+    super(true, [], {isNoInput: true});
+  }
+}
+
 interface RangerLevelingParams extends LevelingParams {
   favoredEnemy?: string;
   favoredTerrain?: string;

@@ -214,3 +214,9 @@ export class Paladin extends PlayerClass {
     this.subclassDriver(pc, "20", params);
   }
 }
+
+export class DSPaladin extends Paladin {
+  constructor(){
+    super(true, {isNoInput: true});
+  }
+}

@@ -51,8 +51,6 @@ export class Druid extends PlayerClass {
     }
   }
   
-  terrain?: string | null = null;
-
   abilitiesAtLevels = {
     "1": this.level1,
     "2": this.level2,
@@ -254,5 +252,11 @@ export class Druid extends PlayerClass {
     // archdruid
     pc.pcHelper.findResourceTraitByName("Wild Shape").resourceMax.value = Infinity;
     this.pushDruidFeatures(pc, 20);
+  }
+}
+
+export class DSDruid extends Druid {
+  constructor(){
+    super(true, {isNoInput: true});
   }
 }
