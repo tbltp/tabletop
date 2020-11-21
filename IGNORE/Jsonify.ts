@@ -24,13 +24,10 @@ export class Jsonify {
     return;
   }
 
-
   static dumpFromLocal(filename: string): CharacterSheet {
 
     return Jsonify.dumpToObject(fs.readFileSync(filename, 'utf8'));
   }
-
- 
 
   static dumpToObject(text: string): CharacterSheet {
     
@@ -51,12 +48,12 @@ export class Jsonify {
     let race: Race = Deserialize.deserializeRace(jsonSheet['race']['name'])
     race = this.buildRace(race, jsonSheet);
 
+    let bg: Background = new DSBackground();
+    bg = this.buildBackground(bg, jsonSheet);
+
     const pclassesEmpty: PlayerClass[] = Deserialize.deserializePlayerClasses(Object.keys(jsonSheet['playerClasses']));
     const pclasses: PlayerClass[] = Jsonify.buildClasses(pclassesEmpty, jsonSheet);
     const pclass: PlayerClass = pclasses[0];
-
-    let bg: Background = new DSBackground();
-    bg = this.buildBackground(bg, jsonSheet);
 
     const charSheet = new CharacterSheet(name, pc, race, pclass, bg, true);
     

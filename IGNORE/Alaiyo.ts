@@ -62,7 +62,6 @@ pc.multiClass(new Ranger(true, ["perception"], {isNoInput: false, favoredEnemy: 
 Jsonify.dumpToJSON(pc, "Alaiyo");
 
 let newsheet: CharacterSheet = Jsonify.dumpFromLocal(`./IGNORE/Alaiyo.json`);
-console.log(newsheet.playerClasses["Bard"].subclass)
 newsheet.levelUp("Ranger", 10, {isNoInput: false, spellSelection: ["AID"], fightingStyle: ["ARCHERY"]});
 
 Jsonify.dumpToJSON(newsheet, "Alaiyo");
