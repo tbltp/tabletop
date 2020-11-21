@@ -57,6 +57,12 @@ export abstract class Background {
   }
 }
 
+export class DSBackground extends Background {
+  constructor() {
+    super("", [], [], [], [], [], -1, []);
+  }
+}
+
 export class Acolyte extends Background {
   constructor(languages: string[], holySymbol: string) {
     super(
@@ -284,6 +290,12 @@ export class Sage extends Background {
         },
       ]
     );
+  }
+}
+
+export class DSSage extends Sage {
+  constructor(){
+    super([])
   }
 }
 

@@ -1,0 +1,36 @@
+{
+  "title": "Knowledge Domain", 
+  "description": "The gods of knowledge - including Oghma, Boccob, Gilean, Aureon, and Thoth - value learning and understanding above all. Some teach that knowledge is to be gathered and shared in libraries and universities, or promote the practical knowledge of craft and invention. Some deities hoard knowledge and keep its secrets to themselves. And some promise thier followers that they will gain tremendous power if they unlock the secrets of the multiverse. Followers of these gods study esoteric lore, collectold tomes, delve into the secret places of the earth, and learn all they can. Some gods of knowledge promote the practical knowledge of craft and invention, including smith deities like Gond, Reorx, Onatar, Moradin, Hephaestus, and Goibhniu.", 
+  "features": {
+    "1": {
+      "BLESSINGS OF KNOWLEDGE": {
+        "title": "Blessings of Knowledge", 
+        "description": "You learn two languages of your choice. You become proficient in your choice of two of the following skills: Arcana, History, Nature, Religion.\nYour proficiency bonus is doubled for any ability check you make with either of those skills."
+      }
+    }, 
+    "2": {
+      "THE KNOWLEDGE OF THE AGES": {
+        "title": "Channel Divinity: The Knowledge of the Ages", 
+        "description": "You can use your Channel Divinity to tap into a divine well of knowledge. As an action, you choose one skill or tool. For 10 minutes, you have proficiency with the chosen skill or tool."
+      }
+    }, 
+    "6": {
+      "READ THOUGHTS": {
+        "title": "Channel Divinity: Read Thoughts", 
+        "description": "You can use your Channel Divinity to read a creature's thoughts. You can then use your access to the creature's mind to command it.\nAs an action, choose one creature that you can see within 60 feet of you. That creature must make a Wisdom saving throw. If the creature succeeds on the saving throw, you can't use this feature on it again until you finish a long rest.\nIf the creature fails its save, you can read its surface throughts (those foremost in its mind, reflecting its current emotions and what it is actively thinking about_ when it is within 60 feet of you. This effect lasts for 1 minute.\nDuring that time, you can use your action to end this effect and cast the suggestion spell on the creature without expending a spell slot. The target automatically fails its saving throw against the spell."
+      }
+    }, 
+    "8": {
+      "POTENT SPELLCASTING": {
+        "title": "Potent Spellcasting", 
+        "description": "You add your Wisdom modifier to the damage you deal with any cleric cantrip."
+      }
+    }, 
+    "17": {
+      "VISIONS OF THE PAST": {
+        "title": "Visions of the Past", 
+        "description": "You can call up visions of the past that relate to an object you hold or your immediate surroundings. You spend at least 1 minute in meditation and prayer, then receive dreamlike, shadowy glimpses of recent events. You can meditate in this way for a number of minutes equal to your Wisdom score and must maintain concentration during that time, as if you were casting a spell.\nOnce you use this feature, you can\u2019t use it again until you finish a short or long rest.\nObject Reading: Holding an object as you meditate, you can see visions of the object\u2019s previous owner. After meditating for 1 minute, you learn how the owner acquired and lost the object, as well as the most recent significant event involving the object and that owner. if the object was owned by another creature in the recent past (within a number of days equal to your Wisdom score), you can spend 1 additional minute for each owner to learn the same information about that creature.\nArea Reading: As you meditate, you see visions of recent events in your immediate vicinity (a room. street, tunnel, clearing, or the like, up to a 50-foot cube), going back a number of days equal to your Wisdom score. For each minute you meditate, you learn about one significant event, beginning with the most recent. Significant events typically involve powerful emotions, such as battles and betrayals, marriages and murders, births and funerals. However, they might also include more mundane events that are nevertheless important in your current situation."
+      }
+    }
+  }
+}

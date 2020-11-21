@@ -1,5 +1,6 @@
 import { Trait } from "../Base/Interfaces";
 import { PlayerCharacter } from "../Base/PlayerCharacter";
+import { Feat } from "../Feats/Feat";
 
 export abstract class Race {
   constructor(
@@ -33,6 +34,7 @@ export abstract class Race {
   weaponProficiencies: string[];
   armorProficiencies: string[];
   toolProficiencies: string[];
+  feats: Feat[];
 
   abstract abilitiesAtLevels: { [key: string]: (pc: PlayerCharacter) => void };
 
@@ -70,6 +72,12 @@ export abstract class Race {
     }
   }
 
+  addFeats(pc: PlayerCharacter): void {
+    for (let feat of this.feats) {
+      feat.apply(pc);
+    }
+  }
+
   apply(pc: PlayerCharacter): void {
     this.abilityIncrease(pc);
     this.proficiencies(pc);
@@ -81,8 +89,20 @@ export abstract class Race {
     pc.speed.value = this.speed;
     pc.size = this.size;
 
-    if (Object.keys(this.abilitiesAtLevels).indexOf("1") != -1) {
+    if (Object.keys(this.abilitiesAtLevels).includes("1")) {
       this.abilitiesAtLevels["1"](pc);
     }
   }
+}
+
+export class DSRace extends Race {
+  constructor(){
+    super("", "", -1, "", [], [], [], [], []);
+  }
+
+  abilitiesAtLevels = {}
+
+  proficiencies(){}
+
+  abilityIncrease(){}
 }

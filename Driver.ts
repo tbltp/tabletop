@@ -1,14 +1,14 @@
 import { PlayerCharacter } from "./src/Base/PlayerCharacter";
 
-import { HillDwarf, MountainDwarf } from "./src/Races/Dwarf";
-import { HighElf, WoodElf, DarkElf } from "./src/Races/Elf";
-import { Lightfoot, Stout } from "./src/Races/Halfling";
-import { ForestGnome, MountainGnome } from "./src/Races/Gnome";
-import { Dragonborn } from "./src/Races/Dragonborn";
-import { HalfElf } from "./src/Races/HalfElf";
-import { BaseHuman, VariantHuman } from "./src/Races/Human";
-import { HalfOrc } from "./src/Races/HalfOrc";
-import { Tiefling } from "./src/Races/Tiefling";
+import { HillDwarf, MountainDwarf } from "./src/Races/Dwarf/Dwarf";
+import { HighElf, WoodElf, DarkElf } from "./src/Races/Elf/Elf";
+import { Lightfoot, Stout } from "./src/Races/Halfling/Halfling";
+import { ForestGnome, MountainGnome } from "./src/Races/Gnome/Gnome";
+import { Dragonborn } from "./src/Races/Dragonborn/Dragonborn";
+import { HalfElf } from "./src/Races/Half Elf/HalfElf";
+import { BaseHuman, VariantHuman } from "./src/Races/Human/Human";
+import { HalfOrc } from "./src/Races/Half Orc/HalfOrc";
+import { Tiefling } from "./src/Races/Tiefling/Tiefling";
 
 import {
   Acolyte,
@@ -72,12 +72,24 @@ import {
   WarCaster,
   WeaponMaster,
 } from "./src/Feats/Feat";
-import { Barbarian } from "./src/Classes/Barbarian";
-import { Bard } from "./src/Classes/Bard";
+import { Barbarian } from "./src/Classes/Barbarian/Barbarian";
+import { Bard } from "./src/Classes/Bard/Bard";
 import { PlayerClass } from "./src/Classes/PlayerClass";
 
+  // ?
+  public static quickClassLevelUp(
+    pc: PlayerCharacter,
+    pclass: PlayerClass,
+    argsAry: LevelingParams[],
+    level: number
+  ): void {
+    for (let i = 2; i <= level; i++) {
+      pclass.abilitiesAtLevels[i](pc, argsAry[i - 1]);
+    }
+  }
+
 const pc = new PlayerCharacter(12, 12, 12, 12, 12, 12);
-const bdclass = new Bard([], [], [], "", "ENTERTAINER", {
+const bdclass = new Bard(false, [], [], {
   isNoInput: false,
   spellSelection: [
     "VICIOUS MOCKERY",
@@ -87,7 +99,8 @@ const bdclass = new Bard([], [], [], "", "ENTERTAINER", {
     "HEALING WORD",
     "THUNDERWAVE",
   ],
-});
+},
+ [], "");
 
 const bardArgs = [
   {

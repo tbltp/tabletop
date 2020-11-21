@@ -1,0 +1,36 @@
+{
+  "title": "Champion", 
+  "description": "The archetypal Champion focuses on the development of raw physical power honed to deadly perfection. Those who model themselves on this archetype combine rigorous training with physical excellence to deal devastating blows.", 
+  "features": {
+    "3": {
+      "IMPROVED CRITICAL": {
+        "title": "Improved Critical", 
+        "description": "Your weapon attacks score a critical hit on a roll of 19 or 20."
+      }
+    }, 
+    "7": {
+      "REMARKABLE ATHLETE": {
+        "title": "Remarkable Athlete", 
+        "description": "You can add half your proficiency bonus (round up) to any Strength, Dexterity, or Constitution check you make that doesn't already use your proficiency bonus.\nIn addition, when you make a running long jump, the distance you can cover increases by a number of feet equal to your Strength modifier."
+      }
+    }, 
+    "10": {
+      "ADDITIONAL FIGHTING STYLE": {
+        "title": "Additional Fighting Style", 
+        "description": "You can choose a second option from the Fighting Style class feature."
+      }
+    }, 
+    "15": {
+      "SUPERIOR CRITICAL": {
+        "title": "Superior Critical", 
+        "description": "Your weapon attacks score a critical hit on a roll of 18-20."
+      }
+    }, 
+    "18": {
+      "SURVIVOR": {
+        "title": "Survivor", 
+        "description": "At 18th level, you attain the pinnacle of resilience in battle. At the start of each of your turns, you regain hit points equal to 5 + your Constitution modifier if you have no more than half of your hit points left. You don't gain this benefit if you have 0 hit points."
+      }
+    }
+  }
+}

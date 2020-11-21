@@ -1,0 +1,30 @@
+{
+  "1": {
+    "DRUIDIC": {
+      "title": "Druidic", 
+      "description": "You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a message. Others spot the message's presence with a successful DC 15 Wisdom (Perception) check but can't decipher it without magic."
+    }
+  }, 
+  "2": {
+    "WILD SHAPE": {
+      "title": "Wild Shape", 
+      "description": "Starting at 2nd level, you can use your action to magically assume the shape of a beast that you have seen before. You can use this feature twice. You regain expended uses when you finish a short or long rest.\nYour druid level determines the beasts you can transform into, as shown in the Beast Shapes table. At 2nd level, for example, you can transform into any beast that has a challenge rating of 1/4 or lower that doesn't have a flying or swimming speed.\nYou can stay in a beast shape for a number of hours equal to half your druid level (rounded down). You then revert to your normal form unless you expend another use of this feature. You can revert to your normal from earlier by using a bonus action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die.\nWhile you are transformed, the following rules apply:\nYour game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature. If the creature has the same proficiency as you and the bonus in its stat block is higher than yours, use the creature's bonus instead of yours. If the creature has any legendary or lair actions, you can't use them.\nWhen you transform, you assume the beasts hit points and hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage Carries over to your normal form. For example, if you take 10 damage in animal form and have only 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.\nYou can't cast spells, and your ability to speak or take any action that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a spell you've already cast, however, or prevent you from taking actions that are part of a spell, such as call lightning, that you've already cast.\nYou retain the benefit of any features from your class, race, or other source and can use them if the new form is physically capable of doing so. However. you can't use any of your special senses, such as darkvision, unless your new form also has that sense.\nYou choose whether your equipment falls to the ground in your space, merges into your new form, or is worn by it. Worn equipment functions as normal, but the DM decides whether it is practical for the new form to wear a piece of equipment. based on the creature\u2019s shape and size. Your equipment doesn\u2019t change size or shape to match the new form, and any equipment that the new form can\u2019t wear must either fall to the ground or merge with it. Equipment that merges with the form has no effect until you leave the form."
+    }
+  }, 
+  "18": {
+    "TIMELESS BODY": {
+      "title": "Timeless Body", 
+      "description": "Starting at 18th level, the primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year."
+    }, 
+    "BEAST SPELLS": {
+      "title": "Beast Spells", 
+      "description": "Beginning at 18th level, you can cast many of your druid spells in any shape you assume using Wild Shape. You can perform the somatic and verbal components of a druid spell while in a beast shape, but you arent able to provide material components."
+    }
+  }, 
+  "20": {
+    "ARCHDRUID": {
+      "title": "Archdruid", 
+      "description": "At 20th level, you can use your Wild Shape an unlimited number of times."
+    }
+  }
+}

@@ -24,7 +24,7 @@ export abstract class Feat {
   }
 
   spellcasterPrereqCheck(pc: PlayerCharacter) {
-    return !pc.isSpellcaster() ? false : true;
+    return !pc.pcHelper.isSpellcaster() ? false : true;
   }
 }
 

@@ -1,13 +1,15 @@
 import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { Spell, Trait, ResourceTrait } from "../Base/Interfaces";
-import * as ClassTraits from "../../Assets/ClassTraits.json";
 import * as Languages from "../../Assets/Languages.json";
 import * as Gear from "../../Assets/Gear.json";
 import * as ToolKits from "../../Assets/Tools.json";
 import * as FightingStyle from "../../Assets/FightingStyles.json";
+import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
 import * as Armor from "../../Assets/Armor.json";
 import * as Weapons from "../../Assets/Weapons.json";
 import { Inventory } from "../Base/Inventory";
+import { Subclass } from "./Subclass";
+import { Feat } from "../Feats/Feat";
 
 export abstract class PlayerClass {
   constructor(
@@ -43,7 +45,9 @@ export abstract class PlayerClass {
     this.hpBase = hpBase;
   }
 
+
   name: string;
+  subclass: Subclass;
   languages: string[];
   skillProficiencies: string[];
   weaponProficiencies: string[];
@@ -52,7 +56,7 @@ export abstract class PlayerClass {
   weapons: string[];
   armor: string[];
   equipment: string[];
-  equipmentPack: string;
+  equipmentPack: string = "";
   toolKits: string[];
   lvlOneParams: LevelingParams;
   hitDie: string;
@@ -60,9 +64,6 @@ export abstract class PlayerClass {
   savingThrowProficiencies: string[];
   features: Trait[];
   level: { value: number } = { value: 1 };
-
-  //TODO: wtf is a Path
-  //path: Path;
 
   abstract abilitiesAtLevels: {
     [key: string]: (pc: PlayerCharacter, params: LevelingParams) => void;
@@ -100,6 +101,7 @@ export abstract class PlayerClass {
 
   protected addFeatures(pc: PlayerCharacter): void {
     for (let trait of this.features) {
+
       pc.traits.features.push(trait);
     }
   }
@@ -126,12 +128,14 @@ export abstract class PlayerClass {
   }
 
   protected addEquipment(pc: PlayerCharacter): void {
-    for (const item of Inventory.equipmentPacks[this.equipmentPack]()) {
-      pc.inventory.items.push(item);
-    }
+    if(this.equipmentPack){
+      for (const item of Inventory.equipmentPacks[this.equipmentPack]()) {
+        pc.inventory.items.push(item);
+      }
 
-    for (const item of this.equipment) {
-      pc.inventory.items.push(Gear[item]);
+      for (const item of this.equipment) {
+        pc.inventory.items.push(Gear[item]);
+      }
     }
   }
 
@@ -168,10 +172,19 @@ export abstract class PlayerClass {
   protected pushClassFeatures(
     pc: PlayerCharacter,
     level: number,
-    className: string
+    classTraits: object
   ) {
-    for (let key in ClassTraits[className][level]) {
-      pc.addFeatures(ClassTraits[className][level][key]);
+
+    let riskTraits = {
+      "Extra Attack": pc.pcHelper.findFeatureTraitByName("Extra Attack") ? true : false,
+      "Unarmored Defense": pc.pcHelper.findFeatureTraitByName("Unarmored Defense") ? true : false
+    }
+
+    for (let key in classTraits[level]) {
+    
+      let feature: Trait = classTraits[level][key]
+      if(Object.keys(riskTraits).includes(feature["title"]) && riskTraits[feature["title"]]) { continue; }
+      pc.pcHelper.addFeatures(feature);
     }
   }
 
@@ -181,42 +194,72 @@ export abstract class PlayerClass {
     ability: string
   ) {
     if (params.spellSelection) {
-      pc.addSpells(params.spellSelection, ability);
+      pc.pcHelper.addSpells(params.spellSelection, ability);
     }
     if (params.spellReplacement) {
-      pc.replaceSpells(params.spellReplacement, ability);
+      pc.pcHelper.replaceSpells(params.spellReplacement, ability);
     }
   }
 
   public static pushCustomizedClassFeature(
     pc: PlayerCharacter,
     level: number,
-    className: string,
+    classTraits: object,
     feature: string,
     choices: string[]
   ) {
     const customFeature: Trait = {
-      ...ClassTraits[className][level][feature],
+      ...classTraits[level][feature],
       choices: choices,
     };
-    pc.addFeatures(customFeature);
+    pc.pcHelper.addFeatures(customFeature);
   }
 
-  public static quickClassLevelUp(
-    pc: PlayerCharacter,
-    pclass: PlayerClass,
-    argsAry: LevelingParams[],
-    level: number
-  ): void {
-    for (let i = 2; i <= level; i++) {
-      pclass.abilitiesAtLevels[i](pc, argsAry[i - 1]);
+  addSpellcasting(pc: PlayerCharacter, className: string){
+    
+    const preparedSpells = {
+      level: this.level,
+      modifier: pc.abilityScores[SpellcastingAbility[className]].modifier
     }
+    
+    const spellAttack = {
+      proficiency: pc.proficiency.baseBonus,
+      modifier: pc.abilityScores[SpellcastingAbility[className]].modifier
+    }
+
+    const spellSave = {
+      base: 8,
+      proficiency: pc.proficiency.baseBonus,
+      modifier: pc.abilityScores[SpellcastingAbility[className]].modifier
+    }
+
+    let spellcasting = ["CLERIC", "DRUID", "PALADIN", "WIZARD"].includes(className) ? 
+    {
+      title: className,
+      preparedSpells: preparedSpells,
+      spellSave: spellSave,
+      spellAttack : spellAttack
+    } :
+    {
+      title: className,
+      spellSave: spellSave,
+      spellAttack : spellAttack
+    }
+
+    pc.spellcasting
+      ? pc.spellcasting.push(spellcasting)
+      : (pc.spellcasting = [spellcasting]);
   }
+
+  subclassDriver(pc: PlayerCharacter, level: string, params: LevelingParams){
+    this.subclass.subclassDriver(pc, level, this.subclass.title, params);
+  }
+  
   public static addFightingStyle(
       pc: PlayerCharacter,
       fightingStyle: string
     ): void {
-        pc.addFeatures(FightingStyle[fightingStyle]);
+        pc.pcHelper.addFeatures(FightingStyle[fightingStyle]);
         /* FIGHTING STYLE TAGS / EFFECTS: SHOULD BE DONE, PROBABLY IN OWN FILE FOR EXTENSIBILITY / HOMEBREW.
         switch(fightingStyle){
             case 'ARCHERY':
@@ -228,8 +271,19 @@ export abstract class PlayerClass {
         }
         */
   }
-}
+  
+  public static multiClassCheck(pc: PlayerCharacter, trait: string){
+    
+    let riskTraits = {
+      "Channel Divinity": pc.pcHelper.findResourceTraitByName("Channel Divinity") ? true : false,
+      "Unarmored Defense": pc.pcHelper.findFeatureTraitByName("Unarmored Defense") ? true : false
+    }
+    
+    if (riskTraits[trait]) { return false; }
 
+    return true;
+  }
+}
 
 
 export interface LevelingParams {
@@ -244,8 +298,9 @@ export interface LevelingParams {
   };
   proficiencySelection?: string[];
   fightingStyle?: string[];
-  archetypeSelection?: {
-    archetype: string; //school/oath/patron/etc
+  subclassSelection?: {
+    subclass: string; //school/oath/patron/etc
     options?: string[]; //totems/maneuvers/elements/beast companions/etc
-  }[];
+  };
+  featChoice?: Feat;
 }
