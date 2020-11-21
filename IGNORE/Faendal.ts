@@ -35,4 +35,4 @@ pc.levelUp("Ranger", 8, {isNoInput: false, subclassSelection: { subclass: "HUNTE
 pc.levelUp("Ranger", 8, {isNoInput: false, abilityScoreImprovement: [{"ability": "dexterity", "improvement": 2}]});
 pc.levelUp("Ranger", 9, {isNoInput: false, spellSelection: ["SPIKE GROWTH"]})
 
-Jsonify.dumpToJSON(pc.character, "Faendal");
+Jsonify.dumpToJSON(pc, "Faendal");

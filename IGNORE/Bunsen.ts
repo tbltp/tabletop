@@ -18,9 +18,9 @@ let pc = new CharacterSheet(
   new Sage(["Gnomish", "Elvish"])
 )
 
-pc.levelUp("Barbarian", 1, {isNoInput: true});
-pc.levelUp("Barbarian", 1, {isNoInput: false, subclassSelection: {subclass: "BERSERKER"}});
-pc.levelUp("Barbarian", 1, {isNoInput: false, abilityScoreImprovement: [{"ability": "dexterity", "improvement": 1}, {"ability": "constitution", "improvement": 1}]});
-pc.levelUp("Barbarian", 1, {isNoInput: true});
+pc.levelUp("Barbarian", 11, {isNoInput: true});
+pc.levelUp("Barbarian", 12, {isNoInput: false, subclassSelection: {subclass: "BERSERKER"}});
+pc.levelUp("Barbarian", 12, {isNoInput: false, abilityScoreImprovement: [{"ability": "dexterity", "improvement": 1}, {"ability": "constitution", "improvement": 1}]});
+pc.levelUp("Barbarian", 12, {isNoInput: true});
 
-Jsonify.dumpToJSON(pc.character, "Bunsen");
+Jsonify.dumpToJSON(pc, "Bunsen");

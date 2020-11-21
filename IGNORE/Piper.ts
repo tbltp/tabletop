@@ -24,4 +24,4 @@ pclass.abilitiesAtLevels["2"](pc, {isNoInput: true});
 pclass.abilitiesAtLevels["3"](pc, {isNoInput: false, subclassSelection: {subclass: "OPEN HAND"}});
 race.abilitiesAtLevels["3"](pc);
 
-Jsonify.dumpToJSON(pc, "Piper");
+// Jsonify.dumpToJSON(pc, "Piper");

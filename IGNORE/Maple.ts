@@ -35,4 +35,4 @@ pc.levelUp("Druid", 5, {isNoInput: true})
 pc.levelUp("Druid", 5, {isNoInput: false, abilityScoreImprovement: [{"ability": "wisdom", "improvement": 2}], spellSelection: ["RESISTANCE"]});
 pc.levelUp("Druid", 5, {isNoInput: true})
 
-Jsonify.dumpToJSON(pc.character, "Maple");
+Jsonify.dumpToJSON(pc, "Maple");

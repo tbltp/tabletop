@@ -22,4 +22,4 @@ let pc: CharacterSheet = new CharacterSheet(
 
 pc.levelUp("Barbarian", 1, {isNoInput: true});
 
-Jsonify.dumpToJSON(pc.character, "Crenshaw");
+Jsonify.dumpToJSON(pc, "Crenshaw");

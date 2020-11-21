@@ -55,4 +55,4 @@ pc.levelUp(
 pc.multiClass(new Ranger(true, ["perception"], {isNoInput: false, favoredEnemy: "White People", favoredTerrain: "Cities"}));
 
 
-Jsonify.dumpToJSON(pc.character, "Alaiyo");
+Jsonify.dumpToJSON(pc, "Alaiyo");
