@@ -56,7 +56,7 @@ export abstract class PlayerClass {
   weapons: string[];
   armor: string[];
   equipment: string[];
-  equipmentPack: string;
+  equipmentPack: string = "";
   toolKits: string[];
   lvlOneParams: LevelingParams;
   hitDie: string;

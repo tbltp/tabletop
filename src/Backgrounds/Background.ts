@@ -287,6 +287,12 @@ export class Sage extends Background {
   }
 }
 
+export class DSSage extends Sage {
+  constructor(){
+    super([])
+  }
+}
+
 export class Sailor extends Background {
   constructor() {
     super(

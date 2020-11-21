@@ -20,4 +20,10 @@ export class MountainGnome extends Gnome {
       return;
     }
   }
+
+  export class DSMountainGnome extends MountainGnome {
+    constructor(){
+      super()
+    }
+  }
   

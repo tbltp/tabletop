@@ -40,4 +40,10 @@ export class FireGenasi extends Genasi {
       pc.spells["0"].push(spell);
     }
   }
+
+  export class DSFireGenasi extends FireGenasi {
+    constructor(){
+      super()
+    }
+  }
   

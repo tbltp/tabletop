@@ -241,3 +241,9 @@ export class Cleric extends PlayerClass {
   level20(pc: PlayerCharacter, params: LevelingParams): void {
   }
 }
+
+export class DSCleric extends Cleric {
+  constructor(){
+    super(false, {isNoInput: true});
+  }
+}

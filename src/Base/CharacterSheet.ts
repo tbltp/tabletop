@@ -5,28 +5,35 @@ import { Background } from "../Backgrounds/Background";
 import { Feat } from "../Feats/Feat";
 import { SpellSlotFactory } from "../Classes/SpellSlotFactory";
 
+
+class SheetClasses {
+  [key: string]: PlayerClass
+}
+
 export class CharacterSheet {
   
-  constructor(name: string, pc: PlayerCharacter, race: Race, playerClass: PlayerClass, background: Background){
+  constructor(name: string, pc: PlayerCharacter, race: Race, playerClass: PlayerClass, background: Background, DS?: boolean){
     this.name = name;
     this.character = pc;
     this.race = race;
     this.background = background;
     
-    this.race.apply(this.character);
-    
     this.playerClasses[playerClass.name] = playerClass;
     this.levels[playerClass.name] = playerClass["level"];
-    
-    playerClass.apply(this.character);
-    
-    this.background.apply(this.character);
+
+    if(!DS) {
+      this.race.apply(this.character);
+      playerClass.apply(this.character);
+      this.background.apply(this.character);
+
+    }
+
   }
   
   name: string;
   character: PlayerCharacter;
   race: Race;
-  playerClasses: { [key: string]: PlayerClass } = {};
+  playerClasses: SheetClasses = {};
   levels: { [key: string]: PlayerClass["level"] } = {};
   featLevels: number[] = [4, 8, 12, 16, 19];
   feats: Feat[];
@@ -36,7 +43,8 @@ export class CharacterSheet {
 
 
 
-  //this is dumb but it's ok.
+    
+  //this is dumb but it's ok
   multiClass(newClass: PlayerClass): void {
     this.playerClasses[newClass.name] = newClass;
     this.levels[newClass.name] = newClass["level"];
