@@ -4,7 +4,7 @@ import { Charlatan } from "../src/Backgrounds/Background";
 import { Bard } from "../src/Classes/Bard/Bard";
 import { CharacterSheet } from "../src/Base/CharacterSheet";
 
-import { Jsonify } from "./Jsonify";
+import { Jsonify } from "../src/Utilities/Jsonify";
 import { Ranger } from "../src/Classes/Ranger/Ranger";
 import { Barbarian } from "../src/Classes/Barbarian/Barbarian";
 

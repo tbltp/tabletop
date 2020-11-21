@@ -1,4 +1,4 @@
-import { PlayerCharacter } from "Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../Base/PlayerCharacter";
 import { Gnome } from "../Gnome";
 import * as GnomeRacialTraits from "../Gnome.json";
 

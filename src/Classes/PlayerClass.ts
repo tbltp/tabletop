@@ -9,7 +9,7 @@ import * as Armor from "../../Assets/Armor.json";
 import * as Weapons from "../../Assets/Weapons.json";
 import { Inventory } from "../Base/Inventory";
 import { Subclass } from "./Subclass";
-import { Feat } from "Feats/Feat";
+import { Feat } from "../Feats/Feat";
 
 export abstract class PlayerClass {
   constructor(

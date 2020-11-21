@@ -1,5 +1,5 @@
-import { ISpell, Spell } from "Base/Interfaces";
-import { PlayerCharacter } from "Base/PlayerCharacter";
+import { ISpell, Spell } from "../../../Base/Interfaces";
+import { PlayerCharacter } from "../../../Base/PlayerCharacter";
 import { Gnome } from "../Gnome";
 import * as GnomeRacialTraits from "../Gnome.json";
 import * as Spells from '../../../../Assets/Spells.json';

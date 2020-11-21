@@ -5,7 +5,7 @@ import { WoodElf } from "../src/Races/Elf/Subrace/WoodElf";
 import { Ranger } from "../src/Classes/Ranger/Ranger";
 import { FolkHero } from "../src/Backgrounds/Background";
 
-import { Jsonify } from "./Jsonify";
+import { Jsonify } from "../src/Utilities/Jsonify";
 
 let pc: CharacterSheet = new CharacterSheet(
   "Faendal",

@@ -5,7 +5,7 @@ import { Tiefling } from "../src/Races/Tiefling/Tiefling";
 import { Barbarian } from "../src/Classes/Barbarian/Barbarian";
 import { Charlatan } from "../src/Backgrounds/Background";
 
-import { Jsonify } from "./Jsonify";
+import { Jsonify } from "../src/Utilities/Jsonify";
 
 
 let pc: CharacterSheet = new CharacterSheet(

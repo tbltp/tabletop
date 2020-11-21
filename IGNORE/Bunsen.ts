@@ -4,7 +4,7 @@ import { Sage } from "../src/Backgrounds/Background";
 import { Barbarian } from "../src/Classes/Barbarian/Barbarian";
 import { CharacterSheet } from "../src/Base/CharacterSheet";
 
-import { Jsonify } from "./Jsonify";
+import { Jsonify } from "../src/Utilities/Jsonify";
 
 let sheet = new CharacterSheet(
   "Bunsen",

@@ -1,7 +1,6 @@
 import { PlayerCharacter } from "../../../Base/PlayerCharacter";
 import { Genasi } from "../Genasi";
 import * as Traits from "../Genasi.json";
-import { Trait } from "../../../Base/Interfaces";
 import * as Spells from "../../../../Assets/Spells.json";
 import { ISpell } from "../../../Base/Interfaces";
 

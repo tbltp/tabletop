@@ -4,7 +4,8 @@
     "module": "commonjs",
     "resolveJsonModule": true,
     "outDir": "dist",
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "declaration": true
   },
-  "exclude": ["tests", "Driver.ts"]
+  "exclude": ["tests", "Driver.ts", "dist"]
 }

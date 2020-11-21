@@ -1,4 +1,4 @@
-import { PlayerCharacter } from "Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../Base/PlayerCharacter";
 import { Human } from "../Human";
 
 export class VariantHuman extends Human {

@@ -7,3 +7,4 @@ output*
 *.test.ts
 *.js
 *.py
+IGNORE/*

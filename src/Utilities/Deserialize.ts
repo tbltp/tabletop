@@ -1,39 +1,39 @@
 // Deserialization Classes
-import { DSBarbarian } from "../src/Classes/Barbarian/Barbarian";
-import { DSBard } from "../src/Classes/Bard/Bard";
-import { DSCleric } from "../src/Classes/Cleric/Cleric";
-import { DSDruid } from "../src/Classes/Druid/Druid";
-import { DSFighter } from "../src/Classes/Fighter/Fighter";
-import { DSMonk } from "../src/Classes/Monk/Monk";
-import { DSPaladin } from "../src/Classes/Paladin/Paladin";
-import { PlayerClass } from "../src/Classes/PlayerClass";
-import { DSRanger } from "../src/Classes/Ranger/Ranger";
-import { DSRogue } from "../src/Classes/Rogue/Rogue";
-import { DSSorcerer } from "../src/Classes/Sorcerer/Sorcerer";
-import { DSWarlock } from "../src/Classes/Warlock/Warlock";
-import { DSWizard } from "../src/Classes/Wizard/Wizard";
+import { DSBarbarian } from "../Classes/Barbarian/Barbarian";
+import { DSBard } from "../Classes/Bard/Bard";
+import { DSCleric } from "../Classes/Cleric/Cleric";
+import { DSDruid } from "../Classes/Druid/Druid";
+import { DSFighter } from "../Classes/Fighter/Fighter";
+import { DSMonk } from "../Classes/Monk/Monk";
+import { DSPaladin } from "../Classes/Paladin/Paladin";
+import { PlayerClass } from "../Classes/PlayerClass";
+import { DSRanger } from "../Classes/Ranger/Ranger";
+import { DSRogue } from "../Classes/Rogue/Rogue";
+import { DSSorcerer } from "../Classes/Sorcerer/Sorcerer";
+import { DSWarlock } from "../Classes/Warlock/Warlock";
+import { DSWizard } from "../Classes/Wizard/Wizard";
 
 // Deserialization Races
-import { DSRace, Race } from "../src/Races/Race";
-import { DSDarkElf } from "../src/Races/Elf/Subrace/DarkElf";
-import { DSFireGenasi } from "../src/Races/Genasi/Subrace/FireGenasi";
-import { DSWaterGenasi } from "../src/Races/Genasi/Subrace/WaterGenasi";
-import { DSTiefling } from "../src/Races/Tiefling/Tiefling";
+import { DSRace, Race } from "../Races/Race";
+import { DSDarkElf } from "../Races/Elf/Subrace/DarkElf";
+import { DSFireGenasi } from "../Races/Genasi/Subrace/FireGenasi";
+import { DSWaterGenasi } from "../Races/Genasi/Subrace/WaterGenasi";
+import { DSTiefling } from "../Races/Tiefling/Tiefling";
 
 // Subclasses (Called when deserializing a character with a subclass.)
-import { Subclass } from "../src/Classes/Subclass";
-import { BarbarianSubclass } from "../src/Classes/Barbarian/Subclasses/BarbarianSubclass";
-import { BardSubclass } from "../src/Classes/Bard/Subclasses/BardSubclass";
-import { ClericSubclass } from "../src/Classes/Cleric/Subclasses/ClericSubclass";
-import { DruidSubclass } from "../src/Classes/Druid/Subclasses/DruidSubclass";
-import { FighterSubclass } from "../src/Classes/Fighter/Subclasses/FighterSubclass";
-import { MonkSubclass } from "../src/Classes/Monk/Subclasses/MonkSubclass";
-import { PaladinSubclass } from "../src/Classes/Paladin/Subclasses/PaladinSubclass";
-import { RangerSubclass } from "../src/Classes/Ranger/Subclasses/RangerSubclass";
-import { RogueSubclass } from "../src/Classes/Rogue/Subclasses/RogueSubclass";
-import { SorcererSubclass } from "../src/Classes/Sorcerer/Subclasses/SorcererSubclass";
-import { WarlockSubclass } from "../src/Classes/Warlock/Subclasses/WarlockSubclass";
-import { WizardSubclass } from "../src/Classes/Wizard/Subclasses/WizardSubclass";
+import { Subclass } from "../Classes/Subclass";
+import { BarbarianSubclass } from "../Classes/Barbarian/Subclasses/BarbarianSubclass";
+import { BardSubclass } from "../Classes/Bard/Subclasses/BardSubclass";
+import { ClericSubclass } from "../Classes/Cleric/Subclasses/ClericSubclass";
+import { DruidSubclass } from "../Classes/Druid/Subclasses/DruidSubclass";
+import { FighterSubclass } from "../Classes/Fighter/Subclasses/FighterSubclass";
+import { MonkSubclass } from "../Classes/Monk/Subclasses/MonkSubclass";
+import { PaladinSubclass } from "../Classes/Paladin/Subclasses/PaladinSubclass";
+import { RangerSubclass } from "../Classes/Ranger/Subclasses/RangerSubclass";
+import { RogueSubclass } from "../Classes/Rogue/Subclasses/RogueSubclass";
+import { SorcererSubclass } from "../Classes/Sorcerer/Subclasses/SorcererSubclass";
+import { WarlockSubclass } from "../Classes/Warlock/Subclasses/WarlockSubclass";
+import { WizardSubclass } from "../Classes/Wizard/Subclasses/WizardSubclass";
 
 
 export class Deserialize {

@@ -1,15 +1,15 @@
-import { CharacterSheet } from "../src/Base/CharacterSheet";
+import { CharacterSheet } from "../Base/CharacterSheet";
 import * as fs from "fs";
-import { PlayerCharacter } from "../src/Base/PlayerCharacter";
-import { Race } from "../src/Races/Race";
-import { PlayerClass } from "../src/Classes/PlayerClass";
-import { Background, DSBackground } from "../src/Backgrounds/Background";
-import { BarbarianSubclass } from "../src/Classes/Barbarian/Subclasses/BarbarianSubclass";
+import { PlayerCharacter } from "../Base/PlayerCharacter";
+import { Race } from "../Races/Race";
+import { PlayerClass } from "../Classes/PlayerClass";
+import { Background, DSBackground } from "../Backgrounds/Background";
+import { BarbarianSubclass } from "../Classes/Barbarian/Subclasses/BarbarianSubclass";
 import { Deserialize } from './Deserialize';
 
 export class Jsonify {
   static dumpToJSON(sheet: CharacterSheet, filename: string) {
-    fs.writeFileSync(`./IGNORE/${filename}.json`, JSON.stringify(sheet, 
+    fs.writeFileSync(`./${filename}.json`, JSON.stringify(sheet, 
     
     (key, value) => {
       if(value === undefined) {

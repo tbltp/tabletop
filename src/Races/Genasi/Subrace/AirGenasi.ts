@@ -1,4 +1,4 @@
-import { PlayerCharacter } from "Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../Base/PlayerCharacter";
 import { Genasi } from "../Genasi";
 
 export class AirGenasi extends Genasi {

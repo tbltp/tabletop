@@ -3,7 +3,7 @@ import { WaterGenasi } from "../src/Races/Genasi/Subrace/WaterGenasi";
 import { Sage } from "../src/Backgrounds/Background";
 import { Monk } from "../src/Classes/Monk/Monk";
 
-import { Jsonify } from "./Jsonify";
+import { Jsonify } from "../src/Utilities/Jsonify";
 
 let pc: PlayerCharacter = new PlayerCharacter(13, 16, 11, 10, 13, 11);
 const race = new WaterGenasi();

@@ -5,7 +5,7 @@ import { HalfElf } from "../src/Races/Half Elf/HalfElf";
 import { Druid } from "../src/Classes/Druid/Druid";
 import { Criminal } from "../src/Backgrounds/Background";
 
-import { Jsonify } from "./Jsonify";
+import { Jsonify } from "../src/Utilities/Jsonify";
 
 
 

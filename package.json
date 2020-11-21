@@ -1,21 +1,34 @@
 {
-  "name": "tabletop",
-  "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "test": "jest"
-  },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "jest-extended"
-    ]
-  },
+  "name": "tabletop5e",
+  "version": "0.1.8",
+  "description": "WotC don't look please - Ali",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alimohamad/tabletop.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "Ali M.",
+    "email": "aam345@rutgers.edu",
+    "url": "https://alimohamad.github.io"
+  },
+  "contributors": [
+    {
+      "name": "Ez A.",
+      "email": "ezra.ablaza.inbox@gmail.com"
+    },
+    {
+      "name": "Al Bu",
+      "email": "imtheguybehindu@gmail.com"
+    }
+  ],
+  "files": [
+    "dist/*",
+    "tests/*"
+  ],
+  "man": "",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/alimohamad/tabletop/issues"
   },
@@ -26,5 +39,13 @@
     "ts-jest": "^26.3.0",
     "typescript": "^4.0.2"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "jest-extended"
+    ]
+  }
 }
