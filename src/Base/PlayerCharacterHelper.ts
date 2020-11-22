@@ -107,6 +107,10 @@ export class PlayerCharacterHelper {
           this.pc.spells[spell.minimumLevel].push(spell);
         }
       }
+
+      addCustomSpell(customSpell: Spell, spellcastingAbility: string): void {
+        this.pc.spells[customSpell.minimumLevel].push(customSpell);
+      }
     
       replaceSpells(
         spellReplacements: { [key: string]: string },

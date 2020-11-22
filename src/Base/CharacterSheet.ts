@@ -25,7 +25,6 @@ export class CharacterSheet {
       this.race.apply(this.character);
       playerClass.apply(this.character);
       this.background.apply(this.character);
-
     }
 
   }
@@ -63,7 +62,7 @@ export class CharacterSheet {
     if(this.race.abilitiesAtLevels[level.toString()]) {
       this.race.abilitiesAtLevels[level.toString()](this.character);
     }
-    //same for every class
+    //level up every class
     this.playerClasses[levelingClass].abilitiesAtLevels[level.toString()](
       this.character,
       params
