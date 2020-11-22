@@ -7,5 +7,5 @@
     "baseUrl": "src",
     "declaration": true
   },
-  "exclude": ["tests", "Driver.ts", "dist"]
+  "exclude": ["tests", "dist", "IGNORE"],
 }
