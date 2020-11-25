@@ -1,9 +1,13 @@
 {
-  "name": "tabletop5e",
-  "version": "0.1.9",
+  "name": "@tabletop/tabletop5e",
+  "version": "0.2.3",
   "description": "WotC don't look please - Ali",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
+  "files": [
+    "dist/src/*",
+    "dist/Assets/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alimohamad/tabletop.git"

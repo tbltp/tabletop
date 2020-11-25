@@ -55,13 +55,16 @@ pc.levelUp(
 
 
 pc.multiClass(new Ranger(true, ["perception"], {isNoInput: false, favoredEnemy: "White People", favoredTerrain: "Cities"}));
-
+console.log(pc.levels);
 //pc.multiClass(new Barbarian(true));
 
 
 Jsonify.dumpToJSON(pc, "Alaiyo");
 
-let newsheet: CharacterSheet = Jsonify.dumpFromLocal(`./IGNORE/Alaiyo.json`);
+
+let newsheet: CharacterSheet = Jsonify.dumpFromLocal(`Alaiyo.json`);
+
 newsheet.levelUp("Ranger", 10, {isNoInput: false, spellSelection: ["AID"], fightingStyle: ["ARCHERY"]});
 
+console.log(newsheet.levels);
 Jsonify.dumpToJSON(newsheet, "Alaiyo");

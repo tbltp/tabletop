@@ -53,10 +53,11 @@ export class CharacterSheet {
   }
 
   levelUp(levelingClass: string, hp: number, params: LevelingParams): void {
-    this.character.level.totalLevel++;
+
+    const totalLevel = ++this.character.level.totalLevel;
     const level = ++this.playerClasses[levelingClass].level.value;
 
-    this.character.proficiency.levelUp(level);
+    this.character.proficiency.levelUp(totalLevel);
     
     //level up race
     if(this.race.abilitiesAtLevels[level.toString()]) {
