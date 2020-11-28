@@ -10,7 +10,8 @@ export class Wizard extends PlayerClass {
     params: WizardLevelingParams,
     skillProficiencies?: string[],
     weapons?: string[],
-    equipmentPack?: string
+    equipmentPack?: string,
+    arcaneFocus?: string
   ) {
     super(
       "Wizard",
@@ -29,7 +30,7 @@ export class Wizard extends PlayerClass {
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons, equipmentPack);
+    this.characterStart(multiclass, skillProficiencies, weapons, equipmentPack, arcaneFocus);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -37,21 +38,16 @@ export class Wizard extends PlayerClass {
     }
   }
 
-  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], equipmentPack: string){
+  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], equipmentPack: string, arcaneFocus: string){
     if(!multiclass) {
       this.skillProficiencies = skillProficiencies;
       this.weaponProficiencies = ["Dagger", "Dart", "Sling", "Quarterstaff", "Crossbow, hand"],
       this.weapons = weapons;
       this.equipmentPack = equipmentPack;
+      this.equipment = [arcaneFocus]; //POUCH is also a focus
       this.savingThrowProficiencies = ["intelligence", "wisdom"];
     }
   }
-
-  /** TODO
-   * Component Pouch or Arcane Focus, Spellbook
-   * Figure out how to differentiate between spellbook spells and spells learned by leveling up, and add both to known spells.
-   */
-
 
   abilitiesAtLevels = {
     "1": this.level1,

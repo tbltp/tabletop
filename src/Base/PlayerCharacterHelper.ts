@@ -86,6 +86,19 @@ export class PlayerCharacterHelper {
       addFeatures(...features: Trait[]): void {
         this.addTraits("features", ...features);
       }
+
+      replaceFeatures(
+        oldFeatures: string[], newFeatures: Trait[]
+      ): void {
+        this.addFeatures(...newFeatures);
+        for (let oldftr of oldFeatures) {
+          for (let i = 0; i < this.pc.traits.features.length; i++) {
+            if (this.pc.traits.features[i].title == oldftr) {
+              this.pc.traits.features.splice(i, 1);
+            }
+          }
+        }
+      }
     
       addResourceTraits(...resTraits: ResourceTrait[]): void {
         this.addTraits("resources", ...resTraits);
@@ -113,22 +126,20 @@ export class PlayerCharacterHelper {
       }
     
       replaceSpells(
-        spellReplacements: { [key: string]: string },
+        newSpells: string[],
+        oldSpells: string[],
         spellcastingAbility: string
       ): void {
-        for (let oldSpell in spellReplacements) {
-          const newSpell = {
-            ...Spells[spellReplacements[oldSpell]],
-            spellcastingAbility: spellcastingAbility,
-          };
+        
+        this.addSpells(newSpells, spellcastingAbility);
+        for (let oldSpell of oldSpells) {
           const oldSpellLevel: number = Spells[oldSpell].minimumLevel;
           const oldSpellsAtLevel: Spell[] = this.pc.spells[oldSpellLevel];
-          for (let ind = 0; ind < oldSpellsAtLevel.length; ind++) {
-            if (oldSpellsAtLevel[ind].name == Spells[oldSpell].name) {
-              oldSpellsAtLevel.splice(ind, 1);
+          for (let i = 0; i < oldSpellsAtLevel.length; i++) {
+            if (oldSpellsAtLevel[i].name == Spells[oldSpell].name) {
+              oldSpellsAtLevel.splice(i, 1);
             }
           }
-          this.pc.spells[newSpell.minimumLevel].push(newSpell);
         }
       }
 }

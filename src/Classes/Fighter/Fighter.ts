@@ -199,5 +199,10 @@ export class DSFighter extends Fighter {
 }
 
 export interface FighterLevelingParams extends LevelingParams {
-  artisanToolProficiency?: string
+  artisanToolProficiency?: string,
+  battleManeuverSelection?: string[];
+  battleManeuverReplacement?: {
+    add: string[],
+    remove: string[]
+  };
 }

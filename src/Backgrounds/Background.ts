@@ -45,7 +45,7 @@ export abstract class Background {
       pc.traits.toolProficiencies.push(toolProficiency);
     }
     for (const item of this.equipment) {
-      pc.inventory.items.push(Gear[item]);
+      pc.inventory.gear.push(Gear[item]);
     }
     for (const tool of this.toolKits) {
       pc.inventory.toolKits.push(ToolKits[tool]);

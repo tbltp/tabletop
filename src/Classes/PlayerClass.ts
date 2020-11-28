@@ -1,5 +1,6 @@
 import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { Spell, Trait, ResourceTrait } from "../Base/Interfaces";
+import { Trait, EquipmentPack } from "../Base/Interfaces";
+import * as Spells from "../../Assets/Spells.json";
 import * as Languages from "../../Assets/Languages.json";
 import * as Gear from "../../Assets/Gear.json";
 import * as ToolKits from "../../Assets/Tools.json";
@@ -128,13 +129,21 @@ export abstract class PlayerClass {
   }
 
   protected addEquipment(pc: PlayerCharacter): void {
-    if(this.equipmentPack){
-      for (const item of Inventory.equipmentPacks[this.equipmentPack]()) {
-        pc.inventory.items.push(item);
-      }
+    for (const item of this.equipment) {
+      pc.inventory.gear.push(Gear[item]);
+    }
+  }
 
-      for (const item of this.equipment) {
-        pc.inventory.items.push(Gear[item]);
+  protected addEquipmentPack(pc: PlayerCharacter): void {
+    if(this.equipmentPack){
+
+      const pack: EquipmentPack = Inventory.equipmentPacks[this.equipmentPack]();
+
+      if(pack.kit) {
+        pc.inventory.toolKits.push(pack.kit);
+      }
+      for (const item of pack.gear) {
+        pc.inventory.gear.push(item);
       }
     }
   }
@@ -160,6 +169,7 @@ export abstract class PlayerClass {
     this.addWeapons(pc);
     this.addArmor(pc);
     this.addEquipment(pc);
+    this.addEquipmentPack(pc);
     this.addToolkits(pc);
     this.addSavingThrowProficiencies(pc);
     this.abilitiesAtLevels["1"](pc, this.lvlOneParams);
@@ -197,7 +207,9 @@ export abstract class PlayerClass {
       pc.pcHelper.addSpells(params.spellSelection, ability);
     }
     if (params.spellReplacement) {
-      pc.pcHelper.replaceSpells(params.spellReplacement, ability);
+      const newSpells: string[] = params.spellReplacement.add;
+      const oldSpells: string[] = params.spellReplacement.remove;
+      pc.pcHelper.replaceSpells(newSpells, oldSpells, ability);
     }
   }
 
@@ -294,7 +306,8 @@ export interface LevelingParams {
   }[];
   spellSelection?: string[];
   spellReplacement?: {
-    [key: string]: string;
+    add: string[];
+    remove: string[];
   };
   proficiencySelection?: string[];
   fightingStyle?: string[];

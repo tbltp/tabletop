@@ -1,9 +1,10 @@
 import { PlayerCharacter, PCArmorClass, PCAttack } from "./PlayerCharacter";
 import * as Gear from "../../Assets/Gear.json";
-import { Item, Armor, Weapon } from "./Interfaces";
+import * as Tools from "../../Assets/Tools.json";
+import { Armor, Weapon, EquipmentPack } from "./Interfaces";
 
 export class Inventory {
-  static equipmentPacks: { [key: string]: () => Item[] } = {
+  static equipmentPacks: { [key: string]: () => EquipmentPack } = {
     BURGLAR: Inventory.burglar,
     DIPLOMAT: Inventory.diplomat,
     DUNGEONEER: Inventory.dungeoneer,
@@ -14,7 +15,7 @@ export class Inventory {
     NONE: Inventory.none,
   };
 
-  static burglar(): Item[] {
+  static burglar(): EquipmentPack {
     const backpack = Gear["BACKPACK"];
     const ballBearings = Gear["BALL BEARINGS (BAG OF 1000)"];
     const bell = Gear["BELL"];
@@ -37,23 +38,25 @@ export class Inventory {
     let rations = Gear["RATIONS (1 DAY)"];
     rations.quantity = 5;
 
-    return [
-      backpack,
-      ballBearings,
-      bell,
-      crowbar,
-      hammer,
-      lantern,
-      tinderbox,
-      waterskin,
-      rope,
-      candles,
-      oil,
-      pitons,
-      rations,
-    ];
+    return {
+      gear: [
+        backpack,
+        ballBearings,
+        bell,
+        crowbar,
+        hammer,
+        lantern,
+        tinderbox,
+        waterskin,
+        rope,
+        candles,
+        oil,
+        pitons,
+        rations,
+      ],
+    };
   }
-  static diplomat(): Item[] {
+  static diplomat(): EquipmentPack {
     const chest = Gear["CHEST"];
     const fineClothes = Gear["CLOTHES, FINE"];
     const ink = Gear["INK (1 OUNCE BOTTLE)"];
@@ -72,21 +75,23 @@ export class Inventory {
     let paper = Gear["PAPER (ONE SHEET)"];
     paper.quantity = 5;
 
-    return [
-      chest,
-      fineClothes,
-      ink,
-      inkPen,
-      lamp,
-      perfume,
-      sealingWax,
-      soap,
-      scrollCase,
-      oil,
-      paper,
-    ];
+    return {
+      gear: [
+        chest,
+        fineClothes,
+        ink,
+        inkPen,
+        lamp,
+        perfume,
+        sealingWax,
+        soap,
+        scrollCase,
+        oil,
+        paper,
+      ],
+    };
   }
-  static dungeoneer(): Item[] {
+  static dungeoneer(): EquipmentPack {
     const backpack = Gear["BACKPACK"];
     const crowbar = Gear["CROWBAR"];
     const hammer = Gear["HAMMER"];
@@ -100,18 +105,20 @@ export class Inventory {
     let rations = Gear["RATIONS (1 DAY)"];
     rations.quantity = 10;
 
-    return [
-      backpack,
-      crowbar,
-      hammer,
-      tinderbox,
-      waterskin,
-      rope,
-      torches,
-      rations,
-    ];
+    return {
+      gear: [
+        backpack,
+        crowbar,
+        hammer,
+        tinderbox,
+        waterskin,
+        rope,
+        torches,
+        rations,
+      ],
+    };
   }
-  static entertainer(): Item[] {
+  static entertainer(): EquipmentPack {
     const backpack = Gear["BACKPACK"];
     const bedroll = Gear["BEDROLL"];
     const waterskin = Gear["WATERSKIN"];
@@ -126,11 +133,15 @@ export class Inventory {
     rations.quantity = 5;
 
     // INCLUDES DISGUISE KIT WHAT DO?
+    const disguiseKit = Tools["DISGUISE KIT"];
 
-    return [backpack, bedroll, waterskin, candles, costumes, rations];
+    return {
+      gear: [backpack, bedroll, waterskin, candles, costumes, rations],
+      kit: disguiseKit,
+    };
   }
 
-  static explorer(): Item[] {
+  static explorer(): EquipmentPack {
     const backpack = Gear["BACKPACK"];
     const bedroll = Gear["BEDROLL"];
     const messKit = Gear["MESS KIT"];
@@ -144,33 +155,47 @@ export class Inventory {
     let rations = Gear["RATIONS (1 DAY)"];
     rations.quantity = 10;
 
-    return [
-      backpack,
-      bedroll,
-      messKit,
-      tinderbox,
-      waterskin,
-      rope,
-      torches,
-      rations,
-    ];
+    return {
+      gear: [
+        backpack,
+        bedroll,
+        messKit,
+        tinderbox,
+        waterskin,
+        rope,
+        torches,
+        rations,
+      ],
+    };
   }
 
-  static priest(): Item[] {
+  static priest(): EquipmentPack {
     const backpack = Gear["BACKPACK"];
     const blanket = Gear["BLANKET"];
     const tinderbox = Gear["TINDERBOX"];
-    const almsBox = {}; // THIS IS NOT A REAL ITEM
-    const incense = {}; // THIS IS NOT A REAL ITEM
-    const vestements = {}; // THIS IS NOT A REAL ITEM
+    const almsBox = Gear["ALMS BOX"]; // THIS IS NOT A REAL ITEM
+    const incense = Gear["INCENSE"]; // THIS IS NOT A REAL ITEM
+    const vestments = Gear["CLOTHES, COMMON, VESTMENTS"]; // THIS IS NOT A REAL ITEM
     const waterskin = Gear["WATERSKIN"];
 
     let rations = Gear["RATIONS (1 DAY)"];
     rations.quantity = 2;
 
-    return [backpack, blanket, tinderbox, waterskin, rations];
+    return {
+      gear: [
+        backpack,
+        blanket,
+        tinderbox,
+        almsBox,
+        incense,
+        vestments,
+        waterskin,
+        rations,
+      ],
+    };
   }
-  static scholar(): Item[] {
+
+  static scholar(): EquipmentPack {
     const backpack = Gear["BACKPACK"];
     const book = Gear["BOOK"];
     const ink = Gear["INK (1 OUNCE BOTTLE)"];
@@ -179,11 +204,13 @@ export class Inventory {
     let parchement = Gear["PARCHMENT (ONE SHEET)"];
     parchement.quantity = 10;
 
-    return [backpack, book, ink, inkPen, parchement];
+    return {
+      gear: [backpack, book, ink, inkPen, parchement],
+    };
   }
 
-  static none(): Item[] {
-    return [];
+  static none(): EquipmentPack {
+    return { gear: [] };
   }
 
   static acFromArmorType: {
@@ -255,7 +282,7 @@ export class Inventory {
       ability = "dexterity";
     }
 
-    return {
+    let weaponAttack = {
       name: weapon.name,
       attackBonus: {
         ability: pc.abilityScores[ability].modifier,
@@ -266,5 +293,8 @@ export class Inventory {
       damageType: weapon.damageType,
       damageBonus: pc.abilityScores[ability].modifier,
     };
+
+    return weaponAttack;
   }
 }
+

@@ -12,7 +12,8 @@ export class Sorcerer extends PlayerClass {
     params: SorcererLevelingParams,
     skillProficiencies?: string[],
     weapons?: string[],
-    equipmentPack?: string
+    equipmentPack?: string,
+    arcaneFocus?: string
   ) {
     super(
       "Sorcerer",
@@ -31,7 +32,7 @@ export class Sorcerer extends PlayerClass {
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons, equipmentPack);
+    this.characterStart(multiclass, skillProficiencies, weapons, equipmentPack, arcaneFocus);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -39,19 +40,16 @@ export class Sorcerer extends PlayerClass {
     }
   }
 
-  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], equipmentPack: string){
+  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], equipmentPack: string, arcaneFocus: string){
     if(!multiclass){
       this.skillProficiencies = skillProficiencies;
       this. weaponProficiencies = ["Dagger", "Dart", "Sling", "Quarterstaff", "Crossbow, light"];
       this.weapons = [...weapons, "DAGGER", "DAGGER"];
       this.equipmentPack = equipmentPack;
+      this.equipment = [arcaneFocus]; //POUCH is also a focus
       this.savingThrowProficiencies = ["constitution", "charisma"]
     }
   }
-
-  /** TODO
-   * ARCANE FOCUS OR COMPONENT POUCH
-   */
 
   abilitiesAtLevels = {
     "1": this.level1,

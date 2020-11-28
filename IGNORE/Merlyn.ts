@@ -20,7 +20,8 @@ let pc: CharacterSheet = new CharacterSheet(
     ["persuasion", "insight"],
     ["MACE", "GREATCLUB"],
     ["LEATHER", "SHIELD"],
-    "EXPLORER"
+    "EXPLORER",
+    "EMBLEM"
   ),
   new FolkHero("Mason's tools", "TINKER'S TOOLS")
 )

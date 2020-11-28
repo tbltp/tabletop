@@ -1,5 +1,5 @@
 import { BaseCharacter, BaseAbility } from "./BaseCharacter";
-import { ResourceTrait, Spell, Trait, ScalingTrait } from "./Interfaces";
+import { ResourceTrait, Spell, Trait, ScalingTrait, AttachedFeature } from "./Interfaces";
 import * as Spells from "../../Assets/Spells.json";
 import { PlayerCharacterHelper } from "./PlayerCharacterHelper";
 
@@ -16,6 +16,8 @@ export class PlayerCharacter extends BaseCharacter {
   }
 
   hitDie: string;
+  fightingStyles?: string[];
+
   attacks: PCAttack[] = [];
 
   armorClasses: PCArmorClass[] = [
@@ -69,6 +71,7 @@ export interface PCAttack {
   dice: string;
   damageType: string;
   damageBonus: { value: number };
+  fightingStyles?: AttachedFeature[];
 }
 
 export interface PCSpeed {
