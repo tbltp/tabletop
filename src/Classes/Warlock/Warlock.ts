@@ -1,9 +1,11 @@
 import { PlayerClass, LevelingParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
-import { ResourceTrait } from "../../Base/Interfaces";
+import { ResourceTrait, Spell, Trait } from "../../Base/Interfaces";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
+import * as Spells from "../../../Assets/Spells.json";
 import * as PactBoon from "../../../Assets/PactBoon.json";
 import * as WarlockClassTraits from "./Warlock.json";
+import * as Invocations from "./EldritchInvocations.json";
 import { WarlockSubclass } from "./Subclasses/WarlockSubclass";
 
 export class Warlock extends PlayerClass {
@@ -247,6 +249,45 @@ export class Warlock extends PlayerClass {
   level20(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.pushWarlockFeatures(pc, 20);
   }
+
+  static handleInvolcationSelections(
+    pc: PlayerCharacter,
+    params: WarlockLevelingParams
+    ) {
+        if (params.invocations.add) {
+            const invocations: Trait[] = params.invocations.add.map(
+            (inv) => Invocations[inv]
+            );
+            pc.pcHelper.addFeatures(...invocations);
+            const spells: Spell[] = invocations.map(
+                inv => {
+
+                    //logic needs to be added for proficiency things
+                    if(inv.spellAdded) {
+                        const dSpell: Spell = { ...Spells[inv.spellAdded], 
+                            spellcastingAbility: "charisma",
+                            source: {
+                                title: inv.title,
+                                description: inv.description
+                        }};
+                        return dSpell;
+                    }
+                    return null;
+                }
+            );
+            pc.pcHelper.addCustomSpells(...spells);
+        }
+        if (params.invocations.remove) {
+
+            const oldDisciplines: string[] = params.invocations.remove;
+            pc.pcHelper.removeFeatures(oldDisciplines);
+            const oldSpells: string[] = oldDisciplines
+                .map(d => Invocations[d].spellAdded ? Invocations[d].spellAdded : "" )
+                .filter(s => s != "");
+
+            pc.pcHelper.removeSpells(oldSpells);
+        }
+    }
 }
 
 export class DSWarlock extends Warlock {
@@ -265,4 +306,8 @@ interface WarlockLevelingParams extends LevelingParams {
     options?: [];
   };
   mysticArcanum?: string;
+  invocations?: {
+    add: string[],
+    remove: string[]
+  }
 }

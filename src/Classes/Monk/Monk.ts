@@ -234,8 +234,16 @@ export class Monk extends PlayerClass {
   }
 }
 
+export interface MonkLevelingParams extends LevelingParams {
+  disciplines?: {
+    add: string[],
+    remove: string[]
+  };
+}
+
 export class DSMonk extends Monk {
   constructor(){
     super(true, {isNoInput: true});
   }
 }
+

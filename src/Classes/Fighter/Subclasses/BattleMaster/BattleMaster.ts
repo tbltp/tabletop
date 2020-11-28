@@ -28,12 +28,12 @@ export class BattleMaster {
     // Insert tool proficiency, requires some modification to params.
   }
 
-  static battleMaster7(pc: PlayerCharacter, params: LevelingParams) {
+  static battleMaster7(pc: PlayerCharacter, params: FighterLevelingParams) {
     BattleMaster.handleManeuverSelections(pc, params);
     pc.pcHelper.addFeatures(BattleMaster.getFeature("7", "KNOW YOUR ENEMY"));
   }
 
-  static battleMaster10(pc: PlayerCharacter, params: LevelingParams) {
+  static battleMaster10(pc: PlayerCharacter, params: FighterLevelingParams) {
     BattleMaster.handleManeuverSelections(pc, params);
     pc.pcHelper.addFeatures(
       BattleMaster.getFeature("7", "IMPROVED COMBAT SUPERIORITY")
@@ -41,12 +41,12 @@ export class BattleMaster {
     pc.pcHelper.findResourceTraitByName("Superiority Dice").dice = "d10";
   }
 
-  static battleMaster15(pc: PlayerCharacter, params: LevelingParams) {
+  static battleMaster15(pc: PlayerCharacter, params: FighterLevelingParams) {
     BattleMaster.handleManeuverSelections(pc, params);
     pc.pcHelper.addFeatures(BattleMaster.getFeature("7", "RELENTLESS"));
   }
 
-  static battleMaster18(pc: PlayerCharacter, params: LevelingParams) {
+  static battleMaster18(pc: PlayerCharacter, params: FighterLevelingParams) {
     pc.pcHelper.findResourceTraitByName("Superiority Dice").dice = "d12";
   }
 
@@ -54,18 +54,16 @@ export class BattleMaster {
     pc: PlayerCharacter,
     params: FighterLevelingParams
   ) {
-    if (params.battleManeuverSelection) {
-      const maneuvers: Trait[] = params.battleManeuverSelection.map(
+    if (params.battleManeuvers.add) {
+      const maneuvers: Trait[] = params.battleManeuvers.add.map(
         (m) => Maneuvers[m]
       );
       pc.pcHelper.addFeatures(...maneuvers);
     }
-    if (params.battleManeuverReplacement) {
-      const newManeuvers: Trait[] = params.battleManeuverReplacement.add.map(
-        (m) => Maneuvers[m]
-      );
-      const oldManeuvers: string[] = params.battleManeuverReplacement.remove;
-      pc.pcHelper.replaceFeatures(oldManeuvers, newManeuvers);
+    if (params.battleManeuvers.remove) {
+
+      const oldManeuvers: string[] = params.battleManeuvers.remove;
+      pc.pcHelper.removeFeatures(oldManeuvers);
     }
   }
 }
