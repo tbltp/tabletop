@@ -1,7 +1,5 @@
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
-import { LevelingParams } from "../../../../Classes/PlayerClass";
 import * as FourElementsDict from "./WayOfTheFourElements.json"
-import * as Spells from "../../../../../Assets/Spells.json";
 import * as ElementalDisciplines from "./ElementalDisciplines.json"
 import { MonkLevelingParams } from "Classes/Monk/Monk";
 import { ISpell, Spell, Trait } from "Base/Interfaces";
@@ -17,10 +15,12 @@ export class FourElements {
     
 
         pc.pcHelper.addFeatures(
-            FourElements.getFeature("3", "DISCIPLE OF THE ELEMENTS")
+            FourElements.getFeature("3", "DISCIPLE OF THE ELEMENTS"),
+            ElementalDisciplines["ELEMENTAL ATTUNEMENT"]
         );
 
         FourElements.handleDisciplineSelections(pc, params);
+    
         
         pc.pcHelper.addScalingTraits({
             title: "Elemental Discipline Max Level",
@@ -59,37 +59,34 @@ export class FourElements {
     pc: PlayerCharacter,
     params: MonkLevelingParams
     ) {
-        if (params.disciplines.add) {
-            const disciplines: Trait[] = params.disciplines.add.map(
-            (d) => ElementalDisciplines[d]
-            );
-            pc.pcHelper.addFeatures(...disciplines);
-            const spells: Spell[] = disciplines.map(
-                d => {
-                    if(d.spellAdded) {
-                        const dSpell: Spell = { ...Spells[d.spellAdded], 
-                            spellcastingAbility: "wisdom",
-                            source: {
-                                title: d.title,
-                                description: d.description
-                        }};
-                        return dSpell;
-                    }
-                    return null;
-                }
-            );
-            pc.pcHelper.addCustomSpells(...spells);
-        }
+        this.processDisciplines(params.disciplines.add, pc);
         if (params.disciplines.remove) {
+            this.removeDiscipline(params.disciplines.remove, pc);
+        }
+    }
 
-            const oldDisciplines: string[] = params.disciplines.remove;
-            pc.pcHelper.removeFeatures(oldDisciplines);
-            const oldSpells: string[] = oldDisciplines
-                .map(d => ElementalDisciplines[d].spellAdded ? ElementalDisciplines[d].spellAdded : "" )
-                .filter(s => s != "");
+    private static processDisciplines(disciplines: string[], pc: PlayerCharacter): void {
+        const disps: Trait[] = disciplines.map(
+            (d) => ElementalDisciplines[d]
+        );
+        const spells: Spell[] = [];
+        disps.forEach((disp) => {
+            this.addDisciplineSpell(disp, pc);
+        });
+        pc.pcHelper.addFeatures(...disps);
+    }
 
-            pc.pcHelper.removeSpells(oldSpells);
+    private static removeDiscipline(discipline: string, pc: PlayerCharacter): void {
+        const oldDisp: Trait = pc.pcHelper.findFeatureTraitByName(discipline);
+        if (oldDisp.spellAdded) {
+            pc.pcHelper.removeSpells(oldDisp.spellAdded);
+          }
+        pc.pcHelper.removeFeatures(discipline);
+    }
 
+    private static addDisciplineSpell(disp: Trait, pc: PlayerCharacter): void {
+        if(disp.spellAdded) {
+            pc.pcHelper.addSpells([disp.spellAdded], "charisma", disp);
         }
     }
 }

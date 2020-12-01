@@ -15,7 +15,7 @@ export class LandCircle {
     }
     
       static land2(pc: PlayerCharacter, params: LevelingParams) {
-        pc.pcHelper.addSpells(params.spellSelection, "wisdom");
+        pc.pcHelper.addSpells(params.spellSelections.add, "wisdom");
         pc.pcHelper.addFeatures(LandCircle.getFeature("2", "NATURAL RECOVERY"));
       }
     

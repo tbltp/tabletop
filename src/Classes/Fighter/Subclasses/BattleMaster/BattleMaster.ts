@@ -54,16 +54,13 @@ export class BattleMaster {
     pc: PlayerCharacter,
     params: FighterLevelingParams
   ) {
-    if (params.battleManeuvers.add) {
-      const maneuvers: Trait[] = params.battleManeuvers.add.map(
-        (m) => Maneuvers[m]
-      );
-      pc.pcHelper.addFeatures(...maneuvers);
-    }
-    if (params.battleManeuvers.remove) {
 
-      const oldManeuvers: string[] = params.battleManeuvers.remove;
-      pc.pcHelper.removeFeatures(oldManeuvers);
+    const maneuvers: Trait[] = params.battleManeuvers.add.map(
+      (m) => Maneuvers[m]
+    );
+    pc.pcHelper.addFeatures(...maneuvers);
+    if (params.battleManeuvers.remove) {
+      pc.pcHelper.removeFeatures(params.battleManeuvers.remove);
     }
   }
 }

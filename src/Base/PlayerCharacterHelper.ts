@@ -1,4 +1,4 @@
-import { Trait, ResourceTrait, ScalingTrait, Spell } from "./Interfaces";
+import { Trait, ResourceTrait, ScalingTrait, Spell, AttachedFeature } from "./Interfaces";
 import { PlayerCharacter } from "./PlayerCharacter";
 import * as Spells from '../../Assets/Spells.json';
 
@@ -87,7 +87,7 @@ export class PlayerCharacterHelper {
         this.addTraits("features", ...features);
       }
 
-      removeFeatures(oldFeatures: string[]) {
+      removeFeatures(...oldFeatures: string[]) {
         for (let oldftr of oldFeatures) {
           for (let i = 0; i < this.pc.traits.features.length; i++) {
             if (this.pc.traits.features[i].title == oldftr) {
@@ -105,12 +105,13 @@ export class PlayerCharacterHelper {
         this.addTraits("scalingEffects", ...scalTraits);
       }
     
-      addSpells(spellList: string[], spellcastingAbility: string): void {
+      addSpells(spellList: string[], spellcastingAbility: string, source?: AttachedFeature): void {
         let spells: Spell[] = [];
         for (const selectedSpell of spellList) {
           spells.push({
             ...Spells[selectedSpell],
             spellcastingAbility: spellcastingAbility,
+            source: source
           });
         }
         for (const spell of spells) {
@@ -126,7 +127,7 @@ export class PlayerCharacterHelper {
         )
       }
 
-      removeSpells(oldSpells: string[]): void {
+      removeSpells(...oldSpells: string[]): void {
         for (let oldSpell of oldSpells) {
           const oldSpellLevel: number = Spells[oldSpell].minimumLevel;
           const oldSpellsAtLevel: Spell[] = this.pc.spells[oldSpellLevel];
@@ -136,23 +137,5 @@ export class PlayerCharacterHelper {
             }
           }
         } 
-      }
-    
-      replaceSpells(
-        newSpells: string[],
-        oldSpells: string[],
-        spellcastingAbility: string
-      ): void {
-        
-        this.addSpells(newSpells, spellcastingAbility);
-        for (let oldSpell of oldSpells) {
-          const oldSpellLevel: number = Spells[oldSpell].minimumLevel;
-          const oldSpellsAtLevel: Spell[] = this.pc.spells[oldSpellLevel];
-          for (let i = 0; i < oldSpellsAtLevel.length; i++) {
-            if (oldSpellsAtLevel[i].name == Spells[oldSpell].name) {
-              oldSpellsAtLevel.splice(i, 1);
-            }
-          }
-        }
       }
 }

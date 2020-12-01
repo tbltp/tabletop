@@ -196,7 +196,7 @@ export interface FighterLevelingParams extends LevelingParams {
   artisanToolProficiency?: string,
   battleManeuvers?: {
     add: string[],
-    remove: string[]
+    remove?: string
   };
 }
 

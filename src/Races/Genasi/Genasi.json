@@ -26,5 +26,13 @@
     "CALL TO THE WAVE": {
         "title": "Call to the Wave",
         "description": "You know the shape water cantrip. When you reach 3rd level, you can cast the create or destroy water spell as a 2nd-level spell once with this trait, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for these spells."
+    },
+    "UNENDING BREATH": {
+        "title": "Unending Breath",
+        "description": "You can hold your breath indefinitely while you're not incapacitated."
+    },
+    "MINGLE WITH THE WIND": {
+        "title": "Mingle With The Wind",
+        "description": "You can cast the Leviatate spell once with this trait, requiring no material components, and you regain the ability to cast it this way when you finish a long rest.  Constitution is your spellcasting ability for this spell."
     }
 }

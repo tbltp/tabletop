@@ -18,50 +18,53 @@ let pc: CharacterSheet = new CharacterSheet(
     ["Drum", "Lyre", "Flute"],
     {
       isNoInput: false,
-      spellSelection: [
-        "MESSAGE",
-        "VICIOUS MOCKERY",
-        "HEALING WORD",
-        "THUNDERWAVE",
-        "ILLUSORY SCRIPT",
-        "DISSONANT WHISPERS",
-      ],
+      spellSelections: {
+        add: [
+          "MESSAGE",
+          "VICIOUS MOCKERY",
+          "HEALING WORD",
+          "THUNDERWAVE",
+          "ILLUSORY SCRIPT",
+          "DISSONANT WHISPERS",
+        ],
+      },
     },
     ["RAPIER"],
     "DRUM",
-    "SCHOLAR",
+    "SCHOLAR"
   ),
   new Charlatan()
 );
 
-
-pc.levelUp(
-  "Bard",
-  1,
-  {
+pc.levelUp("Bard", 1, {
   isNoInput: false,
-  spellSelection: ["UNSEEN SERVANT"],
+  spellSelections: { add: ["UNSEEN SERVANT"] },
 });
 
-pc.levelUp(
-  "Bard",
-  1,
-  {
+pc.levelUp("Bard", 1, {
   isNoInput: false,
-  spellSelection: ["DETECT THOUGHTS"],
+  spellSelections: { add: ["DETECT THOUGHTS"] },
   proficiencySelection: ["history", "insight"],
   subclassSelection: { subclass: "VALOR" },
 });
 
-
-pc.multiClass(new Ranger(true, ["perception"], {isNoInput: false, favoredEnemy: "White People", favoredTerrain: "Cities"}));
+pc.multiClass(
+  new Ranger(true, ["perception"], {
+    isNoInput: false,
+    favoredEnemy: "White People",
+    favoredTerrain: "Cities",
+  })
+);
 
 //pc.multiClass(new Barbarian(true));
-
 
 Jsonify.dumpToJSON(pc, "Alaiyo");
 
 let newsheet: CharacterSheet = Jsonify.dumpFromLocal(`./IGNORE/Alaiyo.json`);
-newsheet.levelUp("Ranger", 10, {isNoInput: false, spellSelection: ["AID"], fightingStyle: ["ARCHERY"]});
+newsheet.levelUp("Ranger", 10, {
+  isNoInput: false,
+  spellSelections: { add: ["AID"] },
+  fightingStyle: ["ARCHERY"],
+});
 
 Jsonify.dumpToJSON(newsheet, "Alaiyo");

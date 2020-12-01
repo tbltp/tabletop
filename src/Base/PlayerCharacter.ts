@@ -51,7 +51,6 @@ export class PlayerCharacter extends BaseCharacter {
   }[]
 
   pcHelper: PlayerCharacterHelper = new PlayerCharacterHelper(this);
-
 }
 
 export interface PCArmorClass {

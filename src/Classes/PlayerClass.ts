@@ -1,5 +1,5 @@
 import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { Trait, EquipmentPack } from "../Base/Interfaces";
+import { Trait, EquipmentPack, AttachedFeature } from "../Base/Interfaces";
 import * as Spells from "../../Assets/Spells.json";
 import * as Languages from "../../Assets/Languages.json";
 import * as Gear from "../../Assets/Gear.json";
@@ -201,15 +201,16 @@ export abstract class PlayerClass {
   protected handleSpellSelections(
     pc: PlayerCharacter,
     params: LevelingParams,
-    ability: string
+    ability: string,
+    src?: AttachedFeature
   ) {
-    if (params.spellSelection) {
-      pc.pcHelper.addSpells(params.spellSelection, ability);
-    }
-    if (params.spellReplacement) {
-      const newSpells: string[] = params.spellReplacement.add;
-      const oldSpells: string[] = params.spellReplacement.remove;
-      pc.pcHelper.replaceSpells(newSpells, oldSpells, ability);
+    if(params.spellSelections) {
+      if (params.spellSelections.add) {
+        pc.pcHelper.addSpells(params.spellSelections.add, ability, src);
+      }
+      if (params.spellSelections.remove) {
+        pc.pcHelper.removeSpells(params.spellSelections.remove);
+      }
     }
   }
 
@@ -304,10 +305,9 @@ export interface LevelingParams {
     ability: string;
     improvement: number;
   }[];
-  spellSelection?: string[];
-  spellReplacement?: {
+  spellSelections?: {
     add: string[];
-    remove: string[];
+    remove?: string;
   };
   proficiencySelection?: string[];
   fightingStyle?: string[];
