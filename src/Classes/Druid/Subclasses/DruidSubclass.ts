@@ -3,6 +3,7 @@ import { LevelingParams } from "../../../Classes/PlayerClass";
 import { Subclass } from "../../Subclass";
 import { LandCircle } from "./Land/LandCircle"
 import { MoonCircle } from "./Moon/MoonCircle"
+import { SporesCircle } from "./Spores/SporesCircle"
 
 export class DruidSubclass extends Subclass {
   constructor(subclass: string, terrain?: string){
@@ -24,11 +25,26 @@ export class DruidSubclass extends Subclass {
       "10": LandCircle.land10,
       "14": LandCircle.land14
     },
+    SPORES: {
+      "2": SporesCircle.spores2,
+      "3": SporesCircle.spores3,
+      "5": SporesCircle.spores5,
+      "6": SporesCircle.spores6,
+      "7": SporesCircle.spores7,
+      "8": SporesCircle.spores8,
+      "9": SporesCircle.spores9,
+      "10": SporesCircle.spores10,
+      "14": SporesCircle.spores14
+    },
     MOON: {
       "2": MoonCircle.moon2,
       "6": MoonCircle.moon6,
+      "9": MoonCircle.moon9,
       "10": MoonCircle.moon10,
-      "14": MoonCircle.moon14
+      "12": MoonCircle.moon12,
+      "14": MoonCircle.moon14,
+      "15": MoonCircle.moon15,
+      "18": MoonCircle.moon18,
     },
   };
 
@@ -38,10 +54,6 @@ export class DruidSubclass extends Subclass {
     if(subclass === "LAND"){
       params.subclassSelection.options.push(this.terrain);
     }
-
     this.subclassDictionary[subclass][level](pc, params);
-
   }
-
-
 }
