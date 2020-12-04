@@ -216,7 +216,7 @@ export abstract class BaseCharacter {
     weapons: [],
     armor: [],
     toolKits: [],
-    items: [],
+    gear: [],
     gp: 0,
   };
 

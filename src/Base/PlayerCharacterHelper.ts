@@ -1,4 +1,4 @@
-import { Trait, ResourceTrait, ScalingTrait, Spell } from "./Interfaces";
+import { Trait, ResourceTrait, ScalingTrait, Spell, AttachedFeature } from "./Interfaces";
 import { PlayerCharacter } from "./PlayerCharacter";
 import * as Spells from '../../Assets/Spells.json';
 
@@ -10,8 +10,9 @@ export class PlayerCharacterHelper {
     pc: PlayerCharacter;
 
     private findTraitByName(traitType: string, name: string): Trait | null {
+      //accepts title casing or all caps
         const results = this.pc.traits[traitType].filter(
-          (trait) => trait.title == name
+          (trait) => trait.title == name || trait.title.toUpperCase() == name
         );
         return results.length == 1 ? results[0] : null;
       }
@@ -39,18 +40,6 @@ export class PlayerCharacterHelper {
     
       findScalingTraitByName(name: string): ScalingTrait {
         return this.findTraitByName("scalingEffects", name) as ScalingTrait;
-      }
-    
-      findSpellByName(spellName: string): Spell | null {
-        for (let level of Object.keys(this.pc.spells)) {
-          const results = this.pc.spells[level].filter(
-            (spell) => spell.name == spellName
-          );
-          if (results.length == 1) {
-            return results[0];
-          }
-        }
-        return null;
       }
     
       getSpellCountAtLevel(level: number): number {
@@ -86,6 +75,17 @@ export class PlayerCharacterHelper {
       addFeatures(...features: Trait[]): void {
         this.addTraits("features", ...features);
       }
+
+      removeFeatures(...oldFeatures: string[]) {
+        for (let oldftr of oldFeatures) {
+          for (let i = 0; i < this.pc.traits.features.length; i++) {
+            const title: string = this.pc.traits.features[i].title; 
+            if (title.toUpperCase() == oldftr) {
+              this.pc.traits.features.splice(i, 1);
+            }
+          }
+        }
+      }
     
       addResourceTraits(...resTraits: ResourceTrait[]): void {
         this.addTraits("resources", ...resTraits);
@@ -95,12 +95,13 @@ export class PlayerCharacterHelper {
         this.addTraits("scalingEffects", ...scalTraits);
       }
     
-      addSpells(spellList: string[], spellcastingAbility: string): void {
+      addSpells(spellList: string[], spellcastingAbility: string, source?: AttachedFeature): void {
         let spells: Spell[] = [];
         for (const selectedSpell of spellList) {
           spells.push({
             ...Spells[selectedSpell],
             spellcastingAbility: spellcastingAbility,
+            source: source
           });
         }
         for (const spell of spells) {
@@ -108,27 +109,23 @@ export class PlayerCharacterHelper {
         }
       }
 
-      addCustomSpell(customSpell: Spell, spellcastingAbility: string): void {
-        this.pc.spells[customSpell.minimumLevel].push(customSpell);
+      addCustomSpells(...customSpells: Spell[]): void {
+        customSpells.forEach(
+          spell => {
+            this.pc.spells[spell.minimumLevel].push(spell);
+          }
+        )
       }
-    
-      replaceSpells(
-        spellReplacements: { [key: string]: string },
-        spellcastingAbility: string
-      ): void {
-        for (let oldSpell in spellReplacements) {
-          const newSpell = {
-            ...Spells[spellReplacements[oldSpell]],
-            spellcastingAbility: spellcastingAbility,
-          };
+
+      removeSpells(...oldSpells: string[]): void {
+        for (let oldSpell of oldSpells) {
           const oldSpellLevel: number = Spells[oldSpell].minimumLevel;
           const oldSpellsAtLevel: Spell[] = this.pc.spells[oldSpellLevel];
-          for (let ind = 0; ind < oldSpellsAtLevel.length; ind++) {
-            if (oldSpellsAtLevel[ind].name == Spells[oldSpell].name) {
-              oldSpellsAtLevel.splice(ind, 1);
+          for (let i = 0; i < oldSpellsAtLevel.length; i++) {
+            if (oldSpellsAtLevel[i].name == Spells[oldSpell].name) {
+              oldSpellsAtLevel.splice(i, 1);
             }
           }
-          this.pc.spells[newSpell.minimumLevel].push(newSpell);
-        }
+        } 
       }
 }

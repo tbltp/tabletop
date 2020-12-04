@@ -1,6 +1,6 @@
 import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { ResourceTrait, ISpell, Spell, Trait } from "../Base/Interfaces";
-import * as Feats from "../../Assets/Feats.json";
+import * as Feats from "./Feats.json";
 import * as Languages from "../../Assets/Languages.json";
 import * as Spells from "../../Assets/Spells.json";
 import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";

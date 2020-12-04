@@ -1,9 +1,16 @@
 import { PlayerClass, LevelingParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
-import { ResourceTrait } from "../../Base/Interfaces";
+import {
+  AttachedFeature,
+  ResourceTrait,
+  Spell,
+  Trait,
+} from "../../Base/Interfaces";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
-import * as PactBoon from "../../../Assets/PactBoon.json";
+import * as Spells from "../../../Assets/Spells.json";
+import * as PactBoon from "./PactBoon.json";
 import * as WarlockClassTraits from "./Warlock.json";
+import * as Invocations from "./EldritchInvocations.json";
 import { WarlockSubclass } from "./Subclasses/WarlockSubclass";
 
 export class Warlock extends PlayerClass {
@@ -12,7 +19,8 @@ export class Warlock extends PlayerClass {
     params: WarlockLevelingParams,
     skillProficiencies?: string[],
     weapons?: string[],
-    equipmentPack?: string
+    equipmentPack?: string,
+    arcaneFocus?: string
   ) {
     super(
       "Warlock",
@@ -31,7 +39,13 @@ export class Warlock extends PlayerClass {
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons, equipmentPack);
+    this.characterStart(
+      multiclass,
+      skillProficiencies,
+      weapons,
+      equipmentPack,
+      arcaneFocus
+    );
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -39,23 +53,26 @@ export class Warlock extends PlayerClass {
     }
   }
 
-  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], equipmentPack: string){
-    if(!multiclass){
+  characterStart(
+    multiclass: boolean,
+    skillProficiencies: string[],
+    weapons: string[],
+    equipmentPack: string,
+    arcaneFocus: string
+  ) {
+    if (!multiclass) {
       this.skillProficiencies = skillProficiencies;
       this.weapons = [...weapons, "DAGGER", "DAGGER"];
       this.armor = ["LEATHER"];
       this.equipmentPack = equipmentPack;
+      this.equipment = [arcaneFocus]; //POUCH is also a focus
       this.savingThrowProficiencies = ["wisdom", "charisma"];
     }
   }
 
   /** TODO
-   * ARCANE FOCUS / COMPONENT POUCH
-   * ELDRITCH INVOCATIONS JSON
-   * ELDRITCH INVOCATIONS FUNCTIONS FOR TRANSFORMATIONS
-   * ELDRITCH INVOCATIONS REPLACEMENTS
+   * Handle Prequisites for each invocation
    */
-
 
   abilitiesAtLevels = {
     "1": this.level1,
@@ -97,13 +114,29 @@ export class Warlock extends PlayerClass {
   ) {
     switch (pactBoon.boon) {
       case "CHAIN":
+        const chain: AttachedFeature = {
+          title: "Pact of the Chain (Ritual)",
+          description:
+            "Your otherworldly patron bestows upon you the Find Familiar spell.",
+        };
         pc.pcHelper.addFeatures(PactBoon["CHAIN"]);
-        pc.pcHelper.addSpells(["FIND FAMILIAR"], "charisma");
+        pc.pcHelper.addSpells(["FIND FAMILIAR"], "charisma", chain);
+        return;
       case "BLADE":
         pc.pcHelper.addFeatures(PactBoon["BLADE"]);
+        return;
       case "TOME":
-        pc.pcHelper.addFeatures({ ...PactBoon["TOME"], choices: pactBoon.options });
-        pc.pcHelper.addSpells(pactBoon.options, "charisma");
+        const tome: AttachedFeature = {
+          title: "Book of Shadows",
+          description:
+            "This grimoire from your patron allows you to learn three cantrips from any class's spell list.",
+        };
+        pc.pcHelper.addFeatures({
+          ...PactBoon["TOME"],
+          choices: pactBoon.options,
+        });
+        pc.pcHelper.addSpells(pactBoon.options, "charisma", tome);
+        return;
     }
   }
 
@@ -120,13 +153,12 @@ export class Warlock extends PlayerClass {
     this.subclassDriver(pc, "1", params);
 
     this.addSpellcasting(pc, "WARLOCK");
-
   }
 
   level2(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
     pc.pcHelper.findResourceTraitByName("Pact Magic").resourceMax.value++;
-    // ELDRITCH INVOCATIONS HERE
+    this.handleInvocationSelections(pc, params);
   }
 
   level3(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -136,6 +168,7 @@ export class Warlock extends PlayerClass {
     ) as PactMagicSlots;
     pactMagicSlots.level++;
     this.pactBoonHandler(pc, params.pactBoon);
+    this.handleInvocationSelections(pc, params);
   }
 
   level4(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -149,12 +182,13 @@ export class Warlock extends PlayerClass {
       "Pact Magic"
     ) as PactMagicSlots;
     pactMagicSlots.level++;
-    // ELDRITCH INVOCATIONS HERE
+    this.handleInvocationSelections(pc, params);
   }
 
   level6(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
     this.subclassDriver(pc, "6", params);
+    this.handleInvocationSelections(pc, params);
   }
 
   level7(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -163,12 +197,13 @@ export class Warlock extends PlayerClass {
       "Pact Magic"
     ) as PactMagicSlots;
     pactMagicSlots.level++;
-    // ELDRITCH INVOCATIONS HERE
+    this.handleInvocationSelections(pc, params);
   }
 
   level8(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    this.handleInvocationSelections(pc, params);
   }
 
   level9(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -177,12 +212,13 @@ export class Warlock extends PlayerClass {
       "Pact Magic"
     ) as PactMagicSlots;
     pactMagicSlots.level++;
-    // ELDRITCH INVOCATIONS HERE
+    this.handleInvocationSelections(pc, params);
   }
 
   level10(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
     this.subclassDriver(pc, "10", params);
+    this.handleInvocationSelections(pc, params);
   }
 
   level11(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -195,61 +231,132 @@ export class Warlock extends PlayerClass {
       "MYSTIC ARCANUM",
       [params.mysticArcanum]
     );
+    this.handleInvocationSelections(pc, params);
   }
 
   level12(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
-    // ELDRITCH INVOCATIONS HERE
+    this.handleInvocationSelections(pc, params);
   }
 
   level13(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    pc.pcHelper.findFeatureTraitByName("MYSTIC ARCANUM").choices.push(
-      params.mysticArcanum
-    );
+    pc.pcHelper
+      .findFeatureTraitByName("MYSTIC ARCANUM")
+      .choices.push(params.mysticArcanum);
+      this.handleInvocationSelections(pc, params);
   }
 
   level14(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.subclassDriver(pc, "14", params);
+    this.handleInvocationSelections(pc, params);
   }
 
   level15(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    pc.pcHelper.findFeatureTraitByName("MYSTIC ARCANUM").choices.push(
-      params.mysticArcanum
-    );
-    // ELDRITCH INVOCATIONS HERE
+    pc.pcHelper
+      .findFeatureTraitByName("MYSTIC ARCANUM")
+      .choices.push(params.mysticArcanum);
+    this.handleInvocationSelections(pc, params);
   }
 
   level16(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    this.handleInvocationSelections(pc, params);
   }
 
   level17(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
     pc.pcHelper.findResourceTraitByName("Pact Magic").resourceMax.value++;
-    pc.pcHelper.findFeatureTraitByName("MYSTIC ARCANUM").choices.push(
-      params.mysticArcanum
-    );
+    pc.pcHelper
+      .findFeatureTraitByName("MYSTIC ARCANUM")
+      .choices.push(params.mysticArcanum);
+    this.handleInvocationSelections(pc, params);
   }
 
   level18(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    // ELDRITCH INVOCATIONS HERE
+    this.handleInvocationSelections(pc, params);
   }
 
   level19(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.handleWarlockSpellSelections(pc, params);
+    this.handleInvocationSelections(pc, params);
   }
 
   level20(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.pushWarlockFeatures(pc, 20);
+    this.handleInvocationSelections(pc, params);
+  }
+
+  private handleInvocationSelections(
+    pc: PlayerCharacter,
+    params: WarlockLevelingParams
+  ) {
+    this.processInvocations(params.invocations.add, pc);
+    if (params.invocations.remove) {
+      this.removeInvocation(params.invocations.remove, pc);
+    }
+  }
+
+  private processInvocations(invocations: string[], pc: PlayerCharacter): void {
+    const invs: Trait[] = invocations.map((inv) => Invocations[inv]);
+    invs.forEach((inv) => {
+      //prequisite check goes here
+      if(inv.spellAdded) {
+        this.addInvocationSpell(inv, pc);
+      }
+      if (inv.title == "Beguiling Influence") {
+        this.applyBeguilingInfluence(inv, pc);
+      } else {
+        pc.pcHelper.addFeatures(inv);
+      }
+    });
+  }
+
+  private removeInvocation(invocation: string, pc: PlayerCharacter): void {
+    const oldInv: Trait = pc.pcHelper.findFeatureTraitByName(invocation);
+    if (oldInv.title == "Beguiling Influence") {
+      this.removeBeguilingInfluence(oldInv, pc);
+    }
+    if (oldInv.spellAdded) {
+      pc.pcHelper.removeSpells(oldInv.spellAdded);
+    }
+    pc.pcHelper.removeFeatures(invocation);
+  }
+
+  private addInvocationSpell(inv: Trait, pc: PlayerCharacter): void {
+    if (inv.spellAdded) {
+      pc.pcHelper.addSpells([inv.spellAdded], "charisma", inv);
+    }
+  }
+
+  private applyBeguilingInfluence(inv: Trait, pc: PlayerCharacter): void {
+    //determine proficiencies
+    if (!pc.skills["deception"].proficient) {
+      pc.skills["deception"].proficient = true;
+      inv.choices.push("deception");
+    }
+    if (!pc.skills["persuasion"].proficient) {
+      pc.skills["persuasion"].proficient = true;
+      inv.choices.push("persuasion");
+    }
+    pc.pcHelper.addFeatures(inv);
+  }
+
+  private removeBeguilingInfluence(inv: Trait, pc: PlayerCharacter): void {
+    //remove proficiencies
+    if (inv.choices.length > 0) {
+      inv.choices.forEach((skill) => {
+        pc.skills[skill].proficient = false;
+      });
+    }
   }
 }
 
 export class DSWarlock extends Warlock {
-  constructor(){
-    super(true, {isNoInput: true});
+  constructor() {
+    super(true, { isNoInput: true });
   }
 }
 
@@ -257,10 +364,14 @@ interface PactMagicSlots extends ResourceTrait {
   level?: number;
 }
 
-interface WarlockLevelingParams extends LevelingParams {
+export interface WarlockLevelingParams extends LevelingParams {
   pactBoon?: {
     boon: string;
     options?: [];
   };
   mysticArcanum?: string;
+  invocations?: {
+    add: string[];
+    remove?: string;
+  };
 }

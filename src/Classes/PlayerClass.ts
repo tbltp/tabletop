@@ -1,5 +1,6 @@
 import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { Spell, Trait, ResourceTrait } from "../Base/Interfaces";
+import { Trait, EquipmentPack, AttachedFeature } from "../Base/Interfaces";
+import * as Spells from "../../Assets/Spells.json";
 import * as Languages from "../../Assets/Languages.json";
 import * as Gear from "../../Assets/Gear.json";
 import * as ToolKits from "../../Assets/Tools.json";
@@ -128,13 +129,21 @@ export abstract class PlayerClass {
   }
 
   protected addEquipment(pc: PlayerCharacter): void {
-    if(this.equipmentPack){
-      for (const item of Inventory.equipmentPacks[this.equipmentPack]()) {
-        pc.inventory.items.push(item);
-      }
+    for (const item of this.equipment) {
+      pc.inventory.gear.push(Gear[item]);
+    }
+  }
 
-      for (const item of this.equipment) {
-        pc.inventory.items.push(Gear[item]);
+  protected addEquipmentPack(pc: PlayerCharacter): void {
+    if(this.equipmentPack){
+
+      const pack: EquipmentPack = Inventory.equipmentPacks[this.equipmentPack]();
+
+      if(pack.kit) {
+        pc.inventory.toolKits.push(pack.kit);
+      }
+      for (const item of pack.gear) {
+        pc.inventory.gear.push(item);
       }
     }
   }
@@ -160,6 +169,7 @@ export abstract class PlayerClass {
     this.addWeapons(pc);
     this.addArmor(pc);
     this.addEquipment(pc);
+    this.addEquipmentPack(pc);
     this.addToolkits(pc);
     this.addSavingThrowProficiencies(pc);
     this.abilitiesAtLevels["1"](pc, this.lvlOneParams);
@@ -191,13 +201,16 @@ export abstract class PlayerClass {
   protected handleSpellSelections(
     pc: PlayerCharacter,
     params: LevelingParams,
-    ability: string
+    ability: string,
+    src?: AttachedFeature
   ) {
-    if (params.spellSelection) {
-      pc.pcHelper.addSpells(params.spellSelection, ability);
-    }
-    if (params.spellReplacement) {
-      pc.pcHelper.replaceSpells(params.spellReplacement, ability);
+    if(params.spellSelections) {
+      if (params.spellSelections.add) {
+        pc.pcHelper.addSpells(params.spellSelections.add, ability, src);
+      }
+      if (params.spellSelections.remove) {
+        pc.pcHelper.removeSpells(params.spellSelections.remove);
+      }
     }
   }
 
@@ -292,9 +305,9 @@ export interface LevelingParams {
     ability: string;
     improvement: number;
   }[];
-  spellSelection?: string[];
-  spellReplacement?: {
-    [key: string]: string;
+  spellSelections?: {
+    add: string[];
+    remove?: string;
   };
   proficiencySelection?: string[];
   fightingStyle?: string[];

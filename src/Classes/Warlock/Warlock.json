@@ -1,0 +1,27 @@
+{
+  "2": {
+    "ELDRITCH INVOCATIONS": {
+      "title": "Eldritch Invocations",
+      "description": "In your study of occult lore, you have unearthed eldritch invocations, fragments of forbidden knowledge that imbue you with an abiding magical ability.\nAt 2nd level, you gain two eldritch invocations of your choice. When you gain certain warlock levels, you gain additional invocations of your choice, as shown in the Invocations Known column of the Warlock table.\nAdditionally, when you gain a level in this class, you can choose one of the invocations you know and replace it with another invocation that you could learn at that level."
+    }
+  },
+  "3": {
+    "PACT BOON": {
+      "title": "Pact Boon",
+      "description": "At 3rd level, your otherworldly patron bestows a gift upon you for your loyal service."
+    }
+  },
+
+  "11": {
+    "MYSTIC ARCANUM": {
+      "title": "Mystic Arcanum",
+      "description": "At 11th level, your patron bestows upon you a magical secret called an arcanum. Choose one 6th-level spell from the warlock spell list as this arcanum.\nYou can cast your arcanum spell once without expending a spell slot. You must finish a long rest before you can do so again.\nAt higher levels, you gain more w arlock spells of your choice that can be cast in this way: one 7th-level spell at 13th level, one 8th-level spell at 15th level, and one 9th-level spell at 17th level. You regain all uses of your Mystic Arcanum when you finish a long rest."
+    }
+  },
+  "20": {
+    "ELDRITCH MASTER": {
+      "title": "Eldritch Master",
+      "description": "At 20th level, you can draw on your inner reserve of mystical power while entreating your patron to regain expended spell slots. You can spend 1 minute entreating your patron for aid to regain all your expended spell slots from your Pact Magic feature. Once you regain spell slots with this feature, you must finish a long rest before you can do so again."
+    }
+  }
+}

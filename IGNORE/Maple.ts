@@ -21,7 +21,9 @@ let pc: CharacterSheet = new CharacterSheet(
     false,
     {
       isNoInput: false,
-      spellSelection: ["POISON SPRAY", "PRODUCE FLAME"],
+      spellSelections: {
+        add: ["POISON SPRAY", "PRODUCE FLAME"]
+      },
     },
     ["insight", "perception"], 
     ["SCIMITAR"], 
@@ -32,7 +34,7 @@ let pc: CharacterSheet = new CharacterSheet(
 
 pc.levelUp("Druid", 5, {isNoInput: false, subclassSelection: {subclass: "MOON"}});
 pc.levelUp("Druid", 5, {isNoInput: true})
-pc.levelUp("Druid", 5, {isNoInput: false, abilityScoreImprovement: [{"ability": "wisdom", "improvement": 2}], spellSelection: ["RESISTANCE"]});
+pc.levelUp("Druid", 5, {isNoInput: false, abilityScoreImprovement: [{"ability": "wisdom", "improvement": 2}], spellSelections: { add: ["RESISTANCE"]}});
 pc.levelUp("Druid", 5, {isNoInput: true})
 
 Jsonify.dumpToJSON(pc, "Maple");

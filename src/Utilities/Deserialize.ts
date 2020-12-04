@@ -149,7 +149,7 @@ export class Deserialize {
             //    return new DSFireGenasi();
             
             default:
-                new DSRace();
+                return new DSRace();
         }
     }
 }

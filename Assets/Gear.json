@@ -103,6 +103,14 @@
     "weight": "1 lb",
     "description": ""
   },
+  "ALMS BOX": {
+    "name": "Alms box",
+    "itemType": "",
+    "quantity": 1,
+    "cost": "3 sp",
+    "weight": "1 lb",
+    "description": ""
+  },
   "BACKPACK": {
     "name": "Backpack",
     "itemType": "Container",
@@ -287,6 +295,13 @@
     "weight": "4 lb",
     "description": ""
   },
+  "CLOTHES, VESTMENTS": {
+    "name": "Clothes, vestments",
+    "itemType": "",
+    "cost": "5 sp",
+    "weight": "2 lb",
+    "description": ""
+  },
   "COMPONENT POUCH": {
     "name": "Component pouch",
     "itemType": "",
@@ -382,6 +397,14 @@
     "cost": "5 gp",
     "weight": "3 lb",
     "description": "This kit is a leather pouch containing bandages, salves, and splints. The kit has ten uses. As an action, you can expend one use of the kit to stabilize a creature that has 0 hit points, without needing to make a Wisdom (Medicine) check"
+  },
+  "INCENSE": {
+    "name": "Incense",
+    "itemType": "",
+    "quantity": 1,
+    "cost": "1 gp",
+    "weight": "1 lb",
+    "description": ""
   },
   "AMULET": {
     "name": "Amulet",

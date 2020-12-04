@@ -13,21 +13,22 @@ let pc: CharacterSheet = new CharacterSheet(
     false,
     {
       isNoInput: false,
-      spellSelection: ["LIGHT", "MENDING", "SPARE THE DYING"],
+      spellSelections: {add: ["LIGHT", "MENDING", "SPARE THE DYING"]},
       proficiencySelection: ["religion", "history"],
       subclassSelection: { subclass: "KNOWLEDGE", options: ["Sylvan", "Elvish"] },
     },
     ["persuasion", "insight"],
     ["MACE", "GREATCLUB"],
     ["LEATHER", "SHIELD"],
-    "EXPLORER"
+    "EXPLORER",
+    "EMBLEM"
   ),
   new FolkHero("Mason's tools", "TINKER'S TOOLS")
 )
 
 pc.levelUp("Cleric", 4, {isNoInput: true});
 pc.levelUp("Cleric", 5, {isNoInput: true});
-pc.levelUp("Cleric", 5, {isNoInput: false, abilityScoreImprovement: [{"ability": "wisdom", "improvement": 2}], spellSelection: ["RESISTANCE"]});
+pc.levelUp("Cleric", 5, {isNoInput: false, abilityScoreImprovement: [{"ability": "wisdom", "improvement": 2}], spellSelections: {add: ["RESISTANCE"]}});
 pc.levelUp("Cleric", 5, {isNoInput: true});
 
 Jsonify.dumpToJSON(pc, "Merlyn");

@@ -5,7 +5,7 @@ import * as ArchfeyPatronDict from "./TheArchfey.json"
 export class Archfey {
 
     static getFeature(level: string, featureName: string) {
-        return ArchfeyPatronDict["features"][level][featureName];
+        return ArchfeyPatronDict[level][featureName];
     }
 
     static getPatronSpells(pc: PlayerCharacter, patron: string, level: string) {

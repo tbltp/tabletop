@@ -11,14 +11,14 @@ export class NatureDomain {
 
     static nature1(pc: PlayerCharacter, params: LevelingParams) {
         pc.pcHelper.addSpells(
-          [...params.spellSelection, "ANIMAL FRIENDSHIP", "SPEAK WITH ANIMALS"],
+          [...params.spellSelections.add, "ANIMAL FRIENDSHIP", "SPEAK WITH ANIMALS"],
           "wisdom"
         );
         pc.traits.armorProficiencies.push("Heavy");
         pc.pcHelper.addFeatures(
           {
             ...NatureDomain.getFeature("1", "ACOLYTE OF NATURE"),
-            choices: params.spellSelection,
+            choices: params.spellSelections.add,
           },
           NatureDomain.getFeature("1", "BONUS PROFICIENCY")
         );

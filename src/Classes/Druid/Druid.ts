@@ -87,7 +87,7 @@ export class Druid extends PlayerClass {
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.addSpells(
-      [...params.spellSelection, ...SpellList["Druid"][1]],
+      [...params.spellSelections.add, ...SpellList["Druid"][1]],
       SpellcastingAbility["DRUID"]
     );
     this.pushDruidFeatures(pc, 1);

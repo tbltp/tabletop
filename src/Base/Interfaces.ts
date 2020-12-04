@@ -2,7 +2,7 @@ export interface Inventory {
   weapons: Weapon[];
   armor: Armor[];
   toolKits: ToolKit[];
-  items: Item[];
+  gear: Item[];
   gp: number;
 }
 
@@ -42,15 +42,22 @@ export interface Item {
 
 export interface ToolKit {
   readonly name: string;
-  readonly type: string;
+  readonly kit: string;
   readonly cost: string;
   readonly weight: string;
+  readonly description: string;
+}
+
+export interface EquipmentPack {
+  gear: Item[];
+  kit?: ToolKit;
 }
 
 export interface Trait {
   readonly title: string;
   description: string;
   choices?: string[];
+  spellAdded?: string;
 }
 
 export interface ResourceTrait extends Trait {
@@ -85,4 +92,10 @@ export interface ISpell {
 
 export interface Spell extends ISpell {
   spellcastingAbility: string;
+  source?: AttachedFeature;
+}
+
+export interface AttachedFeature {
+  readonly title: string;
+  readonly description: string;
 }

@@ -1,13 +1,15 @@
 {
   "BREATH OF WINTER": {
     "title": "Breath of Winter",
-    "description": "You can spend 6 ki points ot cast Cone of Cold.",
-    "minimumLevel": 17
+    "description": "You can spend 6 ki points to cast Cone of Cold.",
+    "minimumLevel": 17,
+    "spellAdded": "CONE OF COLD"
   },
   "CLENCH OF THE NORTH WIND": {
     "title": "Clench of the North Wind",
     "description": "You can spend 3 ki points to cast Hold Person.",
-    "minimumLevel": 6
+    "minimumLevel": 6,
+    "spellAdded": "HOLD PERSON"
   },
   "ELEMENTAL ATTUNEMENT": {
     "title": "Elemental Attunement",
@@ -17,7 +19,8 @@
   "ETERNAL MOUNTAIN DEFENSE": {
     "title": "Eternal Mountain Defense",
     "description": "You can spend 5 ki points to cast Stoneskin, targeting yourself.",
-    "minimumLevel": 11
+    "minimumLevel": 11,
+    "spellAdded": "STONESKIN"
   },
   "FANGS OF THE FIRE SNAKE": {
     "title": "Fangs of the Fire Snake",
@@ -27,7 +30,8 @@
   "FIST OF FOUR THUNDERS": {
     "title": "Fist of Four Thunders",
     "description": "You can spend 2 ki points to cast Thunderwave.",
-    "minimumLevel": 0
+    "minimumLevel": 0,
+    "spellAdded": "THUNDERWAVE"
   },
   "FIST OF UNBROKEN AIR": {
     "title": "Fist of Unbroken Air",
@@ -37,32 +41,38 @@
   "FLAMES OF THE PHOENIX": {
     "title": "Flames of the Phoenix",
     "description": "You can spend 4 ki points to cast Fireball.",
-    "minimumLevel": 11
+    "minimumLevel": 11,
+    "spellAdded": "FIREBALL"
   },
   "GONG OF THE SUMMIT": {
     "title": "Gong of the Summit",
     "description": "You can spend 3 ki points to cast Shatter.",
-    "minimumLevel": 6
+    "minimumLevel": 6,
+    "spellAdded": "SHATTER"
   },
   "MIST STANCE": {
     "title": "Mist Stance",
     "description": "You can spend 4 ki points to cast Gaseous Form, targeting yourself.",
-    "minimumLevel": 11
+    "minimumLevel": 11,
+    "spellAdded": "GASEOUS FORM"
   },
   "RIDE THE WIND": {
     "title": "Ride the Wind",
     "description": "You can spend 4 ki points to cast Fly, targeting yourself.",
-    "minimumLevel": 11
+    "minimumLevel": 11,
+    "spellAdded": "FLY"
   },
   "RIVER OF HUNGRY FLAME": {
     "title": "River of Hungry Flame",
     "description": "You can spend 5 ki points to cast Wall of Fire.",
-    "minimumLevel": 17
+    "minimumLevel": 17,
+    "spellAdded": "WALL OF FIRE"
   },
   "RUSH OF THE GALE SPIRITS": {
     "title": "Rush of the Gale Spirits",
     "description": "you can spend 2 ki points to cast Gust of Wind.",
-    "minimumLevel": 0
+    "minimumLevel": 0,
+    "spellAdded": "GUST OF WIND"
   },
   "SHAPE OF THE FLOWING RIVER": {
     "title": "Shape of the Flowing River",
@@ -72,7 +82,8 @@
   "SWEEPING CINDER STRIKE": {
     "title": "Sweeping Cinder Strike",
     "description": "You can spend 2 ki points to cast Burning Hands.",
-    "minimumLevel": 0
+    "minimumLevel": 0,
+    "spellAdded": "BURNING HANDS"
   },
   "WATER WHIP": {
     "title": "Water Whip",
@@ -82,6 +93,7 @@
   "WAVE OF ROLLING EARTH": {
     "title": "Wave of Rolling Earth",
     "description": "You can spend 6 ki points to cast Wall of Stone.",
-    "minimumLevel": 17
+    "minimumLevel": 17,
+    "spellAdded": "WALL OF STONE"
   }
 }

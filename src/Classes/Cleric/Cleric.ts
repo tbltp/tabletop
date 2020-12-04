@@ -15,7 +15,8 @@ export class Cleric extends PlayerClass {
     skillProficiencies?: string[],
     weapons?: string[],
     armor?: string[],
-    equipmentPack?: string
+    equipmentPack?: string,
+    holySymbol?: string
   ) {
     super(
       "Cleric",
@@ -34,7 +35,7 @@ export class Cleric extends PlayerClass {
       []
     );
     
-    this.characterStart(multiclass, skillProficiencies, weapons, armor, equipmentPack)
+    this.characterStart(multiclass, skillProficiencies, weapons, armor, equipmentPack, holySymbol);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -42,13 +43,14 @@ export class Cleric extends PlayerClass {
     }
   }
 
-  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], armor: string[], equipmentPack: string){
+  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], armor: string[], equipmentPack: string, holySymbol: string){
     if(!multiclass){
       this.skillProficiencies = skillProficiencies;
       this.weaponProficiencies.push("Simple");
       this.weapons = weapons;
       this.armor = armor;
       this.equipmentPack = equipmentPack;
+      this.equipment = [holySymbol]; 
       this.savingThrowProficiencies = ["wisdom", "charisma"];
     }
   }
@@ -76,11 +78,6 @@ export class Cleric extends PlayerClass {
     "20": this.level20,
   };
 
-  /** TODO:
-   * HOLY SYMBOL IN INVENTORY - NOT A REAL ITEM
-   * PRIESTS PACK CONTAINS NOT REAL ITEMS
-   */
-
   private pushClericFeatures(pc: PlayerCharacter, level: number) {
     this.pushClassFeatures(pc, level, ClericClassTraits);
   }
@@ -94,7 +91,7 @@ export class Cleric extends PlayerClass {
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.addSpells(
-      [...params.spellSelection, ...SpellList["Cleric"][1]],
+      [...params.spellSelections.add, ...SpellList["Cleric"][1]],
       SpellcastingAbility["CLERIC"]
     );
     this.addSpellcasting(pc, "CLERIC");
