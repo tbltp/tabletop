@@ -10,8 +10,9 @@ export class PlayerCharacterHelper {
     pc: PlayerCharacter;
 
     private findTraitByName(traitType: string, name: string): Trait | null {
+      //accepts title casing or all caps
         const results = this.pc.traits[traitType].filter(
-          (trait) => trait.title == name
+          (trait) => trait.title == name || trait.title.toUpperCase() == name
         );
         return results.length == 1 ? results[0] : null;
       }
@@ -39,18 +40,6 @@ export class PlayerCharacterHelper {
     
       findScalingTraitByName(name: string): ScalingTrait {
         return this.findTraitByName("scalingEffects", name) as ScalingTrait;
-      }
-    
-      findSpellByName(spellName: string): Spell | null {
-        for (let level of Object.keys(this.pc.spells)) {
-          const results = this.pc.spells[level].filter(
-            (spell) => spell.name == spellName
-          );
-          if (results.length == 1) {
-            return results[0];
-          }
-        }
-        return null;
       }
     
       getSpellCountAtLevel(level: number): number {
@@ -90,7 +79,8 @@ export class PlayerCharacterHelper {
       removeFeatures(...oldFeatures: string[]) {
         for (let oldftr of oldFeatures) {
           for (let i = 0; i < this.pc.traits.features.length; i++) {
-            if (this.pc.traits.features[i].title == oldftr) {
+            const title: string = this.pc.traits.features[i].title; 
+            if (title.toUpperCase() == oldftr) {
               this.pc.traits.features.splice(i, 1);
             }
           }

@@ -121,8 +121,10 @@ export class Warlock extends PlayerClass {
         };
         pc.pcHelper.addFeatures(PactBoon["CHAIN"]);
         pc.pcHelper.addSpells(["FIND FAMILIAR"], "charisma", chain);
+        return;
       case "BLADE":
         pc.pcHelper.addFeatures(PactBoon["BLADE"]);
+        return;
       case "TOME":
         const tome: AttachedFeature = {
           title: "Book of Shadows",
@@ -134,6 +136,7 @@ export class Warlock extends PlayerClass {
           choices: pactBoon.options,
         });
         pc.pcHelper.addSpells(pactBoon.options, "charisma", tome);
+        return;
     }
   }
 
@@ -165,6 +168,7 @@ export class Warlock extends PlayerClass {
     ) as PactMagicSlots;
     pactMagicSlots.level++;
     this.pactBoonHandler(pc, params.pactBoon);
+    this.handleInvocationSelections(pc, params);
   }
 
   level4(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -184,6 +188,7 @@ export class Warlock extends PlayerClass {
   level6(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
     this.subclassDriver(pc, "6", params);
+    this.handleInvocationSelections(pc, params);
   }
 
   level7(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -198,6 +203,7 @@ export class Warlock extends PlayerClass {
   level8(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    this.handleInvocationSelections(pc, params);
   }
 
   level9(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -212,6 +218,7 @@ export class Warlock extends PlayerClass {
   level10(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
     this.subclassDriver(pc, "10", params);
+    this.handleInvocationSelections(pc, params);
   }
 
   level11(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -224,6 +231,7 @@ export class Warlock extends PlayerClass {
       "MYSTIC ARCANUM",
       [params.mysticArcanum]
     );
+    this.handleInvocationSelections(pc, params);
   }
 
   level12(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -236,10 +244,12 @@ export class Warlock extends PlayerClass {
     pc.pcHelper
       .findFeatureTraitByName("MYSTIC ARCANUM")
       .choices.push(params.mysticArcanum);
+      this.handleInvocationSelections(pc, params);
   }
 
   level14(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.subclassDriver(pc, "14", params);
+    this.handleInvocationSelections(pc, params);
   }
 
   level15(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -252,6 +262,7 @@ export class Warlock extends PlayerClass {
 
   level16(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    this.handleInvocationSelections(pc, params);
   }
 
   level17(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -260,6 +271,7 @@ export class Warlock extends PlayerClass {
     pc.pcHelper
       .findFeatureTraitByName("MYSTIC ARCANUM")
       .choices.push(params.mysticArcanum);
+    this.handleInvocationSelections(pc, params);
   }
 
   level18(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -269,10 +281,12 @@ export class Warlock extends PlayerClass {
   level19(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.handleWarlockSpellSelections(pc, params);
+    this.handleInvocationSelections(pc, params);
   }
 
   level20(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.pushWarlockFeatures(pc, 20);
+    this.handleInvocationSelections(pc, params);
   }
 
   private handleInvocationSelections(
@@ -289,7 +303,9 @@ export class Warlock extends PlayerClass {
     const invs: Trait[] = invocations.map((inv) => Invocations[inv]);
     invs.forEach((inv) => {
       //prequisite check goes here
-      this.addInvocationSpell(inv, pc);
+      if(inv.spellAdded) {
+        this.addInvocationSpell(inv, pc);
+      }
       if (inv.title == "Beguiling Influence") {
         this.applyBeguilingInfluence(inv, pc);
       } else {
@@ -348,7 +364,7 @@ interface PactMagicSlots extends ResourceTrait {
   level?: number;
 }
 
-interface WarlockLevelingParams extends LevelingParams {
+export interface WarlockLevelingParams extends LevelingParams {
   pactBoon?: {
     boon: string;
     options?: [];
