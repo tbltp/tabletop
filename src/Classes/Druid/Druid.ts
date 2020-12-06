@@ -90,15 +90,12 @@ export class Druid extends PlayerClass {
       [...params.spellSelections.add, ...SpellList["Druid"][1]],
       SpellcastingAbility["DRUID"]
     );
-    this.pushDruidFeatures(pc, 1);
-    
+    this.pushDruidFeatures(pc, 1); 
     this.addSpellcasting(pc, "DRUID");
-
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
-    // druid circle
-    
+    // druid circle  
     // wild shape
     const wildShapeRes: ResourceTrait = {
       title: "Wild Shape",
@@ -113,7 +110,7 @@ export class Druid extends PlayerClass {
     };
     pc.pcHelper.addResourceTraits(wildShapeRes);
     pc.pcHelper.addScalingTraits(wildShapeScale);
-
+    
     // pcHelper.This kinda sucks depending on expansion subclasses :( if they have parameters / subchoices this breaks, but we'll see.
     if(params.subclassSelection.options){
       this.subclass = new DruidSubclass(params.subclassSelection.subclass, params.subclassSelection.options[0]);
@@ -122,7 +119,6 @@ export class Druid extends PlayerClass {
       this.subclass = new DruidSubclass(params.subclassSelection.subclass);
     }
     this.subclassDriver(pc, "2", params);    
-
     this.pushDruidFeatures(pc, 2);
   }
 
@@ -133,7 +129,6 @@ export class Druid extends PlayerClass {
       [...SpellList["Druid"][2]],
       SpellcastingAbility["DRUID"]
     );   
-
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {

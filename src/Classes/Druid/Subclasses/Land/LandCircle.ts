@@ -11,11 +11,10 @@ export class LandCircle {
   }
   
   static getFeature(level: string, featureName: string) {
-    return LandCircleDict[level][featureName];
+    return LandCircleDict["features"][level][featureName];
   }
   
   static land2(pc: PlayerCharacter, params: LevelingParams) {
-    pc.pcHelper.addSpells(params.spellSelections.add, "wisdom");
     pc.pcHelper.addFeatures(LandCircle.getFeature("2", "NATURAL RECOVERY"));
     const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName("Wild Shape");
     wildShapeScale.challengeRating = 0.25;
