@@ -95,9 +95,7 @@ export class Barbarian extends PlayerClass {
         bonus: { value: 0 },
       });
     }
-
     this.pushBarbarianFeatures(pc, 1);
-
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
@@ -127,7 +125,6 @@ export class Barbarian extends PlayerClass {
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
     this.subclassDriver(pc, "6", params);
-    console.log(pc.traits.resources);
     pc.pcHelper.findResourceTraitByName("Rage").resourceMax.value++;
   }
 
