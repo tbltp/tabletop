@@ -1,6 +1,7 @@
 import { Subclass } from "../../Subclass";
 import { CollegeOfGlamour } from "./Glamour/CollegeOfGlamour";
 import { CollegeOfLore } from "./Lore/CollegeOfLore";
+import { CollegeOfSwords } from "./Swords/CollegeOfSwords";
 import { CollegeOfValor } from "./Valor/CollegeOfValor";
 
 export class BardSubclass extends Subclass {
@@ -19,6 +20,11 @@ export class BardSubclass extends Subclass {
       "3": CollegeOfValor.valor3,
       "6": CollegeOfValor.valor6,
       "14": CollegeOfValor.valor14,
+    },
+    SWORDS: {
+      "3": CollegeOfSwords.swords3,
+      "6": CollegeOfSwords.swords6,
+      "14": CollegeOfSwords.swords14,
     },
     GLAMOUR: {
       "3": CollegeOfGlamour.glamour3,
