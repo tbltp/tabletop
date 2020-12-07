@@ -3,6 +3,7 @@ import { Berserker } from "./Berserker/Berserker";
 import { TotemWarrior } from "./TotemWarrior/TotemWarrior";
 import { AncestralGuardian } from "./AncestralGuardian/AncestralGuardian"
 import { StormHerald } from "./StormHerald/StormHerald";
+import { Zealot } from "./Zealot/Zealot";
 export class BarbarianSubclass extends Subclass {
 
   constructor(subclass: string){
@@ -15,6 +16,18 @@ export class BarbarianSubclass extends Subclass {
       "6": Berserker.berserker6,
       "10": Berserker.berserker10,
       "14": Berserker.berserker14,
+    },
+    ZEALOT: {
+      "3": Zealot.zealot3,
+      "4": Zealot.upFury,
+      "6": Zealot.zealot6,
+      "8": Zealot.upFury,
+      "10": Zealot.zealot10,
+      "12": Zealot.upFury,
+      "14": Zealot.zealot14,
+      "16": Zealot.upFury,
+      "18": Zealot.upFury,
+      "20": Zealot.upFury,
     },
     "TOTEM WARRIOR": {
       "3": TotemWarrior.totemWarrior3,
