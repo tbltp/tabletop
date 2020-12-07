@@ -21,11 +21,13 @@ export class CollegeOfSwords {
 
   static swords6(pc: PlayerCharacter, params: LevelingParams) {
     CollegeOfSwords.getFeature("6", "EXTRA ATTACK");
-    pc.pcHelper.addResourceTraits({
-      title: "Extra Attack",
-      description: "Number of Extra Attacks you can make.",
-      resourceMax: { value: 1 },
-    });
+    if(!pc.pcHelper.findResourceTraitByName("Extra Attack")) {
+      pc.pcHelper.addResourceTraits({
+        title: "Extra Attack",
+        description: "Number of Extra Attacks you can make.",
+        resourceMax: { value: 1 },
+      });
+    }
   }
 
   static swords14(pc: PlayerCharacter, params: LevelingParams) {

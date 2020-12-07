@@ -112,11 +112,14 @@ export class Fighter extends PlayerClass {
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushFighterFeatures(pc, 5);
-    pc.pcHelper.addResourceTraits({
-      title: "Extra Attack",
-      description: "Number of Extra Attacks you can make.",
-      resourceMax: { value: 1 },
-    });
+    //check for extra attack already
+    if(!pc.pcHelper.findResourceTraitByName("Extra Attack")){
+      pc.pcHelper.addResourceTraits({
+        title: "Extra Attack",
+        description: "Number of Extra Attacks you can make.",
+        resourceMax: { value: 1 },
+      });
+    }
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {

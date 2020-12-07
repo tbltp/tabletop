@@ -137,6 +137,13 @@ export class Paladin extends PlayerClass {
   level5(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
     this.pushPaladinFeatures(pc, 5);
+    if(!pc.pcHelper.findResourceTraitByName("Extra Attack")){
+      pc.pcHelper.addResourceTraits({
+        title: "Extra Attack",
+        description: "Number of Extra Attacks you can make.",
+        resourceMax: { value: 1 },
+      });
+    }
     pc.pcHelper.addSpells([...SpellList["Paladin"][2]], SpellcastingAbility["PALADIN"]);
   }
 

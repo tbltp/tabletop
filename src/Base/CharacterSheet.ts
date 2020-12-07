@@ -101,7 +101,8 @@ export class CharacterSheet {
       
       // Run through and sum the weighted class levels for spell slots.
       for(let playerClass of Object.keys(this.levels)){
-        if(SpellSlotFactory.spellcastingClassRanks[playerClass] == "PRIMARY"){ multiclassSpellcasterLevel += this.levels[playerClass].value }
+        if(SpellSlotFactory.spellcastingClassRanks[playerClass]=="NONE"){}
+        else if(SpellSlotFactory.spellcastingClassRanks[playerClass] == "PRIMARY"){ multiclassSpellcasterLevel += this.levels[playerClass].value }
         else if(SpellSlotFactory.spellcastingClassRanks[playerClass] == "SECONDARY"){ multiclassSpellcasterLevel += this.levels[playerClass].value / 2 }  
         else if(SpellSlotFactory.spellcastingSubclasses[this.playerClasses[playerClass].subclass.title]) { multiclassSpellcasterLevel += this.levels[playerClass].value / 3 }  
       }

@@ -125,6 +125,13 @@ export class Ranger extends PlayerClass {
   level5(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
     this.pushRangerFeatures(pc, 5);
+    if(!pc.pcHelper.findResourceTraitByName("Extra Attack")){
+      pc.pcHelper.addResourceTraits({
+        title: "Extra Attack",
+        description: "Number of Extra Attacks you can make.",
+        resourceMax: { value: 1 },
+      });
+    }
   }
 
   level6(pc: PlayerCharacter, params: RangerLevelingParams): void {
