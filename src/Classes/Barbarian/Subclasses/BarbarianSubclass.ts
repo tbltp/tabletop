@@ -2,6 +2,7 @@ import { Subclass } from "../../Subclass";
 import { Berserker } from "./Berserker/Berserker";
 import { TotemWarrior } from "./TotemWarrior/TotemWarrior";
 import { AncestralGuardian } from "./AncestralGuardian/AncestralGuardian"
+import { StormHerald } from "./StormHerald/StormHerald";
 export class BarbarianSubclass extends Subclass {
 
   constructor(subclass: string){
@@ -27,5 +28,14 @@ export class BarbarianSubclass extends Subclass {
       "10": AncestralGuardian.ancestralGuardian10,
       "14": AncestralGuardian.ancestralGuardian14,
     },
+    "STORM HERALD": {
+      "3": StormHerald.stormHerald3,
+      "5": StormHerald.stormHerald5,
+      "6": StormHerald.stormHerald6,
+      "10": StormHerald.stormHerald10,
+      "14": StormHerald.stormHerald14,
+      "15": StormHerald.stormHerald15,
+      "20": StormHerald.stormHerald20,
+    }
   };
 }

@@ -121,6 +121,7 @@ export class Barbarian extends PlayerClass {
         bonus: {value: 10}
       }
     )
+    this.subclassDriver(pc,"5",params);
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
@@ -170,6 +171,7 @@ export class Barbarian extends PlayerClass {
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushBarbarianFeatures(pc, 15);
+    this.subclassDriver(pc,"15",params);
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
@@ -192,6 +194,7 @@ export class Barbarian extends PlayerClass {
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushBarbarianFeatures(pc, 20);
+    this.subclassDriver(pc,"20",params);
     pc.pcHelper.changeAbilityScoreMaxes(["strength", "constitution"], 24);
     pc.pcHelper.improveAbilityScores([
       {
