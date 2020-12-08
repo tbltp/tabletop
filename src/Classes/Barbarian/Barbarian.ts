@@ -95,9 +95,7 @@ export class Barbarian extends PlayerClass {
         bonus: { value: 0 },
       });
     }
-
     this.pushBarbarianFeatures(pc, 1);
-
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
@@ -112,6 +110,7 @@ export class Barbarian extends PlayerClass {
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "4", params);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
@@ -123,11 +122,18 @@ export class Barbarian extends PlayerClass {
         bonus: {value: 10}
       }
     )
+    if(!pc.pcHelper.findResourceTraitByName("Extra Attack")) {
+      pc.pcHelper.addResourceTraits({
+        title: "Extra Attack",
+        description: "Number of Extra Attacks you can make.",
+        resourceMax: { value: 1 },
+      });
+    }
+    this.subclassDriver(pc,"5",params);
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
     this.subclassDriver(pc, "6", params);
-    console.log(pc.traits.resources);
     pc.pcHelper.findResourceTraitByName("Rage").resourceMax.value++;
   }
 
@@ -137,6 +143,7 @@ export class Barbarian extends PlayerClass {
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "8", params);
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
@@ -161,6 +168,7 @@ export class Barbarian extends PlayerClass {
   level12(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     pc.pcHelper.findResourceTraitByName("Rage").resourceMax.value++;
+    this.subclassDriver(pc, "12", params);
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
@@ -173,11 +181,13 @@ export class Barbarian extends PlayerClass {
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushBarbarianFeatures(pc, 15);
+    this.subclassDriver(pc,"15",params);
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     pc.pcHelper.findScalingTraitByName("Rage Damage").bonus = 4;
+    this.subclassDriver(pc, "16", params);
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
@@ -187,6 +197,7 @@ export class Barbarian extends PlayerClass {
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushBarbarianFeatures(pc, 18);
+    this.subclassDriver(pc, "18", params);
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
@@ -195,6 +206,7 @@ export class Barbarian extends PlayerClass {
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushBarbarianFeatures(pc, 20);
+    this.subclassDriver(pc,"20",params);
     pc.pcHelper.changeAbilityScoreMaxes(["strength", "constitution"], 24);
     pc.pcHelper.improveAbilityScores([
       {

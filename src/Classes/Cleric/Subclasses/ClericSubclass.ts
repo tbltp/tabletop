@@ -1,5 +1,6 @@
 
 import { Subclass } from "../../Subclass";
+import { ForgeDomain } from "./Forge/ForgeDomain";
 import { KnowledgeDomain } from "./Knowledge/KnowledgeDomain";
 import { LifeDomain } from "./Life/LifeDomain";
 import { LightDomain } from "./Light/LightDomain";
@@ -7,6 +8,7 @@ import { NatureDomain } from "./Nature/NatureDomain";
 import { TempestDomain } from "./Tempest/TempestDomain";
 import { TrickeryDomain } from "./Trickery/TrickeryDomain";
 import { WarDomain } from "./War/WarDomain";
+import { GraveDomain } from "./Grave/GraveDomain";
 
 export class ClericSubclass extends Subclass {
 
@@ -36,6 +38,7 @@ export class ClericSubclass extends Subclass {
         "7": LifeDomain.life7,
         "8": LifeDomain.life8,
         "9": LifeDomain.life9,
+        "14": LifeDomain.life14,
         "17": LifeDomain.life17
       },
       LIGHT: {
@@ -47,7 +50,6 @@ export class ClericSubclass extends Subclass {
         "7": LightDomain.light7,
         "8": LightDomain.light8,
         "9": LightDomain.light9,
-        "14": LightDomain.light14,
         "17": LightDomain.light17
       },
       NATURE: {
@@ -59,6 +61,7 @@ export class ClericSubclass extends Subclass {
         "7": NatureDomain.nature7,
         "8": NatureDomain.nature8,
         "9": NatureDomain.nature9,
+        "14": NatureDomain.nature14,
         "17":NatureDomain.nature17
       },
       TEMPEST: {
@@ -70,6 +73,7 @@ export class ClericSubclass extends Subclass {
         "7": TempestDomain.tempest7,
         "8": TempestDomain.tempest8,
         "9": TempestDomain.tempest9,
+        "14": TempestDomain.tempest14,
         "17": TempestDomain.tempest17
       },
       TRICKERY: {
@@ -81,6 +85,7 @@ export class ClericSubclass extends Subclass {
         "7": TrickeryDomain.trickery7,
         "8": TrickeryDomain.trickery8,
         "9": TrickeryDomain.trickery9,
+        "14": TrickeryDomain.trickery14,
         "17": TrickeryDomain.trickery17
       },
       WAR: {
@@ -92,7 +97,31 @@ export class ClericSubclass extends Subclass {
         "7": WarDomain.war7,
         "8": WarDomain.war8,
         "9": WarDomain.war9,
+        "14": WarDomain.war14,
         "17": WarDomain.war17
       },
+      FORGE: {
+        "1": ForgeDomain.forge1,
+        "2": ForgeDomain.forge2,
+        "3": ForgeDomain.forge3,
+        "5": ForgeDomain.forge5,
+        "6": ForgeDomain.forge6,
+        "7": ForgeDomain.forge7,
+        "8": ForgeDomain.forge8,
+        "9": ForgeDomain.forge9,
+        "14": ForgeDomain.forge14,
+        "17": ForgeDomain.forge17
+      },
+      GRAVE: {
+        "1": GraveDomain.grave1,
+        "2": GraveDomain.grave2,
+        "3": GraveDomain.grave3,
+        "5": GraveDomain.grave5,
+        "6": GraveDomain.grave6,
+        "7": GraveDomain.grave7,
+        "8": GraveDomain.grave8,
+        "9": GraveDomain.grave9,
+        "17": GraveDomain.grave17
+      }
   };
 }

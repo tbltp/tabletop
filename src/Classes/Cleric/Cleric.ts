@@ -91,7 +91,7 @@ export class Cleric extends PlayerClass {
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.addSpells(
-      [...params.spellSelections.add, ...SpellList["Cleric"][1]],
+      [...SpellList["Cleric"][1]],
       SpellcastingAbility["CLERIC"]
     );
     this.addSpellcasting(pc, "CLERIC");
@@ -103,15 +103,20 @@ export class Cleric extends PlayerClass {
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
     // channel divinity
-    if(PlayerClass.multiClassCheck(pc, "Channel Divinity")){
-      const channelDivinity: ResourceTrait = {
-        title: "Channel Divinity",
-        description: "Number of times you can use a Channel Divinity ability.",
-        resourceMax: { value: 1 },
-      };
-      pc.pcHelper.addResourceTraits(channelDivinity);
+    // if(!PlayerClass.multiClassCheck(pc, "Channel Divinity")){
+    //   const channelDivinity: ResourceTrait = {
+    //     title: "Channel Divinity",
+    //     description: "Number of times you can use a Channel Divinity ability.",
+    //     resourceMax: { value: 1 },
+    //   };
+    //   pc.pcHelper.addResourceTraits(channelDivinity);
+    // }
+    const channelDivinity: ResourceTrait = {
+      title: "Channel Divinity",
+      description: "Number of times you can use Channel Divinity",
+      resourceMax: {value: 1}
     }
-    
+    pc.pcHelper.addResourceTraits(channelDivinity);
     // divine domain
     this.subclassDriver(pc, "2", params);
     this.pushClericFeatures(pc, 2);

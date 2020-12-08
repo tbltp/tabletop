@@ -34,12 +34,15 @@
   },
   "devDependencies": {
     "@types/jest": "^26.0.10",
+    "@types/node": "^14.14.10",
     "jest": "^26.4.2",
     "jest-extended": "^0.11.5",
     "ts-jest": "^26.3.0",
     "typescript": "^4.0.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "fs": "0.0.1-security"
+  },
   "scripts": {
     "test": "jest"
   },
