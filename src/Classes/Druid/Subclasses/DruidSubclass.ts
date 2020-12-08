@@ -4,6 +4,7 @@ import { Subclass } from "../../Subclass";
 import { LandCircle } from "./Land/LandCircle"
 import { MoonCircle } from "./Moon/MoonCircle"
 import { SporesCircle } from "./Spores/SporesCircle"
+import { DreamsCircle } from "./Dreams/DreamsCircle"
 
 export class DruidSubclass extends Subclass {
   constructor(subclass: string, terrain?: string){
@@ -57,6 +58,27 @@ export class DruidSubclass extends Subclass {
       "15": MoonCircle.upWildShape,
       "18": MoonCircle.upWildShape,
     },
+    DREAMS: {
+      "2": DreamsCircle.dreams2,
+      "3": DreamsCircle.upBalm,
+      "4": DreamsCircle.dreams4,
+      "5": DreamsCircle.upBalm,
+      "6": DreamsCircle.dreams6,
+      "7": DreamsCircle.upBalm,
+      "8": DreamsCircle.dreams8,
+      "9": DreamsCircle.upBalm,
+      "10": DreamsCircle.dreams10,
+      "11": DreamsCircle.upBalm,
+      "12": DreamsCircle.upBalm,
+      "13": DreamsCircle.upBalm,
+      "14": DreamsCircle.dreams14,
+      "15": DreamsCircle.upBalm,
+      "16": DreamsCircle.upBalm,
+      "17": DreamsCircle.upBalm,
+      "18": DreamsCircle.upBalm,
+      "19": DreamsCircle.upBalm,
+      "20": DreamsCircle.upBalm,
+    }
   };
 
   subclassDriver(pc: PlayerCharacter, level: string, subclass: string, params: LevelingParams){
