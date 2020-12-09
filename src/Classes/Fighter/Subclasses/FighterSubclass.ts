@@ -5,6 +5,7 @@ import { BattleMaster } from "./BattleMaster/BattleMaster";
 import { EldritchKnight } from "./EldritchKnight/EldritchKnight";
 import { ArcaneArcher } from "./ArcaneArcher/ArcaneArcher";
 import { Cavalier } from "./Cavalier/Cavalier";
+import { Samurai } from "./Samurai/Samurai";
 
 export class FighterSubclass extends Subclass {
   constructor(subclass: string){
@@ -62,6 +63,14 @@ export class FighterSubclass extends Subclass {
           "18": Cavalier.cavalier18,
           "19": Cavalier.upWarding,
           "20": Cavalier.upMark,
+        },
+        SAMURAI: {
+          "3": Samurai.samurai3,
+          "5": Samurai.upSpirit,
+          "7": Samurai.samurai7,
+          "10": Samurai.samurai10,
+          "15": Samurai.samurai15,
+          "18": Samurai.samurai18,
         }
       };
 }
