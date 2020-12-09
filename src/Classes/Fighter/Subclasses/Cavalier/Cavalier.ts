@@ -14,6 +14,13 @@ export class Cavalier {
   static upWarding(pc:PlayerCharacter) {
     const wardingManeuver: ResourceTrait = pc.pcHelper.findResourceTraitByName("Warding Maneuver");
     wardingManeuver.resourceMax.value = pc.abilityScores.constitution.modifier.value;
+    Cavalier.upMark(pc);
+  }
+
+  static upMark(pc: PlayerCharacter) {
+    const unwaveringMark: ResourceTrait = pc.pcHelper.findResourceTraitByName("Unwavering Mark");
+    unwaveringMark.bonus+=1;
+    unwaveringMark.resourceMax.value = pc.abilityScores.strength.modifier.value;
   }
 
   static cavalier3(pc: PlayerCharacter, params: LevelingParams) {
@@ -22,6 +29,13 @@ export class Cavalier {
     pc.traits.languages.push(Languages[params.subclassSelection.options[0]]);
     pc.pcHelper.addFeatures(Cavalier.getFeature("3", "BORN TO THE SADDLE"));
     pc.pcHelper.addFeatures(Cavalier.getFeature("3", "UNWAVERING MARK"));
+    const unwaveringMark: ResourceTrait = {
+      title: "Unwavering Mark",
+      description: "Number of times you may use Unwavering Mark",
+      bonus: 1,
+      resourceMax: {value: pc.abilityScores.strength.modifier.value}
+    }
+    pc.pcHelper.addResourceTraits(unwaveringMark);
   }
 
   static cavalier7(pc: PlayerCharacter, params: LevelingParams) {

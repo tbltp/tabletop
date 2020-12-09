@@ -50,6 +50,8 @@ export class FighterSubclass extends Subclass {
         },
         CAVALIER: {
           "3": Cavalier.cavalier3,
+          "4": Cavalier.upMark,
+          "6": Cavalier.upMark,
           "7": Cavalier.cavalier7,
           "8": Cavalier.upWarding,
           "10": Cavalier.cavalier10,
@@ -59,6 +61,7 @@ export class FighterSubclass extends Subclass {
           "16": Cavalier.upWarding,
           "18": Cavalier.cavalier18,
           "19": Cavalier.upWarding,
+          "20": Cavalier.upMark,
         }
       };
 }
