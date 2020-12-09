@@ -7,14 +7,13 @@ import { ISpell, Spell } from "../../../Base/Interfaces";
 
 
 export class DarkElf extends Elf {
-    constructor(language: string) {
+    constructor() {
       super("Dark Elf");
       this.traits.push(
         traits["SUPERIOR DARKVISION"],
         traits["SUNLIGHT SENSITIVITY"],
         traits["DROW MAGIC"]
       );
-      this.languages.push(languages[language]);
       this.weaponProficiencies.push("Rapier", "Shortsword", "Crossbow, hand");
     }
   
@@ -54,6 +53,6 @@ export class DarkElf extends Elf {
   
   export class DSDarkElf extends DarkElf {
     constructor(){
-      super("")
+      super()
     }
   }
