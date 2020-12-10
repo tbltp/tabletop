@@ -1,16 +1,59 @@
 import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { ResourceTrait, ISpell, Spell, Trait } from "../Base/Interfaces";
-import * as Feats from "./Feats.json";
 import * as Languages from "../../Assets/Languages.json";
 import * as Spells from "../../Assets/Spells.json";
+import * as Feats from "./Feats.json";
 import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
 
 export abstract class Feat {
+  constructor(
+    name: string,
+    abilityScore?: string,
+    spellClass?: string,
+    spells?: string[],
+    languages?: string[],
+    skills?: string[],
+    tools?: string[],
+    weaponProficiencies?: string[],
+    element?: string
+  ) {
+    this.name = name;
+    this.abilityScore = abilityScore;
+    this.spellClass = spellClass;
+    this.spells = spells;
+    this.languages = languages;
+    this.skills = skills;
+    this.tools = tools;
+    this.weaponProficiencies = weaponProficiencies;
+    this.trait = Feats[name.toUpperCase()];
+    this.element = element;
+  }
+
+  name: string;
+  abilityScore: string | null;
+  spellClass: string | null;
+  spells: string[] | null;
+  languages: string[] | null;
+  skills: string[] | null;
+  tools: string[] | null;
+  weaponProficiencies: string[] | null;
+  element: string | null;
+
   trait: Trait; // Description of Feat inside of Trait list inside PC
   abilitiesAtLevels: { [key: string]: (pc: PlayerCharacter) => void } = {};
 
-  public abstract apply(pc: PlayerCharacter);
+  protected apply(pc: PlayerCharacter, choices?: string[], spell?: string) {
+    if(choices || spell) {
+      const newTrait: Trait = {
+        ...this.trait, 
+        choices: choices,
+        spellAdded: spell
+      }
+    }
+    pc.pcHelper.addFeatures(this.trait);
+  }
 
+  //TODO: separate out pre-req logic checking to an external class to handle feats, eld. invocations, elem. disciplines, multiclasses, etc
   abilityPrereqCheck(
     pc: PlayerCharacter,
     skill: string,
@@ -28,261 +71,15 @@ export abstract class Feat {
   }
 }
 
-export class Alert extends Feat {
-  constructor() {
-    super();
-  }
 
-  trait = Feats["ALERT"];
 
-  apply(pc: PlayerCharacter) {
-    pc.baseStats["initiativeBonus"].bonus.value += 5;
-    pc.traits.features.push(this.trait);
-  }
-}
 
-export class Athlete extends Feat {
-  constructor(abilityScore: string) {
-    super();
-    this.abilityScore = abilityScore;
-  }
 
-  trait = Feats["ATHLETE"];
-  private abilityScore: string;
 
-  apply(pc: PlayerCharacter) {
-    pc.abilityScores[this.abilityScore].update(1);
-    pc.traits.features.push(this.trait);
-  }
-}
 
-export class Actor extends Feat {
-  constructor() {
-    super();
-  }
 
-  trait = Feats["ACTOR"];
 
-  apply(pc: PlayerCharacter) {
-    pc.abilityScores.charisma.update(1);
-    pc.traits.features.push(this.trait);
-  }
-}
 
-export class Charger extends Feat {
-  constructor() {
-    super();
-  }
-
-  trait = Feats["CHARGER"];
-
-  apply(pc: PlayerCharacter) {
-    pc.traits.features.push(this.trait);
-  }
-}
-
-export class CrossbowExpert extends Feat {
-  constructor() {
-    super();
-  }
-
-  trait = Feats["CROSSBOW EXPERT"];
-
-  apply(pc: PlayerCharacter) {
-    pc.traits.features.push(this.trait);
-  }
-}
-
-export class DefensiveDuelist extends Feat {
-  constructor() {
-    super();
-  }
-
-  trait = Feats["DEFENSIVE DUELIST"];
-
-  apply(pc: PlayerCharacter) {
-    if (!this.abilityPrereqCheck(pc, "dexterity", 13)) {
-      throw Error("Requirement Not Met: 13 Dex");
-    }
-
-    pc.traits.features.push(this.trait);
-  }
-}
-
-export class DualWielder extends Feat {
-  constructor() {
-    super();
-  }
-
-  trait = Feats["DUAL WIELDER"];
-
-  apply(pc: PlayerCharacter) {
-    pc.traits.features.push(this.trait);
-  }
-}
-
-export class DungeonDelver extends Feat {
-  constructor() {
-    super();
-  }
-
-  trait = Feats["DUNGEON DELVER"];
-
-  apply(pc: PlayerCharacter) {
-    pc.traits.features.push(this.trait);
-  }
-}
-
-export class Durable extends Feat {
-  constructor(abilityScore: string) {
-    super();
-    this.abilityScore = abilityScore;
-  }
-
-  trait = Feats["DURABLE"];
-  private abilityScore: string;
-
-  apply(pc: PlayerCharacter) {
-    pc.abilityScores[this.abilityScore].update(1);
-    pc.traits.features.push(this.trait);
-  }
-}
-
-export class ElementalAdept extends Feat {
-  constructor(element: string) {
-    super();
-    this.element = element;
-  }
-
-  trait = Feats["ELEMENTAL ADEPT"];
-  private element: string;
-
-  apply(pc: PlayerCharacter) {
-    this.trait.description += `(${this.element})`;
-    pc.traits.features.push(this.trait);
-  }
-}
-
-export class Grappler extends Feat {
-  constructor() {
-    super();
-  }
-
-  trait = Feats["GRAPPLER"];
-
-  apply(pc: PlayerCharacter) {
-    if (!this.abilityPrereqCheck(pc, "strength", 13)) {
-      throw Error("Requirement Not Met: 13 Str");
-    }
-
-    pc.traits.features.push(this.trait);
-  }
-}
-
-export class GreatWeaponMaster extends Feat {
-  constructor() {
-    super();
-  }
-
-  trait = Feats["GREAT WEAPON MASTER"];
-
-  apply(pc: PlayerCharacter) {
-    pc.traits.features.push(this.trait);
-  }
-}
-
-export class Healer extends Feat {
-  constructor() {
-    super();
-  }
-
-  trait = Feats["HEALER"];
-
-  apply(pc: PlayerCharacter) {
-    pc.traits.features.push(this.trait);
-  }
-}
-
-export class HeavilyArmored extends Feat {
-  constructor() {
-    super();
-  }
-
-  trait = Feats["HEAVILY ARMORED"];
-
-  apply(pc: PlayerCharacter) {
-    if (!this.armorPrereqCheck(pc, "Medium")) {
-      throw Error("Requirement Not Met: Medium Armor Proficiency");
-    }
-
-    pc.abilityScores.strength.update(1);
-    pc.traits.armorProficiencies.push("Heavy");
-    pc.traits.features.push(this.trait);
-  }
-}
-
-export class HeavyArmorMaster extends Feat {
-  constructor() {
-    super();
-  }
-
-  trait = Feats["HEAVY ARMOR MASTER"];
-
-  apply(pc: PlayerCharacter) {
-    if (!this.armorPrereqCheck(pc, "Heavy")) {
-      throw Error("Requirement Not Met: Heavy Armor Proficiency");
-    }
-
-    pc.abilityScores.strength.update(1);
-    pc.traits.features.push(this.trait);
-  }
-}
-
-export class InspiringLeader extends Feat {
-  constructor() {
-    super();
-  }
-
-  trait = Feats["INSPIRING LEADER"];
-
-  public apply(pc: PlayerCharacter) {
-    if (!this.abilityPrereqCheck(pc, "charisma", 13)) {
-      throw Error("Requirement Not Met: 13 Cha");
-    }
-
-    pc.traits.features.push(this.trait);
-  }
-}
-
-export class KeenMind extends Feat {
-  constructor() {
-    super();
-  }
-
-  trait = Feats["KEEN MIND"];
-
-  public apply(pc: PlayerCharacter) {
-    pc.abilityScores["intelligence"].update(1);
-    pc.traits.features.push(this.trait);
-  }
-}
-
-export class LightlyArmored extends Feat {
-  constructor(abilityScore: string) {
-    super();
-    this.abilityScore = abilityScore;
-  }
-
-  trait = Feats["LIGHTLY ARMORED"];
-  private abilityScore: string;
-
-  public apply(pc: PlayerCharacter) {
-    pc.abilityScores[this.abilityScore].update(1);
-    pc.traits.armorProficiencies.push("Light");
-    this.trait.description += `\n(${this.abilityScore})`;
-    pc.traits.features.push(this.trait);
-  }
-}
 
 export class Linguist extends Feat {
   constructor(languages: string[]) {
