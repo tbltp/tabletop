@@ -1,10 +1,11 @@
 import { PlayerCharacter } from "../../../Base/PlayerCharacter";
 import { LevelingParams } from "../../../Classes/PlayerClass";
 import { Subclass } from "../../Subclass";
-import { LandCircle } from "./Land/LandCircle"
-import { MoonCircle } from "./Moon/MoonCircle"
-import { SporesCircle } from "./Spores/SporesCircle"
-import { DreamsCircle } from "./Dreams/DreamsCircle"
+import { LandCircle } from "./Land/LandCircle";
+import { MoonCircle } from "./Moon/MoonCircle";
+import { SporesCircle } from "./Spores/SporesCircle";
+import { DreamsCircle } from "./Dreams/DreamsCircle";
+import { ShepherdCircle } from "./Shepherd/ShepherdCircle";
 
 
 export class DruidSubclass extends Subclass {
@@ -79,6 +80,27 @@ export class DruidSubclass extends Subclass {
       "18": DreamsCircle.upBalm,
       "19": DreamsCircle.upBalm,
       "20": DreamsCircle.upBalm,
+    },
+    SHEPHERD: {
+      "2": ShepherdCircle.shepherd2,
+      "3": ShepherdCircle.upSpirit,
+      "4": ShepherdCircle.shepherd4,
+      "5": ShepherdCircle.upSpirit,
+      "6": ShepherdCircle.shepherd6,
+      "7": ShepherdCircle.upSpirit,
+      "8": ShepherdCircle.shepherd8,
+      "9": ShepherdCircle.upSpirit,
+      "10": ShepherdCircle.shepherd10,
+      "11": ShepherdCircle.upSpirit,
+      "12": ShepherdCircle.upGuardian,
+      "13": ShepherdCircle.upSpirit,
+      "14": ShepherdCircle.shepherd14,
+      "15": ShepherdCircle.upSpirit,
+      "16": ShepherdCircle.upGuardian,
+      "17": ShepherdCircle.upSpirit,
+      "18": ShepherdCircle.upGuardian,
+      "19": ShepherdCircle.upSpirit,
+      "20": ShepherdCircle.upGuardian,
     }
   };
 
