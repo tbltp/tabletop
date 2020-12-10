@@ -6,7 +6,4 @@ export class Healer extends Feat {
       super("Healer");
     }
   
-    apply(pc: PlayerCharacter) {
-      super.apply(pc);
-    }
   }

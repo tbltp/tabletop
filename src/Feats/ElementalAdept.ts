@@ -12,10 +12,6 @@ export class ElementalAdept extends Feat {
         throw Error("Requirement Not Met: Spellcasting");
       }
   
-      const newTrait: Trait =  {
-        ...this.trait,
-        choices: [this.element]
-      }
-      super.apply(pc);
+      super.apply(pc, [this.element]);
     }
   }

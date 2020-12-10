@@ -4,11 +4,11 @@ import { Feat } from "./Feat";
 
 export class Durable extends Feat {
     constructor(abilityScore: string) {
-      super(abilityScore);
+      super("Durable", abilityScore);
     }
   
     apply(pc: PlayerCharacter) {
-      super.apply(pc);
+      super.apply(pc, [this.abilityScore]);
       pc.abilityScores[this.abilityScore].update(1);
     }
   }
