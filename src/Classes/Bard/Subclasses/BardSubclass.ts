@@ -1,6 +1,9 @@
 import { Subclass } from "../../Subclass";
+import { CollegeOfGlamour } from "./Glamour/CollegeOfGlamour";
 import { CollegeOfLore } from "./Lore/CollegeOfLore";
+import { CollegeOfSwords } from "./Swords/CollegeOfSwords";
 import { CollegeOfValor } from "./Valor/CollegeOfValor";
+import { CollegeOfWhispers } from "./Whispers/CollegeOfWhispers";
 
 export class BardSubclass extends Subclass {
 
@@ -19,5 +22,26 @@ export class BardSubclass extends Subclass {
       "6": CollegeOfValor.valor6,
       "14": CollegeOfValor.valor14,
     },
+    WHISPERS: {
+      "3": CollegeOfWhispers.whispers3,
+      "5": CollegeOfWhispers.whispers5,
+      "6": CollegeOfWhispers.whispers6,
+      "10": CollegeOfWhispers.whispers10,
+      "14": CollegeOfWhispers.whispers14,
+      "15": CollegeOfWhispers.whispers15,
+    },
+    SWORDS: {
+      "3": CollegeOfSwords.swords3,
+      "6": CollegeOfSwords.swords6,
+      "14": CollegeOfSwords.swords14,
+    },
+    GLAMOUR: {
+      "3": CollegeOfGlamour.glamour3,
+      "5": CollegeOfGlamour.upMantle,
+      "6": CollegeOfGlamour.glamour6,
+      "10": CollegeOfGlamour.upMantle,
+      "14": CollegeOfGlamour.glamour14,
+      "15": CollegeOfGlamour.upMantle,
+    }
   };
 }

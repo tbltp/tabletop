@@ -50,7 +50,7 @@ export class Bard extends PlayerClass {
       this.equipmentPack = equipmentPack;
       this.savingThrowProficiencies = ["dexterity", "charisma"];
     }
-  }
+  }spellSelections
 
   // What should happen if a bard switches out a magical secret spell
 
@@ -106,9 +106,7 @@ export class Bard extends PlayerClass {
       dice: "1d6",
     };
     pc.pcHelper.addResourceTraits(bardicInspiration);
-
     this.addSpellcasting(pc, "BARD");
-
     this.pushBardFeatures(pc, 1);
   }
 
@@ -155,6 +153,7 @@ export class Bard extends PlayerClass {
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
+    this.subclassDriver(pc, "5", params);
     // bardic inspiration
     pc.pcHelper.findResourceTraitByName("Bardic Inspiration").dice = "1d8";
     this.pushBardFeatures(pc, 5);
@@ -184,6 +183,7 @@ export class Bard extends PlayerClass {
 
   level10(pc: PlayerCharacter, params: BardLevelingParams): void {
     this.handleBardSpellSelections(pc, params);
+    this.subclassDriver(pc, "10", params);
     // expertise
     for (let skill of params.proficiencySelection) {
       pc.skills[skill].expertise = true;
@@ -238,6 +238,7 @@ export class Bard extends PlayerClass {
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
+    this.subclassDriver(pc, "15", params);
     // bardic inspiration
     pc.pcHelper.findResourceTraitByName("Bardic Inspiration").dice = "1d12";
   }

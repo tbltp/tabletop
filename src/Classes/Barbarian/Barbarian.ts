@@ -122,6 +122,13 @@ export class Barbarian extends PlayerClass {
         bonus: {value: 10}
       }
     )
+    if(!pc.pcHelper.findResourceTraitByName("Extra Attack")) {
+      pc.pcHelper.addResourceTraits({
+        title: "Extra Attack",
+        description: "Number of Extra Attacks you can make.",
+        resourceMax: { value: 1 },
+      });
+    }
     this.subclassDriver(pc,"5",params);
   }
 

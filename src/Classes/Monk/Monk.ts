@@ -131,6 +131,13 @@ export class Monk extends PlayerClass {
 
   level5(pc: PlayerCharacter, params: MonkLevelingParams): void {
     this.pushMonkFeatures(pc, 5);
+    if(!pc.pcHelper.findResourceTraitByName("Extra Attack")){
+      pc.pcHelper.addResourceTraits({
+        title: "Extra Attack",
+        description: "Number of Extra Attacks you can make.",
+        resourceMax: { value: 1 },
+      });
+    }
     pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
     pc.pcHelper.findScalingTraitByName("Martial Arts").dice = "1d6";
     this.subclassDriver(pc, "5", params);
