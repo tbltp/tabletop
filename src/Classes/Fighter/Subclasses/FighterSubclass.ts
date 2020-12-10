@@ -1,8 +1,9 @@
 
 import { Subclass } from "../../Subclass";
-import { Champion } from "./Champion/Champion"
-import { BattleMaster } from "./BattleMaster/BattleMaster"
-import { EldritchKnight } from "./EldritchKnight/EldritchKnight"
+import { Champion } from "./Champion/Champion";
+import { BattleMaster } from "./BattleMaster/BattleMaster";
+import { EldritchKnight } from "./EldritchKnight/EldritchKnight";
+import {ArcaneArcher } from "./ArcaneArcher/ArcaneArcher";
 
 export class FighterSubclass extends Subclass {
   constructor(subclass: string){
@@ -39,6 +40,13 @@ export class FighterSubclass extends Subclass {
           "19": EldritchKnight.eldritchKnight19,
           "20": EldritchKnight.eldritchKnight20,
         },
+        "ARCANE ARCHER": {
+          "3": ArcaneArcher.arcaneArcher3,
+          "7": ArcaneArcher.arcaneArcher7,
+          "10": ArcaneArcher.arcaneArcher10,
+          "15": ArcaneArcher.arcaneArcher15,
+          "18": ArcaneArcher.arcaneArcher18,
+        }
       };
 }
 
