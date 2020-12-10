@@ -111,6 +111,7 @@ export class ClericSubclass extends Subclass {
         "9": ForgeDomain.forge9,
         "14": ForgeDomain.forge14,
         "17": ForgeDomain.forge17
+
       },
       GRAVE: {
         "1": GraveDomain.grave1,
