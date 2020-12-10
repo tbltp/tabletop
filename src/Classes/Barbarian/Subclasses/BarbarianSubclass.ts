@@ -6,9 +6,12 @@ import { StormHerald } from "./StormHerald/StormHerald";
 import { Zealot } from "./Zealot/Zealot";
 export class BarbarianSubclass extends Subclass {
 
-  constructor(subclass: string){
+  constructor(subclass: string, aura?: string){
     super(subclass);
+    aura ? this.aura = aura : null;
   }
+  
+  aura?: string;
 
   subclassDictionary = {
     BERSERKER: {
