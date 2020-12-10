@@ -18,14 +18,14 @@ export class BattleMaster {
       resourceMax: { value: 4 },
       dice: "d8",
     };
-    // artisan tool proficiency
+
+    pc.traits.toolProficiencies.push(params.toolProficiency);
     pc.pcHelper.addResourceTraits(superiorityDice);
     pc.pcHelper.addFeatures(
       BattleMaster.getFeature("3", "COMBAT SUPERIORITY"),
       BattleMaster.getFeature("3", "STUDENT OF WAR")
     );
     BattleMaster.handleManeuverSelections(pc, params);
-    // Insert tool proficiency, requires some modification to params.
   }
 
   static battleMaster7(pc: PlayerCharacter, params: FighterLevelingParams) {

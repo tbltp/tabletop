@@ -289,6 +289,7 @@ export class BaseAbility {
   scoreMax: number;
   modifier: { value: number };
   savingThrowProficiency: boolean = false;
+  halfProficiency: boolean = false;
 
   update(bonus: number) {
     this.score =

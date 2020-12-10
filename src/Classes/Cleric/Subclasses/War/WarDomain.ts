@@ -15,11 +15,11 @@ export class WarDomain {
 
   static war1(pc: PlayerCharacter, params: LevelingParams) {
     WarDomain.getSpells(pc,"1");
-    // war priest needs to have a minimum of one use available
+
     const warPriest: ResourceTrait = {
       title: "War Priest",
       description: "Number of times you can use War Priest per long rest.",
-      resourceMax: pc.abilityScores.wisdom.modifier,
+      resourceMax: (pc.abilityScores.wisdom.modifier.value >= 1) ? pc.abilityScores.wisdom.modifier : {value: 1}
     };
     pc.pcHelper.addResourceTraits(warPriest);
     pc.traits.weaponProficiencies.push("Martial");

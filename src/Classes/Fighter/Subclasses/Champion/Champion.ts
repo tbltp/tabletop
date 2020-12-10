@@ -14,7 +14,19 @@ export class Champion {
     
       static champion7(pc: PlayerCharacter, params: LevelingParams) {
         pc.pcHelper.addFeatures(Champion.getFeature("7", "REMARKABLE ATHLETE"));
-        // @Ez whatever you did for Jack of All Trades
+
+        for (let skill of Object.keys(pc.skills)) {
+          if (!pc.skills[skill].proficient && ["strength", "dexterity"].includes(pc.skills[skill].ability)) {
+            pc.skills[skill].bonus = pc.proficiency.halfBonus;
+          }
+        }
+
+        pc.abilityScores.strength.halfProficiency = true;
+        pc.abilityScores.dexterity.halfProficiency = true;
+        pc.abilityScores.constitution.halfProficiency = true;
+
+        pc.baseStats.initiativeBonus.bonus = pc.proficiency.halfBonus;
+
       }
     
       static champion10(pc: PlayerCharacter, params: LevelingParams) {

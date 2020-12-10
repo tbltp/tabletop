@@ -310,6 +310,7 @@ export interface LevelingParams {
     remove?: string;
   };
   proficiencySelection?: string[];
+  toolProficiency?: string;
   fightingStyle?: string[];
   subclassSelection?: {
     subclass: string; //school/oath/patron/etc

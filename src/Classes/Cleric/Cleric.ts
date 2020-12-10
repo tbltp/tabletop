@@ -102,21 +102,16 @@ export class Cleric extends PlayerClass {
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
-    // channel divinity
-    // if(!PlayerClass.multiClassCheck(pc, "Channel Divinity")){
-    //   const channelDivinity: ResourceTrait = {
-    //     title: "Channel Divinity",
-    //     description: "Number of times you can use a Channel Divinity ability.",
-    //     resourceMax: { value: 1 },
-    //   };
-    //   pc.pcHelper.addResourceTraits(channelDivinity);
-    // }
-    const channelDivinity: ResourceTrait = {
-      title: "Channel Divinity",
-      description: "Number of times you can use Channel Divinity",
-      resourceMax: {value: 1}
+    // channel divinity multiclass check against paladin
+     if(!PlayerClass.multiClassCheck(pc, "Channel Divinity")){
+       const channelDivinity: ResourceTrait = {
+         title: "Channel Divinity",
+         description: "Number of times you can use a Channel Divinity ability.",
+         resourceMax: { value: 1 },
+       };
+       pc.pcHelper.addResourceTraits(channelDivinity);
     }
-    pc.pcHelper.addResourceTraits(channelDivinity);
+    
     // divine domain
     this.subclassDriver(pc, "2", params);
     this.pushClericFeatures(pc, 2);

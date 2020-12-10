@@ -50,9 +50,7 @@ export class Bard extends PlayerClass {
       this.equipmentPack = equipmentPack;
       this.savingThrowProficiencies = ["dexterity", "charisma"];
     }
-  }spellSelections
-
-  // What should happen if a bard switches out a magical secret spell
+  }
 
   abilitiesAtLevels = {
     "1": this.level1,
