@@ -200,10 +200,12 @@ export class Druid extends PlayerClass {
       [...SpellList["Druid"][6]],
       SpellcastingAbility["DRUID"]
     );
+    this.subclassDriver(pc, "11", params); 
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "12", params); 
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
@@ -211,6 +213,7 @@ export class Druid extends PlayerClass {
       [...SpellList["Druid"][7]],
       SpellcastingAbility["DRUID"]
     );
+    this.subclassDriver(pc, "13", params); 
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
@@ -223,10 +226,12 @@ export class Druid extends PlayerClass {
       [...SpellList["Druid"][8]],
       SpellcastingAbility["DRUID"]
     );
+    this.subclassDriver(pc, "15", params); 
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "16", params); 
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
@@ -234,19 +239,23 @@ export class Druid extends PlayerClass {
       [...SpellList["Druid"][9]],
       SpellcastingAbility["DRUID"]
     );
+    this.subclassDriver(pc, "17", params); 
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {
+    this.subclassDriver(pc, "18", params); 
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "19", params); 
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
     // archdruid
     pc.pcHelper.findResourceTraitByName("Wild Shape").resourceMax.value = Infinity;
     this.pushDruidFeatures(pc, 20);
+    this.subclassDriver(pc, "20", params); 
   }
 }
 

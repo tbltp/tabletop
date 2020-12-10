@@ -91,7 +91,7 @@ export class Cleric extends PlayerClass {
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.addSpells(
-      [...params.spellSelections.add, ...SpellList["Cleric"][1]],
+      [...SpellList["Cleric"][1]],
       SpellcastingAbility["CLERIC"]
     );
     this.addSpellcasting(pc, "CLERIC");

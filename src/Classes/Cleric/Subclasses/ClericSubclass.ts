@@ -8,6 +8,7 @@ import { NatureDomain } from "./Nature/NatureDomain";
 import { TempestDomain } from "./Tempest/TempestDomain";
 import { TrickeryDomain } from "./Trickery/TrickeryDomain";
 import { WarDomain } from "./War/WarDomain";
+import { GraveDomain } from "./Grave/GraveDomain";
 
 export class ClericSubclass extends Subclass {
 
@@ -110,6 +111,18 @@ export class ClericSubclass extends Subclass {
         "9": ForgeDomain.forge9,
         "14": ForgeDomain.forge14,
         "17": ForgeDomain.forge17
+
+      },
+      GRAVE: {
+        "1": GraveDomain.grave1,
+        "2": GraveDomain.grave2,
+        "3": GraveDomain.grave3,
+        "5": GraveDomain.grave5,
+        "6": GraveDomain.grave6,
+        "7": GraveDomain.grave7,
+        "8": GraveDomain.grave8,
+        "9": GraveDomain.grave9,
+        "17": GraveDomain.grave17
       }
   };
 }

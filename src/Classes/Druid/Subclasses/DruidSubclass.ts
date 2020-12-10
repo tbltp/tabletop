@@ -1,9 +1,12 @@
 import { PlayerCharacter } from "../../../Base/PlayerCharacter";
 import { LevelingParams } from "../../../Classes/PlayerClass";
 import { Subclass } from "../../Subclass";
-import { LandCircle } from "./Land/LandCircle"
-import { MoonCircle } from "./Moon/MoonCircle"
-import { SporesCircle } from "./Spores/SporesCircle"
+import { LandCircle } from "./Land/LandCircle";
+import { MoonCircle } from "./Moon/MoonCircle";
+import { SporesCircle } from "./Spores/SporesCircle";
+import { DreamsCircle } from "./Dreams/DreamsCircle";
+import { ShepherdCircle } from "./Shepherd/ShepherdCircle";
+
 
 export class DruidSubclass extends Subclass {
   constructor(subclass: string, terrain?: string){
@@ -57,6 +60,48 @@ export class DruidSubclass extends Subclass {
       "15": MoonCircle.upWildShape,
       "18": MoonCircle.upWildShape,
     },
+    DREAMS: {
+      "2": DreamsCircle.dreams2,
+      "3": DreamsCircle.upBalm,
+      "4": DreamsCircle.dreams4,
+      "5": DreamsCircle.upBalm,
+      "6": DreamsCircle.dreams6,
+      "7": DreamsCircle.upBalm,
+      "8": DreamsCircle.dreams8,
+      "9": DreamsCircle.upBalm,
+      "10": DreamsCircle.dreams10,
+      "11": DreamsCircle.upBalm,
+      "12": DreamsCircle.upBalm,
+      "13": DreamsCircle.upBalm,
+      "14": DreamsCircle.dreams14,
+      "15": DreamsCircle.upBalm,
+      "16": DreamsCircle.upBalm,
+      "17": DreamsCircle.upBalm,
+      "18": DreamsCircle.upBalm,
+      "19": DreamsCircle.upBalm,
+      "20": DreamsCircle.upBalm,
+    },
+    SHEPHERD: {
+      "2": ShepherdCircle.shepherd2,
+      "3": ShepherdCircle.upSpirit,
+      "4": ShepherdCircle.shepherd4,
+      "5": ShepherdCircle.upSpirit,
+      "6": ShepherdCircle.shepherd6,
+      "7": ShepherdCircle.upSpirit,
+      "8": ShepherdCircle.shepherd8,
+      "9": ShepherdCircle.upSpirit,
+      "10": ShepherdCircle.shepherd10,
+      "11": ShepherdCircle.upSpirit,
+      "12": ShepherdCircle.upGuardian,
+      "13": ShepherdCircle.upSpirit,
+      "14": ShepherdCircle.shepherd14,
+      "15": ShepherdCircle.upSpirit,
+      "16": ShepherdCircle.upGuardian,
+      "17": ShepherdCircle.upSpirit,
+      "18": ShepherdCircle.upGuardian,
+      "19": ShepherdCircle.upSpirit,
+      "20": ShepherdCircle.upGuardian,
+    }
   };
 
   subclassDriver(pc: PlayerCharacter, level: string, subclass: string, params: LevelingParams){

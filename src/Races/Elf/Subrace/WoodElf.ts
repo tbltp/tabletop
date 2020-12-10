@@ -6,11 +6,10 @@ import * as Spells from "../../../../Assets/Spells.json";
 import { ISpell, Spell } from "../../../Base/Interfaces";
 
 export class WoodElf extends Elf {
-    constructor(language: string) {
+    constructor() {
       super("Wood Elf");
       this.traits.push(traits["FLEET OF FOOT"], traits["MASK OF THE WILD"]);
       this.speed += 5;
-      this.languages.push(languages[language]);
       this.weaponProficiencies.push(
         "Longsword",
         "Shortsword",

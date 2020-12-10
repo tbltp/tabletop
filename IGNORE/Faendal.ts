@@ -10,7 +10,7 @@ import { Jsonify } from "../src/Utilities/Jsonify";
 let pc: CharacterSheet = new CharacterSheet(
   "Faendal",
   new PlayerCharacter(8, 16, 14, 14, 15, 13),
-  new WoodElf("Sylvan"),
+  new WoodElf(),
   new Ranger(
     false,
     ["insight", "perception", "stealth"],
