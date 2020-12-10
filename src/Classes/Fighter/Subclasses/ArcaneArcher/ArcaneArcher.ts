@@ -9,6 +9,11 @@ export class ArcaneArcher {
       return ArcaneArcherArchetype["features"][level][featureName];
   }
 
+  static getArrow(pc: PlayerCharacter, params: LevelingParams) {
+    const arrowChoice = pc.pcHelper.findFeatureTraitByName("Arcane Shot Choices");
+    arrowChoice.choices.push(params.subclassSelection.options[0]);
+  }
+
   static arcaneArcher3(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(ArcaneArcher.getFeature("3", "ARCANE ARCHER LORE"));
     pc.pcHelper.addFeatures(ArcaneArcher.getFeature("3", "ARCANE SHOT"));
@@ -27,28 +32,42 @@ export class ArcaneArcher {
     pc.pcHelper.addScalingTraits(dmgShot);
     pc.pcHelper.addScalingTraits(saveShot);
     pc.pcHelper.addFeatures(ArcaneArcher.getFeature("3", "ARCANE SHOT OPTIONS"));
+    PlayerClass.pushCustomizedClassFeature(pc,3,ArcaneArcher.shots,"Arcane Shot Choices",params.subclassSelection.options);
   }
 
   static arcaneArcher7(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(ArcaneArcher.getFeature("7", "MAGIC ARROW"));
     pc.pcHelper.addFeatures(ArcaneArcher.getFeature("7", "CURVING SHOT"));
     pc.pcHelper.addFeatures(ArcaneArcher.getFeature("7", "ADDITIONAL ARCANE SHOT OPTION"));
+    ArcaneArcher.getArrow(pc,params);
   }
 
   static arcaneArcher10(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(ArcaneArcher.getFeature("10", "ADDITIONAL ARCANE SHOT OPTION"));
+    ArcaneArcher.getArrow(pc,params);
   }
 
   static arcaneArcher15(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(ArcaneArcher.getFeature("15", "EVER-READY SHOT"));
     pc.pcHelper.addFeatures(ArcaneArcher.getFeature("15", "ADDITIONAL ARCANE SHOT OPTION"));
+    ArcaneArcher.getArrow(pc,params);
   }
 
   static arcaneArcher18(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(ArcaneArcher.getFeature("18", "ADDITIONAL ARCANE SHOT OPTION"));
+    ArcaneArcher.getArrow(pc,params);
     const dmgShot: ScalingTrait = pc.pcHelper.findScalingTraitByName("Arcane Shot (Damage)");
     dmgShot.dice = "4d6";
     const saveShot: ScalingTrait = pc.pcHelper.findScalingTraitByName("Arcane Shot (Save)");
     dmgShot.dice = "2d6";
+  }
+
+  static shots = {
+    3: {
+      "Arcane Shot Choices": {
+        title: "Arcane Shot Choices",
+        description: "These are the shots you have"
+      }
+    }
   }
 }
