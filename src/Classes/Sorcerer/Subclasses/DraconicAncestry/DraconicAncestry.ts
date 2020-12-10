@@ -25,7 +25,7 @@ export class DraconicAncestry {
     }
 
     static draconicAncestry6(pc: PlayerCharacter, params: LevelingParams) {
-      pc.pcHelper.addFeatures(DraconicAncestry.getFeature("6", "ELEMENTAL AFFINITY"))
+      pc.pcHelper.addFeatures({...DraconicAncestry.getFeature("6", "ELEMENTAL AFFINITY"), choices: [DraconicBloodline[params.subclassSelection.options[0]]["Damage Type"]]})
       pc.baseStats.HpMax.bonus.value++;
     }
   
