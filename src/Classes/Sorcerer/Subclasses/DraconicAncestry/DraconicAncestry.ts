@@ -3,6 +3,7 @@ import { LevelingParams } from "../../../../Classes/PlayerClass";
 import * as DraconicAncestryArchetypeDict from "./DraconicAncestry.json"
 import * as DraconicBloodline from "../../../../../Assets/DraconicBloodline.json"
 
+//TODO: Draconic Ancestry choice
 
 export class DraconicAncestry {
 
