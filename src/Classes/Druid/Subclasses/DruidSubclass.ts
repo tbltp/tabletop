@@ -7,6 +7,7 @@ import { SporesCircle } from "./Spores/SporesCircle";
 import { DreamsCircle } from "./Dreams/DreamsCircle";
 import { ShepherdCircle } from "./Shepherd/ShepherdCircle";
 
+
 export class DruidSubclass extends Subclass {
   constructor(subclass: string, terrain?: string){
     super(subclass);
