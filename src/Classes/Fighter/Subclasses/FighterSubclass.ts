@@ -57,8 +57,9 @@ export class FighterSubclass extends Subclass {
           "10": Cavalier.cavalier10,
           "12": Cavalier.upMark,
           "14": Cavalier.upMark,
+          "15": Cavalier.cavalier15,
           "16": Cavalier.upMark,
-          "18": Cavalier.upMark,
+          "18": Cavalier.cavalier18,
           "20": Cavalier.upMark,
         }
       };

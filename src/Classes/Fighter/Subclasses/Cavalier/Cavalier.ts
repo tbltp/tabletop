@@ -48,8 +48,8 @@ export class Cavalier {
 
   static cavalier10(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Cavalier.getFeature("10", "HOLD THE LINE"));
-    PlayerClass.addFightingStyle(pc, params.fightingStyle[0]);  // move add fighting style to PC 
-
+    PlayerClass.addFightingStyle(pc, params.fightingStyle[0]);  // move add fighting style to PC
+    Cavalier.upMark(pc);
   }
 
   static cavalier15(pc: PlayerCharacter, params: LevelingParams) {
@@ -58,5 +58,6 @@ export class Cavalier {
 
   static cavalier18(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Cavalier.getFeature("18", "VIGILANT DEFENDER"));
+    Cavalier.upMark(pc);
   }
 }
