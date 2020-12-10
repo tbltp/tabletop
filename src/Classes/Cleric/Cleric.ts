@@ -97,7 +97,7 @@ export class Cleric extends PlayerClass {
     this.addSpellcasting(pc, "CLERIC");
 
     // divine domain
-    this.subclass = new ClericSubclass(params.subclassSelection.subclass);
+    this.subclass = new ClericSubclass(params.subclassSelection);
     this.subclassDriver(pc, "1", params);
   }
 

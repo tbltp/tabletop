@@ -3,7 +3,7 @@ import { PlayerCharacter } from "../src/Base/PlayerCharacter";
 
 import { Tiefling } from "../src/Races/Tiefling/Tiefling";
 import { Barbarian } from "../src/Classes/Barbarian/Barbarian";
-import { Charlatan } from "../src/Backgrounds/Background";
+import { Charlatan } from "../src/Backgrounds/Charlatan";
 
 import { Jsonify } from "../src/Utilities/Jsonify";
 

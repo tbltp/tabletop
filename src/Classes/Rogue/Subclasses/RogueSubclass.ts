@@ -5,8 +5,8 @@ import { Thief } from "./Thief/Thief";
 
 export class RogueSubclass extends Subclass {
   
-  constructor(subclass: string){
-    super(subclass);
+  constructor(subclassSelection: {subclass: string, options?: string[]}){
+    super(subclassSelection);
   }
 
   subclassDictionary = {

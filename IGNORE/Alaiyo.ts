@@ -1,6 +1,6 @@
 import { PlayerCharacter } from "../src/Base/PlayerCharacter";
 import { Tiefling } from "../src/Races/Tiefling/Tiefling";
-import { Charlatan } from "../src/Backgrounds/Background";
+import { Charlatan } from "../src/Backgrounds/Charlatan";
 import { Bard } from "../src/Classes/Bard/Bard";
 import { CharacterSheet } from "../src/Base/CharacterSheet";
 

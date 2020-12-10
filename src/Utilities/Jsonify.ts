@@ -100,10 +100,15 @@ export class Jsonify {
         dsClass[property] = jsonSheet['playerClasses'][dsClass.name][property];
       }
 
-      // Fucking Druid Terrains Death to Circle of Land
       if(jsonSheet['playerClasses'][dsClass.name]["subclass"]){
-        if(jsonSheet['playerClasses'][dsClass.name]['subclass']['title'] == "LAND") { dsClass.subclass = Deserialize.deserializeSubclass(jsonSheet['playerClasses'][dsClass.name], jsonSheet['playerClasses'][dsClass.name]["subclass"]["title"], jsonSheet['playerClasses'][dsClass.name]['subclass']['terrain']) }
-        else { dsClass.subclass = Deserialize.deserializeSubclass(dsClass.name, jsonSheet['playerClasses'][dsClass.name]["subclass"]["title"]) }
+        dsClass.subclass = Deserialize.deserializeSubclass(
+          dsClass.name, 
+          {
+            subclass: jsonSheet['playerClasses'][dsClass.name]["subclass"]["title"],
+            options: (jsonSheet['playerClasses'][dsClass.name]["subclass"]["persistentSelection"]) ? 
+              [jsonSheet['playerClasses'][dsClass.name]["subclass"]["persistentSelection"]["choice"]] : []
+          }
+        ) 
       }
     }
 

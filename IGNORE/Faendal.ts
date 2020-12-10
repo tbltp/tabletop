@@ -3,7 +3,7 @@ import { PlayerCharacter } from "../src/Base/PlayerCharacter";
 
 import { WoodElf } from "../src/Races/Elf/Subrace/WoodElf";
 import { Ranger } from "../src/Classes/Ranger/Ranger";
-import { FolkHero } from "../src/Backgrounds/Background";
+import { FolkHero } from "../src/Backgrounds/FolkHero";
 
 import { Jsonify } from "../src/Utilities/Jsonify";
 

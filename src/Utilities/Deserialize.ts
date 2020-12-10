@@ -18,7 +18,7 @@ import { DSRace, Race } from "../Races/Race";
 import { DSDarkElf } from "../Races/Elf/Subrace/DarkElf";
 import { DSFireGenasi } from "../Races/Genasi/Subrace/FireGenasi";
 import { DSWaterGenasi } from "../Races/Genasi/Subrace/WaterGenasi";
-import { DSDragonborn } from "Races/Dragonborn/Dragonborn";
+import { DSDragonborn } from "../Races/Dragonborn/Dragonborn";
 import { DSTiefling } from "../Races/Tiefling/Tiefling";
 
 // Subclasses (Called when deserializing a character with a subclass.)
@@ -88,45 +88,44 @@ export class Deserialize {
         return classes;
     }
 
-    static deserializeSubclass(className: string, subclass: string, terrain?: string): Subclass {
+    static deserializeSubclass(className: string, subclassSelection: {subclass: string, options?: string[]}): Subclass {
         
         switch(className) {
             case "Barbarian":
-                return new BarbarianSubclass(subclass);
+                return new BarbarianSubclass(subclassSelection);
                 
             case "Bard":
-                return new BardSubclass(subclass);
+                return new BardSubclass(subclassSelection);
             
             case "Cleric":
-                return new ClericSubclass(subclass);
+                return new ClericSubclass(subclassSelection);
             
             case "Druid":
-                if(terrain){ return new DruidSubclass(subclass, terrain); }
-                return new DruidSubclass(subclass);
+                return new DruidSubclass(subclassSelection);
             
             case "Fighter":
-                return new FighterSubclass(subclass);
+                return new FighterSubclass(subclassSelection);
             
             case "Monk":
-                return new MonkSubclass(subclass);
+                return new MonkSubclass(subclassSelection);
             
             case "Paladin":
-                return new PaladinSubclass(subclass);
+                return new PaladinSubclass(subclassSelection);
             
             case "Ranger":
-                return new RangerSubclass(subclass);
+                return new RangerSubclass(subclassSelection);
             
             case "Rogue":
-                return new RogueSubclass(subclass);
+                return new RogueSubclass(subclassSelection);
             
             case "Sorcerer":
-                return new SorcererSubclass(subclass);
+                return new SorcererSubclass(subclassSelection);
             
             case "Warlock":
-                return new WarlockSubclass(subclass);
+                return new WarlockSubclass(subclassSelection);
             
             case "Wizard":
-                return new WizardSubclass(subclass);
+                return new WizardSubclass(subclassSelection);
         }        
     }
 

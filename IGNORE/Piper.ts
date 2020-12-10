@@ -1,6 +1,6 @@
 import { PlayerCharacter } from "../src/Base/PlayerCharacter";
 import { WaterGenasi } from "../src/Races/Genasi/Subrace/WaterGenasi";
-import { Sage } from "../src/Backgrounds/Background";
+import { Sage } from "../src/Backgrounds/Sage";
 import { Monk } from "../src/Classes/Monk/Monk";
 
 import { Jsonify } from "../src/Utilities/Jsonify";

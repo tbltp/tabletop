@@ -3,7 +3,7 @@ import { PlayerCharacter } from "../src/Base/PlayerCharacter";
 
 import { HalfElf } from "../src/Races/Half Elf/HalfElf";
 import { Druid } from "../src/Classes/Druid/Druid";
-import { Criminal } from "../src/Backgrounds/Background";
+import { Criminal } from "../src/Backgrounds/Criminal";
 
 import { Jsonify } from "../src/Utilities/Jsonify";
 

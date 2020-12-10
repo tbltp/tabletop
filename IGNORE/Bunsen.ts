@@ -1,6 +1,6 @@
 import { PlayerCharacter } from "../src/Base/PlayerCharacter";
 import { FireGenasi } from "../src/Races/Genasi/Subrace/FireGenasi";
-import { Sage } from "../src/Backgrounds/Background";
+import { Sage } from "../src/Backgrounds/Sage";
 import { Barbarian } from "../src/Classes/Barbarian/Barbarian";
 import { CharacterSheet } from "../src/Base/CharacterSheet";
 

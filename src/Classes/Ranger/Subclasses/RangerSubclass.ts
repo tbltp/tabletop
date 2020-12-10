@@ -4,8 +4,8 @@ import { Hunter } from "./Hunter/Hunter";
 
 export class RangerSubclass extends Subclass {
 
-  constructor(subclass: string){
-    super(subclass);
+  constructor(subclassSelection: {subclass: string, options?: string[]}){
+    super(subclassSelection);
   }
 
   subclassDictionary = {

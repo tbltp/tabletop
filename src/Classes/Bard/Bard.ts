@@ -129,7 +129,7 @@ export class Bard extends PlayerClass {
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
     // college
-    this.subclass = new BardSubclass(params.subclassSelection.subclass);
+    this.subclass = new BardSubclass(params.subclassSelection);
     this.subclassDriver(pc, "3", params);
     // expertise
     for (let skill of params.proficiencySelection) {

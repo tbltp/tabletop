@@ -3,7 +3,7 @@ import { PlayerCharacter } from "Base/PlayerCharacter";
 
 import { Tiefling } from "Races/Tiefling/Tiefling";
 import { Barbarian } from "Classes/Barbarian/Barbarian";
-import { Charlatan } from "Backgrounds/Background";
+import { Charlatan } from "Backgrounds/Charlatan";
 
 let pc: CharacterSheet = new CharacterSheet(
     "?",

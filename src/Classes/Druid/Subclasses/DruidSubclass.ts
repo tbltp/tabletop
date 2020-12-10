@@ -9,12 +9,10 @@ import { ShepherdCircle } from "./Shepherd/ShepherdCircle";
 
 
 export class DruidSubclass extends Subclass {
-  constructor(subclass: string, terrain?: string){
-    super(subclass);
-    terrain ? this.terrain = terrain : null;
+  constructor(subclassSelection: {subclass: string, options?: string[]}){
+    super(subclassSelection);
+    subclassSelection.subclass === "LAND" ? this.persistentSelection = {choice: subclassSelection.options[0]} : null;
   }
-
-  terrain?: string;
 
   subclassDictionary = {
     LAND: {
@@ -106,8 +104,8 @@ export class DruidSubclass extends Subclass {
 
   subclassDriver(pc: PlayerCharacter, level: string, subclass: string, params: LevelingParams){
     if(!this.subclassDictionary[subclass][level]){ return; }
-    if(this.terrain){
-      params.subclassSelection = {subclass: "LAND", options: [this.terrain]};
+    if(this.persistentSelection){
+      params.subclassSelection = {subclass: "LAND", options: [this.persistentSelection.choice]};
     }
     this.subclassDictionary[subclass][level](pc, params);
   }

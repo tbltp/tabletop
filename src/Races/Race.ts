@@ -74,7 +74,7 @@ export abstract class Race {
 
   addFeats(pc: PlayerCharacter): void {
     for (let feat of this.feats) {
-      feat.apply(pc);
+      //feat.apply(pc);
     }
   }
 
