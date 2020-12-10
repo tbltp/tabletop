@@ -124,6 +124,7 @@ export class Fighter extends PlayerClass {
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "6", params);
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
@@ -154,6 +155,7 @@ export class Fighter extends PlayerClass {
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "12", params);
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
