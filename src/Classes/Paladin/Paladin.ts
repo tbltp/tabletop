@@ -132,6 +132,7 @@ export class Paladin extends PlayerClass {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.upgradeLayOnHands(pc);
     this.pushPaladinFeatures(pc, 4);
+    this.subclassDriver(pc, "4", params);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
@@ -145,11 +146,13 @@ export class Paladin extends PlayerClass {
       });
     }
     pc.pcHelper.addSpells([...SpellList["Paladin"][2]], SpellcastingAbility["PALADIN"]);
+    this.subclassDriver(pc, "5", params);
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
     this.pushPaladinFeatures(pc, 6);
+    this.subclassDriver(pc, "6", params);
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
@@ -160,36 +163,43 @@ export class Paladin extends PlayerClass {
   level8(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.upgradeLayOnHands(pc);
+    this.subclassDriver(pc, "8", params);
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
     pc.pcHelper.addSpells([...SpellList["Paladin"][3]], SpellcastingAbility["PALADIN"]);
+    this.subclassDriver(pc, "9", params);
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
     this.pushPaladinFeatures(pc, 10);
+    this.subclassDriver(pc, "10", params);
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
     this.pushPaladinFeatures(pc, 11);
+    this.subclassDriver(pc, "11", params);
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.upgradeLayOnHands(pc);
+    this.subclassDriver(pc, "12", params);
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
     pc.pcHelper.addSpells([...SpellList["Paladin"][4]], SpellcastingAbility["PALADIN"]);
+    this.subclassDriver(pc, "13", params);
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
-    this.pushPaladinFeatures(pc, 15);
+    this.pushPaladinFeatures(pc, 14);
+    this.subclassDriver(pc, "14", params);
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
@@ -200,20 +210,24 @@ export class Paladin extends PlayerClass {
   level16(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.upgradeLayOnHands(pc);
+    this.subclassDriver(pc, "16", params);
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
     pc.pcHelper.addSpells([...SpellList["Paladin"][5]], SpellcastingAbility["PALADIN"]);
+    this.subclassDriver(pc, "17", params);
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
+    this.subclassDriver(pc, "18", params);
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "19", params);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
