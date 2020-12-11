@@ -156,6 +156,7 @@ export class Ranger extends PlayerClass {
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
+    this.subclassDriver(pc, "9", params);
   }
 
   level10(pc: PlayerCharacter, params: RangerLevelingParams): void {
@@ -176,6 +177,7 @@ export class Ranger extends PlayerClass {
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
+    this.subclassDriver(pc, "13", params);
   }
 
   level14(pc: PlayerCharacter, params: RangerLevelingParams): void {
@@ -196,6 +198,7 @@ export class Ranger extends PlayerClass {
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
+    this.subclassDriver(pc, "17", params);
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {
@@ -218,7 +221,7 @@ export class DSRanger extends Ranger {
   }
 }
 
-interface RangerLevelingParams extends LevelingParams {
+export interface RangerLevelingParams extends LevelingParams {
   favoredEnemy?: string;
   favoredTerrain?: string;
 }
