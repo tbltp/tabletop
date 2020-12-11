@@ -30,7 +30,7 @@ export class Redemption {
   }
 
   static redemption7(pc: PlayerCharacter, params: LevelingParams) {
-    pc.pcHelper.addFeatures(Redemption.getFeature("7", "AURA OF THE GUARDIAN"))
+    pc.pcHelper.addFeatures(Redemption.getFeature("7", "AURA OF THE GUARDIAN"));
   }
 
   static redemption9(pc: PlayerCharacter, params: LevelingParams) {
@@ -42,7 +42,7 @@ export class Redemption {
   }
 
   static redemption15(pc: PlayerCharacter, params: LevelingParams) {
-    pc.pcHelper.addFeatures(Redemption.getFeature("15", "PROTECTIVE SPIRIT"))
+    pc.pcHelper.addFeatures(Redemption.getFeature("15", "PROTECTIVE SPIRIT"));
     const spiritHP: ScalingTrait = {
       title: "Protective Spirit",
       description: "The amount of hit points recovered with Protective Spirit",
@@ -57,7 +57,8 @@ export class Redemption {
   }
 
   static redemption20(pc: PlayerCharacter, params: LevelingParams) {
-    pc.pcHelper.addFeatures(Redemption.getFeature("20", "EMISSARY OF REDEMPTION"))
+    pc.pcHelper.addFeatures(Redemption.getFeature("20", "EMISSARY OF REDEMPTION"));
+    Redemption.upSpirit(pc);
   }
 
   static oathSpells = {

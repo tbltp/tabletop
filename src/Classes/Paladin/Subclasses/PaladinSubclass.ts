@@ -24,7 +24,9 @@ export class PaladinSubclass extends Subclass {
       "9": Redemption.redemption9,
       "13": Redemption.redemption13,
       "15": Redemption.redemption15,
+      "16": Redemption.upSpirit,
       "17": Redemption.redemption17,
+      "18": Redemption.upSpirit,
       "20": Redemption.redemption20
     },
     ANCIENTS: {
