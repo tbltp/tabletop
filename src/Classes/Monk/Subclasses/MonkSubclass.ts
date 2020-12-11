@@ -3,6 +3,7 @@ import { OpenHand } from "./OpenHand/OpenHand"
 import { Shadow } from "./Shadow/Shadow"
 import { FourElements } from "./FourElements/FourElements"
 import { DrunkenMaster} from "./DrunkenMaster/DrunkenMaster"
+import { SunSoul } from "./SunSoul/SunSoul"
 
 export class MonkSubclass extends Subclass {
   constructor(subclass: string){
@@ -36,6 +37,12 @@ export class MonkSubclass extends Subclass {
       "6": DrunkenMaster.drunkenMaster6,
       "11": DrunkenMaster.drunkenMaster11,
       "17": DrunkenMaster.drunkenMaster17
+    },
+    "SUN SOUL": {
+      "3": SunSoul.sunSoul3,
+      "6": SunSoul.sunSoul6,
+      "11": SunSoul.sunSoul11,
+      "17": SunSoul.sunSoul17
     }
   }
 }
