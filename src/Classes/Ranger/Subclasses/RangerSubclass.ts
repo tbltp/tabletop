@@ -1,7 +1,7 @@
 import { Subclass } from "../../Subclass";
 import { BeastMaster } from "./BeastMaster/BeastMaster";
 import { Hunter } from "./Hunter/Hunter";
-
+import { MonsterSlayer } from "./MonsterSlayer/MonsterSlayer";
 export class RangerSubclass extends Subclass {
 
   constructor(subclass: string){
@@ -21,5 +21,15 @@ export class RangerSubclass extends Subclass {
       "11": BeastMaster.beastMaster11,
       "15": BeastMaster.beastMaster15,
     },
+    "MONSTER SLAYER": {
+      "3": MonsterSlayer.monsterSlayer3,
+      "5": MonsterSlayer.monsterSlayer5,
+      "7": MonsterSlayer.monsterSlayer7,
+      "9": MonsterSlayer.monsterSlayer9,
+      "11": MonsterSlayer.monsterSlayer11,
+      "13": MonsterSlayer.monsterSlayer13,
+      "15": MonsterSlayer.monsterSlayer15,
+      "17": MonsterSlayer.monsterSlayer17
+    }
   };
 }
