@@ -2,6 +2,7 @@ import { Subclass } from "../../Subclass";
 import { ArcaneTrickster } from "./ArcaneTrickster/ArcaneTrickster";
 import { Assassin } from "./Assassin/Assassin";
 import { Thief } from "./Thief/Thief";
+import { Inquisitive } from "./Inquisitive/Inquisitive";
 
 export class RogueSubclass extends Subclass {
   
@@ -21,6 +22,12 @@ export class RogueSubclass extends Subclass {
       "9": Assassin.assassin9,
       "13": Assassin.assassin13,
       "17": Assassin.assassin17,
+    },
+    INQUISITIVE: {
+      "3": Inquisitive.inquisitive3,
+      "9": Inquisitive.inquisitive9,
+      "13": Inquisitive.inquisitive13,
+      "17": Inquisitive.inquisitive17
     },
     "ARCANE TRICKSTER": {
       "3": ArcaneTrickster.arcaneTrickster3,
