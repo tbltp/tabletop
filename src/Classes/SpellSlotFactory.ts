@@ -67,6 +67,7 @@ export class SpellSlotFactory {
     "Monk": "NONE",
     "Paladin": "SECONDARY",
     "Ranger": "SECONDARY",
+    "Rogue": "NONE",
     "Sorcerer": "PRIMARY",
     "Warlock": "NONE",
     "Wizard": "PRIMARY"
