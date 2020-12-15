@@ -1,6 +1,7 @@
 import { Subclass } from "../../Subclass";
 import { DraconicAncestry } from "./DraconicAncestry/DraconicAncestry";
 import { WildMagic } from "./WildMagic/WildMagic";
+import { Shadow } from "./Shadow/Shadow";
 
 export class SorcererSubclass extends Subclass {
   constructor(subclass: string){
@@ -36,5 +37,12 @@ export class SorcererSubclass extends Subclass {
       "14": WildMagic.wildMagic14,
       "18": WildMagic.wildMagic18,
     },
+    SHADOW: {
+      "1": Shadow.shadow1,
+      "3": Shadow.shadow3,
+      "6": Shadow.shadow6,
+      "14": Shadow.shadow14,
+      "18": Shadow.shadow18,
+    }
   };
 }
