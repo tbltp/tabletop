@@ -82,7 +82,7 @@ export class Sorcerer extends PlayerClass {
     pc: PlayerCharacter,
     params: LevelingParams
   ): void {
-    this.handleSpellSelections(pc, params, SpellcastingAbility["SORCEROR"]);
+    this.handleSpellSelections(pc, params, SpellcastingAbility["SORCERER"]);
   }
 
   private addMetaMagic(pc: PlayerCharacter, metaMagicSelection: string[]) {
@@ -97,7 +97,6 @@ export class Sorcerer extends PlayerClass {
     this.addSpellcasting(pc, "SORCERER");
     this.subclass = new SorcererSubclass(params.subclassSelection.subclass)
     this.subclassDriver(pc, "1", params);
-
 
   }
 
@@ -238,6 +237,6 @@ export class DSSorcerer extends Sorcerer {
   }
 }
 
-interface SorcererLevelingParams extends LevelingParams {
+export interface SorcererLevelingParams extends LevelingParams {
   metaMagic?: string[];
 }
