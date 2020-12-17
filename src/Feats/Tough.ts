@@ -7,7 +7,6 @@ export class Tough extends Feat {
     }
     
     abilitiesAtLevels = {
-      "0": this.plusTwoHealth,
       "1": this.plusTwoHealth,
       "2": this.plusTwoHealth,
       "3": this.plusTwoHealth,
