@@ -39,7 +39,7 @@ export abstract class Feat {
   trait: Trait; // Description of Feat inside of Trait list inside PC
   abilitiesAtLevels: { [key: string]: (pc: PlayerCharacter) => void } = {};
 
-  protected apply(pc: PlayerCharacter, choices?: string[], spell?: string) {
+  public apply(pc: PlayerCharacter, choices?: string[], spell?: string) {
     if(choices || spell) {
       const newTrait: Trait = {
         ...this.trait, 
