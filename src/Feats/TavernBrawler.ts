@@ -8,7 +8,8 @@ export class TavernBrawler extends Feat {
   
     apply(pc: PlayerCharacter) {
       pc.abilityScores[this.abilityScore].update(1);
-      pc.traits.weaponProficiencies.push("Unarmed Strike", "Improvised Weapons");
+      pc.traits.weaponProficiencies.add("Unarmed Strike");
+      pc.traits.weaponProficiencies.add("Improvised Weapons");
       super.apply(pc, [this.abilityScore]);
     }
   }

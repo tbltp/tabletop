@@ -41,16 +41,16 @@ export abstract class Feat {
 
   public apply(pc: PlayerCharacter, choices?: string[], spell?: string) {
     if(choices || spell) {
-      const newTrait: Trait = {
+       const newTrait = {
         ...this.trait, 
         choices: choices,
         spellAdded: spell
       }
+      pc.pcHelper.addFeatures(newTrait)
     }
     pc.pcHelper.addFeatures(this.trait);
   }
 
-  //TODO: separate out pre-req logic checking to an external class to handle feats, eld. invocations, elem. disciplines, multiclasses, etc
   abilityPrereqCheck(
     pc: PlayerCharacter,
     skill: string,
@@ -60,7 +60,7 @@ export abstract class Feat {
   }
 
   armorPrereqCheck(pc: PlayerCharacter, skill: string) {
-    return pc.traits.armorProficiencies.indexOf(skill) === -1 ? false : true;
+    return pc.traits.armorProficiencies.has(skill) ? false : true;
   }
 
   spellcasterPrereqCheck(pc: PlayerCharacter) {

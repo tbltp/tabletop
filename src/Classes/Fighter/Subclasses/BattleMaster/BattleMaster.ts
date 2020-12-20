@@ -19,7 +19,7 @@ export class BattleMaster {
       dice: "d8",
     };
 
-    pc.traits.toolProficiencies.push(params.toolProficiency);
+    pc.traits.toolProficiencies.add(params.toolProficiency);
     pc.pcHelper.addResourceTraits(superiorityDice);
     pc.pcHelper.addFeatures(
       BattleMaster.getFeature("3", "COMBAT SUPERIORITY"),

@@ -22,8 +22,8 @@ export class WarDomain {
       resourceMax: (pc.abilityScores.wisdom.modifier.value >= 1) ? pc.abilityScores.wisdom.modifier : {value: 1}
     };
     pc.pcHelper.addResourceTraits(warPriest);
-    pc.traits.weaponProficiencies.push("Martial");
-    pc.traits.armorProficiencies.push("Heavy");
+    pc.traits.weaponProficiencies.add("Martial");
+    pc.traits.armorProficiencies.add("Heavy");
     pc.pcHelper.addFeatures(
         WarDomain.getFeature("1", "WAR PRIEST"),
         WarDomain.getFeature("1", "BONUS PROFICIENCIES")

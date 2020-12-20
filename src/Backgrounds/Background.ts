@@ -42,7 +42,7 @@ export abstract class Background {
       pc.traits.languages.push(Languages[language]);
     }
     for (const toolProficiency of this.toolProficiencies) {
-      pc.traits.toolProficiencies.push(toolProficiency);
+      pc.traits.toolProficiencies.add(toolProficiency);
     }
     for (const item of this.equipment) {
       pc.inventory.gear.push(Gear[item]);

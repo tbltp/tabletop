@@ -16,8 +16,8 @@ export class ForgeDomain {
 
   static forge1(pc: PlayerCharacter, params: LevelingParams) {
     ForgeDomain.getSpells(pc,"1");
-    pc.traits.armorProficiencies.push("Heavy");
-    pc.traits.toolProficiencies.push("Smithing Tools");
+    pc.traits.armorProficiencies.add("Heavy");
+    pc.traits.toolProficiencies.add("Smithing Tools");
     pc.pcHelper.addFeatures(
       ForgeDomain.getFeature("1", "BLESSING OF THE FORGE"),
       ForgeDomain.getFeature("1", "BONUS PROFICIENCY")

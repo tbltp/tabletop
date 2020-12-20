@@ -18,6 +18,9 @@ export class Jsonify {
       if(key == "pcHelper") {
         return value.id;
       }
+      if(["armorProficiencies", "weaponProficiencies", "toolProficiencies"].includes(key)) {
+        return [...value];
+      }
       return value;
     }));
     console.log("File has been created");
@@ -66,6 +69,7 @@ export class Jsonify {
   }
 
   static buildCharacter(emptyCharacter: PlayerCharacter, jsonSheet: object): PlayerCharacter {
+
     for(const property of Object.getOwnPropertyNames(jsonSheet['character'])){
       
       if(property === "abilityScores"){
@@ -74,13 +78,31 @@ export class Jsonify {
         }
       }
 
-      if(["abilityScores", "proficiency", "pcHelper"].includes(property)) {
+      //traits include sets and arrays
+      if(property === "traits") {
+
+        const characterTraits = jsonSheet['character']['traits'];
+
+        for(const trait of Object.keys(characterTraits)) {
+
+          if(["armorProficiencies", "weaponProficiencies", "toolProficiencies"].includes(trait)) {
+            //add everything inside that to the appropriate set
+            for(const element of characterTraits[trait]) {
+              emptyCharacter.traits[trait].add(element);
+            }
+            continue;
+          }
+          emptyCharacter['traits'][trait] = characterTraits[trait];
+        }
+
+      }
+
+      if(["abilityScores", "proficiency", "pcHelper", "traits"].includes(property)) {
         continue;
       }
 
       emptyCharacter[property] = jsonSheet['character'][property];
     }
-
     return emptyCharacter;
   }
 

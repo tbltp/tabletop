@@ -9,7 +9,7 @@ export class LightlyArmored extends Feat {
 
   public apply(pc: PlayerCharacter) {
     pc.abilityScores[this.abilityScore].update(1);
-    pc.traits.armorProficiencies.push("Light");
+    pc.traits.armorProficiencies.add("Light");
     super.apply(pc, [this.abilityScore]);
   }
 }

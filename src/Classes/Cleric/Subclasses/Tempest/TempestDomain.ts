@@ -23,8 +23,8 @@ export class TempestDomain {
       resourceMax: (pc.abilityScores.wisdom.modifier.value >= 1) ? pc.abilityScores.wisdom.modifier : {value: 1}
     };
     pc.pcHelper.addResourceTraits(wrathOfTheStorm);
-    pc.traits.armorProficiencies.push("Heavy");
-    pc.traits.weaponProficiencies.push("Martial");
+    pc.traits.armorProficiencies.add("Heavy");
+    pc.traits.weaponProficiencies.add("Martial");
     pc.pcHelper.addFeatures(
       TempestDomain.getFeature("1", "WRATH OF THE STORM"),
       TempestDomain.getFeature( "1", "BONUS PROFICIENCY")

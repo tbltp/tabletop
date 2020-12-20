@@ -28,3 +28,10 @@ let newsheet: CharacterSheet = Jsonify.dumpFromLocal(`./IGNORE/Bunsen.json`);
 newsheet.levelUp("Barbarian", 11, {isNoInput: true});
 Jsonify.dumpToJSON(newsheet, "NewBunsen");
 
+// const reee = Jsonify.dumpFromLocal("NewBunsen.json")
+
+// console.log(
+//   Object.getPrototypeOf(reee.character.traits.armorProficiencies) === Set.prototype,
+//   Object.getPrototypeOf(reee.character.traits.features) === Array.prototype
+// )
+

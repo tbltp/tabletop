@@ -56,19 +56,19 @@ export abstract class Race {
 
   addWeaponProficiencies(pc: PlayerCharacter): void {
     for (let weapon of this.weaponProficiencies) {
-      pc.traits.weaponProficiencies.push(weapon);
+      pc.traits.weaponProficiencies.add(weapon);
     }
   }
 
   addArmorProficiencies(pc: PlayerCharacter): void {
     for (let armor of this.armorProficiencies) {
-      pc.traits.armorProficiencies.push(armor);
+      pc.traits.armorProficiencies.add(armor);
     }
   }
 
   addToolProficiencies(pc: PlayerCharacter): void {
     for (let tool of this.toolProficiencies) {
-      pc.traits.toolProficiencies.push(tool);
+      pc.traits.toolProficiencies.add(tool);
     }
   }
 

@@ -84,19 +84,19 @@ export abstract class PlayerClass {
 
   protected addWeaponProficiencies(pc: PlayerCharacter): void {
     for (let weapon of this.weaponProficiencies) {
-      pc.traits.weaponProficiencies.push(weapon);
+      pc.traits.weaponProficiencies.add(weapon);
     }
   }
 
   protected addArmorProficiencies(pc: PlayerCharacter): void {
     for (let armor of this.armorProficiencies) {
-      pc.traits.armorProficiencies.push(armor);
+      pc.traits.armorProficiencies.add(armor);
     }
   }
 
   protected addToolProficiencies(pc: PlayerCharacter): void {
     for (let tool of this.toolProficiencies) {
-      pc.traits.toolProficiencies.push(tool);
+      pc.traits.toolProficiencies.add(tool);
     }
   }
 

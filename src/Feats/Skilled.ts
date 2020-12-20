@@ -12,7 +12,7 @@ export class Skilled extends Feat {
       }
   
       for (let t of this.tools) {
-        pc.traits.toolProficiencies.push(t);
+        pc.traits.toolProficiencies.add(t);
       }
   
       super.apply(pc, [...this.skills, ...this.tools]);

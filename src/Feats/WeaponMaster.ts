@@ -9,7 +9,7 @@ export class WeaponMaster extends Feat {
     apply(pc: PlayerCharacter) {
       pc.abilityScores[this.abilityScore].update(1);
       for (let weapon of this.weaponProficiencies) {
-        pc.traits.weaponProficiencies.push(weapon);
+        pc.traits.weaponProficiencies.add(weapon);
       }
   
       super.apply(pc, [this.abilityScore, ...this.weaponProficiencies]);

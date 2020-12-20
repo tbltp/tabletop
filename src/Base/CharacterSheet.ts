@@ -35,7 +35,7 @@ export class CharacterSheet {
   playerClasses: SheetClasses = {};
   levels: { [key: string]: PlayerClass["level"] } = {};
   asiLevels: number[] = [4, 8, 12, 16, 19];
-  feats: Feat[];
+  feats: Feat[] = [];
   background: Background;
 
   //exposed responsibilities: level up, add/remove stuff to inventory, serialize to JSON, deserialize to JSON

@@ -13,7 +13,8 @@ export class ModeratelyArmored extends Feat {
       }
   
       pc.abilityScores[this.abilityScore].update(1);
-      pc.traits.armorProficiencies.push("Medium", "Shield");
+      pc.traits.armorProficiencies.add("Medium");
+      pc.traits.armorProficiencies.add("Shield");
       super.apply(pc, [this.abilityScore]);
     }
   }

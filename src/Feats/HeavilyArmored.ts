@@ -12,7 +12,7 @@ export class HeavilyArmored extends Feat {
       }
   
       pc.abilityScores.strength.update(1);
-      pc.traits.armorProficiencies.push("Heavy");
+      pc.traits.armorProficiencies.add("Heavy");
       super.apply(pc);
     }
   }

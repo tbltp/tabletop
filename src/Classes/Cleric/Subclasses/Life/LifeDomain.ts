@@ -16,7 +16,7 @@ export class LifeDomain {
 
   static life1(pc: PlayerCharacter, params: LevelingParams) {
       LifeDomain.getSpells(pc,"1");
-      pc.traits.armorProficiencies.push("Heavy");
+      pc.traits.armorProficiencies.add("Heavy");
       pc.pcHelper.addFeatures(
         LifeDomain.getFeature("1", "DISCIPLE OF LIFE"),
         LifeDomain.getFeature("1", "BONUS PROFICIENCY")
