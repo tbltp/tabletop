@@ -1,17 +1,28 @@
-import { PlayerCharacter } from "Base/PlayerCharacter";
+import { ResourceTrait, Trait } from "../Base/Interfaces";
+import { PlayerCharacter } from "../Base/PlayerCharacter";
+import * as Maneuvers from "../Classes/Fighter/Subclasses/BattleMaster/Maneuvers.json";
+
 import { Feat } from "./Feat";
 
 export class MartialAdept extends Feat {
-    /**
-     * TO DO: Fill this class in when:
-     * actions are represented
-     * classes are implemented
-     * class-specific resources are known
-     */
   
-    constructor() {
-      super("Martial Adept");
+    constructor(maneuvers: string[]) {
+      super("Martial Adept","","",[], [],[],[],[],"",maneuvers);
     }
   
-    apply(pc: PlayerCharacter) {}
+    apply(pc: PlayerCharacter) {
+      
+      const superiorityDice: ResourceTrait = {
+        title: "Superiority Dice: Martial Adept",
+        description: "Number of superiority dice you can use for maneuvers",
+        resourceMax: { value: 1 },
+        dice: "d6",
+      };
+      
+      pc.pcHelper.addResourceTraits(superiorityDice);
+      
+      const maneuvers: Trait[] = this.maneuvers.map(m => Maneuvers[m]);
+      pc.pcHelper.addFeatures(...maneuvers);
+    }
+    
   }

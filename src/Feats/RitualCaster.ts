@@ -5,7 +5,7 @@ import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
 export class RitualCaster extends Feat {
     // TODO: THIS IS VERY COMPLEX - NOT DONE
     constructor(spellClass: string, spells: string[]) {
-      super("Ritual Caster","",spellClass, spells);
+      super("Ritual Caster", "", spellClass, spells);
     }
   
     apply(pc: PlayerCharacter) {

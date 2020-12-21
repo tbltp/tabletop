@@ -14,4 +14,4 @@ export class MagicInitiate extends Feat {
       super.apply(pc, [this.spellClass, ...this.spells]); //TODO: put spells in spell added instead, when that's fixed
     }
   }
-  
+  6

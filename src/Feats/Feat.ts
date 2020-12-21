@@ -12,7 +12,8 @@ export abstract class Feat {
     skills?: string[],
     tools?: string[],
     weaponProficiencies?: string[],
-    element?: string
+    element?: string,
+    maneuvers?: string[]
   ) {
     this.name = name;
     this.abilityScore = abilityScore;
@@ -24,6 +25,7 @@ export abstract class Feat {
     this.weaponProficiencies = weaponProficiencies;
     this.trait = Feats[name.toUpperCase()];
     this.element = element;
+    this.maneuvers = maneuvers;
   }
 
   name: string;
@@ -35,6 +37,7 @@ export abstract class Feat {
   tools: string[] | null;
   weaponProficiencies: string[] | null;
   element: string | null;
+  maneuvers: string[] | null;
 
   trait: Trait; // Description of Feat inside of Trait list inside PC
   abilitiesAtLevels: { [key: string]: (pc: PlayerCharacter) => void } = {};

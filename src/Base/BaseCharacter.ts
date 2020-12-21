@@ -241,7 +241,7 @@ export abstract class BaseCharacter {
     resources: [],
     scalingEffects: [],
   };
-
+  
   // Known Spells
   spells: {
     "0": Spell[];
