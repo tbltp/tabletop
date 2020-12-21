@@ -24,5 +24,4 @@ export class MartialAdept extends Feat {
       const maneuvers: Trait[] = this.maneuvers.map(m => Maneuvers[m]);
       pc.pcHelper.addFeatures(...maneuvers);
     }
-    
   }
