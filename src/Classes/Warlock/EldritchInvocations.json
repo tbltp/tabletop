@@ -10,7 +10,7 @@
         ]
     },
     "ARMOR OF SHADOWS": {
-        "title": "Agonizing Blast",
+        "title": "Armor of Shadows",
         "description": "You can cast Mage Armor on yourself at will, without expending a spell slot or material components.",
         "spellAdded": "MAGE ARMOR"
     },
