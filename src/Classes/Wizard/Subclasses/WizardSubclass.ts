@@ -1,3 +1,4 @@
+import { WarCaster } from "Feats/Feat";
 import { Subclass } from "../../Subclass";
 import { Abjuration } from "./Abjuration/Abjuration";
 import { Conjuration } from "./Conjuration/Conjuration";
@@ -7,6 +8,7 @@ import { Evocation } from "./Evocation/Evocation";
 import { Illusion } from "./Illusion/Illusion";
 import { Necromancy } from "./Necromancy/Necromancy";
 import { Transmutation } from "./Transmutation/Transmutation";
+import { War } from "./War/War";
 
 export class WizardSubclass extends Subclass {
 
@@ -62,6 +64,17 @@ export class WizardSubclass extends Subclass {
             "6": Transmutation.transmutation6,
             "10": Transmutation.transmutation10,
             "14": Transmutation.transmutation14,
+        },
+        WAR: {
+            "2": War.war2,
+            "6": War.war6,
+            "8": War.upSurge,
+            "10": War.war10,
+            "12": War.upSurge,
+            "14": War.war14,
+            "16": War.upSurge,
+            "18": War.upSurge,
+            "20": War.upSurge,
         }
     };
 }
