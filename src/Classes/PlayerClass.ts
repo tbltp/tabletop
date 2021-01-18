@@ -288,8 +288,8 @@ export abstract class PlayerClass {
   public static multiClassCheck(pc: PlayerCharacter, trait: string){
     
     let riskTraits = {
-      "Channel Divinity": pc.pcHelper.findResourceTraitByName("Channel Divinity") ? true : false,
-      "Unarmored Defense": pc.pcHelper.findFeatureTraitByName("Unarmored Defense") ? true : false
+      "Channel Divinity": pc.pcHelper.findResourceTraitByName("Channel Divinity") === null ? true : false,
+      "Unarmored Defense": pc.pcHelper.findFeatureTraitByName("Unarmored Defense") === null ? true : false
     }
     
     if (riskTraits[trait]) { return false; }

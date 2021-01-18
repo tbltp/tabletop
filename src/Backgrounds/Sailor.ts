@@ -4,7 +4,7 @@ export class Sailor extends Background {
   constructor() {
     super(
       "Sailor",
-      ["athletics", "perpection"],
+      ["athletics", "perception"],
       [],
       ["Navigator's tools, Vehicles, water"],
       ["ROPE, SILK (50 FEET)", "CLOTHES, COMMON"],

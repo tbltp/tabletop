@@ -293,9 +293,13 @@ export class Warlock extends PlayerClass {
     pc: PlayerCharacter,
     params: WarlockLevelingParams
   ) {
-    this.processInvocations(params.invocations.add, pc);
-    if (params.invocations.remove) {
-      this.removeInvocation(params.invocations.remove, pc);
+    
+    if(params.invocations) {
+      this.processInvocations(params.invocations.add, pc);
+      
+      if (params.invocations.remove) {
+        this.removeInvocation(params.invocations.remove, pc);
+      }
     }
   }
 
