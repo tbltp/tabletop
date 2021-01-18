@@ -10,8 +10,8 @@ import { Transmutation } from "./Transmutation/Transmutation";
 
 export class WizardSubclass extends Subclass {
 
-    constructor(subclass: string){
-        super(subclass);
+    constructor(subclassSelection: {subclass: string, options?: string[]}){
+        super(subclassSelection);
     }
     
     subclassDictionary = {

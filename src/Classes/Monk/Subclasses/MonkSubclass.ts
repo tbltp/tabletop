@@ -5,8 +5,8 @@ import { FourElements } from "./FourElements/FourElements"
 import { DrunkenMaster} from "./DrunkenMaster/DrunkenMaster"
 
 export class MonkSubclass extends Subclass {
-  constructor(subclass: string){
-    super(subclass);
+  constructor(subclassSelection: {subclass: string, options?: string[]}){
+    super(subclassSelection);
   }
   
   subclassDictionary = {

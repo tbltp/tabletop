@@ -111,7 +111,7 @@ export class Paladin extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.subclass = new PaladinSubclass(params.subclassSelection.subclass);
+    this.subclass = new PaladinSubclass(params.subclassSelection);
     this.upgradeLayOnHands(pc);
     this.subclassDriver(pc, "3", params);
 

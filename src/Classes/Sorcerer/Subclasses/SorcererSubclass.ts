@@ -1,10 +1,15 @@
+
 import { Subclass } from "../../Subclass";
 import { DraconicAncestry } from "./DraconicAncestry/DraconicAncestry";
 import { WildMagic } from "./WildMagic/WildMagic";
+import { LevelingParams } from "Classes/PlayerClass";
+import { PlayerCharacter } from "index";
 
 export class SorcererSubclass extends Subclass {
-  constructor(subclass: string){
-    super(subclass);
+  constructor(subclassSelection: {subclass: string, options?: string[]}){
+    super(subclassSelection);
+
+    subclassSelection.subclass === "DRACONIC ANCESTRY" ? this.persistentSelection = {choice: subclassSelection.options[0]} : null
   }
 
   subclassDictionary = {
@@ -37,4 +42,13 @@ export class SorcererSubclass extends Subclass {
       "18": WildMagic.wildMagic18,
     },
   };
+
+  subclassDriver(pc: PlayerCharacter, level: string, subclass: string, params: LevelingParams){
+    if(!this.subclassDictionary[subclass][level]){ return; }
+    if(this.persistentSelection){
+      params.subclassSelection = {subclass: "DRACONIC ANCESTRY", options: [this.persistentSelection.choice]};
+    }
+    this.subclassDictionary[subclass][level](pc, params);
+  }
+
 }
