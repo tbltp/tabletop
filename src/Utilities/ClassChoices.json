@@ -1,7 +1,7 @@
 {
     "Barbarian": {
         "1": {
-            "Skill Proficiency": {
+            "Skill Proficiencies": {
                 "choose": 2,
                 "from": [
                    "animal handling",
@@ -70,7 +70,7 @@
     },
     "Bard": {
         "1": {
-            "Musical Instrument Proficiency": {
+            "Musical Instrument Proficiencies": {
                 "choose": 3,
                 "from": [
                     "Bagpipes",
@@ -85,7 +85,7 @@
                     "Viol"
                 ]
             },
-            "Skill Proficiency": {
+            "Skill Proficiencies": {
                 "choose": 3,
                 "from": [
                     "acrobatics",
@@ -177,7 +177,7 @@
                     "1"
                 ]
             },
-            "Replacement": {
+            "Spell Replacement": {
                 "choose": 1,
                 "method": "getKnownSpells"
             }
@@ -206,7 +206,7 @@
                     "2"
                 ]
             },
-            "Replacement": {
+            "Spell Replacement": {
                 "choose": 1,
                 "method": "getKnownSpells"
             }
@@ -229,7 +229,7 @@
                     "2"
                 ]
             },
-            "Replacement": {
+            "Spell Replacement": {
                 "choose": 1,
                 "method": "getKnownSpells"
             }
@@ -244,7 +244,7 @@
                     "3"
                 ]
             },
-            "Replacement": {
+            "Spell Replacement": {
                 "choose": 1,
                 "method": "getKnownSpells"
             }
@@ -259,7 +259,7 @@
                     "3"
                 ]
             },
-            "Replacement": {
+            "Spell Replacement": {
                 "choose": 1,
                 "method": "getKnownSpells"
             }
@@ -274,7 +274,7 @@
                     "4"
                 ]
             },
-            "Replacement": {
+            "Spell Replacement": {
                 "choose": 1,
                 "method": "getKnownSpells"
             }
@@ -289,7 +289,7 @@
                     "4"
                 ]
             },
-            "Replacement": {
+            "Spell Replacement": {
                 "choose": 1,
                 "method": "getKnownSpells"
             }
@@ -304,7 +304,7 @@
                     "5"
                 ]
             },
-            "Replacement": {
+            "Spell Replacement": {
                 "choose": 1,
                 "method": "getKnownSpells"
             }
@@ -340,7 +340,7 @@
                     "5"
                 ]
             },
-            "Replacement": {
+            "Spell Replacement": {
                 "choose": 1,
                 "method": "getKnownSpells"
             }
@@ -355,7 +355,7 @@
                     "6"
                 ]
             },
-            "Replacement": {
+            "Spell Replacement": {
                 "choose": 1,
                 "method": "getKnownSpells"
             }
@@ -370,7 +370,7 @@
                     "7"
                 ]
             },
-            "Replacement": {
+            "Spell Replacement": {
                 "choose": 1,
                 "method": "getKnownSpells"
             }
@@ -394,7 +394,7 @@
                     "7"
                 ]
             },
-            "Replacement": {
+            "Spell Replacement": {
                 "choose": 1,
                 "method": "getKnownSpells"
             }
@@ -409,7 +409,7 @@
                     "8"
                 ]
             },
-            "Replacement": {
+            "Spell Replacement": {
                 "choose": 1,
                 "method": "getKnownSpells"
             }
@@ -424,7 +424,7 @@
                     "9"
                 ]
             },
-            "Replacement": {
+            "Spell Replacement": {
                 "choose": 1,
                 "method": "getKnownSpells"
             }
@@ -448,7 +448,7 @@
                     "9"
                 ]
             },
-            "Replacement": {
+            "Spell Replacement": {
                 "choose": 1,
                 "method": "getKnownSpells"
             }
@@ -456,7 +456,7 @@
     },
     "Cleric": {
         "1": {
-            "Skill Proficiency": {
+            "Skill Proficiencies": {
                 "choose": 2,
                 "from": [
                     "history",
@@ -532,7 +532,7 @@
             }
         },
         "4": {
-            "Cantrips": {
+            "Cantrip": {
                 "choose": 1,
                 "method": "getSpellList",
                 "args": [
@@ -542,7 +542,7 @@
             }
         },
         "10": {
-            "Cantrips": {
+            "Cantrip": {
                 "choose": 1,
                 "method": "getSpellList",
                 "args": [
@@ -634,7 +634,7 @@
             }
         },
         "4": {
-            "Cantrips": {
+            "Cantrip": {
                 "choose": 1,
                 "method": "getSpellList",
                 "args": [
@@ -644,7 +644,7 @@
             }
         },
         "10": {
-            "Cantrips": {
+            "Cantrip": {
                 "choose": 1,
                 "method": "getSpellList",
                 "args": [
@@ -656,7 +656,7 @@
     }, 
     "Fighter": {
         "1": {
-            "Skill Proficiency": {
+            "Skill Proficiencies": {
                 "choose": 2,
                 "from": [
                     "acrobatics",
@@ -847,6 +847,129 @@
                     "FOUR ELEMENTS",
                     "OPEN HAND", 
                     "SHADOW"
+                ]
+            }
+        }
+    }, 
+    "Paladin": {
+        "1": {
+            "Skill Proficiencies": {
+                "choose": 2,
+                "from": [
+                    "athletics",
+                    "insight",
+                    "intimidation",
+                    "medicine",
+                    "persuasion",
+                    "religion"
+                ]
+            },
+            "First Martial Weapon": {
+                "choose": 1,
+                "from": [
+                    "GREATAXE",
+                    "BATTLEAXE",
+                    "FLAIL",
+                    "GLAIVE",
+                    "GREATSWORD",
+                    "HALBERD",
+                    "LANCE",
+                    "LONGSWORD",
+                    "MAUL",
+                    "MORNINGSTAR",
+                    "PIKE",
+                    "RAPIER",
+                    "SCIMITAR",
+                    "SHORTSWORD",
+                    "TRIDENT",
+                    "WAR PICK",
+                    "WARHAMMER",
+                    "WHIP"
+                ]
+            },
+            "Second Martial Weapon": {
+                "choose": 1,
+                "from": [
+                    "SHIELD",
+                    "GREATAXE",
+                    "BATTLEAXE",
+                    "FLAIL",
+                    "GLAIVE",
+                    "GREATSWORD",
+                    "HALBERD",
+                    "LANCE",
+                    "LONGSWORD",
+                    "MAUL",
+                    "MORNINGSTAR",
+                    "PIKE",
+                    "RAPIER",
+                    "SCIMITAR",
+                    "SHORTSWORD",
+                    "TRIDENT",
+                    "WAR PICK",
+                    "WARHAMMER",
+                    "WHIP"
+                ]
+            },
+            "Simple Weapon": {
+                "choose": 1,
+                "from": [
+                    [                    
+                        "JAVELIN",
+                        "JAVELIN",
+                        "JAVELIN",
+                        "JAVELIN",
+                        "JAVELIN"
+                    ],
+                    "CLUB",
+                    "CROSSBOW, LIGHT",
+                    "DART",
+                    "DAGGER",
+                    "GREATCLUB",
+                    "HANDAXE",
+                    "LIGHT HAMMER",
+                    "MACE",
+                    "QUARTERSTAFF",
+                    "SHORTBOW",
+                    "SICKLE",
+                    "SLING",
+                    "SPEAR"
+                ]
+            },
+            "Pack": {
+                "choose": 1,
+                "from": [
+                    "PRIEST",
+                    "EXPLORER"
+                ]
+            },
+            "Holy Symbol": {
+                "choose": 1,
+                "from": [
+                    "AMULET",
+                    "EMBLEM",
+                    "RELIQUARY"
+                ] 
+            }
+        },
+        "2": {
+            "Fighting Style": {
+                "choose": 1,
+                "from": [
+                    "DEFENSE",
+                    "DUELING",
+                    "GREAT WEAPON FIGHTING",
+                    "PROTECTION"
+                ]
+            }
+        },
+        "3": {
+            "Subclass": {
+                "choose": 1,
+                "from": [
+                    "ANCIENTS",
+                    "DEVOTION",
+                    "VENGEANCE"
                 ]
             }
         }
