@@ -1,0 +1,334 @@
+{
+    "Acolyte": {
+        "Language": {
+            "choose": 2,
+            "from": [
+                "Celestial",
+                "Common",
+                "Deep Speech",
+                "Draconic",
+                "Dwarvish",
+                "Elvish",
+                "Gnomish",
+                "Goblin",
+                "Halfling",
+                "Infernal",
+                "Orc",
+                "Primordial",
+                "Sylvan",
+                "Undercommon"
+            ]
+        },
+        "Holy Symbol": {
+            "choose": 1,
+            "from": [
+                "AMULET",
+                "EMBLEM",
+                "RELIQUARY"
+            ]
+        }
+    },
+    "Criminal": {
+        "Gaming Set Proficiency": {
+            "choose": 1,
+            "from": [
+                "Playing card set",
+                "Dragonchess set",
+                "Dice set",
+                "Three-dragon ante set"
+            ]
+        }
+    },
+    "Entertainer": {
+        "Musical Instrument Proficiency": {
+            "choose": 1,
+            "from": [
+                "Bagpipes",
+                "Drum",
+                "Dulcimer",
+                "Flute",
+                "Horn",
+                "Lute",
+                "Lyre",
+                "Pan Flute",
+                "Shawm",
+                "Viol"
+            ]
+        },
+        "Musical Instrument": {
+            "choose": 1,
+            "from": [
+                "BAGPIPES",
+                "DRUM",
+                "DULCIMER",
+                "FLUTE",
+                "HORN",
+                "LUTE",
+                "LYRE",
+                "PAN FLUTE",
+                "SHAWM",
+                "VIOL"
+            ]
+        }
+    },
+    "Folk Hero": {
+        "Artisan Tool Proficiency": {
+            "choose": 1,
+            "from": [
+                "Alchemist's supplies",
+                "Brewer's supplies",
+                "Calligrapher's supplies",
+                "Carpenter's tools",
+                "Cartographer's tools",
+                "Cobbler's tools",
+                "Cook's utensils",
+                "Glassblower's tools",
+                "Jeweler's tools",
+                "Leatherworker's tools",
+                "Mason's tools",
+                "Painter's tools",
+                "Potter's tools",
+                "Smith's tools",
+                "Tinker's tools",
+                "Weaver's tools",
+                "Woodcarver's tools"
+            ]
+        },
+        "Artisan Tools": {
+            "choose": 1,
+            "from": [
+                "ALCHEMIST'S SUPPLIES",
+                "BREWER'S SUPPLIES",
+                "CALLIGRAPHER'S SUPPLIES",
+                "CARPENTER'S TOOLS",
+                "CARTOGRAPHER'S TOOLS",
+                "COBBLER'S TOOLS",
+                "COOK'S UTENSILS",
+                "GLASSBLOWER'S TOOLS",
+                "JEWELER'S TOOLS",
+                "LEATHERWORKER'S TOOLS",
+                "MASON'S TOOLS",
+                "PAINTER'S TOOLS",
+                "POTTER'S TOOLS",
+                "SMITH'S TOOLS",
+                "TINKER'S TOOLS",
+                "WEAVER'S TOOLS",
+                "WOODCARVER'S TOOLS"
+            ]
+        }
+    },
+    "Guild Artisan": {
+        "Language": {
+            "choose": 1,
+            "from": [
+                "Celestial",
+                "Common",
+                "Deep Speech",
+                "Draconic",
+                "Dwarvish",
+                "Elvish",
+                "Gnomish",
+                "Goblin",
+                "Halfling",
+                "Infernal",
+                "Orc",
+                "Primordial",
+                "Sylvan",
+                "Undercommon"
+            ]
+        },
+        "Artisan Tool Proficiency": {
+            "choose": 1,
+            "from": [
+                "Alchemist's supplies",
+                "Brewer's supplies",
+                "Calligrapher's supplies",
+                "Carpenter's tools",
+                "Cartographer's tools",
+                "Cobbler's tools",
+                "Cook's utensils",
+                "Glassblower's tools",
+                "Jeweler's tools",
+                "Leatherworker's tools",
+                "Mason's tools",
+                "Painter's tools",
+                "Potter's tools",
+                "Smith's tools",
+                "Tinker's tools",
+                "Weaver's tools",
+                "Woodcarver's tools"
+            ]
+        },
+        "Artisan Tools": {
+            "choose": 1,
+            "from": [
+                "ALCHEMIST'S SUPPLIES",
+                "BREWER'S SUPPLIES",
+                "CALLIGRAPHER'S SUPPLIES",
+                "CARPENTER'S TOOLS",
+                "CARTOGRAPHER'S TOOLS",
+                "COBBLER'S TOOLS",
+                "COOK'S UTENSILS",
+                "GLASSBLOWER'S TOOLS",
+                "JEWELER'S TOOLS",
+                "LEATHERWORKER'S TOOLS",
+                "MASON'S TOOLS",
+                "PAINTER'S TOOLS",
+                "POTTER'S TOOLS",
+                "SMITH'S TOOLS",
+                "TINKER'S TOOLS",
+                "WEAVER'S TOOLS",
+                "WOODCARVER'S TOOLS"
+            ]
+        }
+    },
+    "Hermit": {
+        "Language": {
+            "choose": 1,
+            "from": [
+                "Celestial",
+                "Common",
+                "Deep Speech",
+                "Draconic",
+                "Dwarvish",
+                "Elvish",
+                "Gnomish",
+                "Goblin",
+                "Halfling",
+                "Infernal",
+                "Orc",
+                "Primordial",
+                "Sylvan",
+                "Undercommon"
+            ]
+        }
+    },
+    "Knight": {
+        "Language": {
+            "choose": 1,
+            "from": [
+                "Celestial",
+                "Common",
+                "Deep Speech",
+                "Draconic",
+                "Dwarvish",
+                "Elvish",
+                "Gnomish",
+                "Goblin",
+                "Halfling",
+                "Infernal",
+                "Orc",
+                "Primordial",
+                "Sylvan",
+                "Undercommon"
+            ]
+        },
+        "Gaming Set": {
+            "choose": 1,
+            "from": [
+                "PLAYING CARD SET",
+                "DRAGONCHESS SET",
+                "DICE SET",
+                "THREE-DRAGON ANTE SET"
+            ]
+        }
+    },
+    "Noble": {
+        "Language": {
+            "choose": 1,
+            "from": [
+                "Celestial",
+                "Common",
+                "Deep Speech",
+                "Draconic",
+                "Dwarvish",
+                "Elvish",
+                "Gnomish",
+                "Goblin",
+                "Halfling",
+                "Infernal",
+                "Orc",
+                "Primordial",
+                "Sylvan",
+                "Undercommon"
+            ]
+        },
+        "Gaming Set": {
+            "choose": 1,
+            "from": [
+                "PLAYING CARD SET",
+                "DRAGONCHESS SET",
+                "DICE SET",
+                "THREE-DRAGON ANTE SET"
+            ]
+        }
+    },
+    "Outlander": {
+        "Language": {
+            "choose": 1,
+            "from": [
+                "Celestial",
+                "Common",
+                "Deep Speech",
+                "Draconic",
+                "Dwarvish",
+                "Elvish",
+                "Gnomish",
+                "Goblin",
+                "Halfling",
+                "Infernal",
+                "Orc",
+                "Primordial",
+                "Sylvan",
+                "Undercommon"
+            ]
+        },
+        "Musical Instrument": {
+            "choose": 1,
+            "from": [
+                "BAGPIPES",
+                "DRUM",
+                "DULCIMER",
+                "FLUTE",
+                "HORN",
+                "LUTE",
+                "LYRE",
+                "PAN FLUTE",
+                "SHAWM",
+                "VIOL"
+            ]
+        }
+    },
+    "Sage": {
+        "Language": {
+            "choose": 2,
+            "from": [
+                "Celestial",
+                "Common",
+                "Deep Speech",
+                "Draconic",
+                "Dwarvish",
+                "Elvish",
+                "Gnomish",
+                "Goblin",
+                "Halfling",
+                "Infernal",
+                "Orc",
+                "Primordial",
+                "Sylvan",
+                "Undercommon"
+            ]
+        }
+    },
+    "Soldier": {
+        "Gaming Set Proficiency": {
+            "choose": 1,
+            "from": [
+                "Playing card set",
+                "Dragonchess set",
+                "Dice set",
+                "Three-dragon ante set"
+            ]
+        }
+    }
+}

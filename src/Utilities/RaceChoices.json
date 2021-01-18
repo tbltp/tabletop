@@ -1,0 +1,180 @@
+
+{
+    "Dragonborn": {
+        "Draconic Ancestry": {
+            "choose": 1,
+            "from": [
+                "Black",
+                "Blue",
+                "Brass",
+                "Bronze",
+                "Copper",
+                "Gold",
+                "Green",
+                "Red",
+                "Silver",
+                "White"
+            ]
+        }
+    },
+    "Hill Dwarf": {
+        "Toolkit Proficiency": {
+            "choose": 1,
+            "from": [
+                "Brewer's supplies",
+                "Smith's tools",
+                "Mason's tools"
+            ]
+        }
+    },
+    "Mountain Dwarf": {
+        "Toolkit Proficiency": {
+            "choose": 1,
+            "from": [
+                "Brewer's supplies",
+                "Smith's tools",
+                "Mason's tools"
+            ]
+        }
+    },
+    "Half Elf": {
+        "Ability Score": {
+            "choose": 2,
+            "from": [
+                "Strength",
+                "Dexterity",
+                "Constitution",
+                "Intelligence",
+                "Wisdom", 
+                "Charisma"
+            ]
+        },
+        "Skill Proficiency": {
+            "choose": 2,
+            "from": [
+                "acrobatics",
+                "animal handling",
+                "arcana",
+                "athletics",
+                "deception",
+                "history",
+                "insight",
+                "intimidation",
+                "investigation",
+                "medicine",
+                "nature",
+                "perception",
+                "performance",
+                "persuasion",
+                "religion",
+                "sleight of hand",
+                "stealth",
+                "survival"
+            ]
+        },
+        "Language": {
+            "choose": 1,
+            "from": [
+                "Celestial",
+                "Common",
+                "Deep Speech",
+                "Draconic",
+                "Dwarvish",
+                "Elvish",
+                "Gnomish",
+                "Goblin",
+                "Halfling",
+                "Infernal",
+                "Orc",
+                "Primordial",
+                "Sylvan",
+                "Undercommon"
+            ]
+        }
+    },
+    "High Elf": {
+        "Wizard Cantrip": {
+            "choose": 1,
+            "from": [
+                "BLADE WARD",
+                "DANCING LIGHTS",
+                "MENDING",
+                "LIGHT",
+                "MESSAGE",
+                "FRIENDS",
+                "PRESTIDIGITATION",
+                "MINOR ILLUSION",
+                "MAGE HAND",
+                "TRUE STRIKE",
+                "ACID SPLASH",
+                "CHILL TOUCH",
+                "FIRE BOLT",
+                "POISON SPRAY",
+                "RAY OF FROST",
+                "SHOCKING GRASP"
+            ]
+        },
+        "Language": {
+            "choose": 1,
+            "from": [
+                "Celestial",
+                "Common",
+                "Deep Speech",
+                "Draconic",
+                "Dwarvish",
+                "Elvish",
+                "Gnomish",
+                "Goblin",
+                "Halfling",
+                "Infernal",
+                "Orc",
+                "Primordial",
+                "Sylvan",
+                "Undercommon"
+            ]
+        }
+    },
+    "Base Human": {
+        "Language": {
+            "choose": 1,
+            "from": [
+                "Celestial",
+                "Common",
+                "Deep Speech",
+                "Draconic",
+                "Dwarvish",
+                "Elvish",
+                "Gnomish",
+                "Goblin",
+                "Halfling",
+                "Infernal",
+                "Orc",
+                "Primordial",
+                "Sylvan",
+                "Undercommon"
+            ]
+        }
+    },
+    "Variant Human": {
+        "Language": {
+            "choose": 1,
+            "from": [
+                "Celestial",
+                "Common",
+                "Deep Speech",
+                "Draconic",
+                "Dwarvish",
+                "Elvish",
+                "Gnomish",
+                "Goblin",
+                "Halfling",
+                "Infernal",
+                "Orc",
+                "Primordial",
+                "Sylvan",
+                "Undercommon"
+            ]
+        },
+        "Feat": {}
+    }
+}
