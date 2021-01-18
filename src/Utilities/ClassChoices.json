@@ -653,5 +653,202 @@
                 ]
             }
         }
+    }, 
+    "Fighter": {
+        "1": {
+            "Skill Proficiency": {
+                "choose": 2,
+                "from": [
+                    "acrobatics",
+                    "animal handling",
+                    "athletics",
+                    "history",
+                    "insight",
+                    "intimidation",
+                    "perception",
+                    "survival"
+                ]
+            },
+            "Fighter Armor": {
+                "choose": 1,
+                "from": [
+                    "CHAIN MAIL",
+                    [
+                        "LEATHER ARMOR",
+                        "LONGBOW"
+                    ]
+                ]
+            },
+            "First Martial Weapon": {
+                "choose": 1,
+                "from": [
+                    "GREATAXE",
+                    "BATTLEAXE",
+                    "FLAIL",
+                    "GLAIVE",
+                    "GREATSWORD",
+                    "HALBERD",
+                    "LANCE",
+                    "LONGSWORD",
+                    "MAUL",
+                    "MORNINGSTAR",
+                    "PIKE",
+                    "RAPIER",
+                    "SCIMITAR",
+                    "SHORTSWORD",
+                    "TRIDENT",
+                    "WAR PICK",
+                    "WARHAMMER",
+                    "WHIP"
+                ]
+            },
+            "Second Martial Weapon": {
+                "choose": 1,
+                "from": [
+                    "SHIELD",
+                    "GREATAXE",
+                    "BATTLEAXE",
+                    "FLAIL",
+                    "GLAIVE",
+                    "GREATSWORD",
+                    "HALBERD",
+                    "LANCE",
+                    "LONGSWORD",
+                    "MAUL",
+                    "MORNINGSTAR",
+                    "PIKE",
+                    "RAPIER",
+                    "SCIMITAR",
+                    "SHORTSWORD",
+                    "TRIDENT",
+                    "WAR PICK",
+                    "WARHAMMER",
+                    "WHIP"
+                ]
+            },
+            "Third Weapon": {
+                "choose": 1,
+                "from": [
+                    "CROSSBOW, LIGHT",
+                    ["HANDAXE", "HANDAXE"]
+                ]
+            },
+            "Pack": {
+                "choose": 1,
+                "from": [
+                    "DUNGEONEER",
+                    "EXPLORER"
+                ]
+            },
+            "Fighting Style": {
+                "choose": 1,
+                "from": [
+                    "ARCHERY",
+                    "DEFENSE",
+                    "DUELING",
+                    "GREAT WEAPON FIGHTING",
+                    "PROTECTION",
+                    "TWO WEAPON FIGHTING"
+                ]
+            }
+        },
+        "3": {
+            "Subclass": {
+                "choose": 1,
+                "from": [
+                    "ARCANE ARCHER",
+                    "BATTLE MASTER",
+                    "CAVALIER",
+                    "CHAMPION",
+                    "ELDRITCH KNIGHT",
+                    "SAMURAI"
+                ]
+            }
+        }
+    },
+    "Monk": {
+        "1": {
+            "Tool Proficiency": {
+                "choose": 1, 
+                "from": [
+                    "Alchemist's supplies",
+                    "Brewer's supplies",
+                    "Calligrapher's supplies",
+                    "Carpenter's tools",
+                    "Cartographer's tools",
+                    "Cobbler's tools",
+                    "Cook's utensils",
+                    "Glassblower's tools",
+                    "Jeweler's tools",
+                    "Leatherworker's tools",
+                    "Mason's tools",
+                    "Painter's tools",
+                    "Potter's tools",
+                    "Smith's tools",
+                    "Tinker's tools",
+                    "Weaver's tools",
+                    "Woodcarver's tools",
+                    "Bagpipes",
+                    "Drum",
+                    "Dulcimer",
+                    "Flute",
+                    "Horn",
+                    "Lute",
+                    "Lyre",
+                    "Pan Flute",
+                    "Shawm",
+                    "Viol"
+                ]
+            },
+            "Skill Proficiency": {
+                "choose": 2,
+                "from": [
+                    "acrobatics",
+                    "athletics",
+                    "history",
+                    "insight",
+                    "religion",
+                    "stealth"
+                ]
+            },
+            "Weapon": {
+                "choose": 1,
+                "from": [
+                    "SHORTSWORD",
+                    "CROSSBOW, LIGHT",
+                    "CLUB",
+                    "DART",
+                    "DAGGER",
+                    "GREATCLUB",
+                    "HANDAXE",
+                    "JAVELIN",
+                    "LIGHT HAMMER",
+                    "MACE",
+                    "QUARTERSTAFF",
+                    "SHORTBOW",
+                    "SICKLE",
+                    "SLING",
+                    "SPEAR"
+                ]
+            },
+            "Pack": {
+                "choose": 1, 
+                "from": [
+                    "DUNGEONEER",
+                    "EXPLORER"
+                ]
+            }
+        },
+        "3": {
+            "Subclass": {
+                "choose": 1,
+                "from": [
+                    "DRUNKEN MASTER",
+                    "FOUR ELEMENTS",
+                    "OPEN HAND", 
+                    "SHADOW"
+                ]
+            }
+        }
     }
 }
