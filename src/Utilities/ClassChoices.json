@@ -1,0 +1,657 @@
+{
+    "Barbarian": {
+        "1": {
+            "Skill Proficiency": {
+                "choose": 2,
+                "from": [
+                   "animal handling",
+                   "athletics",
+                   "intimidation",
+                   "nature",
+                   "perception",
+                   "survival" 
+                ]
+            },
+            "Martial Weapon": {
+                "choose": 1,
+                "from": [
+                    "GREATAXE",
+                    "BATTLEAXE",
+                    "FLAIL",
+                    "GLAIVE",
+                    "GREATSWORD",
+                    "HALBERD",
+                    "LANCE",
+                    "LONGSWORD",
+                    "MAUL",
+                    "MORNINGSTAR",
+                    "PIKE",
+                    "RAPIER",
+                    "SCIMITAR",
+                    "SHORTSWORD",
+                    "TRIDENT",
+                    "WAR PICK",
+                    "WARHAMMER",
+                    "WHIP"
+                ]
+            },
+            "Simple Weapon": {
+                "choose": 1,
+                "from": [
+                    ["HANDAXE", "HANDAXE"],
+                    "CLUB",
+                    "CROSSBOW, LIGHT",
+                    "DART",
+                    "DAGGER",
+                    "GREATCLUB",
+                    "JAVELIN",
+                    "LIGHT HAMMER",
+                    "MACE",
+                    "QUARTERSTAFF",
+                    "SHORTBOW",
+                    "SICKLE",
+                    "SLING",
+                    "SPEAR"
+                ]
+            }
+        },
+        "3": {
+            "Subclass": {
+                "choose": 1,
+                "from": [
+                    "ANCESTRAL GUARDIAN",
+                    "BERSERKER",
+                    "TOTEM WARRIOR",
+                    "STORM HERALD",
+                    "ZEALOT"
+                ]
+            }
+        }
+    },
+    "Bard": {
+        "1": {
+            "Musical Instrument Proficiency": {
+                "choose": 3,
+                "from": [
+                    "Bagpipes",
+                    "Drum",
+                    "Dulcimer",
+                    "Flute",
+                    "Horn",
+                    "Lute",
+                    "Lyre",
+                    "Pan Flute",
+                    "Shawm",
+                    "Viol"
+                ]
+            },
+            "Skill Proficiency": {
+                "choose": 3,
+                "from": [
+                    "acrobatics",
+                    "animal handling",
+                    "arcana",
+                    "athletics",
+                    "deception",
+                    "history",
+                    "insight",
+                    "intimidation",
+                    "investigation",
+                    "medicine",
+                    "nature",
+                    "perception",
+                    "performance",
+                    "persuasion",
+                    "religion",
+                    "sleight of hand",
+                    "stealth",
+                    "survival"
+                ]
+            },
+            "Weapon": {
+                "choose": 1,
+                "from": [
+                    "RAPIER",
+                    "LONGSWORD",
+                    "CLUB",
+                    "CROSSBOW, LIGHT",
+                    "DART",
+                    "DAGGER",
+                    "GREATCLUB",
+                    "HANDAXE",
+                    "JAVELIN",
+                    "LIGHT HAMMER",
+                    "MACE",
+                    "QUARTERSTAFF",
+                    "SHORTBOW",
+                    "SICKLE",
+                    "SLING",
+                    "SPEAR"
+                ]
+            },
+            "Pack": {
+                "choose": 1,
+                "from": [
+                    "DIPLOMAT",
+                    "ENTERTAINER"
+                ]
+            },
+            "Musical Instrument": {
+                "choose": 1,
+                "from": [
+                    "LUTE",
+                    "BAGPIPES",
+                    "DRUM",
+                    "DULCIMER",
+                    "FLUTE",
+                    "HORN",
+                    "LYRE",
+                    "PAN FLUTE",
+                    "SHAWM",
+                    "VIOL"
+                ]
+            },
+            "Cantrips": {
+                "choose": 2,
+                "method": "getSpellList",
+                "args": [
+                    "Bard",
+                    "0"
+                ]
+            },
+            "Spells": {
+                "choose": 4,
+                "method": "getSpellList",
+                "args": [
+                    "Bard",
+                    "1"
+                ]
+            }
+        },
+        "2": {
+            "Spell": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Bard",
+                    "1"
+                ]
+            },
+            "Replacement": {
+                "choose": 1,
+                "method": "getKnownSpells"
+            }
+        },
+        "3": {
+            "Subclass": {
+                "choose": 1,
+                "from": [
+                    "GLAMOUR",
+                    "LORE",
+                    "SWORDS",
+                    "VALOR",
+                    "WHISPERS"
+                ]
+            },
+            "Expertise": {
+                "choose": 2,
+                "method": "getSkillProficiencies"
+            },
+            "Spell": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Bard",
+                    "1",
+                    "2"
+                ]
+            },
+            "Replacement": {
+                "choose": 1,
+                "method": "getKnownSpells"
+            }
+        },
+        "4": {
+            "Cantrip": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Bard",
+                    "0"
+                ]
+            },
+            "Spell": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Bard",
+                    "1",
+                    "2"
+                ]
+            },
+            "Replacement": {
+                "choose": 1,
+                "method": "getKnownSpells"
+            }
+        },
+        "5": {
+            "Spell": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Bard",
+                    "1",
+                    "3"
+                ]
+            },
+            "Replacement": {
+                "choose": 1,
+                "method": "getKnownSpells"
+            }
+        },
+        "6": {
+            "Spell": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Bard",
+                    "1",
+                    "3"
+                ]
+            },
+            "Replacement": {
+                "choose": 1,
+                "method": "getKnownSpells"
+            }
+        },
+        "7": {
+            "Spell": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Bard",
+                    "1",
+                    "4"
+                ]
+            },
+            "Replacement": {
+                "choose": 1,
+                "method": "getKnownSpells"
+            }
+        },
+        "8": {
+            "Spell": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Bard",
+                    "1",
+                    "4"
+                ]
+            },
+            "Replacement": {
+                "choose": 1,
+                "method": "getKnownSpells"
+            }
+        },
+        "9": {
+            "Spell": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Bard",
+                    "1",
+                    "5"
+                ]
+            },
+            "Replacement": {
+                "choose": 1,
+                "method": "getKnownSpells"
+            }
+        },
+        "10": {
+            "Magical Secrets Spells": {
+                "choose": 2,
+                "method": "getSpellList",
+                "args": [
+                    "*",
+                    "0", 
+                    "5"
+                ]
+            },
+            "Expertise": {
+                "choose": 2,
+                "method": "getSkillProficiencies"
+            },
+            "Cantrip": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Bard",
+                    "0"
+                ]
+            },
+            "Spell": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Bard",
+                    "1",
+                    "5"
+                ]
+            },
+            "Replacement": {
+                "choose": 1,
+                "method": "getKnownSpells"
+            }
+        },
+        "11": {
+            "Spell": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Bard",
+                    "1",
+                    "6"
+                ]
+            },
+            "Replacement": {
+                "choose": 1,
+                "method": "getKnownSpells"
+            }
+        },
+        "13": {
+            "Spell": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Bard",
+                    "1",
+                    "7"
+                ]
+            },
+            "Replacement": {
+                "choose": 1,
+                "method": "getKnownSpells"
+            }
+        },
+        "14": {
+            "Magical Secrets Spells": {
+                "choose": 2,
+                "method": "getSpellList",
+                "args": [
+                    "*",
+                    "0", 
+                    "7"
+                ]
+            },
+            "Spell": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Bard",
+                    "1",
+                    "7"
+                ]
+            },
+            "Replacement": {
+                "choose": 1,
+                "method": "getKnownSpells"
+            }
+        },
+        "15": {
+            "Spell": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Bard",
+                    "1",
+                    "8"
+                ]
+            },
+            "Replacement": {
+                "choose": 1,
+                "method": "getKnownSpells"
+            }
+        },
+        "17": {
+            "Spell": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Bard",
+                    "1",
+                    "9"
+                ]
+            },
+            "Replacement": {
+                "choose": 1,
+                "method": "getKnownSpells"
+            }
+        },
+        "18": {
+            "Magical Secrets Spells": {
+                "choose": 2,
+                "method": "getSpellList",
+                "args": [
+                    "*",
+                    "0", 
+                    "9"
+                ]
+            },
+            "Spell": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Bard",
+                    "1",
+                    "9"
+                ]
+            },
+            "Replacement": {
+                "choose": 1,
+                "method": "getKnownSpells"
+            }
+        }
+    },
+    "Cleric": {
+        "1": {
+            "Skill Proficiency": {
+                "choose": 2,
+                "from": [
+                    "history",
+                    "insight",
+                    "medicine",
+                    "persuasion",
+                    "religion"
+                ]
+            },
+            "Cleric Weapon": {
+                "choose": 1,
+                "method": "getAvailableClericWeapons"
+            },
+            "Armor": {
+                "choose": 1,
+                "method": "getAvailableClericArmor"
+            },
+            "Simple Weapon": {
+                "choose": 1,
+                "from": [
+                    "CROSSBOW, LIGHT",
+                    "CLUB",
+                    "DART",
+                    "DAGGER",
+                    "GREATCLUB",
+                    "HANDAXE",
+                    "JAVELIN",
+                    "LIGHT HAMMER",
+                    "MACE",
+                    "QUARTERSTAFF",
+                    "SHORTBOW",
+                    "SICKLE",
+                    "SLING",
+                    "SPEAR"
+                ]
+            },
+            "Pack": {
+                "choose": 1,
+                "from": [
+                    "PRIEST",
+                    "EXPLORER"
+                ]
+            },
+            "Holy Symbol": {
+                "choose": 1,
+                "from": [
+                    "AMULET",
+                    "EMBLEM",
+                    "RELIQUARY"
+                ] 
+            },
+            "Subclass": {
+                "choose": 1,
+                "from": [
+                    "FORGE",
+                    "GRAVE",
+                    "KNOWLEDGE",
+                    "LIFE",
+                    "LIGHT",
+                    "NATURE",
+                    "TEMPEST",
+                    "TRICKERY",
+                    "WAR"
+                ]
+            },
+            "Cantrips": {
+                "choose": 3,
+                "method": "getSpellList",
+                "args": [
+                    "Cleric",
+                    "0"
+                ]
+            }
+        },
+        "4": {
+            "Cantrips": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Cleric",
+                    "0"
+                ]
+            }
+        },
+        "10": {
+            "Cantrips": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Cleric",
+                    "0"
+                ]
+            }
+        }
+    },
+    "Druid": {
+        "1": {
+            "Skill Proficiency": {
+                "choose": 2,
+                "from": [
+                    "arcana",
+                    "animal handling",
+                    "insight",
+                    "medicine",
+                    "nature",
+                    "perception",
+                    "religion",
+                    "survival"
+                ]
+            },
+            "Simple Weapon": {
+                "choose": 1,
+                "from": [
+                    "SHIELD",
+                    "CROSSBOW, LIGHT",
+                    "CLUB",
+                    "DART",
+                    "DAGGER",
+                    "GREATCLUB",
+                    "HANDAXE",
+                    "JAVELIN",
+                    "LIGHT HAMMER",
+                    "MACE",
+                    "QUARTERSTAFF",
+                    "SHORTBOW",
+                    "SICKLE",
+                    "SLING",
+                    "SPEAR"
+                ]
+            },
+            "Melee Weapon": {
+                "choose": 1,
+                "from": [
+                    "SCIMITAR",
+                    "CLUB",
+                    "DAGGER",
+                    "GREATCLUB",
+                    "HANDAXE",
+                    "JAVELIN",
+                    "LIGHT HAMMER",
+                    "MACE",
+                    "QUARTERSTAFF",
+                    "SICKLE",
+                    "SPEAR"
+                ]
+            },
+            "Druidic Focus": {
+                "choose": 1,
+                "from": [
+                    "SPRIG OF MISTLETOE",
+                    "TOTEM",
+                    "WOODEN STAFF",
+                    "YEW WAND"
+                ]
+            },
+            "Cantrips": {
+                "choose": 2,
+                "method": "getSpellList",
+                "args": [
+                    "Druid",
+                    "0"
+                ]
+            }
+        },
+        "2": {
+            "Subclass": {
+                "choose": 1,
+                "from": [
+                    "DREAMS",
+                    "LAND",
+                    "MOON",
+                    "SHEPHERD",
+                    "SPORES"
+                ]
+            }
+        },
+        "4": {
+            "Cantrips": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Druid",
+                    "0"
+                ]
+            }
+        },
+        "10": {
+            "Cantrips": {
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Druid",
+                    "0"
+                ]
+            }
+        }
+    }
+}

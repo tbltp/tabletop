@@ -95,23 +95,10 @@
     "High Elf": {
         "Wizard Cantrip": {
             "choose": 1,
-            "from": [
-                "BLADE WARD",
-                "DANCING LIGHTS",
-                "MENDING",
-                "LIGHT",
-                "MESSAGE",
-                "FRIENDS",
-                "PRESTIDIGITATION",
-                "MINOR ILLUSION",
-                "MAGE HAND",
-                "TRUE STRIKE",
-                "ACID SPLASH",
-                "CHILL TOUCH",
-                "FIRE BOLT",
-                "POISON SPRAY",
-                "RAY OF FROST",
-                "SHOCKING GRASP"
+            "method": "getSpellList",
+            "args": [
+                "Wizard",
+                "0"
             ]
         },
         "Language": {
