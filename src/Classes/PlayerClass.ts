@@ -246,7 +246,7 @@ export abstract class PlayerClass {
       modifier: pc.abilityScores[SpellcastingAbility[className]].modifier
     }
 
-    let spellcasting = ["CLERIC", "DRUID", "PALADIN", "WIZARD"].includes(className) ? 
+    let spellcasting = ["ARTIFICER", "CLERIC", "DRUID", "PALADIN", "WIZARD"].includes(className) ? 
     {
       title: className,
       preparedSpells: preparedSpells,

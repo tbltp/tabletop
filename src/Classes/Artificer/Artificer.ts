@@ -1,0 +1,186 @@
+import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { ResourceTrait, Trait, ScalingTrait } from "../../Base/Interfaces";
+import * as ArtificerClassTraits from "./Artificer.json"
+import * as SpellList from ".../../../Assets/SpellList.json"
+import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { ArtificerSubclass } from "./Subclasses/ArtificerSubclass";
+
+export class Artificer extends PlayerClass {
+  constructor(multiclass: boolean, skillProficiencies?: string[], toolProficiency?: string, weapons?: string[], armor?: string[]) {
+    super(
+      "Artificer",
+      [],
+      [],
+      [],
+      ["Light", "Medium", "Shield"],
+      ["Thieves' tools", "Tinker's tools"],
+      [],
+      [],
+      [],
+      [],
+      { isNoInput: true },
+      "d8",
+      8,
+      []
+    );
+
+    this.characterStart(multiclass, skillProficiencies, toolProficiency, weapons, armor);
+
+    for (let level in this.abilitiesAtLevels) {
+      const func: Function = this.abilitiesAtLevels[level];
+      this.abilitiesAtLevels[level] = func.bind(this);
+    }
+  }
+
+  characterStart(multiclass: boolean, skillProficiencies: string[], toolProficiency: string, weapons: string[], armor: string[]){
+    if(!multiclass){
+      this.skillProficiencies.push(...skillProficiencies)
+      this.toolProficiencies.push(toolProficiency)
+      this.weapons.push(...weapons, "CROSSBOW, LIGHT");
+      this.armor.push(...armor);
+      this.toolKits.push(toolProficiency);
+      this.equipmentPack = "DUNGEONEER";
+      this.savingThrowProficiencies = ["constitution", "intelligence"];
+    }
+  }
+
+  abilitiesAtLevels = {
+    "1": this.level1,
+    "2": this.level2,
+    "3": this.level3,
+    "4": this.level4,
+    "5": this.level5,
+    "6": this.level6,
+    "7": this.level7,
+    "8": this.level8,
+    "9": this.level9,
+    "10": this.level10,
+    "11": this.level11,
+    "12": this.level12,
+    "13": this.level13,
+    "14": this.level14,
+    "15": this.level15,
+    "16": this.level16,
+    "17": this.level17,
+    "18": this.level18,
+    "19": this.level19,
+    "20": this.level20,
+  };
+
+  private pushArtificerFeatures(pc: PlayerCharacter, level: number) {
+    this.pushClassFeatures(pc, level, ArtificerClassTraits);
+  }
+
+  level1(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    this.pushArtificerFeatures(pc, 1);
+    pc.pcHelper.addSpells([...SpellList["Artificer"]["1"], ...params.spellSelections.add], "intelligence");
+    this.addSpellcasting(pc, "ARTIFICER");
+  }
+
+  level2(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    this.pushArtificerFeatures(pc, 2);
+    // Learn four new infusions
+    pc.pcHelper.addResourceTraits({title: "Infused Items", description: "Number of items you can infuse with magic.", resourceMax: {value: 2}});
+  }
+
+  level3(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    this.subclass = new ArtificerSubclass(params.subclassSelection);
+    this.subclassDriver(pc, "3", params);
+  }
+
+  level4(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+  }
+
+  level5(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    this.subclassDriver(pc,"5",params);
+    pc.pcHelper.addSpells(SpellList["Artificer"]["2"], "intelligence");
+  }
+
+  level6(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    this.subclassDriver(pc, "6", params);
+    // Learn two new infusions
+    pc.pcHelper.findResourceTraitByName("Infused Items").resourceMax.value++;
+  }
+
+  level7(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    this.pushArtificerFeatures(pc, 7);
+  }
+
+  level8(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    this.pushArtificerFeatures(pc, 8);
+  }
+
+  level9(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    this.subclassDriver(pc, "9", params);
+    pc.pcHelper.addSpells(SpellList["Artificer"]["3"], "intelligence");
+  }
+
+  level10(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    // two new infusions
+    this.pushArtificerFeatures(pc, 10);
+    pc.pcHelper.findResourceTraitByName("Infused Items").resourceMax.value++;
+    pc.pcHelper.addSpells(params.spellSelections.add, "intelligence")
+  }
+
+  level11(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    this.pushArtificerFeatures(pc, 11);
+  }
+
+  level12(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+  }
+
+  level13(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    pc.pcHelper.addSpells(SpellList["Artificer"]["4"], "intelligence");
+  }
+
+  level14(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    // two new infusions
+    pc.pcHelper.findResourceTraitByName("Infused Items").resourceMax.value++;
+    this.pushArtificerFeatures(pc, 14);
+    pc.pcHelper.addSpells(params.spellSelections.add, "intelligence")
+  }
+
+  level15(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    this.subclassDriver(pc,"15",params);
+  }
+
+  level16(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+  }
+
+  level17(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    pc.pcHelper.addSpells(SpellList["Artificer"]["5"], "intelligence");
+  }
+
+  level18(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    this.pushArtificerFeatures(pc, 18);
+    pc.pcHelper.findResourceTraitByName("Infused Items").resourceMax.value++;
+  }
+
+  level19(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+  }
+
+  level20(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
+    this.pushArtificerFeatures(pc, 20);
+  }
+}
+
+// ADD / REPLACE INFUSIONS
+// ADD ALL XANATHARS + TASHA'S SPELLS TO FUCKEN SPELLS.JSON
+
+export interface ArtificerLevelingParams extends LevelingParams {
+  infusions?: {
+    add: string[];
+    remove?: string;
+  };
+}
+
+export class DSArtificer extends Artificer {
+  constructor(){
+    super(true);
+  }
+}

@@ -59,6 +59,7 @@ export class SpellSlotFactory {
   };
 
   public static spellcastingClassRanks: { [key: string]: string } = {
+    "Artificer": "SECONDARY",
     "Barbarian": "NONE",
     "Bard": "PRIMARY",
     "Cleric": "PRIMARY",
