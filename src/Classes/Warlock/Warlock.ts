@@ -159,6 +159,7 @@ export class Warlock extends PlayerClass {
     this.handleWarlockSpellSelections(pc, params);
     pc.pcHelper.findResourceTraitByName("Pact Magic").resourceMax.value++;
     this.handleInvocationSelections(pc, params);
+    this.subclassDriver(pc, "2", params);
   }
 
   level3(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -169,11 +170,13 @@ export class Warlock extends PlayerClass {
     pactMagicSlots.level++;
     this.pactBoonHandler(pc, params.pactBoon);
     this.handleInvocationSelections(pc, params);
+    this.subclassDriver(pc, "3", params);
   }
 
   level4(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "4", params);
   }
 
   level5(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -183,6 +186,7 @@ export class Warlock extends PlayerClass {
     ) as PactMagicSlots;
     pactMagicSlots.level++;
     this.handleInvocationSelections(pc, params);
+    this.subclassDriver(pc, "5", params);
   }
 
   level6(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -198,12 +202,14 @@ export class Warlock extends PlayerClass {
     ) as PactMagicSlots;
     pactMagicSlots.level++;
     this.handleInvocationSelections(pc, params);
+    this.subclassDriver(pc, "7", params);
   }
 
   level8(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.handleInvocationSelections(pc, params);
+    this.subclassDriver(pc, "8", params);
   }
 
   level9(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -213,6 +219,7 @@ export class Warlock extends PlayerClass {
     ) as PactMagicSlots;
     pactMagicSlots.level++;
     this.handleInvocationSelections(pc, params);
+    this.subclassDriver(pc, "9", params);
   }
 
   level10(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -232,11 +239,13 @@ export class Warlock extends PlayerClass {
       [params.mysticArcanum]
     );
     this.handleInvocationSelections(pc, params);
+    this.subclassDriver(pc, "11", params);
   }
 
   level12(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.handleInvocationSelections(pc, params);
+    this.subclassDriver(pc, "12", params);
   }
 
   level13(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -245,6 +254,7 @@ export class Warlock extends PlayerClass {
       .findFeatureTraitByName("MYSTIC ARCANUM")
       .choices.push(params.mysticArcanum);
       this.handleInvocationSelections(pc, params);
+      this.subclassDriver(pc, "13", params);
   }
 
   level14(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -258,11 +268,13 @@ export class Warlock extends PlayerClass {
       .findFeatureTraitByName("MYSTIC ARCANUM")
       .choices.push(params.mysticArcanum);
     this.handleInvocationSelections(pc, params);
+    this.subclassDriver(pc, "15", params);
   }
 
   level16(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.handleInvocationSelections(pc, params);
+    this.subclassDriver(pc, "16", params);
   }
 
   level17(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -272,6 +284,7 @@ export class Warlock extends PlayerClass {
       .findFeatureTraitByName("MYSTIC ARCANUM")
       .choices.push(params.mysticArcanum);
     this.handleInvocationSelections(pc, params);
+    this.subclassDriver(pc, "17", params);
   }
 
   level18(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -282,11 +295,13 @@ export class Warlock extends PlayerClass {
     pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.handleWarlockSpellSelections(pc, params);
     this.handleInvocationSelections(pc, params);
+    this.subclassDriver(pc, "18", params);
   }
 
   level20(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.pushWarlockFeatures(pc, 20);
     this.handleInvocationSelections(pc, params);
+    this.subclassDriver(pc, "19", params);
   }
 
   private handleInvocationSelections(
@@ -339,12 +354,13 @@ export class Warlock extends PlayerClass {
     //determine proficiencies
     if (!pc.skills["deception"].proficient) {
       pc.skills["deception"].proficient = true;
-      inv.choices.push("deception");
+      // inv.choices.push("deception");
     }
     if (!pc.skills["persuasion"].proficient) {
       pc.skills["persuasion"].proficient = true;
-      inv.choices.push("persuasion");
+      // inv.choices.push("persuasion");
     }
+    inv.choices = ["deception","persuasion"];
     pc.pcHelper.addFeatures(inv);
   }
 
