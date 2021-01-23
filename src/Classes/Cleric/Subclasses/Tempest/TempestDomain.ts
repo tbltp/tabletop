@@ -15,16 +15,16 @@ export class TempestDomain {
 
   static tempest1(pc: PlayerCharacter, params: LevelingParams) {
     TempestDomain.getSpells(pc,"1");
-    // wrath of the storm needs to have a minimum of one use available
+
     const wrathOfTheStorm: ResourceTrait = {
       title: "Wrath of the Storm",
       description:
         "Number of times you can use Wrath of the Storm per long rest.",
-      resourceMax: pc.abilityScores.wisdom.modifier,
+      resourceMax: (pc.abilityScores.wisdom.modifier.value >= 1) ? pc.abilityScores.wisdom.modifier : {value: 1}
     };
     pc.pcHelper.addResourceTraits(wrathOfTheStorm);
-    pc.traits.armorProficiencies.push("Heavy");
-    pc.traits.weaponProficiencies.push("Martial");
+    pc.traits.armorProficiencies.add("Heavy");
+    pc.traits.weaponProficiencies.add("Martial");
     pc.pcHelper.addFeatures(
       TempestDomain.getFeature("1", "WRATH OF THE STORM"),
       TempestDomain.getFeature( "1", "BONUS PROFICIENCY")
