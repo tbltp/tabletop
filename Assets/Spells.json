@@ -1,4 +1,18 @@
 {
+  "ABSORB ELEMENTS": {
+    "name": "Absorb Elements",
+    "description": "The spell captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack. You have resistance to the triggering damage type until the start of your next turn. Also, the first time you hit with a melee attack on your next turn, the target takes an extra 1d6 damage of the triggering type, and the spell ends. When you cast this spell using a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st.",
+    "school": "abjuration",
+    "castTime": "1 reaction, which you take when you takeacid, cold, fire, lightning, or thunder damage",
+    "range": "Self",
+    "concentration": false,
+    "duration": "1 round",
+    "components": ["S"],
+    "material": "",
+    "minimumLevel": "1",
+    "ritual": false,
+    "spellAttack": false
+  },
   "ACID SPLASH": {
     "name": "Acid Splash",
     "description": "You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other, A target must succeed on a Dexterity saving throw or take 1d6 acid damage. This spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
@@ -557,6 +571,20 @@
     "ritual": false,
     "spellAttack": false
   },
+  "BOOMING BLADE": {
+    "name": "Booming Blade",
+    "description": "You brandish the weapon used in the spell's casting and make a melee attack with it against one creature within 5 feet of you. On a hit, the target suffers the weapon attack's normal effects and then becomes sheathed in booming energy until the start of your next turn. If the target willingly moves 5 feet or more before then, the target takes 1d8 thunder damage, and the spell ends. This spell's damage increases when you reach certain levels. At 5th level, the melee attack deals an extra 1d8 thunder damage to the target on a hit, and the damage the target takes for moving increases to 2d8. Both damage rolls increase by 1d8 at 11th level (2d8 and 3d8) and again at 17th level (3d8 and 4d8).",
+    "school": "evocation",
+    "castTime": "1 action",
+    "range": "Self (5-foot radius)",
+    "concentration": false,
+    "duration": "1 round",
+    "components": ["V", "M"],
+    "material": "a melee weapon worth at least 1 sp",
+    "minimumLevel": "0",
+    "ritual": false,
+    "spellAttack": false
+  },
   "BRANDING SMITE": {
     "name": "Branding Smite",
     "description": "The next time you hit a creature with a weapon attack before this spell ends, the weapon gleams with astral radiance as you strike. The attack deals an extra 2d6 radiant damage to the target, which becomes visible if it's invisible, and the target sheds dim light in a 5-foot radius and can't become invisible until the spell ends. At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, the extra damage increases by 1d6 for each slot level above 2nd.",
@@ -610,6 +638,34 @@
     "components": ["V", "S"],
     "material": "",
     "minimumLevel": "2",
+    "ritual": false,
+    "spellAttack": false
+  },
+  "CATAPULT": {
+    "name": "Catapult",
+    "description": "Choose one object weighing 1 to 5 pounds within range that isn't being worn or carried. The object flies in a straight line up to 90 feet in a direction you choose before falling to the ground, stopping early if it impacts against a solid surface. If the object would strike a creature, that creature must make a Dexterity saving throw. On a failed save, the object strikes the target and stops moving. When the object strikes something, the object and what it strikes each take 3d8 bludgeoning damage. When you cast this spell using a spell slot of 2nd level or higher, the maximum weight of objects that you can target with this spell increases by 5 pounds, and the damage increases by 1d8, for each slot level above 1st.",
+    "school": "transmutation",
+    "castTime": "1 action",
+    "range": "60 feet",
+    "concentration": false,
+    "duration": "Instantaneous",
+    "components": ["S"],
+    "material": "",
+    "minimumLevel": "1",
+    "ritual": false,
+    "spellAttack": false
+  },
+  "CATNAP": {
+    "name": "Catnap",
+    "description": "You make a calming gesture, and up to three willing creatures of your choice that you can see within range fall unconscious for the spell's duration. The spell ends on a target early if it takes damage or someone uses an action to shake or slap it awake. If a target remains unconscious for the full duration, that target gains the benefit of a short rest, and it can't be affected by this spell again until it finishes a long rest. When you cast this spell using a spell slot of 4th level or higher, you can target one additional willing creature for each slot level above 3rd.",
+    "school": "enchantment",
+    "castTime": "1 action",
+    "range": "30 feet",
+    "concentration": false,
+    "duration": "10 minutes",
+    "components": ["S", "M"],
+    "material": "a pinch of sand",
+    "minimumLevel": "3",
     "ritual": false,
     "spellAttack": false
   },
@@ -1117,6 +1173,20 @@
     "ritual": false,
     "spellAttack": false
   },
+  "CREATE BONFIRE": {
+    "name": "Create Bonfire",
+    "description": "You create a bonfire on ground that you can see within range. Until the spell ends, the magic bonfire fills a 5-foot cube. Any creature in the bonfire's space when you cast the spell must succeed on a Dexterity saving throw or take 1d8 fire damage. A creature must also make the saving throw when it moves into the bonfire's space for the first time on a turn or ends its turn there. The bonfire ignites flammable objects in its area that aren't being worn or carried. The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+    "school": "conjuration",
+    "castTime": "1 action",
+    "range": "60 feet",
+    "concentration": true,
+    "duration": "up to 1 minute",
+    "components": ["V", "S"],
+    "material": "",
+    "minimumLevel": "0",
+    "ritual": false,
+    "spellAttack": false
+  },
   "CREATE OR DESTROY WATER": {
     "name": "Create Or Destroy Water",
     "description": "You either create or destroy water. Create Water, You create up to 10 gallons of clean water within range in an open container. Alternatively, the water falls as rain in a 30-foot cube within range, extinguishing exposed flames in the area. Destroy Water. You destroy up to 10 gallons of water in an open container within range. Alternatively, you destroy fog in a 30-foot cube within range. At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, you create or destroy 10 additional gallons of water, or the size of the cube increases by 5 feet, for each slot level above Ist.",
@@ -1607,6 +1677,20 @@
     "ritual": false,
     "spellAttack": true
   },
+  "ELEMENTAL BANE": {
+    "name": "Elemental Bane",
+    "description": "Choose one creature you can see within range, and choose one of the following damage types: acid, cold, fire, lightning, or thunder. The target must succeed on a Constitution saving throw or be affected by the spell for its duration. The first time each turn the affected target takes damage of the chosen type, the target takes an extra 2d6 damage of that type. Moreover, the target loses any resistance to that damage type until the spell ends. When you cast this spell using a spell slot of 5th level or higher, you can target one additional creature for each slot level above 4th. The creatures must be within 30 feet of each other when you target them.",
+    "school": "transmutation",
+    "castTime": "1 action",
+    "range": "90 feet",
+    "concentration": true,
+    "duration": "up to 1 minute",
+    "components": ["V", "S"],
+    "material": "",
+    "minimumLevel": "4",
+    "ritual": false,
+    "spellAttack": false
+  },
   "ELEMENTAL WEAPON": {
     "name": "Elemental Weapon",
     "description": "A nonmagical weapon you touch becomes a magic weapon. Choose one of the following damage types: acid, cold, fire, lightning, or thunder, For the duration, the weapon has a +1 bonus to attack rolls and deals an extra 1d4 damage of the chosen type when it hits. At Higher Levels. When you cast this spell using a spell slot of 5th or 6th level, the bonus to attack rolls increases to +2 and the extra damage increases to 2d4, When you use a spell slot of 7th level or higher, the bonus increases to +3 and the extra damage increases to 3d4,",
@@ -1971,6 +2055,20 @@
     "ritual": false,
     "spellAttack": false
   },
+  "FLAME ARROWS": {
+    "name": "Flame Arrows",
+    "description": "You touch a quiver containing arrows or bolts. When a target is hit by a ranged weapon attack using a piece of ammunition drawn from the quiver, the target takes an extra 1d6 fire damage. The spell's magic ends on a piece of ammunition when it hits or misses, and the spell ends when twelve pieces of ammunition have been drawn from the quiver. When you cast this spell using a spell slot of 4th level or higher, the number of pieces of ammunition you can affect with this spell increases by two for each slot level above 3rd.",
+    "school": "transmutation",
+    "castTime": "1 action",
+    "range": "Touch",
+    "concentration": true,
+    "duration": "up to 1 hour",
+    "components": ["V", "S"],
+    "material": "",
+    "minimumLevel": "3",
+    "ritual": false,
+    "spellAttack": false
+  },
   "FLAME BLADE": {
     "name": "Flame Blade",
     "description": "You evoke a fiery blade in your free hand. The blade is similar in size and shape to a scimitar, and it lasts for the duration. If you let go of the blade, it disappears, but you can evoke the blade again as a bonus action. You can use your action to make a melee spell attack with the fiery blade. On a hit, the target takes 3d6 fire damage. The flaming blade sheds bright light in a 10-foot radius and dim light for an additional 10 feet. At Higher Levels, When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for every two slot levels above 2nd.",
@@ -2121,6 +2219,20 @@
     "duration": "up to 1 minute",
     "components": ["S", "M"],
     "material": "a small amount of makeup applied to the face as this spell is cast",
+    "minimumLevel": "0",
+    "ritual": false,
+    "spellAttack": false
+  },
+  "FROSTBITE": {
+    "name": "Frostbite",
+    "description": "You cause numbing frost to form on one creature that you can see within range. The target must make a Constitution saving throw. On a failed save, the target takes 1d6 cold damage, and it has disadvantage on the next weapon attack roll it makes before the end of its next turn. The spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+    "school": "evocation",
+    "castTime": "1 action",
+    "range": "60 feet",
+    "concentration": false,
+    "duration": "Instantaneous",
+    "components": ["V", "S"],
+    "material": "",
     "minimumLevel": "0",
     "ritual": false,
     "spellAttack": false
@@ -2304,6 +2416,20 @@
     "components": ["V", "S", "M"],
     "material": "diamond dust worth at least 100 gp, which the spell consumes",
     "minimumLevel": "5",
+    "ritual": false,
+    "spellAttack": false
+  },
+  "GREEN-FLAME BLADE": {
+    "name": "Green-flame Blade",
+    "description": "You brandish the weapon used in the spell's casting and make a melee attack with it against one creature within 5 feet of you. On a hit, the target suffers the weapon attack's normal effects, and you can cause green fire to leap from the target to a different creature of your choice that you can see within 5 feet of it. The second creature takes fire damage equal to your spellcasting ability modifier. This spell's damage increases when you reach certain levels. At 5th level, the melee attack deals an extra 1d8 fire damage to the target on a hit, and the fire damage to the second creature increases to 1d8 + your spellcasting ability modifier. Both damage rolls increase by 1d8 at 11th level (2d8 and 2d8) and 17th level (3d8 and 3d8).",
+    "school": "evocation",
+    "castTime": "1 action",
+    "range": "Self (5-foot radius)",
+    "concentration": false,
+    "duration": "Instantaneous",
+    "components": ["V", "M"],
+    "material": "a melee weapon worth at least 1 sp",
+    "minimumLevel": "0",
     "ritual": false,
     "spellAttack": false
   },
@@ -2713,6 +2839,20 @@
     "ritual": false,
     "spellAttack": true
   },
+  "INTELLECT FORTRESS": {
+    "name": "Intellect Fortress",
+    "description": "For the duration, you or one willing creature you can see within range has resistance to psychic damage, as well as advantage on Intelligence, Wisdom, and Charisma saving throws. When you cast this spell using a spell slot of 4th level or higher, you can target one additional creature for each slot level above 3rd. The creatures must be within 30 feet of each other when you target them.",
+    "school": "abjuration",
+    "castTime": "1 action",
+    "range": "30 feet",
+    "concentration": true,
+    "duration": "up to 1 hour",
+    "components": ["V"],
+    "material": "",
+    "minimumLevel": "3",
+    "ritual": false,
+    "spellAttack": false
+  },
   "INSECT PLAGUE": {
     "name": "Insect Plague",
     "description": "Swarming, biting locusts fill a 20-foot-radius sphere centered on a point you choose within range. The sphere spreads around corners. The sphere remains for the duration, and its area is lightly obscured. The sphere's area is difficult terrain. When the area appears, each creature in it must make a Constitution saving throw, A creature takes 4d10 piercing damage on a failed save, or half as much damage on a successful one. A creature must also make this saving throw when it enters the spell's area for the first time on a turn or ends its turn there. At Higher Levels. When you cast this spell using a spell slot of 6th level or higher, the damage increases by 1d10 for each slot level above 5th.",
@@ -2881,6 +3021,20 @@
     "ritual": false,
     "spellAttack": false
   },
+  "LIGHTNING LURE": {
+    "name": "Lightning Lure",
+    "description": "You create a lash of lightning energy that strikes at one creature of your choice that you can see within 15 feet of you. The target must succeed on a Strength saving throw or be pulled up to 10 feet in a straight line toward you and then take 1d8 lightning damage if it is within 5 feet of you. This spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+    "school": "evocation",
+    "castTime": "1 action",
+    "range": "Self (15-foot radius)",
+    "concentration": false,
+    "duration": "Instantaneous",
+    "components": ["V"],
+    "material": "",
+    "minimumLevel": "0",
+    "ritual": false,
+    "spellAttack": false
+  },
   "LOCATE ANIMALS OR PLANTS": {
     "name": "Locate Animals Or Plants",
     "description": "Describe or name a specific kind of beast or plant. Concentrating on the voice of nature in your surroundings, you learn the direction and distance to the closest creature or plant of that kind within 5 miles, if any are present.",
@@ -3020,6 +3174,20 @@
     "minimumLevel": "2",
     "ritual": true,
     "spellAttack": false
+  },
+  "MAGIC STONE": {
+    "name": "Magic Stone",
+    "description": "You touch one to three pebbles and imbue them with magic. You or someone else can make a ranged spell attack with one of the pebbles by throwing it or hurling it with a sling. If thrown, a pebble has a range of 60 feet. If someone else attacks with a pebble, that attacker adds your spellcasting ability modifier, not the attacker's, to the attack roll. On a hit, the target takes bludgeoning damage equal to 1d6 + your spellcasting ability modifier. Whether the attack hits or misses, the spell then ends on the stone. If you cast this spell again, the spell ends on any pebbles still affected by your previous casting.",
+    "school": "transmutation",
+    "castTime": "1 bonus action",
+    "range": "Touch",
+    "concentration": false,
+    "duration": "1 minute",
+    "components": ["V", "S"],
+    "material": "",
+    "minimumLevel": "0",
+    "ritual": false,
+    "spellAttack": true
   },
   "MAGIC WEAPON": {
     "name": "Magic Weapon",
@@ -3791,6 +3959,20 @@
     "ritual": true,
     "spellAttack": false
   },
+  "PYROTECHNICS": {
+    "name": "Pyrotechnics",
+    "description": "Choose an area of nonmagical flame that you can see and that fits within a 5-foot cube within range. You can extinguish the fire in that area, and you create either fireworks or smoke when you do so.\nFireworks. The target explodes with a dazzling display of colors. Each creature within 10 feet of the target must succeed on a Constitution saving throw or become blinded until the end of your next turn.\nSmoke. Thick black smoke spreads out from the target in a 20-foot radius, moving around corners. The area of the smoke is heavily obscured. The smoke persists for 1 minute or until a strong wind disperses it.",
+    "school": "transmutation",
+    "castTime": "1 action",
+    "range": "60 feet",
+    "concentration": false,
+    "duration": "Instantaneous",
+    "components": ["V", "S"],
+    "material": "",
+    "minimumLevel": "2",
+    "ritual": false,
+    "spellAttack": false
+  },
   "RAISE DEAD": {
     "name": "Raise Dead",
     "description": "You return a dead creature you touch to life, provided that it has been dead no longer than 10 days. If the creature's soul is both willing and at liberty to rejoin the body, the creature returns to life with 1 hit point. This spell also neutralizes any poisons and cures nonmagical diseases that affected the creature at the time it died. This spell doesn't, however, remove magical diseases, curses, or similar effects; if these aren't first removed prior to casting the spell, they take effect when the creature returns to life, The spell can't return an undead creature to life. This spell closes all mortal wounds, but it doesn't restore missing body parts, If the creature is lacking body parts or organs integral for its survival\u2014its head, for instance\u2014the spell automatically fails. Coming back from the dead is an ordeal. The target takes a \u20144 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a long rest, the penalty is reduced by 1 until it disappears.",
@@ -4239,6 +4421,34 @@
     "ritual": false,
     "spellAttack": false
   },
+  "SKILL EMPOWERMENT": {
+    "name": "Skill Empowerment",
+    "description": "Your magic deepens a creature's understanding of its own talent. You touch one willing creature and give it expertise in one skill of your choice; until the spell ends, the creature doubles its proficiency bonus for ability checks it makes that use the chosen skill. You must choose a skill in which the target is proficient and that isn't already benefiting from an effect, such as Expertise, that doubles its proficiency bonus.",
+    "school": "transmutation",
+    "castTime": "1 action",
+    "range": "Touch",
+    "concentration": true,
+    "duration": "up to 1 hour",
+    "components": ["V", "S"],
+    "material": "",
+    "minimumLevel": "5",
+    "ritual": false,
+    "spellAttack": false
+  },
+  "SKYWRITE": {
+    "name": "Skywrite",
+    "description": "You cause up to ten words to form in a part of the sky you can see. The words appear to be made of cloud and remain in place for the spell's duration. The words dissipate when the spell ends. A strong wind can disperse the clouds and end the spell early.",
+    "school": "transmutation",
+    "castTime": "1 action",
+    "range": "Sight",
+    "concentration": true,
+    "duration": "up to 1 hour",
+    "components": ["V", "S"],
+    "material": "",
+    "minimumLevel": "2",
+    "ritual": true,
+    "spellAttack": false
+  },
   "SLEEP": {
     "name": "Sleep",
     "description": "This spell sends creatures into a magical slumber. Roll 5d8; the total is how many hit points of creatures this spell can affect. Creatures within 20 feet of a point you choose within range are affected in ascending order of their current hit points (ignoring unconscious creatures). Starting with the creature that has the lowest current hit points, each creature affected by this spell falls unconscious until the spell ends, the sleeper takes damage, or someone us\u00e9s an action to shake or slap the sleeper awake. Subtract each creature's hit points from the total before moving on to the creature with the next lowest hit points. A creature's hit points must be equal to or less than the remaining total for that creature to be affected. Undead and creatures immune to being charmed aren't affected by this spell. At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, roll an additional 2d8 for each slot level above 1st.",
@@ -4278,6 +4488,20 @@
     "components": ["V", "S", "M"],
     "material": "a drop of molasses",
     "minimumLevel": "3",
+    "ritual": false,
+    "spellAttack": false
+  },
+  "SNARE": {
+    "name": "Snare",
+    "description": "As you cast this spell, you use the rope to create a circle with a 5-foot radius on the ground or the floor. When you finish casting, the rope disappears and the circle becomes a magic trap.\nThis trap is nearly invisible, requiring a successful Intelligence (Investigation) check against your spell save DC to be discerned.\nThe trap triggers when a Small, Medium, or Large creature moves onto the ground or the floor in the spell's radius. That creature must succeed on a Dexterity saving throw or be magically hoisted into the air, leaving it hanging upside down 3 feet above the ground or the floor. The creature is restrained there until the spell ends.\nA restrained creature can make a Dexterity saving throw at the end of each of its turns, ending the effect on itself on a success. Alternatively, the creature or someone else who can reach it can use an action to make an Intelligence (Arcana) check against your spell save DC. On a success, the restrained effect ends.\nAfter the trap is triggered, the spell ends when no creature is restrained by it.",
+    "school": "abjuration",
+    "castTime": "1 minute",
+    "range": "Touch",
+    "concentration": false,
+    "duration": "8 hours",
+    "components": ["S", "M"],
+    "material": "25 feet of rope, which the spell consumes",
+    "minimumLevel": "1",
     "ritual": false,
     "spellAttack": false
   },
@@ -4477,6 +4701,20 @@
     "ritual": false,
     "spellAttack": false
   },
+  "SUMMON CONSTRUCT": {
+    "name": "Summon Construct",
+    "description": "You call forth the spirit of a construct. It manifests in an unoccupied space that you can see within range. This corporeal form uses the Construct Spirit stat block. When you cast the spell, choose a material: Clay, Metal, or Stone. The creature resembles a golem or a modron (your choice) made of the chosen material, which determines certain traits in its stat block. The creature disappears when it drops to 0 hit points or when the spell ends.\nThe creature is an ally to you and your companions. In combat, the creature shares your initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its move to avoid danger. When you cast this spell using a spell slot of 4th level or higher, use the higher level wherever the spell's level appears in the stat block.",
+    "school": "conjuration",
+    "castTime": "1 action",
+    "range": "90 feet",
+    "concentration": true,
+    "duration": "up to 1 hour",
+    "components": ["V", "S","M"],
+    "material": "an ornate stone and metal lockbox worth at least 400 gp",
+    "minimumLevel": "4",
+    "ritual": false,
+    "spellAttack": false
+  },
   "SUNBEAM": {
     "name": "Sunbeam",
     "description": "A beam of brilliant light flashes out from your hand in a 5-foot-wide, 60-foot-long line. Each creature in the line must make a Constitution saving throw. Ona failed save, a creature takes 6d8 radiant damage and is blinded until your next turn. On a successful save, it takes half as much damage and isn't blinded by this spell. Undead and oozes have disadvantage on this saving throw. You can create a new line of radiance as your action on any turn until the spell ends, For the duration, a mote of brilliant radiance shines in your hand. It sheds bright light in a 30-foot radius and dim light for an additional 30 feet. This light is sunlight.",
@@ -4519,6 +4757,20 @@
     "ritual": false,
     "spellAttack": false
   },
+  "SWORD BURST": {
+    "name": "Sword Burst",
+    "description": "You create a momentary circle of spectral blades that sweep around you. All other creatures within 5 feet of you must succeed on a Dexterity saving throw or take 1d6 force damage This spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+    "school": "conjuration",
+    "castTime": "1 action",
+    "range": "Self (5-foot radius)",
+    "concentration": false,
+    "duration": "Instantaneous",
+    "components": ["V"],
+    "material": "",
+    "minimumLevel": "0",
+    "ritual": false,
+    "spellAttack": false
+  },
   "SYMBOL": {
     "name": "Symbol",
     "description": "When you cast this spell, you inscribe a harmful glyph either on a surface (such as a section of floor, a wall, or a table) or within an object that can be closed to conceal the glyph (such as a book, a scroll, or a treasure chest). If you cheose a surface, the glyph can cover an area of the surface no larger than 10 feet in diameter. If you choose an object, that object must remain in its place; if the object is moved more than 10 feet from where you cast this spell, the glyph is broken, and the spell ends without being triggered. The glyph is nearly invisible, requiring an Intelligence (Investigation) check against your spell save DC to find it. You decide what triggers the glyph when you cast the spell. For glyphs inscribed on a surface, the most typical triggers include touching or stepping on the glyph, removing another object covering it, approaching within a certain distance of it, or manipulating the object that holds it. For glyphs inscribed within an object, the most common triggers are opening the object, approaching within a certain distance of it, or seeing or reading the glyph. You can further refine the trigger so the spell is activated only under certain circumstances or according to a creature's physical characteristics (such as height or weight), or physical kind (for example, the ward could be set to affect hags or shapechangers). You can also specify creatures that don't trigger the glyph, such as those who say a certain password. When you inscribe the glyph, choose one of the options below for its effect. Once triggered, the glyph glows, filling a 60-foot-radius sphere with dim light for 10 minutes, after which time the spell ends. Each creature in the sphere when the glyph activates is targeted by its effect, as is a creature that enters the sphere for the first time on a turn or ends its turn there. Death, Each target must make a Constitution saving throw, taking 10d10 necrotic damage on a failed save, or half as much damage on a successful save. Discord. Each target must make a Constitution saving throw. On a failed save, a target bickers and argues with other creatures for 1 minute, During this time, it is incapable of meaningful communication and has disadvantage on attack rolls and ability checks. Fear. Each target must make a Wisdom saving throw and becomes frightened for 1 minute on a failed save. While frightened, the target drops whatever it is holding and must move at least 30 feet away from the glyph on each of its turns, if able. Hopelessness. Each target must make a Charisma saving throw. On a failed save, the target is overwhelmed with despair for 1 minute. During this time, it can't attack or target any creature with harmful abilities, spells, or other magical effects. Insanity. Each target must make an Intelligence saving throw. On a failed save, the target is driven insane for 1 minute. An insane creature can't take actions, can't understand what other creatures say, can't read, and speaks only in gibberish. The DM controls its movement, which is erratic. Pain. Each target must make a Constitution saving throw and becomes incapacitated with excruciating pain for 1 minute on a failed save. Sleep. Each target must make a Wisdom saving throw and falls unconscious for 10 minutes on a failed save. A creature awakens if it takes damage or if someone uses an action to shake or slap it awake. Stunning. Each target must make a Wisdom saving throw and becomes stunned for | minute on a failed save.",
@@ -4530,6 +4782,20 @@
     "components": ["V", "M"],
     "material": "mercury, phosphorus, and powdered diamond and opal with a total value of at least 1,000 gp, which the spell consumes",
     "minimumLevel": "7",
+    "ritual": false,
+    "spellAttack": false
+  },
+  "TASHA'S CAUSTIC BREW": {
+    "name": "Tasha's Caustic Brew",
+    "description": "A stream of acid emanates from you in a line 30 feet long and 5 feet wide in a direction you choose. Each creature in the line must succeed on a Dexterity saving throw or be covered in acid for the spell's duration or until a creature uses its action to scrape or wash the acid off itself or another creature. A creature covered in the acid takes 2d4 acid damage at start of each of its turns. When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 2d4 for each slot level above 1st.",
+    "school": "evocation",
+    "castTime": "1 action",
+    "range": "Self (30-foot line)",
+    "concentration": true,
+    "duration": "up to 1 minute",
+    "components": ["V", "S","M"],
+    "material": "a bit of rotten food",
+    "minimumLevel": "1",
     "ritual": false,
     "spellAttack": false
   },
@@ -4645,6 +4911,20 @@
     "ritual": false,
     "spellAttack": true
   },
+  "THUNDERCLAP": {
+    "name": "Thunderclap",
+    "description": "You create a burst of thunderous sound that can be heard up to 100 feet away. Each creature within range, other than you, must make a Constitution saving throw or take 1d6 thunder damage. The spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+    "school": "evocation",
+    "castTime": "1 action",
+    "range": "5 feet",
+    "concentration": false,
+    "duration": "Instantaneous",
+    "components": ["S"],
+    "material": "",
+    "minimumLevel": "0",
+    "ritual": false,
+    "spellAttack": false
+  },
   "THUNDEROUS SMITE": {
     "name": "Thunderous Smite",
     "description": "The first time you hit with a melee weapon attack during this spell's duration, your weapon rings with thunder that is audible within 300 feet of you, and the attack deals an extra 2d6 thunder damage to the target. Additionally, if the target is a creature, it must succeed on a Strength saving throw or be pushed 10 feet away from you and knocked prone.",
@@ -4687,6 +4967,20 @@
     "ritual": false,
     "spellAttack": false
   },
+  "TINY SERVANT": {
+    "name": "Tiny Servant",
+    "description": "You touch one Tiny, nonmagical object that isn't attached to another object or a surface and isn't being carried by another creature. The target animates and sprouts little arms and legs, becoming a creature under your control until the spell ends or the creature drops to 0 hit points. See the stat block for its statistics.\nAs a bonus action, you can mentally command the creature if it is within 120 feet of you. (If you control multiple creatures with this spell, you can command any or all of them at the same time, issuing the same command to each one.) You decide what action the creature will take and where it will move during its next turn, or you can issue a simple, general command, such as to fetch a key, stand watch, or stack some books. If you issue no commands, the servant does nothing other than defend itself against hostile creatures. Once given an order, the servant continues to follow that order until its task is complete.\nWhen the creature drops to 0 hit points, it reverts to its original form, and any remaining damage carries over to that form. When you cast this spell using a spell slot of 4th level or higher, you can animate two additional objects for each slot level above 3rd.",
+    "school": "transmutation",
+    "castTime": "1 minute",
+    "range": "Touch",
+    "concentration": false,
+    "duration": "8 hours",
+    "components": ["V", "S"],
+    "material": "",
+    "minimumLevel": "3",
+    "ritual": false,
+    "spellAttack": false
+  },
   "TONGUES": {
     "name": "Tongues",
     "description": "This spell grants the creature you touch the ability to understand any spoken language it hears. Moreover, when the target speaks, any creature that knows at least one language and can hear the target understands what it says.",
@@ -4698,6 +4992,20 @@
     "components": ["V", "M"],
     "material": "a small clay model of a ziggurat",
     "minimumLevel": "1",
+    "ritual": false,
+    "spellAttack": false
+  },
+  "TRANSMUTE ROCK": {
+    "name": "Transmute Rock",
+    "description": "You choose an area of stone or mud that you can see that fits within a 40-foot cube and is within range, and choose one of the following effects.\nTransmute Rock to Mud. Nonmagical rock of any sort in the area becomes an equal volume of thick, flowing mud that remains for the spell's duration. The ground in the spell's area becomes muddy enough that creatures can sink into it. Each foot that a creature moves through the mud costs 4 feet of movement, and any creature on the ground when you cast the spell must make a Strength saving throw. A creature must also make the saving throw when it moves into the area for the first time on a turn or ends its turn there. On a failed save, a creature sinks into the mud and is restrained, though it can use an action to end the restrained condition on itself by pulling itself free of the mud.\nIf you cast the spell on a ceiling, the mud falls. Any creature under the mud when it falls must make a Dexterity saving throw. A creature takes 4d8 bludgeoning damage on a failed save, or half as much damage on a successful one.\nTransmute Mud to Rock. Nonmagical mud or quicksand in the area no more than 10 feet deep transforms into soft stone for the spell's duration. Any creature in the mud when it transforms must make a Dexterity saving throw. On a successful save, a creature is shunted safely to the surface in an unoccupied space. On a failed save, a creature becomes restrained by the rock. A restrained creature, or another creature within reach, can use an action to try to break the rock by succeeding on a DC 20 Strength check or by dealing damage to it. The rock has AC 15 and 25 hit points, and it is immune to poison and psychic damage.",
+    "school": "transmutation",
+    "castTime": "1 action",
+    "range": "120 feet",
+    "concentration": false,
+    "duration": "until dispelled",
+    "components": ["V", "S", "M"],
+    "material": "clay and water",
+    "minimumLevel": "5",
     "ritual": false,
     "spellAttack": false
   },

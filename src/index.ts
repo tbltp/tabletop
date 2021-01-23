@@ -1,22 +1,20 @@
 //main export
 
-export { 
-    Acolyte,
-    Charlatan,
-    Criminal,
-    Entertainer,
-    FolkHero,
-    GuildArtisan,
-    Hermit,
-    Noble,
-    Knight,
-    Outlander,
-    Sage,
-    Sailor,
-    Pirate,
-    Soldier,
-    Urchin
-} from './Backgrounds/Background';
+export { Acolyte } from "../src/Backgrounds/Acolyte";
+export { Charlatan } from "../src/Backgrounds/Charlatan";
+export { Criminal } from "../src/Backgrounds/Criminal";
+export { Entertainer } from "../src/Backgrounds/Entertainer";
+export { FolkHero } from "../src/Backgrounds/FolkHero";
+export { GuildArtisan } from "../src/Backgrounds/GuildArtisan";
+export { Hermit } from "../src/Backgrounds/Hermit";
+export { Noble } from "../src/Backgrounds/Noble";
+export { Knight } from "../src/Backgrounds/Knight";
+export { Outlander } from "../src/Backgrounds/Outlander";
+export { Sage } from "../src/Backgrounds/Sage";
+export { Sailor } from "../src/Backgrounds/Sailor";
+export { Pirate } from "../src/Backgrounds/Pirate";
+export { Soldier } from "../src/Backgrounds/Soldier";
+export { Urchin } from "../src/Backgrounds/Urchin";
 
 export { PlayerCharacter } from './Base/PlayerCharacter';
 export { CharacterSheet } from './Base/CharacterSheet';

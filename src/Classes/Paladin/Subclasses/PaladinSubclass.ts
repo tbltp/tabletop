@@ -5,8 +5,8 @@ import { Vengeance } from "./Vengeance/Vengeance";
 
 export class PaladinSubclass extends Subclass {
 
-  constructor(subclass: string){
-    super(subclass);
+  constructor(subclassSelection: {subclass: string, options?: string[]}){
+    super(subclassSelection);
   }
 
   subclassDictionary = {

@@ -6,8 +6,8 @@ import { DrunkenMaster} from "./DrunkenMaster/DrunkenMaster"
 import { SunSoul } from "./SunSoul/SunSoul"
 
 export class MonkSubclass extends Subclass {
-  constructor(subclass: string){
-    super(subclass);
+  constructor(subclassSelection: {subclass: string, options?: string[]}){
+    super(subclassSelection);
   }
   
   subclassDictionary = {
@@ -22,6 +22,12 @@ export class MonkSubclass extends Subclass {
       "6": Shadow.shadow6,
       "11": Shadow.shadow11,
       "17": Shadow.shadow17
+    },
+    KENSEI : {
+      "3": Kensei.kensei3,
+      "6": Kensei.kensei6,
+      "11": Kensei.kensei11,
+      "17": Kensei.kensei17
     },
     "FOUR ELEMENTS": {
       "3": FourElements.fourElements3,
