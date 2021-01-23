@@ -10,8 +10,8 @@ export class CollegeOfSwords {
 
   static swords3(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(CollegeOfSwords.getFeature("3", "BONUS PROFICIENCY"));
-    pc.traits.armorProficiencies.push("Medium");
-    pc.traits.weaponProficiencies.push("Scimitar");
+    pc.traits.armorProficiencies.add("Medium");
+    pc.traits.weaponProficiencies.add("Scimitar");
     pc.pcHelper.addFeatures(CollegeOfSwords.getFeature("3", "FIGHTING STYLE"));
     if(params.fightingStyle) {
       PlayerClass.addFightingStyle(pc,params.fightingStyle[0]);

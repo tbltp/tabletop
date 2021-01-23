@@ -101,7 +101,7 @@ export class Fighter extends PlayerClass {
 
   level3(pc: PlayerCharacter, params: FighterLevelingParams): void {
     //martial archetype
-    this.subclass = new FighterSubclass(params.subclassSelection.subclass);
+    this.subclass = new FighterSubclass(params.subclassSelection);
     this.subclassDriver(pc, "3", params);    
   }
 

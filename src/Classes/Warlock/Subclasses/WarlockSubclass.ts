@@ -4,8 +4,8 @@ import { Fiend } from "./Fiend/Fiend";
 import { GreatOldOne } from "./GreatOldOne/GreatOldOne";
 
 export class WarlockSubclass extends Subclass {
-  constructor(subclass: string){
-    super(subclass);
+  constructor(subclassSelection: {subclass: string, options?: string[]}){
+    super(subclassSelection);
   }
 
   subclassDictionary = {

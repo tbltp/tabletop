@@ -132,7 +132,6 @@ export class Inventory {
     let rations = Gear["RATIONS (1 DAY)"];
     rations.quantity = 5;
 
-    // INCLUDES DISGUISE KIT WHAT DO?
     const disguiseKit = Tools["DISGUISE KIT"];
 
     return {
@@ -264,9 +263,9 @@ export class Inventory {
     let ability: string;
 
     if (
-      proficiencies.indexOf(weaponType[0]) ||
-      proficiencies.indexOf(weaponType[1]) ||
-      proficiencies.indexOf(weapon.name)
+      proficiencies.has(weaponType[0]) ||
+      proficiencies.has(weaponType[1]) ||
+      proficiencies.has(weapon.name)
     ) {
       proficient = true;
     }

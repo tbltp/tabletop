@@ -57,7 +57,7 @@ export interface Trait {
   readonly title: string;
   description: string;
   choices?: string[];
-  spellAdded?: string;
+  spellAdded?: string; //TODO: turn this into an array
 }
 
 export interface ResourceTrait extends Trait {

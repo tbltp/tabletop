@@ -34,8 +34,8 @@ export class CharacterSheet {
   race: Race;
   playerClasses: SheetClasses = {};
   levels: { [key: string]: PlayerClass["level"] } = {};
-  featLevels: number[] = [4, 8, 12, 16, 19];
-  feats: Feat[];
+  asiLevels: number[] = [4, 8, 12, 16, 19];
+  feats: Feat[] = [];
   background: Background;
 
   //exposed responsibilities: level up, add/remove stuff to inventory, serialize to JSON, deserialize to JSON
@@ -53,29 +53,43 @@ export class CharacterSheet {
   }
 
   levelUp(levelingClass: string, hpAdd: number, params: LevelingParams): void {
-    this.character.level.totalLevel++;
-    const level = ++this.playerClasses[levelingClass].level.value;
+    const tLevel = ++this.character.level.totalLevel;
+    const cLevel = ++this.playerClasses[levelingClass].level.value;
 
-    this.character.proficiency.levelUp(level);
+    //hp
+    this.character.baseStats.hpMax.bonus.value += hpAdd;
+
+    //level up proficiency according to total level
+    this.character.proficiency.levelUp(tLevel);
     
-    //level up race
-    if(this.race.abilitiesAtLevels[level.toString()]) {
-      this.race.abilitiesAtLevels[level.toString()](this.character);
+    //level up race according to total level
+    if(this.race.abilitiesAtLevels[tLevel.toString()]) {
+      this.race.abilitiesAtLevels[tLevel.toString()](this.character);
     }
-    //level up every class
-    this.playerClasses[levelingClass].abilitiesAtLevels[level.toString()](
+
+    //level up Tough feat according to total level
+    const tough = this.feats.find(ft => ft.name == "Tough");
+    if(tough) {
+      tough.abilitiesAtLevels[tLevel.toString()](this.character);
+    }
+
+    //level up class according to class level
+    this.playerClasses[levelingClass].abilitiesAtLevels[cLevel.toString()](
       this.character,
       params
     );
 
-    //feat logic vs ability score improvement?
-    if(this.featLevels.includes(level) && params.featChoice) {
-      this.feats.push(params.featChoice);
-    } else {
-      
+    //get feat or ability score improvement according to class level
+    if(this.asiLevels.includes(cLevel)) {
+      if(params.featChoice) {
+        this.feats.push(params.featChoice);
+        params.featChoice.apply(this.character);
+      } else {
+        this.character.pcHelper.improveAbilityScores(params.abilityScoreImprovement) ;
+      }
     }
-    this.character.baseStats.hpMax.bonus.value += hpAdd;
 
+    //apply spell slots based on selected classes
     this.applySpellSlotsAtLevelUp();
   }
 

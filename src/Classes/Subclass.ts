@@ -3,11 +3,12 @@ import { LevelingParams } from "./PlayerClass";
 
 export abstract class Subclass {
 
-  constructor(subclass: string){
-    this.title = subclass;
+  constructor(subclassSelection: {subclass:string, options?: string[]}){
+    this.title = subclassSelection.subclass;
   }
 
   title: string;
+  persistentSelection?: {choice: string};
 
   subclassDictionary: {
     [key1: string]: {
