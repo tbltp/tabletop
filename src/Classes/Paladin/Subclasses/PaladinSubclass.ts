@@ -2,6 +2,7 @@ import { Subclass } from "../../Subclass";
 import { Ancients } from "./Ancients/Ancients";
 import { Devotion } from "./Devotion/Devotion";
 import { Vengeance } from "./Vengeance/Vengeance";
+import { Redemption } from "./Redemption/Redemption";
 
 export class PaladinSubclass extends Subclass {
 
@@ -15,6 +16,18 @@ export class PaladinSubclass extends Subclass {
       "7": Devotion.devotion7,
       "15": Devotion.devotion15,
       "20": Devotion.devotion20,
+    },
+    REDEMPTION: {
+      "3": Redemption.redemption3,
+      "5": Redemption.redemption5,
+      "7": Redemption.redemption7,
+      "9": Redemption.redemption9,
+      "13": Redemption.redemption13,
+      "15": Redemption.redemption15,
+      "16": Redemption.upSpirit,
+      "17": Redemption.redemption17,
+      "18": Redemption.upSpirit,
+      "20": Redemption.redemption20
     },
     ANCIENTS: {
       "3": Ancients.ancients3,
