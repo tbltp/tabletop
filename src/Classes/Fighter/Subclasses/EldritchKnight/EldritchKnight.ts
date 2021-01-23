@@ -10,8 +10,26 @@ export class EldritchKnight {
 
     static eldritchKnight3(pc: PlayerCharacter, params: LevelingParams) {
   
-      // FUCK LOL
-      // this.addSpellcasting(pc, "FIGHTER (ELDRITCH KNIGHT)");
+      const spellAttack = {
+        proficiency: pc.proficiency.baseBonus,
+        modifier: pc.abilityScores["intelligence"].modifier
+      }
+  
+      const spellSave = {
+        base: 8,
+        proficiency: pc.proficiency.baseBonus,
+        modifier: pc.abilityScores["intelligence"].modifier
+      }
+  
+      let spellcasting = {
+        title: "ELDRITCH KNIGHT",
+        spellSave: spellSave,
+        spellAttack : spellAttack
+      }
+  
+      pc.spellcasting
+        ? pc.spellcasting.push(spellcasting)
+        : (pc.spellcasting = [spellcasting]);
 
         pc.pcHelper.addSpells(params.spellSelections.add, "intelligence");
         pc.pcHelper.addFeatures(EldritchKnight.getFeature( "3", "WEAPON BOND"))
