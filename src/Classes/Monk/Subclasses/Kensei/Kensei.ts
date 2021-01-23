@@ -10,13 +10,13 @@ export class Kensei {
 
   static addKensei(pc:PlayerCharacter, params: LevelingParams) {
     for(let wep in params.subclassSelection.options) {
-      pc.traits.weaponProficiencies.push(params.subclassSelection.options[wep]);
+      pc.traits.weaponProficiencies.add(params.subclassSelection.options[wep]);
     }
   }
   static kensei3(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Kensei.getFeature("3", "PATH OF THE KENSEI"));
     //Add proficiency for Calligrapher's or Artist Tools
-    pc.traits.toolProficiencies.push(params.proficiencySelection[0]);
+    pc.traits.toolProficiencies.add(params.proficiencySelection[0]);
     Kensei.addKensei(pc,params);
   }
 

@@ -63,7 +63,8 @@ export class SorcererSubclass extends Subclass {
       "3": Shadow.shadow3,
       "6": Shadow.shadow6,
       "14": Shadow.shadow14,
-      "18": Shadow.shadow18,
+      "18": Shadow.shadow18
+    },
     "DIVINE SOUL": {
       "1": DivineSoul.divineSoul1,
       "6": DivineSoul.divineSoul6,

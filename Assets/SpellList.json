@@ -977,7 +977,7 @@
     "8": ["ANTIMAGIC FIELD", "CONTROL WEATHER", "EARTHQUAKE", "HOLY AURA"],
     "9": ["ASTRAL PROJECTION", "GATE", "MASS HEAL", "TRUE RESURRECTION"]
   },
-  "ARTIFICER": {
+  "Artificer": {
     "0": [
       "ACID SPLASH",
       "BOOMING BLADE",

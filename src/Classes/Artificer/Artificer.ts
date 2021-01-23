@@ -7,7 +7,7 @@ import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ArtificerSubclass } from "./Subclasses/ArtificerSubclass";
 
 export class Artificer extends PlayerClass {
-  constructor(multiclass: boolean, skillProficiencies?: string[], toolProficiency?: string, weapons?: string[], armor?: string[]) {
+  constructor(multiclass: boolean, artificerParams: ArtificerLevelingParams, skillProficiencies?: string[], toolProficiency?: string, weapons?: string[], armor?: string[]) {
     super(
       "Artificer",
       [],
@@ -19,7 +19,7 @@ export class Artificer extends PlayerClass {
       [],
       [],
       [],
-      { isNoInput: true },
+      artificerParams,
       "d8",
       8,
       []
@@ -93,7 +93,7 @@ export class Artificer extends PlayerClass {
 
   level2(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
     this.pushArtificerFeatures(pc, 2);
-    // Learn four new infusions
+    this.handleInfusionSelections(pc, params);
     pc.pcHelper.addResourceTraits({title: "Infused Items", description: "Number of items you can infuse with magic.", resourceMax: {value: 2}});
   }
 
@@ -113,7 +113,7 @@ export class Artificer extends PlayerClass {
 
   level6(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
     this.subclassDriver(pc, "6", params);
-    // Learn two new infusions
+    this.handleInfusionSelections(pc, params);
     pc.pcHelper.findResourceTraitByName("Infused Items").resourceMax.value++;
   }
 
@@ -132,7 +132,7 @@ export class Artificer extends PlayerClass {
   }
 
   level10(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
-    // two new infusions
+    this.handleInfusionSelections(pc, params);
     this.pushArtificerFeatures(pc, 10);
     pc.pcHelper.findResourceTraitByName("Infused Items").resourceMax.value++;
     pc.pcHelper.addSpells(params.spellSelections.add, "intelligence")
@@ -148,10 +148,11 @@ export class Artificer extends PlayerClass {
 
   level13(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
     pc.pcHelper.addSpells(SpellList["Artificer"]["4"], "intelligence");
+    this.subclassDriver(pc, "13", params);
   }
 
   level14(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
-    // two new infusions
+    this.handleInfusionSelections(pc, params);
     pc.pcHelper.findResourceTraitByName("Infused Items").resourceMax.value++;
     this.pushArtificerFeatures(pc, 14);
     pc.pcHelper.addSpells(params.spellSelections.add, "intelligence")
@@ -167,6 +168,7 @@ export class Artificer extends PlayerClass {
 
   level17(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
     pc.pcHelper.addSpells(SpellList["Artificer"]["5"], "intelligence");
+    this.subclassDriver(pc, "17", params);
   }
 
   level18(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
@@ -185,7 +187,6 @@ export class Artificer extends PlayerClass {
   private processInfusions(infusions: string[], pc: PlayerCharacter){
     const infs: Trait[] = infusions.map((inf) => Infusions[inf]);
     infs.forEach((inf) => {
-     //prequisite check goes here
     pc.pcHelper.addFeatures(inf);
     });
   }
@@ -206,6 +207,6 @@ export interface ArtificerLevelingParams extends LevelingParams {
 
 export class DSArtificer extends Artificer {
   constructor(){
-    super(true);
+    super(true, {isNoInput: true});
   }
 }

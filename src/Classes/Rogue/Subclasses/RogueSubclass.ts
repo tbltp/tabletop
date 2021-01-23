@@ -35,7 +35,8 @@ export class RogueSubclass extends Subclass {
       "3": Mastermind.mastermind3,
       "9": Mastermind.mastermind9,
       "13": Mastermind.mastermind13,
-      "17": Mastermind.mastermind17,
+      "17": Mastermind.mastermind17
+    },
     INQUISITIVE: {
       "3": Inquisitive.inquisitive3,
       "9": Inquisitive.inquisitive9,
@@ -57,5 +58,5 @@ export class RogueSubclass extends Subclass {
       "19": ArcaneTrickster.arcaneTrickster19,
       "20": ArcaneTrickster.arcaneTrickster20
     }
-  };
+  }
 }
