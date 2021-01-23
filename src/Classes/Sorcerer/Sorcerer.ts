@@ -98,7 +98,6 @@ export class Sorcerer extends PlayerClass {
     this.subclass = new SorcererSubclass(params.subclassSelection)
     this.subclassDriver(pc, "1", params);
 
-
   }
 
   level2(pc: PlayerCharacter, params: SorcererLevelingParams): void {
@@ -238,6 +237,6 @@ export class DSSorcerer extends Sorcerer {
   }
 }
 
-interface SorcererLevelingParams extends LevelingParams {
+export interface SorcererLevelingParams extends LevelingParams {
   metaMagic?: string[];
 }
