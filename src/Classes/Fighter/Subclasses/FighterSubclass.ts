@@ -8,8 +8,8 @@ import { Cavalier } from "./Cavalier/Cavalier";
 import { Samurai } from "./Samurai/Samurai";
 
 export class FighterSubclass extends Subclass {
-  constructor(subclass: string){
-    super(subclass);
+  constructor(subclassSelection: {subclass: string, options?: string[]}){
+    super(subclassSelection);
   }
     
   subclassDictionary = {

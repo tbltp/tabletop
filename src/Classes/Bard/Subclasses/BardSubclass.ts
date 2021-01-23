@@ -7,8 +7,8 @@ import { CollegeOfWhispers } from "./Whispers/CollegeOfWhispers";
 
 export class BardSubclass extends Subclass {
 
-  constructor(subclass: string){
-    super(subclass);
+  constructor(subclassSelection: {subclass: string, options?: string[]}){
+    super(subclassSelection);
   }
 
   subclassDictionary = {

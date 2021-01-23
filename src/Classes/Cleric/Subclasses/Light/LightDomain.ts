@@ -15,12 +15,13 @@ export class LightDomain {
 
   static light1(pc: PlayerCharacter, params: LevelingParams) {
     LightDomain.getSpells(pc,"1");
-    // warding flare needs to have a minimum of one use available
+
     const wardingFlare: ResourceTrait = {
       title: "Warding Flare",
       description: "Number of times you can use Warding Flare per long rest.",
-      resourceMax: pc.abilityScores.wisdom.modifier,
-    };
+      resourceMax: (pc.abilityScores.wisdom.modifier.value >= 1) ? pc.abilityScores.wisdom.modifier : {value: 1}
+    }
+    
     pc.pcHelper.addResourceTraits(wardingFlare);
     pc.pcHelper.addFeatures(
       LightDomain.getFeature("1", "WARDING FLARE"),

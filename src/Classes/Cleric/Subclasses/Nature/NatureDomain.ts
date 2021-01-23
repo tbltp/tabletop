@@ -17,7 +17,7 @@ export class NatureDomain {
     pc.pcHelper.addSpells(
       [...params.spellSelections.add],"wisdom");
     NatureDomain.getSpells(pc,"1");
-    pc.traits.armorProficiencies.push("Heavy");
+    pc.traits.armorProficiencies.add("Heavy");
     pc.pcHelper.addFeatures(
       {
         ...NatureDomain.getFeature("1", "ACOLYTE OF NATURE"),

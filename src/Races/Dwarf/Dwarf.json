@@ -7,6 +7,14 @@
         "title": "Dwarven Resilience",
         "description": "You have advantage on saving throws againist poison, and you have resistance against poison damage."
     },
+    "DWARVEN COMBAT TRAINING": {
+        "title": "Dwarven Combat Training",
+        "description": "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
+    },
+    "DWARVEN ARMOR TRAINING": {
+        "title": "Dwarven Armor Training",
+        "description": "You have proficiency with light and medium armor."
+    },
     "STONECUNNING": {
         "title": "Stonecunning",
         "description": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus."
