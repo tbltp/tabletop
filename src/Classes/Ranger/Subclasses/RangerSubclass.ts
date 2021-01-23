@@ -2,11 +2,12 @@ import { Subclass } from "../../Subclass";
 import { BeastMaster } from "./BeastMaster/BeastMaster";
 import { Hunter } from "./Hunter/Hunter";
 import { HorizonWalker } from "./HorizonWalker/HorizonWalker"
+import { GloomStalker } from "./GloomStalker/GloomStalker";
 
 export class RangerSubclass extends Subclass {
 
-  constructor(subclass: string){
-    super(subclass);
+  constructor(subclassSelection: {subclass: string, options?: string[]}){
+    super(subclassSelection);
   }
 
   subclassDictionary = {
@@ -31,6 +32,14 @@ export class RangerSubclass extends Subclass {
       "13": HorizonWalker.horizonWalker13,
       "15": HorizonWalker.horizonWalker15,
       "17": HorizonWalker.horizonWalker17
+    "GLOOM STALKER": {
+      "3": GloomStalker.gloomStalker3,
+      "5": GloomStalker.gloomStalker5,
+      "7": GloomStalker.gloomStalker7,
+      "9": GloomStalker.gloomStalker9,
+      "11": GloomStalker.gloomStalker11,
+      "15": GloomStalker.gloomStalker15,
+      "17": GloomStalker.gloomStalker17
     }
   };
 }
