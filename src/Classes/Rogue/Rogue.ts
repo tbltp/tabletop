@@ -122,10 +122,7 @@ export class Rogue extends PlayerClass {
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.findFeatureTraitByName("EXPERTISE").choices.push(
-      ...params.proficiencySelection
-    );
-
+    pc.pcHelper.findFeatureTraitByName("Expertise").choices.push(...params.proficiencySelection);
     // Expertise
     for (const proficiency of params.proficiencySelection) {
       pc.skills[proficiency].expertise = true;
