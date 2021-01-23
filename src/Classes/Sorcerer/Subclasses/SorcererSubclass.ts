@@ -2,6 +2,7 @@
 import { Subclass } from "../../Subclass";
 import { DraconicAncestry } from "./DraconicAncestry/DraconicAncestry";
 import { WildMagic } from "./WildMagic/WildMagic";
+import { StormSorcery } from "./StormSorcery/StormSorcery";
 import { Shadow } from "./Shadow/Shadow";
 import { DivineSoul } from "./DivineSoul/DivineSoul";
 import { LevelingParams } from "Classes/PlayerClass";
@@ -36,6 +37,20 @@ export class SorcererSubclass extends Subclass {
       "18": DraconicAncestry.draconicAncestry18,
       "19": DraconicAncestry.draconicResilienceHpBonus,
       "20": DraconicAncestry.draconicResilienceHpBonus,
+    },
+    "STORM SORCERY": {
+      "1": StormSorcery.stormSorcery1,
+      "6": StormSorcery.stormSorcery6,
+      "8": StormSorcery.upHeart,
+      "10": StormSorcery.upHeart,
+      "12": StormSorcery.upHeart,
+      "14": StormSorcery.stormSorcery14,
+      "15": StormSorcery.upFury,
+      "16": StormSorcery.upBoth,
+      "17": StormSorcery.upFury,
+      "18": StormSorcery.stormSorcery18,
+      "19": StormSorcery.upFury,
+      "20": StormSorcery.upBoth,
     },
     "WILD MAGIC": {
       "1": WildMagic.wildMagic1,
