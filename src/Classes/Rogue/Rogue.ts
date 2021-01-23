@@ -1,6 +1,6 @@
 import { PlayerClass, LevelingParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
-import { ResourceTrait } from "../../Base/Interfaces";
+import { Trait } from "../../Base/Interfaces";
 import * as SpellList from "../../../Assets/SpellList.json";
 import * as RogueClassTraits from "./Rogue.json";
 import { RogueSubclass } from "./Subclasses/RogueSubclass";
@@ -14,7 +14,7 @@ export class Rogue extends PlayerClass {
     equipmentPack?: string
   ) {
     super(
-      "Paladin",
+      "Rogue",
       [],
       skillProficiencies,
       [],
@@ -78,13 +78,13 @@ export class Rogue extends PlayerClass {
   }
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
-    PlayerClass.pushCustomizedClassFeature(
-      pc,
-      1,
-      RogueClassTraits,
-      "EXPERTISE",
-      params.proficiencySelection
-    );
+    // PlayerClass.pushCustomizedClassFeature(
+    //   pc,
+    //   1,
+    //   RogueClassTraits,
+    //   "EXPERTISE",
+    //   params.proficiencySelection
+    // );
     // Expertise
     for (const proficiency of params.proficiencySelection) {
       pc.skills[proficiency].expertise = true;
@@ -96,6 +96,8 @@ export class Rogue extends PlayerClass {
       dice: "1d6",
     });
     this.pushRogueFeatures(pc, 1);
+    const expert: Trait = pc.pcHelper.findFeatureTraitByName("Expertise");
+    expert.choices = params.proficiencySelection;
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
@@ -103,7 +105,7 @@ export class Rogue extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.subclass = new RogueSubclass(params.subclassSelection.subclass);
+    this.subclass = new RogueSubclass(params.subclassSelection);
     this.subclassDriver(pc, "3", params);    
 
     pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "2d6";
@@ -120,10 +122,7 @@ export class Rogue extends PlayerClass {
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.findFeatureTraitByName("EXPERTISE").choices.push(
-      ...params.proficiencySelection
-    );
-
+    pc.pcHelper.findFeatureTraitByName("Expertise").choices.push(...params.proficiencySelection);
     // Expertise
     for (const proficiency of params.proficiencySelection) {
       pc.skills[proficiency].expertise = true;

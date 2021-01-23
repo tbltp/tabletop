@@ -95,7 +95,7 @@ export class Wizard extends PlayerClass {
   level2(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
     this.pushWizardFeatures(pc, 2);
-    this.subclass = new WizardSubclass(params.subclassSelection.subclass);
+    this.subclass = new WizardSubclass(params.subclassSelection);
 
     this.subclassDriver(pc, "2", params);
   }

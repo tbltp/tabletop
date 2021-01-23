@@ -10,8 +10,26 @@ export class ArcaneTrickster {
 
     static arcaneTrickster3(pc: PlayerCharacter, params: LevelingParams) {
 
-      // l0l FUCK
-      // this.addSpellcasting(pc, "ROGUE (ARCANE TRICKSTER)");
+      const spellAttack = {
+        proficiency: pc.proficiency.baseBonus,
+        modifier: pc.abilityScores["intelligence"].modifier
+      }
+  
+      const spellSave = {
+        base: 8,
+        proficiency: pc.proficiency.baseBonus,
+        modifier: pc.abilityScores["intelligence"].modifier
+      }
+  
+      let spellcasting = {
+        title: "ARCANE TRICKSTER",
+        spellSave: spellSave,
+        spellAttack : spellAttack
+      }
+  
+      pc.spellcasting
+        ? pc.spellcasting.push(spellcasting)
+        : (pc.spellcasting = [spellcasting]);
 
 
       pc.pcHelper.addSpells([...params.spellSelections.add, "MAGE HAND"], "intelligence")

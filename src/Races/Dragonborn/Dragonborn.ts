@@ -1,5 +1,6 @@
 import { Race } from "../Race";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { ScalingTrait } from "../../Base/Interfaces";
 import * as DraconicAncestry from "../../../Assets/DraconicBloodline.json";
 import * as languages from "../../../Assets/Languages.json";
 
@@ -34,7 +35,32 @@ export class Dragonborn extends Race {
     );
   }
 
-  abilitiesAtLevels = {};
+  abilitiesAtLevels = {
+    "1": this.level1,
+    "6": this.level6,
+    "11": this.level11,
+    "16": this.level16,
+  };
+
+  level1(pc: PlayerCharacter) {
+    pc.traits.scalingEffects.push({
+      title: "Breath Weapon Damage",
+      description: "Damage die for Dragonborn Breath Weapon.",
+      dice: "2d6"
+    })
+  }
+
+  level6(pc: PlayerCharacter) {
+    pc.pcHelper.findScalingTraitByName("Breath Weapon Damage").dice = "3d6"
+  }
+
+  level11(pc: PlayerCharacter) {
+    pc.pcHelper.findScalingTraitByName("Breath Weapon Damage").dice = "4d6"
+  }
+
+  level16(pc: PlayerCharacter) {
+    pc.pcHelper.findScalingTraitByName("Breath Weapon Damage").dice = "5d6"
+  }
 
   draconicAncestry: {};
 
@@ -45,5 +71,11 @@ export class Dragonborn extends Race {
 
   proficiencies(pc: PlayerCharacter): void {
     return;
+  }
+}
+
+export class DSDragonborn extends Dragonborn {
+  constructor(draconicAncestry: string){
+    super(draconicAncestry)
   }
 }

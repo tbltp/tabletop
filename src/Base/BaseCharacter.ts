@@ -225,23 +225,23 @@ export abstract class BaseCharacter {
 
   // Traits (Class Features, Racial Traits, Feats)
   traits: {
-    armorProficiencies: string[];
-    weaponProficiencies: string[];
-    toolProficiencies: string[];
+    armorProficiencies: Set<string>;
+    weaponProficiencies: Set<string>;
+    toolProficiencies: Set<string>;
     languages: Trait[];
     features: Trait[];
     resources: ResourceTrait[];
     scalingEffects: ScalingTrait[];
   } = {
-    armorProficiencies: [],
-    weaponProficiencies: [],
-    toolProficiencies: [],
+    armorProficiencies: new Set(),
+    weaponProficiencies: new Set(),
+    toolProficiencies: new Set(),
     languages: [],
     features: [],
     resources: [],
     scalingEffects: [],
   };
-
+  
   // Known Spells
   spells: {
     "0": Spell[];
@@ -289,6 +289,7 @@ export class BaseAbility {
   scoreMax: number;
   modifier: { value: number };
   savingThrowProficiency: boolean = false;
+  halfProficiency: boolean = false;
 
   update(bonus: number) {
     this.score =

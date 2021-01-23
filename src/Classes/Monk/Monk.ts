@@ -116,7 +116,7 @@ export class Monk extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: MonkLevelingParams): void {
-    this.subclass = new MonkSubclass(params.subclassSelection.subclass);
+    this.subclass = new MonkSubclass(params.subclassSelection);
     this.pushMonkFeatures(pc, 3);
     pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
 
