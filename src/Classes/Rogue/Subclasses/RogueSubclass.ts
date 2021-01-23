@@ -3,11 +3,13 @@ import { ArcaneTrickster } from "./ArcaneTrickster/ArcaneTrickster";
 import { Assassin } from "./Assassin/Assassin";
 import { Thief } from "./Thief/Thief";
 import { Mastermind } from "./Mastermind/Mastermind";
+import { Inquisitive } from "./Inquisitive/Inquisitive";
+import { Scout } from "./Scout/Scout";
 
 export class RogueSubclass extends Subclass {
   
-  constructor(subclass: string){
-    super(subclass);
+  constructor(subclassSelection: {subclass: string, options?: string[]}){
+    super(subclassSelection);
   }
 
   subclassDictionary = {
@@ -16,6 +18,12 @@ export class RogueSubclass extends Subclass {
       "9": Thief.thief9,
       "13": Thief.thief13,
       "17": Thief.thief17,
+    },
+    SCOUT: {
+      "3": Scout.Scout3,
+      "9": Scout.Scout9,
+      "13": Scout.Scout13,
+      "17": Scout.Scout17,
     },
     ASSASSIN: {
       "3": Assassin.assassin3,
@@ -28,6 +36,11 @@ export class RogueSubclass extends Subclass {
       "9": Mastermind.mastermind9,
       "13": Mastermind.mastermind13,
       "17": Mastermind.mastermind17,
+    INQUISITIVE: {
+      "3": Inquisitive.inquisitive3,
+      "9": Inquisitive.inquisitive9,
+      "13": Inquisitive.inquisitive13,
+      "17": Inquisitive.inquisitive17
     },
     "ARCANE TRICKSTER": {
       "3": ArcaneTrickster.arcaneTrickster3,

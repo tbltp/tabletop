@@ -12,8 +12,8 @@ import { GraveDomain } from "./Grave/GraveDomain";
 
 export class ClericSubclass extends Subclass {
 
-  constructor(subclass: string){
-    super(subclass);
+  constructor(subclassSelection: {subclass: string, options?: string[]}){
+    super(subclassSelection);
   }
 
   subclassDictionary = {
