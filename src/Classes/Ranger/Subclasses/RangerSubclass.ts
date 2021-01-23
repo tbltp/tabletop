@@ -1,6 +1,7 @@
 import { Subclass } from "../../Subclass";
 import { BeastMaster } from "./BeastMaster/BeastMaster";
 import { Hunter } from "./Hunter/Hunter";
+import { MonsterSlayer } from "./MonsterSlayer/MonsterSlayer";
 import { HorizonWalker } from "./HorizonWalker/HorizonWalker"
 import { GloomStalker } from "./GloomStalker/GloomStalker";
 
@@ -40,6 +41,15 @@ export class RangerSubclass extends Subclass {
       "11": GloomStalker.gloomStalker11,
       "15": GloomStalker.gloomStalker15,
       "17": GloomStalker.gloomStalker17
-    }
+    },
+    "MONSTER SLAYER": {
+      "3": MonsterSlayer.monsterSlayer3,
+      "5": MonsterSlayer.monsterSlayer5,
+      "7": MonsterSlayer.monsterSlayer7,
+      "9": MonsterSlayer.monsterSlayer9,
+      "11": MonsterSlayer.monsterSlayer11,
+      "13": MonsterSlayer.monsterSlayer13,
+      "15": MonsterSlayer.monsterSlayer15,
+      "17": MonsterSlayer.monsterSlayer17
   };
 }
