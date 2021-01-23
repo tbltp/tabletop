@@ -1,7 +1,8 @@
 import { PlayerClass, LevelingParams } from "../PlayerClass";
 import { ResourceTrait, Trait, ScalingTrait } from "../../Base/Interfaces";
 import * as ArtificerClassTraits from "./Artificer.json"
-import * as SpellList from ".../../../Assets/SpellList.json"
+import * as Infusions from "./Infusions.json"
+import * as SpellList from "../../../Assets/SpellList.json"
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ArtificerSubclass } from "./Subclasses/ArtificerSubclass";
 
@@ -69,6 +70,19 @@ export class Artificer extends PlayerClass {
 
   private pushArtificerFeatures(pc: PlayerCharacter, level: number) {
     this.pushClassFeatures(pc, level, ArtificerClassTraits);
+  }
+  private handleInfusionSelections(
+    pc: PlayerCharacter,
+    params: ArtificerLevelingParams
+  ) {
+    
+    if(params.infusions) {
+      this.processInfusions(params.infusions.add, pc);
+      
+      if (params.infusions.remove) {
+        this.removeInfusion(params.infusions.remove, pc);
+      }
+    }
   }
 
   level1(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
@@ -167,10 +181,21 @@ export class Artificer extends PlayerClass {
   level20(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
     this.pushArtificerFeatures(pc, 20);
   }
+
+  private processInfusions(infusions: string[], pc: PlayerCharacter){
+    const infs: Trait[] = infusions.map((inf) => Infusions[inf]);
+    infs.forEach((inf) => {
+     //prequisite check goes here
+    pc.pcHelper.addFeatures(inf);
+    });
+  }
+  private removeInfusion(infusion: string, pc: PlayerCharacter): void {
+    pc.pcHelper.removeFeatures(infusion);
+  }
 }
 
-// ADD / REPLACE INFUSIONS
-// ADD ALL XANATHARS + TASHA'S SPELLS TO FUCKEN SPELLS.JSON
+
+
 
 export interface ArtificerLevelingParams extends LevelingParams {
   infusions?: {

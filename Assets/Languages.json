@@ -41,6 +41,10 @@
     "title": "Deep Speech",
     "description": "The language of the Far Realms."
   },
+  "Ghukliak":{
+    "title": "Ghukliak",
+    "description": "The language of the goblins, hobgoblins, and bugbears."
+  },
   "Infernal": {
     "title": "Infernal",
     "description": "The language of the Devils (Lawful Evil)."

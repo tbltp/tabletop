@@ -120,10 +120,13 @@ export abstract class PlayerClass {
   }
 
   protected addArmor(pc: PlayerCharacter): void {
-    for (const armor of this.armor) {
-      pc.inventory.armor.push(Armor[armor]);
+    for (const a of this.armor) {
+      const AC = Inventory.acFromArmorType[Armor[a].armorType](pc, Armor[a])
+      let armor  = Armor[a];
+      armor.AC = AC;
+      pc.inventory.armor.push(armor);
       pc.armorClasses.push(
-        Inventory.acFromArmorType[Armor[armor].armorType](pc, Armor[armor])
+        AC
       );
     }
   }
@@ -186,7 +189,7 @@ export abstract class PlayerClass {
   ) {
 
     let riskTraits = {
-      "Extra Attack": pc.pcHelper.findFeatureTraitByName("Extra Attack") ? true : false,
+      "Extra Attack": pc.pcHelper.findFeatureTraitByName("Extra Attack") === null ? true : false,
       "Unarmored Defense": pc.pcHelper.findFeatureTraitByName("Unarmored Defense") ? true : false
     }
 
