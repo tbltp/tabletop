@@ -1,4 +1,5 @@
 {
+  "ARTIFICER": "intelligence",
   "BARD": "charisma",
   "CLERIC": "wisdom",
   "DRUID": "wisdom",

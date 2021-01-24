@@ -59,6 +59,7 @@ export class SpellSlotFactory {
   };
 
   public static spellcastingClassRanks: { [key: string]: string } = {
+    "Artificer": "SECONDARY",
     "Barbarian": "NONE",
     "Bard": "PRIMARY",
     "Cleric": "PRIMARY",
@@ -74,8 +75,8 @@ export class SpellSlotFactory {
   }
 
   public static spellcastingSubclasses: { [key: string]: string } = {
-    "Eldritch Knight": "TERTIARY",
-    "Arcane Trickster": "TERTIARY"
+    "ELDRITCH KNIGHT": "TERTIARY",
+    "ARCANE TRICKSTER": "TERTIARY"
   }
 
   private static getLevelString(level: number): string {

@@ -23,6 +23,7 @@ import { DSTiefling } from "../Races/Tiefling/Tiefling";
 
 // Subclasses (Called when deserializing a character with a subclass.)
 import { Subclass } from "../Classes/Subclass";
+import { DSArtificer } from "../Classes/Artificer/Artificer";
 import { BarbarianSubclass } from "../Classes/Barbarian/Subclasses/BarbarianSubclass";
 import { BardSubclass } from "../Classes/Bard/Subclasses/BardSubclass";
 import { ClericSubclass } from "../Classes/Cleric/Subclasses/ClericSubclass";
@@ -36,16 +37,16 @@ import { SorcererSubclass } from "../Classes/Sorcerer/Subclasses/SorcererSubclas
 import { WarlockSubclass } from "../Classes/Warlock/Subclasses/WarlockSubclass";
 import { WizardSubclass } from "../Classes/Wizard/Subclasses/WizardSubclass";
 
-
 export class Deserialize {
     
-    // Standby for Artificer lol
     static deserializePlayerClasses(classNames: string[]): PlayerClass[] {
 
         let classes = []
         
         for( const className of classNames) {
             switch(className) {
+                case "Artificer":
+                    classes.push(new DSArtificer());
                 case "Barbarian":
                     classes.push(new DSBarbarian());
                     break;

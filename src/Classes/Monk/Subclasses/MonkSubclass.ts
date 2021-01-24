@@ -3,6 +3,7 @@ import { OpenHand } from "./OpenHand/OpenHand"
 import { Shadow } from "./Shadow/Shadow"
 import { FourElements } from "./FourElements/FourElements"
 import { DrunkenMaster} from "./DrunkenMaster/DrunkenMaster"
+import { Kensei} from "./Kensei/Kensei"
 import { SunSoul } from "./SunSoul/SunSoul"
 
 export class MonkSubclass extends Subclass {

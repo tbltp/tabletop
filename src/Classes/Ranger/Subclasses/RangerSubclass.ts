@@ -33,6 +33,7 @@ export class RangerSubclass extends Subclass {
       "13": HorizonWalker.horizonWalker13,
       "15": HorizonWalker.horizonWalker15,
       "17": HorizonWalker.horizonWalker17
+    },
     "GLOOM STALKER": {
       "3": GloomStalker.gloomStalker3,
       "5": GloomStalker.gloomStalker5,
@@ -51,5 +52,6 @@ export class RangerSubclass extends Subclass {
       "13": MonsterSlayer.monsterSlayer13,
       "15": MonsterSlayer.monsterSlayer15,
       "17": MonsterSlayer.monsterSlayer17
-  };
+    }
+  }
 }

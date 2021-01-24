@@ -890,7 +890,7 @@
       "LESSER RESTORATION",
       "HOLD PERSON",
       "ENHANCE ABILITY",
-      "BLINDNESS/ DEAFNESS",
+      "BLINDNESS/DEAFNESS",
       "SILENCE",
       "LOCATE OBJECT",
       "ZONE OF TRUTH",
@@ -977,7 +977,7 @@
     "8": ["ANTIMAGIC FIELD", "CONTROL WEATHER", "EARTHQUAKE", "HOLY AURA"],
     "9": ["ASTRAL PROJECTION", "GATE", "MASS HEAL", "TRUE RESURRECTION"]
   },
-  "ARTIFICER": {
+  "Artificer": {
     "0": [
       "ACID SPLASH",
       "BOOMING BLADE",

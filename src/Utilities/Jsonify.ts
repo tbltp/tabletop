@@ -97,7 +97,12 @@ export class Jsonify {
 
       }
 
-      if(["abilityScores", "proficiency", "pcHelper", "traits"].includes(property)) {
+      if(property === "proficiency"){
+        emptyCharacter.proficiency.baseBonus = jsonSheet['character']['proficiency']['baseBonus']['value'];
+        emptyCharacter.proficiency.halfBonus = jsonSheet['character']['proficiency']['halfBonus']['value'];
+      }
+
+      if(["abilityScores", "pcHelper", "traits"].includes(property)) {
         continue;
       }
 
