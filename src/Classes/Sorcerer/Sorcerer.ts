@@ -122,7 +122,6 @@ export class Sorcerer extends PlayerClass {
 
   level4(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.subclassDriver(pc, "4", params);
   }
@@ -147,7 +146,6 @@ export class Sorcerer extends PlayerClass {
 
   level8(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.subclassDriver(pc, "8", params);
   }
@@ -173,7 +171,6 @@ export class Sorcerer extends PlayerClass {
 
   level12(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.subclassDriver(pc, "12", params);
   }
@@ -198,7 +195,6 @@ export class Sorcerer extends PlayerClass {
 
   level16(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.subclassDriver(pc, "16", params);
   }
@@ -218,7 +214,6 @@ export class Sorcerer extends PlayerClass {
 
   level19(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.subclassDriver(pc, "19", params);
   }
