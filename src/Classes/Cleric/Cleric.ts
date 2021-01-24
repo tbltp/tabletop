@@ -126,7 +126,6 @@ export class Cleric extends PlayerClass {
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     // cantrip
     this.handleClericSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
@@ -163,7 +162,6 @@ export class Cleric extends PlayerClass {
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     // destroy undead
     pc.pcHelper.findScalingTraitByName("Destroy Undead").challengeRating = 1;
     // divine domain
@@ -197,7 +195,6 @@ export class Cleric extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
@@ -215,7 +212,6 @@ export class Cleric extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
@@ -232,7 +228,6 @@ export class Cleric extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {

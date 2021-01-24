@@ -103,7 +103,6 @@ export class Artificer extends PlayerClass {
   }
 
   level4(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
@@ -122,7 +121,6 @@ export class Artificer extends PlayerClass {
   }
 
   level8(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.pushArtificerFeatures(pc, 8);
   }
 
@@ -143,7 +141,6 @@ export class Artificer extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level13(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
@@ -163,7 +160,6 @@ export class Artificer extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level17(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
@@ -177,7 +173,6 @@ export class Artificer extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: ArtificerLevelingParams): void {

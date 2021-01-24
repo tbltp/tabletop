@@ -173,7 +173,6 @@ export class Warlock extends PlayerClass {
 
   level4(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -202,7 +201,6 @@ export class Warlock extends PlayerClass {
 
   level8(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.handleInvocationSelections(pc, params);
   }
 
@@ -235,7 +233,6 @@ export class Warlock extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.handleInvocationSelections(pc, params);
   }
 
@@ -261,7 +258,6 @@ export class Warlock extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.handleInvocationSelections(pc, params);
   }
 
@@ -279,7 +275,6 @@ export class Warlock extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.handleWarlockSpellSelections(pc, params);
     this.handleInvocationSelections(pc, params);
   }
