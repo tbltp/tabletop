@@ -6,6 +6,8 @@ import { StormHerald } from "./StormHerald/StormHerald";
 import { Zealot } from "./Zealot/Zealot";
 import { LevelingParams } from "Classes/PlayerClass";
 import { PlayerCharacter } from "index";
+import { Beast } from "./Beast/Beast";
+
 export class BarbarianSubclass extends Subclass {
 
   constructor(subclassSelection: {subclass: string, options?: string[]}){
@@ -19,6 +21,12 @@ export class BarbarianSubclass extends Subclass {
       "6": Berserker.berserker6,
       "10": Berserker.berserker10,
       "14": Berserker.berserker14,
+    },
+    BEAST: {
+      "3": Beast.beast3,
+      "6": Beast.beast6,
+      "10": Beast.beast10,
+      "14": Beast.beast14,
     },
     ZEALOT: {
       "3": Zealot.zealot3,
