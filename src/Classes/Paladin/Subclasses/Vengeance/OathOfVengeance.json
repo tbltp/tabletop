@@ -1,32 +1,34 @@
 {
   "title": "Oath of Vengeance", 
   "description": "The Oath of Vengeance is a solemn commitment to punish those who have committed a grievous sin. When evil forces slaughter helpless villagers, when an entire people turns against the will of the gods, when a thieves\u2019 guild grows too violent and powerful, when a dragon rampages through the countryside\u2014at times like these, paladins arise and swear an Oath of Vengeance to set right that which has gone wrong. To these paladins\u2014 sometimes called avengers or dark knights\u2014their own purity is not as important as delivering justice.\nTenets of Vengeance: The tenets of the Oath of Vengeance vary by paladin, but all the tenets revolve around punishing wrongdoers by any means necessary. Paladins who uphold these tenets are willing to sacrifice even their own righteousness to mete out justice upon those who do evil, so the paladins are often neutral or lawful neutral in alignment. The core principles of the tenets are brutally simple.\nFight the Greater Evil: Faced with a choice of fighting my sworn foes or combating a lesser evil. I choose the greater evil.\nNo Mercy for the Wicked: Ordinary foes might win my mercy, but my sworn enemies do not.\nBy Any Means Necessary: My qualms can't get in the way of exterminating my foes.\nRestitution: If my foes wreak ruin on the world, it is because I failed to stop them. I must help those harmed by their misdeeds.", 
-  "3": {
-    "ABJURE ENEMY": {
-      "title": "Channel Divinity: Abjure Enemy", 
-      "description": "As an action, you present your holy symbol and speak a prayer of denunciation, using your Channel Divinity. Choose one creature within 60 feet of you that you can see. That creature must make a Wisdom saving throw, unless it is immune to being frightened. Fiends and undead have disadvantage on this saving throw.\nOn a failed save, the creature is frightened for 1 minute or until it takes any damage. While frightened, the creature's speed is O, and it can't benefit from any bonus to its speed.\nOn a successful save, the creature's speed is halved for 1 minute or until the creature takes any damage."
+  "features": {
+    "3": {
+      "ABJURE ENEMY": {
+        "title": "Channel Divinity: Abjure Enemy", 
+        "description": "As an action, you present your holy symbol and speak a prayer of denunciation, using your Channel Divinity. Choose one creature within 60 feet of you that you can see. That creature must make a Wisdom saving throw, unless it is immune to being frightened. Fiends and undead have disadvantage on this saving throw.\nOn a failed save, the creature is frightened for 1 minute or until it takes any damage. While frightened, the creature's speed is O, and it can't benefit from any bonus to its speed.\nOn a successful save, the creature's speed is halved for 1 minute or until the creature takes any damage."
+      }, 
+      "VOW OF ENMITY": {
+        "title": "Channel Divinity: Vow of Enmity", 
+        "description": "As a bonus action, you can utter a vow of enmity against a creature you can see within 10 feet of you, using your Channel Divinity. You gain advantage on attack rolls against the creature for 1 minute or until it drops to 0 hit points or falls unconscious."
+      }
     }, 
-    "VOW OF ENMITY": {
-      "title": "Channel Divinity: Vow of Enmity", 
-      "description": "As a bonus action, you can utter a vow of enmity against a creature you can see within 10 feet of you, using your Channel Divinity. You gain advantage on attack rolls against the creature for 1 minute or until it drops to 0 hit points or falls unconscious."
-    }
-  }, 
-  "7": {
-    "RELENTLESS AVENGER": {
-      "title": "Relentless Avenger", 
-      "description": "By 7th level, your supernatural focus helps you close off a foe's retreat. When you hit a creature with an Opportunity attack, you can move up to half your speed immediately after the attack and as part of the same reaction. This movement doesn\u2019t provoke opportunity attacks."
-    }
-  }, 
-  "15": {
-    "SOUL OF VENGEANCE": {
-      "title": "Soul of Vengeance", 
-      "description": "Starting at 15th level, the authority with which you speak your Vow of Enmity gives you greater power over your foe. When a creature under the effect of your Vow of Enmity makes an attack, you can use your reaction to make a melee weapon attack against that creature if it is within range."
-    }
-  }, 
-  "20": {
-    "AVENGING ANGEL": {
-      "title": "Avenging Angel", 
-      "description": "At 20th level, you can assume the form of an angelic avenger. Using your action, you undergo a transformation. For 1 hour, you gain the following benefits:\nWings sprout from your back and grant you a flying speed of 60 feet.\nYou emanate an aura of menace in a 30-foot radius. The first time any enemy creature enters the aura or starts its turn there during a battle, the creature must succeed on a Wisdom saving throw or become frightened of you for 1 minute or until it takes any damage. Attack rolls against the frightened creature have advantage.\nOnce you use this feature, you can\u2019t use it again until you finish a long rest."
+    "7": {
+      "RELENTLESS AVENGER": {
+        "title": "Relentless Avenger", 
+        "description": "By 7th level, your supernatural focus helps you close off a foe's retreat. When you hit a creature with an Opportunity attack, you can move up to half your speed immediately after the attack and as part of the same reaction. This movement doesn\u2019t provoke opportunity attacks."
+      }
+    }, 
+    "15": {
+      "SOUL OF VENGEANCE": {
+        "title": "Soul of Vengeance", 
+        "description": "Starting at 15th level, the authority with which you speak your Vow of Enmity gives you greater power over your foe. When a creature under the effect of your Vow of Enmity makes an attack, you can use your reaction to make a melee weapon attack against that creature if it is within range."
+      }
+    }, 
+    "20": {
+      "AVENGING ANGEL": {
+        "title": "Avenging Angel", 
+        "description": "At 20th level, you can assume the form of an angelic avenger. Using your action, you undergo a transformation. For 1 hour, you gain the following benefits:\nWings sprout from your back and grant you a flying speed of 60 feet.\nYou emanate an aura of menace in a 30-foot radius. The first time any enemy creature enters the aura or starts its turn there during a battle, the creature must succeed on a Wisdom saving throw or become frightened of you for 1 minute or until it takes any damage. Attack rolls against the frightened creature have advantage.\nOnce you use this feature, you can\u2019t use it again until you finish a long rest."
+      }
     }
   }
 }

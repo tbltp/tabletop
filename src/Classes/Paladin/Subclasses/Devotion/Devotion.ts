@@ -41,7 +41,7 @@ export class Devotion {
         pc.pcHelper.addFeatures(Devotion.getFeature("15", "PURITY OF SPIRIT"))
       }
   
-      static devotion19(pc: PlayerCharacter, params: LevelingParams) {
+      static devotion17(pc: PlayerCharacter, params: LevelingParams) {
         Devotion.addArchetypeSpells(pc, "17");
       }
     
