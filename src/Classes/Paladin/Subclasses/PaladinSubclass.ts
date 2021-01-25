@@ -3,11 +3,12 @@ import { Ancients } from "./Ancients/Ancients";
 import { Devotion } from "./Devotion/Devotion";
 import { Vengeance } from "./Vengeance/Vengeance";
 import { Conquest } from "./Conquest/Conquest";
+import { Redemption } from "./Redemption/Redemption";
 
 export class PaladinSubclass extends Subclass {
 
-  constructor(subclass: string){
-    super(subclass);
+  constructor(subclassSelection: {subclass: string, options?: string[]}){
+    super(subclassSelection);
   }
 
   subclassDictionary = {
@@ -20,6 +21,18 @@ export class PaladinSubclass extends Subclass {
       "15": Devotion.devotion15,
       "17": Devotion.devotion17,
       "20": Devotion.devotion20,
+    },
+    REDEMPTION: {
+      "3": Redemption.redemption3,
+      "5": Redemption.redemption5,
+      "7": Redemption.redemption7,
+      "9": Redemption.redemption9,
+      "13": Redemption.redemption13,
+      "15": Redemption.redemption15,
+      "16": Redemption.upSpirit,
+      "17": Redemption.redemption17,
+      "18": Redemption.upSpirit,
+      "20": Redemption.redemption20
     },
     ANCIENTS: {
       "3": Ancients.ancients3,

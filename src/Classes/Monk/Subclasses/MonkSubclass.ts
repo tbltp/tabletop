@@ -3,10 +3,12 @@ import { OpenHand } from "./OpenHand/OpenHand"
 import { Shadow } from "./Shadow/Shadow"
 import { FourElements } from "./FourElements/FourElements"
 import { DrunkenMaster} from "./DrunkenMaster/DrunkenMaster"
+import { Kensei} from "./Kensei/Kensei"
+import { SunSoul } from "./SunSoul/SunSoul"
 
 export class MonkSubclass extends Subclass {
-  constructor(subclass: string){
-    super(subclass);
+  constructor(subclassSelection: {subclass: string, options?: string[]}){
+    super(subclassSelection);
   }
   
   subclassDictionary = {
@@ -22,6 +24,12 @@ export class MonkSubclass extends Subclass {
       "11": Shadow.shadow11,
       "17": Shadow.shadow17
     },
+    KENSEI : {
+      "3": Kensei.kensei3,
+      "6": Kensei.kensei6,
+      "11": Kensei.kensei11,
+      "17": Kensei.kensei17
+    },
     "FOUR ELEMENTS": {
       "3": FourElements.fourElements3,
       "5": FourElements.fourElements5,
@@ -36,6 +44,12 @@ export class MonkSubclass extends Subclass {
       "6": DrunkenMaster.drunkenMaster6,
       "11": DrunkenMaster.drunkenMaster11,
       "17": DrunkenMaster.drunkenMaster17
+    },
+    "SUN SOUL": {
+      "3": SunSoul.sunSoul3,
+      "6": SunSoul.sunSoul6,
+      "11": SunSoul.sunSoul11,
+      "17": SunSoul.sunSoul17
     }
   }
 }

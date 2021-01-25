@@ -1,10 +1,11 @@
 {
+  "ARTIFICER": "intelligence",
   "BARD": "charisma",
   "CLERIC": "wisdom",
   "DRUID": "wisdom",
   "PALADIN": "charisma",
   "RANGER": "wisdom",
-  "SORCEROR": "charisma",
+  "SORCERER": "charisma",
   "WARLOCK": "charisma",
   "WIZARD": "intelligence"
 }

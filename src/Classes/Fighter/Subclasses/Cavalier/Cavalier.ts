@@ -1,4 +1,4 @@
-import { ResourceTrait, Trait } from "Base/Interfaces";
+import { ResourceTrait, ScalingTrait, Trait } from "Base/Interfaces";
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
 import { LevelingParams, PlayerClass } from "../../../../Classes/PlayerClass";
 import * as CavalierArchetype from "./Cavalier.json"
@@ -10,17 +10,9 @@ export class Cavalier {
     return CavalierArchetype["features"][level][featureName];
   }
 
-  //only need to run this on ability score increases
-  static upWarding(pc:PlayerCharacter) {
-    const wardingManeuver: ResourceTrait = pc.pcHelper.findResourceTraitByName("Warding Maneuver");
-    wardingManeuver.resourceMax.value = pc.abilityScores.constitution.modifier.value;
-    Cavalier.upMark(pc);
-  }
-
   static upMark(pc: PlayerCharacter) {
-    const unwaveringMark: ResourceTrait = pc.pcHelper.findResourceTraitByName("Unwavering Mark");
+    const unwaveringMark: ScalingTrait = pc.pcHelper.findScalingTraitByName("Unwavering Mark");
     unwaveringMark.bonus+=1;
-    unwaveringMark.resourceMax.value = pc.abilityScores.strength.modifier.value;
   }
 
   static cavalier3(pc: PlayerCharacter, params: LevelingParams) {
@@ -32,9 +24,14 @@ export class Cavalier {
     const unwaveringMark: ResourceTrait = {
       title: "Unwavering Mark",
       description: "Number of times you may use Unwavering Mark",
-      bonus: 1,
-      resourceMax: {value: pc.abilityScores.strength.modifier.value}
+      resourceMax: (pc.abilityScores.strength.modifier.value>=1) ? pc.abilityScores.strength.modifier : {value: 1}
     }
+    const unwaveringDmg: ScalingTrait = {
+      title: "Unwavering Mark",
+      description: "Damage bonus for Unwavering Mark",
+      bonus: 1
+    }
+    pc.pcHelper.addScalingTraits(unwaveringDmg);
     pc.pcHelper.addResourceTraits(unwaveringMark);
   }
 
@@ -44,15 +41,15 @@ export class Cavalier {
       title: "Warding Maneuver",
       description: "Number of times you may use Warding Maneuver",
       dice: "1d8",
-      resourceMax: {value: pc.abilityScores.constitution.modifier.value}
+      resourceMax: (pc.abilityScores.constitution.modifier.value>=1) ? pc.abilityScores.constitution.modifier : {value: 1}
     }
     pc.pcHelper.addResourceTraits(wardingManeuver);
   }
 
   static cavalier10(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Cavalier.getFeature("10", "HOLD THE LINE"));
-    PlayerClass.addFightingStyle(pc, params.fightingStyle[0]);  // move add fighting style to PC 
-
+    PlayerClass.addFightingStyle(pc, params.fightingStyle[0]);  // move add fighting style to PC
+    Cavalier.upMark(pc);
   }
 
   static cavalier15(pc: PlayerCharacter, params: LevelingParams) {
@@ -61,5 +58,6 @@ export class Cavalier {
 
   static cavalier18(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Cavalier.getFeature("18", "VIGILANT DEFENDER"));
+    Cavalier.upMark(pc);
   }
 }

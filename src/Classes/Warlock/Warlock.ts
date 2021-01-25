@@ -149,7 +149,7 @@ export class Warlock extends PlayerClass {
       level: 1,
     };
     pc.pcHelper.addResourceTraits(pactMagic);
-    this.subclass = new WarlockSubclass(params.subclassSelection.subclass);
+    this.subclass = new WarlockSubclass(params.subclassSelection);
     this.subclassDriver(pc, "1", params);
 
     this.addSpellcasting(pc, "WARLOCK");
@@ -173,7 +173,6 @@ export class Warlock extends PlayerClass {
 
   level4(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -202,7 +201,6 @@ export class Warlock extends PlayerClass {
 
   level8(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.handleInvocationSelections(pc, params);
   }
 
@@ -235,7 +233,6 @@ export class Warlock extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.handleInvocationSelections(pc, params);
   }
 
@@ -261,7 +258,6 @@ export class Warlock extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.handleInvocationSelections(pc, params);
   }
 
@@ -279,7 +275,6 @@ export class Warlock extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.handleWarlockSpellSelections(pc, params);
     this.handleInvocationSelections(pc, params);
   }
@@ -293,9 +288,13 @@ export class Warlock extends PlayerClass {
     pc: PlayerCharacter,
     params: WarlockLevelingParams
   ) {
-    this.processInvocations(params.invocations.add, pc);
-    if (params.invocations.remove) {
-      this.removeInvocation(params.invocations.remove, pc);
+    
+    if(params.invocations) {
+      this.processInvocations(params.invocations.add, pc);
+      
+      if (params.invocations.remove) {
+        this.removeInvocation(params.invocations.remove, pc);
+      }
     }
   }
 

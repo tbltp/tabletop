@@ -15,11 +15,16 @@ export abstract class Dwarf extends Race {
         traits["DARKVISION"],
         traits["DWARVEN RESILIENCE"],
         traits["STONECUNNING"],
+        traits["DWARVEN COMBAT TRAINING"]
       ], // Racial Traits
       ["Battleaxe", "Handaxe", "Light Hammer", "Warhammer"], // Weapon Proficiencies
       [], // Armor Proficiencies
       [toolProficiency] // Tool Proficiences
     );
+  }
+
+  abilityIncrease(pc: PlayerCharacter) {
+    pc.abilityScores.constitution.update(2);
   }
 
   abilitiesAtLevels = {};

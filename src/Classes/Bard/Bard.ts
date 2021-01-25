@@ -50,9 +50,7 @@ export class Bard extends PlayerClass {
       this.equipmentPack = equipmentPack;
       this.savingThrowProficiencies = ["dexterity", "charisma"];
     }
-  }spellSelections
-
-  // What should happen if a bard switches out a magical secret spell
+  }
 
   abilitiesAtLevels = {
     "1": this.level1,
@@ -131,7 +129,7 @@ export class Bard extends PlayerClass {
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
     // college
-    this.subclass = new BardSubclass(params.subclassSelection.subclass);
+    this.subclass = new BardSubclass(params.subclassSelection);
     this.subclassDriver(pc, "3", params);
     // expertise
     for (let skill of params.proficiencySelection) {
@@ -148,7 +146,6 @@ export class Bard extends PlayerClass {
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
@@ -172,7 +169,6 @@ export class Bard extends PlayerClass {
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
@@ -213,7 +209,6 @@ export class Bard extends PlayerClass {
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
@@ -245,7 +240,6 @@ export class Bard extends PlayerClass {
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
@@ -268,7 +262,6 @@ export class Bard extends PlayerClass {
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
