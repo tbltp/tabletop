@@ -132,7 +132,6 @@ export class Inventory {
     let rations = Gear["RATIONS (1 DAY)"];
     rations.quantity = 5;
 
-    // INCLUDES DISGUISE KIT WHAT DO?
     const disguiseKit = Tools["DISGUISE KIT"];
 
     return {
@@ -237,6 +236,7 @@ export class Inventory {
       pc.abilityScores.dexterity.modifier.value > 2
         ? { value: 2 }
         : pc.abilityScores.dexterity.modifier;
+
     return {
       name: armor.name,
       base: armor.AC.base,
@@ -249,7 +249,7 @@ export class Inventory {
     return {
       name: armor.name,
       base: armor.AC.base,
-      modifier: [armor.AC.modifier],
+      modifier: [{value: 0}],
       bonus: armor.AC.bonus,
     };
   }
@@ -264,9 +264,9 @@ export class Inventory {
     let ability: string;
 
     if (
-      proficiencies.indexOf(weaponType[0]) ||
-      proficiencies.indexOf(weaponType[1]) ||
-      proficiencies.indexOf(weapon.name)
+      proficiencies.has(weaponType[0]) ||
+      proficiencies.has(weaponType[1]) ||
+      proficiencies.has(weapon.name)
     ) {
       proficient = true;
     }

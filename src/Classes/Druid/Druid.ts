@@ -110,14 +110,9 @@ export class Druid extends PlayerClass {
     };
     pc.pcHelper.addResourceTraits(wildShapeRes);
     pc.pcHelper.addScalingTraits(wildShapeScale);
-    
-    // pcHelper.This kinda sucks depending on expansion subclasses :( if they have parameters / subchoices this breaks, but we'll see.
-    if(params.subclassSelection.options){
-      this.subclass = new DruidSubclass(params.subclassSelection.subclass, params.subclassSelection.options[0]);
-    }
-    else{
-      this.subclass = new DruidSubclass(params.subclassSelection.subclass);
-    }
+  
+    this.subclass = new DruidSubclass(params.subclassSelection);
+  
     this.subclassDriver(pc, "2", params);    
     this.pushDruidFeatures(pc, 2);
   }
@@ -133,7 +128,6 @@ export class Druid extends PlayerClass {
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleDruidSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     // wild shape
     const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName(
       "Wild Shape"
@@ -170,7 +164,6 @@ export class Druid extends PlayerClass {
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     // wild shape
     const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName(
       "Wild Shape"
@@ -204,7 +197,6 @@ export class Druid extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "12", params); 
   }
 
@@ -230,7 +222,6 @@ export class Druid extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "16", params); 
   }
 
@@ -247,7 +238,6 @@ export class Druid extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "19", params); 
   }
 

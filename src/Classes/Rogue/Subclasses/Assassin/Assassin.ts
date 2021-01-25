@@ -10,7 +10,7 @@ export class Assassin {
 
     static assassin3(pc: PlayerCharacter, params: LevelingParams) {
         pc.pcHelper.addFeatures(Assassin.getFeature("3", "BONUS PROFICIENCIES"), Assassin.getFeature("3", "ASSASSINATE"));
-        pc.traits.toolProficiencies.push("Poisoner's Kit", "Disguise Kit")
+        pc.traits.toolProficiencies.add("Poisoner's Kit").add("Disguise Kit")
       }
     
       static assassin9(pc: PlayerCharacter, params: LevelingParams) {
@@ -24,5 +24,4 @@ export class Assassin {
       static assassin17(pc: PlayerCharacter, params: LevelingParams) {
         pc.pcHelper.addFeatures(Assassin.getFeature("17", "DEATH STRIKE"));
       }
-    
 }

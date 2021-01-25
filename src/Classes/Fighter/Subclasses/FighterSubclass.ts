@@ -8,8 +8,8 @@ import { Cavalier } from "./Cavalier/Cavalier";
 import { Samurai } from "./Samurai/Samurai";
 
 export class FighterSubclass extends Subclass {
-  constructor(subclass: string){
-    super(subclass);
+  constructor(subclassSelection: {subclass: string, options?: string[]}){
+    super(subclassSelection);
   }
     
   subclassDictionary = {
@@ -54,14 +54,13 @@ export class FighterSubclass extends Subclass {
           "4": Cavalier.upMark,
           "6": Cavalier.upMark,
           "7": Cavalier.cavalier7,
-          "8": Cavalier.upWarding,
+          "8": Cavalier.upMark,
           "10": Cavalier.cavalier10,
-          "12": Cavalier.upWarding,
-          "14": Cavalier.upWarding,
+          "12": Cavalier.upMark,
+          "14": Cavalier.upMark,
           "15": Cavalier.cavalier15,
-          "16": Cavalier.upWarding,
+          "16": Cavalier.upMark,
           "18": Cavalier.cavalier18,
-          "19": Cavalier.upWarding,
           "20": Cavalier.upMark,
         },
         SAMURAI: {

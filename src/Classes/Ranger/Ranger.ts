@@ -112,14 +112,14 @@ export class Ranger extends PlayerClass {
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    this.subclass = new RangerSubclass(params.subclassSelection.subclass);
+    this.subclass = new RangerSubclass(params.subclassSelection);
     this.subclassDriver(pc, "3", params);
     this.pushRangerFeatures(pc, 3);
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.pushRangerFeatures(pc, 4);
+    this.subclassDriver(pc, "4", params);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
@@ -132,6 +132,7 @@ export class Ranger extends PlayerClass {
         resourceMax: { value: 1 },
       });
     }
+    this.subclassDriver(pc, "5", params);
   }
 
   level6(pc: PlayerCharacter, params: RangerLevelingParams): void {
@@ -142,6 +143,7 @@ export class Ranger extends PlayerClass {
       params.favoredTerrain
     );
     this.pushRangerFeatures(pc, 6);
+    this.subclassDriver(pc, "6", params);
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
@@ -150,12 +152,13 @@ export class Ranger extends PlayerClass {
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.pushRangerFeatures(pc, 8);
+    this.subclassDriver(pc, "8", params);
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
+    this.subclassDriver(pc, "9", params);
   }
 
   level10(pc: PlayerCharacter, params: RangerLevelingParams): void {
@@ -163,6 +166,7 @@ export class Ranger extends PlayerClass {
     pc.pcHelper.findFeatureTraitByName("Natural Explorer").choices.push(
       params.favoredTerrain
     );
+    this.subclassDriver(pc, "10", params);
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
@@ -171,11 +175,12 @@ export class Ranger extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "12", params);
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
+    this.subclassDriver(pc, "13", params);
   }
 
   level14(pc: PlayerCharacter, params: RangerLevelingParams): void {
@@ -183,6 +188,7 @@ export class Ranger extends PlayerClass {
       params.favoredEnemy
     );
     this.pushRangerFeatures(pc, 14);
+    this.subclassDriver(pc, "14", params);
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
@@ -191,24 +197,27 @@ export class Ranger extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "16", params);
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
+    this.subclassDriver(pc, "17", params);
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushRangerFeatures(pc, 18);
+    this.subclassDriver(pc, "18", params);
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "19", params);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushRangerFeatures(pc, 20);
+    this.subclassDriver(pc, "20", params);
   }
 }
 
@@ -218,7 +227,7 @@ export class DSRanger extends Ranger {
   }
 }
 
-interface RangerLevelingParams extends LevelingParams {
+export interface RangerLevelingParams extends LevelingParams {
   favoredEnemy?: string;
   favoredTerrain?: string;
 }

@@ -97,26 +97,21 @@ export class Cleric extends PlayerClass {
     this.addSpellcasting(pc, "CLERIC");
 
     // divine domain
-    this.subclass = new ClericSubclass(params.subclassSelection.subclass);
+    this.subclass = new ClericSubclass(params.subclassSelection);
     this.subclassDriver(pc, "1", params);
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
-    // channel divinity
-    // if(!PlayerClass.multiClassCheck(pc, "Channel Divinity")){
-    //   const channelDivinity: ResourceTrait = {
-    //     title: "Channel Divinity",
-    //     description: "Number of times you can use a Channel Divinity ability.",
-    //     resourceMax: { value: 1 },
-    //   };
-    //   pc.pcHelper.addResourceTraits(channelDivinity);
-    // }
-    const channelDivinity: ResourceTrait = {
-      title: "Channel Divinity",
-      description: "Number of times you can use Channel Divinity",
-      resourceMax: {value: 1}
+    // channel divinity multiclass check against paladin
+     if(!PlayerClass.multiClassCheck(pc, "Channel Divinity")){
+       const channelDivinity: ResourceTrait = {
+         title: "Channel Divinity",
+         description: "Number of times you can use a Channel Divinity ability.",
+         resourceMax: { value: 1 },
+       };
+       pc.pcHelper.addResourceTraits(channelDivinity);
     }
-    pc.pcHelper.addResourceTraits(channelDivinity);
+    
     // divine domain
     this.subclassDriver(pc, "2", params);
     this.pushClericFeatures(pc, 2);
@@ -131,7 +126,6 @@ export class Cleric extends PlayerClass {
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     // cantrip
     this.handleClericSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
@@ -168,7 +162,6 @@ export class Cleric extends PlayerClass {
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     // destroy undead
     pc.pcHelper.findScalingTraitByName("Destroy Undead").challengeRating = 1;
     // divine domain
@@ -202,7 +195,6 @@ export class Cleric extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
@@ -220,7 +212,6 @@ export class Cleric extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
@@ -237,7 +228,6 @@ export class Cleric extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {

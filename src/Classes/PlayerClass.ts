@@ -84,19 +84,19 @@ export abstract class PlayerClass {
 
   protected addWeaponProficiencies(pc: PlayerCharacter): void {
     for (let weapon of this.weaponProficiencies) {
-      pc.traits.weaponProficiencies.push(weapon);
+      pc.traits.weaponProficiencies.add(weapon);
     }
   }
 
   protected addArmorProficiencies(pc: PlayerCharacter): void {
     for (let armor of this.armorProficiencies) {
-      pc.traits.armorProficiencies.push(armor);
+      pc.traits.armorProficiencies.add(armor);
     }
   }
 
   protected addToolProficiencies(pc: PlayerCharacter): void {
     for (let tool of this.toolProficiencies) {
-      pc.traits.toolProficiencies.push(tool);
+      pc.traits.toolProficiencies.add(tool);
     }
   }
 
@@ -120,10 +120,13 @@ export abstract class PlayerClass {
   }
 
   protected addArmor(pc: PlayerCharacter): void {
-    for (const armor of this.armor) {
-      pc.inventory.armor.push(Armor[armor]);
+    for (const a of this.armor) {
+      const AC = Inventory.acFromArmorType[Armor[a].armorType](pc, Armor[a])
+      let armor  = Armor[a];
+      armor.AC = AC;
+      pc.inventory.armor.push(armor);
       pc.armorClasses.push(
-        Inventory.acFromArmorType[Armor[armor].armorType](pc, Armor[armor])
+        AC
       );
     }
   }
@@ -186,7 +189,7 @@ export abstract class PlayerClass {
   ) {
 
     let riskTraits = {
-      "Extra Attack": pc.pcHelper.findFeatureTraitByName("Extra Attack") ? true : false,
+      "Extra Attack": pc.pcHelper.findFeatureTraitByName("Extra Attack") === null ? true : false,
       "Unarmored Defense": pc.pcHelper.findFeatureTraitByName("Unarmored Defense") ? true : false
     }
 
@@ -246,7 +249,7 @@ export abstract class PlayerClass {
       modifier: pc.abilityScores[SpellcastingAbility[className]].modifier
     }
 
-    let spellcasting = ["CLERIC", "DRUID", "PALADIN", "WIZARD"].includes(className) ? 
+    let spellcasting = ["ARTIFICER", "CLERIC", "DRUID", "PALADIN", "WIZARD"].includes(className) ? 
     {
       title: className,
       preparedSpells: preparedSpells,
@@ -288,8 +291,8 @@ export abstract class PlayerClass {
   public static multiClassCheck(pc: PlayerCharacter, trait: string){
     
     let riskTraits = {
-      "Channel Divinity": pc.pcHelper.findResourceTraitByName("Channel Divinity") ? true : false,
-      "Unarmored Defense": pc.pcHelper.findFeatureTraitByName("Unarmored Defense") ? true : false
+      "Channel Divinity": pc.pcHelper.findResourceTraitByName("Channel Divinity") === null ? true : false,
+      "Unarmored Defense": pc.pcHelper.findFeatureTraitByName("Unarmored Defense") === null ? true : false
     }
     
     if (riskTraits[trait]) { return false; }
@@ -310,6 +313,7 @@ export interface LevelingParams {
     remove?: string;
   };
   proficiencySelection?: string[];
+  toolProficiency?: string;
   fightingStyle?: string[];
   subclassSelection?: {
     subclass: string; //school/oath/patron/etc
