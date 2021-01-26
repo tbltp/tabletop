@@ -7,6 +7,7 @@ import { Zealot } from "./Zealot/Zealot";
 import { LevelingParams } from "Classes/PlayerClass";
 import { PlayerCharacter } from "index";
 import { Beast } from "./Beast/Beast";
+import { WildMagic } from "./WildMagic/WildMagic";
 
 export class BarbarianSubclass extends Subclass {
 
@@ -39,6 +40,12 @@ export class BarbarianSubclass extends Subclass {
       "16": Zealot.upFury,
       "18": Zealot.upFury,
       "20": Zealot.upFury,
+    },
+    "WILD MAGIC": {
+      "3": WildMagic.wildMagic3,
+      "6": WildMagic.wildMagic6,
+      "10": WildMagic.wildMagic10,
+      "14": WildMagic.wildMagic14,
     },
     "TOTEM WARRIOR": {
       "3": TotemWarrior.totemWarrior3,
