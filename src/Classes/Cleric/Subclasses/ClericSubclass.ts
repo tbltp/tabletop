@@ -9,6 +9,7 @@ import { TempestDomain } from "./Tempest/TempestDomain";
 import { TrickeryDomain } from "./Trickery/TrickeryDomain";
 import { WarDomain } from "./War/WarDomain";
 import { GraveDomain } from "./Grave/GraveDomain";
+import { TwilightDomain } from "./Twilight/TwilightDomain";
 
 export class ClericSubclass extends Subclass {
 
@@ -123,6 +124,28 @@ export class ClericSubclass extends Subclass {
         "8": GraveDomain.grave8,
         "9": GraveDomain.grave9,
         "17": GraveDomain.grave17
+      },
+      TWILIGHT: {
+        "1": TwilightDomain.twilight1,
+        "2": TwilightDomain.twilight2,
+        "3": TwilightDomain.twilight3,
+        "4": TwilightDomain.upSanc,
+        "5": TwilightDomain.twilight5,
+        "6": TwilightDomain.twilight6,
+        "7": TwilightDomain.twilight7,
+        "8": TwilightDomain.twilight8,
+        "9": TwilightDomain.twilight9,
+        "10": TwilightDomain.upSanc,
+        "11": TwilightDomain.upSanc,
+        "12": TwilightDomain.upSanc,
+        "13": TwilightDomain.upSanc,
+        "14": TwilightDomain.upSanc,
+        "15": TwilightDomain.upSanc,
+        "16": TwilightDomain.upSanc,
+        "17": TwilightDomain.twilight17,
+        "18": TwilightDomain.upSanc,
+        "19": TwilightDomain.upSanc,
+        "20": TwilightDomain.upSanc,
       }
   };
 }
