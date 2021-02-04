@@ -1,7 +1,8 @@
 {
     "Barbarian": {
         "1": {
-            "Skill Proficiencies": {
+            "skillProficiencies": {
+                "alias": "Skill Proficiencies",
                 "choose": 2,
                 "from": [
                    "animal handling",
@@ -12,51 +13,56 @@
                    "survival" 
                 ]
             },
-            "Martial Weapon": {
-                "choose": 1,
-                "from": [
-                    "GREATAXE",
-                    "BATTLEAXE",
-                    "FLAIL",
-                    "GLAIVE",
-                    "GREATSWORD",
-                    "HALBERD",
-                    "LANCE",
-                    "LONGSWORD",
-                    "MAUL",
-                    "MORNINGSTAR",
-                    "PIKE",
-                    "RAPIER",
-                    "SCIMITAR",
-                    "SHORTSWORD",
-                    "TRIDENT",
-                    "WAR PICK",
-                    "WARHAMMER",
-                    "WHIP"
-                ]
-            },
-            "Simple Weapon": {
-                "choose": 1,
-                "from": [
-                    ["HANDAXE", "HANDAXE"],
-                    "CLUB",
-                    "CROSSBOW, LIGHT",
-                    "DART",
-                    "DAGGER",
-                    "GREATCLUB",
-                    "JAVELIN",
-                    "LIGHT HAMMER",
-                    "MACE",
-                    "QUARTERSTAFF",
-                    "SHORTBOW",
-                    "SICKLE",
-                    "SLING",
-                    "SPEAR"
-                ]
-            }
+            "weapon": [
+                {
+                    "alias": "Martial Weapon",
+                    "choose": 1,
+                    "from": [
+                        "GREATAXE",
+                        "BATTLEAXE",
+                        "FLAIL",
+                        "GLAIVE",
+                        "GREATSWORD",
+                        "HALBERD",
+                        "LANCE",
+                        "LONGSWORD",
+                        "MAUL",
+                        "MORNINGSTAR",
+                        "PIKE",
+                        "RAPIER",
+                        "SCIMITAR",
+                        "SHORTSWORD",
+                        "TRIDENT",
+                        "WAR PICK",
+                        "WARHAMMER",
+                        "WHIP"
+                    ]
+                },
+                {
+                    "alias": "Simple Weapon",
+                    "choose": 1,
+                    "from": [
+                        ["HANDAXE", "HANDAXE"],
+                        "CLUB",
+                        "CROSSBOW, LIGHT",
+                        "DART",
+                        "DAGGER",
+                        "GREATCLUB",
+                        "JAVELIN",
+                        "LIGHT HAMMER",
+                        "MACE",
+                        "QUARTERSTAFF",
+                        "SHORTBOW",
+                        "SICKLE",
+                        "SLING",
+                        "SPEAR"
+                    ]
+                }
+            ]
         },
         "3": {
-            "Subclass": {
+            "subclass": {
+                "alias": "Primal Path",
                 "choose": 1,
                 "from": [
                     "ANCESTRAL GUARDIAN",
@@ -70,7 +76,8 @@
     },
     "Bard": {
         "1": {
-            "Musical Instrument Proficiencies": {
+            "toolProficiencies": {
+                "alias": "Musical Instrument Proficiencies",
                 "choose": 3,
                 "from": [
                     "Bagpipes",
@@ -85,7 +92,24 @@
                     "Viol"
                 ]
             },
-            "Skill Proficiencies": {
+            "equipment": {
+                "alias": "Musical Instrument",
+                "choose": 1,
+                "from": [
+                    "LUTE",
+                    "BAGPIPES",
+                    "DRUM",
+                    "DULCIMER",
+                    "FLUTE",
+                    "HORN",
+                    "LYRE",
+                    "PAN FLUTE",
+                    "SHAWM",
+                    "VIOL"
+                ]
+            },
+            "skillProficiencies": {
+                "alias": "Skill Proficiencies",
                 "choose": 3,
                 "from": [
                     "acrobatics",
@@ -108,63 +132,57 @@
                     "survival"
                 ]
             },
-            "Weapon": {
-                "choose": 1,
-                "from": [
-                    "RAPIER",
-                    "LONGSWORD",
-                    "CLUB",
-                    "CROSSBOW, LIGHT",
-                    "DART",
-                    "DAGGER",
-                    "GREATCLUB",
-                    "HANDAXE",
-                    "JAVELIN",
-                    "LIGHT HAMMER",
-                    "MACE",
-                    "QUARTERSTAFF",
-                    "SHORTBOW",
-                    "SICKLE",
-                    "SLING",
-                    "SPEAR"
-                ]
-            },
-            "Pack": {
+            "weapon": [
+                {
+                    "alias": "Martial Weapon",
+                    "choose": 1,
+                    "from": [
+                        "RAPIER",
+                        "LONGSWORD",
+                        "CLUB",
+                        "CROSSBOW, LIGHT",
+                        "DART",
+                        "DAGGER",
+                        "GREATCLUB",
+                        "HANDAXE",
+                        "JAVELIN",
+                        "LIGHT HAMMER",
+                        "MACE",
+                        "QUARTERSTAFF",
+                        "SHORTBOW",
+                        "SICKLE",
+                        "SLING",
+                        "SPEAR"
+                    ]
+                }
+            ],
+            "equipmentPack": {
+                "alias": "Pack",
                 "choose": 1,
                 "from": [
                     "DIPLOMAT",
                     "ENTERTAINER"
                 ]
             },
-            "Musical Instrument": {
-                "choose": 1,
-                "from": [
-                    "LUTE",
-                    "BAGPIPES",
-                    "DRUM",
-                    "DULCIMER",
-                    "FLUTE",
-                    "HORN",
-                    "LYRE",
-                    "PAN FLUTE",
-                    "SHAWM",
-                    "VIOL"
-                ]
-            },
-            "Cantrips": {
-                "choose": 2,
-                "method": "getSpellList",
-                "args": [
-                    "Bard",
-                    "0"
-                ]
-            },
-            "Spells": {
-                "choose": 4,
-                "method": "getSpellList",
-                "args": [
-                    "Bard",
-                    "1"
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Cantrips",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Bard", 
+                            "0"
+                        ]
+                    },
+                    {
+                        "alias": "First Level Spells",
+                        "method": "getSpellList",
+                        "args": [
+                            "Bard",
+                            "1"
+                        ]
+                    }
                 ]
             }
         },
@@ -656,7 +674,8 @@
     }, 
     "Fighter": {
         "1": {
-            "Skill Proficiencies": {
+            "skillProficiencies": {
+                "alias": "Skill Proficiencies",
                 "choose": 2,
                 "from": [
                     "acrobatics",
