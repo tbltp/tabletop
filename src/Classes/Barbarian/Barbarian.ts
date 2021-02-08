@@ -84,7 +84,7 @@ export class Barbarian extends PlayerClass {
     pc.pcHelper.addResourceTraits(rage);
     pc.pcHelper.addScalingTraits(rageDamage);
 
-    if(PlayerClass.multiClassCheck(pc, "Unarmored Defense")){
+    if(!PlayerClass.multiClassCheck(pc, "Unarmored Defense")){
       pc.armorClasses.push({
         name: "Unarmored Defense",
         base: 10,

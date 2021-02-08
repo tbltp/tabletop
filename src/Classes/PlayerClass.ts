@@ -189,8 +189,8 @@ export abstract class PlayerClass {
   ) {
 
     let riskTraits = {
-      "Extra Attack": pc.pcHelper.findFeatureTraitByName("Extra Attack") === null ? true : false,
-      "Unarmored Defense": pc.pcHelper.findFeatureTraitByName("Unarmored Defense") ? true : false
+      "Extra Attack": pc.pcHelper.findFeatureTraitByName("Extra Attack") === null ? false : true,
+      "Unarmored Defense": pc.pcHelper.findFeatureTraitByName("Unarmored Defense") === null ? false : true
     }
 
     for (let key in classTraits[level]) {
