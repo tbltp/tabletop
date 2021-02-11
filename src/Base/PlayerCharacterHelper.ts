@@ -12,9 +12,9 @@ export class PlayerCharacterHelper {
     private findTraitByName(traitType: string, name: string): Trait | null {
       //accepts title casing or all caps
         const results = this.pc.traits[traitType].filter(
-          (trait) => trait.title == name || trait.title.toUpperCase() == name
+          (trait) => trait.title === name || trait.title.toUpperCase() === name
         );
-        return results.length == 1 ? results[0] : null;
+        return results.length === 1 ? results[0] : null;
       }
     
       private addTraits(type: string, ...traits: Trait[]) {
@@ -98,6 +98,7 @@ export class PlayerCharacterHelper {
       addSpells(spellList: string[], spellcastingAbility: string, source?: AttachedFeature): void {
         let spells: Spell[] = [];
         for (const selectedSpell of spellList) {
+          //console.log(Spells[selectedSpell] ? `${selectedSpell} +1`: `${selectedSpell} - FIX` )
           spells.push({
             ...Spells[selectedSpell],
             spellcastingAbility: spellcastingAbility,

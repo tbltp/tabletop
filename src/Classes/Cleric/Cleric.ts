@@ -94,6 +94,7 @@ export class Cleric extends PlayerClass {
       [...SpellList["Cleric"][1]],
       SpellcastingAbility["CLERIC"]
     );
+    this.handleClericSpellSelections(pc, params);
     this.addSpellcasting(pc, "CLERIC");
 
     // divine domain

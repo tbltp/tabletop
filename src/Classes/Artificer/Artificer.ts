@@ -39,7 +39,7 @@ export class Artificer extends PlayerClass {
       this.toolProficiencies.push(toolProficiency)
       this.weapons.push(...weapons, "CROSSBOW, LIGHT");
       this.armor.push(...armor);
-      this.toolKits.push(toolProficiency);
+      this.toolKits.push("THIEVES' TOOLS");
       this.equipmentPack = "DUNGEONEER";
       this.savingThrowProficiencies = ["constitution", "intelligence"];
     }
