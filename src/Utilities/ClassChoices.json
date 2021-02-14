@@ -874,7 +874,7 @@
                     "alias": "Primary Weapon",
                     "choose": 1,
                     "method": "getAvailableClericWeapons",
-                    "required": "true"
+                    "required": true
                 },
                 {                
                     "alias": "Secondary Weapon",
@@ -903,7 +903,7 @@
                     "alias": "Cleric Armor",
                     "choose": 1,
                     "method": "getAvailableClericArmor",
-                    "required": "true"
+                    "required": true
                 }
             ],
             "equipmentPack": {
@@ -992,7 +992,8 @@
     },
     "Druid": {
         "1": {
-            "Skill Proficiency": {
+            "skillProficiencies": {
+                "alias": "Skill Proficiencies",
                 "choose": 2,
                 "from": [
                     "arcana",
@@ -1005,62 +1006,77 @@
                     "survival"
                 ]
             },
-            "Simple Weapon": {
-                "choose": 1,
-                "from": [
-                    "SHIELD",
-                    "CROSSBOW, LIGHT",
-                    "CLUB",
-                    "DART",
-                    "DAGGER",
-                    "GREATCLUB",
-                    "HANDAXE",
-                    "JAVELIN",
-                    "LIGHT HAMMER",
-                    "MACE",
-                    "QUARTERSTAFF",
-                    "SHORTBOW",
-                    "SICKLE",
-                    "SLING",
-                    "SPEAR"
-                ]
-            },
-            "Melee Weapon": {
-                "choose": 1,
-                "from": [
-                    "SCIMITAR",
-                    "CLUB",
-                    "DAGGER",
-                    "GREATCLUB",
-                    "HANDAXE",
-                    "JAVELIN",
-                    "LIGHT HAMMER",
-                    "MACE",
-                    "QUARTERSTAFF",
-                    "SICKLE",
-                    "SPEAR"
-                ]
-            },
-            "Druidic Focus": {
+            "weapon": [
+                {
+                    "alias": "Simple Weapon",
+                    "choose": 1,
+                    "from": [
+                        "SHIELD",
+                        "CROSSBOW, LIGHT",
+                        "CLUB",
+                        "DART",
+                        "DAGGER",
+                        "GREATCLUB",
+                        "HANDAXE",
+                        "JAVELIN",
+                        "LIGHT HAMMER",
+                        "MACE",
+                        "QUARTERSTAFF",
+                        "SHORTBOW",
+                        "SICKLE",
+                        "SLING",
+                        "SPEAR"
+                    ],
+                    "required": true
+                },
+                {                
+                    "alias": "Melee Weapon",
+                    "choose": 1,
+                    "from": [
+                        "SCIMITAR",
+                        "CLUB",
+                        "DAGGER",
+                        "GREATCLUB",
+                        "HANDAXE",
+                        "JAVELIN",
+                        "LIGHT HAMMER",
+                        "MACE",
+                        "QUARTERSTAFF",
+                        "SICKLE",
+                        "SPEAR"
+                    ],
+                    "required": true
+                }
+            ],
+            "druidicFocus": {
+                "alias": "Druidic Focus",
                 "choose": 1,
                 "from": [
                     "SPRIG OF MISTLETOE",
                     "TOTEM",
                     "WOODEN STAFF",
                     "YEW WAND"
-                ]
+                ],
+                "required": true
             },
-            "Cantrips": {
-                "choose": 2,
-                "method": "getSpellList",
-                "args": [
-                    "Druid",
-                    "0"
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Cantrip",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Druid", 
+                            "0"
+                        ],
+                        "required": true
+                    }
                 ]
             }
         },
         "2": {
-            "Subclass": {
+            "subclassSelection": {
+                "alias": "Druidic Circle",
                 "choose": 1,
                 "from": [
                     "DREAMS",
@@ -1068,26 +1084,40 @@
                     "MOON",
                     "SHEPHERD",
                     "SPORES"
-                ]
+                ],
+                "option": true,
+                "required": true
             }
         },
         "4": {
-            "Cantrip": {
-                "choose": 1,
-                "method": "getSpellList",
-                "args": [
-                    "Druid",
-                    "0"
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Cantrip",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Druid", 
+                            "0"
+                        ],
+                        "required": true
+                    }
                 ]
             }
         },
         "10": {
-            "Cantrip": {
-                "choose": 1,
-                "method": "getSpellList",
-                "args": [
-                    "Druid",
-                    "0"
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Cantrip",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Druid", 
+                            "0"
+                        ],
+                        "required": true
+                    }
                 ]
             }
         }
