@@ -44,7 +44,7 @@
                     "alias": "Simple Weapon",
                     "choose": 1,
                     "from": [
-                        ["HANDAXE", "HANDAXE"],
+                        "HANDAXE X2",
                         "CLUB",
                         "CROSSBOW, LIGHT",
                         "DART",
@@ -901,7 +901,7 @@
             ],
             "armor": [
                 {
-                    "alias": "Cleric Armor",
+                    "alias": "Armor",
                     "choose": 1,
                     "method": "getAvailableClericArmor",
                     "required": true
@@ -1143,15 +1143,9 @@
             },
             "armor": [
                 {
-                    "alias": "Cleric Armor",
+                    "alias": "Armor",
                     "choose": 1,
-                    "from": [
-                        "CHAIN MAIL",
-                        [
-                            "LEATHER ARMOR",
-                            "LONGBOW"
-                        ]
-                    ],
+                    "method": "getAvailableFighterArmor",
                     "required": true
                 }
             ],
@@ -1212,7 +1206,7 @@
                     "choose": 1,
                     "from": [
                         "CROSSBOW, LIGHT",
-                        ["HANDAXE", "HANDAXE"]
+                        "HANDAXE X2"
                     ],
                     "required": true
                 }
@@ -1424,13 +1418,7 @@
                     "alias": "Simple Weapon",
                     "choose": 1,
                     "from": [
-                        [                    
-                            "JAVELIN",
-                            "JAVELIN",
-                            "JAVELIN",
-                            "JAVELIN",
-                            "JAVELIN"
-                        ],
+                        "JAVELIN X5",
                         "CLUB",
                         "CROSSBOW, LIGHT",
                         "DART",
@@ -1488,11 +1476,164 @@
                 "from": [
                     "ANCIENTS",
                     "DEVOTION",
+                    "REDEMPTION",
                     "VENGEANCE"
                 ],
                 "option": false,
                 "required": true
             }
         }
+    },
+    "Ranger": {
+        "1": {
+            "skillProficiencies": {
+                "alias": "Skill Proficiencies",
+                "choose": 3,
+                "from": [
+                    "athletics",
+                    "animal handling",
+                    "insight",
+                    "investigation",
+                    "nature",
+                    "perception",
+                    "stealth",
+                    "survival"
+                ],
+                "required": true
+            },   
+            "armor": [
+                {
+                    "alias": "Armor",
+                    "choose": 1,
+                    "from": [
+                        "SCALE MAIL",
+                        "LEATHER ARMOR"
+                    ],
+                    "required": true
+                }
+            ],
+            "weapons": [
+                {
+                    "alias": "Melee Weapons",
+                    "choose": 2,
+                    "restrict": {
+                        "SHORTSWORD X2": 1
+                    },
+                    "from": [
+                        "SHORTSWORD X2",
+                        "CLUB",
+                        "DAGGER",
+                        "GREATCLUB",
+                        "HANDAXE",
+                        "JAVELIN",
+                        "LIGHT HAMMER",
+                        "MACE",
+                        "QUARTERSTAFF",
+                        "SICKLE",
+                        "SPEAR"
+                    ]
+                }
+            ],
+            "equipmentPack": {
+                "alias": "Pack",
+                "choose": 1,
+                "from": [
+                    "DUNGEONEER",
+                    "EXPLORER"
+                ],
+                "required": true
+            },
+            "favoredEnemy": {
+                "alias": "Favored Enemy",
+                "choose": 1,
+                "custom": true,
+                "required": true
+            },
+            "favoredTerrain": {
+                "alias": "Favored Terrain",
+                "choose": 1,
+                "custom": true,
+                "required": true
+            }
+        },
+        "2": {
+            "fightingStyle": {
+                "alias": "Fighting Style",
+                "choose": 1,
+                "from": [
+                    "ARCHERY",
+                    "DEFENSE",
+                    "DUELING",
+                    "TWO WEAPON FIGHTING"
+                ]
+            },
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spells (Up to Level 1)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Ranger",
+                            "1"
+                        ],
+                        "required": true
+                    }
+                ]
+            }
+        },
+        "3": {
+            "subclassSelection": {
+                "alias": "Ranger Archetype",
+                "choose": 1,
+                "from": [
+                    "BEASTMASTER",
+                    "GLOOMSTALKER",
+                    "HORIZONWALKER",
+                    "HUNTER",
+                    "MONSTERSLAYER"
+                ],
+                "option": true,
+                "required": true
+            },
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 1)",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Ranger",
+                            "1"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getSpellList",
+                        "args": [
+                            "Ranger",
+                            "1"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        
     }
 }
