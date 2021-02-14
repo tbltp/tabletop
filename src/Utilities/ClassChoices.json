@@ -98,7 +98,7 @@
                 ],
                 "required": true
             },
-            "equipment": {
+            "instrument": {
                 "alias": "Musical Instrument",
                 "choose": 1,
                 "from": [
@@ -867,7 +867,8 @@
                     "medicine",
                     "persuasion",
                     "religion"
-                ]
+                ],
+                "required": true
             },
             "weapon": [
                 {
@@ -1004,7 +1005,8 @@
                     "perception",
                     "religion",
                     "survival"
-                ]
+                ],
+                "required": true
             },
             "weapon": [
                 {
@@ -1124,6 +1126,22 @@
     }, 
     "Fighter": {
         "1": {
+            "skillProficiencies": {
+                "alias": "Skill Proficiencies",
+                "choose": 2,
+                "from": [
+                    "arcana",
+                    "animal handling",
+                    "insight",
+                    "medicine",
+                    "nature",
+                    "perception",
+                    "religion",
+                    "survival"
+                ],
+                "required": true
+            },
+
             "skillProficiencies": {
                 "alias": "Skill Proficiencies",
                 "choose": 2,
