@@ -65,20 +65,17 @@
         },
         "3": {
             "subclassSelection": {
-
-                "subclass": {
-                    "alias": "Primal Path",
-                    "choose": 1,
-                    "from": [
-                        "ANCESTRAL GUARDIAN",
-                        "BERSERKER",
-                        "TOTEM WARRIOR",
-                        "STORM HERALD",
-                        "ZEALOT"
-                    ],
-                    "option": true,
-                    "required": true
-                }
+                "alias": "Primal Path",
+                "choose": 1,
+                "from": [
+                    "ANCESTRAL GUARDIAN",
+                    "BERSERKER",
+                    "TOTEM WARRIOR",
+                    "STORM HERALD",
+                    "ZEALOT"
+                ],
+                "option": true,
+                "required": true
             }
         }
     },
@@ -190,7 +187,7 @@
                         "required": true
                     },
                     {
-                        "alias": "First Level Spells",
+                        "alias": "New Spells (Up to Level 1)",
                         "choose": 4,
                         "method": "getSpellList",
                         "args": [
@@ -242,7 +239,7 @@
             }
         },
         "3": {
-            "subclass": {
+            "subclassSelection": {
                 "alias": "Bard College",
                 "choose": 1,
                 "from": [
@@ -861,7 +858,8 @@
     },
     "Cleric": {
         "1": {
-            "Skill Proficiencies": {
+            "skillProficiencies": {
+                "alias": "Skill Proficiencies",
                 "choose": 2,
                 "from": [
                     "history",
@@ -871,49 +869,64 @@
                     "religion"
                 ]
             },
-            "Cleric Weapon": {
-                "choose": 1,
-                "method": "getAvailableClericWeapons"
-            },
-            "Armor": {
-                "choose": 1,
-                "method": "getAvailableClericArmor"
-            },
-            "Simple Weapon": {
-                "choose": 1,
-                "from": [
-                    "CROSSBOW, LIGHT",
-                    "CLUB",
-                    "DART",
-                    "DAGGER",
-                    "GREATCLUB",
-                    "HANDAXE",
-                    "JAVELIN",
-                    "LIGHT HAMMER",
-                    "MACE",
-                    "QUARTERSTAFF",
-                    "SHORTBOW",
-                    "SICKLE",
-                    "SLING",
-                    "SPEAR"
-                ]
-            },
-            "Pack": {
+            "weapon": [
+                {
+                    "alias": "Primary Weapon",
+                    "choose": 1,
+                    "method": "getAvailableClericWeapons",
+                    "required": "true"
+                },
+                {                
+                    "alias": "Secondary Weapon",
+                    "choose": 1,
+                    "from": [
+                        "CROSSBOW, LIGHT",
+                        "CLUB",
+                        "DART",
+                        "DAGGER",
+                        "GREATCLUB",
+                        "HANDAXE",
+                        "JAVELIN",
+                        "LIGHT HAMMER",
+                        "MACE",
+                        "QUARTERSTAFF",
+                        "SHORTBOW",
+                        "SICKLE",
+                        "SLING",
+                        "SPEAR"
+                    ],
+                    "required": true
+                }
+            ],
+            "armor": [
+                {
+                    "alias": "Cleric Armor",
+                    "choose": 1,
+                    "method": "getAvailableClericArmor",
+                    "required": "true"
+                }
+            ],
+            "equipmentPack": {
+                "alias": "Pack",
                 "choose": 1,
                 "from": [
                     "PRIEST",
                     "EXPLORER"
-                ]
+                ],
+                "required": true
             },
-            "Holy Symbol": {
+            "holySymbol": {
+                "alias": "Holy Symbol",
                 "choose": 1,
                 "from": [
                     "AMULET",
                     "EMBLEM",
                     "RELIQUARY"
-                ] 
+                ],
+                "required": true
             },
-            "Subclass": {
+            "subclassSelection": {
+                "alias": "Cleric Domain",
                 "choose": 1,
                 "from": [
                     "FORGE",
@@ -925,34 +938,54 @@
                     "TEMPEST",
                     "TRICKERY",
                     "WAR"
-                ]
+                ],
+                "option": true,
+                "required": true
             },
-            "Cantrips": {
-                "choose": 3,
-                "method": "getSpellList",
-                "args": [
-                    "Cleric",
-                    "0"
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Cantrips",
+                        "choose": 3,
+                        "method": "getSpellList",
+                        "args": [
+                            "Cleric", 
+                            "0"
+                        ],
+                        "required": true
+                    }
                 ]
             }
         },
         "4": {
-            "Cantrip": {
-                "choose": 1,
-                "method": "getSpellList",
-                "args": [
-                    "Cleric",
-                    "0"
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Cantrip",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Cleric", 
+                            "0"
+                        ],
+                        "required": true
+                    }
                 ]
             }
         },
         "10": {
-            "Cantrip": {
-                "choose": 1,
-                "method": "getSpellList",
-                "args": [
-                    "Cleric",
-                    "0"
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Cantrip",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Cleric", 
+                            "0"
+                        ],
+                        "required": true
+                    }
                 ]
             }
         }
@@ -1370,13 +1403,18 @@
             }
         },
         "3": {
-            "Subclass": {
+            "subclassSelection": {
+                "alias": "Primal Path",
                 "choose": 1,
                 "from": [
-                    "ANCIENTS",
-                    "DEVOTION",
-                    "VENGEANCE"
-                ]
+                    "ANCESTRAL GUARDIAN",
+                    "BERSERKER",
+                    "TOTEM WARRIOR",
+                    "STORM HERALD",
+                    "ZEALOT"
+                ],
+                "option": true,
+                "required": true
             }
         }
     }
