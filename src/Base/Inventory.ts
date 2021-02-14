@@ -236,6 +236,7 @@ export class Inventory {
       pc.abilityScores.dexterity.modifier.value > 2
         ? { value: 2 }
         : pc.abilityScores.dexterity.modifier;
+
     return {
       name: armor.name,
       base: armor.AC.base,
@@ -248,7 +249,7 @@ export class Inventory {
     return {
       name: armor.name,
       base: armor.AC.base,
-      modifier: [armor.AC.modifier],
+      modifier: [{value: 0}],
       bonus: armor.AC.bonus,
     };
   }

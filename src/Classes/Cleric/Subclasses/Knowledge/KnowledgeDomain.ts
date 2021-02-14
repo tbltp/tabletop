@@ -55,7 +55,7 @@ export class KnowledgeDomain {
     pc.pcHelper.addFeatures(
         KnowledgeDomain.getFeature(
         "6",
-        "CHANNEL DIVINITY: READ THOUGHTS"
+        "READ THOUGHTS"
       )
     );
   }

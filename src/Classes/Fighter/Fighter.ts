@@ -43,7 +43,7 @@ export class Fighter extends PlayerClass {
     if(!multiclass) {
       this.armorProficiencies.push( "Heavy");
       this.skillProficiencies = skillProficiencies;
-      this.weaponProficiencies = weapons;
+      this.weapons = weapons;
       this.armor = armor;
       this.equipmentPack = equipmentPack;
       this.savingThrowProficiencies = ["strength", "constitution"];
