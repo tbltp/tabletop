@@ -1355,7 +1355,8 @@
     }, 
     "Paladin": {
         "1": {
-            "Skill Proficiencies": {
+            "skillProficiencies": {
+                "alias": "Skill Proficiencies",
                 "choose": 2,
                 "from": [
                     "athletics",
@@ -1364,119 +1365,132 @@
                     "medicine",
                     "persuasion",
                     "religion"
-                ]
+                ],
+                "required": true
             },
-            "First Martial Weapon": {
-                "choose": 1,
-                "from": [
-                    "GREATAXE",
-                    "BATTLEAXE",
-                    "FLAIL",
-                    "GLAIVE",
-                    "GREATSWORD",
-                    "HALBERD",
-                    "LANCE",
-                    "LONGSWORD",
-                    "MAUL",
-                    "MORNINGSTAR",
-                    "PIKE",
-                    "RAPIER",
-                    "SCIMITAR",
-                    "SHORTSWORD",
-                    "TRIDENT",
-                    "WAR PICK",
-                    "WARHAMMER",
-                    "WHIP"
-                ]
-            },
-            "Second Martial Weapon": {
-                "choose": 1,
-                "from": [
-                    "SHIELD",
-                    "GREATAXE",
-                    "BATTLEAXE",
-                    "FLAIL",
-                    "GLAIVE",
-                    "GREATSWORD",
-                    "HALBERD",
-                    "LANCE",
-                    "LONGSWORD",
-                    "MAUL",
-                    "MORNINGSTAR",
-                    "PIKE",
-                    "RAPIER",
-                    "SCIMITAR",
-                    "SHORTSWORD",
-                    "TRIDENT",
-                    "WAR PICK",
-                    "WARHAMMER",
-                    "WHIP"
-                ]
-            },
-            "Simple Weapon": {
-                "choose": 1,
-                "from": [
-                    [                    
-                        "JAVELIN",
-                        "JAVELIN",
-                        "JAVELIN",
-                        "JAVELIN",
-                        "JAVELIN"
+            "weapons": [
+                {
+                    "alias": "First Martial Weapon",
+                    "choose": 1,
+                    "from": [
+                        "GREATAXE",
+                        "BATTLEAXE",
+                        "FLAIL",
+                        "GLAIVE",
+                        "GREATSWORD",
+                        "HALBERD",
+                        "LANCE",
+                        "LONGSWORD",
+                        "MAUL",
+                        "MORNINGSTAR",
+                        "PIKE",
+                        "RAPIER",
+                        "SCIMITAR",
+                        "SHORTSWORD",
+                        "TRIDENT",
+                        "WAR PICK",
+                        "WARHAMMER",
+                        "WHIP"
                     ],
-                    "CLUB",
-                    "CROSSBOW, LIGHT",
-                    "DART",
-                    "DAGGER",
-                    "GREATCLUB",
-                    "HANDAXE",
-                    "LIGHT HAMMER",
-                    "MACE",
-                    "QUARTERSTAFF",
-                    "SHORTBOW",
-                    "SICKLE",
-                    "SLING",
-                    "SPEAR"
-                ]
-            },
-            "Pack": {
+                    "required": true                    
+                },
+                {
+                    "alias": "Second Martial Weapon",
+                    "choose": 1,
+                    "from": [
+                        "SHIELD",
+                        "GREATAXE",
+                        "BATTLEAXE",
+                        "FLAIL",
+                        "GLAIVE",
+                        "GREATSWORD",
+                        "HALBERD",
+                        "LANCE",
+                        "LONGSWORD",
+                        "MAUL",
+                        "MORNINGSTAR",
+                        "PIKE",
+                        "RAPIER",
+                        "SCIMITAR",
+                        "SHORTSWORD",
+                        "TRIDENT",
+                        "WAR PICK",
+                        "WARHAMMER",
+                        "WHIP"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Simple Weapon",
+                    "choose": 1,
+                    "from": [
+                        [                    
+                            "JAVELIN",
+                            "JAVELIN",
+                            "JAVELIN",
+                            "JAVELIN",
+                            "JAVELIN"
+                        ],
+                        "CLUB",
+                        "CROSSBOW, LIGHT",
+                        "DART",
+                        "DAGGER",
+                        "GREATCLUB",
+                        "HANDAXE",
+                        "LIGHT HAMMER",
+                        "MACE",
+                        "QUARTERSTAFF",
+                        "SHORTBOW",
+                        "SICKLE",
+                        "SLING",
+                        "SPEAR"
+                    ],
+                    "required": true
+                }
+            ],
+            "equipmentPack": {
+                "alias": "Pack",
                 "choose": 1,
                 "from": [
                     "PRIEST",
                     "EXPLORER"
-                ]
+                ],
+                "required": true
             },
-            "Holy Symbol": {
+            "holySymbol": {
+                "alias": "Holy Symbol",
                 "choose": 1,
                 "from": [
                     "AMULET",
                     "EMBLEM",
                     "RELIQUARY"
-                ] 
+                ],
+                "required": true
             }
         },
         "2": {
-            "Fighting Style": {
+            "fightingStyle": {
+                "alias": "Fighting Style",
                 "choose": 1,
                 "from": [
                     "DEFENSE",
                     "DUELING",
                     "GREAT WEAPON FIGHTING",
                     "PROTECTION"
-                ]
+                ],
+                "required": true
             }
         },
         "3": {
             "subclassSelection": {
-                "alias": "Primal Path",
+                "alias": "Paladin Oath",
                 "choose": 1,
                 "from": [
-                    "ANCESTRAL GUARDIAN",
-                    "BERSERKER",
-                    "TOTEM WARRIOR",
-                    "STORM HERALD",
-                    "ZEALOT"
+                    "ANCIENTS",
+                    "DEVOTION",
+                    "VENGEANCE"
                 ],
-                "option": true,
+                "option": false,
                 "required": true
             }
         }
