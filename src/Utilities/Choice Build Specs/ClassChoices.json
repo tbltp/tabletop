@@ -1961,7 +1961,7 @@
                     "athletics",
                     "deception",
                     "insight",
-                    "intimadation",
+                    "intimidation",
                     "investigation",
                     "perception",
                     "performance",
@@ -2036,6 +2036,632 @@
                     "Rogue"
                 ],
                 "required": true
+            }
+        }
+    },
+    "Sorceror": {
+        "1": {
+            "skillProficiencies": {
+                "alias": "Skill Proficiencies",
+                "choose": 2,
+                "from": [
+                    "arcana",
+                    "deception",
+                    "insight",
+                    "intimidation",
+                    "persuasion",
+                    "religion"
+                ],
+                "required": true
+            },
+            "weapons": [
+                {
+                    "alias": "Primary Weapon",
+                    "choose": 1,
+                    "from": [
+                        "CROSSBOW, LIGHT",
+                        "CLUB",
+                        "DAGGER",
+                        "GREATCLUB",
+                        "HANDAXE",
+                        "JAVELIN",
+                        "LIGHT HAMMER",
+                        "MACE",
+                        "QUARTERSTAFF",
+                        "SICKLE",
+                        "SPEAR",
+                        "DART",
+                        "SHORTBOW",
+                        "SLING"
+                    ],
+                    "required": true
+                }
+            ],
+            "arcaneFocus": {
+                "alias": "Arcane Focus",
+                "choose": 1,
+                "from": [
+                    "COMPONENT POUCH",
+                    "CRYSTAL",
+                    "ORB",
+                    "ROD",
+                    "STAFF",
+                    "WAND"
+                ],
+                "required": true
+            },
+            "equipmentPack": {
+                "alias": "Pack",
+                "choose": 1,
+                "from": [
+                    "DUNGEONEER",
+                    "EXPLORER"
+                ],
+                "required": true
+            },
+            "subclassSelection": {
+                "alias": "Sorcerous Origin",
+                "choose": 1,
+                "from": [
+                    "DIVINE SOUL",
+                    "DRACONIC ANCESTRY",
+                    "SHADOW",
+                    "STORM SORCERY",
+                    "WILD MAGIC"
+                ],
+                "option": true,
+                "required": true
+            },
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Cantrips",
+                        "choose": 4,
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror", 
+                            "0"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "New Spells (Up to Level 1)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Bard",
+                            "1"
+                        ],
+                        "required": true
+                    }
+                ]
+            }
+        },
+        "2": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 1)",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "1"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "1"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }   
+        },
+        "3": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 2)",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "2"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "2"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "4": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Cantrip",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "0"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "New Spell (Up to Level 2)",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "2"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "2"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "5": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 3)",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "3"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "3"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        }, 
+        "6": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 3)",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "3"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "3"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "7": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 4)",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "4"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "4"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "8": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 4)",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "4"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "4"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "9": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 5)",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "5"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "5"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "10": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Cantrips",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror", 
+                            "0"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "New Spell (Up to Level 5)",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "5"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "5"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "11": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 6)",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "6"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "6"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "13": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 7)",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "7"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "7"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "15": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 8)",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "8"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "8"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "17": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 9)",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "9"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getSpellList",
+                        "args": [
+                            "Sorceror",
+                            "9"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
             }
         }
     }
