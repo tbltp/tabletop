@@ -1258,7 +1258,8 @@
     },
     "Monk": {
         "1": {
-            "Tool Proficiency": {
+            "toolProficiencies": {
+                "alias": "Tool Proficiency",
                 "choose": 1, 
                 "from": [
                     "Alchemist's supplies",
@@ -1288,9 +1289,10 @@
                     "Pan Flute",
                     "Shawm",
                     "Viol"
-                ]
+                ]                
             },
-            "Skill Proficiency": {
+            "skillProficiencies": {
+                "alias": "Skill Proficiencies",
                 "choose": 2,
                 "from": [
                     "acrobatics",
@@ -1299,45 +1301,55 @@
                     "insight",
                     "religion",
                     "stealth"
-                ]
+                ],
+                "required": true
             },
-            "Weapon": {
-                "choose": 1,
-                "from": [
-                    "SHORTSWORD",
-                    "CROSSBOW, LIGHT",
-                    "CLUB",
-                    "DART",
-                    "DAGGER",
-                    "GREATCLUB",
-                    "HANDAXE",
-                    "JAVELIN",
-                    "LIGHT HAMMER",
-                    "MACE",
-                    "QUARTERSTAFF",
-                    "SHORTBOW",
-                    "SICKLE",
-                    "SLING",
-                    "SPEAR"
-                ]
-            },
-            "Pack": {
+            "weapons": [
+                {
+                    "alias": "Weapon",
+                    "choose": 1,
+                    "from": [
+                        "SHORTSWORD",
+                        "CROSSBOW, LIGHT",
+                        "CLUB",
+                        "DART",
+                        "DAGGER",
+                        "GREATCLUB",
+                        "HANDAXE",
+                        "JAVELIN",
+                        "LIGHT HAMMER",
+                        "MACE",
+                        "QUARTERSTAFF",
+                        "SHORTBOW",
+                        "SICKLE",
+                        "SLING",
+                        "SPEAR"
+                    ],
+                    "required": true
+                }
+            ],
+            "equipmentPack": {
+                "alias": "Pack",
                 "choose": 1, 
                 "from": [
                     "DUNGEONEER",
                     "EXPLORER"
-                ]
+                ],
+                "require": true
             }
         },
         "3": {
-            "Subclass": {
+            "subclassSelection": {
+                "alias": "Monastic Tradition",
                 "choose": 1,
                 "from": [
                     "DRUNKEN MASTER",
                     "FOUR ELEMENTS",
                     "OPEN HAND", 
                     "SHADOW"
-                ]
+                ],
+                "option": true,
+                "required": true
             }
         }
     }, 
