@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, NewCharacterParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import * as WizardClassTraits from './Wizard.json';
@@ -8,10 +8,7 @@ export class Wizard extends PlayerClass {
   constructor(
     multiclass: boolean,
     params: WizardLevelingParams,
-    skillProficiencies?: string[],
-    weapons?: string[],
-    equipmentPack?: string,
-    arcaneFocus?: string
+    initParams?: NewCharacterParams
   ) {
     super(
       "Wizard",
@@ -30,7 +27,7 @@ export class Wizard extends PlayerClass {
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons, equipmentPack, arcaneFocus);
+    this.characterStart(multiclass, initParams.skillProficiencies, initParams.weapons, initParams.equipmentPack, initParams.arcaneFocus);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];

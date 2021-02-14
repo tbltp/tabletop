@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, NewCharacterParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ResourceTrait, ScalingTrait } from "../../Base/Interfaces";
 import { BardSubclass } from "./Subclasses/BardSubclass";
@@ -9,20 +9,16 @@ import { SpellSlotFactory } from "../SpellSlotFactory";
 export class Bard extends PlayerClass {
   constructor(
     multiclass: boolean,
-    skillProficiencies: string[],
-    instrumentProficiencies: string[],
     bardParams: LevelingParams,
-    weapons?: string[],
-    instrument?: string,
-    equipmentPack?: string,
+    initParams?: NewCharacterParams
   ) {
     super(
       "Bard",
       [],
-      skillProficiencies,
+      initParams.skillProficiencies,
       [],
       ["Light"],
-      instrumentProficiencies,
+      initParams.toolProficiencies,
       [],
       [],
       [],
@@ -33,7 +29,7 @@ export class Bard extends PlayerClass {
       []
     );
 
-    this.characterStart(multiclass, weapons, instrument, equipmentPack);
+    this.characterStart(multiclass, initParams.weapons, initParams.instrument, initParams.equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -276,6 +272,6 @@ export interface BardLevelingParams extends LevelingParams {
 
 export class DSBard extends Bard {
   constructor(){
-    super(true, [], [], {isNoInput: true});
+    super(true, {isNoInput: true});
   }
 }

@@ -1,11 +1,14 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, NewCharacterParams } from "../PlayerClass";
 import { ResourceTrait, Trait, ScalingTrait } from "../../Base/Interfaces";
 import * as BarbarianClassTraits from "./Barbarian.json"
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { BarbarianSubclass } from "./Subclasses/BarbarianSubclass";
 
 export class Barbarian extends PlayerClass {
-  constructor(multiclass: boolean, skillProficiencies?: string[], weapons?: string[]) {
+  constructor(
+    multiclass: boolean,
+    initParams?: NewCharacterParams
+  ) {
     super(
       "Barbarian",
       [],
@@ -23,7 +26,7 @@ export class Barbarian extends PlayerClass {
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons);
+    this.characterStart(multiclass, initParams.skillProficiencies, initParams.weapons);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];

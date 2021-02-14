@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, NewCharacterParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ResourceTrait } from "../../Base/Interfaces";
 import * as SpellList from "../../../Assets/SpellList.json";
@@ -10,16 +10,14 @@ import { SpellSlotFactory } from "../SpellSlotFactory";
 export class Ranger extends PlayerClass {
   constructor(
     multiclass: boolean,
-    skillProficiencies: string[],
     rangerParams: RangerLevelingParams,
-    weapons?: string[],
-    armor?: string[],
-    equipmentPack?: string,
+    initParams?: NewCharacterParams
+    
   ) {
     super(
       "Ranger",
       [],
-      skillProficiencies,
+      initParams.skillProficiencies,
       ["Simple", "Martial"],
       ["Light", "Medium", "Shield"],
       [],
@@ -33,7 +31,7 @@ export class Ranger extends PlayerClass {
       []
     );
 
-    this.characterStart(multiclass, weapons, armor, equipmentPack);
+    this.characterStart(multiclass, initParams.weapons, initParams.armor, initParams.equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -223,7 +221,7 @@ export class Ranger extends PlayerClass {
 
 export class DSRanger extends Ranger {
   constructor(){
-    super(true, [], {isNoInput: true});
+    super(true, {isNoInput: true});
   }
 }
 

@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, NewCharacterParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import * as SpellList from "../../../Assets/SpellList.json";
@@ -12,10 +12,7 @@ export class Paladin extends PlayerClass {
   constructor(
     multiclass: boolean,
     params: LevelingParams,
-    skillProficiencies?: string[],    
-    weapons?: string[],
-    armor?: string[],
-    equipmentPack?: string
+    initParams?: NewCharacterParams
   ) {
     super(
       "Paladin",
@@ -34,7 +31,7 @@ export class Paladin extends PlayerClass {
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons, armor, equipmentPack);
+    this.characterStart(multiclass, initParams.skillProficiencies, initParams.weapons, initParams.armor, initParams.equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];

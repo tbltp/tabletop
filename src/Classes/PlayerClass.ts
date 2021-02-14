@@ -321,3 +321,15 @@ export interface LevelingParams {
   };
   featChoice?: Feat;
 }
+
+export interface NewCharacterParams {
+  skillProficiencies?: string[]; 
+  toolProficiencies?: string[];
+  weapons?: string[];
+  armor?: string[];
+  equipmentPack?: string;
+  instrument?: string;
+  holySymbol?: string;
+  arcaneFocus?: string;
+  druidicFocus?: string;
+}

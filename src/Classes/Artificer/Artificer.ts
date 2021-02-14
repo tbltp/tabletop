@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, NewCharacterParams } from "../PlayerClass";
 import { ResourceTrait, Trait, ScalingTrait } from "../../Base/Interfaces";
 import * as ArtificerClassTraits from "./Artificer.json"
 import * as Infusions from "./Infusions.json"
@@ -7,7 +7,11 @@ import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ArtificerSubclass } from "./Subclasses/ArtificerSubclass";
 
 export class Artificer extends PlayerClass {
-  constructor(multiclass: boolean, artificerParams: ArtificerLevelingParams, skillProficiencies?: string[], toolProficiency?: string, weapons?: string[], armor?: string[]) {
+  constructor(
+    multiclass: boolean, 
+    artificerParams: ArtificerLevelingParams, 
+    initParams?: NewCharacterParams
+  ) {
     super(
       "Artificer",
       [],
@@ -25,7 +29,7 @@ export class Artificer extends PlayerClass {
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, toolProficiency, weapons, armor);
+    this.characterStart(multiclass, initParams.skillProficiencies, initParams.toolProficiencies, initParams.weapons, initParams.armor);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -33,10 +37,10 @@ export class Artificer extends PlayerClass {
     }
   }
 
-  characterStart(multiclass: boolean, skillProficiencies: string[], toolProficiency: string, weapons: string[], armor: string[]){
+  characterStart(multiclass: boolean, skillProficiencies: string[], toolProficiencies: string[], weapons: string[], armor: string[]){
     if(!multiclass){
       this.skillProficiencies.push(...skillProficiencies)
-      this.toolProficiencies.push(toolProficiency)
+      this.toolProficiencies.push(...toolProficiencies)
       this.weapons.push(...weapons, "CROSSBOW, LIGHT");
       this.armor.push(...armor);
       this.toolKits.push("THIEVES' TOOLS");

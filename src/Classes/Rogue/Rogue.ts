@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, NewCharacterParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { Trait } from "../../Base/Interfaces";
 import * as SpellList from "../../../Assets/SpellList.json";
@@ -8,15 +8,13 @@ import { RogueSubclass } from "./Subclasses/RogueSubclass";
 export class Rogue extends PlayerClass {
   constructor(
     multiclass: boolean,
-    skillProficiencies: string[],
     params: LevelingParams,
-    weapons?: string[],
-    equipmentPack?: string
+    initParams?: NewCharacterParams
   ) {
     super(
       "Rogue",
       [],
-      skillProficiencies,
+      initParams.skillProficiencies,
       [],
       ["Light"],
       ["Thieves' Tools"],
@@ -30,7 +28,7 @@ export class Rogue extends PlayerClass {
       []
     );
 
-    this.characterStart(multiclass, weapons, equipmentPack);
+    this.characterStart(multiclass, initParams.weapons, initParams.equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -200,6 +198,6 @@ export class Rogue extends PlayerClass {
 
 export class DSRogue extends Rogue {
   constructor(){
-    super(true, [], {isNoInput: true});
+    super(true, {isNoInput: true});
   }
 }

@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, NewCharacterParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ResourceTrait } from "../../Base/Interfaces";
 import * as Languages from "../../../Assets/Languages.json";
@@ -9,10 +9,7 @@ export class Monk extends PlayerClass {
   constructor(
     multiclass: boolean,
     levelingParams: LevelingParams,
-    skillProficiencies?: string[],
-    weapons?: string[],
-    toolKitProficiency?: string[],
-    equipmentPack?: string
+    initParams?: NewCharacterParams
   ) {
     super(
       "Monk",
@@ -31,7 +28,7 @@ export class Monk extends PlayerClass {
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons, toolKitProficiency, equipmentPack);
+    this.characterStart(multiclass, initParams.skillProficiencies, initParams.weapons, initParams.toolProficiencies, initParams.equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -39,11 +36,11 @@ export class Monk extends PlayerClass {
     }
   }
 
-  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], toolKitProficiency: string[], equipmentPack: string){
+  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], toolProficiencies: string[], equipmentPack: string){
     if(!multiclass){
       this.skillProficiencies = skillProficiencies;
       this.weapons.push(...weapons, "DART", "DART", "DART", "DART", "DART", "DART", "DART", "DART", "DART", "DART");
-      this.toolProficiencies = toolKitProficiency;
+      this.toolProficiencies = toolProficiencies;
       this.equipmentPack = equipmentPack;
       this.savingThrowProficiencies = ["strength", "dexterity"];
     }

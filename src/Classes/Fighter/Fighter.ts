@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, NewCharacterParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ResourceTrait } from "../../Base/Interfaces";
 import * as FightingStyles from "../../../Assets/FightingStyles.json";
@@ -9,10 +9,7 @@ export class Fighter extends PlayerClass {
   constructor(
     multiclass: boolean,
     params: LevelingParams,
-    skillProficiencies?: string[],
-    weapons?: string[],
-    armor?: string[],
-    equipmentPack?: string
+    initParams?: NewCharacterParams
   ) {
     super(
       "Fighter",
@@ -31,7 +28,7 @@ export class Fighter extends PlayerClass {
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons, armor, equipmentPack);
+    this.characterStart(multiclass, initParams.skillProficiencies, initParams.weapons, initParams.armor, initParams.equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
