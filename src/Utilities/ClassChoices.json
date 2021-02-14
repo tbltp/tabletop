@@ -14,7 +14,7 @@
                 ],
                 "required": true
             },
-            "weapon": [
+            "weapons": [
                 {
                     "alias": "Martial Weapon",
                     "choose": 1,
@@ -140,7 +140,7 @@
                 ],
                 "required": true
             },
-            "weapon": [
+            "weapons": [
                 {
                     "alias": "Martial Weapon",
                     "choose": 1,
@@ -870,7 +870,7 @@
                 ],
                 "required": true
             },
-            "weapon": [
+            "weapons": [
                 {
                     "alias": "Primary Weapon",
                     "choose": 1,
@@ -1008,7 +1008,7 @@
                 ],
                 "required": true
             },
-            "weapon": [
+            "weapons": [
                 {
                     "alias": "Simple Weapon",
                     "choose": 1,
@@ -1130,22 +1130,6 @@
                 "alias": "Skill Proficiencies",
                 "choose": 2,
                 "from": [
-                    "arcana",
-                    "animal handling",
-                    "insight",
-                    "medicine",
-                    "nature",
-                    "perception",
-                    "religion",
-                    "survival"
-                ],
-                "required": true
-            },
-
-            "skillProficiencies": {
-                "alias": "Skill Proficiencies",
-                "choose": 2,
-                "from": [
                     "acrobatics",
                     "animal handling",
                     "athletics",
@@ -1154,80 +1138,96 @@
                     "intimidation",
                     "perception",
                     "survival"
-                ]
+                ],
+                "required": true
             },
-            "Fighter Armor": {
-                "choose": 1,
-                "from": [
-                    "CHAIN MAIL",
-                    [
-                        "LEATHER ARMOR",
-                        "LONGBOW"
-                    ]
-                ]
-            },
-            "First Martial Weapon": {
-                "choose": 1,
-                "from": [
-                    "GREATAXE",
-                    "BATTLEAXE",
-                    "FLAIL",
-                    "GLAIVE",
-                    "GREATSWORD",
-                    "HALBERD",
-                    "LANCE",
-                    "LONGSWORD",
-                    "MAUL",
-                    "MORNINGSTAR",
-                    "PIKE",
-                    "RAPIER",
-                    "SCIMITAR",
-                    "SHORTSWORD",
-                    "TRIDENT",
-                    "WAR PICK",
-                    "WARHAMMER",
-                    "WHIP"
-                ]
-            },
-            "Second Martial Weapon": {
-                "choose": 1,
-                "from": [
-                    "SHIELD",
-                    "GREATAXE",
-                    "BATTLEAXE",
-                    "FLAIL",
-                    "GLAIVE",
-                    "GREATSWORD",
-                    "HALBERD",
-                    "LANCE",
-                    "LONGSWORD",
-                    "MAUL",
-                    "MORNINGSTAR",
-                    "PIKE",
-                    "RAPIER",
-                    "SCIMITAR",
-                    "SHORTSWORD",
-                    "TRIDENT",
-                    "WAR PICK",
-                    "WARHAMMER",
-                    "WHIP"
-                ]
-            },
-            "Third Weapon": {
-                "choose": 1,
-                "from": [
-                    "CROSSBOW, LIGHT",
-                    ["HANDAXE", "HANDAXE"]
-                ]
-            },
-            "Pack": {
+            "armor": [
+                {
+                    "alias": "Cleric Armor",
+                    "choose": 1,
+                    "from": [
+                        "CHAIN MAIL",
+                        [
+                            "LEATHER ARMOR",
+                            "LONGBOW"
+                        ]
+                    ],
+                    "required": true
+                }
+            ],
+            "weapons": [
+                {
+                    "alias": "First Martial Weapon",
+                    "choose": 1,
+                    "from": [
+                        "GREATAXE",
+                        "BATTLEAXE",
+                        "FLAIL",
+                        "GLAIVE",
+                        "GREATSWORD",
+                        "HALBERD",
+                        "LANCE",
+                        "LONGSWORD",
+                        "MAUL",
+                        "MORNINGSTAR",
+                        "PIKE",
+                        "RAPIER",
+                        "SCIMITAR",
+                        "SHORTSWORD",
+                        "TRIDENT",
+                        "WAR PICK",
+                        "WARHAMMER",
+                        "WHIP"
+                    ],
+                    "required": true                    
+                },
+                {
+                    "alias": "Second Martial Weapon",
+                    "choose": 1,
+                    "from": [
+                        "SHIELD",
+                        "GREATAXE",
+                        "BATTLEAXE",
+                        "FLAIL",
+                        "GLAIVE",
+                        "GREATSWORD",
+                        "HALBERD",
+                        "LANCE",
+                        "LONGSWORD",
+                        "MAUL",
+                        "MORNINGSTAR",
+                        "PIKE",
+                        "RAPIER",
+                        "SCIMITAR",
+                        "SHORTSWORD",
+                        "TRIDENT",
+                        "WAR PICK",
+                        "WARHAMMER",
+                        "WHIP"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Third Weapon",
+                    "choose": 1,
+                    "from": [
+                        "CROSSBOW, LIGHT",
+                        ["HANDAXE", "HANDAXE"]
+                    ],
+                    "required": true
+                }
+            ],
+            "equipmentPack": {
+                "alias": "Pack",
                 "choose": 1,
                 "from": [
                     "DUNGEONEER",
                     "EXPLORER"
-                ]
+                ],
+                "required": true
             },
-            "Fighting Style": {
+            "fightingStyle": {
+                "alias": "Fighting Style",
                 "choose": 1,
                 "from": [
                     "ARCHERY",
@@ -1240,7 +1240,8 @@
             }
         },
         "3": {
-            "Subclass": {
+            "subclassSelection": {
+                "alias": "Martial Archetype",
                 "choose": 1,
                 "from": [
                     "ARCANE ARCHER",
@@ -1249,7 +1250,9 @@
                     "CHAMPION",
                     "ELDRITCH KNIGHT",
                     "SAMURAI"
-                ]
+                ],
+                "option": true,
+                "required": true
             }
         }
     },
