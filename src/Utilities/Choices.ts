@@ -123,9 +123,9 @@ export interface ChoiceParams {
 
 export interface ChoiceSpec {
     alias: string;
-    prop: string;
     choose: number;
     from?: string[];
     method?: string;
+    args?: string[];
     required: boolean;
 }

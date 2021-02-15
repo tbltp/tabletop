@@ -43,7 +43,7 @@ function defaultCreationParams(): ClassCreationParams {
         firstLevelParams: defaultLevelParams,
         weapons: [],
         armor: [],
-        toolKitProficiency: [],
+        toolProficiencies: [],
         equipmentPack: "",
         instrument: "",
         holySymbol: "",
