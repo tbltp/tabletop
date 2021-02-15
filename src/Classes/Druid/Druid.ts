@@ -19,7 +19,6 @@ export class Druid extends PlayerClass {
       [],
       [],
       [],
-      params.firstLevelParams,
       "d8",
       8,
       []

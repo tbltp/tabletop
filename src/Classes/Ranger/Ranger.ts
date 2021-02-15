@@ -20,7 +20,6 @@ export class Ranger extends PlayerClass {
       [],
       [],
       [],
-      params.firstLevelParams,
       "d10",
       10,
       []

@@ -24,7 +24,6 @@ export abstract class PlayerClass {
     armor: string[],
     equipment: string[],
     toolKits: string[],
-    lvlOneParams: LevelingParams,
     hitDie: string,
     hpBase: number,
     savingThrowProficiencies: string[]
@@ -39,7 +38,6 @@ export abstract class PlayerClass {
     this.armor = armor;
     this.equipment = equipment;
     this.toolKits = toolKits;
-    this.lvlOneParams = lvlOneParams;
     this.hitDie = hitDie;
     this.savingThrowProficiencies = savingThrowProficiencies;
     this.features = [];
@@ -59,12 +57,11 @@ export abstract class PlayerClass {
   equipment: string[];
   equipmentPack: string = "";
   toolKits: string[];
-  lvlOneParams: LevelingParams;
   hitDie: string;
   hpBase: number;
   savingThrowProficiencies: string[];
   features: Trait[];
-  level: { value: number } = { value: 1 };
+  level: { value: number } = { value: 0 };
 
   abstract abilitiesAtLevels: {
     [key: string]: (pc: PlayerCharacter, params: LevelingParams) => void;
@@ -175,7 +172,6 @@ export abstract class PlayerClass {
     this.addEquipmentPack(pc);
     this.addToolkits(pc);
     this.addSavingThrowProficiencies(pc);
-    this.abilitiesAtLevels["1"](pc, this.lvlOneParams);
 
     pc.hitDie = this.hitDie;
 

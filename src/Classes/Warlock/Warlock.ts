@@ -26,7 +26,6 @@ export class Warlock extends PlayerClass {
       [],
       [],
       [],
-      params.firstLevelParams,
       "d8",
       8,
       []

@@ -46,9 +46,9 @@ import {
   Sailor,
   Soldier,
   Urchin,
-} from "index";
+} from "../index";
 
-const raceDict = {
+export const raceDict = {
     "Dragonborn": Dragonborn,
     "Hill Dwarf": HillDwarf,
     "Mountain Dwarf": MountainDwarf,
@@ -70,7 +70,7 @@ const raceDict = {
     "Tiefling": Tiefling,
 };
 
-const classDict = {
+export const classDict = {
     "Artificer": Artificer,
     "Barbarian": Barbarian,
     "Bard": Bard,
@@ -86,7 +86,7 @@ const classDict = {
     "Wizard": Wizard
 };
 
-const bgDict = {
+export const bgDict = {
     "Acolyte": Acolyte, 
     "Charlatan": Charlatan,
     "Criminal": Criminal,

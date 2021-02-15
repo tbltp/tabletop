@@ -19,7 +19,6 @@ export class Fighter extends PlayerClass {
       [],
       [],
       [],
-      params.firstLevelParams,
       "d10",
       10,
       []

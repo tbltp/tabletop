@@ -19,7 +19,6 @@ export class Rogue extends PlayerClass {
       [],
       [],
       [],
-      params.firstLevelParams,
       "d8",
       8,
       []

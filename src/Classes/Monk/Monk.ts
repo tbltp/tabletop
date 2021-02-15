@@ -18,7 +18,6 @@ export class Monk extends PlayerClass {
       [],
       [],
       [],
-      { isNoInput: true },
       "d8",
       8,
       []

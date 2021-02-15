@@ -1,12 +1,12 @@
-import { Background } from '../Backgrounds/Background';
+
 import { ClassCreationParams, LevelingParams, PlayerClass } from '../Classes/PlayerClass';
-import { Barbarian } from '../Classes/Barbarian/Barbarian';
-import { Criminal } from '../Backgrounds/Criminal';
-import { Race } from '../Races/Race';
+import { bgDict, classDict, raceDict } from './ConstructorDefinitions';
 import { Choices, ChoiceSpec } from './Choices';
 import { CharacterSheet } from '../Base/CharacterSheet';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import { Jsonify } from './Jsonify';
+import { Race } from '../Races/Race';
+import { Background } from '../Backgrounds/Background';
 var prompt = require('prompt-sync')();
 
 
@@ -57,12 +57,17 @@ function createCharacter(){
     console.log("Welcome to Tbltp's DND Character Sheet Creator!\nEnter a character name:");
     const name = prompt(">");
     const scores = promptAbilityScores();
+    const pc: PlayerCharacter = new PlayerCharacter(...scores);
+    const race: Race = raceHandler();
+    const bg: Background = backgroundHandler(pc);
+    const pClass: PlayerClass = pclassHandler(pc);
+
     let sheet: CharacterSheet = new CharacterSheet(
         name,
-        new PlayerCharacter(...scores),
-        raceHandler(),
-        pclassHandler(),
-        backgroundHandler()
+        pc,
+        race,
+        pClass,
+        bg
     )
 
     Jsonify.dumpToJSON(sheet, `test-${name}`);
@@ -86,12 +91,21 @@ function promptAbilityScores(): [number, number, number, number, number, number]
 }
 
 
-function promptChoice(key: string, selection: ChoiceSpec, resultObject: object): void {
+function promptChoice(key: string, selection: ChoiceSpec, resultObject: object, pc?: PlayerCharacter): void {
     //pass by reference
     for(let i = 0; i < selection['choose']; i++) {
         console.log(key, ':');
-        console.log(selection);
-        console.log("Choice?");
+        if(selection['from']) {
+            console.log(selection['from']);
+            console.log("Choice?");
+        } else {
+            if(!pc) { let pc = null; }
+            const choiceParams = Choices.convertToParams(selection , pc);
+            console.log(selection['method']);
+            const optionList = Choices.functionRailRoad[selection['method']](choiceParams);
+            console.log(optionList);
+            console.log("Choice?");
+        }
         
         const userChoice = prompt(">");
         const paramType:string = typeof resultObject[key]; 
@@ -103,57 +117,20 @@ function promptChoice(key: string, selection: ChoiceSpec, resultObject: object):
 }
 
 
-function choiceHandler(choicesSet: [key: string, selection: ChoiceSpec][], resultObject: object): void {
+function choiceHandler(choicesSet: [key: string, selection: ChoiceSpec][], resultObject: object, pc?: PlayerCharacter): void {
     //pass by reference
     for(const [key, selection] of choicesSet) {
 
         if(selection instanceof Array) {
             selection.forEach(choice => {
-                promptChoice(key, choice, resultObject);
+                promptChoice(key, choice, resultObject, pc);
             });
         }
         else if(Object.keys(selection).length !== 0) {
 
-            promptChoice(key, selection, resultObject);
+            promptChoice(key, selection, resultObject, pc);
         }
     }
-}
-
-
-function pclassHandler() {
-    console.log(Choices.renderClassChoices());
-    console.log("Select Your Class.");
-    let pclassSelection = prompt(">");
-    console.log("Enter level [1-20].");
-    let pclassLevel = prompt(">");
-
-    let pclassInstance: PlayerClass = null;
-
-    //assume no multiclassing for now
-    let pclassParams: ClassCreationParams = {...defaultCreationParams(), multiclass: false };
-    for(let i = 0; i <= pclassLevel; i++) {
-        
-        const choicesSet = Choices.renderClassChoicesAtLevel(pclassSelection, i);
-        if(i == 0) {
-            //creation will always have decisions
-            choiceHandler(choicesSet, pclassParams)
-        }
-        else {
-            if(i == 1) {
-                //creation first level (meh)
-                choiceHandler(choicesSet, pclassParams["firstLevelParams"]);
-                console.log(pclassParams);
-                pclassInstance = new classDict[pclassSelection](pclassParams);
-                console.log(pclassInstance);
-            }
-            else {
-                //other levels
-            }
-        }
-
-    }
-
-    return pclassInstance;
 }
 
 
@@ -163,30 +140,23 @@ function raceHandler(){
     let raceSelection = prompt(">");
 
     let raceParams = {};
-    for(const [key, selection] of Choices.renderRaceSelectionChoices(raceSelection)){
-        console.log(key, ':');
-        console.log(selection);
-        console.log("Choice?")
-        raceParams[key] = prompt(">");
-    }
+    const choicesSet = Choices.renderRaceSelectionChoices(raceSelection);
+    choiceHandler(choicesSet, raceParams);
+
     console.log(raceParams);
     const race = new raceDict[raceSelection](raceParams);
     console.log(race);
     return race;
 }
 
-function backgroundHandler(){
+function backgroundHandler(pc: PlayerCharacter){
     console.log(Choices.renderBackgroundChoices());
     console.log("Select Your Background.")
     let bgSelection = prompt(">");
 
     let bgParams = {};
-    for(const [key, selection] of Choices.renderBackgroundSelectionChoices(bgSelection)){
-        console.log(key, ':');
-        console.log(selection);
-        console.log("Choice?");
-        bgParams[key] = prompt(">");
-    }
+    const choicesSet = Choices.renderBackgroundSelectionChoices(bgSelection)
+    choiceHandler(choicesSet, bgParams, pc);
 
     console.log(bgParams);
     const bg = new bgDict[bgSelection](bgParams);
@@ -195,4 +165,27 @@ function backgroundHandler(){
     return bg;
 }
 
-createCharacter();
+
+function pclassHandler(pc: PlayerCharacter) {
+    console.log(Choices.renderClassChoices());
+    console.log("Select Your Class.");
+    let pclassSelection = prompt(">");
+
+    let pclassInstance: PlayerClass = null;
+
+    //assume no multiclassing for now
+    let pclassParams: ClassCreationParams = {...defaultCreationParams(), multiclass: false };
+
+    //creation
+    const choicesSet = Choices.renderClassChoicesAtLevel(pclassSelection, 0);
+    choiceHandler(choicesSet, pclassParams);
+    
+    console.log(pclassParams);
+    pclassInstance = new classDict[pclassSelection](pclassParams);
+    console.log(pclassInstance);
+    return pclassInstance;
+}
+
+
+//createCharacter();
+raceHandler();

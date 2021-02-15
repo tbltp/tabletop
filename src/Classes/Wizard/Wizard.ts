@@ -17,7 +17,6 @@ export class Wizard extends PlayerClass {
       [],
       [],
       [],
-      params.firstLevelParams,
       "d6",
       6,
       []

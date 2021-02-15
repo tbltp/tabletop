@@ -21,7 +21,6 @@ export class Cleric extends PlayerClass {
       [],
       [],
       [],
-      params.firstLevelParams,
       "d8",
       8,
       []

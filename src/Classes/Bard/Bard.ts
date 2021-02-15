@@ -19,7 +19,6 @@ export class Bard extends PlayerClass {
       [],
       [],
       [],
-      params.firstLevelParams,
       "d8",
       8,
       []

@@ -17,7 +17,6 @@ export class Barbarian extends PlayerClass {
       [],
       [],
       [],
-      { isNoInput: true },
       "d12",
       12,
       []
@@ -220,7 +219,7 @@ export class Barbarian extends PlayerClass {
 }
 
 export class DSBarbarian extends Barbarian {
-  constructor(){
-    super({multiclass: true});
+  constructor() {
+    super({ multiclass: true });
   }
 }

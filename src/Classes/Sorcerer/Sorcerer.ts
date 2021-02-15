@@ -19,7 +19,6 @@ export class Sorcerer extends PlayerClass {
       [],
       [],
       [],
-      params.firstLevelParams,
       "d6",
       6,
       []

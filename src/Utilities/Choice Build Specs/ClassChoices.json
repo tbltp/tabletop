@@ -276,9 +276,6 @@
                 "alias": "Expertise",
                 "choose": 2,
                 "method": "getSkillProficiencies",
-                "args": [
-                    "Bard"
-                ],
                 "required": true
             },
             "spellSelections": {
@@ -749,7 +746,7 @@
                 "choose": 2,
                 "method": "getSpellListAll",
                 "args": [
-                    7
+                    "7"
                 ],
                 "required": true
             }
@@ -876,7 +873,7 @@
                 "choose": 2,
                 "method": "getSpellListAll",
                 "args": [
-                    9
+                    "9"
                 ],
                 "required": true
             }
@@ -2138,9 +2135,6 @@
                 "alias": "Expertise",
                 "choose": 2,
                 "method": "getSkillProficiencies",
-                "args": [
-                    "Rogue"
-                ],
                 "required": true
             }
         },
@@ -2168,9 +2162,6 @@
                 "alias": "Expertise",
                 "choose": 2,
                 "method": "getSkillProficiencies",
-                "args": [
-                    "Rogue"
-                ],
                 "required": true
             }
         },

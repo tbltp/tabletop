@@ -36,27 +36,51 @@ export class Choices {
         return Object.entries(ClassChoices[pclass][level]);        
     }
 
+    static convertToParams(spec: ChoiceSpec, pc?: PlayerCharacter): ChoiceParams {
+        
+        let params: ChoiceParams = {}; 
+
+        if(pc) {
+            params.pc = pc;
+        }
+        if(spec['args']) {
+            const args = spec['args'];
+            if(args.length == 1) {
+                params.level = args[0];
+            } else {
+                params.list = args[0];
+                params.level = args[1];
+            }
+        }
+        return params;
+    }
     
     static functionRailRoad: {[key: string]: (spec: ChoiceParams) => string[]} = {
-        getSpellList: Choices.getSpellList,
-    }
-
-    
+        'getSpellList': Choices.getSpellList,
+        'getSpellListAll': Choices.getSpellListAll,
+        'getKnownSpells': Choices.getKnownSpells,
+        'getKnownSpellsAtLevel': Choices.getKnownSpellsAtLevel,
+        'getSkillProficiencies': Choices.getSkillProficiencies,
+        'getAvailableClericWeapons': Choices.getAvailableClericWeapons,
+        'getAvailableClericArmor': Choices.getAvailableClericArmor,
+        'getEldritchInvocations': Choices.getEldritchInvocations
+    };
 
     static getSpellList(spec: ChoiceParams){
         return SpellList[spec.list][spec.level];
     }
 
-    static getKnownSpells(pc: PlayerCharacter){
-        return [...Object.values(pc.spells)]
+    static getKnownSpells(spec: ChoiceParams){
+        return [...Object.values(spec.pc.spells).map(spell => spell['title'])];
     }
 
-    static getKnownSpellsAtLevel(level: string, pc: PlayerCharacter){
-        return [...Object.values(pc.spells[level])]
+    static getKnownSpellsAtLevel(spec: ChoiceParams){
+        return [...Object.values(spec.pc.spells[spec['args'][0]]).map(spell => spell['title'])];
     }
 
-    static getSkillProficiencies(pc: PlayerCharacter){
+    static getSkillProficiencies(spec: ChoiceParams){
         let expertiseElligibleSkills = [];
+        const pc: PlayerCharacter = spec.pc;
 
         for(const skill in pc.skills){
             if(pc.skills[skill].proficient && !pc.skills[skill].expertise){
@@ -64,14 +88,14 @@ export class Choices {
             }
         }
 
-        return expertiseElligibleSkills
+        return expertiseElligibleSkills;
     }
 
-    static getSpellListAll(level: string){
+    static getSpellListAll(spec: ChoiceParams){
         let allSpellLists = [];
 
         for(const spellList in SpellList){
-            for(let i = 0; i < parseInt(level); i++){
+            for(let i = 0; i < parseInt(spec.level); i++){
                 allSpellLists.push(...SpellList[spellList][i])
             }
         }
@@ -79,20 +103,20 @@ export class Choices {
         return allSpellLists;
     }
 
-    static getAvailableClericWeapons(pc: PlayerCharacter){
-        return pc.traits.weaponProficiencies.has("Martial") ||
-        pc.traits.weaponProficiencies.has("Warhammer") ?
+    static getAvailableClericWeapons(spec: ChoiceParams){
+        return spec.pc.traits.weaponProficiencies.has("Martial") ||
+        spec.pc.traits.weaponProficiencies.has("Warhammer") ?
         ["MACE", "WARHAMMER"] :
         ["MACE"]
     }
 
-    static getAvailableClericArmor(pc: PlayerCharacter){
-        return pc.traits.armorProficiencies.has("Heavy") ?
+    static getAvailableClericArmor(spec: ChoiceParams){
+        return spec.pc.traits.armorProficiencies.has("Heavy") ?
         ["SCALE MAIL", "LEATHER", "CHAIN MAIL"] :
         ["SCALE MAIL", "LEATHER"]
     }
 
-    static getEldritchInvocations(pc: PlayerCharacter){
+    static getEldritchInvocations(spec: ChoiceParams){
         let elligibleInvocations = [];
         for(const invocation of Object.keys(Invocations)){
             if(!Invocations[invocation].prereqs){
@@ -101,7 +125,7 @@ export class Choices {
             else{
                 let validInv = true;
                 for(const prereq of Invocations[invocation].prereqs){
-                    if(!Prereqs.prereqChecks[prereq.type](prereq.value, pc)){
+                    if(!Prereqs.prereqChecks[prereq.type](prereq.value, spec.pc)){
                         validInv = false;
                         break;
                     }

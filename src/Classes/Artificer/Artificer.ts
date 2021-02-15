@@ -19,7 +19,6 @@ export class Artificer extends PlayerClass {
       [],
       [],
       [],
-      params.firstLevelParams,
       "d8",
       8,
       []
