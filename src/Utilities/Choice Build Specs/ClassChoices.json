@@ -3578,5 +3578,448 @@
                 "required": true
             }
         }
+    },
+    "Wizard": {
+        "1": {
+            "skillProficiencies": {
+                "alias": "Skill Proficiencies",
+                "choose": 2,
+                "from": [
+                   "arcana",
+                   "history",
+                   "insight",
+                   "investigation",
+                   "medicine",
+                   "religion" 
+                ],
+                "required": true
+            },
+            "weapons": [
+                {
+                    "alias": "Weapon",
+                    "choose": 1,
+                    "from": [
+                        "QUARTERSTAFF",
+                        "DAGGER"
+                    ],
+                    "required": true
+                }
+            ],
+            "arcaneFocus": {
+                "alias": "Arcane Focus",
+                "choose": 1,
+                "from": [
+                    "COMPONENT POUCH",
+                    "CRYSTAL",
+                    "ORB",
+                    "ROD",
+                    "STAFF",
+                    "WAND"
+                ],
+                "required": true
+            },  
+            "equipmentPack": {
+                "alias": "Pack",
+                "choose": 1,
+                "from": [
+                    "SCHOLAR",
+                    "EXPLORER"
+                ],
+                "required": true
+            },
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Cantrips",
+                        "choose": 3,
+                        "method": "getSpellList",
+                        "args": [
+                            "Bard", 
+                            "0"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "New Spells (Up to Level 1)",
+                        "choose": 6,
+                        "method": "getSpellList",
+                        "args": [
+                            "Wizard",
+                            "1"
+                        ],
+                        "required": true
+                    }
+                ]
+            }
+        },
+        "2": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 1)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Warlock",
+                            "1"
+                        ],
+                        "required": true
+                    }
+                ]
+            },
+            "subclassSelection": {
+                "alias": "Arcane Tradition",
+                "choose": 1,
+                "from": [
+                    "ABJURATION",
+                    "CONJURATION",
+                    "DIVINATION",
+                    "ENCHANTMENT",
+                    "EVOCATION",
+                    "ILLUSION",
+                    "NECROMANCY",
+                    "TRANSMUTATION"
+                ],
+                "option": true,
+                "required": true
+            }
+        },
+        "3": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 2)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Warlock",
+                            "2"
+                        ],
+                        "required": true
+                    }
+                ]
+            }
+        },
+        "4": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Cantrip",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Bard", 
+                            "0"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "New Spell (Up to Level 2)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Warlock",
+                            "2"
+                        ],
+                        "required": true
+                    }
+                ]
+            }
+        },
+        "5": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 3)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Warlock",
+                            "3"
+                        ],
+                        "required": true
+                    }
+                ]
+            }
+        },
+        "6": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 3)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Warlock",
+                            "3"
+                        ],
+                        "required": true
+                    }
+                ]
+            }
+        },
+        "7": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 4)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Warlock",
+                            "4"
+                        ],
+                        "required": true
+                    }
+                ]
+            }
+        },
+        "8": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 4)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Warlock",
+                            "4"
+                        ],
+                        "required": true
+                    }
+                ]
+            }
+        },
+        "9": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 5)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Warlock",
+                            "5"
+                        ],
+                        "required": true
+                    }
+                ]
+            }
+        },
+        "10": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Cantrip",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Bard", 
+                            "0"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "New Spell (Up to Level 5)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Warlock",
+                            "5"
+                        ],
+                        "required": true
+                    }
+                ]
+            }
+        },
+        "11": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 6)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Warlock",
+                            "6"
+                        ],
+                        "required": true
+                    }
+                ]
+            }
+        },
+        "12": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 6)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Warlock",
+                            "6"
+                        ],
+                        "required": true
+                    }
+                ]
+            }
+        },
+        "13": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 7)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Warlock",
+                            "7"
+                        ],
+                        "required": true
+                    }
+                ]
+            }
+        },
+        "14": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 7)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Warlock",
+                            "7"
+                        ],
+                        "required": true
+                    }
+                ]
+            }
+        },
+        "15": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 8)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Warlock",
+                            "8"
+                        ],
+                        "required": true
+                    }
+                ]
+            }             
+        },
+        "16": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 8)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Warlock",
+                            "8"
+                        ],
+                        "required": true
+                    }
+                ]
+            }             
+        },
+        "17": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 9)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Warlock",
+                            "9"
+                        ],
+                        "required": true
+                    }
+                ]
+            } 
+        },
+        "18": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 9)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Warlock",
+                            "9"
+                        ],
+                        "required": true
+                    }
+                ]
+            },
+            "mastery": [
+                {
+                    "alias": "Spell Mastery (Level 1)",
+                    "choose": 1,
+                    "method": "getKnownSpellsAtLevel",
+                    "args": [
+                        "1"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Spell Mastery (Level 2)",
+                    "choose": 1,
+                    "method": "getKnownSpellsAtLevel",
+                    "args": [
+                        "2"
+                    ],
+                    "required": true
+                }
+            ]
+        },  
+        "19": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 9)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Warlock",
+                            "9"
+                        ],
+                        "required": true
+                    }
+                ]
+            } 
+        },
+        "20": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 9)",
+                        "choose": 2,
+                        "method": "getSpellList",
+                        "args": [
+                            "Warlock",
+                            "9"
+                        ],
+                        "required": true
+                    }
+                ]
+            },
+            "signatureSpells": {
+                "alias": "Signature Spells",
+                "choose": 2,
+                "method": "getKnownSpellsAtLevel",
+                "args": [
+                    "3"
+                ],
+                "required": true
+            }
+        }
     }
 }
