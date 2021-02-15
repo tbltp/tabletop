@@ -16,31 +16,25 @@ export class Choices {
         return Object.keys(RaceChoices);
     }
 
-    static renderRaceSelectionChoices(race: string): ChoiceSpec[] {        
-        return Object.values(RaceChoices[race]);
+    static renderRaceSelectionChoices(race: string): [string, ChoiceSpec][] {        
+        return Object.entries(RaceChoices[race]);
     }
 
     static renderBackgroundChoices(){
         return Object.keys(BackgroundChoices);
     }
 
-    static renderBackgroundSelectionChoices(background: string): ChoiceSpec[] {        
-        return Object.values(BackgroundChoices[background]);
+    static renderBackgroundSelectionChoices(background: string): [string, ChoiceSpec][] {        
+        return Object.entries(BackgroundChoices[background]);
     }
 
     static renderClassChoices(){
         return Object.keys(ClassChoices);
     }
 
-    static renderClassChoicesAtLevel(pclass: string, level: number): ChoiceSpec[] {
-        return Object.values(ClassChoices[pclass][level]);        
+    static renderClassChoicesAtLevel(pclass: string, level: number): [string, ChoiceSpec][] {
+        return Object.entries(ClassChoices[pclass][level]);        
     }
-
-    static renderClassSelections(pclass: string, level: number, pclassField: string): ChoiceSpec[] {
-        return Object.values(ClassChoices[pclass][level][pclassField]);
-    }
-
-
 
     
     static functionRailRoad: {[key: string]: (spec: ChoiceParams) => string[]} = {
