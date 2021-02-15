@@ -141,7 +141,7 @@ export class Deserialize {
         // Edge case for Dragonborn - race title formatting is weird.
         if(race.includes("Dragonborn")){
             const draconicAncestry = race.split(" - ")[1]
-            return new DSDragonborn(draconicAncestry);
+            return new DSDragonborn({draconicAncestry: draconicAncestry});
         }
 
         switch(race) {

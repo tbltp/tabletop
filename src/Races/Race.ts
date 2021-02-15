@@ -106,3 +106,13 @@ export class DSRace extends Race {
 
   abilityIncrease(){}
 }
+
+export interface  RaceParams {
+  draconicAncestry?: string;
+  toolProficiency?: string;
+  abilityScores?: string[];
+  skillProficiencies?: string[];
+  language?: string;
+  cantrip?: string;
+  feat?: string
+}

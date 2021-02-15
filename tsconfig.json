@@ -7,5 +7,5 @@
     "baseUrl": "src",
     "declaration": true
   },
-  "exclude": ["tests", "dist"],
+  "exclude": ["tests", "dist", "IGNORE"],
 }

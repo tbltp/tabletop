@@ -1,22 +1,24 @@
 import { PlayerCharacter } from "../../../Base/PlayerCharacter";
 import { Human } from "../Human";
+import { RaceParams } from "../../Race";
+
 
 export class VariantHuman extends Human {
-    constructor(language: string, proficiency: string, abilityScores: string[]) {
-      super("Variant Human", language);
+    constructor(params: RaceParams) {
+      super("Variant Human", params.language);
       this.traits.push(
         {
           title: "Extra Language",
-          description: `You can speak, read, and write one extra language of your chotce. - ${language}`,
+          description: `You can speak, read, and write one extra language of your chotce. - ${params.language}`,
         },
         {
           title: "Proficiency",
-          description: `You gain proficiency in a skill of your choice . - ${proficiency}`,
+          description: `You gain proficiency in a skill of your choice . - ${params.skillProficiencies[0]}`,
         }
       );
   
-      this.chosenAbilityScores = abilityScores;
-      this.chosenProficiency = proficiency;
+      this.chosenAbilityScores = params.abilityScores;
+      this.chosenProficiency = params.skillProficiencies[0];
     }
   
     chosenAbilityScores: string[];
