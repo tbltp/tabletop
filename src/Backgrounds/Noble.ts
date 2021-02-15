@@ -1,12 +1,12 @@
-import { Background } from "./Background";
+import { Background, BackgroundParams } from "./Background";
 
 export class Noble extends Background {
-    constructor(gamingSet: string, language: string) {
+    constructor(params: BackgroundParams) {
       super(
         "Noble",
         ["history", "persuasion"],
-        [language],
-        [gamingSet],
+        [...params.languages],
+        [params.gamingSet],
         ["CLOTHES, FINE", "SIGNET RING"],
         [],
         25,

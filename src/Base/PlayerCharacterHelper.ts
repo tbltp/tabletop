@@ -128,4 +128,8 @@ export class PlayerCharacterHelper {
           }
         } 
       }
+
+      addNote(title: string, description: string){
+        this.pc.notes.push({title: title, description: description, date: new Date().toLocaleDateString()})
+      }
 }

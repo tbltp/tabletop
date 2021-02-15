@@ -1,6 +1,7 @@
 {
     "Acolyte": {
-        "Language": {
+        "languages": {
+            "alias": "Languages",
             "choose": 2,
             "from": [
                 "Celestial",
@@ -17,30 +18,37 @@
                 "Primordial",
                 "Sylvan",
                 "Undercommon"
-            ]
+            ],
+            "required": true
         },
-        "Holy Symbol": {
+        "holySymbol": {
+            "alias": "Holy Symbol",
             "choose": 1,
             "from": [
                 "AMULET",
                 "EMBLEM",
                 "RELIQUARY"
-            ]
+            ],
+            "required": true
         }
     },
+    "Charlatan": {},
     "Criminal": {
-        "Gaming Set Proficiency": {
+        "gamingSet": {
+            "alias": "Gaming Set Proficiency",
             "choose": 1,
             "from": [
                 "Playing card set",
                 "Dragonchess set",
                 "Dice set",
                 "Three-dragon ante set"
-            ]
+            ],
+            "required": true
         }
     },
     "Entertainer": {
-        "Musical Instrument Proficiency": {
+        "toolProficiencies": {
+            "alias": "Musical Instrument Proficiency",
             "choose": 1,
             "from": [
                 "Bagpipes",
@@ -53,9 +61,11 @@
                 "Pan Flute",
                 "Shawm",
                 "Viol"
-            ]
-        },
-        "Musical Instrument": {
+            ],
+            "required": true
+        }, 
+        "instrument": {
+            "alias": "Musical Instrument",
             "choose": 1,
             "from": [
                 "BAGPIPES",
@@ -68,11 +78,13 @@
                 "PAN FLUTE",
                 "SHAWM",
                 "VIOL"
-            ]
+            ],
+            "required": true
         }
     },
     "Folk Hero": {
-        "Artisan Tool Proficiency": {
+        "toolProficiencies": {
+            "alias": "Artisan's Tool Proficiency",
             "choose": 1,
             "from": [
                 "Alchemist's supplies",
@@ -92,9 +104,11 @@
                 "Tinker's tools",
                 "Weaver's tools",
                 "Woodcarver's tools"
-            ]
-        },
-        "Artisan Tools": {
+            ],
+            "required": true   
+        }, 
+        "toolKit": {
+            "alias": "Artisan's Tools",
             "choose": 1,
             "from": [
                 "ALCHEMIST'S SUPPLIES",
@@ -114,11 +128,13 @@
                 "TINKER'S TOOLS",
                 "WEAVER'S TOOLS",
                 "WOODCARVER'S TOOLS"
-            ]
+            ],
+            "required": true
         }
     },
     "Guild Artisan": {
-        "Language": {
+        "languages": {
+            "alias": "Language",
             "choose": 1,
             "from": [
                 "Celestial",
@@ -135,9 +151,11 @@
                 "Primordial",
                 "Sylvan",
                 "Undercommon"
-            ]
+            ],
+            "required": true
         },
-        "Artisan Tool Proficiency": {
+        "toolProficiencies": {
+            "alias": "Artisan Tool Proficiency",
             "choose": 1,
             "from": [
                 "Alchemist's supplies",
@@ -157,9 +175,11 @@
                 "Tinker's tools",
                 "Weaver's tools",
                 "Woodcarver's tools"
-            ]
+            ],
+            "required": true
         },
-        "Artisan Tools": {
+        "toolKit": {
+            "alias": "Artisan Tools",
             "choose": 1,
             "from": [
                 "ALCHEMIST'S SUPPLIES",
@@ -179,11 +199,12 @@
                 "TINKER'S TOOLS",
                 "WEAVER'S TOOLS",
                 "WOODCARVER'S TOOLS"
-            ]
+            ],
+            "required": true
         }
     },
     "Hermit": {
-        "Language": {
+        "languages": {
             "choose": 1,
             "from": [
                 "Celestial",
@@ -200,11 +221,13 @@
                 "Primordial",
                 "Sylvan",
                 "Undercommon"
-            ]
+            ],
+            "required": true
         }
     },
     "Knight": {
-        "Language": {
+        "languages": {
+            "alias": "Language",
             "choose": 1,
             "from": [
                 "Celestial",
@@ -223,7 +246,7 @@
                 "Undercommon"
             ]
         },
-        "Gaming Set": {
+        "gamingSet": {
             "choose": 1,
             "from": [
                 "PLAYING CARD SET",
@@ -283,7 +306,7 @@
                 "Undercommon"
             ]
         },
-        "Musical Instrument": {
+        "instrument": {
             "choose": 1,
             "from": [
                 "BAGPIPES",
@@ -299,6 +322,7 @@
             ]
         }
     },
+    "Pirate": {},
     "Sage": {
         "Language": {
             "choose": 2,
@@ -320,6 +344,7 @@
             ]
         }
     },
+    "Sailor": {},
     "Soldier": {
         "Gaming Set Proficiency": {
             "choose": 1,
@@ -330,5 +355,6 @@
                 "Three-dragon ante set"
             ]
         }
-    }
+    },
+    "Urchin": {}
 }

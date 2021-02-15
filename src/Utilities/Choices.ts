@@ -5,6 +5,7 @@ import * as BackgroundChoices from './Choice Build Specs/BackgroundChoices.json'
 import * as Invocations from '../Classes/Warlock/EldritchInvocations.json';
 import * as SpellList from '../../Assets/SpellList.json';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
+import { Prereqs } from './Prereqs';
 import { Race } from '../Races/Race';
 import { PlayerClass } from '../Classes/PlayerClass';
 import { Background } from '../Backgrounds/Background';
@@ -15,22 +16,28 @@ export class Choices {
         return Object.keys(RaceChoices);
     }
 
-    static renderRaceSelectionChoices(race: string){
-        
-        return Object.keys(RaceChoices[race]);
-        // .forEach( key => RaceChoices[race][key]['prop'] = key );
+    static renderRaceSelectionChoices(race: string): ChoiceSpec[] {        
+        return Object.values(RaceChoices[race]);
+    }
+
+    static renderBackgroundChoices(){
+        return Object.keys(BackgroundChoices);
+    }
+
+    static renderBackgroundSelectionChoices(background: string): ChoiceSpec[] {        
+        return Object.values(BackgroundChoices[background]);
     }
 
     static renderClassChoices(){
         return Object.keys(ClassChoices);
     }
 
-    static renderClassChoicesAtLevel(pclass: string, level: number) {
-        return Object.keys(ClassChoices[pclass][level]);        
+    static renderClassChoicesAtLevel(pclass: string, level: number): ChoiceSpec[] {
+        return Object.values(ClassChoices[pclass][level]);        
     }
 
-    static renderClassSelections(pclass: string, level: number, pclassField: string) {
-        return Object.keys(ClassChoices[pclass][level][pclassField]);
+    static renderClassSelections(pclass: string, level: number, pclassField: string): ChoiceSpec[] {
+        return Object.values(ClassChoices[pclass][level][pclassField]);
     }
 
 
@@ -40,24 +47,7 @@ export class Choices {
         getSpellList: Choices.getSpellList,
     }
 
-    static prereqChecks = {
-        Level: Choices.checkLevel,
-        Cantrip: Choices.checkSpell,
-        Feature: Choices.checkFeature
-    }
-
-    static checkLevel(level: string, pc: PlayerCharacter){
-        return pc.level.totalLevel >= parseInt(level) ? true : false
-    }
     
-    static checkSpell(spell: string, pc: PlayerCharacter){
-        return pc.spells["0"].filter(x => x.name === spell) ? true : false
-    }
-
-    static checkFeature(feature: string, pc: PlayerCharacter){
-        return pc.traits.features.filter(x => x.title === feature) ? true : false
-
-    }
 
     static getSpellList(spec: ChoiceParams){
         return SpellList[spec.list][spec.level];
@@ -117,7 +107,7 @@ export class Choices {
             else{
                 let validInv = true;
                 for(const prereq of Invocations[invocation].prereqs){
-                    if(!Choices.prereqChecks[prereq.type](prereq.value, pc)){
+                    if(!Prereqs.prereqChecks[prereq.type](prereq.value, pc)){
                         validInv = false;
                         break;
                     }
@@ -135,4 +125,13 @@ export interface ChoiceParams {
     list?: string;
     level?: string;
     
+}
+
+interface ChoiceSpec {
+    alias: string;
+    prop: string;
+    choose: number;
+    from?: string[];
+    method?: string;
+    required: boolean;
 }
