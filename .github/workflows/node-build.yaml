@@ -2,9 +2,8 @@ name: node-build
 
 on:
   push: 
-    branches: 
-      -main 
-      -master
+    branch:
+      test_build
 
 
 jobs: 
