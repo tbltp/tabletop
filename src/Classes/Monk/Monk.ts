@@ -126,7 +126,6 @@ export class Monk extends PlayerClass {
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 4);
     pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: MonkLevelingParams): void {
@@ -157,7 +156,6 @@ export class Monk extends PlayerClass {
   level8(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 8);
     pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level9(pc: PlayerCharacter, params: MonkLevelingParams): void {
@@ -182,7 +180,6 @@ export class Monk extends PlayerClass {
   level12(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 12);
     pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level13(pc: PlayerCharacter, params: MonkLevelingParams): void {
@@ -212,7 +209,6 @@ export class Monk extends PlayerClass {
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level17(pc: PlayerCharacter, params: MonkLevelingParams): void {
@@ -228,7 +224,6 @@ export class Monk extends PlayerClass {
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {

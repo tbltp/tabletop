@@ -3,6 +3,7 @@ import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import * as WizardClassTraits from './Wizard.json';
 import { WizardSubclass } from "./Subclasses/WizardSubclass";
+import { Trait } from "Base/Interfaces";
 
 export class Wizard extends PlayerClass {
   constructor(
@@ -86,8 +87,9 @@ export class Wizard extends PlayerClass {
   level1(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
     this.pushWizardFeatures(pc, 1);
-    PlayerClass.pushCustomizedClassFeature(pc, 1, WizardClassTraits, "SPELLBOOK", params.spellBookSpells)
-
+    // PlayerClass.pushCustomizedClassFeature(pc, 1, WizardClassTraits, "SPELLBOOK", params.spellBookSpells)
+    const spellbook: Trait = pc.pcHelper.findFeatureTraitByName("Spellbook");
+    spellbook.choices = params.spellBookSpells;
     this.addSpellcasting(pc, "WIZARD");
 
   }
@@ -104,7 +106,6 @@ export class Wizard extends PlayerClass {
 
   level4(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: WizardLevelingParams): void {
@@ -122,7 +123,7 @@ export class Wizard extends PlayerClass {
 
   level8(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "8", params);
   }
 
   level9(pc: PlayerCharacter, params: WizardLevelingParams): void {
@@ -139,8 +140,7 @@ export class Wizard extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: WizardLevelingParams): void {
-    this.handleWizardSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
+    this.subclassDriver(pc, "12", params);
   }
 
   level13(pc: PlayerCharacter, params: WizardLevelingParams): void {
@@ -158,6 +158,7 @@ export class Wizard extends PlayerClass {
 
   level16(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
+    this.subclassDriver(pc, "16", params);
   }
 
   level17(pc: PlayerCharacter, params: WizardLevelingParams): void {
@@ -166,16 +167,17 @@ export class Wizard extends PlayerClass {
 
   level18(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
-    this.pushWizardFeatures(pc, 18)
+    this.subclassDriver(pc, "18", params);
+    this.pushWizardFeatures(pc, 18);
   }
 
   level19(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
+    this.subclassDriver(pc, "20", params);
     PlayerClass.pushCustomizedClassFeature(pc, 20, WizardClassTraits, "SIGNATURE SPELLS", params.signatureSpells);
   }
 }
@@ -186,7 +188,7 @@ export class DSWizard extends Wizard {
   }
 }
 
-interface WizardLevelingParams extends LevelingParams {
+export interface WizardLevelingParams extends LevelingParams {
   spellBookSpells?: string[]
   signatureSpells?: string[]
 }

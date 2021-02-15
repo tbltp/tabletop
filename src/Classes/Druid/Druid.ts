@@ -128,7 +128,6 @@ export class Druid extends PlayerClass {
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleDruidSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     // wild shape
     const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName(
       "Wild Shape"
@@ -165,7 +164,6 @@ export class Druid extends PlayerClass {
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     // wild shape
     const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName(
       "Wild Shape"
@@ -199,7 +197,6 @@ export class Druid extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "12", params); 
   }
 
@@ -225,7 +222,6 @@ export class Druid extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "16", params); 
   }
 
@@ -242,7 +238,6 @@ export class Druid extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "19", params); 
   }
 
