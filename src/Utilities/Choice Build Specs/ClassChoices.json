@@ -2189,7 +2189,7 @@
         "19": {},
         "20": {}
     },
-    "Sorceror": {
+    "Sorcerer": {
         "0": {
             "skillProficiencies": {
                 "alias": "Skill Proficiencies",
@@ -2271,7 +2271,7 @@
                         "choose": 4,
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror", 
+                            "Sorcerer", 
                             "0"
                         ],
                         "required": true
@@ -2297,7 +2297,7 @@
                         "choose": 1,
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "1"
                         ],
                         "required": true
@@ -2307,7 +2307,7 @@
                         "choose": 1, 
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "1"
                         ],
                         "required": false,
@@ -2336,7 +2336,7 @@
                         "choose": 1,
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "2"
                         ],
                         "required": true
@@ -2346,7 +2346,7 @@
                         "choose": 1, 
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "2"
                         ],
                         "required": false,
@@ -2375,7 +2375,7 @@
                         "choose": 1,
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "0"
                         ],
                         "required": true
@@ -2385,7 +2385,7 @@
                         "choose": 1,
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "2"
                         ],
                         "required": true
@@ -2395,7 +2395,7 @@
                         "choose": 1, 
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "2"
                         ],
                         "required": false,
@@ -2424,7 +2424,7 @@
                         "choose": 1,
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "3"
                         ],
                         "required": true
@@ -2434,7 +2434,7 @@
                         "choose": 1, 
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "3"
                         ],
                         "required": false,
@@ -2463,7 +2463,7 @@
                         "choose": 1,
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "3"
                         ],
                         "required": true
@@ -2473,7 +2473,7 @@
                         "choose": 1, 
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "3"
                         ],
                         "required": false,
@@ -2502,7 +2502,7 @@
                         "choose": 1,
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "4"
                         ],
                         "required": true
@@ -2512,7 +2512,7 @@
                         "choose": 1, 
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "4"
                         ],
                         "required": false,
@@ -2541,7 +2541,7 @@
                         "choose": 1,
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "4"
                         ],
                         "required": true
@@ -2551,7 +2551,7 @@
                         "choose": 1, 
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "4"
                         ],
                         "required": false,
@@ -2580,7 +2580,7 @@
                         "choose": 1,
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "5"
                         ],
                         "required": true
@@ -2590,7 +2590,7 @@
                         "choose": 1, 
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "5"
                         ],
                         "required": false,
@@ -2619,7 +2619,7 @@
                         "choose": 1,
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror", 
+                            "Sorcerer", 
                             "0"
                         ],
                         "required": true
@@ -2629,7 +2629,7 @@
                         "choose": 1,
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "5"
                         ],
                         "required": true
@@ -2639,7 +2639,7 @@
                         "choose": 1, 
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "5"
                         ],
                         "required": false,
@@ -2668,7 +2668,7 @@
                         "choose": 1,
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "6"
                         ],
                         "required": true
@@ -2678,7 +2678,7 @@
                         "choose": 1, 
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "6"
                         ],
                         "required": false,
@@ -2708,7 +2708,7 @@
                         "choose": 1,
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "7"
                         ],
                         "required": true
@@ -2718,7 +2718,7 @@
                         "choose": 1, 
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "7"
                         ],
                         "required": false,
@@ -2748,7 +2748,7 @@
                         "choose": 1,
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "8"
                         ],
                         "required": true
@@ -2758,7 +2758,7 @@
                         "choose": 1, 
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "8"
                         ],
                         "required": false,
@@ -2788,7 +2788,7 @@
                         "choose": 1,
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "9"
                         ],
                         "required": true
@@ -2798,7 +2798,7 @@
                         "choose": 1, 
                         "method": "getSpellList",
                         "args": [
-                            "Sorceror",
+                            "Sorcerer",
                             "9"
                         ],
                         "required": false,
