@@ -236,6 +236,6 @@ export class Paladin extends PlayerClass {
 
 export class DSPaladin extends Paladin {
   constructor(){
-    super(true, {isNoInput: true});
+    super(true);
   }
 }

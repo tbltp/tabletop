@@ -121,7 +121,7 @@ export interface ChoiceParams {
     
 }
 
-interface ChoiceSpec {
+export interface ChoiceSpec {
     alias: string;
     prop: string;
     choose: number;

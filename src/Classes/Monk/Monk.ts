@@ -245,7 +245,7 @@ export interface MonkLevelingParams extends LevelingParams {
 
 export class DSMonk extends Monk {
   constructor(){
-    super(true, {isNoInput: true});
+    super(true);
   }
 }
 
