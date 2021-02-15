@@ -8,7 +8,7 @@ import { FighterSubclass } from "./Subclasses/FighterSubclass";
 export class Fighter extends PlayerClass {
   constructor(
     multiclass: boolean,
-    params: LevelingParams,
+    firstLevelParams: FighterLevelingParams,
     skillProficiencies?: string[],
     weapons?: string[],
     armor?: string[],
@@ -25,7 +25,7 @@ export class Fighter extends PlayerClass {
       [],
       [],
       [],
-      params,
+      firstLevelParams,
       "d10",
       10,
       []

@@ -7,7 +7,7 @@ import { WizardSubclass } from "./Subclasses/WizardSubclass";
 export class Wizard extends PlayerClass {
   constructor(
     multiclass: boolean,
-    params: WizardLevelingParams,
+    firstLevelParams: WizardLevelingParams,
     skillProficiencies?: string[],
     weapons?: string[],
     equipmentPack?: string,
@@ -24,7 +24,7 @@ export class Wizard extends PlayerClass {
       [],
       [],
       [],
-      params,
+      firstLevelParams,
       "d6",
       6,
       []

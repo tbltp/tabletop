@@ -11,7 +11,7 @@ import { SpellSlotFactory } from "../SpellSlotFactory";
 export class Cleric extends PlayerClass {
   constructor(
     multiclass: boolean,
-    clericParams: LevelingParams,
+    firstLevelParams: LevelingParams,
     skillProficiencies?: string[],
     weapons?: string[],
     armor?: string[],
@@ -29,7 +29,7 @@ export class Cleric extends PlayerClass {
       [],
       [],
       [],
-      clericParams,
+      firstLevelParams,
       "d8",
       8,
       []

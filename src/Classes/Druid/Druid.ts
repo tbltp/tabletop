@@ -9,7 +9,7 @@ import { DruidSubclass } from "./Subclasses/DruidSubclass";
 export class Druid extends PlayerClass {
   constructor(
     multiclass: boolean,
-    druidParams: LevelingParams,
+    firstLevelParams: LevelingParams,
     skillProficiencies?: string[],
     weapons?: string[],
     armor?: string[]
@@ -25,7 +25,7 @@ export class Druid extends PlayerClass {
       [],
       [],
       [],
-      druidParams,
+      firstLevelParams,
       "d8",
       8,
       []

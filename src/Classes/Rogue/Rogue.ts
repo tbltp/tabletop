@@ -9,7 +9,7 @@ export class Rogue extends PlayerClass {
   constructor(
     multiclass: boolean,
     skillProficiencies: string[],
-    params: LevelingParams,
+    firstLevelParams: LevelingParams,
     weapons?: string[],
     equipmentPack?: string
   ) {
@@ -24,7 +24,7 @@ export class Rogue extends PlayerClass {
       [],
       [],
       [],
-      params,
+      firstLevelParams,
       "d8",
       8,
       []

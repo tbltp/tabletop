@@ -7,7 +7,7 @@ import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ArtificerSubclass } from "./Subclasses/ArtificerSubclass";
 
 export class Artificer extends PlayerClass {
-  constructor(multiclass: boolean, artificerParams: ArtificerLevelingParams, skillProficiencies?: string[], toolProficiency?: string, weapons?: string[], armor?: string[]) {
+  constructor(multiclass: boolean, firstLevelParams: ArtificerLevelingParams, skillProficiencies?: string[], toolProficiency?: string, weapons?: string[], armor?: string[]) {
     super(
       "Artificer",
       [],
@@ -19,7 +19,7 @@ export class Artificer extends PlayerClass {
       [],
       [],
       [],
-      artificerParams,
+      firstLevelParams,
       "d8",
       8,
       []

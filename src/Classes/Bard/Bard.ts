@@ -11,7 +11,7 @@ export class Bard extends PlayerClass {
     multiclass: boolean,
     skillProficiencies: string[],
     instrumentProficiencies: string[],
-    bardParams: LevelingParams,
+    firstLevelParams: BardLevelingParams,
     weapons?: string[],
     instrument?: string,
     equipmentPack?: string,
@@ -27,7 +27,7 @@ export class Bard extends PlayerClass {
       [],
       [],
       [],
-      bardParams,
+      firstLevelParams,
       "d8",
       8,
       []

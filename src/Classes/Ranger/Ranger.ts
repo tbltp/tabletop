@@ -11,7 +11,7 @@ export class Ranger extends PlayerClass {
   constructor(
     multiclass: boolean,
     skillProficiencies: string[],
-    rangerParams: RangerLevelingParams,
+    firstLevelParams: RangerLevelingParams,
     weapons?: string[],
     armor?: string[],
     equipmentPack?: string,
@@ -27,7 +27,7 @@ export class Ranger extends PlayerClass {
       [],
       [],
       [],
-      rangerParams,
+      firstLevelParams,
       "d10",
       10,
       []

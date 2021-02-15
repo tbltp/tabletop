@@ -11,7 +11,7 @@ import { ResourceTrait } from "Base/Interfaces";
 export class Paladin extends PlayerClass {
   constructor(
     multiclass: boolean,
-    params: LevelingParams,
+    firstLevelParams: LevelingParams,
     skillProficiencies?: string[],    
     weapons?: string[],
     armor?: string[],
@@ -28,7 +28,7 @@ export class Paladin extends PlayerClass {
       [],
       [],
       [],
-      params,
+      firstLevelParams,
       "d10",
       10,
       []

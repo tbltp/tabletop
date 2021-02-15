@@ -16,7 +16,7 @@ import { WarlockSubclass } from "./Subclasses/WarlockSubclass";
 export class Warlock extends PlayerClass {
   constructor(
     multiclass: boolean,
-    params: WarlockLevelingParams,
+    firstLevelParams: WarlockLevelingParams,
     skillProficiencies?: string[],
     weapons?: string[],
     equipmentPack?: string,
@@ -33,7 +33,7 @@ export class Warlock extends PlayerClass {
       [],
       [],
       [],
-      params,
+      firstLevelParams,
       "d8",
       8,
       []
