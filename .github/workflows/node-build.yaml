@@ -1,4 +1,4 @@
-name: nodebuild
+name: node-build
 
 on:
   push: 
