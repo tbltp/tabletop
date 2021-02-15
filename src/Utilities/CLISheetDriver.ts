@@ -52,6 +52,7 @@ function defaultCreationParams(): ClassCreationParams {
 
 
 
+
 function createCharacter(){
 
     console.log("Welcome to Tbltp's DND Character Sheet Creator!\nEnter a character name:");
