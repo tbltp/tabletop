@@ -8,7 +8,6 @@ import { MonkSubclass } from "./Subclasses/MonkSubclass";
 export class Monk extends PlayerClass {
   constructor(
     multiclass: boolean,
-    firstLevelParams: MonkLevelingParams,
     skillProficiencies?: string[],
     weapons?: string[],
     toolKitProficiency?: string[],
@@ -25,7 +24,7 @@ export class Monk extends PlayerClass {
       [],
       [],
       [],
-      firstLevelParams,
+      { isNoInput: true },
       "d8",
       8,
       []

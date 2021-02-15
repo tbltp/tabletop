@@ -78,13 +78,6 @@ export class Rogue extends PlayerClass {
   }
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
-    // PlayerClass.pushCustomizedClassFeature(
-    //   pc,
-    //   1,
-    //   RogueClassTraits,
-    //   "EXPERTISE",
-    //   params.proficiencySelection
-    // );
     // Expertise
     for (const proficiency of params.proficiencySelection) {
       pc.skills[proficiency].expertise = true;

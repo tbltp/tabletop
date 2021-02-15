@@ -1,6 +1,6 @@
 {
     "Barbarian": {
-        "1": {
+        "0": {
             "skillProficiencies": {
                 "alias": "Skill Proficiencies",
                 "choose": 2,
@@ -63,6 +63,8 @@
                 }
             ]
         },
+        "1": {},
+        "2": {},
         "3": {
             "subclassSelection": {
                 "alias": "Primal Path",
@@ -77,10 +79,27 @@
                 "option": true,
                 "required": true
             }
-        }
+        },
+        "4": {},
+        "5": {},
+        "6": {},
+        "7": {},
+        "8": {},
+        "9": {},
+        "10": {},
+        "11": {},
+        "12": {},
+        "13": {},
+        "14": {},
+        "15": {},
+        "16": {},
+        "17": {},
+        "18": {},
+        "19": {},
+        "20": {}
     },
     "Bard": {
-        "1": {
+        "0": {
             "toolProficiencies": {
                 "alias": "Musical Instrument Proficiencies",
                 "choose": 3,
@@ -173,7 +192,9 @@
                     "ENTERTAINER"
                 ],
                 "required": true
-            },
+            }
+        },
+        "1": {
             "spellSelections": {
                 "add": [
                     {
@@ -645,6 +666,7 @@
                 }
             }
         },
+        "12": {},
         "13": {
             "spellSelections": {
                 "add": [
@@ -771,6 +793,7 @@
                 }
             }
         },
+        "16": {},
         "17": {
             "spellSelections": {
                 "add": [
@@ -857,10 +880,12 @@
                 ],
                 "required": true
             }
-        }
+        },
+        "19": {},
+        "20": {}
     },
     "Cleric": {
-        "1": {
+        "0": {
             "skillProficiencies": {
                 "alias": "Skill Proficiencies",
                 "choose": 2,
@@ -928,7 +953,9 @@
                     "RELIQUARY"
                 ],
                 "required": true
-            },
+            }
+        },
+        "1": {
             "subclassSelection": {
                 "alias": "Cleric Domain",
                 "choose": 1,
@@ -961,6 +988,8 @@
                 ]
             }
         },
+        "2": {},
+        "3": {},
         "4": {
             "spellSelections": {
                 "add": [
@@ -977,6 +1006,11 @@
                 ]
             }
         },
+        "5": {},
+        "6": {},
+        "7": {},
+        "8": {},
+        "9": {},
         "10": {
             "spellSelections": {
                 "add": [
@@ -992,10 +1026,20 @@
                     }
                 ]
             }
-        }
+        },
+        "11": {},
+        "12": {},
+        "13": {},
+        "14": {},
+        "15": {},
+        "16": {},
+        "17": {},
+        "18": {},
+        "19": {},
+        "20": {}
     },
     "Druid": {
-        "1": {
+        "0": {
             "skillProficiencies": {
                 "alias": "Skill Proficiencies",
                 "choose": 2,
@@ -1063,7 +1107,9 @@
                     "YEW WAND"
                 ],
                 "required": true
-            },
+            }
+        },
+        "1": {
             "spellSelections": {
                 "add": [
                     {
@@ -1094,6 +1140,7 @@
                 "required": true
             }
         },
+        "3": {},
         "4": {
             "spellSelections": {
                 "add": [
@@ -1110,6 +1157,11 @@
                 ]
             }
         },
+        "5": {},
+        "6": {},
+        "7": {},
+        "8": {},
+        "9": {},
         "10": {
             "spellSelections": {
                 "add": [
@@ -1125,10 +1177,20 @@
                     }
                 ]
             }
-        }
+        },
+        "11": {},
+        "12": {},
+        "13": {},
+        "14": {},
+        "15": {},
+        "16": {},
+        "17": {},
+        "18": {},
+        "19": {},
+        "20": {}
     }, 
     "Fighter": {
-        "1": {
+        "0": {
             "skillProficiencies": {
                 "alias": "Skill Proficiencies",
                 "choose": 2,
@@ -1223,6 +1285,9 @@
                 ],
                 "required": true
             },
+        },
+        "1": {
+            
             "fightingStyle": {
                 "alias": "Fighting Style",
                 "choose": 1,
@@ -1236,6 +1301,7 @@
                 ]
             }
         },
+        "2": {},
         "3": {
             "subclassSelection": {
                 "alias": "Martial Archetype",
@@ -1251,10 +1317,27 @@
                 "option": true,
                 "required": true
             }
-        }
+        },
+        "4": {},
+        "5": {},
+        "6": {},
+        "7": {},
+        "8": {},
+        "9": {},
+        "10": {},
+        "11": {},
+        "12": {},
+        "13": {},
+        "14": {},
+        "15": {},
+        "16": {},
+        "17": {},
+        "18": {},
+        "19": {},
+        "20": {}
     },
     "Monk": {
-        "1": {
+        "0": {
             "toolProficiencies": {
                 "alias": "Tool Proficiency",
                 "choose": 1, 
@@ -1335,6 +1418,9 @@
                 "require": true
             }
         },
+        "1": {
+        },
+        "2": {},
         "3": {
             "subclassSelection": {
                 "alias": "Monastic Tradition",
@@ -1348,10 +1434,27 @@
                 "option": true,
                 "required": true
             }
-        }
+        },
+        "4": {},
+        "5": {},
+        "6": {},
+        "7": {},
+        "8": {},
+        "9": {},
+        "10": {},
+        "11": {},
+        "12": {},
+        "13": {},
+        "14": {},
+        "15": {},
+        "16": {},
+        "17": {},
+        "18": {},
+        "19": {},
+        "20": {}
     }, 
     "Paladin": {
-        "1": {
+        "0": {
             "skillProficiencies": {
                 "alias": "Skill Proficiencies",
                 "choose": 2,
@@ -1459,6 +1562,7 @@
                 "required": true
             }
         },
+        "1": {},
         "2": {
             "fightingStyle": {
                 "alias": "Fighting Style",
@@ -1485,10 +1589,27 @@
                 "option": false,
                 "required": true
             }
-        }
+        },
+        "4": {},
+        "5": {},
+        "6": {},
+        "7": {},
+        "8": {},
+        "9": {},
+        "10": {},
+        "11": {},
+        "12": {},
+        "13": {},
+        "14": {},
+        "15": {},
+        "16": {},
+        "17": {},
+        "18": {},
+        "19": {},
+        "20": {}
     },
     "Ranger": {
-        "1": {
+        "0": {
             "skillProficiencies": {
                 "alias": "Skill Proficiencies",
                 "choose": 3,
@@ -1545,7 +1666,9 @@
                     "EXPLORER"
                 ],
                 "required": true
-            },
+            }
+        },
+        "1": {
             "favoredEnemy": {
                 "alias": "Favored Enemy",
                 "choose": 1,
@@ -1637,6 +1760,7 @@
                 }
             }
         },
+        "4": {},
         "5": {
             "spellSelections": {
                 "add": [
@@ -1676,6 +1800,7 @@
                 }
             }
         },
+        "6": {},
         "7": {
             "spellSelections": {
                 "add": [
@@ -1715,6 +1840,7 @@
                 }
             }
         },
+        "8": {},
         "9": {
             "spellSelections": {
                 "add": [
@@ -1754,6 +1880,7 @@
                 }
             }   
         },
+        "10": {},
         "11": {
             "spellSelections": {
                 "add": [
@@ -1793,6 +1920,7 @@
                 }
             }   
         },
+        "12": {},
         "13": {
             "spellSelections": {
                 "add": [
@@ -1832,6 +1960,7 @@
                 }
             }   
         },
+        "14": {},
         "15": {
             "spellSelections": {
                 "add": [
@@ -1871,6 +2000,7 @@
                 }
             }   
         },
+        "16": {},
         "17": {
             "spellSelections": {
                 "add": [
@@ -1910,6 +2040,7 @@
                 }
             }   
         },
+        "18": {},
         "19": {
             "spellSelections": {
                 "add": [
@@ -1948,11 +2079,11 @@
                     }
                 }
             }   
-        }        
-        
+        },
+        "20": {}        
     },
     "Rogue": {
-        "1": {
+        "0": {
             "skillProficiencies": {
                 "alias": "Skill Proficiencies",
                 "choose": 4,
@@ -2000,7 +2131,9 @@
                     "EXPLORER"
                 ],
                 "required": true
-            },
+            }
+        },
+        "1": {
             "proficiencySelection": {
                 "alias": "Expertise",
                 "choose": 2,
@@ -2011,6 +2144,7 @@
                 "required": true
             }
         },
+        "2": {},
         "3": {
             "subclassSelection": {
                 "alias": "Roguish Archetype",
@@ -2027,6 +2161,8 @@
                 "required": true
             }
         },
+        "4": {},
+        "5": {},
         "6": {
             "proficiencySelection": {
                 "alias": "Expertise",
@@ -2037,10 +2173,24 @@
                 ],
                 "required": true
             }
-        }
+        },
+        "7": {},
+        "8": {},
+        "9": {},
+        "10": {},
+        "11": {},
+        "12": {},
+        "13": {},
+        "14": {},
+        "15": {},
+        "16": {},
+        "17": {},
+        "18": {},
+        "19": {},
+        "20": {}
     },
     "Sorceror": {
-        "1": {
+        "0": {
             "skillProficiencies": {
                 "alias": "Skill Proficiencies",
                 "choose": 2,
@@ -2098,7 +2248,9 @@
                     "EXPLORER"
                 ],
                 "required": true
-            },
+            }
+        },
+        "1": {      
             "subclassSelection": {
                 "alias": "Sorcerous Origin",
                 "choose": 1,
@@ -2547,6 +2699,7 @@
                 }
             }
         },
+        "12": {},
         "13": {
             "spellSelections": {
                 "add": [
@@ -2586,6 +2739,7 @@
                 }
             }
         },
+        "14": {},
         "15": {
             "spellSelections": {
                 "add": [
@@ -2625,6 +2779,7 @@
                 }
             }
         },
+        "16": {},
         "17": {
             "spellSelections": {
                 "add": [
@@ -2664,9 +2819,12 @@
                 }
             }
         }
+        "18": {},
+        "19": {},
+        "20": {}
     },
     "Warlock": {
-        "1": {
+        "0": {
             "skillProficiencies": {
                 "alias": "Skill Proficiencies",
                 "choose": 2,
@@ -2725,7 +2883,9 @@
                     "SCHOLAR"
                 ],
                 "required": true
-            },
+            }
+        },
+        "1": {
             "subclassSelection": {
                 "alias": "Otherwordly Patron",
                 "choose": 1,
@@ -3379,6 +3539,7 @@
                 "required": true
             }   
         },
+        "14": {},
         "15": {
             "spellSelections": {
                 "add": [
@@ -3458,6 +3619,7 @@
                 }
             }   
         },
+        "16": {},
         "17": {
             "spellSelections": {
                 "add": [
@@ -3577,10 +3739,11 @@
                 ],
                 "required": true
             }
-        }
+        },
+        "20": {}
     },
     "Wizard": {
-        "1": {
+        "0": {
             "skillProficiencies": {
                 "alias": "Skill Proficiencies",
                 "choose": 2,
@@ -3626,7 +3789,9 @@
                     "EXPLORER"
                 ],
                 "required": true
-            },
+            }
+        },
+        "1": {
             "spellSelections": {
                 "add": [
                     {

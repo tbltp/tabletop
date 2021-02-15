@@ -12,7 +12,8 @@ export class Druid extends PlayerClass {
     firstLevelParams: LevelingParams,
     skillProficiencies?: string[],
     weapons?: string[],
-    armor?: string[]
+    armor?: string[],
+    druidicFocus?: string
   ) {
     super(
       "Druid",
@@ -31,7 +32,7 @@ export class Druid extends PlayerClass {
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons, armor);
+    this.characterStart(multiclass, skillProficiencies, weapons, armor, druidicFocus);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -39,13 +40,14 @@ export class Druid extends PlayerClass {
     }
   }
 
-  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], armor: string[], ){
+  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], armor: string[], druidicFocus: string){
     if(!multiclass) {  
       this.skillProficiencies = skillProficiencies;
       this.weaponProficiencies.push("Club", "Darts", "Javelin", "Mace", "Quarterstaff", "Scimitar", "Sickle", "Sling", "Spear");
       this.toolProficiencies.push("Herbalism Kit")
       this.weapons = weapons;
       this.armor = [...armor, "LEATHER"];
+      this.equipment = [druidicFocus];
       this.equipmentPack = "EXPLORER";
       this.savingThrowProficiencies = ["intelligence", "wisdom"];
     }

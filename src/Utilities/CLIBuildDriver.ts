@@ -1,6 +1,6 @@
 import { Dragonborn } from '../Races/Dragonborn/Dragonborn';
 import { Background } from '../Backgrounds/Background';
-import { PlayerClass } from '../Classes/PlayerClass';
+import { ClassCreationParams, PlayerClass } from '../Classes/PlayerClass';
 import { Barbarian } from '../Classes/Barbarian/Barbarian';
 import { Criminal } from '../Backgrounds/Criminal';
 import { Race } from '../Races/Race';
@@ -33,14 +33,23 @@ function pclassHandler() {
     console.log("Enter level [1-20].");
     let pclassLevel = prompt(">");
 
-    let pclassParams = {};
+
+
+    let pclassParams: ClassCreationParams = { multiclass: false };
     for(let i = 1; i <= pclassLevel; i++) {
         const choicesSet = Choices.renderClassChoicesAtLevel(pclassSelection, pclassLevel);
         for(const [key, selection] of choicesSet) {
             console.log(key, ':');
             console.log(selection);
             console.log("Choice?");
-            pclassParams[key] = prompt(">") 
+            
+            const userChoice = prompt(">");
+            type paramType = 
+            console.log(paramType);
+            if(paramType == "string") {
+                pclassParams[key] = userChoice
+            }
+            pclassParams[key].push(userChoice); 
         }
     }
     console.log(pclassParams);
