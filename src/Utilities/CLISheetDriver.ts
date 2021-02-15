@@ -1,11 +1,9 @@
-import { Dragonborn } from '../Races/Dragonborn/Dragonborn';
 import { Background } from '../Backgrounds/Background';
 import { ClassCreationParams, LevelingParams, PlayerClass } from '../Classes/PlayerClass';
 import { Barbarian } from '../Classes/Barbarian/Barbarian';
 import { Criminal } from '../Backgrounds/Criminal';
 import { Race } from '../Races/Race';
 import { Choices, ChoiceSpec } from './Choices';
-import { HalfOrc } from '../Races/Half Orc/HalfOrc';
 import { CharacterSheet } from '../Base/CharacterSheet';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import { Jsonify } from './Jsonify';
@@ -53,19 +51,6 @@ function defaultCreationParams(): ClassCreationParams {
 }
 
 
-
-const raceDict = {
-    'Dragonborn': Dragonborn, 
-    'Half Orc': HalfOrc   
-}
-
-const classDict = {
-    Barbarian: Barbarian
-}
-
-const bgDict = {
-    Criminal: Criminal
-}
 
 function createCharacter(){
 
