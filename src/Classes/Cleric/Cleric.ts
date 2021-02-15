@@ -103,7 +103,7 @@ export class Cleric extends PlayerClass {
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
     // channel divinity multiclass check against paladin
-     if(!PlayerClass.multiClassCheck(pc, "Channel Divinity")){
+     if(PlayerClass.multiClassCheck(pc, "Channel Divinity")){
        const channelDivinity: ResourceTrait = {
          title: "Channel Divinity",
          description: "Number of times you can use a Channel Divinity ability.",

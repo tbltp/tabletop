@@ -5,6 +5,10 @@ import { Barbarian } from '../Classes/Barbarian/Barbarian';
 import { Criminal } from '../Backgrounds/Criminal';
 import { Race } from '../Races/Race';
 import { Choices, ChoiceSpec } from './Choices';
+import { HalfOrc } from '../Races/Half Orc/HalfOrc';
+import { CharacterSheet } from '../Base/CharacterSheet';
+import { PlayerCharacter } from '../Base/PlayerCharacter';
+import { Jsonify } from './Jsonify';
 var prompt = require('prompt-sync')();
 
 
@@ -51,7 +55,8 @@ function defaultCreationParams(): ClassCreationParams {
 
 
 const raceDict = {
-    Dragonborn: Dragonborn    
+    'Dragonborn': Dragonborn, 
+    'Half Orc': HalfOrc   
 }
 
 const classDict = {
@@ -63,13 +68,41 @@ const bgDict = {
 }
 
 function createCharacter(){
-    let race: Race = raceHandler();
-    let pclass: PlayerClass = pclassHandler();
-    let background: Background = backgroundHandler();
+
+    console.log("Welcome to Tbltp's DND Character Sheet Creator!\nEnter a character name:");
+    const name = prompt(">");
+    const scores = promptAbilityScores();
+    let sheet: CharacterSheet = new CharacterSheet(
+        name,
+        new PlayerCharacter(...scores),
+        raceHandler(),
+        pclassHandler(),
+        backgroundHandler()
+    )
+
+    Jsonify.dumpToJSON(sheet, `test-${name}`);
+}
+
+function promptAbilityScores(): [number, number, number, number, number, number] {
+    const scores: string[] = [
+        "Strength",
+        "Dexterity",
+        "Constitution",
+        "Intelligence",
+        "Wisdom",
+        "Charisma"
+    ];
+    const values: [number, number, number, number, number, number] = [0,0,0,0,0,0];
+    Object.entries(scores).forEach(([ind, scoreName]) => {
+        console.log("Enter", scoreName, "(1-20):");
+        values[ind] = +(prompt(">"));  
+    });
+    return values;
 }
 
 
-function promptChoice(key: string, selection: ChoiceSpec, resultObject: object) {
+function promptChoice(key: string, selection: ChoiceSpec, resultObject: object): void {
+    //pass by reference
     for(let i = 0; i < selection['choose']; i++) {
         console.log(key, ':');
         console.log(selection);
@@ -85,7 +118,7 @@ function promptChoice(key: string, selection: ChoiceSpec, resultObject: object) 
 }
 
 
-function choiceHandler(choicesSet: [key: string, selection: ChoiceSpec][], resultObject: object) {
+function choiceHandler(choicesSet: [key: string, selection: ChoiceSpec][], resultObject: object): void {
     //pass by reference
     for(const [key, selection] of choicesSet) {
 
@@ -177,6 +210,4 @@ function backgroundHandler(){
     return bg;
 }
 
-//raceHandler();
-//backgroundHandler();
-pclassHandler();
+createCharacter();

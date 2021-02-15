@@ -294,10 +294,9 @@ export abstract class PlayerClass {
       "Channel Divinity": pc.pcHelper.findResourceTraitByName("Channel Divinity") === null ? true : false,
       "Unarmored Defense": pc.pcHelper.findFeatureTraitByName("Unarmored Defense") === null ? true : false
     }
-    
-    if (riskTraits[trait]) { return false; }
+    if (riskTraits[trait]) { return true; }
 
-    return true;
+    return false;
   }
 }
 

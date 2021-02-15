@@ -27,7 +27,7 @@ export class Paladin extends PlayerClass {
       [],
       [],
       [],
-      {isNoInput: true},
+      { isNoInput: true },
       "d10",
       10,
       []
