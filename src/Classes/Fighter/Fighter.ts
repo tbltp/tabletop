@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ResourceTrait } from "../../Base/Interfaces";
 import * as FightingStyles from "../../../Assets/FightingStyles.json";
@@ -6,14 +6,8 @@ import * as FighterClassTraits from "./Fighter.json";
 import { FighterSubclass } from "./Subclasses/FighterSubclass";
 
 export class Fighter extends PlayerClass {
-  constructor(
-    multiclass: boolean,
-    firstLevelParams: FighterLevelingParams,
-    skillProficiencies?: string[],
-    weapons?: string[],
-    armor?: string[],
-    equipmentPack?: string
-  ) {
+  constructor(params: ClassCreationParams)
+ {
     super(
       "Fighter",
       [],
@@ -25,13 +19,13 @@ export class Fighter extends PlayerClass {
       [],
       [],
       [],
-      firstLevelParams,
+      params.firstLevelParams,
       "d10",
       10,
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons, armor, equipmentPack);
+    this.characterStart(params.multiclass, params.skillProficiencies, params.weapons, params.armor, params.equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -107,7 +101,6 @@ export class Fighter extends PlayerClass {
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     this.subclassDriver(pc, "4", params);    
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
@@ -132,7 +125,6 @@ export class Fighter extends PlayerClass {
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "8", params);
   }
 
@@ -154,7 +146,6 @@ export class Fighter extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "12", params);
   }
 
@@ -173,7 +164,6 @@ export class Fighter extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "16", params);
   }
 
@@ -187,7 +177,6 @@ export class Fighter extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "19", params);
   }
 
@@ -207,7 +196,7 @@ export interface FighterLevelingParams extends LevelingParams {
 
 export class DSFighter extends Fighter {
   constructor(){
-    super(true, {isNoInput: true});
+    super({ multiclass: true });
   }
 }
 

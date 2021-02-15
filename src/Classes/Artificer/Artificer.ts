@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { ResourceTrait, Trait, ScalingTrait } from "../../Base/Interfaces";
 import * as ArtificerClassTraits from "./Artificer.json"
 import * as Infusions from "./Infusions.json"
@@ -7,7 +7,7 @@ import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ArtificerSubclass } from "./Subclasses/ArtificerSubclass";
 
 export class Artificer extends PlayerClass {
-  constructor(multiclass: boolean, firstLevelParams: ArtificerLevelingParams, skillProficiencies?: string[], toolProficiency?: string, weapons?: string[], armor?: string[]) {
+  constructor(params: ClassCreationParams) {
     super(
       "Artificer",
       [],
@@ -19,13 +19,13 @@ export class Artificer extends PlayerClass {
       [],
       [],
       [],
-      firstLevelParams,
+      params.firstLevelParams,
       "d8",
       8,
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, toolProficiency, weapons, armor);
+    this.characterStart(params.multiclass, params.skillProficiencies, params.toolProficiencies, params.weapons, params.armor);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -33,13 +33,13 @@ export class Artificer extends PlayerClass {
     }
   }
 
-  characterStart(multiclass: boolean, skillProficiencies: string[], toolProficiency: string, weapons: string[], armor: string[]){
+  characterStart(multiclass: boolean, skillProficiencies: string[], toolProficiencies: string[], weapons: string[], armor: string[]){
     if(!multiclass){
       this.skillProficiencies.push(...skillProficiencies)
-      this.toolProficiencies.push(toolProficiency)
+      this.toolProficiencies.push(...toolProficiencies)
       this.weapons.push(...weapons, "CROSSBOW, LIGHT");
       this.armor.push(...armor);
-      this.toolKits.push(toolProficiency);
+      this.toolKits.push("THIEVES' TOOLS");
       this.equipmentPack = "DUNGEONEER";
       this.savingThrowProficiencies = ["constitution", "intelligence"];
     }
@@ -103,7 +103,6 @@ export class Artificer extends PlayerClass {
   }
 
   level4(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
@@ -122,7 +121,6 @@ export class Artificer extends PlayerClass {
   }
 
   level8(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.pushArtificerFeatures(pc, 8);
   }
 
@@ -143,7 +141,6 @@ export class Artificer extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level13(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
@@ -163,7 +160,6 @@ export class Artificer extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level17(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
@@ -177,7 +173,6 @@ export class Artificer extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
@@ -207,6 +202,6 @@ export interface ArtificerLevelingParams extends LevelingParams {
 
 export class DSArtificer extends Artificer {
   constructor(){
-    super(true, {isNoInput: true});
+    super({multiclass: true});
   }
 }

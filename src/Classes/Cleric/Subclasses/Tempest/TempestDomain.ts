@@ -35,7 +35,7 @@ export class TempestDomain {
     pc.pcHelper.addFeatures(
       TempestDomain.getFeature(
         "2",
-        "CHANNEL DIVINITY: DESTRUCTIVE WRATH"
+        "DESTRUCTIVE WRATH"
       )
     );
   }

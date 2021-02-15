@@ -84,7 +84,7 @@ export class Barbarian extends PlayerClass {
     pc.pcHelper.addResourceTraits(rage);
     pc.pcHelper.addScalingTraits(rageDamage);
 
-    if(PlayerClass.multiClassCheck(pc, "Unarmored Defense")){
+    if(!PlayerClass.multiClassCheck(pc, "Unarmored Defense")){
       pc.armorClasses.push({
         name: "Unarmored Defense",
         base: 10,
@@ -111,7 +111,6 @@ export class Barbarian extends PlayerClass {
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "4", params);
   }
 
@@ -144,7 +143,6 @@ export class Barbarian extends PlayerClass {
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "8", params);
   }
 
@@ -168,7 +166,6 @@ export class Barbarian extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     pc.pcHelper.findResourceTraitByName("Rage").resourceMax.value++;
     this.subclassDriver(pc, "12", params);
   }
@@ -187,7 +184,6 @@ export class Barbarian extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     pc.pcHelper.findScalingTraitByName("Rage Damage").bonus = 4;
     this.subclassDriver(pc, "16", params);
   }
@@ -203,7 +199,6 @@ export class Barbarian extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {

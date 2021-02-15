@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ResourceTrait } from "../../Base/Interfaces";
 import * as SpellList from "../../../Assets/SpellList.json";
@@ -8,18 +8,11 @@ import { RangerSubclass } from "./Subclasses/RangerSubclass";
 import { SpellSlotFactory } from "../SpellSlotFactory";
 
 export class Ranger extends PlayerClass {
-  constructor(
-    multiclass: boolean,
-    skillProficiencies: string[],
-    firstLevelParams: RangerLevelingParams,
-    weapons?: string[],
-    armor?: string[],
-    equipmentPack?: string,
-  ) {
+ constructor(params: ClassCreationParams) {
     super(
       "Ranger",
       [],
-      skillProficiencies,
+      params.skillProficiencies,
       ["Simple", "Martial"],
       ["Light", "Medium", "Shield"],
       [],
@@ -27,13 +20,13 @@ export class Ranger extends PlayerClass {
       [],
       [],
       [],
-      firstLevelParams,
+      params.firstLevelParams,
       "d10",
       10,
       []
     );
 
-    this.characterStart(multiclass, weapons, armor, equipmentPack);
+    this.characterStart(params.multiclass, params.weapons, params.armor, params.equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -118,7 +111,6 @@ export class Ranger extends PlayerClass {
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.pushRangerFeatures(pc, 4);
     this.subclassDriver(pc, "4", params);
   }
@@ -153,7 +145,6 @@ export class Ranger extends PlayerClass {
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.pushRangerFeatures(pc, 8);
     this.subclassDriver(pc, "8", params);
   }
@@ -177,7 +168,6 @@ export class Ranger extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "12", params);
   }
 
@@ -200,7 +190,6 @@ export class Ranger extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "16", params);
   }
 
@@ -216,7 +205,6 @@ export class Ranger extends PlayerClass {
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "19", params);
   }
 
@@ -228,7 +216,7 @@ export class Ranger extends PlayerClass {
 
 export class DSRanger extends Ranger {
   constructor(){
-    super(true, [], {isNoInput: true});
+    super({ multiclass: true });
   }
 }
 

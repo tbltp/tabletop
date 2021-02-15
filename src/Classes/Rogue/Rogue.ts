@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { Trait } from "../../Base/Interfaces";
 import * as SpellList from "../../../Assets/SpellList.json";
@@ -6,17 +6,12 @@ import * as RogueClassTraits from "./Rogue.json";
 import { RogueSubclass } from "./Subclasses/RogueSubclass";
 
 export class Rogue extends PlayerClass {
-  constructor(
-    multiclass: boolean,
-    skillProficiencies: string[],
-    firstLevelParams: LevelingParams,
-    weapons?: string[],
-    equipmentPack?: string
-  ) {
+  constructor(params: ClassCreationParams)
+ {
     super(
       "Rogue",
       [],
-      skillProficiencies,
+      params.skillProficiencies,
       [],
       ["Light"],
       ["Thieves' Tools"],
@@ -24,13 +19,13 @@ export class Rogue extends PlayerClass {
       [],
       [],
       [],
-      firstLevelParams,
+      params.firstLevelParams,
       "d8",
       8,
       []
     );
 
-    this.characterStart(multiclass, weapons, equipmentPack);
+    this.characterStart(params.multiclass, params.weapons, params.equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -106,7 +101,6 @@ export class Rogue extends PlayerClass {
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     this.subclassDriver(pc, "4", params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
@@ -129,7 +123,6 @@ export class Rogue extends PlayerClass {
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "8", params);
   }
 
@@ -150,7 +143,6 @@ export class Rogue extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
@@ -171,7 +163,6 @@ export class Rogue extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "16", params);
   }
 
@@ -185,7 +176,6 @@ export class Rogue extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "10d6";
     this.subclassDriver(pc, "19", params);
   }
@@ -198,6 +188,6 @@ export class Rogue extends PlayerClass {
 
 export class DSRogue extends Rogue {
   constructor(){
-    super(true, [], {isNoInput: true});
+    super({ multiclass: true });
   }
 }

@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import * as SpellList from "../../../Assets/SpellList.json";
@@ -9,13 +9,7 @@ import { SpellSlotFactory } from "../SpellSlotFactory";
 import { ResourceTrait } from "Base/Interfaces";
 
 export class Paladin extends PlayerClass {
-  constructor(
-    multiclass: boolean,
-    skillProficiencies?: string[],    
-    weapons?: string[],
-    armor?: string[],
-    equipmentPack?: string
-  ) {
+  constructor(params: ClassCreationParams) {
     super(
       "Paladin",
       [],
@@ -33,7 +27,7 @@ export class Paladin extends PlayerClass {
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons, armor, equipmentPack);
+    this.characterStart(params.multiclass, params.skillProficiencies, params.weapons, params.armor, params.equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -127,7 +121,6 @@ export class Paladin extends PlayerClass {
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.upgradeLayOnHands(pc);
     this.pushPaladinFeatures(pc, 4);
     this.subclassDriver(pc, "4", params);
@@ -159,7 +152,6 @@ export class Paladin extends PlayerClass {
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.upgradeLayOnHands(pc);
     this.subclassDriver(pc, "8", params);
   }
@@ -183,7 +175,6 @@ export class Paladin extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.upgradeLayOnHands(pc);
     this.subclassDriver(pc, "12", params);
   }
@@ -206,7 +197,6 @@ export class Paladin extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.upgradeLayOnHands(pc);
     this.subclassDriver(pc, "16", params);
   }
@@ -224,7 +214,6 @@ export class Paladin extends PlayerClass {
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "19", params);
   }
 
@@ -236,6 +225,6 @@ export class Paladin extends PlayerClass {
 
 export class DSPaladin extends Paladin {
   constructor(){
-    super(true);
+    super({ multiclass: true });
   }
 }

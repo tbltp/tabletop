@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ISpell, Spell, ResourceTrait, ScalingTrait } from "../../Base/Interfaces";
 import * as ClericClassTraits from "./Cleric.json";
@@ -9,15 +9,7 @@ import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import { SpellSlotFactory } from "../SpellSlotFactory";
 
 export class Cleric extends PlayerClass {
-  constructor(
-    multiclass: boolean,
-    firstLevelParams: LevelingParams,
-    skillProficiencies?: string[],
-    weapons?: string[],
-    armor?: string[],
-    equipmentPack?: string,
-    holySymbol?: string
-  ) {
+  constructor(params: ClassCreationParams) {
     super(
       "Cleric",
       [],
@@ -29,13 +21,13 @@ export class Cleric extends PlayerClass {
       [],
       [],
       [],
-      firstLevelParams,
+      params.firstLevelParams,
       "d8",
       8,
       []
     );
     
-    this.characterStart(multiclass, skillProficiencies, weapons, armor, equipmentPack, holySymbol);
+    this.characterStart(params.multiclass, params.skillProficiencies, params.weapons, params.armor, params.equipmentPack, params.holySymbol);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -94,6 +86,7 @@ export class Cleric extends PlayerClass {
       [...SpellList["Cleric"][1]],
       SpellcastingAbility["CLERIC"]
     );
+    this.handleClericSpellSelections(pc, params);
     this.addSpellcasting(pc, "CLERIC");
 
     // divine domain
@@ -126,7 +119,6 @@ export class Cleric extends PlayerClass {
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     // cantrip
     this.handleClericSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
@@ -163,7 +155,6 @@ export class Cleric extends PlayerClass {
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     // destroy undead
     pc.pcHelper.findScalingTraitByName("Destroy Undead").challengeRating = 1;
     // divine domain
@@ -197,7 +188,6 @@ export class Cleric extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
@@ -215,7 +205,6 @@ export class Cleric extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
@@ -232,7 +221,6 @@ export class Cleric extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
@@ -241,6 +229,6 @@ export class Cleric extends PlayerClass {
 
 export class DSCleric extends Cleric {
   constructor(){
-    super(true, {isNoInput: true});
+    super({multiclass: true});
   }
 }

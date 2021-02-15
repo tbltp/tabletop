@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams  } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import {
   AttachedFeature,
@@ -14,14 +14,7 @@ import * as Invocations from "./EldritchInvocations.json";
 import { WarlockSubclass } from "./Subclasses/WarlockSubclass";
 
 export class Warlock extends PlayerClass {
-  constructor(
-    multiclass: boolean,
-    firstLevelParams: WarlockLevelingParams,
-    skillProficiencies?: string[],
-    weapons?: string[],
-    equipmentPack?: string,
-    arcaneFocus?: string
-  ) {
+  constructor(params: ClassCreationParams) {
     super(
       "Warlock",
       [],
@@ -33,18 +26,18 @@ export class Warlock extends PlayerClass {
       [],
       [],
       [],
-      firstLevelParams,
+      params.firstLevelParams,
       "d8",
       8,
       []
     );
 
     this.characterStart(
-      multiclass,
-      skillProficiencies,
-      weapons,
-      equipmentPack,
-      arcaneFocus
+      params.multiclass,
+      params.skillProficiencies,
+      params.weapons,
+      params.equipmentPack,
+      params.arcaneFocus
     );
 
     for (let level in this.abilitiesAtLevels) {
@@ -173,7 +166,6 @@ export class Warlock extends PlayerClass {
 
   level4(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -202,7 +194,6 @@ export class Warlock extends PlayerClass {
 
   level8(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.handleInvocationSelections(pc, params);
   }
 
@@ -235,7 +226,6 @@ export class Warlock extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.handleInvocationSelections(pc, params);
   }
 
@@ -261,7 +251,6 @@ export class Warlock extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.handleInvocationSelections(pc, params);
   }
 
@@ -279,7 +268,6 @@ export class Warlock extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.handleWarlockSpellSelections(pc, params);
     this.handleInvocationSelections(pc, params);
   }
@@ -360,7 +348,7 @@ export class Warlock extends PlayerClass {
 
 export class DSWarlock extends Warlock {
   constructor() {
-    super(true, { isNoInput: true });
+    super({ multiclass: true });
   }
 }
 

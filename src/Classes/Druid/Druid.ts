@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ResourceTrait, ScalingTrait } from "../../Base/Interfaces";
 import * as SpellList from "../../../Assets/SpellList.json";
@@ -7,14 +7,7 @@ import * as DruidClassTraits from "./Druid.json";
 import { DruidSubclass } from "./Subclasses/DruidSubclass";
 
 export class Druid extends PlayerClass {
-  constructor(
-    multiclass: boolean,
-    firstLevelParams: LevelingParams,
-    skillProficiencies?: string[],
-    weapons?: string[],
-    armor?: string[],
-    druidicFocus?: string
-  ) {
+  constructor(params: ClassCreationParams) {
     super(
       "Druid",
       [],
@@ -26,13 +19,13 @@ export class Druid extends PlayerClass {
       [],
       [],
       [],
-      firstLevelParams,
+      params.firstLevelParams,
       "d8",
       8,
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons, armor, druidicFocus);
+    this.characterStart(params.multiclass, params.skillProficiencies, params.weapons, params.armor, params.druidicFocus);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -47,7 +40,7 @@ export class Druid extends PlayerClass {
       this.toolProficiencies.push("Herbalism Kit")
       this.weapons = weapons;
       this.armor = [...armor, "LEATHER"];
-      this.equipment = [druidicFocus];
+      this.equipment.push(druidicFocus);
       this.equipmentPack = "EXPLORER";
       this.savingThrowProficiencies = ["intelligence", "wisdom"];
     }
@@ -130,7 +123,6 @@ export class Druid extends PlayerClass {
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleDruidSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     // wild shape
     const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName(
       "Wild Shape"
@@ -167,7 +159,6 @@ export class Druid extends PlayerClass {
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     // wild shape
     const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName(
       "Wild Shape"
@@ -201,7 +192,6 @@ export class Druid extends PlayerClass {
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "12", params); 
   }
 
@@ -227,7 +217,6 @@ export class Druid extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "16", params); 
   }
 
@@ -244,7 +233,6 @@ export class Druid extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "19", params); 
   }
 
@@ -258,6 +246,6 @@ export class Druid extends PlayerClass {
 
 export class DSDruid extends Druid {
   constructor(){
-    super(true, {isNoInput: true});
+    super({ multiclass: true });
   }
 }

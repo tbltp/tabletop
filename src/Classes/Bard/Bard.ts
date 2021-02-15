@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ResourceTrait, ScalingTrait } from "../../Base/Interfaces";
 import { BardSubclass } from "./Subclasses/BardSubclass";
@@ -7,33 +7,25 @@ import * as BardClassTraits from "./Bard.json";
 import { SpellSlotFactory } from "../SpellSlotFactory";
 
 export class Bard extends PlayerClass {
-  constructor(
-    multiclass: boolean,
-    skillProficiencies: string[],
-    instrumentProficiencies: string[],
-    firstLevelParams: BardLevelingParams,
-    weapons?: string[],
-    instrument?: string,
-    equipmentPack?: string,
-  ) {
+  constructor(params: ClassCreationParams) {
     super(
       "Bard",
       [],
-      skillProficiencies,
+      params.skillProficiencies,
       [],
       ["Light"],
-      instrumentProficiencies,
+      params.toolProficiencies,
       [],
       [],
       [],
       [],
-      firstLevelParams,
+      params.firstLevelParams,
       "d8",
       8,
       []
     );
 
-    this.characterStart(multiclass, weapons, instrument, equipmentPack);
+    this.characterStart(params.multiclass, params.weapons, params.instrument, params.equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -146,7 +138,6 @@ export class Bard extends PlayerClass {
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
@@ -170,7 +161,6 @@ export class Bard extends PlayerClass {
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
@@ -211,7 +201,6 @@ export class Bard extends PlayerClass {
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
@@ -243,7 +232,6 @@ export class Bard extends PlayerClass {
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
@@ -266,7 +254,6 @@ export class Bard extends PlayerClass {
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
@@ -281,6 +268,6 @@ export interface BardLevelingParams extends LevelingParams {
 
 export class DSBard extends Bard {
   constructor(){
-    super(true, [], [], {isNoInput: true});
+    super({multiclass: true});
   }
 }
