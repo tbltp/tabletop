@@ -205,6 +205,7 @@
     },
     "Hermit": {
         "languages": {
+            "alias": "Language",
             "choose": 1,
             "from": [
                 "Celestial",
@@ -244,20 +245,24 @@
                 "Primordial",
                 "Sylvan",
                 "Undercommon"
-            ]
+            ],
+            "required": true
         },
         "gamingSet": {
+            "alias": "Gaming Set Proficiency",
             "choose": 1,
             "from": [
                 "PLAYING CARD SET",
                 "DRAGONCHESS SET",
                 "DICE SET",
                 "THREE-DRAGON ANTE SET"
-            ]
+            ],
+            "required": true
         }
     },
     "Noble": {
-        "Language": {
+        "languages": {
+            "alias": "Language",
             "choose": 1,
             "from": [
                 "Celestial",
@@ -274,20 +279,24 @@
                 "Primordial",
                 "Sylvan",
                 "Undercommon"
-            ]
+            ],
+            "required": true
         },
-        "Gaming Set": {
+        "gamingSet": {
+            "alias": "Gaming Set Proficiency",
             "choose": 1,
             "from": [
                 "PLAYING CARD SET",
                 "DRAGONCHESS SET",
                 "DICE SET",
                 "THREE-DRAGON ANTE SET"
-            ]
+            ],
+            "required": true
         }
     },
     "Outlander": {
-        "Language": {
+        "languages": {
+            "alias": "Language",
             "choose": 1,
             "from": [
                 "Celestial",
@@ -304,9 +313,11 @@
                 "Primordial",
                 "Sylvan",
                 "Undercommon"
-            ]
+            ],
+            "required": true
         },
         "instrument": {
+            "alias": "Musical Instrument Proficiency",
             "choose": 1,
             "from": [
                 "BAGPIPES",
@@ -319,12 +330,14 @@
                 "PAN FLUTE",
                 "SHAWM",
                 "VIOL"
-            ]
+            ],
+            "required": true
         }
     },
     "Pirate": {},
     "Sage": {
-        "Language": {
+        "languages": {
+            "alias": "Languages",
             "choose": 2,
             "from": [
                 "Celestial",
@@ -341,19 +354,22 @@
                 "Primordial",
                 "Sylvan",
                 "Undercommon"
-            ]
+            ],
+            "required": true
         }
     },
     "Sailor": {},
     "Soldier": {
-        "Gaming Set Proficiency": {
+        "gamingSet": {
+            "alias": "Gaming Set Proficiency",
             "choose": 1,
             "from": [
-                "Playing card set",
-                "Dragonchess set",
-                "Dice set",
-                "Three-dragon ante set"
-            ]
+                "PLAYING CARD SET",
+                "DRAGONCHESS SET",
+                "DICE SET",
+                "THREE-DRAGON ANTE SET"
+            ],
+            "required": true
         }
     },
     "Urchin": {}

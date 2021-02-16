@@ -88,16 +88,16 @@
             "alias": "Ability Scores",
             "choose": 2,
             "from": [
-                "Strength",
-                "Dexterity",
-                "Constitution",
-                "Intelligence",
-                "Wisdom", 
-                "Charisma"
+                "strength",
+                "dexterity",
+                "constitution",
+                "intelligence",
+                "wisdom", 
+                "charisma"
             ],
             "required": true
         },
-        "proficiencies":  {
+        "skillProficiencies":  {
             "alias": "Skill Proficiencies",
             "choose": 2,
             "from": [
@@ -196,16 +196,16 @@
             "alias": "Ability Scores",
             "choose": 2,
             "from": [
-                "Strength",
-                "Dexterity",
-                "Constitution",
-                "Intelligence",
-                "Wisdom", 
-                "Charisma"
+                "strength",
+                "dexterity",
+                "constitution",
+                "intelligence",
+                "wisdom", 
+                "charisma"
             ],
             "required": true
         },
-        "proficiencies":  {
+        "skillProficiencies":  {
             "alias": "Skill Proficiencies",
             "choose": 2,
             "from": [

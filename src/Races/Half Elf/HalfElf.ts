@@ -38,6 +38,8 @@ export class HalfElf extends Race {
 
   abilityIncrease(pc: PlayerCharacter): void {
     pc.abilityScores.charisma.update(2);
+    console.log(this.chosenAbilityScores);
+    console.log(pc.abilityScores);
     pc.abilityScores[this.chosenAbilityScores[0]].update(1);
     pc.abilityScores[this.chosenAbilityScores[1]].update(1);
   }

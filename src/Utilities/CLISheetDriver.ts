@@ -5,10 +5,37 @@ import { Choices, ChoiceSpec } from './Choices';
 import { CharacterSheet } from '../Base/CharacterSheet';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import { Jsonify } from './Jsonify';
-import { Race } from '../Races/Race';
-import { Background } from '../Backgrounds/Background';
+import { Race, RaceParams } from '../Races/Race';
+import { Background, BackgroundParams } from '../Backgrounds/Background';
 var prompt = require('prompt-sync')();
 
+
+
+
+
+
+function defaultRaceParams(): RaceParams {
+    return {
+        draconicAncestry: "",
+        toolProficiency: "",
+        abilityScores: [],
+        skillProficiencies: [],
+        language: "",
+        cantrip: "",
+        feat: ""
+    };
+}
+
+function defaultBackgroundParams(): BackgroundParams {
+    return {
+        languages: [],
+        holySymbol: "",
+        gamingSet: "",
+        toolProficiencies: [],
+        instrument: "",
+        toolKit: ""
+    };
+}
 
 
 function defaultLevelingParams(): LevelingParams {
@@ -102,7 +129,6 @@ function promptChoice(key: string, selection: ChoiceSpec, resultObject: object, 
         } else {
             if(!pc) { let pc = null; }
             const choiceParams = Choices.convertToParams(selection , pc);
-            console.log(selection['method']);
             const optionList = Choices.functionRailRoad[selection['method']](choiceParams);
             console.log(optionList);
             console.log("Choice?");
@@ -113,7 +139,9 @@ function promptChoice(key: string, selection: ChoiceSpec, resultObject: object, 
         if(paramType == "string") {
             resultObject[key] = userChoice
         }
-        resultObject[key].push(userChoice); 
+        else {
+            resultObject[key].push(userChoice);
+        } 
     }
 }
 
@@ -121,26 +149,23 @@ function promptChoice(key: string, selection: ChoiceSpec, resultObject: object, 
 function choiceHandler(choicesSet: [key: string, selection: ChoiceSpec][], resultObject: object, pc?: PlayerCharacter): void {
     //pass by reference
     for(const [key, selection] of choicesSet) {
-
         if(selection instanceof Array) {
             selection.forEach(choice => {
                 promptChoice(key, choice, resultObject, pc);
             });
         }
         else if(Object.keys(selection).length !== 0) {
-
             promptChoice(key, selection, resultObject, pc);
         }
     }
 }
-
 
 function raceHandler(){
     console.log(Choices.renderRaceChoices());
     console.log("Select Your Race.")
     let raceSelection = prompt(">");
 
-    let raceParams = {};
+    let raceParams = defaultRaceParams();
     const choicesSet = Choices.renderRaceSelectionChoices(raceSelection);
     choiceHandler(choicesSet, raceParams);
 
@@ -155,7 +180,7 @@ function backgroundHandler(pc: PlayerCharacter){
     console.log("Select Your Background.")
     let bgSelection = prompt(">");
 
-    let bgParams = {};
+    let bgParams = defaultBackgroundParams();
     const choicesSet = Choices.renderBackgroundSelectionChoices(bgSelection)
     choiceHandler(choicesSet, bgParams, pc);
 
@@ -188,5 +213,5 @@ function pclassHandler(pc: PlayerCharacter) {
 }
 
 
-//createCharacter();
-raceHandler();
+createCharacter();
+
