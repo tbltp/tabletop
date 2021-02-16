@@ -54,7 +54,6 @@ function defaultLevelingParams(): LevelingParams {
 
 function defaultCreationParams(): ClassCreationParams {
 
-    let defaultLevelParams = defaultLevelingParams();
     return {
         multiclass: false,
         skillProficiencies: [],

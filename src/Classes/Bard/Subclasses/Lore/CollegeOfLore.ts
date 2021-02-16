@@ -10,6 +10,7 @@ export class CollegeOfLore {
   }
 
   static lore3(pc: PlayerCharacter, params: LevelingParams) {
+    //bonus proficiencies need to be done here
     pc.pcHelper.addFeatures(CollegeOfLore.getFeature("3", "CUTTING WORDS"));
   }
 

@@ -1,11 +1,21 @@
 {
-    "ANCESTRAL GUARDIAN": {},
-    "BERSERKER": {},
-    "STORM HERALD": {},
+    "STORM HERALD": {
+        "3": {
+            "stormAura": {
+                "alias": "Storm Aura",
+                "choose": 1,
+                "from": [
+                    "DESERT",
+                    "SEA",
+                    "TUNDRA"
+                ]
+            }
+        }
+    },
     "TOTEM WARRIOR": {
         "3": {
-            "options": {
-                "alias": "Totem (Level 3)",
+            "totem": {
+                "alias": "Totem Spirit (Level 3)",
                 "choose": 1,
                 "from": [
                     "BEAR",
@@ -16,8 +26,8 @@
             }
         },
         "6": {
-            "options": {
-                "alias": "Totem (Level 6)",
+            "totem": {
+                "alias": "Totem Spirit (Level 6)",
                 "choose": 1,
                 "from": [
                     "BEAR",
@@ -28,8 +38,8 @@
             }
         },
         "14": {
-            "options": {
-                "alias": "Totem (Level 14)",
+            "totem": {
+                "alias": "Totem Spirit (Level 14)",
                 "choose": 1,
                 "from": [
                     "BEAR",
@@ -42,8 +52,9 @@
     },
     "LORE": {
         "3": {
-            "proficiencySelection": {
-                "choose": 1,
+            "skillProficiencies": {
+                "alias": "Bonus Proficiencies",
+                "choose": 3,
                 "from": [
                     "acrobatics",
                     "animal handling",
@@ -63,25 +74,39 @@
                     "sleight of hand",
                     "stealth",
                     "survival"
-                ]
+                ],
+                "required": true
             }
         },
         "6": {
-            "spellSelections": {
-                "add": {
-                    "choose": 2,
-                    "method": "getSpellListAll",
-                    "args": [
-                        "6"
-                    ]
-                }
-            } 
+            "spells": {
+                "alias": "Additional Magical Secrets Spells",
+                "choose": 2,
+                "method": "getSpellListAll",
+                "args": [
+                    "3"
+                ],
+                "required": true
+            }
         }
     },
-    "VALOR": {},
+    "SWORDS": {
+        "3": {
+            "fightingStyles": {
+                "alias": "Fighting Style",
+                "choose": 1,
+                "from": [
+                    "DUELING",
+                    "TWO WEAPON FIGHTING"
+                ],
+                "required": true
+            }
+        }
+    },
     "KNOWLEDGE": {
         "1": {
-            "options": {
+            "languages": {
+                "alias": "Blessings of Knowledge (Languages)",
                 "choose": 2,
                 "from": [
                     "Celestial",
@@ -98,61 +123,86 @@
                     "Primordial",
                     "Sylvan",
                     "Undercommon"
-                ]
+                ],
+                "required": true
             },
-            "proficiencySelection": {
+            "skillProficiencies": {
+                "alias": "Blessings of Knowledge (Skill Proficiencies)",
                 "choose": 2,
                 "from": [
                     "arcana",
                     "nature",
                     "history",
                     "religion"
-                ]
+                ],
+                "required": true
             }
         }
     },
-    "LIFE": {},
-    "LIGHT": {},
     "NATURE": {
         "1": {
-            "spellSelections": {
-                "add": {
-                    "choose": 1,
-                    "method": "getSpellList",
-                    "args": [
-                        "Druid",
-                        "0"
-                    ]
-                } 
+            "spells": {
+                "alias": "Acolyte of Nature (Cantrip)",
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Druid",
+                    "0"
+                ],
+                "required": true
             },
-            "proficiencySelection": {
+            "skillProficiencies": {
+                "alias": "Acolyte of Nature (Skill)",
                 "choose": 1,
                 "from": [
                     "animal handling",
                     "nature",
                     "survival"
-                ]
+                ],
+                "required": true
             }
         }
     },
-    "TEMPEST": {},
-    "TRICKERY": {},
-    "WAR": {},
+    "ORDER": {
+        "1": {
+            "spells": {
+                "alias": "Acolyte of Nature (Cantrip)",
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Druid",
+                    "0"
+                ],
+                "required": true
+            },
+            "skillProficiencies": {
+                "alias": "Acolyte of Nature (Skill)",
+                "choose": 1,
+                "from": [
+                    "animal handling",
+                    "nature",
+                    "survival"
+                ],
+                "required": true
+            }
+        }
+    },
     "LAND": {
         "2": {
-            "spellSelections": {
-                "add": {
-                    "choose": 1,
-                    "method": "getSpellList",
-                    "args": [
-                        "Druid",
-                        "0"
-                    ]
-                }
+            "spells": {
+                "alias": "Bonus Cantrip",
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Druid",
+                    "0"
+                ],
+                "required": true
             }
         },
         "3": {
-            "options": {
+            "land": {
+                "alias": "Land",
                 "choose": 1,
                 "from": [
                     "ARCTIC",
@@ -163,36 +213,335 @@
                     "MOUNTAIN",
                     "SWAMP",
                     "UNDERDARK"
-                ]
+                ],
+                "required": true
             }
         }
     },
-    "MOON": {},
-    "CHAMPION": {},
-    "BATTLE MASTER": {},
-    "ELDRITCH KNIGHT": {},
-    "OPEN HAND": {},
-    "SHADOW": {},
-    "FOUR ELEMENTS": {},
-    "DEVOTION": {},
-    "ANCIENTS": {},
-    "VENGEANCE": {},
-    "HUNTER": {},
-    "BEAST MASTER": {},
-    "ASSASSIN": {},
-    "THIEF": {},
-    "ARCANE TRICKSTER": {},
-    "DRACONIC ANCESTRY": {},
-    "WILD MAGIC": {},
-    "FIEND": {},
-    "ARCHFEY": {},
-    "GREAT OLD ONE": {},
-    "ABJURATION": {},
-    "CONJURATION": {},
-    "DIVINATION": {},
-    "ENCHANTMENT": {},
-    "EVOCATION": {},
-    "ILLUSION": {},
-    "NECROMANCY": {},
-    "TRANSMUTATION": {}
+    "ARCANE ARCHER": {
+        "3": {},
+        "7": {},
+        "10": {},
+        "15": {},
+        "18": {}
+    },
+    "BATTLE MASTER": {
+        "3": {
+            "toolkitProficiency": {
+                "alias": "Student of War Tool Proficiency",
+                "choose": 1,
+                "from": [
+                    "Alchemist's supplies",
+                    "Brewer's supplies",
+                    "Calligrapher's supplies",
+                    "Carpenter's tools",
+                    "Cartographer's tools",
+                    "Cobbler's tools",
+                    "Cook's utensils",
+                    "Glassblower's tools",
+                    "Jeweler's tools",
+                    "Leatherworker's tools",
+                    "Mason's tools",
+                    "Painter's tools",
+                    "Potter's tools",
+                    "Smith's tools",
+                    "Tinker's tools",
+                    "Weaver's tools",
+                    "Woodcarver's tools"
+                ],
+                "required": true
+            },
+            "battleManeuvers": {
+                "add": [
+                    {
+                        "alias": "Combat Superiority (Level 3)",
+                        "choose": 3,
+                        "from": [
+                            "COMMANDER'S STRIKE",
+                            "DISARMING ATTACK",
+                            "DISTRACTING STRIKE",
+                            "EVASIVE FOOTWORK",
+                            "FEINTING ATTACK",
+                            "GOADING ATTACK",
+                            "LUNGING ATTACK",
+                            "MANEUVERING ATTACK",
+                            "MENACING ATTACK",
+                            "PARRY",
+                            "PRECISION ATTACK",
+                            "PUSHING ATTACK",
+                            "RALLY",
+                            "RIPOSTE",
+                            "SWEEPING ATTACK",
+                            "TRIP ATTACK"
+                        ],
+                        "required": true
+                    }
+                ]
+            }
+        },
+        "7": {
+            "battleManeuvers": {
+                "add": [
+                    {
+                        "alias": "Combat Superiority (Level 7)",
+                        "choose": 2,
+                        "from": [
+                            "COMMANDER'S STRIKE",
+                            "DISARMING ATTACK",
+                            "DISTRACTING STRIKE",
+                            "EVASIVE FOOTWORK",
+                            "FEINTING ATTACK",
+                            "GOADING ATTACK",
+                            "LUNGING ATTACK",
+                            "MANEUVERING ATTACK",
+                            "MENACING ATTACK",
+                            "PARRY",
+                            "PRECISION ATTACK",
+                            "PUSHING ATTACK",
+                            "RALLY",
+                            "RIPOSTE",
+                            "SWEEPING ATTACK",
+                            "TRIP ATTACK"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Maneuver",
+                        "choose": 1,
+                        "from": [
+                            "COMMANDER'S STRIKE",
+                            "DISARMING ATTACK",
+                            "DISTRACTING STRIKE",
+                            "EVASIVE FOOTWORK",
+                            "FEINTING ATTACK",
+                            "GOADING ATTACK",
+                            "LUNGING ATTACK",
+                            "MANEUVERING ATTACK",
+                            "MENACING ATTACK",
+                            "PARRY",
+                            "PRECISION ATTACK",
+                            "PUSHING ATTACK",
+                            "RALLY",
+                            "RIPOSTE",
+                            "SWEEPING ATTACK",
+                            "TRIP ATTACK"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "battleManeuvers.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Maneuver Removal",
+                    "choose": 1,
+                    "method": "getKnownManeuvers",
+                    "required": false,
+                    "linked": {
+                        "element": "battleManeuvers.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "10": {
+            "battleManeuvers": {
+                "add": [
+                    {
+                        "alias": "Combat Superiority (Level 10)",
+                        "choose": 2,
+                        "from": [
+                            "COMMANDER'S STRIKE",
+                            "DISARMING ATTACK",
+                            "DISTRACTING STRIKE",
+                            "EVASIVE FOOTWORK",
+                            "FEINTING ATTACK",
+                            "GOADING ATTACK",
+                            "LUNGING ATTACK",
+                            "MANEUVERING ATTACK",
+                            "MENACING ATTACK",
+                            "PARRY",
+                            "PRECISION ATTACK",
+                            "PUSHING ATTACK",
+                            "RALLY",
+                            "RIPOSTE",
+                            "SWEEPING ATTACK",
+                            "TRIP ATTACK"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Maneuver",
+                        "choose": 1,
+                        "from": [
+                            "COMMANDER'S STRIKE",
+                            "DISARMING ATTACK",
+                            "DISTRACTING STRIKE",
+                            "EVASIVE FOOTWORK",
+                            "FEINTING ATTACK",
+                            "GOADING ATTACK",
+                            "LUNGING ATTACK",
+                            "MANEUVERING ATTACK",
+                            "MENACING ATTACK",
+                            "PARRY",
+                            "PRECISION ATTACK",
+                            "PUSHING ATTACK",
+                            "RALLY",
+                            "RIPOSTE",
+                            "SWEEPING ATTACK",
+                            "TRIP ATTACK"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "battleManeuvers.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Maneuver Removal",
+                    "choose": 1,
+                    "method": "getKnownManeuvers",
+                    "required": false,
+                    "linked": {
+                        "element": "battleManeuvers.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "15": {
+            "battleManeuvers": {
+                "add": [
+                    {
+                        "alias": "Combat Superiority (Level 15)",
+                        "choose": 2,
+                        "from": [
+                            "COMMANDER'S STRIKE",
+                            "DISARMING ATTACK",
+                            "DISTRACTING STRIKE",
+                            "EVASIVE FOOTWORK",
+                            "FEINTING ATTACK",
+                            "GOADING ATTACK",
+                            "LUNGING ATTACK",
+                            "MANEUVERING ATTACK",
+                            "MENACING ATTACK",
+                            "PARRY",
+                            "PRECISION ATTACK",
+                            "PUSHING ATTACK",
+                            "RALLY",
+                            "RIPOSTE",
+                            "SWEEPING ATTACK",
+                            "TRIP ATTACK"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Maneuver",
+                        "choose": 1,
+                        "from": [
+                            "COMMANDER'S STRIKE",
+                            "DISARMING ATTACK",
+                            "DISTRACTING STRIKE",
+                            "EVASIVE FOOTWORK",
+                            "FEINTING ATTACK",
+                            "GOADING ATTACK",
+                            "LUNGING ATTACK",
+                            "MANEUVERING ATTACK",
+                            "MENACING ATTACK",
+                            "PARRY",
+                            "PRECISION ATTACK",
+                            "PUSHING ATTACK",
+                            "RALLY",
+                            "RIPOSTE",
+                            "SWEEPING ATTACK",
+                            "TRIP ATTACK"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "battleManeuvers.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Maneuver Removal",
+                    "choose": 1,
+                    "method": "getKnownManeuvers",
+                    "required": false,
+                    "linked": {
+                        "element": "battleManeuvers.add",
+                        "index": 1
+                    }
+                }
+            }
+        }
+    },
+    "CAVALIER": {
+        "3": {}
+    },
+    "CHAMPION": {
+        "10": {}
+    },
+    "ELDRITCH KNIGHT": {
+        "3": {},
+        "4": {},
+        "7": {},
+        "8": {},
+        "10": {},
+        "11": {},
+        "13": {},
+        "14": {},
+        "16": {},
+        "19": {},
+        "20": {}
+    },
+    "SAMURAI": {
+        "3": {},
+        "7": {}
+    },
+    "FOUR ELEMENTS": {
+        "3": {},
+        "6": {},
+        "11": {},
+        "17": {}
+    },
+    "KENSEI": {
+        "3": {},
+        "6": {},
+        "11": {},
+        "17": {}
+    },
+    "HUNTER": {
+        "3": {},
+        "7": {},
+        "11": {},
+        "15": {}
+    },
+    "BEAST MASTER": {
+        "3": {}
+    },
+    "GLOOM STALKER": {
+        "7": {}
+    },
+    "ARCANE TRICKSTER": {
+        "3": {},
+        "4": {},
+        "7": {},
+        "8": {},
+        "10": {},
+        "11": {},
+        "13": {},
+        "14": {},
+        "16": {},
+        "19": {},
+        "20": {}
+    },
+    "MASTERMIND": {
+        "3": {}
+    },
+    "DIVINE SOUL": {
+        "3": {}
+    },
+    "DRACONIC ANCESTRY": {
+        "3": {}
+    }
 }

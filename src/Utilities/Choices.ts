@@ -74,12 +74,36 @@ export class Choices {
         return SpellList[spec.list][spec.level];
     }
 
+    static getSpellListAll(spec: ChoiceParams){
+        let allSpellLists = [];
+
+        for(const spellList in SpellList){
+            for(let i = 0; i < parseInt(spec.level); i++){
+                allSpellLists.push(...SpellList[spellList][i])
+            }
+        }
+
+        return allSpellLists;
+    }
+
+    //get spell list for Wizard at a level BUT only Abjuration or Evocation schools 
+    static getEldritchSpells(spec: ChoiceParams) {
+        return [];
+    }
+
+    //currently returns undefined
     static getKnownSpells(spec: ChoiceParams){
         return [...Object.values(spec.pc.spells).map(spell => spell['name'])];
     }
 
+    //ditto
     static getKnownSpellsAtLevel(spec: ChoiceParams){
         return [...Object.values(spec.pc.spells[spec['args'][0]]).map(spell => spell['name'])];
+    }
+
+    //to complete
+    static getKnownManeuvers(spec: ChoiceParams) {
+        return [];
     }
 
     static getSkillProficiencies(spec: ChoiceParams){
@@ -93,18 +117,6 @@ export class Choices {
         }
 
         return expertiseElligibleSkills;
-    }
-
-    static getSpellListAll(spec: ChoiceParams){
-        let allSpellLists = [];
-
-        for(const spellList in SpellList){
-            for(let i = 0; i < parseInt(spec.level); i++){
-                allSpellLists.push(...SpellList[spellList][i])
-            }
-        }
-
-        return allSpellLists;
     }
 
     static getAvailableClericWeapons(spec: ChoiceParams){

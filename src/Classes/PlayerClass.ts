@@ -296,6 +296,19 @@ export abstract class PlayerClass {
   }
 }
 
+export interface ClassCreationParams {
+	multiclass: boolean
+	skillProficiencies?: string[],
+	instrumentProficiencies?: string[],
+	weapons?: string[],
+	armor?: string[],
+	toolProficiencies?: string[],
+	equipmentPack?: string,
+	instrument?: string,
+	holySymbol?: string,
+  arcaneFocus?: string,
+  druidicFocus?: string
+}
 export interface LevelingParams {
   isNoInput: boolean;
   abilityScoreImprovement?: {
@@ -309,22 +322,11 @@ export interface LevelingParams {
   proficiencySelection?: string[];
   toolProficiency?: string;
   fightingStyle?: string[];
-  subclassSelection?: {
-    subclass: string; //school/oath/patron/etc
-    options?: string[]; //totems/maneuvers/elements/beast companions/etc
-  };
+  subclassSelection?: SubclassParams;
   featChoice?: Feat;
 }
-export interface ClassCreationParams {
-	multiclass: boolean
-	skillProficiencies?: string[],
-	instrumentProficiencies?: string[],
-	weapons?: string[],
-	armor?: string[],
-	toolProficiencies?: string[],
-	equipmentPack?: string,
-	instrument?: string,
-	holySymbol?: string,
-  arcaneFocus?: string,
-  druidicFocus?: string
+
+export interface SubclassParams {
+  name: string;
+  //tbd
 }
