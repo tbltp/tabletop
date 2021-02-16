@@ -1,0 +1,190 @@
+{
+    "BERSERKER": {},
+    "TOTEM WARRIOR": {
+        "3": {
+            "options": {
+                "choose": 1,
+                "from": [
+                    "BEAR",
+                    "EAGLE",
+                    "WOLF"
+                ]
+            }
+        },
+        "6": {
+            "option": {
+                "choose": 1,
+                "from": [
+                    "BEAR",
+                    "EAGLE",
+                    "WOLF"
+                ]
+            }
+        },
+        "14": {
+            "option": {
+                "choose": 1,
+                "from": [
+                    "BEAR",
+                    "EAGLE",
+                    "WOLF"
+                ]
+            }
+        }
+    },
+    "LORE": {
+        "3": {
+            "proficiencySelection": {
+                "choose": 1,
+                "from": [
+                    "acrobatics",
+                    "animal handling",
+                    "arcana",
+                    "athletics",
+                    "deception",
+                    "history",
+                    "insight",
+                    "intimidation",
+                    "investigation",
+                    "medicine",
+                    "nature",
+                    "perception",
+                    "performance",
+                    "persuasion",
+                    "religion",
+                    "sleight of hand",
+                    "stealth",
+                    "survival"
+                ]
+            }
+        },
+        "6": {
+            "spellSelections": {
+                "add": {
+                    "choose": 2,
+                    "method": "getSpellListAll",
+                    "args": [
+                        "6"
+                    ]
+                }
+            } 
+        }
+    },
+    "VALOR": {},
+    "KNOWLEDGE": {
+        "1": {
+            "options": {
+                "choose": 2,
+                "from": [
+                    "Celestial",
+                    "Common",
+                    "Deep Speech",
+                    "Draconic",
+                    "Dwarvish",
+                    "Elvish",
+                    "Gnomish",
+                    "Goblin",
+                    "Halfling",
+                    "Infernal",
+                    "Orc",
+                    "Primordial",
+                    "Sylvan",
+                    "Undercommon"
+                ]
+            },
+            "proficiencySelection": {
+                "choose": 2,
+                "from": [
+                    "arcana",
+                    "nature",
+                    "history",
+                    "religion"
+                ]
+            }
+        }
+    },
+    "LIFE": {},
+    "LIGHT": {},
+    "NATURE": {
+        "1": {
+            "spellSelections": {
+                "add": {
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Druid",
+                        "0"
+                    ]
+                } 
+            },
+            "proficiencySelection": {
+                "choose": 1,
+                "from": [
+                    "animal handling",
+                    "nature",
+                    "survival"
+                ]
+            }
+        }
+    },
+    "TEMPEST": {},
+    "TRICKERY": {},
+    "WAR": {},
+    "LAND": {
+        "2": {
+            "spellSelections": {
+                "add": {
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Druid",
+                        "0"
+                    ]
+                }
+            }
+        },
+        "3": {
+            "options": {
+                "choose": 1,
+                "from": [
+                    "ARCTIC",
+                    "COAST",
+                    "DESERT",
+                    "FOREST",
+                    "GRASSLAND",
+                    "MOUNTAIN",
+                    "SWAMP",
+                    "UNDERDARK"
+                ]
+            }
+        }
+    },
+    "MOON": {},
+    "CHAMPION": {},
+    "BATTLE MASTER": {},
+    "ELDRITCH KNIGHT": {},
+    "OPEN HAND": {},
+    "SHADOW": {},
+    "FOUR ELEMENTS": {},
+    "DEVOTION": {},
+    "ANCIENTS": {},
+    "VENGEANCE": {},
+    "HUNTER": {},
+    "BEAST MASTER": {},
+    "ASSASSIN": {},
+    "THIEF": {},
+    "ARCANE TRICKSTER": {},
+    "DRACONIC ANCESTRY": {},
+    "WILD MAGIC": {},
+    "FIEND": {},
+    "ARCHFEY": {},
+    "GREAT OLD ONE": {},
+    "ABJURATION": {},
+    "CONJURATION": {},
+    "DIVINATION": {},
+    "ENCHANTMENT": {},
+    "EVOCATION": {},
+    "ILLUSION": {},
+    "NECROMANCY": {},
+    "TRANSMUTATION": {}
+}
