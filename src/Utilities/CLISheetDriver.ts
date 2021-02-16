@@ -97,7 +97,7 @@ function createCharacter(){
         pClass,
         bg
     )
-
+    levelHandler(sheet);
     Jsonify.dumpToJSON(sheet, `test-${name}`);
 }
 
@@ -122,19 +122,18 @@ function promptAbilityScores(): [number, number, number, number, number, number]
 function promptChoice(key: string, selection: ChoiceSpec, resultObject: object, pc?: PlayerCharacter): void {
     //pass by reference
     for(let i = 0; i < selection['choose']; i++) {
-        console.log(key, ':');
+        console.log(selection['alias'], ':');
         if(selection['from']) {
             console.log(selection['from']);
             console.log("Choice?");
         } else {
-            if(!pc) { let pc = null; }
             const choiceParams = Choices.convertToParams(selection , pc);
             const optionList = Choices.functionRailRoad[selection['method']](choiceParams);
             console.log(optionList);
             console.log("Choice?");
         }
-        
         const userChoice = prompt(">");
+        if(!userChoice) continue;
         const paramType:string = typeof resultObject[key]; 
         if(paramType == "string") {
             resultObject[key] = userChoice
@@ -149,11 +148,17 @@ function promptChoice(key: string, selection: ChoiceSpec, resultObject: object, 
 function choiceHandler(choicesSet: [key: string, selection: ChoiceSpec][], resultObject: object, pc?: PlayerCharacter): void {
     //pass by reference
     for(const [key, selection] of choicesSet) {
-        if(selection instanceof Array) {
+        if(key == "spellSelections") {
+            //spell selection
+            const spellChoiceSet: [key: string, selection: ChoiceSpec][] = Object.entries(selection);
+            const spellChoiceResult = resultObject[key];            
+            choiceHandler(spellChoiceSet, spellChoiceResult, pc);
+        }
+        else if(selection instanceof Array) {
             selection.forEach(choice => {
                 promptChoice(key, choice, resultObject, pc);
             });
-        }
+        } 
         else if(Object.keys(selection).length !== 0) {
             promptChoice(key, selection, resultObject, pc);
         }
@@ -200,9 +205,8 @@ function pclassHandler(pc: PlayerCharacter) {
     let pclassInstance: PlayerClass = null;
 
     //assume no multiclassing for now
-    let pclassParams: ClassCreationParams = {...defaultCreationParams(), multiclass: false };
+    let pclassParams: ClassCreationParams = { ...defaultCreationParams(), multiclass: false };
 
-    //creation
     const choicesSet = Choices.renderClassChoicesAtLevel(pclassSelection, 0);
     choiceHandler(choicesSet, pclassParams);
     
@@ -210,6 +214,28 @@ function pclassHandler(pc: PlayerCharacter) {
     pclassInstance = new classDict[pclassSelection](pclassParams);
     console.log(pclassInstance);
     return pclassInstance;
+}
+
+function levelHandler(sheet: CharacterSheet) {
+
+    const pClass: string = Object.keys(sheet['levels'])[0];
+    console.log(`Select level to go up to in ${pClass}`);
+    const level = prompt(">");
+
+    for(let i = 1; i <= level; i++) {
+        let pc: PlayerCharacter = sheet.character;
+        let hpAdd: number = 0
+        if(i != 1) {
+            //bonus hp
+            console.log('Enter amount of HP to increase:');
+            hpAdd = +prompt(">");
+        }
+        let levelParams: LevelingParams = defaultLevelingParams();        
+        const choiceSet = Choices.renderClassChoicesAtLevel(pClass, i);
+        choiceHandler(choiceSet, levelParams, pc);
+        console.log(levelParams);
+        sheet.levelUp(pClass, hpAdd, levelParams);
+    }
 }
 
 

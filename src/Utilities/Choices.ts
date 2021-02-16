@@ -71,11 +71,11 @@ export class Choices {
     }
 
     static getKnownSpells(spec: ChoiceParams){
-        return [...Object.values(spec.pc.spells).map(spell => spell['title'])];
+        return [...Object.values(spec.pc.spells).map(spell => spell['name'])];
     }
 
     static getKnownSpellsAtLevel(spec: ChoiceParams){
-        return [...Object.values(spec.pc.spells[spec['args'][0]]).map(spell => spell['title'])];
+        return [...Object.values(spec.pc.spells[spec['args'][0]]).map(spell => spell['name'])];
     }
 
     static getSkillProficiencies(spec: ChoiceParams){
