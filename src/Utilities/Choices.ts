@@ -33,11 +33,11 @@ export class Choices {
     }
 
     static renderClassChoicesAtLevel(pclass: string, level: number): [string, ChoiceSpec][] {
-        return Object.entries(ClassChoices[pclass][level]);        
+        return (ClassChoices[pclass][level]) ? Object.entries(ClassChoices[pclass][level]) : [];        
     }
 
     static renderSubclassChoices(subclass: string, level: number): [string, ChoiceSpec][] {
-        return Object.entries(SubclassChoices[subclass][level]);
+        return (SubclassChoices[subclass] && SubclassChoices[subclass][level]) ? Object.entries(SubclassChoices[subclass][level]) : [];
     }
 
     static convertToParams(spec: ChoiceSpec, pc?: PlayerCharacter): ChoiceParams {
