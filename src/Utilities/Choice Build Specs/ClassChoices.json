@@ -72,8 +72,8 @@
                 "from": [
                     "ANCESTRAL GUARDIAN",
                     "BERSERKER",
-                    "TOTEM WARRIOR",
                     "STORM HERALD",
+                    "TOTEM WARRIOR",
                     "ZEALOT"
                 ],
                 "option": true,
@@ -100,40 +100,6 @@
     },
     "Bard": {
         "0": {
-            "toolProficiencies": {
-                "alias": "Musical Instrument Proficiencies",
-                "choose": 3,
-                "from": [
-                    "Bagpipes",
-                    "Drum",
-                    "Dulcimer",
-                    "Flute",
-                    "Horn",
-                    "Lute",
-                    "Lyre",
-                    "Pan Flute",
-                    "Shawm",
-                    "Viol"
-                ],
-                "required": true
-            },
-            "instrument": {
-                "alias": "Musical Instrument",
-                "choose": 1,
-                "from": [
-                    "LUTE",
-                    "BAGPIPES",
-                    "DRUM",
-                    "DULCIMER",
-                    "FLUTE",
-                    "HORN",
-                    "LYRE",
-                    "PAN FLUTE",
-                    "SHAWM",
-                    "VIOL"
-                ],
-                "required": true
-            },
             "skillProficiencies": {
                 "alias": "Skill Proficiencies",
                 "choose": 3,
@@ -156,6 +122,23 @@
                     "sleight of hand",
                     "stealth",
                     "survival"
+                ],
+                "required": true
+            },
+            "toolProficiencies": {
+                "alias": "Musical Instrument Proficiencies",
+                "choose": 3,
+                "from": [
+                    "Bagpipes",
+                    "Drum",
+                    "Dulcimer",
+                    "Flute",
+                    "Horn",
+                    "Lute",
+                    "Lyre",
+                    "Pan Flute",
+                    "Shawm",
+                    "Viol"
                 ],
                 "required": true
             },
@@ -184,6 +167,23 @@
                     "required": true
                 }
             ],
+            "instrument": {
+                "alias": "Musical Instrument",
+                "choose": 1,
+                "from": [
+                    "LUTE",
+                    "BAGPIPES",
+                    "DRUM",
+                    "DULCIMER",
+                    "FLUTE",
+                    "HORN",
+                    "LYRE",
+                    "PAN FLUTE",
+                    "SHAWM",
+                    "VIOL"
+                ],
+                "required": true
+            },
             "equipmentPack": {
                 "alias": "Pack",
                 "choose": 1,
@@ -272,12 +272,6 @@
                 ],
                 "required": true
             },
-            "proficiencySelection": {
-                "alias": "Expertise",
-                "choose": 2,
-                "method": "getSkillProficiencies",
-                "required": true
-            },
             "spellSelections": {
                 "add": [
                     {
@@ -314,6 +308,12 @@
                         "index": 1
                     }
                 }
+            },
+            "proficiencySelection": {
+                "alias": "Expertise",
+                "choose": 2,
+                "method": "getSkillProficiencies",
+                "required": true
             }
         },
         "4": {
@@ -608,6 +608,12 @@
                     }
                 }
             },
+            "proficiencySelection": {
+                "alias": "Expertise",
+                "choose": 2,
+                "method": "getSkillProficiencies",
+                "required": true
+            },
             "magicalSecretsSpellSelection": {
                 "alias": "Magical Secrets Spells",
                 "choose": 2,
@@ -615,12 +621,6 @@
                 "args": [
                     5
                 ],
-                "required": true
-            },
-            "proficiencySelection": {
-                "alias": "Expertise",
-                "choose": 2,
-                "method": "getSkillProficiencies",
                 "required": true
             }
         },
@@ -1203,14 +1203,6 @@
                 ],
                 "required": true
             },
-            "armor": [
-                {
-                    "alias": "Armor",
-                    "choose": 1,
-                    "method": "getAvailableFighterArmor",
-                    "required": true
-                }
-            ],
             "weapons": [
                 {
                     "alias": "First Martial Weapon",
@@ -1273,6 +1265,14 @@
                     "required": true
                 }
             ],
+            "armor": [
+                {
+                    "alias": "Armor",
+                    "choose": 1,
+                    "method": "getAvailableFighterArmor",
+                    "required": true
+                }
+            ],
             "equipmentPack": {
                 "alias": "Pack",
                 "choose": 1,
@@ -1284,7 +1284,6 @@
             }
         },
         "1": {
-            
             "fightingStyle": {
                 "alias": "Fighting Style",
                 "choose": 1,
@@ -1335,6 +1334,19 @@
     },
     "Monk": {
         "0": {
+            "skillProficiencies": {
+                "alias": "Skill Proficiencies",
+                "choose": 2,
+                "from": [
+                    "acrobatics",
+                    "athletics",
+                    "history",
+                    "insight",
+                    "religion",
+                    "stealth"
+                ],
+                "required": true
+            },
             "toolProficiencies": {
                 "alias": "Tool Proficiency",
                 "choose": 1, 
@@ -1367,19 +1379,6 @@
                     "Shawm",
                     "Viol"
                 ]                
-            },
-            "skillProficiencies": {
-                "alias": "Skill Proficiencies",
-                "choose": 2,
-                "from": [
-                    "acrobatics",
-                    "athletics",
-                    "history",
-                    "insight",
-                    "religion",
-                    "stealth"
-                ],
-                "required": true
             },
             "weapons": [
                 {
@@ -1622,17 +1621,6 @@
                 ],
                 "required": true
             },   
-            "armor": [
-                {
-                    "alias": "Armor",
-                    "choose": 1,
-                    "from": [
-                        "SCALE MAIL",
-                        "LEATHER ARMOR"
-                    ],
-                    "required": true
-                }
-            ],
             "weapons": [
                 {
                     "alias": "Melee Weapons",
@@ -1653,6 +1641,17 @@
                         "SICKLE",
                         "SPEAR"
                     ]
+                }
+            ],
+            "armor": [
+                {
+                    "alias": "Armor",
+                    "choose": 1,
+                    "from": [
+                        "SCALE MAIL",
+                        "LEATHER ARMOR"
+                    ],
+                    "required": true
                 }
             ],
             "equipmentPack": {
@@ -1680,16 +1679,6 @@
             }
         },
         "2": {
-            "fightingStyle": {
-                "alias": "Fighting Style",
-                "choose": 1,
-                "from": [
-                    "ARCHERY",
-                    "DEFENSE",
-                    "DUELING",
-                    "TWO WEAPON FIGHTING"
-                ]
-            },
             "spellSelections": {
                 "add": [
                     {
@@ -1702,6 +1691,16 @@
                         ],
                         "required": true
                     }
+                ]
+            },
+            "fightingStyle": {
+                "alias": "Fighting Style",
+                "choose": 1,
+                "from": [
+                    "ARCHERY",
+                    "DEFENSE",
+                    "DUELING",
+                    "TWO WEAPON FIGHTING"
                 ]
             }
         },
@@ -2218,6 +2217,15 @@
                     "required": true
                 }
             ],
+            "equipmentPack": {
+                "alias": "Pack",
+                "choose": 1,
+                "from": [
+                    "DUNGEONEER",
+                    "EXPLORER"
+                ],
+                "required": true
+            },
             "arcaneFocus": {
                 "alias": "Arcane Focus",
                 "choose": 1,
@@ -2228,15 +2236,6 @@
                     "ROD",
                     "STAFF",
                     "WAND"
-                ],
-                "required": true
-            },
-            "equipmentPack": {
-                "alias": "Pack",
-                "choose": 1,
-                "from": [
-                    "DUNGEONEER",
-                    "EXPLORER"
                 ],
                 "required": true
             }
@@ -2853,6 +2852,15 @@
                     "required": true
                 }
             ],
+            "equipmentPack": {
+                "alias": "Pack",
+                "choose": 1,
+                "from": [
+                    "DUNGEONEER",
+                    "SCHOLAR"
+                ],
+                "required": true
+            },
             "arcaneFocus": {
                 "alias": "Arcane Focus",
                 "choose": 1,
@@ -2863,15 +2871,6 @@
                     "ROD",
                     "STAFF",
                     "WAND"
-                ],
-                "required": true
-            },
-            "equipmentPack": {
-                "alias": "Pack",
-                "choose": 1,
-                "from": [
-                    "DUNGEONEER",
-                    "SCHOLAR"
                 ],
                 "required": true
             }
@@ -3759,6 +3758,15 @@
                     "required": true
                 }
             ],
+            "equipmentPack": {
+                "alias": "Pack",
+                "choose": 1,
+                "from": [
+                    "SCHOLAR",
+                    "EXPLORER"
+                ],
+                "required": true
+            },
             "arcaneFocus": {
                 "alias": "Arcane Focus",
                 "choose": 1,
@@ -3769,15 +3777,6 @@
                     "ROD",
                     "STAFF",
                     "WAND"
-                ],
-                "required": true
-            },  
-            "equipmentPack": {
-                "alias": "Pack",
-                "choose": 1,
-                "from": [
-                    "SCHOLAR",
-                    "EXPLORER"
                 ],
                 "required": true
             }

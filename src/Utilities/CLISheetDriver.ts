@@ -10,10 +10,6 @@ import { Background, BackgroundParams } from '../Backgrounds/Background';
 var prompt = require('prompt-sync')();
 
 
-
-
-
-
 function defaultRaceParams(): RaceParams {
     return {
         draconicAncestry: "",
@@ -37,7 +33,6 @@ function defaultBackgroundParams(): BackgroundParams {
     };
 }
 
-
 function defaultLevelingParams(): LevelingParams {
     return {
         isNoInput: true,
@@ -57,7 +52,6 @@ function defaultLevelingParams(): LevelingParams {
     };
 }
 
-
 function defaultCreationParams(): ClassCreationParams {
 
     let defaultLevelParams = defaultLevelingParams();
@@ -65,7 +59,6 @@ function defaultCreationParams(): ClassCreationParams {
         multiclass: false,
         skillProficiencies: [],
         instrumentProficiencies: [],
-        firstLevelParams: defaultLevelParams,
         weapons: [],
         armor: [],
         toolProficiencies: [],
@@ -81,7 +74,6 @@ function defaultCreationParams(): ClassCreationParams {
 
 
 function createCharacter(){
-
     console.log("Welcome to Tbltp's DND Character Sheet Creator!\nEnter a character name:");
     const name = prompt(">");
     const scores = promptAbilityScores();
@@ -143,7 +135,6 @@ function promptChoice(key: string, selection: ChoiceSpec, resultObject: object, 
         } 
     }
 }
-
 
 function choiceHandler(choicesSet: [key: string, selection: ChoiceSpec][], resultObject: object, pc?: PlayerCharacter): void {
     //pass by reference

@@ -36,6 +36,10 @@ export class Choices {
         return Object.entries(ClassChoices[pclass][level]);        
     }
 
+    static renderSubclassChoices(subclass: string, level: number): [string, ChoiceSpec][] {
+        return Object.entries(SubclassChoices[subclass][level]);
+    }
+
     static convertToParams(spec: ChoiceSpec, pc?: PlayerCharacter): ChoiceParams {
         
         let params: ChoiceParams = {}; 

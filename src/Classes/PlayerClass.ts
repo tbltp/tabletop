@@ -296,7 +296,6 @@ export abstract class PlayerClass {
   }
 }
 
-
 export interface LevelingParams {
   isNoInput: boolean;
   abilityScoreImprovement?: {
@@ -320,7 +319,6 @@ export interface ClassCreationParams {
 	multiclass: boolean
 	skillProficiencies?: string[],
 	instrumentProficiencies?: string[],
-	firstLevelParams?: LevelingParams,
 	weapons?: string[],
 	armor?: string[],
 	toolProficiencies?: string[],

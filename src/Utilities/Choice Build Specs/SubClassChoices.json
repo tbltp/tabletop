@@ -3,32 +3,38 @@
     "TOTEM WARRIOR": {
         "3": {
             "options": {
+                "alias": "Totem (Level 3)",
                 "choose": 1,
                 "from": [
                     "BEAR",
                     "EAGLE",
                     "WOLF"
-                ]
+                ],
+                "required": true
             }
         },
         "6": {
-            "option": {
+            "options": {
+                "alias": "Totem (Level 6)",
                 "choose": 1,
                 "from": [
                     "BEAR",
                     "EAGLE",
                     "WOLF"
-                ]
+                ],
+                "required": true
             }
         },
         "14": {
-            "option": {
+            "options": {
+                "alias": "Totem (Level 14)",
                 "choose": 1,
                 "from": [
                     "BEAR",
                     "EAGLE",
                     "WOLF"
-                ]
+                ],
+                "required": true
             }
         }
     },
