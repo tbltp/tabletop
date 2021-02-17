@@ -105,6 +105,17 @@
     },
     "KNOWLEDGE": {
         "1": {
+            "skillProficiencies": {
+                "alias": "Blessings of Knowledge (Skill Proficiencies)",
+                "choose": 2,
+                "from": [
+                    "arcana",
+                    "nature",
+                    "history",
+                    "religion"
+                ],
+                "required": true
+            },
             "languages": {
                 "alias": "Blessings of Knowledge (Languages)",
                 "choose": 2,
@@ -125,32 +136,11 @@
                     "Undercommon"
                 ],
                 "required": true
-            },
-            "skillProficiencies": {
-                "alias": "Blessings of Knowledge (Skill Proficiencies)",
-                "choose": 2,
-                "from": [
-                    "arcana",
-                    "nature",
-                    "history",
-                    "religion"
-                ],
-                "required": true
             }
         }
     },
     "NATURE": {
         "1": {
-            "spells": {
-                "alias": "Acolyte of Nature (Cantrip)",
-                "choose": 1,
-                "method": "getSpellList",
-                "args": [
-                    "Druid",
-                    "0"
-                ],
-                "required": true
-            },
             "skillProficiencies": {
                 "alias": "Acolyte of Nature (Skill)",
                 "choose": 1,
@@ -158,6 +148,16 @@
                     "animal handling",
                     "nature",
                     "survival"
+                ],
+                "required": true
+            },
+            "spells": {
+                "alias": "Acolyte of Nature (Cantrip)",
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Druid",
+                    "0"
                 ],
                 "required": true
             }
@@ -165,16 +165,6 @@
     },
     "ORDER": {
         "1": {
-            "spells": {
-                "alias": "Acolyte of Nature (Cantrip)",
-                "choose": 1,
-                "method": "getSpellList",
-                "args": [
-                    "Druid",
-                    "0"
-                ],
-                "required": true
-            },
             "skillProficiencies": {
                 "alias": "Acolyte of Nature (Skill)",
                 "choose": 1,
@@ -182,6 +172,16 @@
                     "animal handling",
                     "nature",
                     "survival"
+                ],
+                "required": true
+            },
+            "spells": {
+                "alias": "Acolyte of Nature (Cantrip)",
+                "choose": 1,
+                "method": "getSpellList",
+                "args": [
+                    "Druid",
+                    "0"
                 ],
                 "required": true
             }
@@ -219,7 +219,26 @@
         }
     },
     "ARCANE ARCHER": {
-        "3": {},
+        "3": {
+            "skillProficiencies": {
+                "alias": "Arcane Archer Lore (Skill)",
+                "choose": 1,
+                "from": [
+                    "arcana",
+                    "nature"
+                ],
+                "required": true
+            },
+            "spells": {
+                "alias": "Arcane Archer Lore (Cantrip)",
+                "choose": 1,
+                "from": [
+                    "DRUIDCRAFT",
+                    "PRESTIDIGITATION"
+                ],
+                "required": true
+            }
+        },
         "7": {},
         "10": {},
         "15": {},
