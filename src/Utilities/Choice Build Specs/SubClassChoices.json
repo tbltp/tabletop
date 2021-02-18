@@ -237,12 +237,91 @@
                     "PRESTIDIGITATION"
                 ],
                 "required": true
+            },
+            "arcaneShots": {
+                "alias": "Arcane Shot",
+                "choose": 2,
+                "from": [
+                    "BANISHING ARROW",
+                    "BEGUILING ARROW",
+                    "BURSTING ARROW",
+                    "ENFEEBLING ARROW",
+                    "GRASPING ARROW",
+                    "PIERCING ARROW",
+                    "SEEKING ARROW",
+                    "SHADOW ARROW"
+                ],
+                "required": true
             }
         },
-        "7": {},
-        "10": {},
-        "15": {},
-        "18": {}
+        "7": {
+            "arcaneShots": {
+                "alias": "Arcane Shot",
+                "choose": 1,
+                "from": [
+                    "BANISHING ARROW",
+                    "BEGUILING ARROW",
+                    "BURSTING ARROW",
+                    "ENFEEBLING ARROW",
+                    "GRASPING ARROW",
+                    "PIERCING ARROW",
+                    "SEEKING ARROW",
+                    "SHADOW ARROW"
+                ],
+                "required": true
+            }
+        },
+        "10": {
+            "arcaneShots": {
+                "alias": "Arcane Shot",
+                "choose": 1,
+                "from": [
+                    "BANISHING ARROW",
+                    "BEGUILING ARROW",
+                    "BURSTING ARROW",
+                    "ENFEEBLING ARROW",
+                    "GRASPING ARROW",
+                    "PIERCING ARROW",
+                    "SEEKING ARROW",
+                    "SHADOW ARROW"
+                ],
+                "required": true
+            }
+        },
+        "15": {
+            "arcaneShots": {
+                "alias": "Arcane Shot",
+                "choose": 1,
+                "from": [
+                    "BANISHING ARROW",
+                    "BEGUILING ARROW",
+                    "BURSTING ARROW",
+                    "ENFEEBLING ARROW",
+                    "GRASPING ARROW",
+                    "PIERCING ARROW",
+                    "SEEKING ARROW",
+                    "SHADOW ARROW"
+                ],
+                "required": true
+            }
+        },
+        "18": {
+            "arcaneShots": {
+                "alias": "Arcane Shot",
+                "choose": 1,
+                "from": [
+                    "BANISHING ARROW",
+                    "BEGUILING ARROW",
+                    "BURSTING ARROW",
+                    "ENFEEBLING ARROW",
+                    "GRASPING ARROW",
+                    "PIERCING ARROW",
+                    "SEEKING ARROW",
+                    "SHADOW ARROW"
+                ],
+                "required": true
+            }
+        }
     },
     "BATTLE MASTER": {
         "3": {
