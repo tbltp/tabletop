@@ -28,8 +28,8 @@ jobs:
       - name: Generate Changelog
         uses: scottbrenner/generate-changelog-action@master
         id: Changelog
-      - run: npm version patch
+      - run: npm version patch --no-git-tag-version
       - name: Publish package
-        run: npm publish --no-git-tag-version --access public 
+        run: npm publish --access public 
         env: 
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
