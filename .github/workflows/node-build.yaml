@@ -30,6 +30,6 @@ jobs:
         id: Changelog
       - run: npm version patch
       - name: Publish package
-        run: npm publish --access public 
+        run: npm publish --no-git-tag-version --access public 
         env: 
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
