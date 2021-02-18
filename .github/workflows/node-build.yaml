@@ -12,10 +12,7 @@ jobs:
   build:
     name: Build package
     runs-on: ubuntu-latest
-
-    strategy: 
-      node-version: 12.x
-
+    
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
