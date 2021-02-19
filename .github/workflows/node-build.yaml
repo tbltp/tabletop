@@ -10,7 +10,6 @@ on:
     types: 
       closed
 
-
 jobs: 
   publish:
     name: Build package
