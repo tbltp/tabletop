@@ -3,9 +3,7 @@ name: node-build
 on:
   push: 
     branch:
-      test_build
       master
-      dev      
 
 
 jobs: 
