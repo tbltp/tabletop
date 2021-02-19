@@ -43,7 +43,7 @@ jobs:
         uses: scottbrenner/generate-changelog-action@master
         id: Changelog
       - name: Version
-        uses: npm version patch 
+        run: npm version patch 
       - name: Publish package
         run: npm publish --access public 
       - name: Track in Git  
