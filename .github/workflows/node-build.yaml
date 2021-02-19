@@ -12,7 +12,7 @@ on:
 
 
 jobs: 
-  build and publish:
+  publish:
     name: Build package
     runs-on: ubuntu-latest
 
