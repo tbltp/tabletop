@@ -1,9 +1,6 @@
 name: node-build
 
 on:
-  push: 
-    branch: 
-      publish_with_git_config
   pull_request: 
     branch:
       master
