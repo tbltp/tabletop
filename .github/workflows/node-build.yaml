@@ -37,7 +37,7 @@ jobs:
     steps:
       - name: Credentials
         uses: |
-          git config user.name $GITHUB_ACTOR
+          git config user.name ${GITHUB_ACTOR}
           git config user.email gh-actions-${GITHUB_ACTOR}@github.com
       - name: Generate Changelog
         uses: scottbrenner/generate-changelog-action@master
@@ -47,7 +47,7 @@ jobs:
       - name: Publish package
         run: npm publish --access public 
       - name: Track in Git  
-        uses: |
+        run: |
           git remote add gh-origin https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           git push gh-origin HEAD:master --tags
         env: 
