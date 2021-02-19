@@ -38,10 +38,11 @@ jobs:
         run: npm version patch 
       - name: Publish package
         run: npm publish --access public 
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Track in Git  
         run: |
           git remote add gh-origin https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           git push gh-origin HEAD:master --tags
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
