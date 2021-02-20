@@ -71,7 +71,8 @@ export class Choices {
         'getAvailableClericArmor': Choices.getAvailableClericArmor,
         'getEldritchSpellList': Choices.getEldritchSpellList,
         'getEldritchInvocations': Choices.getEldritchInvocations,
-        'getElementalDisciplines': Choices.getElementalDisciplines
+        'getElementalDisciplines': Choices.getElementalDisciplines,
+        'getKnownElementalDisciplines': Choices.getKnownElementalDisciplines
     };
 
     static getSpellList(spec: ChoiceParams){
@@ -164,6 +165,11 @@ export class Choices {
 
     //to complete - elemental disciplines will also have prereqs
     static getElementalDisciplines(spec: ChoiceParams){
+        return [];
+    }
+
+    //to complete
+    static getKnownElementalDisciplines(spec: ChoiceParams) {
         return [];
     }
 }

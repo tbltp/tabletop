@@ -346,7 +346,7 @@
     },
     "BATTLE MASTER": {
         "3": {
-            "toolkitProficiency": {
+            "toolProficiencies": {
                 "alias": "Student of War Tool Proficiency",
                 "choose": 1,
                 "from": [
@@ -1118,28 +1118,316 @@
         }
     },
     "FOUR ELEMENTS": {
-        "3": {},
-        "6": {},
-        "11": {},
-        "17": {}
+        "3": {
+            "disciplineSelections": {
+                "add": [
+                    {
+                        "alias": "Elemental Discipline",
+                        "choose": 1,
+                        "method": "getElementalDisciplines",
+                        "required": true
+                    }
+                ]
+            }
+        },
+        "6": {
+            "disciplineSelections": {
+                "add": [
+                    {
+                        "alias": "Elemental Discipline",
+                        "choose": 1,
+                        "method": "getElementalDisciplines",
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Elemental Discipline",
+                        "choose": 1,
+                        "method": "getElementalDisciplines",
+                        "required": false
+                    }
+                ],
+                "remove": {
+                    "alias": "Discipline Removal",
+                    "choose": 1,
+                    "method": "getKnownElementalDisciplines",
+                    "required": false
+                }
+            }
+        },
+        "11": {
+            "disciplineSelections": {
+                "add": [
+                    {
+                        "alias": "Elemental Discipline",
+                        "choose": 1,
+                        "method": "getElementalDisciplines",
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Elemental Discipline",
+                        "choose": 1,
+                        "method": "getElementalDisciplines",
+                        "required": false
+                    }
+                ],
+                "remove": {
+                    "alias": "Discipline Removal",
+                    "choose": 1,
+                    "method": "getKnownElementalDisciplines",
+                    "required": false
+                }
+            }
+        },
+        "17": {
+            "disciplineSelections": {
+                "add": [
+                    {
+                        "alias": "Elemental Discipline",
+                        "choose": 1,
+                        "method": "getElementalDisciplines",
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Elemental Discipline",
+                        "choose": 1,
+                        "method": "getElementalDisciplines",
+                        "required": false
+                    }
+                ],
+                "remove": {
+                    "alias": "Discipline Removal",
+                    "choose": 1,
+                    "method": "getKnownElementalDisciplines",
+                    "required": false
+                }
+            }
+        }
     },
     "KENSEI": {
-        "3": {},
-        "6": {},
-        "11": {},
-        "17": {}
+        "3": {
+            "toolProficiencies": {
+                "alias": "Path of the Kensei - (Way of the Brush)",
+                "choose": 1,
+                "from": [
+                    "Calligrapher's supplies",
+                    "Painter's tools"
+                ],
+                "required": true
+            },
+            "weapons": {
+                "alias": "Path of the Kensei - (Kensei Weapons)",
+                "choose": 2,
+                "from": [
+                    "CLUB",
+                    "DAGGER",
+                    "GREATCLUB",
+                    "HANDAXE",
+                    "JAVELIN",
+                    "LIGHT HAMMER",
+                    "MACE",
+                    "QUARTERSTAFF",
+                    "SICKLE",
+                    "SPEAR",
+                    "CROSSBOW, LIGHT",
+                    "DART",
+                    "SHORTBOW",
+                    "SLING",
+                    "BATTLEAXE",
+                    "FLAIL",
+                    "LONGSWORD",
+                    "MORNINGSTAR",
+                    "RAPIER",
+                    "SCIMITAR",
+                    "SHORTSWORD",
+                    "TRIDENT",
+                    "WAR PICK",
+                    "WARHAMMER",
+                    "WHIP",
+                    "BLOWGUN",
+                    "CROSSBOW, HAND",
+                    "LONGBOW"
+                ],
+                "required": true
+            }
+        },
+        "6": {
+            "weapons": {
+                "alias": "New Kensei Weapon",
+                "choose": 1,
+                "from": [
+                    "CLUB",
+                    "DAGGER",
+                    "GREATCLUB",
+                    "HANDAXE",
+                    "JAVELIN",
+                    "LIGHT HAMMER",
+                    "MACE",
+                    "QUARTERSTAFF",
+                    "SICKLE",
+                    "SPEAR",
+                    "CROSSBOW, LIGHT",
+                    "DART",
+                    "SHORTBOW",
+                    "SLING",
+                    "BATTLEAXE",
+                    "FLAIL",
+                    "LONGSWORD",
+                    "MORNINGSTAR",
+                    "RAPIER",
+                    "SCIMITAR",
+                    "SHORTSWORD",
+                    "TRIDENT",
+                    "WAR PICK",
+                    "WARHAMMER",
+                    "WHIP",
+                    "BLOWGUN",
+                    "CROSSBOW, HAND",
+                    "LONGBOW"
+                ],
+                "required": true
+            }
+        },
+        "11": {
+            "weapons": {
+                "alias": "New Kensei Weapon",
+                "choose": 1,
+                "from": [
+                    "CLUB",
+                    "DAGGER",
+                    "GREATCLUB",
+                    "HANDAXE",
+                    "JAVELIN",
+                    "LIGHT HAMMER",
+                    "MACE",
+                    "QUARTERSTAFF",
+                    "SICKLE",
+                    "SPEAR",
+                    "CROSSBOW, LIGHT",
+                    "DART",
+                    "SHORTBOW",
+                    "SLING",
+                    "BATTLEAXE",
+                    "FLAIL",
+                    "LONGSWORD",
+                    "MORNINGSTAR",
+                    "RAPIER",
+                    "SCIMITAR",
+                    "SHORTSWORD",
+                    "TRIDENT",
+                    "WAR PICK",
+                    "WARHAMMER",
+                    "WHIP",
+                    "BLOWGUN",
+                    "CROSSBOW, HAND",
+                    "LONGBOW"
+                ],
+                "required": true
+            }
+        },
+        "17": {            "weapons": {
+            "alias": "New Kensei Weapon",
+            "choose": 1,
+            "from": [
+                "CLUB",
+                "DAGGER",
+                "GREATCLUB",
+                "HANDAXE",
+                "JAVELIN",
+                "LIGHT HAMMER",
+                "MACE",
+                "QUARTERSTAFF",
+                "SICKLE",
+                "SPEAR",
+                "CROSSBOW, LIGHT",
+                "DART",
+                "SHORTBOW",
+                "SLING",
+                "BATTLEAXE",
+                "FLAIL",
+                "LONGSWORD",
+                "MORNINGSTAR",
+                "RAPIER",
+                "SCIMITAR",
+                "SHORTSWORD",
+                "TRIDENT",
+                "WAR PICK",
+                "WARHAMMER",
+                "WHIP",
+                "BLOWGUN",
+                "CROSSBOW, HAND",
+                "LONGBOW"
+            ],
+            "required": true
+        }}
     },
     "HUNTER": {
-        "3": {},
-        "7": {},
-        "11": {},
-        "15": {}
+        "3": {
+            "feature": {
+                "alias": "Hunter Feature",
+                "choose": 1, 
+                "from": [
+                    "COLUSSUS SLAYER",
+                    "GIANT KILLER", 
+                    "HORDE BREAKER"
+                ],
+                "required": true
+            }
+        },
+        "7": {
+            "feature": {
+                "alias": "Hunter Feature",
+                "choose": 1, 
+                "from": [
+                    "ESCAPE THE HORDE",
+                    "MULTIATTACK DEFENSE", 
+                    "STEEL WILL"
+                ],
+                "required": true
+            }
+        },
+        "11": {
+            "feature": {
+                "alias": "Hunter Feature",
+                "choose": 1, 
+                "from": [
+                    "VOLLEY",
+                    "WHIRLWIND ATTACK"
+                ],
+                "required": true
+            }
+        },
+        "15": {
+            "feature": {
+                "alias": "Hunter Feature",
+                "choose": 1, 
+                "from": [
+                    "EVASION",
+                    "STAND AGAINST THE TIDE", 
+                    "UNCANNY DODGE"
+                ],
+                "required": true
+            }
+        }
     },
     "BEAST MASTER": {
-        "3": {}
+        "3": {
+            "beastCompanion": {
+                "alias": "Ranger's Companion",
+                "choose": 1,
+                "custom": true,
+                "required": true
+            }
+        }
     },
     "GLOOM STALKER": {
-        "7": {}
+        "7": {
+            "savingThrows": {
+                "alias": "Iron Mind",
+                "choose": 1, 
+                "method": "getMentalSavingThrows",
+                "required": true
+            }
+        }
     },
     "ARCANE TRICKSTER": {
         "3": {},
