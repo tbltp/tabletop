@@ -264,7 +264,7 @@ export abstract class PlayerClass {
   }
 
   subclassDriver(pc: PlayerCharacter, level: string, params: LevelingParams){
-    this.subclass.subclassDriver(pc, level, this.subclass.title, params);
+    this.subclass.subclassDriver(pc, level, this.subclass.name, params);
   }
   
   public static addFightingStyle(

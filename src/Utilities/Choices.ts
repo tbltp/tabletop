@@ -168,4 +168,5 @@ export interface ChoiceSpec {
     method?: string;
     args?: string[];
     required: boolean;
+    or: ChoiceSpec[];
 }

@@ -45,8 +45,7 @@ function defaultLevelingParams(): LevelingParams {
         toolProficiency: "",
         fightingStyle: [],
         subclassSelection: {
-            subclass: "",
-            options: []
+            name: ""
         },
         featChoice: null
     };
@@ -144,10 +143,28 @@ function choiceHandler(choicesSet: [key: string, selection: ChoiceSpec][], resul
             const spellChoiceResult = resultObject[key];            
             choiceHandler(spellChoiceSet, spellChoiceResult, pc);
         }
+        else if(key == "subclassSelections") {
+            //subclass selection
+            promptChoice(key, selection, resultObject['subclassSelection']['name'], pc);
+        }
         else if(selection instanceof Array) {
-            selection.forEach(choice => {
-                promptChoice(key, choice, resultObject, pc);
-            });
+            if(key == "or") {
+                //or - meaning you pick between categories, then you select within them
+               selection.forEach(category => {
+                    console.log(category['alias'], ':');
+                    console.log(Object.keys(category['categories']));
+                    console.log("Choice?");
+                    const userChoice = prompt(">");
+                    const categoryKey: string = userChoice;
+                    const categorySelection: ChoiceSpec = category['categories'][userChoice];
+                    choiceHandler([[categoryKey, categorySelection]], resultObject, pc);
+               });
+            }
+            else {
+                selection.forEach(choice => {
+                    promptChoice(key, choice, resultObject, pc);
+                });
+            }
         } 
         else if(Object.keys(selection).length !== 0) {
             promptChoice(key, selection, resultObject, pc);
@@ -208,7 +225,9 @@ function pclassHandler(pc: PlayerCharacter) {
 
 function levelHandler(sheet: CharacterSheet) {
 
-    const pClass: string = Object.keys(sheet['levels'])[0];
+    const pClass: PlayerClass = Object.values(sheet.playerClasses)[0];
+    const pClassName: string = pClass.name;
+
     console.log(`Select level to go up to in ${pClass}`);
     const level = prompt(">");
 
@@ -221,10 +240,16 @@ function levelHandler(sheet: CharacterSheet) {
             hpAdd = +prompt(">");
         }
         let levelParams: LevelingParams = defaultLevelingParams();        
-        const choiceSet = Choices.renderClassChoicesAtLevel(pClass, i);
-        choiceHandler(choiceSet, levelParams, pc);
+        const classChoiceSet = Choices.renderClassChoicesAtLevel(pClassName, i);
+        choiceHandler(classChoiceSet, levelParams, pc);
+
+        //subclass handling
+        const subclassName =  pClass.subclass.name || levelParams['subclassSelection']['name'] || "";
+        const subclassChoiceSet = Choices.renderSubclassChoices(subclassName, i);
+        choiceHandler(subclassChoiceSet, levelParams, pc);
+
         console.log(levelParams);
-        sheet.levelUp(pClass, hpAdd, levelParams);
+        sheet.levelUp(pClassName, hpAdd, levelParams);
     }
 }
 
