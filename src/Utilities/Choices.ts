@@ -62,12 +62,16 @@ export class Choices {
     static functionRailRoad: {[key: string]: (spec: ChoiceParams) => string[]} = {
         'getSpellList': Choices.getSpellList,
         'getSpellListAll': Choices.getSpellListAll,
+        'getKnownManeuvers': Choices.getKnownSpellsAtLevel,
         'getKnownSpells': Choices.getKnownSpells,
         'getKnownSpellsAtLevel': Choices.getKnownSpellsAtLevel,
         'getSkillProficiencies': Choices.getSkillProficiencies,
+        'getMentalSavingThrows': Choices.getMentalSavingThrows,
         'getAvailableClericWeapons': Choices.getAvailableClericWeapons,
         'getAvailableClericArmor': Choices.getAvailableClericArmor,
-        'getEldritchInvocations': Choices.getEldritchInvocations
+        'getEldritchSpellList': Choices.getEldritchSpellList,
+        'getEldritchInvocations': Choices.getEldritchInvocations,
+        'getElementalDisciplines': Choices.getElementalDisciplines
     };
 
     static getSpellList(spec: ChoiceParams){
@@ -84,11 +88,6 @@ export class Choices {
         }
 
         return allSpellLists;
-    }
-
-    //get spell list for Wizard at a level BUT only Abjuration or Evocation schools 
-    static getEldritchSpells(spec: ChoiceParams) {
-        return [];
     }
 
     //currently returns undefined
@@ -119,6 +118,11 @@ export class Choices {
         return expertiseElligibleSkills;
     }
 
+    //to complete - only return choices if already have proficiency in wisdom saving throws
+    static getMentalSavingThrows(spec: ChoiceParams) {
+        return [];
+    }
+
     static getAvailableClericWeapons(spec: ChoiceParams){
         return spec.pc.traits.weaponProficiencies.has("Martial") ||
         spec.pc.traits.weaponProficiencies.has("Warhammer") ?
@@ -130,6 +134,11 @@ export class Choices {
         return spec.pc.traits.armorProficiencies.has("Heavy") ?
         ["SCALE MAIL", "LEATHER", "CHAIN MAIL"] :
         ["SCALE MAIL", "LEATHER"]
+    }
+
+    //get spell list for Wizard at a level BUT only Abjuration or Evocation schools 
+    static getEldritchSpellList(spec: ChoiceParams) {
+        return [];
     }
 
     static getEldritchInvocations(spec: ChoiceParams){
@@ -151,6 +160,11 @@ export class Choices {
         }
 
         return elligibleInvocations;
+    }
+
+    //to complete - elemental disciplines will also have prereqs
+    static getElementalDisciplines(spec: ChoiceParams){
+        return [];
     }
 }
 

@@ -1213,7 +1213,10 @@
                 {
                     "alias": "Armor",
                     "choose": 1,
-                    "method": "getAvailableFighterArmor",
+                    "from": [
+                        "CHAIN MAIL",
+                        "LEATHER ARMOR"
+                    ],
                     "required": true
                 }
             ],
@@ -1238,7 +1241,8 @@
                     "GREAT WEAPON FIGHTING",
                     "PROTECTION",
                     "TWO WEAPON FIGHTING"
-                ]
+                ], 
+                "required": true
             }
         },
         "3": {

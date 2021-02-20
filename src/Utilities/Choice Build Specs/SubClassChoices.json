@@ -79,14 +79,18 @@
             }
         },
         "6": {
-            "spells": {
-                "alias": "Additional Magical Secrets Spells",
-                "choose": 2,
-                "method": "getSpellListAll",
-                "args": [
-                    "3"
-                ],
-                "required": true
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Additional Magical Secrets Spells",
+                        "choose": 2,
+                        "method": "getSpellListAll",
+                        "args": [
+                            "3"
+                        ],
+                        "required": true
+                    }
+                ]
             }
         }
     },
@@ -151,15 +155,20 @@
                 ],
                 "required": true
             },
-            "spells": {
-                "alias": "Acolyte of Nature (Cantrip)",
-                "choose": 1,
-                "method": "getSpellList",
-                "args": [
-                    "Druid",
-                    "0"
-                ],
-                "required": true
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Acolyte of Nature (Cantrip)",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Druid",
+                            "0"
+                        ],
+                        "required": true
+                    }
+                ]
+
             }
         }
     },
@@ -175,29 +184,37 @@
                 ],
                 "required": true
             },
-            "spells": {
-                "alias": "Acolyte of Nature (Cantrip)",
-                "choose": 1,
-                "method": "getSpellList",
-                "args": [
-                    "Druid",
-                    "0"
-                ],
-                "required": true
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Acolyte of Nature (Cantrip)",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Druid",
+                            "0"
+                        ],
+                        "required": true
+                    }
+                ]
             }
         }
     },
     "LAND": {
         "2": {
-            "spells": {
-                "alias": "Bonus Cantrip",
-                "choose": 1,
-                "method": "getSpellList",
-                "args": [
-                    "Druid",
-                    "0"
-                ],
-                "required": true
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Bonus Cantrip",
+                        "choose": 1,
+                        "method": "getSpellList",
+                        "args": [
+                            "Druid",
+                            "0"
+                        ],
+                        "required": true
+                    }
+                ]
             }
         },
         "3": {
@@ -229,14 +246,18 @@
                 ],
                 "required": true
             },
-            "spells": {
-                "alias": "Arcane Archer Lore (Cantrip)",
-                "choose": 1,
-                "from": [
-                    "DRUIDCRAFT",
-                    "PRESTIDIGITATION"
-                ],
-                "required": true
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Arcane Archer Lore (Cantrip)",
+                        "choose": 1,
+                        "from": [
+                            "DRUIDCRAFT",
+                            "PRESTIDIGITATION"
+                        ],
+                        "required": true
+                    }
+                ]
             },
             "arcaneShots": {
                 "alias": "Arcane Shot",
@@ -349,7 +370,7 @@
                 ],
                 "required": true
             },
-            "battleManeuvers": {
+            "maneuverSelections": {
                 "add": [
                     {
                         "alias": "Combat Superiority (Level 3)",
@@ -378,7 +399,7 @@
             }
         },
         "7": {
-            "battleManeuvers": {
+            "maneuverSelections": {
                 "add": [
                     {
                         "alias": "Combat Superiority (Level 7)",
@@ -426,7 +447,7 @@
                         ],
                         "required": false,
                         "linked": {
-                            "element": "battleManeuvers.remove"
+                            "element": "maneuverSelections.remove"
                         }
                     }
                 ],
@@ -436,14 +457,14 @@
                     "method": "getKnownManeuvers",
                     "required": false,
                     "linked": {
-                        "element": "battleManeuvers.add",
+                        "element": "maneuverSelections.add",
                         "index": 1
                     }
                 }
             }
         },
         "10": {
-            "battleManeuvers": {
+            "maneuverSelections": {
                 "add": [
                     {
                         "alias": "Combat Superiority (Level 10)",
@@ -491,7 +512,7 @@
                         ],
                         "required": false,
                         "linked": {
-                            "element": "battleManeuvers.remove"
+                            "element": "maneuverSelections.remove"
                         }
                     }
                 ],
@@ -501,14 +522,14 @@
                     "method": "getKnownManeuvers",
                     "required": false,
                     "linked": {
-                        "element": "battleManeuvers.add",
+                        "element": "maneuverSelections.add",
                         "index": 1
                     }
                 }
             }
         },
         "15": {
-            "battleManeuvers": {
+            "maneuverSelections": {
                 "add": [
                     {
                         "alias": "Combat Superiority (Level 15)",
@@ -556,7 +577,7 @@
                         ],
                         "required": false,
                         "linked": {
-                            "element": "battleManeuvers.remove"
+                            "element": "maneuverSelections.remove"
                         }
                     }
                 ],
@@ -566,7 +587,7 @@
                     "method": "getKnownManeuvers",
                     "required": false,
                     "linked": {
-                        "element": "battleManeuvers.add",
+                        "element": "maneuverSelections.add",
                         "index": 1
                     }
                 }
@@ -574,27 +595,527 @@
         }
     },
     "CAVALIER": {
-        "3": {}
+        "3": {
+            "or": [
+                {
+                    "alias": "Bonus Proficiency",
+                    "choose": 1,
+                    "categories": {
+                        "skillProficiencies": {
+                            "alias": "Bonus Proficiency (Skill Proficiencies)",
+                            "choose": 1,
+                            "from": [
+                                "animal handling",
+                                "history",
+                                "insight",
+                                "performance",
+                                "persuasion"
+                            ],
+                            "required": true
+                        },
+                        "languages": {
+                            "alias": "Bonus Proficiency (Languages)",
+                            "choose": 1,
+                            "from": [
+                                "Celestial",
+                                "Common",
+                                "Deep Speech",
+                                "Draconic",
+                                "Dwarvish",
+                                "Elvish",
+                                "Gnomish",
+                                "Goblin",
+                                "Halfling",
+                                "Infernal",
+                                "Orc",
+                                "Primordial",
+                                "Sylvan",
+                                "Undercommon"
+                            ],
+                            "required": true
+                        }
+                    },
+                    "required": true
+                }
+            ]
+
+        }
     },
     "CHAMPION": {
-        "10": {}
+        "10": {
+            "fightingStyle": {
+                "alias": "Fighting Style",
+                "choose": 1,
+                "from": [
+                    "ARCHERY",
+                    "DEFENSE",
+                    "DUELING",
+                    "GREAT WEAPON FIGHTING",
+                    "PROTECTION",
+                    "TWO WEAPON FIGHTING"
+                ], 
+                "required": true
+            }
+        }
     },
     "ELDRITCH KNIGHT": {
-        "3": {},
-        "4": {},
-        "7": {},
-        "8": {},
-        "10": {},
-        "11": {},
-        "13": {},
-        "14": {},
-        "16": {},
-        "19": {},
-        "20": {}
+        "3": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Cantrips",
+                        "choose": 2, 
+                        "method": "getSpellListAll",
+                        "args": [
+                            "0"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "New Spells (Up to Level 1)",
+                        "choose": 3,
+                        "method": "getEldritchSpellList",
+                        "args": [
+                            "1"
+                        ],
+                        "required": true
+                    }
+                ]
+            }
+
+        },
+        "4": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 1)",
+                        "choose": 1,
+                        "method": "getEldritchSpellList",
+                        "args": [
+                            "1"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getEldritchSpellList",
+                        "args": [
+                            "1"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "7": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 2)",
+                        "choose": 1,
+                        "method": "getEldritchSpellList",
+                        "args": [
+                            "2"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getEldritchSpellList",
+                        "args": [
+                            "2"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "8": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 2)",
+                        "choose": 1,
+                        "method": "getSpellListAll",
+                        "args": [
+                            "2"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getEldritchSpellList",
+                        "args": [
+                            "2"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }  
+        },
+        "10": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Cantrip",
+                        "choose": 1, 
+                        "method": "getSpellListAll",
+                        "args": [
+                            "0"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "New Spell (Up to Level 2)",
+                        "choose": 1,
+                        "method": "getEldritchSpellList",
+                        "args": [
+                            "2"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getEldritchSpellList",
+                        "args": [
+                            "2"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "11": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 2)",
+                        "choose": 1,
+                        "method": "getEldritchSpellList",
+                        "args": [
+                            "2"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getEldritchSpellList",
+                        "args": [
+                            "2"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "13": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 3)",
+                        "choose": 1,
+                        "method": "getEldritchSpellList",
+                        "args": [
+                            "3"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getEldritchSpellList",
+                        "args": [
+                            "3"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "14": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 3)",
+                        "choose": 1,
+                        "method": "getSpellListAll",
+                        "args": [
+                            "3"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getEldritchSpellList",
+                        "args": [
+                            "3"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "16": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 3)",
+                        "choose": 1,
+                        "method": "getEldritchSpellList",
+                        "args": [
+                            "3"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getEldritchSpellList",
+                        "args": [
+                            "3"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "19": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 4)",
+                        "choose": 1,
+                        "method": "getEldritchSpellList",
+                        "args": [
+                            "4"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getEldritchSpellList",
+                        "args": [
+                            "4"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "20": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 4)",
+                        "choose": 1,
+                        "method": "getSpellListAll",
+                        "args": [
+                            "4"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getEldritchSpellList",
+                        "args": [
+                            "4"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        }
     },
     "SAMURAI": {
-        "3": {},
-        "7": {}
+        "3": {
+            "or": [
+                {
+                    "alias": "Bonus Proficiency",
+                    "choose": 1,
+                    "categories": {
+                        "skillProficiencies": {
+                            "alias": "Bonus Proficiency (Skill Proficiencies)",
+                            "choose": 1,
+                            "from": [
+                                "history",
+                                "insight",
+                                "performance",
+                                "persuasion"
+                            ],
+                            "required": true
+                        },
+                        "languages": {
+                            "alias": "Bonus Proficiency (Languages)",
+                            "choose": 1,
+                            "from": [
+                                "Celestial",
+                                "Common",
+                                "Deep Speech",
+                                "Draconic",
+                                "Dwarvish",
+                                "Elvish",
+                                "Gnomish",
+                                "Goblin",
+                                "Halfling",
+                                "Infernal",
+                                "Orc",
+                                "Primordial",
+                                "Sylvan",
+                                "Undercommon"
+                            ],
+                            "required": true
+                        }
+                    },
+                    "required": true
+                }
+            ]
+        },
+        "7": {
+            "savingThrows": {
+                "alias": "Elegant Courtier Saving Throws",
+                "choose": 1, 
+                "method": "getMentalSavingThrows",
+                "required": true
+            }
+        }
     },
     "FOUR ELEMENTS": {
         "3": {},

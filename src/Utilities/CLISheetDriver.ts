@@ -137,15 +137,16 @@ function promptChoice(key: string, selection: ChoiceSpec, resultObject: object, 
 function choiceHandler(choicesSet: [key: string, selection: ChoiceSpec][], resultObject: object, pc?: PlayerCharacter): void {
     //pass by reference
     for(const [key, selection] of choicesSet) {
-        if(key == "spellSelections") {
-            //spell selection
-            const spellChoiceSet: [key: string, selection: ChoiceSpec][] = Object.entries(selection);
-            const spellChoiceResult = resultObject[key];            
-            choiceHandler(spellChoiceSet, spellChoiceResult, pc);
-        }
-        else if(key == "subclassSelections") {
-            //subclass selection
-            promptChoice(key, selection, resultObject['subclassSelection']['name'], pc);
+        if(key.includes(`Selections`)) {
+            if(key == "subclassSelections") {
+                //subclass selection
+                promptChoice(key, selection, resultObject['subclassSelection']['name'], pc);
+            } else {
+                //spells, battle maneuvers, elemental disciplines, eldritch invocations 
+                const spellChoiceSet: [key: string, selection: ChoiceSpec][] = Object.entries(selection);
+                const spellChoiceResult = resultObject[key];            
+                choiceHandler(spellChoiceSet, spellChoiceResult, pc);
+            }
         }
         else if(selection instanceof Array) {
             if(key == "or") {
