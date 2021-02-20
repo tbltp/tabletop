@@ -173,7 +173,7 @@ export class Choices {
     //to complete
     static getKnownElementalDisciplines(spec: ChoiceParams) {
         return [];
-    },
+    }
 
     //get spell list for Wizard at a level BUT only Enchantment or Illusion schools 
     static getTricksterSpellList(spec: ChoiceParams) {

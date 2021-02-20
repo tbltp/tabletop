@@ -1,10 +1,10 @@
-import { Subclass } from "../../Subclass";
+import { Subclass, SubclassParams } from "../../Subclass";
 import { Berserker } from "./Berserker/Berserker";
 import { TotemWarrior } from "./TotemWarrior/TotemWarrior";
 import { AncestralGuardian } from "./AncestralGuardian/AncestralGuardian"
 import { StormHerald } from "./StormHerald/StormHerald";
 import { Zealot } from "./Zealot/Zealot";
-import { LevelingParams, SubclassParams } from "Classes/PlayerClass";
+import { LevelingParams } from "Classes/PlayerClass";
 import { PlayerCharacter } from "index";
 export class BarbarianSubclass extends Subclass {
 

@@ -23,7 +23,7 @@ import { DSDragonborn } from "../Races/Dragonborn/Dragonborn";
 import { DSTiefling } from "../Races/Tiefling/Tiefling";
 
 // Subclasses (Called when deserializing a character with a subclass.)
-import { Subclass } from "../Classes/Subclass";
+import { Subclass, SubclassParams } from "../Classes/Subclass";
 import { ArtificerSubclass } from "../Classes/Artificer/Subclasses/ArtificerSubclass";
 import { BarbarianSubclass } from "../Classes/Barbarian/Subclasses/BarbarianSubclass";
 import { BardSubclass } from "../Classes/Bard/Subclasses/BardSubclass";
@@ -91,7 +91,7 @@ export class Deserialize {
         return classes;
     }
 
-    static deserializeSubclass(className: string, subclassSelection: {subclass: string, options?: string[]}): Subclass {
+    static deserializeSubclass(className: string, subclassSelection: SubclassParams): Subclass {
         
         switch(className) {
             case "Artificer":

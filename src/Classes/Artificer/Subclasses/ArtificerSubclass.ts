@@ -1,5 +1,5 @@
-import { Subclass } from "../../Subclass";
-import { LevelingParams, SubclassParams } from "Classes/PlayerClass";
+import { Subclass, SubclassParams } from "../../Subclass";
+import { LevelingParams } from "Classes/PlayerClass";
 import { PlayerCharacter } from "index";
 
 import { Alchemist } from './Alchemist/Alchemist';
