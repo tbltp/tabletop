@@ -15,13 +15,13 @@ export class NatureDomain {
 
   static nature1(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addSpells(
-      [...params.spellSelections.add],"wisdom");
+      [...params.subclassParams.spellSelections.add],"wisdom");
     NatureDomain.getSpells(pc,"1");
     pc.traits.armorProficiencies.add("Heavy");
     pc.pcHelper.addFeatures(
       {
         ...NatureDomain.getFeature("1", "ACOLYTE OF NATURE"),
-        choices: params.spellSelections.add,
+        choices: params.subclassParams.spellSelections.add,
       },
       NatureDomain.getFeature("1", "BONUS PROFICIENCY")
     );

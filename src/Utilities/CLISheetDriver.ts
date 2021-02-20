@@ -1,5 +1,6 @@
 
 import { ClassCreationParams, LevelingParams, PlayerClass } from '../Classes/PlayerClass';
+import { SubclassParams } from '../Classes/Subclass';
 import { bgDict, classDict, raceDict } from './ConstructorDefinitions';
 import { Choices, ChoiceSpec } from './Choices';
 import { CharacterSheet } from '../Base/CharacterSheet';
@@ -44,11 +45,25 @@ function defaultLevelingParams(): LevelingParams {
         proficiencySelection: [],
         toolProficiency: "",
         fightingStyles: [],
-        subclassParams: {
-            name: ""
-        },
+        subclassParams: defaultSubclassParams(),
         featChoice: null
     };
+}
+
+function defaultSubclassParams(): SubclassParams {
+    return {
+        name: "",
+        spellSelections: {
+            add: [],
+            remove: ""
+        },
+        skillProficiencies: [],
+        weapons: [],
+        toolProficiencies: [],
+        fightingStyles: [],
+        languages: [],
+        savingThrows: []
+    }
 }
 
 function defaultCreationParams(): ClassCreationParams {

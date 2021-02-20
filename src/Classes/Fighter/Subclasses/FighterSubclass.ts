@@ -1,5 +1,5 @@
 
-import { Subclass } from "../../Subclass";
+import { Subclass, SubclassParams } from "../../Subclass";
 import { Champion } from "./Champion/Champion";
 import { BattleMaster } from "./BattleMaster/BattleMaster";
 import { EldritchKnight } from "./EldritchKnight/EldritchKnight";
@@ -8,7 +8,7 @@ import { Cavalier } from "./Cavalier/Cavalier";
 import { Samurai } from "./Samurai/Samurai";
 
 export class FighterSubclass extends Subclass {
-  constructor(subclassSelection: {subclass: string, options?: string[]}){
+  constructor(subclassSelection: SubclassParams){
     super(subclassSelection);
   }
     
@@ -75,5 +75,12 @@ export class FighterSubclass extends Subclass {
       };
 }
 
+export interface FighterSubclassParams extends SubclassParams {
+  arcaneShots?: string[];
+  maneuverSelections?: {
+    add: string[];
+    remove?: string;
+  };
+}
 
 

@@ -4,13 +4,13 @@ import { TotemWarrior } from "./TotemWarrior/TotemWarrior";
 import { AncestralGuardian } from "./AncestralGuardian/AncestralGuardian"
 import { StormHerald } from "./StormHerald/StormHerald";
 import { Zealot } from "./Zealot/Zealot";
-import { LevelingParams } from "Classes/PlayerClass";
+import { LevelingParams, SubclassParams } from "Classes/PlayerClass";
 import { PlayerCharacter } from "index";
 export class BarbarianSubclass extends Subclass {
 
-  constructor(subclassSelection: {subclass: string, options?: string[]}){
+  constructor(subclassSelection: SubclassParams){
     super(subclassSelection);
-    subclassSelection.subclass === "STORM HERALD" ? this.persistentSelection = {choice: subclassSelection.options[0]} : null;
+    subclassSelection.name === "STORM HERALD" ? this.persistentSelection = subclassSelection : null;
   }
 
   subclassDictionary = {
@@ -58,8 +58,13 @@ export class BarbarianSubclass extends Subclass {
   subclassDriver(pc: PlayerCharacter, level: string, subclass: string, params: LevelingParams){
     if(!this.subclassDictionary[subclass][level]){ return; }
     if(this.persistentSelection){
-      params.subclassParams = {subclass: "STORM HERALD", options: [this.persistentSelection.choice]};
+      params.subclassParams = this.persistentSelection;
     }
     this.subclassDictionary[subclass][level](pc, params);
   }
+}
+
+export interface BarbarianSubclassParams extends SubclassParams {
+  stormAura?: string,
+  totem?: string
 }

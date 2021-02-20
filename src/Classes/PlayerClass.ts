@@ -9,7 +9,7 @@ import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
 import * as Armor from "../../Assets/Armor.json";
 import * as Weapons from "../../Assets/Weapons.json";
 import { Inventory } from "../Base/Inventory";
-import { Subclass } from "./Subclass";
+import { Subclass, SubclassParams } from "./Subclass";
 import { Feat } from "../Feats/Feat";
 
 export abstract class PlayerClass {
@@ -326,16 +326,4 @@ export interface LevelingParams {
   featChoice?: Feat;
 }
 
-export interface SubclassParams {
-  name: string;
-  spellSelections?: {
-    add: string[];
-    remove?: string;
-  };
-  skillProficiencies?: string[],
-  weapons?: string[];
-  toolProficiencies?: string[];
-  fightingStyles?: string[];
-  languages?: string[];
-  savingThrows?: string[];
-}
+

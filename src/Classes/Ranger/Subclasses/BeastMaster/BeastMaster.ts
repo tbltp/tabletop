@@ -1,5 +1,6 @@
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
-import { LevelingParams } from "../../../../Classes/PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../../Classes/PlayerClass";
+import { RangerSubclassParams } from "../RangerSubclass";
 import * as BeastMasterArchetypeDict from "./BeastMaster.json"
 
 export class BeastMaster {
@@ -9,7 +10,13 @@ export class BeastMaster {
     }
 
     static beastMaster3(pc: PlayerCharacter, params: LevelingParams) {
-        pc.pcHelper.addFeatures(BeastMaster.getFeature("3", "RANGER'S COMPANION"));
+        PlayerClass.pushCustomizedClassFeature(
+          pc,
+          3,
+          BeastMasterArchetypeDict,
+          "RANGER'S COMPANION",
+          [(params.subclassParams as RangerSubclassParams).beastCompanion]
+        );
       }
     
       static beastMaster7(pc: PlayerCharacter, params: LevelingParams) {

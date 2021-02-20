@@ -92,7 +92,7 @@ export class Fighter extends PlayerClass {
     this.pushFighterFeatures(pc, 2);
   }
 
-  level3(pc: PlayerCharacter, params: FighterLevelingParams): void {
+  level3(pc: PlayerCharacter, params: LevelingParams): void {
     //martial archetype
     this.subclass = new FighterSubclass(params.subclassParams);
     this.subclassDriver(pc, "3", params);    
@@ -183,14 +183,6 @@ export class Fighter extends PlayerClass {
     pc.pcHelper.findResourceTraitByName("Extra Attack").resourceMax.value++;
     this.subclassDriver(pc, "20", params);
   }
-}
-
-export interface FighterLevelingParams extends LevelingParams {
-  artisanToolProficiency?: string,
-  battleManeuvers?: {
-    add: string[],
-    remove?: string
-  };
 }
 
 export class DSFighter extends Fighter {
