@@ -10,7 +10,7 @@ export class StormHerald {
   }
 
   static getAuraEffect(pc: PlayerCharacter,params: LevelingParams, level: string) {
-    pc.pcHelper.addFeatures(StormHerald.auraEffect[params.subclassSelection.options[0]][level])
+    pc.pcHelper.addFeatures(StormHerald.auraEffect[params.subclassParams.options[0]][level])
   }
 
   static improveAura(pc: PlayerCharacter,params: LevelingParams, level: string) {
@@ -30,11 +30,11 @@ export class StormHerald {
       title: "Storm Aura",
       description: ""
     }
-    if(params.subclassSelection.options[0] == "DESERT") {
+    if(params.subclassParams.options[0] == "DESERT") {
       auraScale.description = "How much damage your Desert Aura does.",
       auraScale.bonus = 2;
     }
-    else if(params.subclassSelection.options[0] == "SEA") {
+    else if(params.subclassParams.options[0] == "SEA") {
       auraScale.description = "How much damage your Sea Aura does.",
       auraScale.dice = "1d6";
     }

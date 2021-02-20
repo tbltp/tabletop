@@ -9,8 +9,8 @@ export class Kensei {
   }
 
   static addKensei(pc:PlayerCharacter, params: LevelingParams) {
-    for(let wep in params.subclassSelection.options) {
-      pc.traits.weaponProficiencies.add(params.subclassSelection.options[wep]);
+    for(let wep in params.subclassParams.options) {
+      pc.traits.weaponProficiencies.add(params.subclassParams.options[wep]);
     }
   }
   static kensei3(pc: PlayerCharacter, params: LevelingParams) {

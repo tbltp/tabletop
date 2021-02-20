@@ -141,7 +141,7 @@ export class Warlock extends PlayerClass {
       level: 1,
     };
     pc.pcHelper.addResourceTraits(pactMagic);
-    this.subclass = new WarlockSubclass(params.subclassSelection);
+    this.subclass = new WarlockSubclass(params.subclassParams);
     this.subclassDriver(pc, "1", params);
 
     this.addSpellcasting(pc, "WARLOCK");

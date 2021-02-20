@@ -14,7 +14,7 @@ export class DivineSoul {
   }
   static divineSoul1(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(DivineSoul.getFeature("1", "DIVINE MAGIC"), DivineSoul.getFeature("1", "FAVORED BY THE GODS"))
-    DivineSoul.getSpell(pc,params.subclassSelection.options[0]);
+    DivineSoul.getSpell(pc,params.subclassParams.options[0]);
   }
 
   static divineSoul6(pc: PlayerCharacter, params: LevelingParams) {      

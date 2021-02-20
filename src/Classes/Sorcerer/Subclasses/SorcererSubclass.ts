@@ -76,7 +76,7 @@ export class SorcererSubclass extends Subclass {
   subclassDriver(pc: PlayerCharacter, level: string, subclass: string, params: LevelingParams){
     if(!this.subclassDictionary[subclass][level]){ return; }
     if(this.persistentSelection){
-      params.subclassSelection = {subclass: "DRACONIC ANCESTRY", options: [this.persistentSelection.choice]};
+      params.subclassParams = {subclass: "DRACONIC ANCESTRY", options: [this.persistentSelection.choice]};
     }
     this.subclassDictionary[subclass][level](pc, params);
   }

@@ -103,7 +103,7 @@ export class Barbarian extends PlayerClass {
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     
-    this.subclass = new BarbarianSubclass(params.subclassSelection);
+    this.subclass = new BarbarianSubclass(params.subclassParams);
     
     this.subclassDriver(pc, "3", params);
     pc.pcHelper.findResourceTraitByName("Rage").resourceMax.value++;

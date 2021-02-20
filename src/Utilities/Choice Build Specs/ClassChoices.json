@@ -1231,7 +1231,7 @@
             }
         },
         "1": {
-            "fightingStyle": {
+            "fightingStyles": {
                 "alias": "Fighting Style",
                 "choose": 1,
                 "from": [
@@ -1471,7 +1471,7 @@
             }
         },
         "2": {
-            "fightingStyle": {
+            "fightingStyles": {
                 "alias": "Fighting Style",
                 "choose": 1,
                 "from": [
@@ -1587,7 +1587,7 @@
                     }
                 ]
             },
-            "fightingStyle": {
+            "fightingStyles": {
                 "alias": "Fighting Style",
                 "choose": 1,
                 "from": [

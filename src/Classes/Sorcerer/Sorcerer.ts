@@ -87,7 +87,7 @@ export class Sorcerer extends PlayerClass {
     // spell replacements can happen at any level
     this.handleSorcererSpellSelections(pc, params);
     this.addSpellcasting(pc, "SORCERER");
-    this.subclass = new SorcererSubclass(params.subclassSelection)
+    this.subclass = new SorcererSubclass(params.subclassParams)
     this.subclassDriver(pc, "1", params);
 
   }

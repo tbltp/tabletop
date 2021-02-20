@@ -43,8 +43,8 @@ function defaultLevelingParams(): LevelingParams {
         },
         proficiencySelection: [],
         toolProficiency: "",
-        fightingStyle: [],
-        subclassSelection: {
+        fightingStyles: [],
+        subclassParams: {
             name: ""
         },
         featChoice: null
@@ -245,7 +245,7 @@ function levelHandler(sheet: CharacterSheet) {
         choiceHandler(classChoiceSet, levelParams, pc);
 
         //subclass handling
-        const subclassName =  pClass.subclass.name || levelParams['subclassSelection']['name'] || "";
+        const subclassName =  pClass.subclass.name || levelParams['subclassParams']['name'] || "";
         const subclassChoiceSet = Choices.renderSubclassChoices(subclassName, i);
         choiceHandler(subclassChoiceSet, levelParams, pc);
 

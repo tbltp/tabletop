@@ -58,7 +58,7 @@ export class BarbarianSubclass extends Subclass {
   subclassDriver(pc: PlayerCharacter, level: string, subclass: string, params: LevelingParams){
     if(!this.subclassDictionary[subclass][level]){ return; }
     if(this.persistentSelection){
-      params.subclassSelection = {subclass: "STORM HERALD", options: [this.persistentSelection.choice]};
+      params.subclassParams = {subclass: "STORM HERALD", options: [this.persistentSelection.choice]};
     }
     this.subclassDictionary[subclass][level](pc, params);
   }

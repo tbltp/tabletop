@@ -105,7 +105,7 @@ export class Druid extends PlayerClass {
     pc.pcHelper.addResourceTraits(wildShapeRes);
     pc.pcHelper.addScalingTraits(wildShapeScale);
   
-    this.subclass = new DruidSubclass(params.subclassSelection);
+    this.subclass = new DruidSubclass(params.subclassParams);
   
     this.subclassDriver(pc, "2", params);    
     this.pushDruidFeatures(pc, 2);

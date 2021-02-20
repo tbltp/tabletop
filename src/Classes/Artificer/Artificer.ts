@@ -97,7 +97,7 @@ export class Artificer extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
-    this.subclass = new ArtificerSubclass(params.subclassSelection);
+    this.subclass = new ArtificerSubclass(params.subclassParams);
     this.subclassDriver(pc, "3", params);
   }
 

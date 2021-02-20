@@ -99,12 +99,12 @@ export class Ranger extends PlayerClass {
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    PlayerClass.addFightingStyle(pc, params.fightingStyle[0]);
+    PlayerClass.addFightingStyle(pc, params.fightingStyles[0]);
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleRangerSpellSelections(pc, params);
-    this.subclass = new RangerSubclass(params.subclassSelection);
+    this.subclass = new RangerSubclass(params.subclassParams);
     this.subclassDriver(pc, "3", params);
     this.pushRangerFeatures(pc, 3);
   }

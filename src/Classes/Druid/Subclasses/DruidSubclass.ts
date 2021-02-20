@@ -105,7 +105,7 @@ export class DruidSubclass extends Subclass {
   subclassDriver(pc: PlayerCharacter, level: string, subclass: string, params: LevelingParams){
     if(!this.subclassDictionary[subclass][level]){ return; }
     if(this.persistentSelection){
-      params.subclassSelection = {subclass: "LAND", options: [this.persistentSelection.choice]};
+      params.subclassParams = {subclass: "LAND", options: [this.persistentSelection.choice]};
     }
     this.subclassDictionary[subclass][level](pc, params);
   }

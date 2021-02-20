@@ -98,12 +98,12 @@ export class Paladin extends PlayerClass {
   level2(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
     this.pushPaladinFeatures(pc, 2);
-    pc.pcHelper.addFeatures(FightingStyle[params.fightingStyle[0]]);
+    pc.pcHelper.addFeatures(FightingStyle[params.fightingStyles[0]]);
     pc.pcHelper.addSpells([...SpellList["Paladin"][1]], SpellcastingAbility["PALADIN"]);
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.subclass = new PaladinSubclass(params.subclassSelection);
+    this.subclass = new PaladinSubclass(params.subclassParams);
     this.upgradeLayOnHands(pc);
     this.subclassDriver(pc, "3", params);
 

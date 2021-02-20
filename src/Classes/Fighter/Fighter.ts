@@ -72,7 +72,7 @@ export class Fighter extends PlayerClass {
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
     //fighting style
-    PlayerClass.addFightingStyle(pc, params.fightingStyle[0]);
+    PlayerClass.addFightingStyle(pc, params.fightingStyles[0]);
     //second wind
     pc.pcHelper.addResourceTraits({
       title: "Second Wind",
@@ -94,7 +94,7 @@ export class Fighter extends PlayerClass {
 
   level3(pc: PlayerCharacter, params: FighterLevelingParams): void {
     //martial archetype
-    this.subclass = new FighterSubclass(params.subclassSelection);
+    this.subclass = new FighterSubclass(params.subclassParams);
     this.subclassDriver(pc, "3", params);    
   }
 

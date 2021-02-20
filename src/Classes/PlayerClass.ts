@@ -321,12 +321,21 @@ export interface LevelingParams {
   };
   proficiencySelection?: string[];
   toolProficiency?: string;
-  fightingStyle?: string[];
-  subclassSelection?: SubclassParams;
+  fightingStyles?: string[];
+  subclassParams?: SubclassParams;
   featChoice?: Feat;
 }
 
 export interface SubclassParams {
   name: string;
-  //tbd
+  spellSelections?: {
+    add: string[];
+    remove?: string;
+  };
+  skillProficiencies?: string[],
+  weapons?: string[];
+  toolProficiencies?: string[];
+  fightingStyles?: string[];
+  languages?: string[];
+  savingThrows?: string[];
 }

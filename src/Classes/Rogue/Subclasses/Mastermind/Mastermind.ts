@@ -15,8 +15,8 @@ export class Mastermind {
     pc.traits.toolProficiencies.add("Forgery Kit");
     pc.traits.toolProficiencies.add("Disguise Kit");
     pc.traits.toolProficiencies.add(params.proficiencySelection[0]);
-    pc.traits.languages.push(Languages[params.subclassSelection.options[0]]);
-    pc.traits.languages.push(Languages[params.subclassSelection.options[1]]);
+    pc.traits.languages.push(Languages[params.subclassParams.options[0]]);
+    pc.traits.languages.push(Languages[params.subclassParams.options[1]]);
   }
   
   static mastermind9(pc: PlayerCharacter, params: LevelingParams) {
