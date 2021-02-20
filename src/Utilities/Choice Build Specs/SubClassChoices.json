@@ -1430,25 +1430,482 @@
         }
     },
     "ARCANE TRICKSTER": {
-        "3": {},
-        "4": {},
-        "7": {},
-        "8": {},
-        "10": {},
-        "11": {},
-        "13": {},
-        "14": {},
-        "16": {},
-        "19": {},
-        "20": {}
+        "3": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Cantrips",
+                        "choose": 2, 
+                        "method": "getSpellListAll",
+                        "args": [
+                            "0"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "New Spells (Up to Level 1)",
+                        "choose": 3,
+                        "method": "getTricksterSpellList",
+                        "args": [
+                            "1"
+                        ],
+                        "required": true
+                    }
+                ]
+            }
+
+        },
+        "4": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 1)",
+                        "choose": 1,
+                        "method": "getTricksterSpellList",
+                        "args": [
+                            "1"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getTricksterSpellList",
+                        "args": [
+                            "1"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "7": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 2)",
+                        "choose": 1,
+                        "method": "getTricksterSpellList",
+                        "args": [
+                            "2"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getTricksterSpellList",
+                        "args": [
+                            "2"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "8": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 2)",
+                        "choose": 1,
+                        "method": "getSpellListAll",
+                        "args": [
+                            "2"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getTricksterSpellList",
+                        "args": [
+                            "2"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }  
+        },
+        "10": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "Cantrip",
+                        "choose": 1, 
+                        "method": "getSpellListAll",
+                        "args": [
+                            "0"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "New Spell (Up to Level 2)",
+                        "choose": 1,
+                        "method": "getTricksterSpellList",
+                        "args": [
+                            "2"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getTricksterSpellList",
+                        "args": [
+                            "2"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "11": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 2)",
+                        "choose": 1,
+                        "method": "getTricksterSpellList",
+                        "args": [
+                            "2"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getTricksterSpellList",
+                        "args": [
+                            "2"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "13": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 3)",
+                        "choose": 1,
+                        "method": "getTricksterSpellList",
+                        "args": [
+                            "3"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getTricksterSpellList",
+                        "args": [
+                            "3"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "14": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 3)",
+                        "choose": 1,
+                        "method": "getSpellListAll",
+                        "args": [
+                            "3"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getTricksterSpellList",
+                        "args": [
+                            "3"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "16": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 3)",
+                        "choose": 1,
+                        "method": "getTricksterSpellList",
+                        "args": [
+                            "3"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getTricksterSpellList",
+                        "args": [
+                            "3"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "19": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 4)",
+                        "choose": 1,
+                        "method": "getTricksterSpellList",
+                        "args": [
+                            "4"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getTricksterSpellList",
+                        "args": [
+                            "4"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        },
+        "20": {
+            "spellSelections": {
+                "add": [
+                    {
+                        "alias": "New Spell (Up to Level 4)",
+                        "choose": 1,
+                        "method": "getSpellListAll",
+                        "args": [
+                            "4"
+                        ],
+                        "required": true
+                    },
+                    {
+                        "alias": "Replacement Spell",
+                        "choose": 1, 
+                        "method": "getTricksterSpellList",
+                        "args": [
+                            "4"
+                        ],
+                        "required": false,
+                        "linked": {
+                            "element": "spellSelections.remove"
+                        }
+                    }
+                ],
+                "remove": {
+                    "alias": "Spell Removal",
+                    "choose": 1,
+                    "method": "getKnownSpells",
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.add",
+                        "index": 1
+                    }
+                }
+            }
+        }
     },
     "MASTERMIND": {
-        "3": {}
+        "3": {
+            "languages": {
+                "alias": "Master of Intrigue (Languages)",
+                "choose": 2,
+                "from": [
+                    "Celestial",
+                    "Common",
+                    "Deep Speech",
+                    "Draconic",
+                    "Dwarvish",
+                    "Elvish",
+                    "Gnomish",
+                    "Goblin",
+                    "Halfling",
+                    "Infernal",
+                    "Orc",
+                    "Primordial",
+                    "Sylvan",
+                    "Undercommon"
+                ],
+                "required": true
+            },
+            "gamingSet": {
+                "alias": "Master of Intrigue (Gaming Set)",
+                "choose": 1,
+                "from": [
+                    "PLAYING CARD SET",
+                    "DRAGONCHESS SET",
+                    "DICE SET",
+                    "THREE-DRAGON ANTE SET"
+                ],
+                "required": true
+            }
+        }
     },
     "DIVINE SOUL": {
-        "3": {}
+        "1": {
+            "affinity": {
+                "alias": "Divine Magic",
+                "choose": 1,
+                "from": [
+                    "Good", 
+                    "Evil",
+                    "Law",
+                    "Chaos", 
+                    "Neutrality"
+                ],
+                "required": true
+            }
+        }
     },
     "DRACONIC ANCESTRY": {
-        "3": {}
+        "1": {
+            "draconicAncestry": {
+                "alias": "Dragon Ancestor",
+                "choose": 1,
+                "from": [
+                    "Black",
+                    "Blue",
+                    "Brass",
+                    "Bronze",
+                    "Copper",
+                    "Gold",
+                    "Green",
+                    "Red",
+                    "Silver",
+                    "White"
+                ],
+                "required": true
+            }
+        }
     }
 }

@@ -72,7 +72,9 @@ export class Choices {
         'getEldritchSpellList': Choices.getEldritchSpellList,
         'getEldritchInvocations': Choices.getEldritchInvocations,
         'getElementalDisciplines': Choices.getElementalDisciplines,
-        'getKnownElementalDisciplines': Choices.getKnownElementalDisciplines
+        'getKnownElementalDisciplines': Choices.getKnownElementalDisciplines,
+        'getTricksterSpellList': Choices.getTricksterSpellList,
+
     };
 
     static getSpellList(spec: ChoiceParams){
@@ -170,6 +172,11 @@ export class Choices {
 
     //to complete
     static getKnownElementalDisciplines(spec: ChoiceParams) {
+        return [];
+    },
+
+    //get spell list for Wizard at a level BUT only Enchantment or Illusion schools 
+    static getTricksterSpellList(spec: ChoiceParams) {
         return [];
     }
 }
