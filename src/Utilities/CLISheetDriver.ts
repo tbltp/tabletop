@@ -127,10 +127,9 @@ function promptAbilityScores(): [number, number, number, number, number, number]
 
 
 function promptChoice(key: string, selection: ChoiceSpec, resultObject: object, pc?: PlayerCharacter): void {
-    console.log(resultObject);
     //pass by reference
     for(let i = 0; i < selection['choose']; i++) {
-        console.log(selection['alias'], ':');
+        console.log(selection['alias'], `(${i + 1} of ${selection['choose']})`,':');
         if(selection['from']) {
             console.log(selection['from']);
             console.log("Choice?");
