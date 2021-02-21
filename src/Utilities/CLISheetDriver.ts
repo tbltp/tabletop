@@ -264,6 +264,7 @@ function levelHandler(sheet: CharacterSheet) {
     const level = getInput(levelRange, levelPrompt);
 
     for(let i = 1; i <= +level; i++) {
+        console.log(`---${pClassName} Level ${i}---`)
         let pc: PlayerCharacter = sheet.character;
         let hpAdd: number = 0
         if(i != 1) {
