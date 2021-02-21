@@ -8,7 +8,9 @@ import { PlayerCharacter } from '../Base/PlayerCharacter';
 import { Jsonify } from './Jsonify';
 import { Race, RaceParams } from '../Races/Race';
 import { Background, BackgroundParams } from '../Backgrounds/Background';
-var prompt = require('prompt-sync')();
+var prompt = require('prompt-sync')({sigint: true});
+
+
 
 
 function defaultRaceParams(): RaceParams {
@@ -125,6 +127,7 @@ function promptAbilityScores(): [number, number, number, number, number, number]
 
 
 function promptChoice(key: string, selection: ChoiceSpec, resultObject: object, pc?: PlayerCharacter): void {
+    console.log(resultObject);
     //pass by reference
     for(let i = 0; i < selection['choose']; i++) {
         console.log(selection['alias'], ':');
@@ -152,10 +155,10 @@ function promptChoice(key: string, selection: ChoiceSpec, resultObject: object, 
 function choiceHandler(choicesSet: [key: string, selection: ChoiceSpec][], resultObject: object, pc?: PlayerCharacter): void {
     //pass by reference
     for(const [key, selection] of choicesSet) {
-        if(key.includes(`Selections`)) {
-            if(key == "subclassSelections") {
+        if(key.includes(`Selection`)) {
+            if(key == "subclassSelection") {
                 //subclass selection
-                promptChoice(key, selection, resultObject['subclassSelection']['name'], pc);
+                promptChoice('name', selection, resultObject['subclassParams'], pc);
             } else {
                 //spells, battle maneuvers, elemental disciplines, eldritch invocations 
                 const spellChoiceSet: [key: string, selection: ChoiceSpec][] = Object.entries(selection);
@@ -231,7 +234,7 @@ function pclassHandler(pc: PlayerCharacter) {
     let pclassParams: ClassCreationParams = { ...defaultCreationParams(), multiclass: false };
 
     const choicesSet = Choices.renderClassChoicesAtLevel(pclassSelection, 0);
-    choiceHandler(choicesSet, pclassParams);
+    choiceHandler(choicesSet, pclassParams, pc);
     
     console.log(pclassParams);
     pclassInstance = new classDict[pclassSelection](pclassParams);
@@ -244,7 +247,7 @@ function levelHandler(sheet: CharacterSheet) {
     const pClass: PlayerClass = Object.values(sheet.playerClasses)[0];
     const pClassName: string = pClass.name;
 
-    console.log(`Select level to go up to in ${pClass}`);
+    console.log(`Select level to go up to in ${pClass.name}`);
     const level = prompt(">");
 
     for(let i = 1; i <= level; i++) {
@@ -260,7 +263,13 @@ function levelHandler(sheet: CharacterSheet) {
         choiceHandler(classChoiceSet, levelParams, pc);
 
         //subclass handling
-        const subclassName =  pClass.subclass.name || levelParams['subclassParams']['name'] || "";
+        let subclassName: string = "";
+        if(pClass.subclass) {
+            subclassName = pClass.subclass.name;
+        } else if (levelParams['subclassParams']['name']) {
+            subclassName = levelParams['subclassParams']['name'];
+        }
+
         const subclassChoiceSet = Choices.renderSubclassChoices(subclassName, i);
         choiceHandler(subclassChoiceSet, levelParams, pc);
 
@@ -270,5 +279,19 @@ function levelHandler(sheet: CharacterSheet) {
 }
 
 
-createCharacter();
+//createCharacter();
 
+
+function testSubclasses() {
+    const pc: PlayerCharacter = new PlayerCharacter(14, 14, 14, 14, 14, 14);
+    const rc: Race = new raceDict['Tiefling']();
+    const bg: Background = new bgDict['Charlatan']();
+    const cls: PlayerClass = pclassHandler(pc);
+    const sheet: CharacterSheet = new CharacterSheet("Test", pc, rc, cls, bg);
+    levelHandler(sheet);
+
+    Jsonify.dumpToJSON(sheet, `Test`);
+}
+
+
+testSubclasses();
