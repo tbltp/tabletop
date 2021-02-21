@@ -81,6 +81,7 @@ export class Choices {
         return SpellList[spec.list][spec.level];
     }
 
+    //up to specified level
     static getSpellListAll(spec: ChoiceParams){
         let allSpellLists = [];
 
@@ -93,14 +94,12 @@ export class Choices {
         return allSpellLists;
     }
 
-    //currently returns undefined
     static getKnownSpells(spec: ChoiceParams){
-        return [...Object.values(spec.pc.spells).map(spell => spell['name'])];
+        return [].concat(...Object.values(spec.pc.spells).slice(1)).map(spell => spell['name'].toUpperCase());
     }
 
-    //ditto
     static getKnownSpellsAtLevel(spec: ChoiceParams){
-        return [...Object.values(spec.pc.spells[spec['args'][0]]).map(spell => spell['name'])];
+        return [].concat(...Object.values(spec.pc.spells[spec.level])).map(spell => spell['name'].toUpperCase());
     }
 
     //to complete
@@ -177,6 +176,10 @@ export class Choices {
 
     //get spell list for Wizard at a level BUT only Enchantment or Illusion schools 
     static getTricksterSpellList(spec: ChoiceParams) {
+        return [];
+    }
+
+    private static getSpellsForSchools(...schools: string[]) {
         return [];
     }
 }
