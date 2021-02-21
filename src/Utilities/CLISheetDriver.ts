@@ -85,9 +85,6 @@ function defaultCreationParams(): ClassCreationParams {
     };
 }
 
-
-
-
 function createCharacter(){
     console.log("Welcome to Tbltp's DND Character Sheet Creator!\nEnter a character name:");
     const name = prompt(">");
@@ -118,28 +115,50 @@ function promptAbilityScores(): [number, number, number, number, number, number]
         "Charisma"
     ];
     const values: [number, number, number, number, number, number] = [0,0,0,0,0,0];
+    const scoreRange = [...Array(20).keys()].map(l => l + 1 + "")
+
     Object.entries(scores).forEach(([ind, scoreName]) => {
-        console.log("Enter", scoreName, "(1-20):");
-        values[ind] = +(prompt(">"));  
+
+        let scorePrompt =  `Enter score for ${scoreName} (1-20):`;        
+        values[ind] = +getInput(scoreRange, scorePrompt);
     });
     return values;
 }
 
 
+function getInput(choiceList: string[], userQ?: string): string {
+    let invalid: boolean = true;
+    let userChoice: string = "";
+    const upperList = choiceList.map(ch => ch.toUpperCase());
+    const invMsg = `Invalid choice entered.  To skip this choice, enter nothing.  To quit the build, enter ^C (Ctrl+c).`
+    while(invalid) {
+        
+        if(userQ) console.log(userQ);
+        console.log(upperList.sort((a, b) => a.localeCompare(b,  'en', {numeric: true})));
+        console.log("Choice?");
+        userChoice = prompt(">");
+
+        let match: string = choiceList.find(c => c.toUpperCase() == userChoice.toUpperCase()); 
+        if(match || !userChoice) {
+            return match ? match: "";
+        } else {
+            console.log(invMsg);
+        }
+    }
+}
+
 function promptChoice(key: string, selection: ChoiceSpec, resultObject: object, pc?: PlayerCharacter): void {
     //pass by reference
     for(let i = 0; i < selection['choose']; i++) {
-        console.log(selection['alias'], `(${i + 1} of ${selection['choose']})`,':');
+        const description = `${selection['alias']} (${i + 1} of ${selection['choose']}):`
+        let choices: string[] = [];
         if(selection['from']) {
-            console.log(selection['from']);
-            console.log("Choice?");
+            choices = (selection['from']);          
         } else {
             const choiceParams = Choices.convertToParams(selection , pc);
-            const optionList = Choices.functionRailRoad[selection['method']](choiceParams);
-            console.log(optionList);
-            console.log("Choice?");
+            choices = Choices.functionRailRoad[selection['method']](choiceParams)
         }
-        const userChoice = prompt(">");
+        const userChoice = getInput(choices, description);
         if(!userChoice) continue;
         const paramType:string = typeof resultObject[key]; 
         if(paramType == "string") {
@@ -169,13 +188,12 @@ function choiceHandler(choicesSet: [key: string, selection: ChoiceSpec][], resul
             if(key == "or") {
                 //or - meaning you pick between categories, then you select within them
                selection.forEach(category => {
-                    console.log(category['alias'], ':');
-                    console.log(Object.keys(category['categories']));
-                    console.log("Choice?");
-                    const userChoice = prompt(">");
-                    const categoryKey: string = userChoice;
+
+                    const description = `${category['alias']} (choose category):`;
+                    const choices = Object.keys(category['categories']);
+                    const userChoice = getInput(choices, description);
                     const categorySelection: ChoiceSpec = category['categories'][userChoice];
-                    choiceHandler([[categoryKey, categorySelection]], resultObject, pc);
+                    choiceHandler([[userChoice, categorySelection]], resultObject, pc);
                });
             }
             else {
@@ -191,43 +209,38 @@ function choiceHandler(choicesSet: [key: string, selection: ChoiceSpec][], resul
 }
 
 function raceHandler(){
-    console.log(Choices.renderRaceChoices());
-    console.log("Select Your Race.")
-    let raceSelection = prompt(">");
+    
+    const raceSelection = getInput(Choices.renderRaceChoices(), "Select your Race:");
 
     let raceParams = defaultRaceParams();
     const choicesSet = Choices.renderRaceSelectionChoices(raceSelection);
     choiceHandler(choicesSet, raceParams);
-
-    console.log(raceParams);
+    
+    //console.log(raceParams);
     const race = new raceDict[raceSelection](raceParams);
-    console.log(race);
+    //console.log(race);
     return race;
 }
 
 function backgroundHandler(pc: PlayerCharacter){
-    console.log(Choices.renderBackgroundChoices());
-    console.log("Select Your Background.")
-    let bgSelection = prompt(">");
+
+    const bgSelection = getInput(Choices.renderBackgroundChoices(), "Select your Background:");
 
     let bgParams = defaultBackgroundParams();
     const choicesSet = Choices.renderBackgroundSelectionChoices(bgSelection)
     choiceHandler(choicesSet, bgParams, pc);
 
-    console.log(bgParams);
+    //console.log(bgParams);
     const bg = new bgDict[bgSelection](bgParams);
-    console.log(bg)
+    //console.log(bg)
 
     return bg;
 }
 
 
 function pclassHandler(pc: PlayerCharacter) {
-    console.log(Choices.renderClassChoices());
-    console.log("Select Your Class.");
-    let pclassSelection = prompt(">");
 
-    let pclassInstance: PlayerClass = null;
+    const pclassSelection = getInput(Choices.renderClassChoices(), "Select your starting Class:");
 
     //assume no multiclassing for now
     let pclassParams: ClassCreationParams = { ...defaultCreationParams(), multiclass: false };
@@ -235,9 +248,9 @@ function pclassHandler(pc: PlayerCharacter) {
     const choicesSet = Choices.renderClassChoicesAtLevel(pclassSelection, 0);
     choiceHandler(choicesSet, pclassParams, pc);
     
-    console.log(pclassParams);
-    pclassInstance = new classDict[pclassSelection](pclassParams);
-    console.log(pclassInstance);
+    //console.log(pclassParams);
+    const pclassInstance = new classDict[pclassSelection](pclassParams);
+    //console.log(pclassInstance);
     return pclassInstance;
 }
 
@@ -246,10 +259,11 @@ function levelHandler(sheet: CharacterSheet) {
     const pClass: PlayerClass = Object.values(sheet.playerClasses)[0];
     const pClassName: string = pClass.name;
 
-    console.log(`Select level to go up to in ${pClass.name}`);
-    const level = prompt(">");
+    const levelPrompt =  `Select level to go up to in ${pClass.name} (1-20):`;
+    const levelRange = [...Array(20).keys()].map(l => l + 1 + "")
+    const level = getInput(levelRange, levelPrompt);
 
-    for(let i = 1; i <= level; i++) {
+    for(let i = 1; i <= +level; i++) {
         let pc: PlayerCharacter = sheet.character;
         let hpAdd: number = 0
         if(i != 1) {
@@ -272,13 +286,10 @@ function levelHandler(sheet: CharacterSheet) {
         const subclassChoiceSet = Choices.renderSubclassChoices(subclassName, i);
         choiceHandler(subclassChoiceSet, levelParams, pc);
 
-        console.log(levelParams);
+        //console.log(levelParams);
         sheet.levelUp(pClassName, hpAdd, levelParams);
     }
 }
-
-
-//createCharacter();
 
 
 function testSubclasses() {
@@ -293,4 +304,6 @@ function testSubclasses() {
 }
 
 
-testSubclasses();
+createCharacter();
+
+
