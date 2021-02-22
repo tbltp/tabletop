@@ -1,6 +1,7 @@
 import { ScalingTrait } from "../../../../Base/Interfaces";
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
 import { LevelingParams } from "../../../../Classes/PlayerClass";
+import { DruidSubclassParams } from "../DruidSubclass";
 import * as LandCircleDict from "./Land.json";
 
 
@@ -22,7 +23,7 @@ export class LandCircle {
   
   static land3(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(LandCircle.getFeature("3", "CIRCLE SPELLS"));
-    LandCircle.getTerrainSpells(pc, params.subclassSelection.options[0], "3");
+    LandCircle.getTerrainSpells(pc, (params.subclassParams as DruidSubclassParams).land, "3");
   }
 
   static land4(pc: PlayerCharacter, params: LevelingParams){
@@ -31,7 +32,7 @@ export class LandCircle {
   }
 
   static land5(pc: PlayerCharacter, params: LevelingParams){
-    LandCircle.getTerrainSpells(pc, params.subclassSelection.options[0], "5");
+    LandCircle.getTerrainSpells(pc, (params.subclassParams as DruidSubclassParams).land, "5");
   }
 
   static land6(pc: PlayerCharacter, params: LevelingParams) {
@@ -39,7 +40,7 @@ export class LandCircle {
   }
 
   static land7(pc: PlayerCharacter, params: LevelingParams){
-    LandCircle.getTerrainSpells(pc, params.subclassSelection.options[0], "7");
+    LandCircle.getTerrainSpells(pc, (params.subclassParams as DruidSubclassParams).land, "7");
   }
 
   static land8(pc: PlayerCharacter, params: LevelingParams){
@@ -48,7 +49,7 @@ export class LandCircle {
   }
 
   static land9(pc: PlayerCharacter, params: LevelingParams){
-    LandCircle.getTerrainSpells(pc, params.subclassSelection.options[0], "9");
+    LandCircle.getTerrainSpells(pc, (params.subclassParams as DruidSubclassParams).land, "9");
   }
 
   static land10(pc: PlayerCharacter, params: LevelingParams) {

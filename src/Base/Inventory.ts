@@ -172,9 +172,9 @@ export class Inventory {
     const backpack = Gear["BACKPACK"];
     const blanket = Gear["BLANKET"];
     const tinderbox = Gear["TINDERBOX"];
-    const almsBox = Gear["ALMS BOX"]; // THIS IS NOT A REAL ITEM
-    const incense = Gear["INCENSE"]; // THIS IS NOT A REAL ITEM
-    const vestments = Gear["CLOTHES, COMMON, VESTMENTS"]; // THIS IS NOT A REAL ITEM
+    const almsBox = Gear["ALMS BOX"]; 
+    const incense = Gear["INCENSE"];
+    const vestments = Gear["CLOTHES, VESTMENTS"]; 
     const waterskin = Gear["WATERSKIN"];
 
     let rations = Gear["RATIONS (1 DAY)"];

@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ResourceTrait } from "../../Base/Interfaces";
 import * as FightingStyles from "../../../Assets/FightingStyles.json";
@@ -6,14 +6,8 @@ import * as FighterClassTraits from "./Fighter.json";
 import { FighterSubclass } from "./Subclasses/FighterSubclass";
 
 export class Fighter extends PlayerClass {
-  constructor(
-    multiclass: boolean,
-    params: LevelingParams,
-    skillProficiencies?: string[],
-    weapons?: string[],
-    armor?: string[],
-    equipmentPack?: string
-  ) {
+  constructor(params: ClassCreationParams)
+ {
     super(
       "Fighter",
       [],
@@ -25,13 +19,12 @@ export class Fighter extends PlayerClass {
       [],
       [],
       [],
-      params,
       "d10",
       10,
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons, armor, equipmentPack);
+    this.characterStart(params.multiclass, params.skillProficiencies, params.weapons, params.armor, params.equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -79,7 +72,7 @@ export class Fighter extends PlayerClass {
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
     //fighting style
-    PlayerClass.addFightingStyle(pc, params.fightingStyle[0]);
+    PlayerClass.addFightingStyle(pc, params.fightingStyles[0]);
     //second wind
     pc.pcHelper.addResourceTraits({
       title: "Second Wind",
@@ -99,9 +92,9 @@ export class Fighter extends PlayerClass {
     this.pushFighterFeatures(pc, 2);
   }
 
-  level3(pc: PlayerCharacter, params: FighterLevelingParams): void {
+  level3(pc: PlayerCharacter, params: LevelingParams): void {
     //martial archetype
-    this.subclass = new FighterSubclass(params.subclassSelection);
+    this.subclass = new FighterSubclass(params.subclassParams);
     this.subclassDriver(pc, "3", params);    
   }
 
@@ -192,17 +185,9 @@ export class Fighter extends PlayerClass {
   }
 }
 
-export interface FighterLevelingParams extends LevelingParams {
-  artisanToolProficiency?: string,
-  battleManeuvers?: {
-    add: string[],
-    remove?: string
-  };
-}
-
 export class DSFighter extends Fighter {
   constructor(){
-    super(true, {isNoInput: true});
+    super({ multiclass: true });
   }
 }
 

@@ -1,4 +1,4 @@
-import { Subclass } from "../../Subclass";
+import { Subclass, SubclassParams } from "../../Subclass";
 import { LevelingParams } from "Classes/PlayerClass";
 import { PlayerCharacter } from "index";
 
@@ -9,7 +9,7 @@ import { BattleSmith } from "./BattleSmith/BattleSmith";
 
 export class ArtificerSubclass extends Subclass {
 
-  constructor(subclassSelection: {subclass: string, options?: string[]}){
+  constructor(subclassSelection: SubclassParams){
     super(subclassSelection);
   }
 

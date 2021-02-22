@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { Trait } from "../../Base/Interfaces";
 import * as SpellList from "../../../Assets/SpellList.json";
@@ -6,17 +6,12 @@ import * as RogueClassTraits from "./Rogue.json";
 import { RogueSubclass } from "./Subclasses/RogueSubclass";
 
 export class Rogue extends PlayerClass {
-  constructor(
-    multiclass: boolean,
-    skillProficiencies: string[],
-    params: LevelingParams,
-    weapons?: string[],
-    equipmentPack?: string
-  ) {
+  constructor(params: ClassCreationParams)
+ {
     super(
       "Rogue",
       [],
-      skillProficiencies,
+      params.skillProficiencies,
       [],
       ["Light"],
       ["Thieves' Tools"],
@@ -24,13 +19,12 @@ export class Rogue extends PlayerClass {
       [],
       [],
       [],
-      params,
       "d8",
       8,
       []
     );
 
-    this.characterStart(multiclass, weapons, equipmentPack);
+    this.characterStart(params.multiclass, params.weapons, params.equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -78,13 +72,6 @@ export class Rogue extends PlayerClass {
   }
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
-    // PlayerClass.pushCustomizedClassFeature(
-    //   pc,
-    //   1,
-    //   RogueClassTraits,
-    //   "EXPERTISE",
-    //   params.proficiencySelection
-    // );
     // Expertise
     for (const proficiency of params.proficiencySelection) {
       pc.skills[proficiency].expertise = true;
@@ -105,7 +92,7 @@ export class Rogue extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.subclass = new RogueSubclass(params.subclassSelection);
+    this.subclass = new RogueSubclass(params.subclassParams);
     this.subclassDriver(pc, "3", params);    
 
     pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "2d6";
@@ -200,6 +187,6 @@ export class Rogue extends PlayerClass {
 
 export class DSRogue extends Rogue {
   constructor(){
-    super(true, [], {isNoInput: true});
+    super({ multiclass: true });
   }
 }

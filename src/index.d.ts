@@ -19,6 +19,7 @@ export { Urchin } from "../src/Backgrounds/Urchin";
 export { PlayerCharacter } from './Base/PlayerCharacter';
 export { CharacterSheet } from './Base/CharacterSheet';
 
+export { Artificer } from './Classes/Artificer/Artificer';
 export { Barbarian } from './Classes/Barbarian/Barbarian';
 export { Bard } from './Classes/Bard/Bard';
 export { Cleric } from './Classes/Cleric/Cleric';
@@ -53,3 +54,4 @@ export { VariantHuman } from './Races/Human/Subrace/VariantHuman';
 export { Tiefling } from './Races/Tiefling/Tiefling';
 
 export { Jsonify } from './Utilities/Jsonify';
+export { Choices } from './Utilities/Choices';

@@ -1,0 +1,122 @@
+{
+    "ATHLETE":{
+        "abilityScoreImprovement": {
+            "choose": 1,
+            "from": [
+                "dexterity",
+                "strength"
+            ]
+        }
+    },
+    "ELEMENTAL ADEPT":{
+        "damageType": {
+            "choose": 1,
+            "from": [
+                "acid",
+                "cold",
+                "fire",
+                "lightning",
+                "thunder"
+            ]
+        }
+    },
+    "LIGHTLY ARMORED":{
+        "abilityScoreImprovement": {
+            "choose": 1,
+            "from": [
+                "dexterity",
+                "strength"
+            ]
+        }
+    },
+    "LINGUIST":{
+        "language": {
+            "choose": 1,
+            "from": [
+                "Celestial",
+                "Common",
+                "Deep Speech",
+                "Draconic",
+                "Dwarvish",
+                "Elvish",
+                "Gnomish",
+                "Goblin",
+                "Halfling",
+                "Infernal",
+                "Orc",
+                "Primordial",
+                "Sylvan",
+                "Undercommon"
+            ]
+        }
+    },
+    "MAGIC INITIATE": {},
+    "MARTIAL ADEPT": {
+        "maneuvers": {
+            "choose": 2,
+            "method": "getAvailableManeuvers",
+            "args": []
+        }
+    },
+    "MODERATELY ARMORED":{
+        "abilityScoreImprovement": {
+            "choose": 1,
+            "from": [
+                "dexterity",
+                "strength"
+            ]
+        }
+    },
+    "OBSERVANT":{
+        "abilityScoreImprovement": {
+            "choose": 1,
+            "from": [
+                "intelligence",
+                "wisdom"
+            ]
+        }
+    },
+    "RESILIENT":{
+        "abilityScoreImprovement": {
+            "choose": 1,
+            "from": [
+                "strength",
+                "dexterity",
+                "constitution",
+                "intelligence",
+                "wisdom",
+                "charisma"
+            ]
+        }
+    },
+    "RITUAL CASTER": {},
+    "SKILLED": {
+        "skillProficiencies": {},
+        "toolProficiencies": {}
+    },
+    "SPELL SNIPER": {},
+    "TAVERN BRAWLER":{
+        "abilityScoreImprovement": {
+            "choose": 1,
+            "from": [
+                "strength",
+                "constitution"
+            ]
+        }
+    },
+    "WEAPON MASTER":{
+        "abilityScoreImprovement": {
+            "choose": 1,
+            "from": [
+                "dexterity",
+                "strength"
+            ]
+        },
+        "weaponProficiencies": {
+            "choose": 4,
+            "method": "getWeapons",
+            "args": []
+        }
+    },
+    "": {}
+}

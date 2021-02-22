@@ -1,13 +1,13 @@
-import { Race } from "../Race";
+import { Race, RaceParams } from "../Race";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ScalingTrait } from "../../Base/Interfaces";
 import * as DraconicAncestry from "../../../Assets/DraconicBloodline.json";
 import * as languages from "../../../Assets/Languages.json";
 
 export class Dragonborn extends Race {
-  constructor(draconicAncestry: string) {
+  constructor(params: RaceParams) {
     super(
-      `Dragonborn - ${draconicAncestry}`,
+      `Dragonborn - ${params.draconicAncestry}`,
       "80 years", // Average Lifespan
       30, // Speed (Movement)
       "Medium", // Size
@@ -18,11 +18,11 @@ export class Dragonborn extends Race {
       [] // Tool Proficiences
     );
 
-    this.draconicAncestry = DraconicAncestry[draconicAncestry];
+    this.draconicAncestry = DraconicAncestry[params.draconicAncestry];
     this.traits.push(
       {
         title: "Draconic Ancestry",
-        description: `You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type, as shown in the table - ${draconicAncestry}`,
+        description: `You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type, as shown in the table - ${params.draconicAncestry}`,
       },
       {
         title: "Breath Weapon",
@@ -75,7 +75,7 @@ export class Dragonborn extends Race {
 }
 
 export class DSDragonborn extends Dragonborn {
-  constructor(draconicAncestry: string){
-    super(draconicAncestry)
+  constructor(params: RaceParams){
+    super(params);
   }
 }

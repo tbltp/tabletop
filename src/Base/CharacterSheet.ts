@@ -100,7 +100,7 @@ export class CharacterSheet {
       const playerClass = Object.keys(this.levels)[0];
 
       // Are they in a Spellcasting Subclass (i.e. Arcane Trickster / Eldritch Knight)? Run Tertiary.
-      if(this.playerClasses[playerClass].subclass && SpellSlotFactory.spellcastingSubclasses[this.playerClasses[playerClass].subclass.title]) { 
+      if(this.playerClasses[playerClass].subclass && SpellSlotFactory.spellcastingSubclasses[this.playerClasses[playerClass].subclass.name]) { 
         SpellSlotFactory.applyClassSpellSlotsAtLevel(this.character, "TERTIARY", this.character.level.totalLevel);
       }  
       
@@ -118,7 +118,7 @@ export class CharacterSheet {
         if(SpellSlotFactory.spellcastingClassRanks[playerClass]=="NONE"){}
         else if(SpellSlotFactory.spellcastingClassRanks[playerClass] == "PRIMARY"){ multiclassSpellcasterLevel += this.levels[playerClass].value }
         else if(SpellSlotFactory.spellcastingClassRanks[playerClass] == "SECONDARY"){ multiclassSpellcasterLevel += this.levels[playerClass].value / 2 }  
-        else if(SpellSlotFactory.spellcastingSubclasses[this.playerClasses[playerClass].subclass.title]) { multiclassSpellcasterLevel += this.levels[playerClass].value / 3 }  
+        else if(SpellSlotFactory.spellcastingSubclasses[this.playerClasses[playerClass].subclass.name]) { multiclassSpellcasterLevel += this.levels[playerClass].value / 3 }  
       }
 
       SpellSlotFactory.applyClassSpellSlotsAtLevel(this.character, "PRIMARY", Math.floor(multiclassSpellcasterLevel))

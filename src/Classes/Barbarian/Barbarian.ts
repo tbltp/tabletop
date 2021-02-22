@@ -1,11 +1,11 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { ResourceTrait, Trait, ScalingTrait } from "../../Base/Interfaces";
 import * as BarbarianClassTraits from "./Barbarian.json"
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { BarbarianSubclass } from "./Subclasses/BarbarianSubclass";
 
 export class Barbarian extends PlayerClass {
-  constructor(multiclass: boolean, skillProficiencies?: string[], weapons?: string[]) {
+  constructor(params: ClassCreationParams) {
     super(
       "Barbarian",
       [],
@@ -17,13 +17,12 @@ export class Barbarian extends PlayerClass {
       [],
       [],
       [],
-      { isNoInput: true },
       "d12",
       12,
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons);
+    this.characterStart(params.multiclass, params.skillProficiencies, params.weapons);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -104,7 +103,7 @@ export class Barbarian extends PlayerClass {
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     
-    this.subclass = new BarbarianSubclass(params.subclassSelection);
+    this.subclass = new BarbarianSubclass(params.subclassParams);
     
     this.subclassDriver(pc, "3", params);
     pc.pcHelper.findResourceTraitByName("Rage").resourceMax.value++;
@@ -220,7 +219,7 @@ export class Barbarian extends PlayerClass {
 }
 
 export class DSBarbarian extends Barbarian {
-  constructor(){
-    super(true);
+  constructor() {
+    super({ multiclass: true });
   }
 }

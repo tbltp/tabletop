@@ -1,5 +1,6 @@
+
+import { Subclass, SubclassParams } from "../../Subclass";
 import { WarCaster } from "Feats/Feat";
-import { Subclass } from "../../Subclass";
 import { Abjuration } from "./Abjuration/Abjuration";
 import { Conjuration } from "./Conjuration/Conjuration";
 import { Divination } from "./Divination/Divination";
@@ -12,7 +13,7 @@ import { War } from "./War/War";
 
 export class WizardSubclass extends Subclass {
 
-    constructor(subclassSelection: {subclass: string, options?: string[]}){
+    constructor(subclassSelection: SubclassParams){
         super(subclassSelection);
     }
     
