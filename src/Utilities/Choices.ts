@@ -3,6 +3,7 @@ import * as ClassChoices from './Choice Build Specs/ClassChoices.json';
 import * as SubclassChoices from './Choice Build Specs/ClassChoices.json';
 import * as BackgroundChoices from './Choice Build Specs/BackgroundChoices.json';
 import * as Invocations from '../Classes/Warlock/EldritchInvocations.json';
+import * as Disciplines from '../Classes/Monk/Subclasses/FourElements/ElementalDisciplines.json';
 import * as SpellList from '../../Assets/SpellList.json';
 import { PlayerCharacter } from '../Base/PlayerCharacter';
 import { Prereqs } from './Prereqs';
@@ -108,16 +109,16 @@ export class Choices {
     }
 
     static getSkillProficiencies(spec: ChoiceParams){
-        let expertiseElligibleSkills = [];
+        let expertiseeligibleSkills = [];
         const pc: PlayerCharacter = spec.pc;
 
         for(const skill in pc.skills){
             if(pc.skills[skill].proficient && !pc.skills[skill].expertise){
-                expertiseElligibleSkills.push(skill)
+                expertiseeligibleSkills.push(skill)
             }
         }
 
-        return expertiseElligibleSkills;
+        return expertiseeligibleSkills;
     }
 
     //to complete - only return choices if already have proficiency in wisdom saving throws
@@ -144,10 +145,10 @@ export class Choices {
     }
 
     static getEldritchInvocations(spec: ChoiceParams){
-        let elligibleInvocations = [];
+        let eligibleInvocations = [];
         for(const invocation of Object.keys(Invocations)){
             if(!Invocations[invocation].prereqs){
-                elligibleInvocations.push(Invocations[invocation])
+                eligibleInvocations.push(Invocations[invocation])
             }
             else{
                 let validInv = true;
@@ -157,16 +158,32 @@ export class Choices {
                         break;
                     }
                 }
-                validInv ? elligibleInvocations.push(Invocations[invocation]) : null;
+                validInv ? eligibleInvocations.push(Invocations[invocation]) : null;
             }
         }
 
-        return elligibleInvocations;
+        return eligibleInvocations;
     }
 
-    //to complete - elemental disciplines will also have prereqs
     static getElementalDisciplines(spec: ChoiceParams){
-        return [];
+        let eligibleDiscplines = [];
+        for(const discipline of Object.keys(Disciplines)){
+            if(!Disciplines[discipline].prereqs){
+                eligibleDiscplines.push(Disciplines[discipline])
+            }
+            else{
+                let validInv = true;
+                for(const prereq of Disciplines[discipline].prereqs){
+                    if(!Prereqs.prereqChecks[prereq.type](prereq.value, spec.pc)){
+                        validInv = false;
+                        break;
+                    }
+                }
+                validInv ? eligibleDiscplines.push(Disciplines[discipline]) : null;
+            }
+        }
+
+        return eligibleDiscplines;
     }
 
     //to complete
@@ -199,4 +216,5 @@ export interface ChoiceSpec {
     args?: string[];
     required: boolean;
     or: ChoiceSpec[];
+    and: ChoiceSpec[];
 }

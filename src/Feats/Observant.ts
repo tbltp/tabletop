@@ -1,10 +1,10 @@
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { Feat } from "./Feat";
+import { Feat, FeatParams } from "./Feat";
 
 
 export class Observant extends Feat {
-    constructor(abilityScore: string) {
-      super("Observant", abilityScore);
+    constructor(featParams: FeatParams) {
+      super("Observant", featParams.abilityScore);
     }
   
     public apply(pc: PlayerCharacter) {

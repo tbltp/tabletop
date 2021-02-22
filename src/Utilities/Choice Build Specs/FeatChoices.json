@@ -1,6 +1,6 @@
 {
     "ATHLETE":{
-        "abilityScoreImprovement": {
+        "abilityScore": {
             "choose": 1,
             "from": [
                 "dexterity",
@@ -9,7 +9,7 @@
         }
     },
     "ELEMENTAL ADEPT":{
-        "damageType": {
+        "element": {
             "choose": 1,
             "from": [
                 "acid",
@@ -21,7 +21,7 @@
         }
     },
     "LIGHTLY ARMORED":{
-        "abilityScoreImprovement": {
+        "abilityScore": {
             "choose": 1,
             "from": [
                 "dexterity",
@@ -59,7 +59,7 @@
         }
     },
     "MODERATELY ARMORED":{
-        "abilityScoreImprovement": {
+        "abilityScore": {
             "choose": 1,
             "from": [
                 "dexterity",
@@ -68,7 +68,7 @@
         }
     },
     "OBSERVANT":{
-        "abilityScoreImprovement": {
+        "abilityScore": {
             "choose": 1,
             "from": [
                 "intelligence",
@@ -77,7 +77,7 @@
         }
     },
     "RESILIENT":{
-        "abilityScoreImprovement": {
+        "abilityScore": {
             "choose": 1,
             "from": [
                 "strength",
@@ -91,12 +91,12 @@
     },
     "RITUAL CASTER": {},
     "SKILLED": {
-        "skillProficiencies": {},
-        "toolProficiencies": {}
+        "skills": {},
+        "tools": {}
     },
     "SPELL SNIPER": {},
     "TAVERN BRAWLER":{
-        "abilityScoreImprovement": {
+        "abilityScore": {
             "choose": 1,
             "from": [
                 "strength",
@@ -105,7 +105,7 @@
         }
     },
     "WEAPON MASTER":{
-        "abilityScoreImprovement": {
+        "abilityScore": {
             "choose": 1,
             "from": [
                 "dexterity",
@@ -117,6 +117,5 @@
             "method": "getWeapons",
             "args": []
         }
-    },
-    "": {}
+    }
 }

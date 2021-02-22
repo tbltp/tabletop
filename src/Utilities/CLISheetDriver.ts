@@ -8,6 +8,7 @@ import { PlayerCharacter } from '../Base/PlayerCharacter';
 import { Jsonify } from './Jsonify';
 import { Race, RaceParams } from '../Races/Race';
 import { Background, BackgroundParams } from '../Backgrounds/Background';
+import { FeatParams } from 'Feats/Feat';
 var prompt = require('prompt-sync')({sigint: true});
 
 
@@ -39,7 +40,10 @@ function defaultBackgroundParams(): BackgroundParams {
 function defaultLevelingParams(): LevelingParams {
     return {
         isNoInput: true,
-        abilityScoreImprovement: [],
+        abilityScoreImprovement: {
+            abilities: [],
+            value: "'"
+        },
         spellSelections: {
             add: [],
             remove: ""
@@ -48,7 +52,7 @@ function defaultLevelingParams(): LevelingParams {
         toolProficiency: "",
         fightingStyles: [],
         subclassParams: defaultSubclassParams(),
-        featChoice: null
+        featParams: defaultFeatParams()
     };
 }
 
@@ -65,7 +69,22 @@ function defaultSubclassParams(): SubclassParams {
         fightingStyles: [],
         languages: [],
         savingThrows: []
-    }
+    };
+}
+
+function defaultFeatParams(): FeatParams {
+    return {
+        name: "",
+        abilityScore: "",
+        spellClass: "",
+        spells: [],
+        languages: [],
+        skills: [],
+        tools: [],
+        weaponProficiencies: [],
+        element: "",
+        maneuvers: []
+    };
 }
 
 function defaultCreationParams(): ClassCreationParams {
@@ -196,6 +215,14 @@ function choiceHandler(choicesSet: [key: string, selection: ChoiceSpec][], resul
                     choiceHandler([[userChoice, categorySelection]], resultObject, pc);
                });
             }
+            else if(key == "and") {
+                //and - meaning you pick between categories as a choice, and then use that choice later
+                selection.forEach(category => {
+
+                    const description = `${category['alias']} (choose category):`;
+                    const choices = Object.keys(category['categories']);
+                });
+            }
             else {
                 selection.forEach(choice => {
                     promptChoice(key, choice, resultObject, pc);
@@ -262,6 +289,7 @@ function levelHandler(sheet: CharacterSheet) {
     const levelPrompt =  `Select level to go up to in ${pClass.name} (1-20):`;
     const levelRange = [...Array(20).keys()].map(l => l + 1 + "")
     const level = getInput(levelRange, levelPrompt);
+    const asifLevels: number[] = [4, 8, 12, 16, 19];
 
     for(let i = 1; i <= +level; i++) {
         console.log(`---${pClassName} Level ${i}---`)
@@ -292,6 +320,18 @@ function levelHandler(sheet: CharacterSheet) {
     }
 }
 
+function asiOrFeatHandler(sheet: CharacterSheet, params: LevelingParams) {
+
+    const asifPrompt =  `Choose between Ability Score Improvement or Feat Choice:`;
+    const asifChoices = [`Ability Score`, `Feat`];
+    const asif = getInput(asifChoices, asifPrompt);
+
+    if(asif == "Feat") {
+
+    } else {
+
+    }
+}
 
 function testSubclasses() {
     const pc: PlayerCharacter = new PlayerCharacter(14, 14, 14, 14, 14, 14);

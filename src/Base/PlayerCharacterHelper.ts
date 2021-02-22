@@ -65,10 +65,10 @@ export class PlayerCharacterHelper {
       }
     
       improveAbilityScores(
-        abilityScoreImprovements: { ability: string; improvement: number }[]
+        abilityScoreImprovement: { abilities: string[]; value: string }
       ): void {
-        for (const ability of abilityScoreImprovements) {
-          this.pc.abilityScores[ability.ability].update(ability.improvement);
+        for (const ability in abilityScoreImprovement.abilities) {
+          this.pc.abilityScores[ability].update(abilityScoreImprovement.value);
         }
       }
     
