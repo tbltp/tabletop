@@ -41,6 +41,22 @@ export class Choices {
         return (SubclassChoices[subclass] && SubclassChoices[subclass][level]) ? Object.entries(SubclassChoices[subclass][level]) : [];
     }
 
+    static renderAbilityScoreChoices(): [string, ChoiceSpec][] {
+        return [["abilities", {
+            alias: "Ability Score Improvement (up to 2)",
+            choose: 2,
+            from: [
+                "strength",
+                "dexterity",
+                "constitution",
+                "intelligence",
+                "wisdom", 
+                "charisma"
+            ],
+            required: true
+        }]];
+    }
+
     static convertToParams(spec: ChoiceSpec, pc?: PlayerCharacter): ChoiceParams {
         
         let params: ChoiceParams = {}; 
@@ -215,6 +231,6 @@ export interface ChoiceSpec {
     method?: string;
     args?: string[];
     required: boolean;
-    or: ChoiceSpec[];
-    and: ChoiceSpec[];
+    or?: ChoiceSpec[];
+    and?: ChoiceSpec[];
 }

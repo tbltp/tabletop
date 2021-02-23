@@ -4,7 +4,7 @@ import { PlayerCharacter } from "./PlayerCharacter";
 import { Background } from "../Backgrounds/Background";
 import { Feat } from "../Feats/Feat";
 import { SpellSlotFactory } from "../Classes/SpellSlotFactory";
-import { featDict } from "Utilities/ConstructorDefinitions";
+import { featDict } from "../Utilities/ConstructorDefinitions";
 
 
 class SheetClasses {
@@ -78,12 +78,12 @@ export class CharacterSheet {
     );
 
     //get feat or ability score improvement according to class level
-    if(params.featParams) {
+    if(params.featParams.name != "") {
       const newFeat: Feat = new featDict[params.featParams.name](params.featParams);    
       this.feats.push(newFeat);
       newFeat.apply(this.character);
     } 
-    if(params.abilityScoreImprovement) {
+    if(params.abilityScoreImprovement.abilities.length > 0) {
       this.character.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     }
     
