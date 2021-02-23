@@ -1,7 +1,8 @@
 import * as RaceChoices from './Choice Build Specs/RaceChoices.json';
 import * as ClassChoices from './Choice Build Specs/ClassChoices.json';
-import * as SubclassChoices from './Choice Build Specs/ClassChoices.json';
+import * as SubclassChoices from './Choice Build Specs/SubClassChoices.json';
 import * as BackgroundChoices from './Choice Build Specs/BackgroundChoices.json';
+import * as FeatChoices from './Choice Build Specs/FeatChoices.json';
 import * as Invocations from '../Classes/Warlock/EldritchInvocations.json';
 import * as Disciplines from '../Classes/Monk/Subclasses/FourElements/ElementalDisciplines.json';
 import * as SpellList from '../../Assets/SpellList.json';
@@ -13,7 +14,7 @@ import { Background } from '../Backgrounds/Background';
 
 export class Choices {
 
-    static renderRaceChoices(){
+    static renderRaceChoices(): string[] {
         return Object.keys(RaceChoices);
     }
 
@@ -21,7 +22,7 @@ export class Choices {
         return Object.entries(RaceChoices[race]);
     }
 
-    static renderBackgroundChoices(){
+    static renderBackgroundChoices(): string[] {
         return Object.keys(BackgroundChoices);
     }
 
@@ -29,7 +30,7 @@ export class Choices {
         return Object.entries(BackgroundChoices[background]);
     }
 
-    static renderClassChoices(){
+    static renderClassChoices(): string[] {
         return Object.keys(ClassChoices);
     }
 
@@ -55,6 +56,14 @@ export class Choices {
             ],
             required: true
         }]];
+    }
+
+    static renderFeatChoices(): string[] {
+        return Object.keys(FeatChoices);
+    }
+
+    static renderFeatSelectionChoices(feat: string): [string, ChoiceSpec][] {
+        return Object.entries(FeatChoices[feat]);
     }
 
     static convertToParams(spec: ChoiceSpec, pc?: PlayerCharacter): ChoiceParams {

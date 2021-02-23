@@ -354,6 +354,14 @@ function asiOrFeatHandler(sheet: CharacterSheet, levelParams: LevelingParams) {
   const asif = getInput(asifChoices, asifPrompt);
 
   if (asif == "Feat") {
+
+    const featSelection = getInput(
+        Choices.renderFeatChoices(),
+        "Select a Feat:"
+      );
+    levelParams.featParams["name"] = featSelection;
+    const featChoiceSet = Choices.renderFeatSelectionChoices(featSelection);
+    choiceHandler(featChoiceSet, levelParams["featParams"], sheet.character);
   } else {
     const asiChoiceSet = Choices.renderAbilityScoreChoices();
     choiceHandler(asiChoiceSet, levelParams["abilityScoreImprovement"]);
@@ -389,5 +397,5 @@ function testASI() {
     Jsonify.dumpToJSON(sheet, `Test`);
   }
 
-createCharacter();
-
+//createCharacter();
+testASI();

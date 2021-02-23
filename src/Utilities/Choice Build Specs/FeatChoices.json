@@ -1,5 +1,7 @@
 {
-    "ATHLETE":{
+    "Actor": {},
+    "Alert": {},
+    "Athlete": {
         "abilityScore": {
             "choose": 1,
             "from": [
@@ -8,7 +10,13 @@
             ]
         }
     },
-    "ELEMENTAL ADEPT":{
+    "Charger": {},
+    "Crossbow Expert": {},
+    "Defensive Duelist": {},
+    "Dual Wielder": {},
+    "Dungeon Delver": {},
+    "Durable": {},
+    "Elemental Adept": {
         "element": {
             "choose": 1,
             "from": [
@@ -20,7 +28,14 @@
             ]
         }
     },
-    "LIGHTLY ARMORED":{
+    "Grappler": {},
+    "Great Weapon Master": {},
+    "Healer": {},
+    "Heavily Armored": {},
+    "Heavy Armor Master": {},
+    "Inspiring Leader": {},
+    "Keen Mind": {},
+    "Lightly Armored": {
         "abilityScore": {
             "choose": 1,
             "from": [
@@ -29,9 +44,9 @@
             ]
         }
     },
-    "LINGUIST":{
+    "Linguist": {
         "language": {
-            "choose": 1,
+            "choose": 3,
             "from": [
                 "Celestial",
                 "Common",
@@ -50,15 +65,19 @@
             ]
         }
     },
-    "MAGIC INITIATE": {},
-    "MARTIAL ADEPT": {
+    "Lucky": {},
+    "Mage Slayer": {},
+    "Magic Initiate": {},
+    "Martial Adept": {
         "maneuvers": {
             "choose": 2,
             "method": "getAvailableManeuvers",
             "args": []
         }
     },
-    "MODERATELY ARMORED":{
+    "Medium Armor Master": {},
+    "Mobile": {},
+    "Moderately Armored": {
         "abilityScore": {
             "choose": 1,
             "from": [
@@ -67,7 +86,8 @@
             ]
         }
     },
-    "OBSERVANT":{
+    "Mounted Combatant": {},
+    "Observant": {
         "abilityScore": {
             "choose": 1,
             "from": [
@@ -76,7 +96,8 @@
             ]
         }
     },
-    "RESILIENT":{
+    "Polearm Master": {},
+    "Resilient": {
         "abilityScore": {
             "choose": 1,
             "from": [
@@ -89,13 +110,15 @@
             ]
         }
     },
-    "RITUAL CASTER": {},
-    "SKILLED": {
-        "skills": {},
-        "tools": {}
-    },
-    "SPELL SNIPER": {},
-    "TAVERN BRAWLER":{
+    "Ritual Caster": {},
+    "Savage Attacker": {},
+    "Sentinel": {},
+    "Sharpshooter": {},
+    "Shield Master": {},
+    "Skilled": {},
+    "Skulker": {},
+    "Spell Sniper": {},
+    "Tavern Brawler": {
         "abilityScore": {
             "choose": 1,
             "from": [
@@ -104,7 +127,9 @@
             ]
         }
     },
-    "WEAPON MASTER":{
+    "Tough": {},
+    "War Caster": {},
+    "Weapon Master": {
         "abilityScore": {
             "choose": 1,
             "from": [
