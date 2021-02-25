@@ -1,6 +1,5 @@
 
 import { Subclass, SubclassParams } from "../../Subclass";
-import { WarCaster } from "Feats/Feat";
 import { Abjuration } from "./Abjuration/Abjuration";
 import { Conjuration } from "./Conjuration/Conjuration";
 import { Divination } from "./Divination/Divination";
