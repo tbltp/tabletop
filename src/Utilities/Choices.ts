@@ -6,6 +6,7 @@ import * as FeatChoices from "./Choice Build Specs/FeatChoices.json";
 import * as Invocations from "../Classes/Warlock/EldritchInvocations.json";
 import * as Maneuvers from "../Classes/Fighter/Subclasses/BattleMaster/Maneuvers.json";
 import * as Disciplines from "../Classes/Monk/Subclasses/FourElements/ElementalDisciplines.json";
+import * as Spells from "../../Assets/Spells.json";
 import * as SpellList from "../../Assets/SpellList.json";
 import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { Prereqs } from "./Prereqs";
@@ -117,26 +118,38 @@ export class Choices {
     getAvailableClericArmor: Choices.getAvailableClericArmor,
     getEldritchSpellList: Choices.getEldritchSpellList,
     getEldritchInvocations: Choices.getEldritchInvocations,
+    getKnownInvocations: Choices.getKnownInvocations,
     getElementalDisciplines: Choices.getElementalDisciplines,
     getKnownElementalDisciplines: Choices.getKnownElementalDisciplines,
     getTricksterSpellList: Choices.getTricksterSpellList,
   };
 
   static getSpellList(spec: ChoiceParams) {
-    return SpellList[spec.list][spec.level];
+    //up to specified level
+    if (+spec.level > 0) {
+      let spellList = new Set<string>();
+      for (let i = 1; i <= +spec.level; i++) {
+        SpellList[spec.list][i].map((spell) => spellList.add(spell));
+      }
+      return [...spellList.values()];
+    } else {
+      return SpellList[spec.list][spec.level];
+    }
   }
 
-  //up to specified level
   static getSpellListAll(spec: ChoiceParams) {
-    let allSpellLists = [];
-
-    for (const spellList in SpellList) {
-      for (let i = 0; i < parseInt(spec.level); i++) {
-        allSpellLists.push(...SpellList[spellList][i]);
+    //up to specified level across all spellcasting classes
+    let spellList = new Set<string>();
+    for (const className in SpellList) {
+      if (+spec.level > 0) {
+        for (let i = 1; i <= +spec.level; i++) {
+          SpellList[className][i].map((spell) => spellList.add(spell));
+        }
+      } else {
+        SpellList[className][spec.level].map((spell) => spellList.add(spell));
       }
     }
-
-    return allSpellLists;
+    return [...spellList.values()];
   }
 
   static getKnownSpells(spec: ChoiceParams): string[] {
@@ -149,17 +162,6 @@ export class Choices {
     return []
       .concat(...Object.values(spec.pc.spells[spec.level]))
       .map((spell) => spell["name"].toUpperCase());
-  }
-
-  static getKnownManeuvers(spec: ChoiceParams): string[] {
-    const pc: PlayerCharacter = spec.pc;
-    const helper: PlayerCharacterHelper = pc.pcHelper;
-
-    return helper
-      .findFeatures((t: Trait) =>
-        Object.keys(Maneuvers).includes(t.title.toUpperCase())
-      )
-      .map((f) => f.title);
   }
 
   static getSkillProficiencies(spec: ChoiceParams) {
@@ -196,14 +198,20 @@ export class Choices {
       : ["SCALE MAIL", "LEATHER"];
   }
 
-  //get spell list for Wizard at a level BUT only Abjuration or Evocation schools
   static getEldritchSpellList(spec: ChoiceParams) {
-    return [];
+    //get spell list for Wizard at a level BUT only Abjuration or Evocation schools
+    spec.list = "Wizard";
+    return Choices.getSpellList(spec).filter(spell => Choices.checkSpellSchools(spell, "abjuration", "evocation"));
   }
 
-  //get spell list for Wizard at a level BUT only Enchantment or Illusion schools
   static getTricksterSpellList(spec: ChoiceParams) {
-    return [];
+    //get spell list for Wizard at a level BUT only Enchantment or Illusion schools
+    spec.list = "Wizard";
+    return Choices.getSpellList(spec).filter(spell => Choices.checkSpellSchools(spell, "enchantment", "illusion"));
+  }
+
+  static getKnownManeuvers(spec: ChoiceParams): string[] {
+    return Choices.knownFeaturesLookup(spec, Maneuvers);
   }
 
   static getEldritchInvocations(spec: ChoiceParams) {
@@ -226,6 +234,10 @@ export class Choices {
     return eligibleInvocations;
   }
 
+  static getKnownInvocations(spec: ChoiceParams) {
+    return Choices.knownFeaturesLookup(spec, Invocations);
+  }
+
   static getElementalDisciplines(spec: ChoiceParams) {
     let eligibleDiscplines = [];
     for (const discipline of Object.keys(Disciplines)) {
@@ -246,13 +258,23 @@ export class Choices {
     return eligibleDiscplines;
   }
 
-  //to complete
   static getKnownElementalDisciplines(spec: ChoiceParams) {
-    return [];
+    return Choices.knownFeaturesLookup(spec, Disciplines);
   }
 
-  private static getSpellsForSchools(...schools: string[]) {
-    return [];
+  private static knownFeaturesLookup(spec: ChoiceParams, featureSet: object) {
+    const pc: PlayerCharacter = spec.pc;
+    const helper: PlayerCharacterHelper = pc.pcHelper;
+
+    return helper
+      .findFeatures((t: Trait) =>
+        Object.keys(featureSet).includes(t.title.toUpperCase())
+      )
+      .map((f) => f.title);
+  }
+
+  private static checkSpellSchools(spell: string, ...schools: string[]) {
+    return schools.includes(Spells[spell]["school"]);
   }
 }
 

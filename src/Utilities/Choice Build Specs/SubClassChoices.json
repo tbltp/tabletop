@@ -665,8 +665,9 @@
                     {
                         "alias": "Cantrips",
                         "choose": 2, 
-                        "method": "getSpellListAll",
+                        "method": "getSpellList",
                         "args": [
+                            "Wizard",
                             "0"
                         ],
                         "required": true
@@ -764,8 +765,9 @@
                     {
                         "alias": "New Spell (Up to Level 2)",
                         "choose": 1,
-                        "method": "getSpellListAll",
+                        "method": "getSpellList",
                         "args": [
+                            "Wizard",
                             "2"
                         ],
                         "required": true
@@ -801,8 +803,9 @@
                     {
                         "alias": "Cantrip",
                         "choose": 1, 
-                        "method": "getSpellListAll",
+                        "method": "getSpellList",
                         "args": [
+                            "Wizard",
                             "0"
                         ],
                         "required": true
@@ -921,8 +924,9 @@
                     {
                         "alias": "New Spell (Up to Level 3)",
                         "choose": 1,
-                        "method": "getSpellListAll",
+                        "method": "getSpellList",
                         "args": [
+                            "Wizard",
                             "3"
                         ],
                         "required": true
@@ -1032,8 +1036,9 @@
                     {
                         "alias": "New Spell (Up to Level 4)",
                         "choose": 1,
-                        "method": "getSpellListAll",
+                        "method": "getSpellList",
                         "args": [
+                            "Wizard",
                             "4"
                         ],
                         "required": true
@@ -1446,8 +1451,9 @@
                     {
                         "alias": "Cantrips",
                         "choose": 2, 
-                        "method": "getSpellListAll",
+                        "method": "getSpellList",
                         "args": [
+                            "Wizard",
                             "0"
                         ],
                         "required": true
@@ -1545,8 +1551,9 @@
                     {
                         "alias": "New Spell (Up to Level 2)",
                         "choose": 1,
-                        "method": "getSpellListAll",
+                        "method": "getSpellList",
                         "args": [
+                            "Wizard",
                             "2"
                         ],
                         "required": true
@@ -1582,8 +1589,9 @@
                     {
                         "alias": "Cantrip",
                         "choose": 1, 
-                        "method": "getSpellListAll",
+                        "method": "getSpellList",
                         "args": [
+                            "Wizard",
                             "0"
                         ],
                         "required": true
@@ -1702,8 +1710,9 @@
                     {
                         "alias": "New Spell (Up to Level 3)",
                         "choose": 1,
-                        "method": "getSpellListAll",
+                        "method": "getSpellList",
                         "args": [
+                            "Wizard",
                             "3"
                         ],
                         "required": true
@@ -1813,8 +1822,9 @@
                     {
                         "alias": "New Spell (Up to Level 4)",
                         "choose": 1,
-                        "method": "getSpellListAll",
+                        "method": "getSpellList",
                         "args": [
+                            "Wizard",
                             "4"
                         ],
                         "required": true
