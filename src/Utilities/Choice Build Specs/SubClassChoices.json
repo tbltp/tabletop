@@ -101,7 +101,7 @@
                 "choose": 1,
                 "from": [
                     "DUELING",
-                    "TWO WEAPON FIGHTING"
+                    "TWO-WEAPON FIGHTING"
                 ],
                 "required": true
             }
@@ -652,7 +652,7 @@
                     "DUELING",
                     "GREAT WEAPON FIGHTING",
                     "PROTECTION",
-                    "TWO WEAPON FIGHTING"
+                    "TWO-WEAPON FIGHTING"
                 ], 
                 "required": true
             }

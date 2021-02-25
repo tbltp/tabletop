@@ -37,7 +37,7 @@ function defaultBackgroundParams(): BackgroundParams {
   };
 }
 
-function defaultLevelingParams(): LevelingParams {
+function defaultLevelingParams(pClassName: string): LevelingParams {
   return {
     isNoInput: true,
     abilityScoreImprovement: {
@@ -51,13 +51,48 @@ function defaultLevelingParams(): LevelingParams {
     proficiencySelection: [],
     toolProficiency: "",
     fightingStyles: [],
-    subclassParams: defaultSubclassParams(),
+    subclassParams: defaultSubclassParams(pClassName),
     featParams: defaultFeatParams(),
   };
 }
 
-function defaultSubclassParams(): SubclassParams {
-  return {
+function defaultSubclassParams(pClassName: string): SubclassParams {
+
+  const additionalParams: {[key: string]: object} = {
+    "Barbarian": {
+        stormAura: "",
+        totem: ""
+    },
+    "Druid": {
+        land: ""
+    },
+    "Fighter": {
+        arcaneShots: [],
+        maneuverSelections: {
+          add: [],
+          remove: ""
+        }
+    },
+    "Monk": {
+        disciplineSelections: {
+            add: [],
+            remove: ""
+        }
+    },
+    "Ranger": {
+        feature: "",
+        beastCompanion: ""
+    },
+    "Rogue": {
+        gamingSet: ""
+    },
+    "Sorcerer": {
+        affinity: "",
+        draconicAncestry: ""
+    }
+  }
+
+  const defaultParams = {
     name: "",
     spellSelections: {
       add: [],
@@ -70,6 +105,8 @@ function defaultSubclassParams(): SubclassParams {
     languages: [],
     savingThrows: [],
   };
+
+  return {...defaultParams, ...additionalParams[pClassName]};
 }
 
 function defaultFeatParams(): FeatParams {
@@ -325,7 +362,7 @@ function levelHandler(sheet: CharacterSheet) {
       console.log("Enter amount of HP to increase:");
       hpAdd = +prompt(">");
     }
-    let levelParams: LevelingParams = defaultLevelingParams();
+    let levelParams: LevelingParams = defaultLevelingParams(pClassName);
     const classChoiceSet = Choices.renderClassChoicesAtLevel(pClassName, i);
     choiceHandler(classChoiceSet, levelParams, pc);
 
@@ -336,9 +373,12 @@ function levelHandler(sheet: CharacterSheet) {
     } else if (levelParams["subclassParams"]["name"]) {
       subclassName = levelParams["subclassParams"]["name"];
     }
+    
+    //subclass leveling
     const subclassChoiceSet = Choices.renderSubclassChoices(subclassName, i);
-    choiceHandler(subclassChoiceSet, levelParams, pc);
+    choiceHandler(subclassChoiceSet, levelParams["subclassParams"], pc);
 
+    //ability score or feat
     if(asifLevels.includes(i)) {
         asiOrFeatHandler(sheet, levelParams);
     }
@@ -395,7 +435,26 @@ function testASI() {
     levelHandler(sheet);
   
     Jsonify.dumpToJSON(sheet, `Test`);
-  }
+}
+
+function testManeuvers() {
+    const pc: PlayerCharacter = new PlayerCharacter(15, 15, 15, 15, 15, 15);
+    const rc: Race = new raceDict["Wood Elf"]();
+    const bg: Background = new bgDict["Soldier"]({
+        gamingSet: "Dice set"
+    });
+    const cls: PlayerClass = new classDict["Fighter"]({
+        multiclass: false,
+        skillProficiencies: [ "athletics", "acrobatics"],
+        weapons: [ "LONGSWORD", "MAUL", "CROSSBOW, LIGHT"],
+        armor: ["LEATHER"],
+        equipmentPack: "DUNGEONEER"
+    });
+    const sheet: CharacterSheet = new CharacterSheet("Test", pc, rc, cls, bg);
+    levelHandler(sheet);
+  
+    Jsonify.dumpToJSON(sheet, `Test`);
+}
 
 //createCharacter();
-testASI();
+testManeuvers();
