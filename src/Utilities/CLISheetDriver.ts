@@ -363,8 +363,9 @@ function levelHandler(sheet: CharacterSheet) {
     let hpAdd: number = 0;
     if (i != 1) {
       //bonus hp
-      console.log("Enter amount of HP to increase:");
-      hpAdd = +prompt(">");
+      const hpPrompt = `Enter amount to increase max HP by:`;
+      const hpRange = [...Array(+pc.hitDie.slice(1)).keys()].map((h) => h + 1 + ""); 
+      hpAdd = +getInput(hpRange, hpPrompt);
     }
     let levelParams: LevelingParams = defaultLevelingParams(pClassName);
     const classChoiceSet = Choices.renderClassChoicesAtLevel(pClassName, i);
