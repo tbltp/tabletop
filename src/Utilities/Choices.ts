@@ -151,7 +151,6 @@ export class Choices {
       .map((spell) => spell["name"].toUpperCase());
   }
 
-  //to complete
   static getKnownManeuvers(spec: ChoiceParams): string[] {
     const pc: PlayerCharacter = spec.pc;
     const helper: PlayerCharacterHelper = pc.pcHelper;
@@ -176,9 +175,12 @@ export class Choices {
     return expertiseEligibleSkills;
   }
 
-  //to complete - only return choices if already have proficiency in wisdom saving throws
   static getMentalSavingThrows(spec: ChoiceParams) {
-    return [];
+    //only return charisma and intelligence if already have proficiency in wisdom saving throws
+    const pc: PlayerCharacter = spec.pc;
+    return pc.abilityScores.wisdom.savingThrowProficiency == true
+      ? ["charisma", "intelligence"]
+      : ["wisdom"];
   }
 
   static getAvailableClericWeapons(spec: ChoiceParams) {
@@ -196,6 +198,11 @@ export class Choices {
 
   //get spell list for Wizard at a level BUT only Abjuration or Evocation schools
   static getEldritchSpellList(spec: ChoiceParams) {
+    return [];
+  }
+
+  //get spell list for Wizard at a level BUT only Enchantment or Illusion schools
+  static getTricksterSpellList(spec: ChoiceParams) {
     return [];
   }
 
@@ -241,11 +248,6 @@ export class Choices {
 
   //to complete
   static getKnownElementalDisciplines(spec: ChoiceParams) {
-    return [];
-  }
-
-  //get spell list for Wizard at a level BUT only Enchantment or Illusion schools
-  static getTricksterSpellList(spec: ChoiceParams) {
     return [];
   }
 

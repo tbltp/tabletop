@@ -267,8 +267,12 @@ function choiceHandler(
         //or - meaning you pick between categories, then you select within them
         selection.forEach((category) => {
           const description = `${category["alias"]} (choose category):`;
-          const choices = Object.keys(category["categories"]);
-          const userChoice = getInput(choices, description);
+
+          const choiceDict = {};
+          Object.entries(category["categories"]).map(
+              ([c, o]: [string, ChoiceSpec]) => {choiceDict[o.alias] = c});
+          const choices = Object.keys(choiceDict);
+          const userChoice = choiceDict[getInput(choices, description)];
           const categorySelection: ChoiceSpec =
             category["categories"][userChoice];
           choiceHandler([[userChoice, categorySelection]], resultObject, pc);
