@@ -38,7 +38,37 @@ function defaultBackgroundParams(): BackgroundParams {
 }
 
 function defaultLevelingParams(pClassName: string): LevelingParams {
-  return {
+
+
+  const additionalParams: {[key: string]: object} = {
+    "Bard": {
+      magicalSecretsSpellSelection: []
+    },
+    "Ranger": {
+        favoredEnemy: "",
+        favoredTerrain: ""
+    },
+    "Sorcerer": {
+        metamagic: []
+    },
+    "Warlock": {
+      pactBoon: {
+        boon: "",
+        options: []
+      },
+      mysticArcanum: "",
+      invocations: {
+        add: [],
+        remove: ""
+      }
+    },
+    "Wizard": {
+      spellBookSpells: [],
+      signatureSpells: []
+    }
+  }
+
+  const defaultParams = {
     isNoInput: true,
     abilityScoreImprovement: {
       abilities: [],
@@ -54,6 +84,8 @@ function defaultLevelingParams(pClassName: string): LevelingParams {
     subclassParams: defaultSubclassParams(pClassName),
     featParams: defaultFeatParams(),
   };
+
+  return {...defaultParams, ...additionalParams[pClassName]};
 }
 
 function defaultSubclassParams(pClassName: string): SubclassParams {
@@ -207,7 +239,11 @@ function getInput(choiceList: string[], userQ?: string): string {
     );
     if (match || !userChoice) {
       return match ? match : "";
-    } else {
+    }
+    else if (choiceList[0] == "Custom Entry") {
+      return userChoice;
+    } 
+    else {
       console.log(invMsg);
     }
   }
@@ -227,17 +263,31 @@ function promptChoice(
     let choices: string[] = [];
     if (selection["from"]) {
       choices = selection["from"];
-    } else {
+    }
+    else if (selection["custom"]) {
+      choices = ["Custom Entry"]
+    } 
+    else {
       const choiceParams = Choices.convertToParams(selection, pc);
       choices = Choices.functionRailRoad[selection["method"]](choiceParams);
     }
-    const userChoice = getInput(choices, description);
+    let userChoice = getInput(choices, description);
     if (!userChoice) continue;
     const paramType: string = typeof resultObject[key];
     if (paramType == "string") {
       resultObject[key] = userChoice;
     } else {
-      resultObject[key].push(userChoice);
+
+      let dups = 1;
+      if(userChoice.match(/\w+\sX[0-9]/g)) {
+        //multiple adds of same choice
+        const splits = userChoice.split(" X");
+        userChoice = splits[0]; 
+        dups = +splits[1];
+      }
+      for(let i = 1; i <= dups; i++) {
+        resultObject[key].push(userChoice);
+      }      
     }
   }
 }
@@ -272,9 +322,11 @@ function choiceHandler(
           Object.entries(category["categories"]).map(
               ([c, o]: [string, ChoiceSpec]) => {choiceDict[o.alias] = c});
           const choices = Object.keys(choiceDict);
-          const userChoice = choiceDict[getInput(choices, description)];
+          let userChoice = choiceDict[getInput(choices, description)];
           const categorySelection: ChoiceSpec =
             category["categories"][userChoice];
+          //hacky thing to remove underscore
+          userChoice = userChoice.replace('_', '');
           choiceHandler([[userChoice, categorySelection]], resultObject, pc);
         });
       } else if (key == "and") {
@@ -289,6 +341,7 @@ function choiceHandler(
         });
       }
     } else if (Object.keys(selection).length !== 0) {
+      //recurse
       promptChoice(key, selection, resultObject, pc);
     }
   }
@@ -443,23 +496,37 @@ function testASI() {
 }
 
 function testManeuvers() {
-    const pc: PlayerCharacter = new PlayerCharacter(15, 15, 15, 15, 15, 15);
-    const rc: Race = new raceDict["Wood Elf"]();
-    const bg: Background = new bgDict["Soldier"]({
-        gamingSet: "Dice set"
-    });
-    const cls: PlayerClass = new classDict["Fighter"]({
-        multiclass: false,
-        skillProficiencies: [ "athletics", "acrobatics"],
-        weapons: [ "LONGSWORD", "MAUL", "CROSSBOW, LIGHT"],
-        armor: ["LEATHER"],
-        equipmentPack: "DUNGEONEER"
-    });
-    const sheet: CharacterSheet = new CharacterSheet("Test", pc, rc, cls, bg);
-    levelHandler(sheet);
-  
-    Jsonify.dumpToJSON(sheet, `Test`);
+  const pc: PlayerCharacter = new PlayerCharacter(15, 15, 15, 15, 15, 15);
+  const rc: Race = new raceDict["Wood Elf"]();
+  const bg: Background = new bgDict["Soldier"]({
+      gamingSet: "Dice set"
+  });
+  const cls: PlayerClass = new classDict["Fighter"]({
+      multiclass: false,
+      skillProficiencies: [ "athletics", "acrobatics"],
+      weapons: [ "LONGSWORD", "MAUL", "CROSSBOW, LIGHT"],
+      armor: ["LEATHER"],
+      equipmentPack: "DUNGEONEER"
+  });
+  const sheet: CharacterSheet = new CharacterSheet("Test", pc, rc, cls, bg);
+  levelHandler(sheet);
+
+  Jsonify.dumpToJSON(sheet, `Test`);
+}
+
+function testRanger() {
+  const pc: PlayerCharacter = new PlayerCharacter(15, 15, 15, 15, 15, 15);
+  const rc: Race = new raceDict["Wood Elf"]();
+  const bg: Background = new bgDict["Soldier"]({
+      gamingSet: "Dice set"
+  });
+  const cls: PlayerClass = pclassHandler(pc);
+  const sheet: CharacterSheet = new CharacterSheet("Test", pc, rc, cls, bg);
+  levelHandler(sheet);
+
+  Jsonify.dumpToJSON(sheet, `Test`);
 }
 
 //createCharacter();
-testManeuvers();
+
+testRanger();
