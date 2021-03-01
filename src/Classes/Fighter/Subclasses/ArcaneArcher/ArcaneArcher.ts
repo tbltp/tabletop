@@ -17,8 +17,9 @@ export class ArcaneArcher {
 
   static getArrow(pc: PlayerCharacter, params: LevelingParams) {
     const arrowChoice = pc.pcHelper.findFeatureTraitByName("ARCANE SHOT CHOICES");
-    arrowChoice.choices.push(params.subclassSelection.options[0]);
-    pc.pcHelper.addFeatures(ArcaneArcher.shots[params.subclassSelection.options[0]])
+    arrowChoice.choices.push(...(params.subclassParams as FighterSubclassParams)['arcaneShots']);
+    (params.subclassParams as FighterSubclassParams)['arcaneShots'].map(shot => 
+      pc.pcHelper.addFeatures(ArcaneArcher.shots[shot]));
   }
 
   static arcaneArcher3(pc: PlayerCharacter, params: LevelingParams) {

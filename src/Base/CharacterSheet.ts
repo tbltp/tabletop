@@ -4,6 +4,7 @@ import { PlayerCharacter } from "./PlayerCharacter";
 import { Background } from "../Backgrounds/Background";
 import { Feat } from "../Feats/Feat";
 import { SpellSlotFactory } from "../Classes/SpellSlotFactory";
+import { featDict } from "../Utilities/ConstructorDefinitions";
 
 
 class SheetClasses {
@@ -34,13 +35,10 @@ export class CharacterSheet {
   race: Race;
   playerClasses: SheetClasses = {};
   levels: { [key: string]: PlayerClass["level"] } = {};
-  asiLevels: number[] = [4, 8, 12, 16, 19];
   feats: Feat[] = [];
   background: Background;
 
   //exposed responsibilities: level up, add/remove stuff to inventory, serialize to JSON, deserialize to JSON
-
-
 
     
   //this is dumb but it's ok
@@ -80,15 +78,15 @@ export class CharacterSheet {
     );
 
     //get feat or ability score improvement according to class level
-    if(this.asiLevels.includes(cLevel)) {
-      if(params.featChoice) {
-        this.feats.push(params.featChoice);
-        params.featChoice.apply(this.character);
-      } else {
-        this.character.pcHelper.improveAbilityScores(params.abilityScoreImprovement) ;
-      }
+    if(params.featParams.name != "") {
+      const newFeat: Feat = new featDict[params.featParams.name](params.featParams);    
+      this.feats.push(newFeat);
+      newFeat.apply(this.character);
+    } 
+    if(params.abilityScoreImprovement.abilities.length > 0) {
+      this.character.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     }
-
+    
     //apply spell slots based on selected classes
     this.applySpellSlotsAtLevelUp();
   }

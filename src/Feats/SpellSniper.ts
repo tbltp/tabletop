@@ -1,10 +1,10 @@
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { Feat } from "./Feat";
+import { Feat, FeatParams } from "./Feat";
 import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
 
 export class SpellSniper extends Feat {
-    constructor(spellClass: string, cantrip: string) {
-      super("Spell Sniper","",spellClass, [cantrip]);
+    constructor(featParams: FeatParams) {
+      super("Spell Sniper", "", featParams.spellClass, featParams.spells)
     }
   
     apply(pc: PlayerCharacter) {

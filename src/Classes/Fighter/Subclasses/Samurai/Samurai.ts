@@ -16,7 +16,8 @@ export class Samurai {
   }
   static samurai3(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Samurai.getFeature("3", "BONUS PROFICIENCY"));
-    pc.skills[params.subclassParams.skillProficiencies[0]].proficient = true;
+    params.subclassParams.skillProficiencies.length > 0 ?
+    pc.skills[params.subclassParams.skillProficiencies[0]].proficient = true :
     pc.traits.languages.push(Languages[params.subclassParams.languages[0]]);
     pc.pcHelper.addFeatures(Samurai.getFeature("3", "FIGHTING SPIRIT"));
     const fightingSpirit: ResourceTrait = {
