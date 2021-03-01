@@ -1,10 +1,10 @@
 import { Trait } from "Base/Interfaces";
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { Feat } from "./Feat";
+import { Feat, FeatParams } from "./Feat";
 
 export class ElementalAdept extends Feat {
-    constructor(element: string) {
-      super("Elemental Adept","","",[],[],[],[],[],element);
+    constructor(featParams: FeatParams) {
+      super("Elemental Adept","","",[],[],[],[],[],featParams.element);
     }
   
     apply(pc: PlayerCharacter) {

@@ -8,3 +8,4 @@ output*
 *.js
 *.py
 IGNORE/*
+Test.json

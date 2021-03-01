@@ -16,7 +16,7 @@ export class OrderDomain {
 
   static order1(pc: PlayerCharacter, params: LevelingParams) {
     OrderDomain.getSpells(pc,"1");
-    pc.skills[params.proficiencySelection[0]].proficient = true;
+    pc.skills[params.subclassParams.skillProficiencies[0]].proficient = true;
     pc.pcHelper.addFeatures(OrderDomain.getFeature("1", "VOICE OF AUTHORITY"),OrderDomain.getFeature("1", "BONUS PROFICIENCIES"));
   }
   

@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import * as SpellList from "../../../Assets/SpellList.json";
@@ -9,14 +9,7 @@ import { SpellSlotFactory } from "../SpellSlotFactory";
 import { ResourceTrait } from "Base/Interfaces";
 
 export class Paladin extends PlayerClass {
-  constructor(
-    multiclass: boolean,
-    params: LevelingParams,
-    skillProficiencies?: string[],    
-    weapons?: string[],
-    armor?: string[],
-    equipmentPack?: string
-  ) {
+  constructor(params: ClassCreationParams) {
     super(
       "Paladin",
       [],
@@ -28,13 +21,12 @@ export class Paladin extends PlayerClass {
       [],
       [],
       [],
-      params,
       "d10",
       10,
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons, armor, equipmentPack);
+    this.characterStart(params.multiclass, params.skillProficiencies, params.weapons, params.armor, params.equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -106,12 +98,12 @@ export class Paladin extends PlayerClass {
   level2(pc: PlayerCharacter, params: LevelingParams): void {
     this.upgradeLayOnHands(pc);
     this.pushPaladinFeatures(pc, 2);
-    pc.pcHelper.addFeatures(FightingStyle[params.fightingStyle[0]]);
+    pc.pcHelper.addFeatures(FightingStyle[params.fightingStyles[0]]);
     pc.pcHelper.addSpells([...SpellList["Paladin"][1]], SpellcastingAbility["PALADIN"]);
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.subclass = new PaladinSubclass(params.subclassSelection);
+    this.subclass = new PaladinSubclass(params.subclassParams);
     this.upgradeLayOnHands(pc);
     this.subclassDriver(pc, "3", params);
 
@@ -232,6 +224,6 @@ export class Paladin extends PlayerClass {
 
 export class DSPaladin extends Paladin {
   constructor(){
-    super(true, {isNoInput: true});
+    super({ multiclass: true });
   }
 }

@@ -1,12 +1,11 @@
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { Feat } from "./Feat";
+import { Feat, FeatParams } from "./Feat";
 import * as Languages from "../../Assets/Languages.json";
 
 export class Linguist extends Feat {
-    constructor(languages: string[]) {
-      super("Linguist");
+    constructor(featParams: FeatParams) {
+      super("Linguist","","",[],featParams.languages);
     }
-  
   
     public apply(pc: PlayerCharacter) {
       pc.abilityScores["intelligence"].update(1);

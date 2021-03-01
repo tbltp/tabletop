@@ -31,7 +31,7 @@ export class Champion {
     
       static champion10(pc: PlayerCharacter, params: LevelingParams) {
         pc.pcHelper.addFeatures(Champion.getFeature("10", "ADDITIONAL FIGHTING STYLE"));
-        PlayerClass.addFightingStyle(pc, params.fightingStyle[0]);  // move add fighting style to PC 
+        PlayerClass.addFightingStyle(pc, params.subclassParams.fightingStyles[0]);  // move add fighting style to PC 
     
       }
     

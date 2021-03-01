@@ -88,10 +88,6 @@ export abstract class Race {
     this.addToolProficiencies(pc);
     pc.speed.value = this.speed;
     pc.size = this.size;
-
-    if (Object.keys(this.abilitiesAtLevels).includes("1")) {
-      this.abilitiesAtLevels["1"](pc);
-    }
   }
 }
 
@@ -105,4 +101,14 @@ export class DSRace extends Race {
   proficiencies(){}
 
   abilityIncrease(){}
+}
+
+export interface  RaceParams {
+  draconicAncestry?: string;
+  toolProficiency?: string;
+  abilityScores?: string[];
+  skillProficiencies?: string[];
+  language?: string;
+  cantrip?: string;
+  feat?: string
 }

@@ -34,5 +34,13 @@
     "MINGLE WITH THE WIND": {
         "title": "Mingle With The Wind",
         "description": "You can cast the Leviatate spell once with this trait, requiring no material components, and you regain the ability to cast it this way when you finish a long rest.  Constitution is your spellcasting ability for this spell."
+    },
+    "EARTH WALK": {
+        "title": "Earth Walk",
+        "description": "You can move across difficult terrain made of earth or stone without expending extra movement."
+    },
+    "MERGE WITH STONE": {
+        "title": "Merge With Stone",
+        "description": "You can cast the Pass Without Trace spell once with this trait, requiring no material components, and you regain the ability to cast it this way when you finish a long rest.  Constitution is your spellcasting ability for this spell."
     }
 }
