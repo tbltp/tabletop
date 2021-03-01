@@ -1,11 +1,11 @@
-import { Background } from "./Background";
+import { Background, BackgroundParams } from "./Background";
 
 export class Hermit extends Background {
-    constructor(language: string) {
+    constructor(params: BackgroundParams) {
       super(
         "Hermit",
         ["medicine", "religion"],
-        [language],
+        [...params.languages],
         ["Herbalism Kit"],
         ["CLOTHES, COMMON", "BLANKET"],
         ["HERBALISM KIT"],

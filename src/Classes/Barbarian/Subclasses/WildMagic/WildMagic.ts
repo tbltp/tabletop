@@ -1,4 +1,3 @@
-import { ResourceLimits } from "worker_threads";
 import { ResourceTrait, ScalingTrait } from "../../../../Base/Interfaces";
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
 import { LevelingParams } from "../../../PlayerClass";

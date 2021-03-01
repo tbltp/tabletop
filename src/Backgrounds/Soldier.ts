@@ -1,12 +1,12 @@
-import { Background } from "./Background";
+import { Background, BackgroundParams } from "./Background";
 
 export class Soldier extends Background {
-    constructor(gamingSet: string) {
+    constructor(params: BackgroundParams) {
       super(
         "Soldier",
         ["athletics", "intimidation"],
         [],
-        ["Vehicles, land", gamingSet],
+        ["Vehicles, land", params.gamingSet],
         ["CLOTHES, COMMON"],
         [],
         10,

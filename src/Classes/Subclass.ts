@@ -3,12 +3,12 @@ import { LevelingParams } from "./PlayerClass";
 
 export abstract class Subclass {
 
-  constructor(subclassSelection: {subclass:string, options?: string[]}){
-    this.title = subclassSelection.subclass;
+  constructor(subclassSelection: SubclassParams){
+    this.name = subclassSelection.name;
   }
 
-  title: string;
-  persistentSelection?: {choice: string};
+  name: string;
+  persistentSelection?: SubclassParams;
 
   subclassDictionary: {
     [key1: string]: {
@@ -21,4 +21,18 @@ export abstract class Subclass {
     this.subclassDictionary[subclass][level](pc, params);
   }
 
+}
+
+export interface SubclassParams {
+  name: string;
+  spellSelections?: {
+    add: string[];
+    remove?: string;
+  };
+  skillProficiencies?: string[],
+  weapons?: string[];
+  toolProficiencies?: string[];
+  fightingStyles?: string[];
+  languages?: string[];
+  savingThrows?: string[];
 }

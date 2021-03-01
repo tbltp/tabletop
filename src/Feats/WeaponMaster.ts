@@ -1,9 +1,9 @@
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { Feat } from "./Feat";
+import { Feat, FeatParams } from "./Feat";
 
 export class WeaponMaster extends Feat {
-    constructor(abilityScore: string, weaponProficiencies: string[]) {
-      super("Weapon Master", abilityScore, "", [], [], [], [], weaponProficiencies);
+    constructor(featParams: FeatParams) {
+      super("Weapon Master", featParams.abilityScore, "", [], [], [], [], featParams.weaponProficiencies);
     }
   
     apply(pc: PlayerCharacter) {

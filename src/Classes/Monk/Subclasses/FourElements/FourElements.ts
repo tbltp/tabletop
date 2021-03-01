@@ -1,8 +1,9 @@
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
 import * as FourElementsDict from "./WayOfTheFourElements.json"
 import * as ElementalDisciplines from "./ElementalDisciplines.json"
-import { MonkLevelingParams } from "Classes/Monk/Monk";
 import { ISpell, Spell, Trait } from "Base/Interfaces";
+import { LevelingParams } from "../../../PlayerClass";
+import { MonkSubclassParams } from "../MonkSubclass";
 
 export class FourElements {
 
@@ -10,7 +11,7 @@ export class FourElements {
         return FourElementsDict["features"][level][featureName];
     }
     
-    static fourElements3(pc: PlayerCharacter, params: MonkLevelingParams) {
+    static fourElements3(pc: PlayerCharacter, params: LevelingParams) {
         // New elemental discipline learned, plus Elemental Attunement discipline.
     
 
@@ -29,39 +30,39 @@ export class FourElements {
         });
     }
   
-    static fourElements5(pc: PlayerCharacter, params: MonkLevelingParams) {
+    static fourElements5(pc: PlayerCharacter, params: LevelingParams) {
         pc.pcHelper.findScalingTraitByName("Elemental Discipline Max Level").points++;
     }
 
-    static fourElements6(pc: PlayerCharacter, params: MonkLevelingParams) {
+    static fourElements6(pc: PlayerCharacter, params: LevelingParams) {
         FourElements.handleDisciplineSelections(pc, params);
     }
 
-    static fourElements9(pc: PlayerCharacter, params: MonkLevelingParams) {
+    static fourElements9(pc: PlayerCharacter, params: LevelingParams) {
         pc.pcHelper.findScalingTraitByName("Elemental Discipline Max Level").points++;
     }
   
-    static fourElements11(pc: PlayerCharacter, params: MonkLevelingParams) {
+    static fourElements11(pc: PlayerCharacter, params: LevelingParams) {
         FourElements.handleDisciplineSelections(pc, params);
     }
 
-    static fourElements13(pc: PlayerCharacter, params: MonkLevelingParams) {
+    static fourElements13(pc: PlayerCharacter, params: LevelingParams) {
         FourElements.handleDisciplineSelections(pc, params);        
         pc.pcHelper.findScalingTraitByName("Elemental Discipline Max Level").points++;
     }
   
-    static fourElements17(pc: PlayerCharacter, params: MonkLevelingParams) {
+    static fourElements17(pc: PlayerCharacter, params: LevelingParams) {
         FourElements.handleDisciplineSelections(pc, params);
         pc.pcHelper.findScalingTraitByName("Elemental Discipline Max Level").points++;
     }
 
     static handleDisciplineSelections(
     pc: PlayerCharacter,
-    params: MonkLevelingParams
+    params: LevelingParams
     ) {
-        this.processDisciplines(params.disciplines.add, pc);
-        if (params.disciplines.remove) {
-            this.removeDiscipline(params.disciplines.remove, pc);
+        this.processDisciplines((params.subclassParams as MonkSubclassParams).disciplineSelections.add, pc);
+        if ((params.subclassParams as MonkSubclassParams).disciplineSelections.remove) {
+            this.removeDiscipline((params.subclassParams as MonkSubclassParams).disciplineSelections.remove, pc);
         }
     }
 

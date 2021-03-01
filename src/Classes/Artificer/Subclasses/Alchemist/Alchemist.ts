@@ -13,7 +13,7 @@ export class Alchemist {
   }
 
   static alchemist3(pc: PlayerCharacter, params: LevelingParams) {
-    pc.traits.toolProficiencies.add(params.subclassSelection.options[0]);
+    pc.traits.toolProficiencies.add(params.subclassParams.toolProficiencies[0]);
     pc.pcHelper.addFeatures(Alchemist.getFeature("3", "EXPERIMENTAL ELIXIR"));
     pc.pcHelper.addResourceTraits({
         title: "Experimental Elixirs",

@@ -1,10 +1,10 @@
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { Feat } from "./Feat";
+import { Feat, FeatParams } from "./Feat";
 import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
 
 export class MagicInitiate extends Feat {
-    constructor(spellClass: string, cantrips: string[], firstLevelSpell: string) {
-      super("Magic Initiate","",spellClass, [...cantrips, firstLevelSpell]);
+    constructor(featParams: FeatParams) {
+      super("Magic Initiate","",featParams.spellClass, featParams.spells); 
     }
   
   

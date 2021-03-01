@@ -12,9 +12,8 @@ export class PlayerCharacterHelper {
     private findTraitByName(traitType: string, name: string): Trait | null {
       //accepts title casing or all caps
         const results = this.pc.traits[traitType].filter(
-          (trait) => trait.title == name || trait.title.toUpperCase() == name
-        );
-        return results.length == 1 ? results[0] : null;
+          (trait) => trait.title.toUpperCase() === name.toUpperCase());
+        return results.length === 1 ? results[0] : null;
       }
     
       private addTraits(type: string, ...traits: Trait[]) {
@@ -65,10 +64,10 @@ export class PlayerCharacterHelper {
       }
     
       improveAbilityScores(
-        abilityScoreImprovements: { ability: string; improvement: number }[]
+        abilityScoreImprovement: { abilities: string[]; value: string }
       ): void {
-        for (const ability of abilityScoreImprovements) {
-          this.pc.abilityScores[ability.ability].update(ability.improvement);
+        for (const ability of abilityScoreImprovement.abilities) {
+          this.pc.abilityScores[ability].update(+abilityScoreImprovement.value);
         }
       }
     
@@ -76,15 +75,19 @@ export class PlayerCharacterHelper {
         this.addTraits("features", ...features);
       }
 
-      removeFeatures(...oldFeatures: string[]) {
+      removeFeatures(...oldFeatures: string[]): void {
         for (let oldftr of oldFeatures) {
           for (let i = 0; i < this.pc.traits.features.length; i++) {
             const title: string = this.pc.traits.features[i].title; 
-            if (title.toUpperCase() == oldftr) {
+            if (title.toUpperCase() == oldftr.toUpperCase()) {
               this.pc.traits.features.splice(i, 1);
             }
           }
         }
+      }
+
+      findFeatures(filterFunc: (Trait) => boolean): Trait[] {
+        return this.pc.traits.features.filter(filterFunc);
       }
     
       addResourceTraits(...resTraits: ResourceTrait[]): void {
@@ -98,6 +101,7 @@ export class PlayerCharacterHelper {
       addSpells(spellList: string[], spellcastingAbility: string, source?: AttachedFeature): void {
         let spells: Spell[] = [];
         for (const selectedSpell of spellList) {
+          //console.log(Spells[selectedSpell] ? `${selectedSpell} +1`: `${selectedSpell} - FIX` )
           spells.push({
             ...Spells[selectedSpell],
             spellcastingAbility: spellcastingAbility,
@@ -127,5 +131,9 @@ export class PlayerCharacterHelper {
             }
           }
         } 
+      }
+
+      addNote(title: string, description: string){
+        this.pc.notes.push({title: title, description: description, date: new Date().toLocaleDateString()})
       }
 }

@@ -17,8 +17,9 @@ export class Cavalier {
 
   static cavalier3(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Cavalier.getFeature("3", "BONUS PROFICIENCY"));
-    pc.skills[params.proficiencySelection[0]].proficient = true;
-    pc.traits.languages.push(Languages[params.subclassSelection.options[0]]);
+    params.subclassParams.skillProficiencies.length > 0 ?
+    pc.skills[params.subclassParams.skillProficiencies[0]].proficient = true :
+    pc.traits.languages.push(Languages[params.subclassParams.languages[0]]);
     pc.pcHelper.addFeatures(Cavalier.getFeature("3", "BORN TO THE SADDLE"));
     pc.pcHelper.addFeatures(Cavalier.getFeature("3", "UNWAVERING MARK"));
     const unwaveringMark: ResourceTrait = {
@@ -48,8 +49,8 @@ export class Cavalier {
 
   static cavalier10(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Cavalier.getFeature("10", "HOLD THE LINE"));
-    PlayerClass.addFightingStyle(pc, params.fightingStyle[0]);  // move add fighting style to PC
-    Cavalier.upMark(pc);
+    PlayerClass.addFightingStyle(pc, params.subclassParams.fightingStyles[0]);  // move add fighting style to PC 
+
   }
 
   static cavalier15(pc: PlayerCharacter, params: LevelingParams) {

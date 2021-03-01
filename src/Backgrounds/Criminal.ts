@@ -1,12 +1,12 @@
-import { Background } from "./Background";
+import { Background, BackgroundParams } from "./Background";
 
 export class Criminal extends Background {
-    constructor(gamingSet: string) {
+    constructor(params: BackgroundParams) {
       super(
         "Criminal",
         ["deception", "stealth"],
         [],
-        ["Thieves' Tools", gamingSet],
+        ["Thieves' Tools", params.gamingSet],
         ["CROWBAR", "CLOTHES, COMMON"],
         [],
         15,

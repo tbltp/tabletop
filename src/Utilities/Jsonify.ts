@@ -127,14 +127,15 @@ export class Jsonify {
         dsClass[property] = jsonSheet['playerClasses'][dsClass.name][property];
       }
 
+      //this probably needs an update
       if(jsonSheet['playerClasses'][dsClass.name]["subclass"]){
         dsClass.subclass = Deserialize.deserializeSubclass(
-          dsClass.name, 
-          {
-            subclass: jsonSheet['playerClasses'][dsClass.name]["subclass"]["title"],
-            options: (jsonSheet['playerClasses'][dsClass.name]["subclass"]["persistentSelection"]) ? 
-              [jsonSheet['playerClasses'][dsClass.name]["subclass"]["persistentSelection"]["choice"]] : []
+          dsClass.name,          
+          (jsonSheet['playerClasses'][dsClass.name]["subclass"]["persistentSelection"]) ?
+          jsonSheet['playerClasses'][dsClass.name]["subclass"]["persistentSelection"] : {
+            "name": jsonSheet['playerClasses'][dsClass.name]["subclass"]["name"]
           }
+
         ) 
       }
     }

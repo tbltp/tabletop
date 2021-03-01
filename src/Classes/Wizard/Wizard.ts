@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import * as WizardClassTraits from './Wizard.json';
@@ -6,14 +6,7 @@ import { WizardSubclass } from "./Subclasses/WizardSubclass";
 import { Trait } from "Base/Interfaces";
 
 export class Wizard extends PlayerClass {
-  constructor(
-    multiclass: boolean,
-    params: WizardLevelingParams,
-    skillProficiencies?: string[],
-    weapons?: string[],
-    equipmentPack?: string,
-    arcaneFocus?: string
-  ) {
+  constructor(params: ClassCreationParams) {
     super(
       "Wizard",
       [],
@@ -25,13 +18,12 @@ export class Wizard extends PlayerClass {
       [],
       [],
       [],
-      params,
       "d6",
       6,
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons, equipmentPack, arcaneFocus);
+    this.characterStart(params.multiclass, params.skillProficiencies, params.weapons, params.equipmentPack, params.arcaneFocus);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -96,7 +88,7 @@ export class Wizard extends PlayerClass {
 
   level2(pc: PlayerCharacter, params: WizardLevelingParams): void {
     this.handleWizardSpellSelections(pc, params);
-    this.subclass = new WizardSubclass(params.subclassSelection);
+    this.subclass = new WizardSubclass(params.subclassParams);
     this.subclassDriver(pc, "2", params);
   }
 
@@ -184,7 +176,7 @@ export class Wizard extends PlayerClass {
 
 export class DSWizard extends Wizard {
   constructor(){
-    super(true, {isNoInput: true});
+    super({ multiclass: true });
   }
 }
 

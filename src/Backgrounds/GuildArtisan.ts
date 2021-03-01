@@ -1,18 +1,16 @@
-import { Background } from "./Background";
+import { Background, BackgroundParams } from "./Background";
 
 export class GuildArtisan extends Background {
     constructor(
-      artisansToolProficiency: string,
-      artisansTool: string,
-      language: string
+      params: BackgroundParams
     ) {
       super(
         "Guild Artisan",
         ["insight", "persuasion"],
-        [language],
-        [artisansToolProficiency],
+        [...params.languages],
+        [...params.toolProficiencies],
         ["CLOTHES, TRAVELER'S"],
-        [artisansTool],
+        [...params.toolKit],
         15,
         [
           {

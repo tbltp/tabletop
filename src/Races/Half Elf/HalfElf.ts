@@ -1,35 +1,33 @@
-import { Race } from "../Race";
+import { Race, RaceParams } from "../Race";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import * as traits from "./HalfElf.json";
 import * as languages from "../../../Assets/Languages.json";
 
 export class HalfElf extends Race {
   constructor(
-    language: string,
-    abilityScores: string[],
-    proficiencies: string[]
+    params: RaceParams
   ) {
     super(
       "Half-Elf",
       "180 years", // Average Lifespan
       30, // Speed (Movement)
       "Medium", // Size
-      [languages["Common"], languages[language]], // Languages
+      [languages["Common"], languages[params.language]], // Languages
       [traits["DARKVISION"], traits["FEY ANCESTRY"]], // Racial Traits
       [], // Weapon Proficiencies
       [], // Armor Proficiencies
       [] // Tool Proficiences
     );
-    this.chosenAbilityScores = abilityScores;
-    this.chosenProficiencies = proficiencies;
+    this.chosenAbilityScores = params.abilityScores;
+    this.chosenProficiencies = params.skillProficiencies;
     this.traits.push(
       {
         title: "Skill Versatility",
-        description: `You gain proficiency in two skills of your choice. - ${proficiencies[0]}, ${proficiencies[1]}`,
+        description: `You gain proficiency in two skills of your choice. - ${params.skillProficiencies[0]}, ${params.skillProficiencies[1]}`,
       },
       {
         title: "Extra Language",
-        description: `You can speak, read, and write one extra language of your chotce. - ${language}`,
+        description: `You can speak, read, and write one extra language of your chotce. - ${params.language}`,
       }
     );
   }

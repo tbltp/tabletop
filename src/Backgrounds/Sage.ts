@@ -1,11 +1,11 @@
-import { Background } from "./Background";
+import { Background, BackgroundParams } from "./Background";
 
 export class Sage extends Background {
-  constructor(languages: string[]) {
+  constructor(params: BackgroundParams) {
     super(
       "Sage",
       ["arcana", "history"],
-      languages,
+      params.languages,
       [],
       ["INK (1 OUNCE BOTTLE)", "INK PEN", "CLOTHES, COMMON"],
       [],
@@ -23,6 +23,6 @@ export class Sage extends Background {
 
 export class DSSage extends Sage {
   constructor() {
-    super([]);
+    super({});
   }
 }
