@@ -1,6 +1,6 @@
 import { PlayerCharacter } from "../../../Base/PlayerCharacter";
 import { LevelingParams } from "../../../Classes/PlayerClass";
-import { Subclass } from "../../Subclass";
+import { Subclass, SubclassParams } from "../../Subclass";
 import { LandCircle } from "./Land/LandCircle";
 import { MoonCircle } from "./Moon/MoonCircle";
 import { SporesCircle } from "./Spores/SporesCircle";
@@ -9,9 +9,9 @@ import { ShepherdCircle } from "./Shepherd/ShepherdCircle";
 
 
 export class DruidSubclass extends Subclass {
-  constructor(subclassSelection: {subclass: string, options?: string[]}){
+  constructor(subclassSelection: SubclassParams){
     super(subclassSelection);
-    subclassSelection.subclass === "LAND" ? this.persistentSelection = {choice: subclassSelection.options[0]} : null;
+    subclassSelection.name === "LAND" ? this.persistentSelection = subclassSelection : null;
   }
 
   subclassDictionary = {
@@ -105,8 +105,13 @@ export class DruidSubclass extends Subclass {
   subclassDriver(pc: PlayerCharacter, level: string, subclass: string, params: LevelingParams){
     if(!this.subclassDictionary[subclass][level]){ return; }
     if(this.persistentSelection){
-      params.subclassSelection = {subclass: "LAND", options: [this.persistentSelection.choice]};
+      params.subclassParams = this.persistentSelection;
     }
     this.subclassDictionary[subclass][level](pc, params);
   }
+}
+
+
+export interface DruidSubclassParams extends SubclassParams {
+  land?: string
 }

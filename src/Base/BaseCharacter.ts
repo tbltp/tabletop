@@ -191,7 +191,7 @@ export abstract class BaseCharacter {
 
   // Base Stats
   proficiency: BaseProficiency;
-  level: { totalLevel: number } = { totalLevel: 1 };
+  level: { totalLevel: number } = { totalLevel: 0 };
   baseStats: {
     [key: string]: {
       base: number;

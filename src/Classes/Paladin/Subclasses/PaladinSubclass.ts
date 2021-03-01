@@ -1,4 +1,4 @@
-import { Subclass } from "../../Subclass";
+import { Subclass, SubclassParams } from "../../Subclass";
 import { Ancients } from "./Ancients/Ancients";
 import { Devotion } from "./Devotion/Devotion";
 import { Vengeance } from "./Vengeance/Vengeance";
@@ -7,7 +7,7 @@ import { Redemption } from "./Redemption/Redemption";
 
 export class PaladinSubclass extends Subclass {
 
-  constructor(subclassSelection: {subclass: string, options?: string[]}){
+  constructor(subclassSelection: SubclassParams){
     super(subclassSelection);
   }
 

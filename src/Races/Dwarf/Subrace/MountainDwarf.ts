@@ -1,10 +1,11 @@
 import { Dwarf } from "../Dwarf";
+import { RaceParams } from "../../Race";
 import * as traits from "../Dwarf.json";
 import { PlayerCharacter } from "../../../Base/PlayerCharacter";
 
 export class MountainDwarf extends Dwarf {
-    constructor(toolProficiency: string) {
-      super("Mountain Dwarf", toolProficiency);
+    constructor(params: RaceParams) {
+      super("Mountain Dwarf", params.toolProficiency);
       this.traits.push(traits["DWARVEN ARMOR TRAINING"]);
       this.armorProficiencies.push("Light", "Medium");
     }

@@ -25,7 +25,7 @@ export class GloomStalker {
 
   static gloomStalker7(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(GloomStalker.getFeature("7","IRON MIND"));
-    pc.abilityScores[params.proficiencySelection[0]].savingThrowProficiency = true;
+    if(params.subclassParams.savingThrows) pc.abilityScores[params.subclassParams.savingThrows[0]].savingThrowProficiency = true;
   }
 
   static gloomStalker9(pc: PlayerCharacter, params: LevelingParams) {

@@ -13,7 +13,7 @@ export class Armorer {
   }
 
   static armorer3(pc: PlayerCharacter, params: LevelingParams) {
-    pc.traits.toolProficiencies.add(params.subclassSelection.options[0]);
+    pc.traits.toolProficiencies.add(params.subclassParams.toolProficiencies[0]);
     pc.traits.armorProficiencies.add("Heavy");
     pc.pcHelper.addFeatures(
         Armorer.getFeature("3", "ARCANE ARMOR"),
