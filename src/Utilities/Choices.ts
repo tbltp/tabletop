@@ -109,6 +109,8 @@ export class Choices {
   } = {
     getSpellList: Choices.getSpellList,
     getSpellListAll: Choices.getSpellListAll,
+    getRitualSpellList: Choices.getRitualSpellList,
+    getAttackSpellList: Choices.getAttackSpellList,
     getKnownManeuvers: Choices.getKnownManeuvers,
     getKnownSpells: Choices.getKnownSpells,
     getKnownSpellsAtLevel: Choices.getKnownSpellsAtLevel,
@@ -150,6 +152,20 @@ export class Choices {
       }
     }
     return [...spellList.values()];
+  }
+
+  static getRitualSpellList(spec: ChoiceParams) {
+    //up to specified level
+    return Choices.getSpellList(spec).filter((spell) =>
+      Choices.checkForSpellProperty(spell, "ritual")
+    );
+  }
+
+  static getAttackSpellList(spec: ChoiceParams) {
+    //up to specified level
+    return Choices.getSpellList(spec).filter((spell) =>
+      Choices.checkForSpellProperty(spell, "spellAttack")
+    );
   }
 
   static getKnownSpells(spec: ChoiceParams): string[] {
@@ -201,13 +217,17 @@ export class Choices {
   static getEldritchSpellList(spec: ChoiceParams) {
     //get spell list for Wizard at a level BUT only Abjuration or Evocation schools
     spec.list = "Wizard";
-    return Choices.getSpellList(spec).filter(spell => Choices.checkSpellSchools(spell, "abjuration", "evocation"));
+    return Choices.getSpellList(spec).filter((spell) =>
+      Choices.checkSpellSchools(spell, "abjuration", "evocation")
+    );
   }
 
   static getTricksterSpellList(spec: ChoiceParams) {
     //get spell list for Wizard at a level BUT only Enchantment or Illusion schools
     spec.list = "Wizard";
-    return Choices.getSpellList(spec).filter(spell => Choices.checkSpellSchools(spell, "enchantment", "illusion"));
+    return Choices.getSpellList(spec).filter((spell) =>
+      Choices.checkSpellSchools(spell, "enchantment", "illusion")
+    );
   }
 
   static getKnownManeuvers(spec: ChoiceParams): string[] {
@@ -276,6 +296,10 @@ export class Choices {
   private static checkSpellSchools(spell: string, ...schools: string[]) {
     return schools.includes(Spells[spell]["school"]);
   }
+
+  private static checkForSpellProperty(spell: string, property: string) {
+    return Spells[spell][property];
+  }
 }
 
 export interface ChoiceParams {
@@ -293,4 +317,5 @@ export interface ChoiceSpec {
   required: boolean;
   or?: ChoiceSpec[];
   and?: ChoiceSpec[];
+  needs?: string;
 }

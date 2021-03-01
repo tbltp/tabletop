@@ -45,7 +45,6 @@ export class CharacterSheet {
   multiClass(newClass: PlayerClass): void {
     this.playerClasses[newClass.name] = newClass;
     this.levels[newClass.name] = newClass["level"];
-    this.character.level.totalLevel++;
     newClass.apply(this.character);
 
   }
