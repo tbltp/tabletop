@@ -393,7 +393,7 @@ export class CLISheetDriver {
     return bg;
   }
 
-  static pclassHandler(pc: PlayerCharacter) {
+  static pclassHandler(pc: PlayerCharacter, multiclassing?: boolean) {
     const pclassSelection = CLISheetDriver.getInput(
       Choices.renderClassChoices(),
       "Select your starting Class:"
@@ -402,7 +402,7 @@ export class CLISheetDriver {
     //assume no multiclassing for now
     let pclassParams: ClassCreationParams = {
       ...CLISheetDriver.defaultCreationParams(),
-      multiclass: false,
+      multiclass: multiclassing || false,
     };
 
     const choicesSet = Choices.renderClassChoicesAtLevel(pclassSelection, 0);
@@ -415,15 +415,44 @@ export class CLISheetDriver {
   }
 
   static levelHandler(sheet: CharacterSheet) {
-    const pClass: PlayerClass = Object.values(sheet.playerClasses)[0];
-    const pClassName: string = pClass.name;
 
-    const levelPrompt = `Select level to go up to in ${pClass.name} (1-20):`;
-    const levelRange = [...Array(20).keys()].map((l) => l + 1 + "");
+    let pClass: PlayerClass = null;
+    let pClassName: string = "";
+    const currentClasses = Object.keys(sheet.levels);
+
+    if(currentClasses.length == 1 && sheet.levels[currentClasses[0]].value == 0) {
+      //must level up
+      pClassName = currentClasses[0];
+      pClass = sheet.playerClasses[pClassName];
+    } else {
+
+      //otherwise, player's choice
+      const classPrompt = `Select class to level up in, or enter "Multiclass" to get a new class`;
+      const classNames: string[] = [...Object.keys(sheet.playerClasses), "Multiclass"];
+      pClassName = CLISheetDriver.getInput(classNames, classPrompt);
+      
+      if(pClassName == "Multiclass") {
+
+        const pc: PlayerCharacter = sheet.character;
+        pClass = CLISheetDriver.pclassHandler(pc, true);
+        pClassName = pClass.name;
+        sheet.multiClass(pClass);
+
+      } else {
+        pClass = sheet.playerClasses[pClassName];    
+      }
+    }
+    
+
+    let levelRange = [];
+    for(let i = sheet.levels[pClassName].value + 1; i<= 20; i++) {
+      levelRange.push(i + "");
+    }  
+    const levelPrompt = `Select level to go up to in ${pClassName} (1-20):`;
     const level = CLISheetDriver.getInput(levelRange, levelPrompt);
     const asifLevels: number[] = [4, 8, 12, 16, 19];
 
-    for (let i = 1; i <= +level; i++) {
+    for (let i = sheet.levels[pClassName].value + 1; i <= +level; i++) {
       console.log(`---${pClassName} Level ${i}---`);
       let pc: PlayerCharacter = sheet.character;
       let hpAdd: number = 0;
@@ -465,6 +494,7 @@ export class CLISheetDriver {
       //console.log(levelParams);
       sheet.levelUp(pClassName, hpAdd, levelParams);
     }
+  
   }
 
   static asiOrFeatHandler(sheet: CharacterSheet, levelParams: LevelingParams) {
@@ -555,6 +585,23 @@ function testClass() {
   Jsonify.dumpToJSON(sheet, `Test`);
 }
 
+function testMultiClassing() {
+  const pc: PlayerCharacter = new PlayerCharacter(14, 14, 14, 14, 14, 14);
+  const rc: Race = new raceDict["Tiefling"]();
+  const bg: Background = new bgDict["Charlatan"]();
+  const cls: PlayerClass = new classDict["Barbarian"]({
+    multiclass: false,
+    skillProficiencies: ["athletics", "intimidation"],
+    weapons: ["GREATAXE", "CLUB"],
+  });
+  const sheet: CharacterSheet = new CharacterSheet("Test", pc, rc, cls, bg);
+  CLISheetDriver.levelHandler(sheet);
+  CLISheetDriver.levelHandler(sheet);
+  CLISheetDriver.levelHandler(sheet);
+
+  Jsonify.dumpToJSON(sheet, `Test`);
+}
+
 //CLISheetDriver.createCharacter()
 
-testClass();
+testMultiClassing();
