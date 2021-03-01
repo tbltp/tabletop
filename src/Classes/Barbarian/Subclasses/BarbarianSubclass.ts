@@ -5,7 +5,7 @@ import { AncestralGuardian } from "./AncestralGuardian/AncestralGuardian"
 import { StormHerald } from "./StormHerald/StormHerald";
 import { Zealot } from "./Zealot/Zealot";
 import { LevelingParams } from "Classes/PlayerClass";
-import { PlayerCharacter } from "index";
+import { PlayerCharacter } from "../../../Base/PlayerCharacter";
 export class BarbarianSubclass extends Subclass {
 
   constructor(subclassSelection: SubclassParams){

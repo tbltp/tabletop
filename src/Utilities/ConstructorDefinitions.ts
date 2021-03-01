@@ -1,94 +1,93 @@
-import {
-  DarkElf,
-  Dragonborn,
-  HalfOrc,
-  HighElf,
-  HillDwarf,
-  MountainDwarf,
-  WoodElf,
-  AirGenasi,
-  EarthGenasi,
-  WaterGenasi,
-  FireGenasi,
-  MountainGnome,
-  ForestGnome,
-  HalfElf,
-  Lightfoot,
-  Stout,
-  BaseHuman,
-  Barbarian,
-  Criminal,
-  VariantHuman,
-  Tiefling,
-  Artificer,
-  Bard,
-  Cleric,
-  Druid,
-  Fighter,
-  Monk,
-  Paladin,
-  Ranger,
-  Rogue,
-  Sorcerer,
-  Warlock,
-  Wizard,
-  Acolyte,
-  Charlatan,
-  Entertainer,
-  FolkHero,
-  GuildArtisan,
-  Hermit,
-  Knight,
-  Noble,
-  Outlander,
-  Pirate,
-  Sage,
-  Sailor,
-  Soldier,
-  Urchin,
-  Actor,
-  Alert,
-  Athlete,
-  Charger,
-  CrossbowExpert,
-  DefensiveDuelist,
-  DualWielder,
-  DungeonDelver,
-  Durable,
-  ElementalAdept,
-  Grappler,
-  GreatWeaponMaster,
-  Healer,
-  HeavilyArmored,
-  HeavyArmorMaster,
-  InspiringLeader,
-  KeenMind,
-  LightlyArmored,
-  Linguist,
-  Lucky,
-  MageSlayer,
-  MagicInitiate,
-  MartialAdept,
-  MediumArmorMaster,
-  Mobile,
-  ModeratelyArmored,
-  MountedCombatant,
-  Observant,
-  PolearmMaster,
-  Resilient,
-  RitualCaster,
-  SavageAttacker,
-  Sentinel,
-  Sharpshooter,
-  ShieldMaster,
-  Skilled,
-  Skulker,
-  SpellSniper,
-  TavernBrawler,
-  Tough,
-  WarCaster,
-  WeaponMaster,
-} from "../index";
+import { Acolyte } from "../Backgrounds/Acolyte";
+import { Charlatan } from "../Backgrounds/Charlatan";
+import { Criminal } from "../Backgrounds/Criminal";
+import { Entertainer } from "../Backgrounds/Entertainer";
+import { FolkHero } from "../Backgrounds/FolkHero";
+import { GuildArtisan } from "../Backgrounds/GuildArtisan";
+import { Hermit } from "../Backgrounds/Hermit";
+import { Knight } from "../Backgrounds/Knight";
+import { Noble } from "../Backgrounds/Noble";
+import { Outlander } from "../Backgrounds/Outlander";
+import { Pirate } from "../Backgrounds/Pirate";
+import { Sage } from "../Backgrounds/Sage";
+import { Sailor } from "../Backgrounds/Sailor";
+import { Soldier } from "../Backgrounds/Soldier";
+import { Urchin } from "../Backgrounds/Urchin";
+import { Artificer } from "../Classes/Artificer/Artificer";
+import { Barbarian } from "../Classes/Barbarian/Barbarian";
+import { Bard } from "../Classes/Bard/Bard";
+import { Cleric } from "../Classes/Cleric/Cleric";
+import { Druid } from "../Classes/Druid/Druid";
+import { Fighter } from "../Classes/Fighter/Fighter";
+import { Monk } from "../Classes/Monk/Monk";
+import { Paladin } from "../Classes/Paladin/Paladin";
+import { Ranger } from "../Classes/Ranger/Ranger";
+import { Rogue } from "../Classes/Rogue/Rogue";
+import { Sorcerer } from "../Classes/Sorcerer/Sorcerer";
+import { Warlock } from "../Classes/Warlock/Warlock";
+import { Wizard } from "../Classes/Wizard/Wizard";
+import { Actor } from "../Feats/Actor";
+import { Alert } from "../Feats/Alert";
+import { Athlete } from "../Feats/Athlete";
+import { Charger } from "../Feats/Charger";
+import { CrossbowExpert } from "../Feats/CrossbowExpert";
+import { DefensiveDuelist } from "../Feats/DefensiveDuelist";
+import { DualWielder } from "../Feats/DualWielder";
+import { DungeonDelver } from "../Feats/DungeonDelver";
+import { Durable } from "../Feats/Durable";
+import { ElementalAdept } from "../Feats/ElementalAdept";
+import { Grappler } from "../Feats/Grappler";
+import { GreatWeaponMaster } from "../Feats/GreatWeaponMaster";
+import { Healer } from "../Feats/Healer";
+import { HeavilyArmored } from "../Feats/HeavilyArmored";
+import { HeavyArmorMaster } from "../Feats/HeavyArmorMaster";
+import { InspiringLeader } from "../Feats/InspiringLeader";
+import { KeenMind } from "../Feats/KeenMind";
+import { LightlyArmored } from "../Feats/LightlyArmored";
+import { Linguist } from "../Feats/Linguist";
+import { Lucky } from "../Feats/Lucky";
+import { MageSlayer } from "../Feats/MageSlayer";
+import { MagicInitiate } from "../Feats/MagicInitiate";
+import { MartialAdept } from "../Feats/MartialAdept";
+import { MediumArmorMaster } from "../Feats/MediumArmorMaster";
+import { Mobile } from "../Feats/Mobile";
+import { ModeratelyArmored } from "../Feats/ModeratelyArmored";
+import { MountedCombatant } from "../Feats/MountedCombatant";
+import { Observant } from "../Feats/Observant";
+import { PolearmMaster } from "../Feats/PolearmMaster";
+import { Resilient } from "../Feats/Resilient";
+import { RitualCaster } from "../Feats/RitualCaster";
+import { SavageAttacker } from "../Feats/SavageAttacker";
+import { Sentinel } from "../Feats/Sentinel";
+import { Sharpshooter } from "../Feats/Sharpshooter";
+import { ShieldMaster } from "../Feats/ShieldMaster";
+import { Skilled } from "../Feats/Skilled";
+import { Skulker } from "../Feats/Skulker";
+import { SpellSniper } from "../Feats/SpellSniper";
+import { TavernBrawler } from "../Feats/TavernBrawler";
+import { Tough } from "../Feats/Tough";
+import { WarCaster } from "../Feats/WarCaster";
+import { WeaponMaster } from "../Feats/WeaponMaster";
+import { HillDwarf } from "../Races/Dwarf/Subrace/HillDwarf";
+import { MountainDwarf } from "../Races/Dwarf/Subrace/MountainDwarf";
+import { DarkElf } from "../Races/Elf/Subrace/DarkElf";
+import { HighElf } from "../Races/Elf/Subrace/HighElf";
+import { WoodElf } from "../Races/Elf/Subrace/WoodElf";
+import { AirGenasi } from "../Races/Genasi/Subrace/AirGenasi";
+import { EarthGenasi } from "../Races/Genasi/Subrace/EarthGenasi";
+import { FireGenasi } from "../Races/Genasi/Subrace/FireGenasi";
+import { WaterGenasi } from "../Races/Genasi/Subrace/WaterGenasi";
+import { ForestGnome } from "../Races/Gnome/Subrace/ForestGnome";
+import { MountainGnome } from "../Races/Gnome/Subrace/MountainGnome";
+import { HalfElf } from "../Races/Half Elf/HalfElf";
+import { HalfOrc } from "../Races/Half Orc/HalfOrc";
+import { Lightfoot } from "../Races/Halfling/Subrace/Lightfoot";
+import { Stout } from "../Races/Halfling/Subrace/Stout";
+import { BaseHuman } from "../Races/Human/Subrace/BaseHuman";
+import { VariantHuman } from "../Races/Human/Subrace/VariantHuman";
+import { Tiefling } from "../Races/Tiefling/Tiefling";
+import { Dragonborn } from "../Races/Dragonborn/Dragonborn";
+
 
 export const raceDict = {
   Dragonborn: Dragonborn,
