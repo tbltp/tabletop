@@ -67,7 +67,51 @@
     },
     "Lucky": {},
     "Mage Slayer": {},
-    "Magic Initiate": {},
+    "Magic Initiate": {
+        "and": [
+            {
+                "alias": "Magic Initiate",
+                "categories": {
+                    "spellClass": {
+                        "alias": "Spellcasting Class",
+                        "choose": 1,
+                        "from": [
+                            "Bard",
+                            "Cleric",
+                            "Druid",
+                            "Sorcerer",
+                            "Warlock",
+                            "Wizard"
+                        ],
+                        "required": true
+                    },
+                    "spells": [
+                        {
+                            "alias": "Magic Initiate Cantrips",
+                            "choose": 2,
+                            "method": "getSpellList",
+                            "needs": "spellClass",
+                            "args": [
+                                "0"
+                            ],
+                            "required": true
+                        },
+                        {
+                            "alias": "Magic Initiate Spell (Up to Level 1)",
+                            "choose": 1,
+                            "method": "getSpellList",
+                            "needs": "spellClass",
+                            "args": [
+                                "1"
+                            ],
+                            "required": true
+                        }
+                    ]
+                },
+                "required": true
+            }
+        ]
+    },
     "Martial Adept": {
         "maneuvers": {
             "choose": 2,
@@ -110,14 +154,80 @@
             ]
         }
     },
-    "Ritual Caster": {},
+    "Ritual Caster": {
+        "and": [
+            {
+                "alias": "Ritual Caster",
+                "categories": {
+                    "spellClass": {
+                        "alias": "Spellcasting Class",
+                        "choose": 1,
+                        "from": [
+                            "Bard",
+                            "Cleric",
+                            "Druid",
+                            "Sorcerer",
+                            "Warlock",
+                            "Wizard"
+                        ],
+                        "required": true
+                    },
+                    "spells": [
+                        {
+                            "alias": "Ritual Caster Spells (Up to Level 1)",
+                            "choose": 2,
+                            "method": "getRitualSpellList",
+                            "needs": "spellClass",
+                            "args": [
+                                "1"
+                            ],
+                            "required": true
+                        }
+                    ]
+                },
+                "required": true
+            }
+        ]
+    },
     "Savage Attacker": {},
     "Sentinel": {},
     "Sharpshooter": {},
     "Shield Master": {},
     "Skilled": {},
     "Skulker": {},
-    "Spell Sniper": {},
+    "Spell Sniper": {
+        "and": [
+            {
+                "alias": "Spell Sniper",
+                "categories": {
+                    "spellClass": {
+                        "alias": "Spellcasting Class",
+                        "choose": 1,
+                        "from": [
+                            "Druid",
+                            "Sorcerer",
+                            "Warlock",
+                            "Wizard"
+                        ],
+                        "required": true
+                    },
+                    "spells": [
+                        {
+                            "alias": "Spell Sniper Cantrip",
+                            "choose": 1,
+                            "method": "getAttackSpellList",
+                            "needs": "spellClass",
+                            "args": [
+                                "0"
+                            ],
+                            "required": true
+                        }
+                    ]
+                },
+                "required": true
+            }
+        ]
+    },
     "Tavern Brawler": {
         "abilityScore": {
             "choose": 1,

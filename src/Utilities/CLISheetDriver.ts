@@ -252,6 +252,7 @@ export class CLISheetDriver {
     pc?: PlayerCharacter
   ): void {
     //pass by reference
+    let injected: boolean = false;
     for (let i = 0; i < selection["choose"]; i++) {
       const description = `${selection["alias"]} (${i + 1} of ${
         selection["choose"]
@@ -262,6 +263,10 @@ export class CLISheetDriver {
       } else if (selection["custom"]) {
         choices = ["Custom Entry"];
       } else {
+        if(selection["needs"] && !injected) {
+          selection.args = [resultObject[selection["needs"]], ...selection.args];
+          injected = true;
+        }
         const choiceParams = Choices.convertToParams(selection, pc);
         choices = Choices.functionRailRoad[selection["method"]](choiceParams);
       }
@@ -338,8 +343,10 @@ export class CLISheetDriver {
         } else if (key == "and") {
           //and - meaning you pick between categories as a choice, and then use that choice later
           selection.forEach((category) => {
-            const description = `${category["alias"]} (choose category):`;
-            const choices = Object.keys(category["categories"]);
+            const choiceSequence: [key: string, value: ChoiceSpec][] = Object.entries(category["categories"]);
+            CLISheetDriver.choiceHandler(
+              choiceSequence, resultObject, pc
+            );
           });
         } else {
           selection.forEach((choice) => {
@@ -550,4 +557,4 @@ function testClass() {
 
 //CLISheetDriver.createCharacter()
 
-testClass();
+testASI();

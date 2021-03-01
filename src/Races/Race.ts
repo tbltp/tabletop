@@ -88,10 +88,6 @@ export abstract class Race {
     this.addToolProficiencies(pc);
     pc.speed.value = this.speed;
     pc.size = this.size;
-
-    if (Object.keys(this.abilitiesAtLevels).includes("1")) {
-      this.abilitiesAtLevels["1"](pc);
-    }
   }
 }
 
