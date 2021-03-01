@@ -1,6 +1,8 @@
 {
-    "ATHLETE":{
-        "abilityScoreImprovement": {
+    "Actor": {},
+    "Alert": {},
+    "Athlete": {
+        "abilityScore": {
             "choose": 1,
             "from": [
                 "dexterity",
@@ -8,8 +10,14 @@
             ]
         }
     },
-    "ELEMENTAL ADEPT":{
-        "damageType": {
+    "Charger": {},
+    "Crossbow Expert": {},
+    "Defensive Duelist": {},
+    "Dual Wielder": {},
+    "Dungeon Delver": {},
+    "Durable": {},
+    "Elemental Adept": {
+        "element": {
             "choose": 1,
             "from": [
                 "acid",
@@ -20,8 +28,15 @@
             ]
         }
     },
-    "LIGHTLY ARMORED":{
-        "abilityScoreImprovement": {
+    "Grappler": {},
+    "Great Weapon Master": {},
+    "Healer": {},
+    "Heavily Armored": {},
+    "Heavy Armor Master": {},
+    "Inspiring Leader": {},
+    "Keen Mind": {},
+    "Lightly Armored": {
+        "abilityScore": {
             "choose": 1,
             "from": [
                 "dexterity",
@@ -29,9 +44,9 @@
             ]
         }
     },
-    "LINGUIST":{
+    "Linguist": {
         "language": {
-            "choose": 1,
+            "choose": 3,
             "from": [
                 "Celestial",
                 "Common",
@@ -50,16 +65,64 @@
             ]
         }
     },
-    "MAGIC INITIATE": {},
-    "MARTIAL ADEPT": {
+    "Lucky": {},
+    "Mage Slayer": {},
+    "Magic Initiate": {
+        "and": [
+            {
+                "alias": "Magic Initiate",
+                "categories": {
+                    "spellClass": {
+                        "alias": "Spellcasting Class",
+                        "choose": 1,
+                        "from": [
+                            "Bard",
+                            "Cleric",
+                            "Druid",
+                            "Sorcerer",
+                            "Warlock",
+                            "Wizard"
+                        ],
+                        "required": true
+                    },
+                    "spells": [
+                        {
+                            "alias": "Magic Initiate Cantrips",
+                            "choose": 2,
+                            "method": "getSpellList",
+                            "needs": "spellClass",
+                            "args": [
+                                "0"
+                            ],
+                            "required": true
+                        },
+                        {
+                            "alias": "Magic Initiate Spell (Up to Level 1)",
+                            "choose": 1,
+                            "method": "getSpellList",
+                            "needs": "spellClass",
+                            "args": [
+                                "1"
+                            ],
+                            "required": true
+                        }
+                    ]
+                },
+                "required": true
+            }
+        ]
+    },
+    "Martial Adept": {
         "maneuvers": {
             "choose": 2,
             "method": "getAvailableManeuvers",
             "args": []
         }
     },
-    "MODERATELY ARMORED":{
-        "abilityScoreImprovement": {
+    "Medium Armor Master": {},
+    "Mobile": {},
+    "Moderately Armored": {
+        "abilityScore": {
             "choose": 1,
             "from": [
                 "dexterity",
@@ -67,8 +130,9 @@
             ]
         }
     },
-    "OBSERVANT":{
-        "abilityScoreImprovement": {
+    "Mounted Combatant": {},
+    "Observant": {
+        "abilityScore": {
             "choose": 1,
             "from": [
                 "intelligence",
@@ -76,8 +140,9 @@
             ]
         }
     },
-    "RESILIENT":{
-        "abilityScoreImprovement": {
+    "Polearm Master": {},
+    "Resilient": {
+        "abilityScore": {
             "choose": 1,
             "from": [
                 "strength",
@@ -89,14 +154,82 @@
             ]
         }
     },
-    "RITUAL CASTER": {},
-    "SKILLED": {
-        "skillProficiencies": {},
-        "toolProficiencies": {}
+    "Ritual Caster": {
+        "and": [
+            {
+                "alias": "Ritual Caster",
+                "categories": {
+                    "spellClass": {
+                        "alias": "Spellcasting Class",
+                        "choose": 1,
+                        "from": [
+                            "Bard",
+                            "Cleric",
+                            "Druid",
+                            "Sorcerer",
+                            "Warlock",
+                            "Wizard"
+                        ],
+                        "required": true
+                    },
+                    "spells": [
+                        {
+                            "alias": "Ritual Caster Spells (Up to Level 1)",
+                            "choose": 2,
+                            "method": "getRitualSpellList",
+                            "needs": "spellClass",
+                            "args": [
+                                "1"
+                            ],
+                            "required": true
+                        }
+                    ]
+                },
+                "required": true
+            }
+        ]
     },
-    "SPELL SNIPER": {},
-    "TAVERN BRAWLER":{
-        "abilityScoreImprovement": {
+    "Savage Attacker": {},
+    "Sentinel": {},
+    "Sharpshooter": {},
+    "Shield Master": {},
+    "Skilled": {},
+    "Skulker": {},
+    "Spell Sniper": {
+        "and": [
+            {
+                "alias": "Spell Sniper",
+                "categories": {
+                    "spellClass": {
+                        "alias": "Spellcasting Class",
+                        "choose": 1,
+                        "from": [
+                            "Druid",
+                            "Sorcerer",
+                            "Warlock",
+                            "Wizard"
+                        ],
+                        "required": true
+                    },
+                    "spells": [
+                        {
+                            "alias": "Spell Sniper Cantrip",
+                            "choose": 1,
+                            "method": "getAttackSpellList",
+                            "needs": "spellClass",
+                            "args": [
+                                "0"
+                            ],
+                            "required": true
+                        }
+                    ]
+                },
+                "required": true
+            }
+        ]
+    },
+    "Tavern Brawler": {
+        "abilityScore": {
             "choose": 1,
             "from": [
                 "strength",
@@ -104,8 +237,10 @@
             ]
         }
     },
-    "WEAPON MASTER":{
-        "abilityScoreImprovement": {
+    "Tough": {},
+    "War Caster": {},
+    "Weapon Master": {
+        "abilityScore": {
             "choose": 1,
             "from": [
                 "dexterity",
@@ -117,6 +252,5 @@
             "method": "getWeapons",
             "args": []
         }
-    },
-    "": {}
+    }
 }

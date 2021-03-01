@@ -57,6 +57,6 @@ export class RangerSubclass extends Subclass {
 }
 
 export interface RangerSubclassParams {
-  feature?: string,
-  beastCompanion?: string
+  feature?: string;
+  beastCompanion?: string;
 }

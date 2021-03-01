@@ -1,8 +1,8 @@
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { Feat } from "./Feat";
+import { Feat, FeatParams } from "./Feat";
 
 export class Actor extends Feat {
-    constructor() {
+    constructor(_featParams: FeatParams) {
       super("Actor");
     }
     

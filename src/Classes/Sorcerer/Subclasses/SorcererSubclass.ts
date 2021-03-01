@@ -6,7 +6,7 @@ import { StormSorcery } from "./StormSorcery/StormSorcery";
 import { Shadow } from "./Shadow/Shadow";
 import { DivineSoul } from "./DivineSoul/DivineSoul";
 import { LevelingParams } from "Classes/PlayerClass";
-import { PlayerCharacter } from "index";
+import { PlayerCharacter } from "../../../Base/PlayerCharacter";
 
 export class SorcererSubclass extends Subclass {
   constructor(subclassSelection: SubclassParams){

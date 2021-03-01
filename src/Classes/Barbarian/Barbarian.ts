@@ -204,16 +204,10 @@ export class Barbarian extends PlayerClass {
     this.pushBarbarianFeatures(pc, 20);
     this.subclassDriver(pc,"20",params);
     pc.pcHelper.changeAbilityScoreMaxes(["strength", "constitution"], 24);
-    pc.pcHelper.improveAbilityScores([
-      {
-        ability: "strength",
-        improvement: 4,
-      },
-      {
-        ability: "constitution",
-        improvement: 4,
-      },
-    ]);
+    pc.pcHelper.improveAbilityScores({
+      abilities: ["strength", "constitution"],
+      value: "4",
+    });
     pc.pcHelper.findResourceTraitByName("Rage").resourceMax.value = Infinity;
   }
 }

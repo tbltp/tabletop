@@ -10,7 +10,7 @@ import * as Armor from "../../Assets/Armor.json";
 import * as Weapons from "../../Assets/Weapons.json";
 import { Inventory } from "../Base/Inventory";
 import { Subclass, SubclassParams } from "./Subclass";
-import { Feat } from "../Feats/Feat";
+import { Feat, FeatParams } from "../Feats/Feat";
 
 export abstract class PlayerClass {
   constructor(
@@ -312,9 +312,9 @@ export interface ClassCreationParams {
 export interface LevelingParams {
   isNoInput: boolean;
   abilityScoreImprovement?: {
-    ability: string;
-    improvement: number;
-  }[];
+    abilities: string[];
+    value: string;
+  };
   spellSelections?: {
     add: string[];
     remove?: string;
@@ -323,7 +323,7 @@ export interface LevelingParams {
   toolProficiency?: string;
   fightingStyles?: string[];
   subclassParams?: SubclassParams;
-  featChoice?: Feat;
+  featParams?: FeatParams;
 }
 
 
