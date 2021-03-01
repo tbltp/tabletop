@@ -4,6 +4,7 @@ import { PlayerCharacter } from "./PlayerCharacter";
 import { Background } from "../Backgrounds/Background";
 import { Feat } from "../Feats/Feat";
 import { SpellSlotFactory } from "../Classes/SpellSlotFactory";
+import { featDict } from "../Utilities/ConstructorDefinitions";
 
 
 class SheetClasses {
@@ -34,20 +35,16 @@ export class CharacterSheet {
   race: Race;
   playerClasses: SheetClasses = {};
   levels: { [key: string]: PlayerClass["level"] } = {};
-  asiLevels: number[] = [4, 8, 12, 16, 19];
   feats: Feat[] = [];
   background: Background;
 
   //exposed responsibilities: level up, add/remove stuff to inventory, serialize to JSON, deserialize to JSON
-
-
 
     
   //this is dumb but it's ok
   multiClass(newClass: PlayerClass): void {
     this.playerClasses[newClass.name] = newClass;
     this.levels[newClass.name] = newClass["level"];
-    this.character.level.totalLevel++;
     newClass.apply(this.character);
 
   }
@@ -80,15 +77,15 @@ export class CharacterSheet {
     );
 
     //get feat or ability score improvement according to class level
-    if(this.asiLevels.includes(cLevel)) {
-      if(params.featChoice) {
-        this.feats.push(params.featChoice);
-        params.featChoice.apply(this.character);
-      } else {
-        this.character.pcHelper.improveAbilityScores(params.abilityScoreImprovement) ;
-      }
+    if(params.featParams.name != "") {
+      const newFeat: Feat = new featDict[params.featParams.name](params.featParams);    
+      this.feats.push(newFeat);
+      newFeat.apply(this.character);
+    } 
+    if(params.abilityScoreImprovement.abilities.length > 0) {
+      this.character.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     }
-
+    
     //apply spell slots based on selected classes
     this.applySpellSlotsAtLevelUp();
   }
@@ -100,7 +97,7 @@ export class CharacterSheet {
       const playerClass = Object.keys(this.levels)[0];
 
       // Are they in a Spellcasting Subclass (i.e. Arcane Trickster / Eldritch Knight)? Run Tertiary.
-      if(this.playerClasses[playerClass].subclass && SpellSlotFactory.spellcastingSubclasses[this.playerClasses[playerClass].subclass.title]) { 
+      if(this.playerClasses[playerClass].subclass && SpellSlotFactory.spellcastingSubclasses[this.playerClasses[playerClass].subclass.name]) { 
         SpellSlotFactory.applyClassSpellSlotsAtLevel(this.character, "TERTIARY", this.character.level.totalLevel);
       }  
       
@@ -118,7 +115,7 @@ export class CharacterSheet {
         if(SpellSlotFactory.spellcastingClassRanks[playerClass]=="NONE"){}
         else if(SpellSlotFactory.spellcastingClassRanks[playerClass] == "PRIMARY"){ multiclassSpellcasterLevel += this.levels[playerClass].value }
         else if(SpellSlotFactory.spellcastingClassRanks[playerClass] == "SECONDARY"){ multiclassSpellcasterLevel += this.levels[playerClass].value / 2 }  
-        else if(SpellSlotFactory.spellcastingSubclasses[this.playerClasses[playerClass].subclass.title]) { multiclassSpellcasterLevel += this.levels[playerClass].value / 3 }  
+        else if(SpellSlotFactory.spellcastingSubclasses[this.playerClasses[playerClass].subclass.name]) { multiclassSpellcasterLevel += this.levels[playerClass].value / 3 }  
       }
 
       SpellSlotFactory.applyClassSpellSlotsAtLevel(this.character, "PRIMARY", Math.floor(multiclassSpellcasterLevel))

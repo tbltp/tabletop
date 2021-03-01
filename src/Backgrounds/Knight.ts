@@ -1,8 +1,9 @@
 import { Noble } from "./Noble";
+import { BackgroundParams } from './Background';
 
 export class Knight extends Noble {
-    constructor(gamingSet: string, language: string) {
-      super(gamingSet, language);
+    constructor(params: BackgroundParams) {
+      super(params);
       this.name = "Knight";
       this.features = [
         {

@@ -1,11 +1,11 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { ResourceTrait, Trait, ScalingTrait } from "../../Base/Interfaces";
 import * as BarbarianClassTraits from "./Barbarian.json"
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { BarbarianSubclass } from "./Subclasses/BarbarianSubclass";
 
 export class Barbarian extends PlayerClass {
-  constructor(multiclass: boolean, skillProficiencies?: string[], weapons?: string[]) {
+  constructor(params: ClassCreationParams) {
     super(
       "Barbarian",
       [],
@@ -17,13 +17,12 @@ export class Barbarian extends PlayerClass {
       [],
       [],
       [],
-      { isNoInput: true },
       "d12",
       12,
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons);
+    this.characterStart(params.multiclass, params.skillProficiencies, params.weapons);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -84,7 +83,7 @@ export class Barbarian extends PlayerClass {
     pc.pcHelper.addResourceTraits(rage);
     pc.pcHelper.addScalingTraits(rageDamage);
 
-    if(PlayerClass.multiClassCheck(pc, "Unarmored Defense")){
+    if(!PlayerClass.multiClassCheck(pc, "Unarmored Defense")){
       pc.armorClasses.push({
         name: "Unarmored Defense",
         base: 10,
@@ -104,7 +103,7 @@ export class Barbarian extends PlayerClass {
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     
-    this.subclass = new BarbarianSubclass(params.subclassSelection);
+    this.subclass = new BarbarianSubclass(params.subclassParams);
     
     this.subclassDriver(pc, "3", params);
     pc.pcHelper.findResourceTraitByName("Rage").resourceMax.value++;
@@ -205,22 +204,16 @@ export class Barbarian extends PlayerClass {
     this.pushBarbarianFeatures(pc, 20);
     this.subclassDriver(pc,"20",params);
     pc.pcHelper.changeAbilityScoreMaxes(["strength", "constitution"], 24);
-    pc.pcHelper.improveAbilityScores([
-      {
-        ability: "strength",
-        improvement: 4,
-      },
-      {
-        ability: "constitution",
-        improvement: 4,
-      },
-    ]);
+    pc.pcHelper.improveAbilityScores({
+      abilities: ["strength", "constitution"],
+      value: "4",
+    });
     pc.pcHelper.findResourceTraitByName("Rage").resourceMax.value = Infinity;
   }
 }
 
 export class DSBarbarian extends Barbarian {
-  constructor(){
-    super(true);
+  constructor() {
+    super({ multiclass: true });
   }
 }

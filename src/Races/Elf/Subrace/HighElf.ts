@@ -1,4 +1,5 @@
 import { Elf } from "../Elf";
+import { RaceParams } from "../../Race";
 import { PlayerCharacter } from "../../../Base/PlayerCharacter";
 import * as traits from "../Elf.json";
 import * as languages from "../../../../Assets/Languages.json";
@@ -7,16 +8,16 @@ import { ISpell, Spell } from "../../../Base/Interfaces";
 
 
 export class HighElf extends Elf {
-    constructor(cantrip: string, language: string) {
+    constructor(params: RaceParams) {
       super("High Elf");
       this.traits.push(
         {
           title: "Cantrip",
-          description: `You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it - ${cantrip}`,
+          description: `You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it - ${params.cantrip}`,
         },
         {
           title: "Extra Language",
-          description: `You can speak, read, and write one extra language of your choice. - ${language}`,
+          description: `You can speak, read, and write one extra language of your choice. - ${params.language}`,
         }
       );
       this.weaponProficiencies.push(
@@ -25,8 +26,8 @@ export class HighElf extends Elf {
         "Shortbow",
         "Longbow"
       );
-      this.languages.push(languages[language]);
-      this.cantrip = cantrip;
+      this.languages.push(languages[params.language]);
+      this.cantrip = params.cantrip;
     }
   
     cantrip: string;

@@ -298,6 +298,7 @@
   "CLOTHES, VESTMENTS": {
     "name": "Clothes, vestments",
     "itemType": "",
+    "quantity": 1,
     "cost": "5 sp",
     "weight": "2 lb",
     "description": ""

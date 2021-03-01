@@ -1,9 +1,9 @@
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { Feat } from "./Feat";
+import { Feat, FeatParams } from "./Feat";
 
 export class MediumArmorMaster extends Feat {
 
-    constructor() {
+    constructor(_featParams: FeatParams) {
       super("Medium Armor Master");
     }
   

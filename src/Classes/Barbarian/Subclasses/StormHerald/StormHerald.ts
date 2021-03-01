@@ -1,4 +1,5 @@
 import { ScalingTrait } from "Base/Interfaces";
+import { BarbarianSubclassParams } from "../BarbarianSubclass";
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
 import { LevelingParams } from "../../../PlayerClass";
 import * as StormHeraldDict from "./StormHerald.json";
@@ -9,11 +10,12 @@ export class StormHerald {
       return StormHeraldDict["features"][level][featureName];
   }
 
-  static getAuraEffect(pc: PlayerCharacter,params: LevelingParams, level: string) {
-    pc.pcHelper.addFeatures(StormHerald.auraEffect[params.subclassSelection.options[0]][level])
+  static getAuraEffect(pc: PlayerCharacter, params: LevelingParams, level: string) {
+    pc.pcHelper.addFeatures(StormHerald.auraEffect[
+      (params.subclassParams as BarbarianSubclassParams).stormAura][level])
   }
 
-  static improveAura(pc: PlayerCharacter,params: LevelingParams, level: string) {
+  static improveAura(pc: PlayerCharacter, params: LevelingParams, level: string) {
     const auraScale: ScalingTrait = pc.pcHelper.findScalingTraitByName("Storm Aura");
     if(auraScale.bonus) {
       auraScale.bonus++;
@@ -30,11 +32,11 @@ export class StormHerald {
       title: "Storm Aura",
       description: ""
     }
-    if(params.subclassSelection.options[0] == "DESERT") {
+    if( (params.subclassParams as BarbarianSubclassParams).stormAura == "DESERT") {
       auraScale.description = "How much damage your Desert Aura does.",
       auraScale.bonus = 2;
     }
-    else if(params.subclassSelection.options[0] == "SEA") {
+    else if((params.subclassParams as BarbarianSubclassParams).stormAura == "SEA") {
       auraScale.description = "How much damage your Sea Aura does.",
       auraScale.dice = "1d6";
     }

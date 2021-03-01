@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams  } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import {
   AttachedFeature,
@@ -14,14 +14,7 @@ import * as Invocations from "./EldritchInvocations.json";
 import { WarlockSubclass } from "./Subclasses/WarlockSubclass";
 
 export class Warlock extends PlayerClass {
-  constructor(
-    multiclass: boolean,
-    params: WarlockLevelingParams,
-    skillProficiencies?: string[],
-    weapons?: string[],
-    equipmentPack?: string,
-    arcaneFocus?: string
-  ) {
+  constructor(params: ClassCreationParams) {
     super(
       "Warlock",
       [],
@@ -33,18 +26,17 @@ export class Warlock extends PlayerClass {
       [],
       [],
       [],
-      params,
       "d8",
       8,
       []
     );
 
     this.characterStart(
-      multiclass,
-      skillProficiencies,
-      weapons,
-      equipmentPack,
-      arcaneFocus
+      params.multiclass,
+      params.skillProficiencies,
+      params.weapons,
+      params.equipmentPack,
+      params.arcaneFocus
     );
 
     for (let level in this.abilitiesAtLevels) {
@@ -149,7 +141,7 @@ export class Warlock extends PlayerClass {
       level: 1,
     };
     pc.pcHelper.addResourceTraits(pactMagic);
-    this.subclass = new WarlockSubclass(params.subclassSelection);
+    this.subclass = new WarlockSubclass(params.subclassParams);
     this.subclassDriver(pc, "1", params);
 
     this.addSpellcasting(pc, "WARLOCK");
@@ -355,7 +347,7 @@ export class Warlock extends PlayerClass {
 
 export class DSWarlock extends Warlock {
   constructor() {
-    super(true, { isNoInput: true });
+    super({ multiclass: true });
   }
 }
 

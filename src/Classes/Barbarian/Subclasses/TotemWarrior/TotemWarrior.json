@@ -8,29 +8,29 @@
         "description": "Yours is a path that seeks attunement with the natural world. giving you a kinship with beasts. At 3rd level when you adopt this path, you gain the ability to cast the beast sense and speak with animals spells. but only as rituals, as described in chapter 10."
       }, 
       "BEAR": {
-        "title": "Bear (Lvl 3)", 
+        "title": "Totem Spirit: Bear (Lvl 3)", 
         "description": "While raging. you have resistance to all damage except psychic damage. The spirit of the bear makes you tough enough to stand up to any punishment."
       }, 
       "EAGLE": {
-        "title": "Eagle (Lvl 3)", 
+        "title": "Totem Spirit: Eagle (Lvl 3)", 
         "description": "While you're raging and aren't wearing heavy armor, other creatures have disadvantage on Opportunity attack rolls against you, and you can use the Dash action as a bonus action on your turn. The spirit of the eagle makes you into a predator who can weave through the fray with ease."
       }, 
       "WOLF": {
-        "title": "Wolf (Lvl 3)", 
+        "title": "Totem Spirit: Wolf (Lvl 3)", 
         "description": " While you're raging, your friends have advantage on melee attack rolls against any creature within 5 feet of you that ts hostile to you. The spirit of the wolf makes you a leader of hunters."
       }
     }, 
     "6": {
       "BEAR": {
-        "title": "Bear (Lvl 6)", 
+        "title": "Totem Spirit: Bear (Lvl 6)", 
         "description": "You gain the might of a bear. Your carrying capacity (including maximum load and maximum lift) is doubled, and you have advantage on Strength checks made to push, pull, lift. or break objects."
       }, 
       "EAGLE": {
-        "title": "Eagle (Lvl 6)", 
+        "title": "Totem Spirit: Eagle (Lvl 6)", 
         "description": "You gain the eyesight of an eagle. You can see up to 1 mile away with no difficulty, able to discern even fine details as though looking at something no more than 100 feet away from you. Additionally, dim light doesn't impose disadvantage on your Wisdom (Perception) checks."
       }, 
       "WOLF": {
-        "title": "Wolf (Lvl 6)", 
+        "title": "Totem Spirit: Wolf (Lvl 6)", 
         "description": "You gain the hunting sensibilities of a wolf. You can track other creatures while traveling at a fast pace, and you can move stealthily while traveling at a normal pace (see chapter & for rules on travel pace)."
       }
     }, 
@@ -42,15 +42,15 @@
     }, 
     "14": {
       "BEAR": {
-        "title": "Bear (Lvl 14)", 
+        "title": "Totem Spirit: Bear (Lvl 14)", 
         "description": "While you're raging, any creature within 5 feet of you that's hostile to you has disadvantage on attack rolls against targets other than you or another character witb this feature. An enemy is immune to this effect if it cant see or hear you or if it can't be frightened."
       }, 
       "EAGLE": {
-        "title": "Eagle (Lvl 14)", 
+        "title": "Totem Spirit: Eagle (Lvl 14)", 
         "description": "While raging, you have a flying speed equal to your current walking speed. This benefit works only in short bursts; you fall if you end your turn in the air and nothing else is holding you aloft."
       }, 
       "WOLF": {
-        "title": "Wolf (Lvl 14)", 
+        "title": "Totem Spirit: Wolf (Lvl 14)", 
         "description": "While you're raging, you can use a bonus action on your turn to knock a large or smaller creature prone when you hit it with melee weapon attack."
       }
     }

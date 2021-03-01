@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ResourceTrait } from "../../Base/Interfaces";
 import * as Languages from "../../../Assets/Languages.json";
@@ -6,14 +6,7 @@ import * as MonkClassTraits from "./Monk.json";
 import { MonkSubclass } from "./Subclasses/MonkSubclass";
 
 export class Monk extends PlayerClass {
-  constructor(
-    multiclass: boolean,
-    levelingParams: LevelingParams,
-    skillProficiencies?: string[],
-    weapons?: string[],
-    toolKitProficiency?: string[],
-    equipmentPack?: string
-  ) {
+  constructor(params: ClassCreationParams) {
     super(
       "Monk",
       [],
@@ -25,13 +18,12 @@ export class Monk extends PlayerClass {
       [],
       [],
       [],
-      levelingParams,
       "d8",
       8,
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons, toolKitProficiency, equipmentPack);
+    this.characterStart(params.multiclass, params.skillProficiencies, params.weapons, params.toolProficiencies, params.equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -39,11 +31,11 @@ export class Monk extends PlayerClass {
     }
   }
 
-  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], toolKitProficiency: string[], equipmentPack: string){
+  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], toolProficiencies: string[], equipmentPack: string){
     if(!multiclass){
       this.skillProficiencies = skillProficiencies;
       this.weapons.push(...weapons, "DART", "DART", "DART", "DART", "DART", "DART", "DART", "DART", "DART", "DART");
-      this.toolProficiencies = toolKitProficiency;
+      this.toolProficiencies = toolProficiencies;
       this.equipmentPack = equipmentPack;
       this.savingThrowProficiencies = ["strength", "dexterity"];
     }
@@ -115,8 +107,8 @@ export class Monk extends PlayerClass {
     });
   }
 
-  level3(pc: PlayerCharacter, params: MonkLevelingParams): void {
-    this.subclass = new MonkSubclass(params.subclassSelection);
+  level3(pc: PlayerCharacter, params: LevelingParams): void {
+    this.subclass = new MonkSubclass(params.subclassParams);
     this.pushMonkFeatures(pc, 3);
     pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
 
@@ -128,7 +120,7 @@ export class Monk extends PlayerClass {
     pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
   }
 
-  level5(pc: PlayerCharacter, params: MonkLevelingParams): void {
+  level5(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 5);
     if(!pc.pcHelper.findResourceTraitByName("Extra Attack")){
       pc.pcHelper.addResourceTraits({
@@ -142,7 +134,7 @@ export class Monk extends PlayerClass {
     this.subclassDriver(pc, "5", params);
   }
 
-  level6(pc: PlayerCharacter, params: MonkLevelingParams): void {
+  level6(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 6);
     pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
     this.subclassDriver(pc, "6", params);    
@@ -158,7 +150,7 @@ export class Monk extends PlayerClass {
     pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
   }
 
-  level9(pc: PlayerCharacter, params: MonkLevelingParams): void {
+  level9(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 9);
     pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
     this.subclassDriver(pc, "9", params);
@@ -169,7 +161,7 @@ export class Monk extends PlayerClass {
     pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
   }
 
-  level11(pc: PlayerCharacter, params: MonkLevelingParams): void {
+  level11(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 11);
     pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
     pc.pcHelper.findScalingTraitByName("Martial Arts").dice = "1d8";
@@ -182,7 +174,7 @@ export class Monk extends PlayerClass {
     pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
   }
 
-  level13(pc: PlayerCharacter, params: MonkLevelingParams): void {
+  level13(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 13);
     pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
     this.subclassDriver(pc, "13", params);
@@ -211,7 +203,7 @@ export class Monk extends PlayerClass {
     pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
   }
 
-  level17(pc: PlayerCharacter, params: MonkLevelingParams): void {
+  level17(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.findResourceTraitByName("Ki Points").resourceMax.value++;
     this.subclassDriver(pc, "17", params);    
     pc.pcHelper.findScalingTraitByName("Martial Arts").dice = "1d10";
@@ -232,16 +224,9 @@ export class Monk extends PlayerClass {
   }
 }
 
-export interface MonkLevelingParams extends LevelingParams {
-  disciplines?: {
-    add: string[],
-    remove?: string
-  };
-}
-
 export class DSMonk extends Monk {
   constructor(){
-    super(true, {isNoInput: true});
+    super({ multiclass: true });
   }
 }
 

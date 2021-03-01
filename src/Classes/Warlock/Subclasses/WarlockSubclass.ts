@@ -1,10 +1,10 @@
-import { Subclass } from "../../Subclass";
+import { Subclass, SubclassParams } from "../../Subclass";
 import { Archfey } from "./Archfey/Archfey";
 import { Fiend } from "./Fiend/Fiend";
 import { GreatOldOne } from "./GreatOldOne/GreatOldOne";
 
 export class WarlockSubclass extends Subclass {
-  constructor(subclassSelection: {subclass: string, options?: string[]}){
+  constructor(subclassSelection: SubclassParams){
     super(subclassSelection);
   }
 

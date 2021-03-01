@@ -13,7 +13,7 @@ export class Artillerist {
   }
 
   static artillerist3(pc: PlayerCharacter, params: LevelingParams) {
-    pc.traits.toolProficiencies.add(params.subclassSelection.options[0]);
+    pc.traits.toolProficiencies.add(params.subclassParams.toolProficiencies[0]);
     pc.pcHelper.addFeatures(
       Artillerist.getFeature("3", "ELDRITCH CANNON"),
     );

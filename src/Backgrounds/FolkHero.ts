@@ -1,14 +1,14 @@
-import { Background } from "./Background";
+import { Background, BackgroundParams } from "./Background";
 
 export class FolkHero extends Background {
-    constructor(artisansToolProficiency: string, artisansTool: string) {
+    constructor(params: BackgroundParams) {
       super(
         "Folk Hero",
         ["animal handling", "survival"],
         [],
-        ["Vehicles, land", artisansToolProficiency],
+        ["Vehicles, land", ...params.toolProficiencies],
         [],
-        [artisansTool],
+        [params.toolKit],
         10,
         [
           {

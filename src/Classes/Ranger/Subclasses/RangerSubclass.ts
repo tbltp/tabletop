@@ -1,4 +1,4 @@
-import { Subclass } from "../../Subclass";
+import { Subclass, SubclassParams } from "../../Subclass";
 import { BeastMaster } from "./BeastMaster/BeastMaster";
 import { Hunter } from "./Hunter/Hunter";
 import { MonsterSlayer } from "./MonsterSlayer/MonsterSlayer";
@@ -7,7 +7,7 @@ import { GloomStalker } from "./GloomStalker/GloomStalker";
 
 export class RangerSubclass extends Subclass {
 
-  constructor(subclassSelection: {subclass: string, options?: string[]}){
+  constructor(subclassSelection: SubclassParams){
     super(subclassSelection);
   }
 
@@ -54,4 +54,9 @@ export class RangerSubclass extends Subclass {
       "17": MonsterSlayer.monsterSlayer17
     }
   }
+}
+
+export interface RangerSubclassParams {
+  feature?: string;
+  beastCompanion?: string;
 }

@@ -1,9 +1,9 @@
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { Feat } from "./Feat";
+import { Feat, FeatParams } from "./Feat";
 
 export class Skilled extends Feat {
-    constructor(skills: string[], tools: string[]) {
-      super("Skilled","","",[],[],skills,tools);
+    constructor(featParams: FeatParams) {
+      super("Skilled","","",[],[],featParams.skills, featParams.tools);
     }
   
     apply(pc: PlayerCharacter) {
