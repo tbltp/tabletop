@@ -324,7 +324,7 @@ export class CLISheetDriver {
             const choiceDict = {};
             Object.entries(category["categories"]).map(
               ([c, o]: [string, ChoiceSpec]) => {
-                choiceDict[o.alias] = c;
+                o.alias ? choiceDict[o.alias] = c : choiceDict[o[0].alias] = c;
               }
             );
             const choices = Object.keys(choiceDict);
@@ -557,4 +557,4 @@ function testClass() {
 
 //CLISheetDriver.createCharacter()
 
-testASI();
+testClass();

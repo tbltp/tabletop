@@ -1239,16 +1239,44 @@
                         }
                     },
                     "required": true
-                }
-            ],
-            "armor": [
+                }, 
                 {
-                    "alias": "Armor",
+                    "alias": "Armor choices",
                     "choose": 1,
-                    "from": [
-                        "CHAIN MAIL",
-                        "LEATHER"
-                    ],
+                    "categories": {
+                        "armor": {
+                            "alias": "Chain Mail",
+                            "choose": 1,
+                            "from": [
+                                "CHAIN MAIL"
+                            ],
+                            "required": true
+                        },
+                        "and": [
+                            {
+                                "alias": "Leather Armor and Longbow",
+                                "categories": {
+                                    "armor": {
+                                        "alias": "Leather Armor",
+                                        "choose": 1,
+                                        "from": [
+                                            "LEATHER"
+                                        ],
+                                        "required": true
+                                    },
+                                    "weapons": {
+                                        "alias": "Longbow",
+                                        "choose": 1,
+                                        "from": [
+                                            "LONGBOW"
+                                        ],
+                                        "required": true
+                                    }
+                                },
+                                "required": true
+                            }
+                        ]  
+                    },
                     "required": true
                 }
             ],
