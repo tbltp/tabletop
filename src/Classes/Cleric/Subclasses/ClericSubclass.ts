@@ -1,5 +1,5 @@
 
-import { Subclass } from "../../Subclass";
+import { Subclass, SubclassParams } from "../../Subclass";
 import { ForgeDomain } from "./Forge/ForgeDomain";
 import { KnowledgeDomain } from "./Knowledge/KnowledgeDomain";
 import { LifeDomain } from "./Life/LifeDomain";
@@ -13,7 +13,7 @@ import { PeaceDomain } from "./Peace/PeaceDomain";
 
 export class ClericSubclass extends Subclass {
 
-  constructor(subclassSelection: {subclass: string, options?: string[]}){
+  constructor(subclassSelection: SubclassParams){
     super(subclassSelection);
   }
 

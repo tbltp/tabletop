@@ -1,9 +1,9 @@
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { Feat } from "./Feat";
+import { Feat, FeatParams } from "./Feat";
 
 export class ModeratelyArmored extends Feat {
-    constructor(abilityScore: string) {
-      super("Moderately Armored", abilityScore);
+    constructor(featParams: FeatParams) {
+      super("Moderately Armored", featParams.abilityScore);
     }
   
   

@@ -2,12 +2,12 @@ import { ResourceTrait, Trait } from "../Base/Interfaces";
 import { PlayerCharacter } from "../Base/PlayerCharacter";
 import * as Maneuvers from "../Classes/Fighter/Subclasses/BattleMaster/Maneuvers.json";
 
-import { Feat } from "./Feat";
+import { Feat, FeatParams } from "./Feat";
 
 export class MartialAdept extends Feat {
   
-    constructor(maneuvers: string[]) {
-      super("Martial Adept","","",[], [],[],[],[],"",maneuvers);
+    constructor(featParams: FeatParams) {
+      super("Martial Adept","","",[], [],[],[],[],"",featParams.maneuvers);
     }
   
     apply(pc: PlayerCharacter) {

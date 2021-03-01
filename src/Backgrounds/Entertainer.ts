@@ -1,14 +1,14 @@
-import { Background } from "./Background";
+import { Background, BackgroundParams } from "./Background";
 
 export class Entertainer extends Background {
-    constructor(musicalInstrumentProficiency: string, musicalInstrument: string) {
+    constructor(params: BackgroundParams) {
       super(
         "Entertainer",
         ["acrobatics", "performance"],
         [],
-        ["Disguise Kit", musicalInstrumentProficiency],
+        ["Disguise Kit", ...params.toolProficiencies],
         ["CLOTHES, COSTUME"],
-        [musicalInstrument],
+        [params.instrument],
         15,
         [
           {

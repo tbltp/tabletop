@@ -1,8 +1,8 @@
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { Feat } from "./Feat";
+import { Feat, FeatParams } from "./Feat";
 
 export class InspiringLeader extends Feat {
-    constructor() {
+    constructor(_featParams: FeatParams) {
       super("Inspiring leader");
     }
     

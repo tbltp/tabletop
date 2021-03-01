@@ -16,7 +16,7 @@ export class PeaceDomain {
 
   static peace1(pc: PlayerCharacter, params: LevelingParams) {
     PeaceDomain.getSpells(pc,"1");
-    pc.skills[params.proficiencySelection[0]].proficient = true;
+    pc.skills[params.subclassParams.skillProficiencies[0]].proficient = true;
     pc.pcHelper.addFeatures(
       PeaceDomain.getFeature("1", "IMPLEMENT OF PEACE"),
       PeaceDomain.getFeature("1", "EMBOLDENING BOND")
@@ -37,7 +37,7 @@ export class PeaceDomain {
       title: "Balm of Peace",
       description: "Restored hit points with Balm of Peace",
       dice: "2d6",
-      bonus: pc.abilityScores.wisdom.modifier.value
+      bonus: (pc.abilityScores.wisdom.modifier.value>=1) ? pc.abilityScores.wisdom.modifier.value : 1
     }
     pc.pcHelper.addScalingTraits(peace);
   }

@@ -13,8 +13,8 @@ export class CollegeOfSwords {
     pc.traits.armorProficiencies.add("Medium");
     pc.traits.weaponProficiencies.add("Scimitar");
     pc.pcHelper.addFeatures(CollegeOfSwords.getFeature("3", "FIGHTING STYLE"));
-    if(params.fightingStyle) {
-      PlayerClass.addFightingStyle(pc,params.fightingStyle[0]);
+    if(params.fightingStyles) {
+      PlayerClass.addFightingStyle(pc,params.fightingStyles[0]);
     }
     pc.pcHelper.addFeatures(CollegeOfSwords.getFeature("3", "BLADE FLOURISH"));
   }

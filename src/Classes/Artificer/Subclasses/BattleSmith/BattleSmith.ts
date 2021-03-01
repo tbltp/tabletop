@@ -13,7 +13,7 @@ export class BattleSmith {
   }
 
   static battleSmith3(pc: PlayerCharacter, params: LevelingParams) {
-    pc.traits.toolProficiencies.add(params.subclassSelection.options[0]);
+    pc.traits.toolProficiencies.add(params.subclassParams.toolProficiencies[0]);
     pc.pcHelper.addFeatures(
         BattleSmith.getFeature("3", "BATTLE READY"),
         BattleSmith.getFeature("3", "STEEL DEFENDER"),
