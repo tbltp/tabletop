@@ -1,13 +1,13 @@
-import { Background } from "./Background";
+import { Background, BackgroundParams } from "./Background";
 
 export class Acolyte extends Background {
-    constructor(languages: string[], holySymbol: string) {
+    constructor(params: BackgroundParams) {
       super(
         "Acolyte",
         ["insight", "religion"],
-        languages,
+        params.languages,
         [],
-        ["CLOTHES, COMMON", holySymbol],
+        ["CLOTHES, COMMON", params.holySymbol],
         [],
         15,
         [

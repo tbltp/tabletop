@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import { Subclass } from "../../Subclass";
+=======
+
+import { Subclass, SubclassParams } from "../../Subclass";
+>>>>>>> c3f37828bcbc2fa6ac50641597d04e351248e151
 import { Abjuration } from "./Abjuration/Abjuration";
 import { Conjuration } from "./Conjuration/Conjuration";
 import { Divination } from "./Divination/Divination";
@@ -11,7 +16,7 @@ import { War } from "./War/War";
 
 export class WizardSubclass extends Subclass {
 
-    constructor(subclassSelection: {subclass: string, options?: string[]}){
+    constructor(subclassSelection: SubclassParams){
         super(subclassSelection);
     }
     

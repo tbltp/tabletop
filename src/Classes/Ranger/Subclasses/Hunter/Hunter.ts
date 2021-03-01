@@ -1,5 +1,6 @@
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
 import { LevelingParams } from "../../../../Classes/PlayerClass";
+import { RangerSubclassParams } from "../RangerSubclass";
 import * as HunterArchetypeDict from "./Hunter.json"
 
 
@@ -12,8 +13,7 @@ export class Hunter {
         pc.pcHelper.addFeatures(
             Hunter.getFeature(
             "3",
-            params.subclassSelection.options[0]
-          )
+            (params.subclassParams as RangerSubclassParams).feature)
         );
       }
     
@@ -21,8 +21,7 @@ export class Hunter {
         pc.pcHelper.addFeatures(
             Hunter.getFeature(
             "7",
-            params.subclassSelection.options[0]
-          )
+            (params.subclassParams as RangerSubclassParams).feature)
         );
       }
     
@@ -30,8 +29,7 @@ export class Hunter {
         pc.pcHelper.addFeatures(
             Hunter.getFeature(
             "11",
-            params.subclassSelection.options[0]
-          )
+            (params.subclassParams as RangerSubclassParams).feature)
         );
       }
     
@@ -39,8 +37,7 @@ export class Hunter {
         pc.pcHelper.addFeatures(
             Hunter.getFeature(
             "15",
-            params.subclassSelection.options[0]
-          )
+            (params.subclassParams as RangerSubclassParams).feature)
         );
       }
 }

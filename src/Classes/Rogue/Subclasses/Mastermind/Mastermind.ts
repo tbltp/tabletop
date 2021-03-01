@@ -1,6 +1,7 @@
 import * as Languages from "../../../../../Assets/Languages.json";
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
 import { LevelingParams } from "../../../../Classes/PlayerClass";
+import { RogueSubclassParams } from "../RogueSubclass";
 import * as MastermindArchetypeDict from "./Mastermind.json"
 
 export class Mastermind {
@@ -14,9 +15,8 @@ export class Mastermind {
     Mastermind.getFeature("3", "MASTER OF TACTICS"));
     pc.traits.toolProficiencies.add("Forgery Kit");
     pc.traits.toolProficiencies.add("Disguise Kit");
-    pc.traits.toolProficiencies.add(params.proficiencySelection[0]);
-    pc.traits.languages.push(Languages[params.subclassSelection.options[0]]);
-    pc.traits.languages.push(Languages[params.subclassSelection.options[1]]);
+    pc.traits.toolProficiencies.add((params.subclassParams as RogueSubclassParams).gamingSet[0]);
+    pc.traits.languages.push(...params.subclassParams.languages.map(l => Languages[l]));
   }
   
   static mastermind9(pc: PlayerCharacter, params: LevelingParams) {

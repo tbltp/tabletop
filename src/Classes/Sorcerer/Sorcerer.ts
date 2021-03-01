@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import * as SorcererClassTraits from "./Sorcerer.json";
@@ -7,14 +7,7 @@ import { SorcererSubclass } from "./Subclasses/SorcererSubclass";
 import { SpellSlotFactory } from "../SpellSlotFactory";
 
 export class Sorcerer extends PlayerClass {
-  constructor(
-    multiclass: boolean,
-    params: SorcererLevelingParams,
-    skillProficiencies?: string[],
-    weapons?: string[],
-    equipmentPack?: string,
-    arcaneFocus?: string
-  ) {
+  constructor(params: ClassCreationParams) {
     super(
       "Sorcerer",
       [],
@@ -26,13 +19,12 @@ export class Sorcerer extends PlayerClass {
       [],
       [],
       [],
-      params,
       "d6",
       6,
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons, equipmentPack, arcaneFocus);
+    this.characterStart(params.multiclass, params.skillProficiencies, params.weapons, params.equipmentPack, params.arcaneFocus);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -95,7 +87,7 @@ export class Sorcerer extends PlayerClass {
     // spell replacements can happen at any level
     this.handleSorcererSpellSelections(pc, params);
     this.addSpellcasting(pc, "SORCERER");
-    this.subclass = new SorcererSubclass(params.subclassSelection)
+    this.subclass = new SorcererSubclass(params.subclassParams)
     this.subclassDriver(pc, "1", params);
 
   }
@@ -228,7 +220,7 @@ export class Sorcerer extends PlayerClass {
 
 export class DSSorcerer extends Sorcerer {
   constructor(){
-    super(true, {isNoInput: true});
+    super({ multiclass: true });
   }
 }
 

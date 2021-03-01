@@ -1,10 +1,10 @@
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { Feat } from "./Feat";
+import { Feat, FeatParams } from "./Feat";
 
 
 export class Durable extends Feat {
-    constructor(abilityScore: string) {
-      super("Durable", abilityScore);
+    constructor(featParams: FeatParams) {
+      super("Durable", featParams.abilityScore);
     }
   
     apply(pc: PlayerCharacter) {

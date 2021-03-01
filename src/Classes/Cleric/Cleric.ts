@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ISpell, Spell, ResourceTrait, ScalingTrait } from "../../Base/Interfaces";
 import * as ClericClassTraits from "./Cleric.json";
@@ -9,15 +9,7 @@ import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import { SpellSlotFactory } from "../SpellSlotFactory";
 
 export class Cleric extends PlayerClass {
-  constructor(
-    multiclass: boolean,
-    clericParams: LevelingParams,
-    skillProficiencies?: string[],
-    weapons?: string[],
-    armor?: string[],
-    equipmentPack?: string,
-    holySymbol?: string
-  ) {
+  constructor(params: ClassCreationParams) {
     super(
       "Cleric",
       [],
@@ -29,13 +21,12 @@ export class Cleric extends PlayerClass {
       [],
       [],
       [],
-      clericParams,
       "d8",
       8,
       []
     );
     
-    this.characterStart(multiclass, skillProficiencies, weapons, armor, equipmentPack, holySymbol);
+    this.characterStart(params.multiclass, params.skillProficiencies, params.weapons, params.armor, params.equipmentPack, params.holySymbol);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -94,16 +85,17 @@ export class Cleric extends PlayerClass {
       [...SpellList["Cleric"][1]],
       SpellcastingAbility["CLERIC"]
     );
+    this.handleClericSpellSelections(pc, params);
     this.addSpellcasting(pc, "CLERIC");
 
     // divine domain
-    this.subclass = new ClericSubclass(params.subclassSelection);
+    this.subclass = new ClericSubclass(params.subclassParams);
     this.subclassDriver(pc, "1", params);
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
     // channel divinity multiclass check against paladin
-     if(!PlayerClass.multiClassCheck(pc, "Channel Divinity")){
+     if(PlayerClass.multiClassCheck(pc, "Channel Divinity")){
        const channelDivinity: ResourceTrait = {
          title: "Channel Divinity",
          description: "Number of times you can use a Channel Divinity ability.",
@@ -236,6 +228,6 @@ export class Cleric extends PlayerClass {
 
 export class DSCleric extends Cleric {
   constructor(){
-    super(true, {isNoInput: true});
+    super({multiclass: true});
   }
 }

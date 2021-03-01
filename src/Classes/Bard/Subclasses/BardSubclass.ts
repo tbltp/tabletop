@@ -1,4 +1,4 @@
-import { Subclass } from "../../Subclass";
+import { Subclass, SubclassParams } from "../../Subclass";
 import { CollegeOfGlamour } from "./Glamour/CollegeOfGlamour";
 import { CollegeOfLore } from "./Lore/CollegeOfLore";
 import { CollegeOfSwords } from "./Swords/CollegeOfSwords";
@@ -8,7 +8,7 @@ import { CollegeOfCreation } from "./Creation/CollegeOfCreation";
 
 export class BardSubclass extends Subclass {
 
-  constructor(subclassSelection: {subclass: string, options?: string[]}){
+  constructor(subclassSelection: SubclassParams){
     super(subclassSelection);
   }
 

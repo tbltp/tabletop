@@ -17,10 +17,9 @@ export class KnowledgeDomain {
     KnowledgeDomain.getSpells(pc,"1");
     // Languages
     pc.traits.languages.push(
-      Languages[params.subclassSelection.options[0]],
-      Languages[params.subclassSelection.options[1]]
-    ); // Languages, How do we pass this?
-    for (const skill of params.proficiencySelection) {
+      ...params.subclassParams.languages.map(l => Languages[l])
+    ); 
+    for (const skill of params.subclassParams.skillProficiencies) {
       // Skill Proficiencies / Expertise
       pc.skills[skill].proficient = true;
       pc.skills[skill].expertise = true;
@@ -28,7 +27,7 @@ export class KnowledgeDomain {
     pc.pcHelper.addFeatures({
       ...KnowledgeDomain.getFeature("1", "BLESSINGS OF KNOWLEDGE"),
       choices: [
-        ...params.subclassSelection.options,
+        ...params.subclassParams.skillProficiencies,
         ...params.proficiencySelection,
       ],
     });

@@ -1,12 +1,12 @@
-import { Background } from "./Background";
+import { Background, BackgroundParams } from "./Background";
 
 export class Outlander extends Background {
-    constructor(musicalInstrument: string, language: string) {
+    constructor(params: BackgroundParams) {
       super(
         "Outlander",
         ["athletics", "survival"],
-        [language],
-        [musicalInstrument],
+        [...params.languages],
+        [params.instrument],
         ["STAFF", "HUNTING TRAP", "CLOTHES, TRAVELER'S"],
         [],
         10,

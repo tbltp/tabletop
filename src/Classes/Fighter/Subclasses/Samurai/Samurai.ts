@@ -16,8 +16,9 @@ export class Samurai {
   }
   static samurai3(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Samurai.getFeature("3", "BONUS PROFICIENCY"));
-    pc.skills[params.proficiencySelection[0]].proficient = true;
-    pc.traits.languages.push(Languages[params.subclassSelection.options[0]]);
+    params.subclassParams.skillProficiencies.length > 0 ?
+    pc.skills[params.subclassParams.skillProficiencies[0]].proficient = true :
+    pc.traits.languages.push(Languages[params.subclassParams.languages[0]]);
     pc.pcHelper.addFeatures(Samurai.getFeature("3", "FIGHTING SPIRIT"));
     const fightingSpirit: ResourceTrait = {
       title: "Fighting Spirit",
@@ -35,7 +36,9 @@ export class Samurai {
 
   static samurai7(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Samurai.getFeature("7", "ELEGANT COURTIER"));
-    pc.abilityScores[params.proficiencySelection[0]].savingThrowProficiency = true;
+    if(params.subclassParams.savingThrows) {
+      pc.abilityScores[params.subclassParams.savingThrows[0]].savingThrowProficiency = true;
+    }
   }
 
   static samurai10(pc: PlayerCharacter, params: LevelingParams) {

@@ -1,4 +1,4 @@
-import { Subclass } from "../../Subclass";
+import { Subclass, SubclassParams } from "../../Subclass";
 import { ArcaneTrickster } from "./ArcaneTrickster/ArcaneTrickster";
 import { Assassin } from "./Assassin/Assassin";
 import { Thief } from "./Thief/Thief";
@@ -8,7 +8,7 @@ import { Scout } from "./Scout/Scout";
 
 export class RogueSubclass extends Subclass {
   
-  constructor(subclassSelection: {subclass: string, options?: string[]}){
+  constructor(subclassSelection: SubclassParams){
     super(subclassSelection);
   }
 
@@ -59,4 +59,8 @@ export class RogueSubclass extends Subclass {
       "20": ArcaneTrickster.arcaneTrickster20
     }
   }
+}
+
+export interface RogueSubclassParams extends SubclassParams {
+  gamingSet?: string;
 }

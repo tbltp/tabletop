@@ -1,9 +1,11 @@
 import { PlayerCharacter } from "../../../Base/PlayerCharacter";
 import { Human } from "../Human";
+import { RaceParams } from "../../Race";
+
 
 export class BaseHuman extends Human {
-    constructor(language: string) {
-      super("Human", language);
+    constructor(params: RaceParams) {
+      super("Human", params.language);
     }
   
     abilityIncrease(pc: PlayerCharacter): void {

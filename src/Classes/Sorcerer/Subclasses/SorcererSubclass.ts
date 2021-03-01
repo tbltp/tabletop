@@ -1,18 +1,18 @@
 
-import { Subclass } from "../../Subclass";
+import { Subclass, SubclassParams } from "../../Subclass";
 import { DraconicAncestry } from "./DraconicAncestry/DraconicAncestry";
 import { WildMagic } from "./WildMagic/WildMagic";
 import { StormSorcery } from "./StormSorcery/StormSorcery";
 import { Shadow } from "./Shadow/Shadow";
 import { DivineSoul } from "./DivineSoul/DivineSoul";
 import { LevelingParams } from "Classes/PlayerClass";
-import { PlayerCharacter } from "index";
+import { PlayerCharacter } from "../../../Base/PlayerCharacter";
 
 export class SorcererSubclass extends Subclass {
-  constructor(subclassSelection: {subclass: string, options?: string[]}){
+  constructor(subclassSelection: SubclassParams){
     super(subclassSelection);
 
-    subclassSelection.subclass === "DRACONIC ANCESTRY" ? this.persistentSelection = {choice: subclassSelection.options[0]} : null
+    subclassSelection.name === "DRACONIC ANCESTRY" ? this.persistentSelection = subclassSelection : null
   }
 
   subclassDictionary = {
@@ -76,9 +76,14 @@ export class SorcererSubclass extends Subclass {
   subclassDriver(pc: PlayerCharacter, level: string, subclass: string, params: LevelingParams){
     if(!this.subclassDictionary[subclass][level]){ return; }
     if(this.persistentSelection){
-      params.subclassSelection = {subclass: "DRACONIC ANCESTRY", options: [this.persistentSelection.choice]};
+      params.subclassParams = this.persistentSelection;
     }
     this.subclassDictionary[subclass][level](pc, params);
   }
 
+}
+
+export interface SorcererSubclassParams extends SubclassParams {
+  affinity?: string;
+  draconicAncestry?: string;
 }

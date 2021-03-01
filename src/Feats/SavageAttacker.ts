@@ -1,8 +1,7 @@
-import { Feat } from "./Feat";
+import { Feat, FeatParams } from "./Feat";
 
 export class SavageAttacker extends Feat {
-    constructor() {
+    constructor(_featParams: FeatParams) {
       super("Savage Attacker");
     }
-  
   }
