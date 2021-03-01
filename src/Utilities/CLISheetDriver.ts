@@ -535,7 +535,7 @@ function testManeuvers() {
   Jsonify.dumpToJSON(sheet, `Test`);
 }
 
-function testRanger() {
+function testClass() {
   const pc: PlayerCharacter = new PlayerCharacter(15, 15, 15, 15, 15, 15);
   const rc: Race = new raceDict["Wood Elf"]();
   const bg: Background = new bgDict["Soldier"]({
@@ -547,3 +547,7 @@ function testRanger() {
 
   Jsonify.dumpToJSON(sheet, `Test`);
 }
+
+//CLISheetDriver.createCharacter()
+
+testClass();

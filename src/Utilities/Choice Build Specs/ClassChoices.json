@@ -1012,29 +1012,45 @@
                 ],
                 "required": true
             },
-            "weapons": [
+            "or": [
                 {
-                    "alias": "Simple Weapon",
+                    "alias": "Druid Weapons and Armor",
                     "choose": 1,
-                    "from": [
-                        "SHIELD",
-                        "CROSSBOW, LIGHT",
-                        "CLUB",
-                        "DART",
-                        "DAGGER",
-                        "GREATCLUB",
-                        "HANDAXE",
-                        "JAVELIN",
-                        "LIGHT HAMMER",
-                        "MACE",
-                        "QUARTERSTAFF",
-                        "SHORTBOW",
-                        "SICKLE",
-                        "SLING",
-                        "SPEAR"
-                    ],
+                    "categories": {
+                        "weapons": {
+                            "alias": "Melee Weapons",
+                            "choose": 1,
+                            "from": [
+                                "CROSSBOW, LIGHT",
+                                "CLUB",
+                                "DART",
+                                "DAGGER",
+                                "GREATCLUB",
+                                "HANDAXE",
+                                "JAVELIN",
+                                "LIGHT HAMMER",
+                                "MACE",
+                                "QUARTERSTAFF",
+                                "SHORTBOW",
+                                "SICKLE",
+                                "SLING",
+                                "SPEAR"
+                            ],
+                            "required": true
+                        },
+                        "armor": {
+                            "alias": "Shield", 
+                            "choose": 1,
+                            "from": [
+                                "SHIELD"
+                            ],
+                            "required": true
+                        }
+                    },
                     "required": true
-                },
+                }
+            ],
+            "weapons": [
                 {                
                     "alias": "Melee Weapon",
                     "choose": 1,
@@ -1149,7 +1165,7 @@
             },
             "weapons": [
                 {
-                    "alias": "First Martial Weapon",
+                    "alias": "Primary Martial Weapon",
                     "choose": 1,
                     "from": [
                         "GREATAXE",
@@ -1174,38 +1190,54 @@
                     "required": true                    
                 },
                 {
-                    "alias": "Second Martial Weapon",
-                    "choose": 1,
-                    "from": [
-                        "SHIELD",
-                        "GREATAXE",
-                        "BATTLEAXE",
-                        "FLAIL",
-                        "GLAIVE",
-                        "GREATSWORD",
-                        "HALBERD",
-                        "LANCE",
-                        "LONGSWORD",
-                        "MAUL",
-                        "MORNINGSTAR",
-                        "PIKE",
-                        "RAPIER",
-                        "SCIMITAR",
-                        "SHORTSWORD",
-                        "TRIDENT",
-                        "WAR PICK",
-                        "WARHAMMER",
-                        "WHIP"
-                    ],
-                    "required": true
-                },
-                {
-                    "alias": "Third Weapon",
+                    "alias": "Stashed Weapon",
                     "choose": 1,
                     "from": [
                         "CROSSBOW, LIGHT",
                         "HANDAXE X2"
                     ],
+                    "required": true
+                }
+            ],
+            "or": [
+                {
+                    "alias": "Off-hand",
+                    "choose": 1,
+                    "categories": {
+                        "weapons": {
+                            "alias": "Additional Martial Weapon",
+                            "choose": 1,
+                            "from": [
+                                "GREATAXE",
+                                "BATTLEAXE",
+                                "FLAIL",
+                                "GLAIVE",
+                                "GREATSWORD",
+                                "HALBERD",
+                                "LANCE",
+                                "LONGSWORD",
+                                "MAUL",
+                                "MORNINGSTAR",
+                                "PIKE",
+                                "RAPIER",
+                                "SCIMITAR",
+                                "SHORTSWORD",
+                                "TRIDENT",
+                                "WAR PICK",
+                                "WARHAMMER",
+                                "WHIP"
+                            ],
+                            "required": true
+                        },
+                        "armor": {
+                            "alias": "Shield", 
+                            "choose": 1,
+                            "from": [
+                                "SHIELD"
+                            ],
+                            "required": true
+                        }
+                    },
                     "required": true
                 }
             ],
@@ -1403,32 +1435,6 @@
                     "required": true                    
                 },
                 {
-                    "alias": "Second Martial Weapon",
-                    "choose": 1,
-                    "from": [
-                        "SHIELD",
-                        "GREATAXE",
-                        "BATTLEAXE",
-                        "FLAIL",
-                        "GLAIVE",
-                        "GREATSWORD",
-                        "HALBERD",
-                        "LANCE",
-                        "LONGSWORD",
-                        "MAUL",
-                        "MORNINGSTAR",
-                        "PIKE",
-                        "RAPIER",
-                        "SCIMITAR",
-                        "SHORTSWORD",
-                        "TRIDENT",
-                        "WAR PICK",
-                        "WARHAMMER",
-                        "WHIP"
-                    ],
-                    "required": true
-                },
-                {
                     "alias": "Simple Weapon",
                     "choose": 1,
                     "from": [
@@ -1447,6 +1453,48 @@
                         "SLING",
                         "SPEAR"
                     ],
+                    "required": true
+                }
+            ],
+            "or": [
+                {
+                    "alias": "Off-hand",
+                    "choose": 1,
+                    "categories": {
+                        "weapons": {
+                            "alias": "Additional Martial Weapon",
+                            "choose": 1,
+                            "from": [
+                                "GREATAXE",
+                                "BATTLEAXE",
+                                "FLAIL",
+                                "GLAIVE",
+                                "GREATSWORD",
+                                "HALBERD",
+                                "LANCE",
+                                "LONGSWORD",
+                                "MAUL",
+                                "MORNINGSTAR",
+                                "PIKE",
+                                "RAPIER",
+                                "SCIMITAR",
+                                "SHORTSWORD",
+                                "TRIDENT",
+                                "WAR PICK",
+                                "WARHAMMER",
+                                "WHIP"
+                            ],
+                            "required": true
+                        },
+                        "armor": {
+                            "alias": "Shield", 
+                            "choose": 1,
+                            "from": [
+                                "SHIELD"
+                            ],
+                            "required": true
+                        }
+                    },
                     "required": true
                 }
             ],
