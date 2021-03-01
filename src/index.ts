@@ -55,6 +55,7 @@ export { Tiefling } from './Races/Tiefling/Tiefling';
 
 export { Jsonify } from './Utilities/Jsonify';
 export { Choices } from './Utilities/Choices';
+export { CLISheetDriver } from './Utilities/CLISheetDriver';
 
 export { Actor } from './Feats/Actor';
 export { Alert } from './Feats/Alert';
