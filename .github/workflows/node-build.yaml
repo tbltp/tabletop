@@ -1,6 +1,9 @@
 name: node-build
 
 on:
+  push:
+    branch:
+      master
   pull_request: 
     branch:
       master
