@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ResourceTrait, ScalingTrait } from "../../Base/Interfaces";
 import { BardSubclass } from "./Subclasses/BardSubclass";
@@ -7,33 +7,24 @@ import * as BardClassTraits from "./Bard.json";
 import { SpellSlotFactory } from "../SpellSlotFactory";
 
 export class Bard extends PlayerClass {
-  constructor(
-    multiclass: boolean,
-    skillProficiencies: string[],
-    instrumentProficiencies: string[],
-    bardParams: LevelingParams,
-    weapons?: string[],
-    instrument?: string,
-    equipmentPack?: string,
-  ) {
+  constructor(params: ClassCreationParams) {
     super(
       "Bard",
       [],
-      skillProficiencies,
+      params.skillProficiencies,
       [],
       ["Light"],
-      instrumentProficiencies,
+      params.toolProficiencies,
       [],
       [],
       [],
       [],
-      bardParams,
       "d8",
       8,
       []
     );
 
-    this.characterStart(multiclass, weapons, instrument, equipmentPack);
+    this.characterStart(params.multiclass, params.weapons, params.instrument, params.equipmentPack);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -129,7 +120,7 @@ export class Bard extends PlayerClass {
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     this.handleBardSpellSelections(pc, params);
     // college
-    this.subclass = new BardSubclass(params.subclassSelection);
+    this.subclass = new BardSubclass(params.subclassParams);
     this.subclassDriver(pc, "3", params);
     // expertise
     for (let skill of params.proficiencySelection) {
@@ -276,6 +267,6 @@ export interface BardLevelingParams extends LevelingParams {
 
 export class DSBard extends Bard {
   constructor(){
-    super(true, [], [], {isNoInput: true});
+    super({multiclass: true});
   }
 }

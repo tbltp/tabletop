@@ -1,9 +1,9 @@
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { Feat } from "./Feat";
+import { Feat, FeatParams } from "./Feat";
 
 export class Athlete extends Feat {
-  constructor(abilityScore: string) {
-    super("Athlete", abilityScore);
+  constructor(featParams: FeatParams) {
+    super("Athlete", featParams.abilityScore);
   }
 
   apply(pc: PlayerCharacter) {

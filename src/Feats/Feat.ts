@@ -70,3 +70,16 @@ export abstract class Feat {
     return !pc.pcHelper.isSpellcaster() ? false : true;
   }
 }
+
+export interface FeatParams {
+  name: string;
+  abilityScore?: string;
+  spellClass?: string;
+  spells?: string[];
+  languages?: string[];
+  skills?: string[];
+  tools?: string[];
+  weaponProficiencies?: string[];
+  element?: string;
+  maneuvers?: string[];
+}

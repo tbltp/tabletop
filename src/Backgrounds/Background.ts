@@ -62,3 +62,12 @@ export class DSBackground extends Background {
     super("", [], [], [], [], [], -1, []);
   }
 }
+
+export interface BackgroundParams {
+  languages?: string[];
+  holySymbol?: string;
+  gamingSet?: string;
+  toolProficiencies?: string[];
+  instrument?: string;
+  toolKit?: string;
+}

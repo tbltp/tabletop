@@ -1,5 +1,6 @@
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
 import { LevelingParams } from "../../../PlayerClass";
+import { BarbarianSubclassParams } from "../BarbarianSubclass";
 import * as TotemWarriorDict from "./TotemWarrior.json";
 
 export class TotemWarrior {
@@ -14,7 +15,7 @@ export class TotemWarrior {
           TotemWarrior.getFeature("3", "SPIRIT SEEKER"),
           TotemWarrior.getFeature(
             "3",
-            params.subclassSelection.options[0]
+            (params.subclassParams as BarbarianSubclassParams).totem
           )
         );
       }
@@ -23,8 +24,8 @@ export class TotemWarrior {
         pc.pcHelper.addFeatures(
           TotemWarrior.getFeature(
             "6",
-            params.subclassSelection.options[0]
-          )
+            (params.subclassParams as BarbarianSubclassParams).totem
+            )
         );
       }
     
@@ -39,8 +40,8 @@ export class TotemWarrior {
         pc.pcHelper.addFeatures(
           TotemWarrior.getFeature(
             "14",
-            params.subclassSelection.options[0]
-          )
+            (params.subclassParams as BarbarianSubclassParams).totem
+            )
         );
       }
 }

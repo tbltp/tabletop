@@ -50,6 +50,8 @@ export class PlayerCharacter extends BaseCharacter {
     }
   }[]
 
+  notes: Note[] = [];
+
   pcHelper: PlayerCharacterHelper = new PlayerCharacterHelper(this);
 }
 
@@ -77,4 +79,9 @@ export interface PCSpeed {
   name: string;
   base: { value: number };
   bonus: { value: number };
+}
+export interface Note {
+  title: string;
+  description: string;
+  date: string;
 }

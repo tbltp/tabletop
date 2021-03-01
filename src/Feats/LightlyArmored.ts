@@ -1,10 +1,10 @@
 import { Trait } from "Base/Interfaces";
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { Feat } from "./Feat";
+import { Feat, FeatParams } from "./Feat";
 
 export class LightlyArmored extends Feat {
-  constructor(abilityScore: string) {
-    super("Lightly Armored", abilityScore);
+  constructor(featParams: FeatParams) {
+    super("Lightly Armored", featParams.abilityScore);
   }
 
   public apply(pc: PlayerCharacter) {

@@ -1,4 +1,4 @@
-import { Subclass } from "../../Subclass";
+import { Subclass, SubclassParams } from "../../Subclass";
 import { OpenHand } from "./OpenHand/OpenHand"
 import { Shadow } from "./Shadow/Shadow"
 import { FourElements } from "./FourElements/FourElements"
@@ -7,7 +7,7 @@ import { Kensei} from "./Kensei/Kensei"
 import { SunSoul } from "./SunSoul/SunSoul"
 
 export class MonkSubclass extends Subclass {
-  constructor(subclassSelection: {subclass: string, options?: string[]}){
+  constructor(subclassSelection: SubclassParams){
     super(subclassSelection);
   }
   
@@ -52,4 +52,11 @@ export class MonkSubclass extends Subclass {
       "17": SunSoul.sunSoul17
     }
   }
+}
+
+export interface MonkSubclassParams {
+  disciplineSelections?: {
+    add: string[];
+    remove?: string;
+  };
 }

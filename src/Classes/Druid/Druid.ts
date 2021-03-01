@@ -1,4 +1,4 @@
-import { PlayerClass, LevelingParams } from "../PlayerClass";
+import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { ResourceTrait, ScalingTrait } from "../../Base/Interfaces";
 import * as SpellList from "../../../Assets/SpellList.json";
@@ -7,13 +7,7 @@ import * as DruidClassTraits from "./Druid.json";
 import { DruidSubclass } from "./Subclasses/DruidSubclass";
 
 export class Druid extends PlayerClass {
-  constructor(
-    multiclass: boolean,
-    druidParams: LevelingParams,
-    skillProficiencies?: string[],
-    weapons?: string[],
-    armor?: string[]
-  ) {
+  constructor(params: ClassCreationParams) {
     super(
       "Druid",
       [],
@@ -25,13 +19,12 @@ export class Druid extends PlayerClass {
       [],
       [],
       [],
-      druidParams,
       "d8",
       8,
       []
     );
 
-    this.characterStart(multiclass, skillProficiencies, weapons, armor);
+    this.characterStart(params.multiclass, params.skillProficiencies, params.weapons, params.armor, params.druidicFocus);
 
     for (let level in this.abilitiesAtLevels) {
       const func: Function = this.abilitiesAtLevels[level];
@@ -39,13 +32,14 @@ export class Druid extends PlayerClass {
     }
   }
 
-  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], armor: string[], ){
+  characterStart(multiclass: boolean, skillProficiencies: string[], weapons: string[], armor: string[], druidicFocus: string){
     if(!multiclass) {  
       this.skillProficiencies = skillProficiencies;
       this.weaponProficiencies.push("Club", "Darts", "Javelin", "Mace", "Quarterstaff", "Scimitar", "Sickle", "Sling", "Spear");
       this.toolProficiencies.push("Herbalism Kit")
       this.weapons = weapons;
       this.armor = [...armor, "LEATHER"];
+      this.equipment.push(druidicFocus);
       this.equipmentPack = "EXPLORER";
       this.savingThrowProficiencies = ["intelligence", "wisdom"];
     }
@@ -111,7 +105,7 @@ export class Druid extends PlayerClass {
     pc.pcHelper.addResourceTraits(wildShapeRes);
     pc.pcHelper.addScalingTraits(wildShapeScale);
   
-    this.subclass = new DruidSubclass(params.subclassSelection);
+    this.subclass = new DruidSubclass(params.subclassParams);
   
     this.subclassDriver(pc, "2", params);    
     this.pushDruidFeatures(pc, 2);
@@ -251,6 +245,6 @@ export class Druid extends PlayerClass {
 
 export class DSDruid extends Druid {
   constructor(){
-    super(true, {isNoInput: true});
+    super({ multiclass: true });
   }
 }
