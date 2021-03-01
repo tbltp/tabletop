@@ -601,7 +601,3 @@ function testMultiClassing() {
 
   Jsonify.dumpToJSON(sheet, `Test`);
 }
-
-//CLISheetDriver.createCharacter()
-
-testMultiClassing();
