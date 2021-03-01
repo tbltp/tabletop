@@ -527,6 +527,7 @@ export class CLISheetDriver {
   }
 }
 
+/*
 function testSubclasses() {
   const pc: PlayerCharacter = new PlayerCharacter(14, 14, 14, 14, 14, 14);
   const rc: Race = new raceDict["Tiefling"]();
@@ -601,3 +602,4 @@ function testMultiClassing() {
 
   Jsonify.dumpToJSON(sheet, `Test`);
 }
+*/
