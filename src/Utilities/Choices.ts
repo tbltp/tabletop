@@ -43,18 +43,14 @@ export class Choices {
     pclass: string,
     level: number
   ): [string, ChoiceSpec][] {
-    return ClassChoices[pclass][level]
-      ? Object.entries(ClassChoices[pclass][level])
-      : [];
+    return Object.entries(ClassChoices[pclass][level] ?? {});
   }
 
   static renderSubclassChoices(
     subclass: string,
     level: number
   ): [string, ChoiceSpec][] {
-    return SubclassChoices[subclass] && SubclassChoices[subclass][level]
-      ? Object.entries(SubclassChoices[subclass][level])
-      : [];
+    return Object.entries((SubclassChoices[subclass] && SubclassChoices[subclass][level]) ?? {});
   }
 
   static renderAbilityScoreChoices(): [string, ChoiceSpec][] {

@@ -319,7 +319,7 @@ export interface LevelingParams {
     add: string[];
     remove?: string;
   };
-  proficiencySelection?: string[];
+  skillProficiencies?: string[];
   toolProficiency?: string;
   fightingStyles?: string[];
   subclassParams?: SubclassParams;

@@ -290,7 +290,7 @@
                     }
                 }
             },
-            "proficiencySelection": {
+            "skillProficiencies": {
                 "alias": "Expertise",
                 "choose": 2,
                 "method": "getSkillProficiencies",
@@ -589,7 +589,7 @@
                     }
                 }
             },
-            "proficiencySelection": {
+            "skillProficiencies": {
                 "alias": "Expertise",
                 "choose": 2,
                 "method": "getSkillProficiencies",
@@ -2027,7 +2027,7 @@
             }
         },
         "1": {
-            "proficiencySelection": {
+            "skillProficiencies": {
                 "alias": "Expertise",
                 "choose": 2,
                 "method": "getSkillProficiencies",
@@ -2051,7 +2051,7 @@
             }
         },
         "6": {
-            "proficiencySelection": {
+            "skillProficiencies": {
                 "alias": "Expertise",
                 "choose": 2,
                 "method": "getSkillProficiencies",

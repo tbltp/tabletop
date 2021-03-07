@@ -123,7 +123,7 @@ export class Bard extends PlayerClass {
     this.subclass = new BardSubclass(params.subclassParams);
     this.subclassDriver(pc, "3", params);
     // expertise
-    for (let skill of params.proficiencySelection) {
+    for (let skill of params.skillProficiencies) {
       pc.skills[skill].expertise = true;
     }
     PlayerClass.pushCustomizedClassFeature(
@@ -131,7 +131,7 @@ export class Bard extends PlayerClass {
       3,
       BardClassTraits,
       "EXPERTISE",
-      params.proficiencySelection
+      params.skillProficiencies
     );
   }
 
@@ -172,11 +172,11 @@ export class Bard extends PlayerClass {
     this.handleBardSpellSelections(pc, params);
     this.subclassDriver(pc, "10", params);
     // expertise
-    for (let skill of params.proficiencySelection) {
+    for (let skill of params.skillProficiencies) {
       pc.skills[skill].expertise = true;
     }
     pc.pcHelper.findFeatureTraitByName("Expertise").choices.push(
-      ...params.proficiencySelection
+      ...params.skillProficiencies
     );
     // bardic inspiration
     pc.pcHelper.findResourceTraitByName("Bardic Inspiration").dice = "1d10";

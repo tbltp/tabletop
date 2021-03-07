@@ -77,7 +77,7 @@ export class CLISheetDriver {
         add: [],
         remove: "",
       },
-      proficiencySelection: [],
+      skillProficiencies: [],
       toolProficiency: "",
       fightingStyles: [],
       subclassParams: CLISheetDriver.defaultSubclassParams(pClassName),

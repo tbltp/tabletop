@@ -73,7 +73,7 @@ export class Rogue extends PlayerClass {
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
     // Expertise
-    for (const proficiency of params.proficiencySelection) {
+    for (const proficiency of params.skillProficiencies) {
       pc.skills[proficiency].expertise = true;
     }
     // Sneak Attack
@@ -84,7 +84,7 @@ export class Rogue extends PlayerClass {
     });
     this.pushRogueFeatures(pc, 1);
     const expert: Trait = pc.pcHelper.findFeatureTraitByName("Expertise");
-    expert.choices = params.proficiencySelection;
+    expert.choices = params.skillProficiencies;
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
@@ -108,9 +108,9 @@ export class Rogue extends PlayerClass {
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.findFeatureTraitByName("Expertise").choices.push(...params.proficiencySelection);
+    pc.pcHelper.findFeatureTraitByName("Expertise").choices.push(...params.skillProficiencies);
     // Expertise
-    for (const proficiency of params.proficiencySelection) {
+    for (const proficiency of params.skillProficiencies) {
       pc.skills[proficiency].expertise = true;
     }
   }

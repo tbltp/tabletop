@@ -27,8 +27,7 @@ export class KnowledgeDomain {
     pc.pcHelper.addFeatures({
       ...KnowledgeDomain.getFeature("1", "BLESSINGS OF KNOWLEDGE"),
       choices: [
-        ...params.subclassParams.skillProficiencies,
-        ...params.proficiencySelection,
+        ...params.subclassParams.skillProficiencies
       ],
     });
   }
