@@ -12,8 +12,7 @@ export class PlayerCharacterHelper {
     private findTraitByName(traitType: string, name: string): Trait | null {
       //accepts title casing or all caps
         const results = this.pc.traits[traitType].filter(
-          (trait) => trait.title === name || trait.title.toUpperCase() === name
-        );
+          (trait) => trait.title.toUpperCase() === name.toUpperCase());
         return results.length === 1 ? results[0] : null;
       }
     
@@ -76,15 +75,19 @@ export class PlayerCharacterHelper {
         this.addTraits("features", ...features);
       }
 
-      removeFeatures(...oldFeatures: string[]) {
+      removeFeatures(...oldFeatures: string[]): void {
         for (let oldftr of oldFeatures) {
           for (let i = 0; i < this.pc.traits.features.length; i++) {
             const title: string = this.pc.traits.features[i].title; 
-            if (title.toUpperCase() == oldftr) {
+            if (title.toUpperCase() == oldftr.toUpperCase()) {
               this.pc.traits.features.splice(i, 1);
             }
           }
         }
+      }
+
+      findFeatures(filterFunc: (Trait) => boolean): Trait[] {
+        return this.pc.traits.features.filter(filterFunc);
       }
     
       addResourceTraits(...resTraits: ResourceTrait[]): void {

@@ -1215,7 +1215,7 @@
                     "choose": 1,
                     "from": [
                         "CHAIN MAIL",
-                        "LEATHER ARMOR"
+                        "LEATHER"
                     ],
                     "required": true
                 }
@@ -1240,7 +1240,7 @@
                     "DUELING",
                     "GREAT WEAPON FIGHTING",
                     "PROTECTION",
-                    "TWO WEAPON FIGHTING"
+                    "TWO-WEAPON FIGHTING"
                 ], 
                 "required": true
             }
@@ -1515,26 +1515,38 @@
                 ],
                 "required": true
             },   
-            "weapons": [
+            "or": [
                 {
                     "alias": "Melee Weapons",
-                    "choose": 2,
-                    "restrict": {
-                        "SHORTSWORD X2": 1
+                    "choose": 1,
+                    "categories": {
+                        "weapons": {
+                            "alias": "Melee Weapons",
+                            "choose": 2,
+                            "from": [
+                                "CLUB",
+                                "DAGGER",
+                                "GREATCLUB",
+                                "HANDAXE",
+                                "JAVELIN",
+                                "LIGHT HAMMER",
+                                "MACE",
+                                "QUARTERSTAFF",
+                                "SICKLE",
+                                "SPEAR"
+                            ],
+                            "required": true
+                        },
+                        "weapons_": {
+                            "alias": "Double Shortswords", 
+                            "choose": 1,
+                            "from": [
+                                "SHORTSWORD X2"
+                            ],
+                            "required": true
+                        }
                     },
-                    "from": [
-                        "SHORTSWORD X2",
-                        "CLUB",
-                        "DAGGER",
-                        "GREATCLUB",
-                        "HANDAXE",
-                        "JAVELIN",
-                        "LIGHT HAMMER",
-                        "MACE",
-                        "QUARTERSTAFF",
-                        "SICKLE",
-                        "SPEAR"
-                    ]
+                    "required": true
                 }
             ],
             "armor": [
@@ -1543,7 +1555,7 @@
                     "choose": 1,
                     "from": [
                         "SCALE MAIL",
-                        "LEATHER ARMOR"
+                        "LEATHER"
                     ],
                     "required": true
                 }
@@ -1594,7 +1606,7 @@
                     "ARCHERY",
                     "DEFENSE",
                     "DUELING",
-                    "TWO WEAPON FIGHTING"
+                    "TWO-WEAPON FIGHTING"
                 ]
             }
         },
