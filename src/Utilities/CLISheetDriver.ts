@@ -398,4 +398,4 @@ function testASI() {
   }
 
 //createCharacter();
-testASI();
+createCharacter();

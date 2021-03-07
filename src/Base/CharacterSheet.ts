@@ -78,12 +78,12 @@ export class CharacterSheet {
     );
 
     //get feat or ability score improvement according to class level
-    if(params.featParams.name != "") {
+    if(params.featParams && params.featParams.name != "") {
       const newFeat: Feat = new featDict[params.featParams.name](params.featParams);    
       this.feats.push(newFeat);
       newFeat.apply(this.character);
     } 
-    if(params.abilityScoreImprovement.abilities.length > 0) {
+    if(params.abilityScoreImprovement && params.abilityScoreImprovement.abilities.length > 0) {
       this.character.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     }
     
