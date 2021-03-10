@@ -5,6 +5,7 @@ import { Thief } from "./Thief/Thief";
 import { Mastermind } from "./Mastermind/Mastermind";
 import { Inquisitive } from "./Inquisitive/Inquisitive";
 import { Scout } from "./Scout/Scout";
+import { Phantom } from "./Phantom/Phantom";
 
 export class RogueSubclass extends Subclass {
   
@@ -57,6 +58,13 @@ export class RogueSubclass extends Subclass {
       "17": ArcaneTrickster.arcaneTrickster17,
       "19": ArcaneTrickster.arcaneTrickster19,
       "20": ArcaneTrickster.arcaneTrickster20
+    },
+    PHANTOM: {
+      "3": Phantom.phantom3,
+      "5": Phantom.upWails,
+      "9": Phantom.phantom9,
+      "13": Phantom.phantom13,
+      "17": Phantom.phantom17,
     }
   }
 }
