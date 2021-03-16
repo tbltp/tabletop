@@ -2,6 +2,7 @@ import { Subclass, SubclassParams } from "../../Subclass";
 import { Archfey } from "./Archfey/Archfey";
 import { Fiend } from "./Fiend/Fiend";
 import { GreatOldOne } from "./GreatOldOne/GreatOldOne";
+import { Fathomless } from "./Fathomless/Fathomless";
 
 export class WarlockSubclass extends Subclass {
   constructor(subclassSelection: SubclassParams){
@@ -26,6 +27,12 @@ export class WarlockSubclass extends Subclass {
           "6": GreatOldOne.greatOldOne6,
           "10": GreatOldOne.greatOldOne10,
           "14": GreatOldOne.greatOldOne14,
+        },
+        FATHOMLESS: {
+          "1": Fathomless.fathomless1,
+          "6": Fathomless.fathomless6,
+          "10": Fathomless.fathomless10,
+          "14": Fathomless.fathomless14,
         },
       };
 }

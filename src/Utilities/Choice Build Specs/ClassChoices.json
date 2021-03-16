@@ -2832,7 +2832,8 @@
                 "from": [
                     "ARCHFEY",
                     "FIEND",
-                    "GREAT OLD ONE"
+                    "GREAT OLD ONE",
+                    "FATHOMLESS"
                 ],
                 "option": true,
                 "required": true
