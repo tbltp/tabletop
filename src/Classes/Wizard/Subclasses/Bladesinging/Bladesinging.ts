@@ -47,7 +47,6 @@ export class Bladesinging {
     static bladesinging14(pc: PlayerCharacter, params: LevelingParams): void {
         pc.pcHelper.addFeatures(Bladesinging.getFeature("14", "SONG OF VICTORY"));
         const war: ResourceTrait = pc.pcHelper.findResourceTraitByName("BLADESONG BUFFS");
-        war.description = "The bonus to your AC, damage, and concentration checks when you activate Bladesong";
+        war.description = "The bonus to your AC, damage rolls, and concentration checks when you activate Bladesong";
     }
-
 }
