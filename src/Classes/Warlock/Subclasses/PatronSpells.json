@@ -1,0 +1,23 @@
+{
+    "ARCHFEY": {
+        "1": ["FAERIE FIRE", "SLEEP"],
+        "2": ["CALM EMOTIONS", "PHANTASMAL FORCE"],
+        "3": ["BLINK", "PLANT GROWTH"],
+        "4": ["DOMINATE BEAST", "GREATER INVISIBILITY"],
+        "5": ["DOMINATE PERSON", "SEEMING"]
+    },
+    "FIEND": {
+        "1": ["BURNING HANDS", "COMMAND"],
+        "2": ["BLINDNESS/DEAFNESS", "SCORCHING RAY"],
+        "3": ["FIREBALL", "STINKING CLOUD"],
+        "4": ["FIRE SHIELD", "WALL OF FIRE"],
+        "5": ["FLAME STRIKE", "HALLOW"]
+    },
+    "GREAT OLD ONE": {
+        "1": ["DISSONANT WHISPERS", "TASHA'S HIDEOUS LAUGHTER"],
+        "2": ["DETECT THOUGHTS", "PHANTASMAL FORCE"],
+        "3": ["CLAIRVOYANCE", "SENDING"],
+        "4": ["DOMINATE BEAST", "EVARD'S BLACK TENTACLES"],
+        "5": ["DOMINATE PERSON", "TELEKINESIS"]
+    }
+}
