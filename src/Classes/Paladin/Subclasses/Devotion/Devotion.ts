@@ -4,7 +4,7 @@ import * as DevotionOathDict from "./OathOfDevotion.json"
 
 export class Devotion {
     static getFeature(level: string, featureName: string) {
-        return DevotionOathDict[level][featureName];
+        return DevotionOathDict["features"][level][featureName];
       }
   
       static addArchetypeSpells(pc: PlayerCharacter, level: string){
