@@ -177,11 +177,15 @@ export class CLISheetDriver {
     const name = prompt(">");
     const scores = CLISheetDriver.promptAbilityScores();
     const pc: PlayerCharacter = new PlayerCharacter(...scores);
-    const race: Race = CLISheetDriver.raceHandler();
-    const bg: Background = CLISheetDriver.backgroundHandler(pc);
-    const pClass: PlayerClass = CLISheetDriver.pclassHandler(pc);
 
-    let sheet: CharacterSheet = new CharacterSheet(name, pc, race, pClass, bg);
+    const sheet = new CharacterSheet(name, pc);
+
+    const race: Race = CLISheetDriver.raceHandler();
+    const bg: Background = CLISheetDriver.backgroundHandler(sheet);
+    const pClass: PlayerClass = CLISheetDriver.pclassHandler(sheet);
+
+    sheet.loadInfo(race, pClass, bg);
+
     CLISheetDriver.levelHandler(sheet);
     Jsonify.dumpToJSON(sheet, `test-${name}`);
   }
@@ -249,7 +253,7 @@ export class CLISheetDriver {
     key: string,
     selection: ChoiceSpec,
     resultObject: object,
-    pc?: PlayerCharacter
+    sheet?: CharacterSheet
   ): void {
     //pass by reference
     let injected: boolean = false;
@@ -267,7 +271,7 @@ export class CLISheetDriver {
           selection.args = [resultObject[selection["needs"]], ...selection.args];
           injected = true;
         }
-        const choiceParams = Choices.convertToParams(selection, pc);
+        const choiceParams = Choices.convertToParams(selection, sheet);
         choices = Choices.functionRailRoad[selection["method"]](choiceParams);
       }
       let userChoice = CLISheetDriver.getInput(choices, description);
@@ -293,7 +297,7 @@ export class CLISheetDriver {
   static choiceHandler(
     choicesSet: [key: string, selection: ChoiceSpec][],
     resultObject: object,
-    pc?: PlayerCharacter
+    sheet?: CharacterSheet
   ): void {
     //pass by reference
     for (const [key, selection] of choicesSet) {
@@ -304,7 +308,7 @@ export class CLISheetDriver {
             "name",
             selection,
             resultObject["subclassParams"],
-            pc
+            sheet
           );
         } else {
           //spells, battle maneuvers, elemental disciplines, eldritch invocations
@@ -313,7 +317,7 @@ export class CLISheetDriver {
             selection: ChoiceSpec
           ][] = Object.entries(selection);
           const spellChoiceResult = resultObject[key];
-          CLISheetDriver.choiceHandler(spellChoiceSet, spellChoiceResult, pc);
+          CLISheetDriver.choiceHandler(spellChoiceSet, spellChoiceResult, sheet);
         }
       } else if (selection instanceof Array) {
         if (key == "or") {
@@ -337,7 +341,7 @@ export class CLISheetDriver {
             CLISheetDriver.choiceHandler(
               [[userChoice, categorySelection]],
               resultObject,
-              pc
+              sheet
             );
           });
         } else if (key == "and") {
@@ -345,17 +349,17 @@ export class CLISheetDriver {
           selection.forEach((category) => {
             const choiceSequence: [key: string, value: ChoiceSpec][] = Object.entries(category["categories"]);
             CLISheetDriver.choiceHandler(
-              choiceSequence, resultObject, pc
+              choiceSequence, resultObject, sheet
             );
           });
         } else {
           selection.forEach((choice) => {
-            CLISheetDriver.promptChoice(key, choice, resultObject, pc);
+            CLISheetDriver.promptChoice(key, choice, resultObject, sheet);
           });
         }
       } else if (Object.keys(selection).length !== 0) {
         //recurse
-        CLISheetDriver.promptChoice(key, selection, resultObject, pc);
+        CLISheetDriver.promptChoice(key, selection, resultObject, sheet);
       }
     }
   }
@@ -376,7 +380,7 @@ export class CLISheetDriver {
     return race;
   }
 
-  static backgroundHandler(pc: PlayerCharacter) {
+  static backgroundHandler(sheet: CharacterSheet) {
     const bgSelection = CLISheetDriver.getInput(
       Choices.renderBackgroundChoices(),
       "Select your Background:"
@@ -384,7 +388,7 @@ export class CLISheetDriver {
 
     let bgParams = CLISheetDriver.defaultBackgroundParams();
     const choicesSet = Choices.renderBackgroundSelectionChoices(bgSelection);
-    CLISheetDriver.choiceHandler(choicesSet, bgParams, pc);
+    CLISheetDriver.choiceHandler(choicesSet, bgParams, sheet);
 
     //console.log(bgParams);
     const bg = new bgDict[bgSelection](bgParams);
@@ -393,7 +397,7 @@ export class CLISheetDriver {
     return bg;
   }
 
-  static pclassHandler(pc: PlayerCharacter, multiclassing?: boolean) {
+  static pclassHandler(sheet: CharacterSheet, multiclassing?: boolean) {
     const pclassSelection = CLISheetDriver.getInput(
       Choices.renderClassChoices(),
       "Select your starting Class:"
@@ -406,7 +410,7 @@ export class CLISheetDriver {
     };
 
     const choicesSet = Choices.renderClassChoicesAtLevel(pclassSelection, 0);
-    CLISheetDriver.choiceHandler(choicesSet, pclassParams, pc);
+    CLISheetDriver.choiceHandler(choicesSet, pclassParams, sheet);
 
     //console.log(pclassParams);
     const pclassInstance = new classDict[pclassSelection](pclassParams);
@@ -434,7 +438,7 @@ export class CLISheetDriver {
       if(pClassName == "Multiclass") {
 
         const pc: PlayerCharacter = sheet.character;
-        pClass = CLISheetDriver.pclassHandler(pc, true);
+        pClass = CLISheetDriver.pclassHandler(sheet, true);
         pClassName = pClass.name;
         sheet.multiClass(pClass);
 
@@ -468,7 +472,7 @@ export class CLISheetDriver {
         pClassName
       );
       const classChoiceSet = Choices.renderClassChoicesAtLevel(pClassName, i);
-      CLISheetDriver.choiceHandler(classChoiceSet, levelParams, pc);
+      CLISheetDriver.choiceHandler(classChoiceSet, levelParams, sheet);
 
       //subclass handling
       let subclassName: string = "";
@@ -483,7 +487,7 @@ export class CLISheetDriver {
       CLISheetDriver.choiceHandler(
         subclassChoiceSet,
         levelParams["subclassParams"],
-        pc
+        sheet
       );
 
       //ability score or feat
@@ -512,7 +516,7 @@ export class CLISheetDriver {
       CLISheetDriver.choiceHandler(
         featChoiceSet,
         levelParams["featParams"],
-        sheet.character
+        sheet
       );
     } else {
       const asiChoiceSet = Choices.renderAbilityScoreChoices();
@@ -603,3 +607,5 @@ function testMultiClassing() {
   Jsonify.dumpToJSON(sheet, `Test`);
 }
 */
+
+CLISheetDriver.createCharacter();

@@ -58,7 +58,8 @@ export class Jsonify {
     const pclasses: PlayerClass[] = Jsonify.buildClasses(pclassesEmpty, jsonSheet);
     const pclass: PlayerClass = pclasses[0];
 
-    const charSheet = new CharacterSheet(name, pc, race, pclass, bg, true);
+    const charSheet = new CharacterSheet(name, pc);
+    charSheet.loadInfo(race, pclass, bg, true);
     
     for(const pclass of pclasses) {
       charSheet.playerClasses[pclass.name] = pclass;

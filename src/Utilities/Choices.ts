@@ -9,6 +9,7 @@ import * as Disciplines from "../Classes/Monk/Subclasses/FourElements/ElementalD
 import * as Spells from "../../Assets/Spells.json";
 import * as SpellList from "../../Assets/SpellList.json";
 import { PlayerCharacter } from "../Base/PlayerCharacter";
+import { CharacterSheet } from "../Base/CharacterSheet";
 import { Prereqs } from "./Prereqs";
 import { Race } from "../Races/Race";
 import { PlayerClass } from "../Classes/PlayerClass";
@@ -86,11 +87,12 @@ export class Choices {
     return Object.entries(FeatChoices[feat]);
   }
 
-  static convertToParams(spec: ChoiceSpec, pc?: PlayerCharacter): ChoiceParams {
+  static convertToParams(spec: ChoiceSpec, sheet?: CharacterSheet): ChoiceParams {
     let params: ChoiceParams = {};
 
-    if (pc) {
-      params.pc = pc;
+    if (sheet) {
+      params.pc = sheet.character;
+      params.classes = sheet.playerClasses;
     }
     if (spec["args"]) {
       const args = spec["args"];
@@ -304,6 +306,7 @@ export class Choices {
 
 export interface ChoiceParams {
   pc?: PlayerCharacter;
+  classes?: object;
   list?: string;
   level?: string;
 }

@@ -13,21 +13,9 @@ class SheetClasses {
 
 export class CharacterSheet {
   
-  constructor(name: string, pc: PlayerCharacter, race: Race, playerClass: PlayerClass, background: Background, DS?: boolean){
+  constructor(name: string, pc: PlayerCharacter){
     this.name = name;
     this.character = pc;
-    this.race = race;
-    this.background = background;
-    
-    this.playerClasses[playerClass.name] = playerClass;
-    this.levels[playerClass.name] = playerClass["level"];
-
-    if(!DS) {
-      this.race.apply(this.character);
-      playerClass.apply(this.character);
-      this.background.apply(this.character);
-    }
-
   }
   
   name: string;
@@ -40,6 +28,20 @@ export class CharacterSheet {
 
   //exposed responsibilities: level up, add/remove stuff to inventory, serialize to JSON, deserialize to JSON
 
+  //load info separately
+  loadInfo(race: Race, playerClass: PlayerClass, background: Background, DS?: boolean): void {
+    this.race = race;
+    this.background = background;
+    
+    this.playerClasses[playerClass.name] = playerClass;
+    this.levels[playerClass.name] = playerClass["level"];
+
+    if(!DS) {
+      this.race.apply(this.character);
+      playerClass.apply(this.character);
+      this.background.apply(this.character);
+    }
+  }
     
   //this is dumb but it's ok
   multiClass(newClass: PlayerClass): void {
