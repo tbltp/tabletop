@@ -83,6 +83,7 @@ export class Rogue extends PlayerClass {
       dice: "1d6",
     });
     this.pushRogueFeatures(pc, 1);
+
     const expert: Trait = pc.pcHelper.findFeatureTraitByName("Expertise");
     expert.choices = params.proficiencySelection;
   }
