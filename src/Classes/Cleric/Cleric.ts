@@ -118,6 +118,7 @@ export class Cleric extends PlayerClass {
   level4(pc: PlayerCharacter, params: LevelingParams): void {
     // cantrip
     this.handleClericSpellSelections(pc, params);
+    this.subclassDriver(pc,"4",params);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
@@ -178,19 +179,23 @@ export class Cleric extends PlayerClass {
     };
     pc.pcHelper.addResourceTraits(divineIntervention);
     this.pushClericFeatures(pc, 10);
+    this.subclassDriver(pc, "10", params);
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
     // destroy undead
     pc.pcHelper.findScalingTraitByName("Destroy Undead").challengeRating++;
     pc.pcHelper.addSpells([...SpellList["Cleric"][6]], SpellcastingAbility["CLERIC"]);
+    this.subclassDriver(pc, "11", params);
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
+    this.subclassDriver(pc, "12", params);
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.addSpells([...SpellList["Cleric"][7]], SpellcastingAbility["CLERIC"]);
+    this.subclassDriver(pc, "13", params);
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
@@ -201,9 +206,11 @@ export class Cleric extends PlayerClass {
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
     pc.pcHelper.addSpells([...SpellList["Cleric"][8]], SpellcastingAbility["CLERIC"]);
+    this.subclassDriver(pc, "15", params);
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
+    this.subclassDriver(pc, "16", params);
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
@@ -217,12 +224,15 @@ export class Cleric extends PlayerClass {
   level18(pc: PlayerCharacter, params: LevelingParams): void {
     // channel divinity
     pc.pcHelper.findResourceTraitByName("Channel Divinity").resourceMax.value++;
+    this.subclassDriver(pc, "18", params);
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
+    this.subclassDriver(pc, "19", params);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
+    this.subclassDriver(pc, "20", params);
   }
 }
 
