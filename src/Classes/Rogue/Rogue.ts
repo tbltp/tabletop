@@ -105,6 +105,7 @@ export class Rogue extends PlayerClass {
   level5(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushRogueFeatures(pc, 5);
     pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "3d6";
+    this.subclassDriver(pc,"5",params);
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {

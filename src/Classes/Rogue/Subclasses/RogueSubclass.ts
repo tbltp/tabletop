@@ -5,6 +5,7 @@ import { Thief } from "./Thief/Thief";
 import { Mastermind } from "./Mastermind/Mastermind";
 import { Inquisitive } from "./Inquisitive/Inquisitive";
 import { Scout } from "./Scout/Scout";
+import { Soulknife } from "./Soulknife/Soulknife";
 
 export class RogueSubclass extends Subclass {
   
@@ -57,6 +58,14 @@ export class RogueSubclass extends Subclass {
       "17": ArcaneTrickster.arcaneTrickster17,
       "19": ArcaneTrickster.arcaneTrickster19,
       "20": ArcaneTrickster.arcaneTrickster20
+    },
+    SOULKNIFE: {
+      "3": Soulknife.soulknife3,
+      "5": Soulknife.soulknife5,
+      "9": Soulknife.soulknife9,
+      "11": Soulknife.soulknife11,
+      "13": Soulknife.soulknife13,
+      "17": Soulknife.soulknife17
     }
   }
 }
