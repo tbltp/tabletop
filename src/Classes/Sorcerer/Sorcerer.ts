@@ -99,9 +99,7 @@ export class Sorcerer extends PlayerClass {
       description: "Number of Sorcery Points you have.",
       resourceMax: { value: 2 },
     });
-
     this.subclassDriver(pc, "2", params);
-
   }
 
   level3(pc: PlayerCharacter, params: SorcererLevelingParams): void {
