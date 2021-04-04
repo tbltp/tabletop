@@ -2120,7 +2120,8 @@
                     "INQUISITIVE",
                     "MASTERMIND",
                     "SCOUT",
-                    "THIEF"
+                    "THIEF",
+                    "PHANTOM"
                 ],
                 "option": true,
                 "required": true
