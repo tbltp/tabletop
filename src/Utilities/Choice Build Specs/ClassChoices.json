@@ -2845,7 +2845,7 @@
                         "method": "getSpellList",
                         "args": [
                             "Warlock",
-                            "2"
+                            "0"
                         ],
                         "required": true
                     },

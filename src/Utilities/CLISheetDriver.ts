@@ -253,7 +253,8 @@ export class CLISheetDriver {
     key: string,
     selection: ChoiceSpec,
     resultObject: object,
-    sheet?: CharacterSheet
+    sheet?: CharacterSheet,
+    cache?: object
   ): void {
     //pass by reference
     let injected: boolean = false;
@@ -271,7 +272,7 @@ export class CLISheetDriver {
           selection.args = [resultObject[selection["needs"]], ...selection.args];
           injected = true;
         }
-        const choiceParams = Choices.convertToParams(selection, sheet);
+        const choiceParams = Choices.convertToParams(selection, sheet, cache);
         choices = Choices.functionRailRoad[selection["method"]](choiceParams);
       }
       let userChoice = CLISheetDriver.getInput(choices, description);
@@ -297,7 +298,8 @@ export class CLISheetDriver {
   static choiceHandler(
     choicesSet: [key: string, selection: ChoiceSpec][],
     resultObject: object,
-    sheet?: CharacterSheet
+    sheet?: CharacterSheet, 
+    cache?: object
   ): void {
     //pass by reference
     for (const [key, selection] of choicesSet) {
@@ -317,7 +319,7 @@ export class CLISheetDriver {
             selection: ChoiceSpec
           ][] = Object.entries(selection);
           const spellChoiceResult = resultObject[key];
-          CLISheetDriver.choiceHandler(spellChoiceSet, spellChoiceResult, sheet);
+          CLISheetDriver.choiceHandler(spellChoiceSet, spellChoiceResult, sheet, {subclass: resultObject["subclassParams"]["name"]});
         }
       } else if (selection instanceof Array) {
         if (key == "or") {
@@ -341,7 +343,8 @@ export class CLISheetDriver {
             CLISheetDriver.choiceHandler(
               [[userChoice, categorySelection]],
               resultObject,
-              sheet
+              sheet, 
+              cache
             );
           });
         } else if (key == "and") {
@@ -349,17 +352,17 @@ export class CLISheetDriver {
           selection.forEach((category) => {
             const choiceSequence: [key: string, value: ChoiceSpec][] = Object.entries(category["categories"]);
             CLISheetDriver.choiceHandler(
-              choiceSequence, resultObject, sheet
+              choiceSequence, resultObject, sheet, cache
             );
           });
         } else {
           selection.forEach((choice) => {
-            CLISheetDriver.promptChoice(key, choice, resultObject, sheet);
+            CLISheetDriver.promptChoice(key, choice, resultObject, sheet, cache);
           });
         }
       } else if (Object.keys(selection).length !== 0) {
         //recurse
-        CLISheetDriver.promptChoice(key, selection, resultObject, sheet);
+        CLISheetDriver.promptChoice(key, selection, resultObject, sheet, cache);
       }
     }
   }
@@ -606,6 +609,22 @@ function testMultiClassing() {
 
   Jsonify.dumpToJSON(sheet, `Test`);
 }
+
+function testPatronSpells() {
+  const pc: PlayerCharacter = new PlayerCharacter(14, 14, 14, 14, 14, 14);
+  const sheet: CharacterSheet = new CharacterSheet("Test", pc);
+  const rc: Race = new raceDict["Tiefling"]();
+  const bg: Background = new bgDict["Charlatan"]();
+  const cls: PlayerClass = CLISheetDriver.pclassHandler(sheet);
+  sheet.loadInfo(rc, cls, bg);
+  CLISheetDriver.levelHandler(sheet);
+  Jsonify.dumpToJSON(sheet, `Test`);
+
+}
 */
 
-CLISheetDriver.createCharacter();
+
+
+
+//CLISheetDriver.createCharacter();
+//testPatronSpells();

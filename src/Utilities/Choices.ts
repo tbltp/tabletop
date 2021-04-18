@@ -8,12 +8,10 @@ import * as Maneuvers from "../Classes/Fighter/Subclasses/BattleMaster/Maneuvers
 import * as Disciplines from "../Classes/Monk/Subclasses/FourElements/ElementalDisciplines.json";
 import * as Spells from "../../Assets/Spells.json";
 import * as SpellList from "../../Assets/SpellList.json";
+import * as PatronSpells from "../Classes/Warlock/Subclasses/PatronSpells.json";
 import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { CharacterSheet } from "../Base/CharacterSheet";
+import { CharacterSheet, SheetClasses } from "../Base/CharacterSheet";
 import { Prereqs } from "./Prereqs";
-import { Race } from "../Races/Race";
-import { PlayerClass } from "../Classes/PlayerClass";
-import { Background } from "../Backgrounds/Background";
 import { PlayerCharacterHelper } from "../Base/PlayerCharacterHelper";
 import { Trait } from "../Base/Interfaces";
 
@@ -87,8 +85,8 @@ export class Choices {
     return Object.entries(FeatChoices[feat]);
   }
 
-  static convertToParams(spec: ChoiceSpec, sheet?: CharacterSheet): ChoiceParams {
-    let params: ChoiceParams = {};
+  static convertToParams(spec: ChoiceSpec, sheet?: CharacterSheet, extra?: object): ChoiceParams {
+    let params: ChoiceParams = {...extra};
 
     if (sheet) {
       params.pc = sheet.character;
@@ -96,6 +94,7 @@ export class Choices {
     }
     if (spec["args"]) {
       const args = spec["args"];
+      //args should be a dict eventually
       if (args.length == 1) {
         params.level = args[0];
       } else {
@@ -129,10 +128,15 @@ export class Choices {
   };
 
   static getSpellList(spec: ChoiceParams) {
-    //up to specified level
+    //up to specified level (this function is ugly)
     if (+spec.level > 0) {
       let spellList = new Set<string>();
       for (let i = 1; i <= +spec.level; i++) {
+        if(spec.list === 'Warlock') {
+          //patron spells added to choices
+          const patron =  (spec.classes && spec.classes['Warlock'].subclass && spec.classes['Warlock'].subclass.name) || spec.subclass;
+          PatronSpells[patron][i].map((spell) => spellList.add(spell));
+        }
         SpellList[spec.list][i].map((spell) => spellList.add(spell));
       }
       return [...spellList.values()];
@@ -306,9 +310,11 @@ export class Choices {
 
 export interface ChoiceParams {
   pc?: PlayerCharacter;
-  classes?: object;
+  classes?: SheetClasses;
   list?: string;
   level?: string;
+  //this sucks
+  subclass?: string;
 }
 
 export interface ChoiceSpec {

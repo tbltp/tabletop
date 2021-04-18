@@ -7,7 +7,7 @@ import { SpellSlotFactory } from "../Classes/SpellSlotFactory";
 import { featDict } from "../Utilities/ConstructorDefinitions";
 
 
-class SheetClasses {
+export interface SheetClasses {
   [key: string]: PlayerClass
 }
 
