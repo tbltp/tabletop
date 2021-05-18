@@ -50,7 +50,7 @@ export class CharacterSheet {
   }
 
   levelUp(levelingClass: string, hpAdd: number, params: LevelingParams): void {
-    const tLevel = ++this.character.level.totalLevel;
+    const tLevel = ++this.character.level;
     const cLevel = ++this.playerClasses[levelingClass].level.value;
 
     //hp
@@ -77,12 +77,12 @@ export class CharacterSheet {
     );
 
     //get feat or ability score improvement according to class level
-    if(params.featParams.name != "") {
+    if(params.featParams && params.featParams.name != "") {
       const newFeat: Feat = new featDict[params.featParams.name](params.featParams);    
       this.feats.push(newFeat);
       newFeat.apply(this.character);
     } 
-    if(params.abilityScoreImprovement.abilities.length > 0) {
+    if(params.abilityScoreImprovement && params.abilityScoreImprovement.abilities.length > 0) {
       this.character.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     }
     
@@ -98,12 +98,12 @@ export class CharacterSheet {
 
       // Are they in a Spellcasting Subclass (i.e. Arcane Trickster / Eldritch Knight)? Run Tertiary.
       if(this.playerClasses[playerClass].subclass && SpellSlotFactory.spellcastingSubclasses[this.playerClasses[playerClass].subclass.name]) { 
-        SpellSlotFactory.applyClassSpellSlotsAtLevel(this.character, "TERTIARY", this.character.level.totalLevel);
+        SpellSlotFactory.applyClassSpellSlotsAtLevel(this.character, "TERTIARY", this.character.level);
       }  
       
       // Otherwise add spell slots as they need.
       else {
-        SpellSlotFactory.applyClassSpellSlotsAtLevel(this.character, SpellSlotFactory.spellcastingClassRanks[playerClass], this.character.level.totalLevel);
+        SpellSlotFactory.applyClassSpellSlotsAtLevel(this.character, SpellSlotFactory.spellcastingClassRanks[playerClass], this.character.level);
       }
     }
     

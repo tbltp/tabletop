@@ -459,10 +459,11 @@ export class CLISheetDriver {
       if (i != 1) {
         //bonus hp
         const hpPrompt = `Enter amount to increase max HP by:`;
-        const hpRange = [...Array(+pc.hitDie.slice(1)).keys()].map(
-          (h) => h + 1 + ""
-        );
-        hpAdd = +CLISheetDriver.getInput(hpRange, hpPrompt);
+        
+        // const hpRange = [...Array(+pc.hitDie.slice(1)).keys()].map(
+        //   (h) => h + 1 + ""
+        // );
+        // hpAdd = +CLISheetDriver.getInput(hpRange, hpPrompt);
       }
       let levelParams: LevelingParams = CLISheetDriver.defaultLevelingParams(
         pClassName

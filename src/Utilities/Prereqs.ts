@@ -8,7 +8,7 @@ export class Prereqs{
     }
 
     static checkLevel(level: string, pc: PlayerCharacter){
-        return pc.level.totalLevel >= parseInt(level) ? true : false
+        return pc.level >= parseInt(level) ? true : false
     }
     static checkSpell(spell: string, pc: PlayerCharacter){
         return pc.spells["0"].filter(x => x.name === spell) ? true : false

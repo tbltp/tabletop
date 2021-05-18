@@ -97,7 +97,7 @@ export class Monk extends PlayerClass {
     this.pushMonkFeatures(pc, 2);
     pc.speeds.push({
       name: "Unarmored Movement",
-      base: pc.speed,
+      base: pc.speeds["Base Speed"].base,
       bonus: { value: 10 },
     });
     pc.traits.resources.push({

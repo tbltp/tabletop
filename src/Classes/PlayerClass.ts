@@ -8,7 +8,7 @@ import * as FightingStyle from "../../Assets/FightingStyles.json";
 import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
 import * as Armor from "../../Assets/Armor.json";
 import * as Weapons from "../../Assets/Weapons.json";
-import { Inventory } from "../Base/Inventory";
+import { Inventory } from "../Base/Equipment/Inventory";
 import { Subclass, SubclassParams } from "./Subclass";
 import { Feat, FeatParams } from "../Feats/Feat";
 
@@ -173,7 +173,7 @@ export abstract class PlayerClass {
     this.addToolkits(pc);
     this.addSavingThrowProficiencies(pc);
 
-    pc.hitDie = this.hitDie;
+    pc.hitDie[this.hitDie] ? pc.hitDie[this.hitDie]++ : pc.hitDie[this.hitDie] = 1;
 
     pc.baseStats.hpMax.base = this.hpBase;
   }
@@ -310,7 +310,6 @@ export interface ClassCreationParams {
   druidicFocus?: string
 }
 export interface LevelingParams {
-  isNoInput: boolean;
   abilityScoreImprovement?: {
     abilities: string[];
     value: string;

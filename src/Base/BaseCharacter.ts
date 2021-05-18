@@ -24,16 +24,11 @@ export abstract class BaseCharacter {
       charisma: new BaseAbility("Cha", cha),
     };
 
-    this.proficiency = new BaseProficiency(this.level.totalLevel);
+    this.proficiency = new BaseProficiency(this.level);
 
     this.baseStats = {
       initiativeBonus: {
         base: 0,
-        modifier: this.abilityScores["dexterity"].modifier,
-        bonus: { value: 0 },
-      },
-      baseArmorClass: {
-        base: 10,
         modifier: this.abilityScores["dexterity"].modifier,
         bonus: { value: 0 },
       },
@@ -191,7 +186,7 @@ export abstract class BaseCharacter {
 
   // Base Stats
   proficiency: BaseProficiency;
-  level: { totalLevel: number } = { totalLevel: 0 };
+  level: 0;
   baseStats: {
     [key: string]: {
       base: number;
@@ -199,7 +194,6 @@ export abstract class BaseCharacter {
       bonus: { value: number };
     };
   };
-  speed: { value: number } = { value: 0 };
   size: string;
 
   // Base Ability Scores

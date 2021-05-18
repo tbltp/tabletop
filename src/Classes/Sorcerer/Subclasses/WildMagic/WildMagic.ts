@@ -14,7 +14,7 @@ export class WildMagic {
     }
 
     static wildMagic1(pc: PlayerCharacter, params: LevelingParams) {
-        pc.pcHelper.addFeatures(WildMagic.getFeature("1", "WILD MAGIC SURGE"), WildMagic.getFeature("3", "TIDES OF CHAOS"))
+        pc.pcHelper.addFeatures(WildMagic.getFeature("1", "WILD MAGIC SURGE"), WildMagic.getFeature("1", "TIDES OF CHAOS"))
       }
     
       static wildMagic6(pc: PlayerCharacter, params: LevelingParams) {      

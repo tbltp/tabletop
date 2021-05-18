@@ -118,7 +118,7 @@ export class Barbarian extends PlayerClass {
     pc.speeds.push(
       {
         name: "Fast Movement",
-        base: pc.speed,
+        base: pc.speeds["Base Speed"].base,
         bonus: {value: 10}
       }
     )

@@ -15,7 +15,7 @@ export class PlayerCharacter extends BaseCharacter {
     super(str, dex, con, int, wis, cha);
   }
 
-  hitDie: string;
+  hitDie: {[key: string]: number} = {};
   fightingStyles?: string[];
 
   attacks: PCAttack[] = [];
@@ -23,14 +23,14 @@ export class PlayerCharacter extends BaseCharacter {
   armorClasses: PCArmorClass[] = [
     {
       name: "Base",
-      base: this.baseStats.baseArmorClass.base,
-      modifier: [this.baseStats.baseArmorClass.modifier],
-      bonus: this.baseStats.baseArmorClass.bonus,
+      base: 10,
+      modifier: [this.abilityScores["dexterity"].modifier],
+      bonus: {value: 0},
     },
   ];
 
   speeds: PCSpeed[] = [
-    { name: "Base Speed", base: this.speed, bonus: { value: 0 } },
+    { name: "Base Speed", base: {value: 0}, bonus: { value: 0 } },
   ];
 
   spellcasting?: {
