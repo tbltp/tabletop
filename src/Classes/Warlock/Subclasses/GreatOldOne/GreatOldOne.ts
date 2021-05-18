@@ -5,7 +5,7 @@ import * as GreatOldOnePatronDict from "./TheGreatOldOne.json"
 export class GreatOldOne {
 
     static getFeature(level: string, featureName: string) {
-        return GreatOldOnePatronDict[level][featureName];
+        return GreatOldOnePatronDict["features"][level][featureName];
     }
 
     static getPatronSpells(pc: PlayerCharacter, patron: string, level: string) {

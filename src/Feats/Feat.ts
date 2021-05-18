@@ -66,9 +66,9 @@ export abstract class Feat {
     return pc.traits.armorProficiencies.has(skill) ? false : true;
   }
 
-  spellcasterPrereqCheck(pc: PlayerCharacter) {
-    return !pc.pcHelper.isSpellcaster() ? false : true;
-  }
+  // spellcasterPrereqCheck(pc: PlayerCharacter) {
+  //   return !pc.pcHelper.isSpellcaster() ? false : true;
+  // }
 }
 
 export interface FeatParams {

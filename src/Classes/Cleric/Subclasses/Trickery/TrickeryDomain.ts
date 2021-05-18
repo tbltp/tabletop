@@ -24,7 +24,7 @@ export class TrickeryDomain {
     pc.pcHelper.addFeatures(
       TrickeryDomain.getFeature(
         "2",
-        "CHANNEL DIVINITY: INVOKE DUPLICITY"
+        "INVOKE DUPLICITY"
       )
     );
   }
@@ -41,7 +41,7 @@ export class TrickeryDomain {
     pc.pcHelper.addFeatures(
       TrickeryDomain.getFeature(
         "6",
-        "CHANNEL DIVINITY: CLOAK OF SHADOWS"
+        "CLOAK OF SHADOWS"
       )
     );
   }

@@ -8,9 +8,9 @@ export class ElementalAdept extends Feat {
     }
   
     apply(pc: PlayerCharacter) {
-      if(!this.spellcasterPrereqCheck(pc)) {
-        throw Error("Requirement Not Met: Spellcasting");
-      }
+      // if(!this.spellcasterPrereqCheck(pc)) {
+      //   throw Error("Requirement Not Met: Spellcasting");
+      // }
   
       super.apply(pc, [this.element]);
     }

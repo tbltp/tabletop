@@ -5,7 +5,7 @@ import * as FiendPatronDict from "./TheFiend.json"
 export class Fiend {
 
     static getFeature(level: string, featureName: string) {
-        return FiendPatronDict[level][featureName];
+        return FiendPatronDict["features"][level][featureName];
     }
 
     static getPatronSpells(pc: PlayerCharacter, patron: string, level: string) {

@@ -190,7 +190,6 @@ export abstract class PlayerClass {
     }
 
     for (let key in classTraits[level]) {
-    
       let feature: Trait = classTraits[level][key]
       if(Object.keys(riskTraits).includes(feature["title"]) && riskTraits[feature["title"]]) { continue; }
       pc.pcHelper.addFeatures(feature);
