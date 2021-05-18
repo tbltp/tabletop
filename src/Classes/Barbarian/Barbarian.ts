@@ -75,7 +75,7 @@ export class Barbarian extends PlayerClass {
       resourceMax: { value: 2 },
     };
     const rageDamage: ScalingTrait = {
-      title: "Rage Damage",
+      title: "Rage",
       description:
         "Amount of damage added to an attack while you're in a Rage.",
       bonus: 2,
