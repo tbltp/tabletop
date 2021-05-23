@@ -11,7 +11,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "EEPC"
   },
   "ACID SPLASH": {
     "name": "Acid Splash",
@@ -25,7 +26,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "AID": {
     "name": "Aid",
@@ -39,7 +41,8 @@
     "material": "a tiny strip of white cloth",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ALARM": {
     "name": "Alarm",
@@ -53,7 +56,8 @@
     "material": "a tiny bell and a piece of fine silver wire",
     "minimumLevel": "1",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ALTER SELF": {
     "name": "Alter Self",
@@ -67,7 +71,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ANIMAL FRIENDSHIP": {
     "name": "Animal Friendship",
@@ -81,7 +86,8 @@
     "material": "a morsel of food",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ANIMAL MESSENGER": {
     "name": "Animal Messenger",
@@ -95,7 +101,8 @@
     "material": "a morsel of food",
     "minimumLevel": "2",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ANIMAL SHAPES": {
     "name": "Animal Shapes",
@@ -109,7 +116,8 @@
     "material": "",
     "minimumLevel": "8",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ANIMATE DEAD": {
     "name": "Animate Dead",
@@ -123,7 +131,8 @@
     "material": "a drop of blood, a piece of flesh, and a pinch of bone dust",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ANIMATE OBJECTS": {
     "name": "Animate Objects",
@@ -137,7 +146,8 @@
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ANTILIFE SHELL": {
     "name": "Antilife Shell",
@@ -151,7 +161,8 @@
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ANTIMAGIC FIELD": {
     "name": "Antimagic Field",
@@ -165,7 +176,8 @@
     "material": "a pinch of powdered iron or iron filings",
     "minimumLevel": "8",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ANTIPATHY/SYMPATHY": {
     "name": "Antipathy/Sympathy",
@@ -179,7 +191,8 @@
     "material": "cither a lump of alum soaked in vinegar for the antipathy effect or a drop of honey for the sympathy effect",
     "minimumLevel": "8",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ARCANE EYE": {
     "name": "Arcane Eye",
@@ -193,7 +206,8 @@
     "material": "a bit of bat fur",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ARCANE GATE": {
     "name": "Arcane Gate",
@@ -207,7 +221,8 @@
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ARCANE LOCK": {
     "name": "Arcane Lock",
@@ -221,19 +236,8 @@
     "material": "gold dust worth at least 2S gp, which the spell consumes",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
-  },
-  "ARCANE SWORD": {
-    "name": "Arcane Sword",
-    "description": "You create a sword-shaped plane of force that hovers within range. It lasts for the duration. When the sword appears, you make a melee spell attack against a target of your choice within 5 feet of the sword. On a hit, the target takes 3d10 force damage. Until the spell ends, you can use a bonus action on each of your turns to move the sword up to 20 feet to a spot you can see and repeat this attack against the same target or a different one.",
-    "school": "evocation",
-    "castTime": "1 action or 8 hours",
-    "range": "60 feet",
-    "components": ["V", "S", "M"],
-    "material": "a miniature platinum sword with a grip and pommel of copper and zinc, worth 250 gp",
-    "minimumLevel": "7",
-    "ritual": false,
-    "spellAttack": true
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ARMOR OF AGATHYS": {
     "name": "Armor Of Agathys",
@@ -247,7 +251,8 @@
     "material": "a cup of water",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ARMS OF HADAR": {
     "name": "Arms Of Hadar",
@@ -261,7 +266,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ASTRAL PROJECTION": {
     "name": "Astral Projection",
@@ -275,7 +281,8 @@
     "material": "for each creature you affect with this spell, you must provide one jacinth worth at least 1,000 gp and one ornately carved bar of silver worth at least 100 gp, all of which the spell consumes",
     "minimumLevel": "9",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "AUGURY": {
     "name": "Augury",
@@ -289,7 +296,8 @@
     "material": "specially marked sticks, bones, or similar tokens worth at least 2S gp",
     "minimumLevel": "2",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "AURA OF LIFE": {
     "name": "Aura Of Life",
@@ -303,7 +311,8 @@
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "AURA OF PURITY": {
     "name": "Aura Of Purity",
@@ -317,7 +326,8 @@
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "AURA OF VITALITY": {
     "name": "Aura Of Vitality",
@@ -331,7 +341,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "AWAKEN": {
     "name": "Awaken",
@@ -345,7 +356,8 @@
     "material": "an agate worth at least 1,000 gp, which the spell consumes",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "BANE": {
     "name": "Bane",
@@ -359,7 +371,8 @@
     "material": "a drop of blood",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "BANISHING SMITE": {
     "name": "Banishing Smite",
@@ -373,7 +386,8 @@
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "BANISHMENT": {
     "name": "Banishment",
@@ -387,7 +401,8 @@
     "material": "an item distasteful to the target",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "BARKSKIN": {
     "name": "Barkskin",
@@ -401,7 +416,8 @@
     "material": "a handful of oak bark",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "BEACON OF HOPE": {
     "name": "Beacon Of Hope",
@@ -415,7 +431,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "BEAST SENSE": {
     "name": "Beast Sense",
@@ -429,7 +446,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "BESTOW CURSE": {
     "name": "Bestow Curse",
@@ -443,7 +461,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "BIGBY'S HAND": {
     "name": "Bigby's Hand",
@@ -457,7 +476,8 @@
     "material": "an eggshell and a snakeskin glove",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "BLADE BARRIER": {
     "name": "Blade Barrier",
@@ -471,7 +491,8 @@
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "BLADE WARD": {
     "name": "Blade Ward",
@@ -485,7 +506,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "BLESS": {
     "name": "Bless",
@@ -499,7 +521,8 @@
     "material": "a sprinkling of holy water",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "BLIGHT": {
     "name": "Blight",
@@ -513,7 +536,8 @@
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "BLINDING SMITE": {
     "name": "Blinding Smite",
@@ -527,7 +551,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "BLINDNESS/DEAFNESS": {
     "name": "Blindness/ Deafness",
@@ -541,7 +566,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "BLINK": {
     "name": "Blink",
@@ -555,7 +581,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "BLUR": {
     "name": "Blur",
@@ -569,7 +596,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "BOOMING BLADE": {
     "name": "Booming Blade",
@@ -583,7 +611,8 @@
     "material": "a melee weapon worth at least 1 sp",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "TCOE"
   },
   "BRANDING SMITE": {
     "name": "Branding Smite",
@@ -597,7 +626,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "BURNING HANDS": {
     "name": "Burning Hands",
@@ -611,7 +641,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CALL LIGHTNING": {
     "name": "Call Lightning",
@@ -625,7 +656,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CALM EMOTIONS": {
     "name": "Calm Emotions",
@@ -639,7 +671,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CATAPULT": {
     "name": "Catapult",
@@ -653,7 +686,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "EEPC"
   },
   "CATNAP": {
     "name": "Catnap",
@@ -667,7 +701,8 @@
     "material": "a pinch of sand",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "XGTE"
   },
   "CHAIN LIGHTNING": {
     "name": "Chain Lightning",
@@ -681,7 +716,8 @@
     "material": "a bit of fur; a piece of amber, glass, or a crystal rod; and three silver pins",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CHARM PERSON": {
     "name": "Charm Person",
@@ -695,7 +731,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CHILL TOUCH": {
     "name": "Chill Touch",
@@ -709,7 +746,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "CHROMATIC ORB": {
     "name": "Chromatic Orb",
@@ -723,7 +761,8 @@
     "material": "a diamond worth at least S0 gp",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CIRCLE OF DEATH": {
     "name": "Circle Of Death",
@@ -737,7 +776,8 @@
     "material": "the powder of a crushed black pearl worth at least S00 gp",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CIRCLE OF POWER": {
     "name": "Circle Of Power",
@@ -751,7 +791,8 @@
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CLAIRVOYANCE": {
     "name": "Clairvoyance",
@@ -765,7 +806,8 @@
     "material": "a focus worth at least 100 gp, cither a jeweled horn for hearing or a glass eye for seeing",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CLONE": {
     "name": "Clone",
@@ -779,7 +821,8 @@
     "material": "a diamond worth at least 1,000 gp and at least 1 cubic inch of flesh of the creature that is to be cloned, which the spell consumes, and a vessel worth at least 2,000 gp that has a sealable lid and is large enough to hold a Medium creature, such as a huge urn, coffin, mud-filled cyst in the ground, or erystal container filled with salt water",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CLOUD OF DAGGERS": {
     "name": "Cloud Of Daggers",
@@ -793,7 +836,8 @@
     "material": "a sliver of glass",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CLOUDKILL": {
     "name": "Cloudkill",
@@ -807,7 +851,8 @@
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "COLOR SPRAY": {
     "name": "Color Spray",
@@ -821,7 +866,8 @@
     "material": "a pinch of powder or sand that is colored red, yellow, and blue",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "COMMAND": {
     "name": "Command",
@@ -835,7 +881,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "COMMUNE": {
     "name": "Commune",
@@ -849,7 +896,8 @@
     "material": "incense and a vial of holy or unholy water",
     "minimumLevel": "5",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "COMMUNE WITH NATURE": {
     "name": "Commune With Nature",
@@ -863,7 +911,8 @@
     "material": "",
     "minimumLevel": "5",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "COMPELLED DUEL": {
     "name": "Compelled Duel",
@@ -877,7 +926,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "COMPREHEND LANGUAGES": {
     "name": "Comprehend Languages",
@@ -891,7 +941,8 @@
     "material": "a pinch of soot and salt",
     "minimumLevel": "1",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "COMPULSION": {
     "name": "Compulsion",
@@ -905,7 +956,8 @@
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CONE OF COLD": {
     "name": "Cone Of Cold",
@@ -919,7 +971,8 @@
     "material": "a small crystal or glass cone",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CONFUSION": {
     "name": "Confusion",
@@ -933,7 +986,8 @@
     "material": "three nut shells",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CONJURE ANIMALS": {
     "name": "Conjure Animals",
@@ -947,7 +1001,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CONJURE BARRAGE": {
     "name": "Conjure Barrage",
@@ -961,7 +1016,8 @@
     "material": "one piece of ammunition or a thrown weapon",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CONJURE CELESTIAL": {
     "name": "Conjure Celestial",
@@ -975,7 +1031,8 @@
     "material": "",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CONJURE ELEMENTAL": {
     "name": "Conjure Elemental",
@@ -989,7 +1046,8 @@
     "material": "burning incense for air, soft clay for earth, sulfur and phosphorus for fire, or water and sand for water",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CONJURE FEY": {
     "name": "Conjure Fey",
@@ -1003,7 +1061,8 @@
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CONJURE MINOR ELEMENTALS": {
     "name": "Conjure Minor Elementals",
@@ -1017,7 +1076,8 @@
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CONJURE VOLLEY": {
     "name": "Conjure Volley",
@@ -1031,7 +1091,8 @@
     "material": "one piece of ammunition or one thrown weapon",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CONJURE WOODLAND BEINGS": {
     "name": "Conjure Woodland Beings",
@@ -1045,7 +1106,8 @@
     "material": "one holly berry per creature summoned",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CONTACT OTHER PLANE": {
     "name": "Contact Other Plane",
@@ -1059,7 +1121,8 @@
     "material": "",
     "minimumLevel": "5",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CONTAGION": {
     "name": "Contagion",
@@ -1073,7 +1136,8 @@
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "CONTINGENCY": {
     "name": "Contingency",
@@ -1087,7 +1151,8 @@
     "material": "a statuette of yourself carved from ivory and decorated with gems worth at least 1,S00 gp",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CONTINUAL FLAME": {
     "name": "Continual Flame",
@@ -1101,7 +1166,8 @@
     "material": "ruby dust worth S0 gp, which the spell consumes",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CONTROL WATER": {
     "name": "Control Water",
@@ -1115,7 +1181,8 @@
     "material": "a drop of water anda pinch of dust",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CONTROL WEATHER": {
     "name": "Control Weather",
@@ -1129,7 +1196,8 @@
     "material": "burning incense and bits of earth and wood mixed in water",
     "minimumLevel": "8",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CORDON OF ARROWS": {
     "name": "Cordon Of Arrows",
@@ -1143,7 +1211,8 @@
     "material": "four or more arrows or bolts",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "COUNTERSPELL": {
     "name": "Counterspell",
@@ -1157,7 +1226,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CREATE FOOD AND WATER": {
     "name": "Create Foop And Water",
@@ -1171,7 +1241,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CREATE BONFIRE": {
     "name": "Create Bonfire",
@@ -1185,7 +1256,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "EEPC"
   },
   "CREATE OR DESTROY WATER": {
     "name": "Create Or Destroy Water",
@@ -1199,7 +1271,8 @@
     "material": "a drop of water if creating water or a few grains of sand if destroying it",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CREATE UNDEAD": {
     "name": "Create Undead",
@@ -1213,7 +1286,8 @@
     "material": "one clay pot filled with grave dirt, one clay pot filled with brackish water, and one 1S0 gp black onyx stone for each corpse) Duration; Instantaneous You can cast this spell only at night. Choose up to three corpses of Medium or Small humanoids within range. Each corpse becomes a ghoul under your control.",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CREATION": {
     "name": "Creation",
@@ -1227,7 +1301,8 @@
     "material": "a tiny piece of matter of the same type of the item you plan to create",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CROWN OF MADNESS": {
     "name": "Crown Of Madness",
@@ -1241,7 +1316,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CRUSADER'S MANTLE": {
     "name": "Crusader's Mantle",
@@ -1255,7 +1331,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "CURE WOUNDS": {
     "name": "Cure Wounds",
@@ -1269,7 +1346,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DANCING LIGHTS": {
     "name": "Dancing Lights",
@@ -1283,7 +1361,8 @@
     "material": "a bit of phosphorus or wychwood. or a glowworm",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DARKNESS": {
     "name": "Darkness",
@@ -1297,7 +1376,8 @@
     "material": "bat fur and a drop of pitch or piece of coal",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DARKVISION": {
     "name": "Darkvision",
@@ -1311,7 +1391,8 @@
     "material": "either a pinch of dried carrot or an agate",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DAYLIGHT": {
     "name": "Daylight",
@@ -1325,7 +1406,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DEATH WARD": {
     "name": "Death Ward",
@@ -1339,7 +1421,8 @@
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DELAYED BLAST FIREBALL": {
     "name": "Delayed Blast Fireball",
@@ -1353,7 +1436,8 @@
     "material": "a tiny ball of bat guano and sulfur",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DEMIPLANE": {
     "name": "Demiplane",
@@ -1367,7 +1451,8 @@
     "material": "",
     "minimumLevel": "8",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DESTRUCTIVE WAVE": {
     "name": "Destructive Wave",
@@ -1381,7 +1466,8 @@
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DETECT EVIL AND GOOD": {
     "name": "Detect Evil And Good",
@@ -1395,7 +1481,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DETECT MAGIC": {
     "name": "Detect Magic",
@@ -1409,7 +1496,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DETECT POISON AND DISEASE": {
     "name": "Detect Poison And Disease",
@@ -1423,7 +1511,8 @@
     "material": "a yew leaf",
     "minimumLevel": "1",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DETECT THOUGHTS": {
     "name": "Detect Thoughts",
@@ -1437,7 +1526,8 @@
     "material": "a copper piece",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DIMENSION DOOR": {
     "name": "Dimension Door",
@@ -1451,7 +1541,8 @@
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DISGUISE SELF": {
     "name": "Disguise Self",
@@ -1465,7 +1556,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DISINTEGRATE": {
     "name": "Disintegrate",
@@ -1479,7 +1571,8 @@
     "material": "a lodestone and a pinch of dust",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DISPEL EVIL AND GOOD": {
     "name": "Dispel Evil And Good",
@@ -1493,7 +1586,8 @@
     "material": "holy water or powdered silver and iron",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "DISPEL MAGIC": {
     "name": "Dispel Magic",
@@ -1507,7 +1601,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DISSONANT WHISPERS": {
     "name": "Dissonant Whispers",
@@ -1521,7 +1616,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DIVINATION": {
     "name": "Divination",
@@ -1535,7 +1631,8 @@
     "material": "incense and a sacrificial offering appropriate to your religion, together worth at least 2S gp, which the spell consumes",
     "minimumLevel": "4",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DIVINE FAVOR": {
     "name": "Divine Favor",
@@ -1549,7 +1646,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DIVINE WORD": {
     "name": "Divine Word",
@@ -1563,7 +1661,8 @@
     "material": "",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DOMINATE BEAST": {
     "name": "Dominate Beast",
@@ -1577,7 +1676,8 @@
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DOMINATE MONSTER": {
     "name": "Dominate Monster",
@@ -1591,7 +1691,8 @@
     "material": "",
     "minimumLevel": "8",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DOMINATE PERSON": {
     "name": "Dominate Person",
@@ -1605,7 +1706,8 @@
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DRAWMIJ'S INSTANT SUMMONS": {
     "name": "Drawmij's Instant Summons",
@@ -1619,7 +1721,8 @@
     "material": "a sapphire worth 1,000 gp",
     "minimumLevel": "6",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DREAM": {
     "name": "Dream",
@@ -1633,7 +1736,8 @@
     "material": "a handful of sand, a dab of ink, and a writing quill plucked from a sleeping bird",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "DRUIDCRAFT": {
     "name": "Druidcraft",
@@ -1647,7 +1751,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "EARTHQUAKE": {
     "name": "Earthquake",
@@ -1661,7 +1766,8 @@
     "material": "a pinch of dirt, a piece of rock, and a lump of clay",
     "minimumLevel": "8",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ELDRITCH BLAST": {
     "name": "Eldritch Blast",
@@ -1675,7 +1781,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "ELEMENTAL BANE": {
     "name": "Elemental Bane",
@@ -1689,7 +1796,8 @@
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "EEPC"
   },
   "ELEMENTAL WEAPON": {
     "name": "Elemental Weapon",
@@ -1703,7 +1811,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ENHANCE ABILITY": {
     "name": "Enhance Ability",
@@ -1717,7 +1826,8 @@
     "material": "fur or a feather from a beast",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ENLARGE/REDUCE": {
     "name": "Enlarge/Reduce",
@@ -1731,7 +1841,8 @@
     "material": "a pinch of powdered iron",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ENSNARING STRIKE": {
     "name": "Ensnaring Strike",
@@ -1745,7 +1856,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ENTANGLE": {
     "name": "Entangle",
@@ -1759,7 +1871,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ENTHRALL": {
     "name": "Enthrall",
@@ -1773,7 +1886,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ETHEREALNESS": {
     "name": "Etherealness",
@@ -1787,7 +1901,8 @@
     "material": "",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "EVARD'S BLACK TENTACLES": {
     "name": "Evard's Black Tentacles",
@@ -1801,7 +1916,8 @@
     "material": "a piece of tentacle from a giant octopus or a giant squid",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "EXPEDITIOUS RETREAT": {
     "name": "Expeditious Retreat",
@@ -1815,7 +1931,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "EYEBITE": {
     "name": "Eyebite",
@@ -1829,7 +1946,8 @@
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FABRICATE": {
     "name": "Fabricate",
@@ -1843,7 +1961,8 @@
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FAERIE FIRE": {
     "name": "Faerie Fire",
@@ -1857,7 +1976,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FALSE LIFE": {
     "name": "False Life",
@@ -1871,7 +1991,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FEAR": {
     "name": "Fear",
@@ -1885,7 +2006,8 @@
     "material": "a white feather or the heart of a hen",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FEATHER FALL": {
     "name": "Feather Fall",
@@ -1899,7 +2021,8 @@
     "material": "a small feather or piece of down",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FEEBLEMIND": {
     "name": "Feeblemind",
@@ -1913,7 +2036,8 @@
     "material": "a handful of clay, crystal, glass, or mineral spheres",
     "minimumLevel": "8",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FEIGN DEATH": {
     "name": "Feign Death",
@@ -1927,7 +2051,8 @@
     "material": "a pinch of graveyard dirt",
     "minimumLevel": "3",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FIND FAMILIAR": {
     "name": "Find Familiar",
@@ -1941,7 +2066,8 @@
     "material": "10 gp worth of charcoal, incense, and herbs that must be consumed by fire ina brass brazier",
     "minimumLevel": "1",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FIND STEED": {
     "name": "Find Steed",
@@ -1955,7 +2081,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FIND THE PATH": {
     "name": "Find The Path",
@@ -1969,7 +2096,8 @@
     "material": "a set of divinatory tools\u2014such as bones, ivory sticks, cards, teeth, or carved runes\u2014 worth 100 gp and an object from the location you wish to find",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FIND TRAPS": {
     "name": "Find Traps",
@@ -1983,7 +2111,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FINGER OF DEATH": {
     "name": "Finger Of Death",
@@ -1997,7 +2126,8 @@
     "material": "",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FIREBALL": {
     "name": "Fireball",
@@ -2011,7 +2141,8 @@
     "material": "a tiny ball of bat guano and sulfur",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FIRE BOLT": {
     "name": "Fire Bolt",
@@ -2025,7 +2156,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "FIRE SHIELD": {
     "name": "Fire Shield",
@@ -2039,7 +2171,8 @@
     "material": "a bit of phosphorus or a firefly",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FIRE STORM": {
     "name": "Fire Storm",
@@ -2053,7 +2186,8 @@
     "material": "",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FLAME ARROWS": {
     "name": "Flame Arrows",
@@ -2067,7 +2201,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "EEPC"
   },
   "FLAME BLADE": {
     "name": "Flame Blade",
@@ -2081,7 +2216,8 @@
     "material": "leaf of sumac",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "FLAME STRIKE": {
     "name": "Flame Strike",
@@ -2095,7 +2231,8 @@
     "material": "pinch of sulfur",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FLAMING SPHERE": {
     "name": "Flaming Sphere",
@@ -2109,7 +2246,8 @@
     "material": "a bit of tallow, a pinch of brimstone, and a dusting of powdered iron",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FLESH TO STONE": {
     "name": "Flesh To Stone",
@@ -2123,7 +2261,8 @@
     "material": "a pinch of lime, water, and earth",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FLY": {
     "name": "Fly",
@@ -2137,7 +2276,8 @@
     "material": "a wing feather from any bird",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FOG CLOUD": {
     "name": "Fog Cloud",
@@ -2151,7 +2291,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FORBIDDANCE": {
     "name": "Forbiddance",
@@ -2165,7 +2306,8 @@
     "material": "a sprinkling of holy water, rare incense, and powdered ruby worth at least 1,000 gp",
     "minimumLevel": "6",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FORCECAGE": {
     "name": "Forcecage",
@@ -2179,7 +2321,8 @@
     "material": "ruby dust worth 1,S00 gp",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FORESIGHT": {
     "name": "Foresight",
@@ -2193,7 +2336,8 @@
     "material": "a hummingbird feather",
     "minimumLevel": "9",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FREEDOM OF MOVEMENT": {
     "name": "Freedom Of Movement",
@@ -2207,7 +2351,8 @@
     "material": "a leather strap, bound around the arm or a similar appendage",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FRIENDS": {
     "name": "Friends",
@@ -2221,7 +2366,8 @@
     "material": "a small amount of makeup applied to the face as this spell is cast",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "FROSTBITE": {
     "name": "Frostbite",
@@ -2235,7 +2381,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "EEPC"
   },
   "GASEOUS FORM": {
     "name": "Gaseous Form",
@@ -2249,7 +2396,8 @@
     "material": "a bit of gauze and a wisp of smoke",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "GATE": {
     "name": "Gate",
@@ -2263,7 +2411,8 @@
     "material": "a diamond worth at least S,000 gp",
     "minimumLevel": "9",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "GEAS": {
     "name": "Geas",
@@ -2277,7 +2426,8 @@
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "GENTLE REPOSE": {
     "name": "Gentle Repose",
@@ -2291,7 +2441,8 @@
     "material": "a pinch of salt and one copper piece placed on each of the corpse's eyes, which must remain there for the duration",
     "minimumLevel": "2",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "GIANT INSECT": {
     "name": "Giant Insect",
@@ -2305,7 +2456,8 @@
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "GLIBNESS": {
     "name": "Glibness",
@@ -2319,7 +2471,8 @@
     "material": "",
     "minimumLevel": "8",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "GLOBE OF INVULNERABILITY": {
     "name": "Globe Of Invulnerability",
@@ -2333,7 +2486,8 @@
     "material": "a glass or crystal bead that shatters when the spell ends",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "GLYPH OF WARDING": {
     "name": "Glyph Of Warding",
@@ -2347,7 +2501,8 @@
     "material": "incense and powdered diamond worth at least 200 gp, which the spell consumes",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "GOODBERRY": {
     "name": "Goodberry",
@@ -2361,7 +2516,8 @@
     "material": "a sprig of mistlctoe",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "GRASPING VINE": {
     "name": "Grasping Vine",
@@ -2375,7 +2531,8 @@
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "GREASE": {
     "name": "Grease",
@@ -2389,7 +2546,8 @@
     "material": "a bit of pork rind or butter",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "GREATER INVISIBILITY": {
     "name": "Greater Invisibility",
@@ -2403,7 +2561,8 @@
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "GREATER RESTORATION": {
     "name": "Greater Restoration",
@@ -2417,7 +2576,8 @@
     "material": "diamond dust worth at least 100 gp, which the spell consumes",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "GREEN-FLAME BLADE": {
     "name": "Green-flame Blade",
@@ -2431,7 +2591,8 @@
     "material": "a melee weapon worth at least 1 sp",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "TCOE"
   },
   "GUARDIAN OF FAITH": {
     "name": "Guardian Of Faith",
@@ -2445,7 +2606,8 @@
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "GUARDS AND WARDS": {
     "name": "Guards And Wards",
@@ -2459,7 +2621,8 @@
     "material": "burning incense, a small measure of brimstone and oil, a knotted string, a small amount of umber hulk blood, and a small silver rod worth at least 10 gp",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "GUIDANCE": {
     "name": "Guidance",
@@ -2473,7 +2636,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "GUIDING BOLT": {
     "name": "Guiding Bolt",
@@ -2487,7 +2651,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "GUST OF WIND": {
     "name": "Gust Of Wind",
@@ -2501,7 +2666,8 @@
     "material": "a legume seed",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "HAIL OF THORNS": {
     "name": "Hail Of Thorns",
@@ -2515,7 +2681,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "HALLOW": {
     "name": "Hallow",
@@ -2529,7 +2696,8 @@
     "material": "herbs, oils, and incense worth at least 1,000 gp, which the spell consumes",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "HALLUCINATORY TERRAIN": {
     "name": "Hallucinatory Terrain",
@@ -2543,7 +2711,8 @@
     "material": "a stone, a twig, and a bit of green plant",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "HARM": {
     "name": "Harm",
@@ -2557,7 +2726,8 @@
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "HASTE": {
     "name": "Haste",
@@ -2571,7 +2741,8 @@
     "material": "a shaving of licorice root",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "HEAL": {
     "name": "Heal",
@@ -2585,7 +2756,8 @@
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "HEALING WORD": {
     "name": "Healing Word",
@@ -2599,7 +2771,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "HEAT METAL": {
     "name": "Heat Metal",
@@ -2613,7 +2786,8 @@
     "material": "a piece of iron and a flame",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "HELLISH REBUKE": {
     "name": "Hellish Rebuke",
@@ -2627,7 +2801,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "HEROES' FEAST": {
     "name": "Heroes' Feast",
@@ -2641,7 +2816,8 @@
     "material": "a gem-encrusted bowl worth at least 1,000 gp, which the spell consumes",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "HEROISM": {
     "name": "Heroism",
@@ -2655,7 +2831,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "HEX": {
     "name": "Hex",
@@ -2669,7 +2846,8 @@
     "material": "the petrified eye of a newt",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "HOLD MONSTER": {
     "name": "Hold Monster",
@@ -2683,7 +2861,8 @@
     "material": "a small, straight piece of iron",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "HOLD PERSON": {
     "name": "Hold Person",
@@ -2697,7 +2876,8 @@
     "material": "a small, straight piece of iron",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "HOLY AURA": {
     "name": "Holy Aura",
@@ -2711,7 +2891,8 @@
     "material": "a tiny reliquary worth at least 1,000 gp containing a sacred relic, such as a scrap of cloth from a saint's robe or a piece of parchment from a religious text",
     "minimumLevel": "8",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "HUNGER OF HADAR": {
     "name": "Hunger Of Hadar",
@@ -2725,7 +2906,8 @@
     "material": "a pickied octopus tentacle",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "HUNTER'S MARK": {
     "name": "Hunter's Mark",
@@ -2739,7 +2921,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "HYPNOTIC PATTERN": {
     "name": "Hypnotic Pattern",
@@ -2753,7 +2936,8 @@
     "material": "a glowing stick of incense or a erystal vial filled with phosphorescent material",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ICE STORM": {
     "name": "Ice Storm",
@@ -2767,7 +2951,8 @@
     "material": "a pinch of dust and a few drops of water",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "IDENTIFY": {
     "name": "Identify",
@@ -2781,7 +2966,8 @@
     "material": "a pearl worth at least 100 gp and an owl feather",
     "minimumLevel": "1",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ILLUSORY SCRIPT": {
     "name": "Illusory Script",
@@ -2795,7 +2981,8 @@
     "material": "a lead-based ink worth at least 10 gp. which the spell consumes",
     "minimumLevel": "1",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "IMPRISONMENT": {
     "name": "Imprisonment",
@@ -2809,7 +2996,8 @@
     "material": "a vellum depiction or a carved statuette in the likeness of the target, and a special component that varies according to the version of the spell you choose, worth at least S00 gp per Hit Die of the target",
     "minimumLevel": "9",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "INCENDIARY CLOUD": {
     "name": "Incendiary Cloud",
@@ -2823,7 +3011,8 @@
     "material": "",
     "minimumLevel": "8",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "INFLICT WOUNDS": {
     "name": "Inflict Wounds",
@@ -2837,7 +3026,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "INTELLECT FORTRESS": {
     "name": "Intellect Fortress",
@@ -2851,7 +3041,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "TCOE"
   },
   "INSECT PLAGUE": {
     "name": "Insect Plague",
@@ -2865,7 +3056,8 @@
     "material": "a few grains of sugar, some kernels of grain, and a smear of fat",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "INVISIBILITY": {
     "name": "Invisibility",
@@ -2879,7 +3071,8 @@
     "material": "an eyelash encased in gum arabic",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "JUMP": {
     "name": "Jump",
@@ -2893,7 +3086,8 @@
     "material": "a grasshopper's hind leg",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "KNOCK": {
     "name": "Knock",
@@ -2907,7 +3101,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "LEGEND LORE": {
     "name": "Legend Lore",
@@ -2921,7 +3116,8 @@
     "material": "incense worth at least 2S0 gp, which the spell consumes, and four ivory strips worth at least S0 gp each",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "LEOMUND'S SECRET CHEST": {
     "name": "Leomund's Secret Chest",
@@ -2935,7 +3131,8 @@
     "material": "an exquisite chest, 3 feet by 2 feet by 2 feet, constructed from rare materials worth at least S,000 gp, and a Tiny replica made from the same materials worth at least S0 gp",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "LEOMUND'S TINY HUT": {
     "name": "Leomund's Tiny Hut",
@@ -2949,7 +3146,8 @@
     "material": "a small crystal bead",
     "minimumLevel": "3",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "LESSER RESTORATION": {
     "name": "Lesser Restoration",
@@ -2963,7 +3161,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "LEVITATE": {
     "name": "Levitate",
@@ -2977,11 +3176,12 @@
     "material": "either a small leather loop or a piece of golden wire bent into a cup shape with a long shank on one end",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "LIFE TRANSFERENCE": {
     "name": "Life Transference",
-    "description": "You sacrifice some of your health to mend another creature’s injuries. You take 4d8 necrotic damage, and one creature of your choice that you can see within range regains a number of hit points equal to twice the necrotic damage you take. When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
+    "description": "You sacrifice some of your health to mend another creature\u2019s injuries. You take 4d8 necrotic damage, and one creature of your choice that you can see within range regains a number of hit points equal to twice the necrotic damage you take. When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
     "school": "necromancy",
     "castTime": "1 action",
     "range": "30 feet",
@@ -2991,7 +3191,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "XGTE"
   },
   "LIGHT": {
     "name": "Light",
@@ -3005,7 +3206,8 @@
     "material": "a firefly or phosphorescent moss",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "LIGHTNING ARROW": {
     "name": "Lightning Arrow",
@@ -3019,7 +3221,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "LIGHTNING BOLT": {
     "name": "Lightning Bolt",
@@ -3033,7 +3236,8 @@
     "material": "a bit of fur and a rod of amber, crystal, or glass",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "LIGHTNING LURE": {
     "name": "Lightning Lure",
@@ -3047,7 +3251,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "TCOE"
   },
   "LOCATE ANIMALS OR PLANTS": {
     "name": "Locate Animals Or Plants",
@@ -3061,7 +3266,8 @@
     "material": "a bit of fur from a bloodhound",
     "minimumLevel": "2",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "LOCATE CREATURE": {
     "name": "Locate Creature",
@@ -3075,7 +3281,8 @@
     "material": "a bit of fur from a bloodhound",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "LOCATE OBJECT": {
     "name": "Locate Object",
@@ -3089,7 +3296,8 @@
     "material": "a forked twig",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "LONGSTRIDER": {
     "name": "Longstrider",
@@ -3103,7 +3311,8 @@
     "material": "a pinch of dirt",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MAGE ARMOR": {
     "name": "Mage Armor",
@@ -3117,7 +3326,8 @@
     "material": "a piece of cured leather",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MAGE HAND": {
     "name": "Mage Hand",
@@ -3131,7 +3341,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MAGIC CIRCLE": {
     "name": "Magic Circle",
@@ -3145,7 +3356,8 @@
     "material": "holy water or powdered silver and iron worth at least 100 gp, which the spell consumes",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MAGIC JAR": {
     "name": "Magic Jar",
@@ -3159,7 +3371,8 @@
     "material": "a gem, crystal. reliquary, or some other ornamental container worth at least S00 gp",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MAGIC MISSILE": {
     "name": "Magic Missile",
@@ -3173,7 +3386,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MAGIC MOUTH": {
     "name": "Magic Mouth",
@@ -3187,7 +3401,8 @@
     "material": "a small bit of honeycomb and jade dust worth at least 10 gp, which the spell consumes",
     "minimumLevel": "2",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MAGIC STONE": {
     "name": "Magic Stone",
@@ -3201,7 +3416,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "EEPC"
   },
   "MAGIC WEAPON": {
     "name": "Magic Weapon",
@@ -3215,7 +3431,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MAJOR IMAGE": {
     "name": "Major Image",
@@ -3229,7 +3446,8 @@
     "material": "a bit of fleece",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MASS CURE WOUNDS": {
     "name": "Mass Cure Wounds",
@@ -3243,7 +3461,8 @@
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MASS HEAL": {
     "name": "Mass Heal",
@@ -3257,7 +3476,8 @@
     "material": "",
     "minimumLevel": "9",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MASS HEALING WORD": {
     "name": "Mass Healing Word",
@@ -3271,7 +3491,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MASS SUGGESTION": {
     "name": "Mass Suggestion",
@@ -3285,7 +3506,8 @@
     "material": "a snake's tongue and either a bit of honeycomb or a drop of sweet oil",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MAZE": {
     "name": "Maze",
@@ -3299,7 +3521,8 @@
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MELD INTO STONE": {
     "name": "Meld Into Stone",
@@ -3313,7 +3536,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MELF'S ACID ARROW": {
     "name": "Melf's Acid Arrow",
@@ -3327,7 +3551,8 @@
     "material": "powdered rhubarb leaf and an adder's stomach",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "MENDING": {
     "name": "Mending",
@@ -3341,7 +3566,8 @@
     "material": "two lodestones",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MESSAGE": {
     "name": "Message",
@@ -3355,7 +3581,8 @@
     "material": "a short piece of copper wire",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "METEOR SWARM": {
     "name": "Meteor Swarm",
@@ -3369,7 +3596,8 @@
     "material": "",
     "minimumLevel": "9",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MIND BLANK": {
     "name": "Mind Blank",
@@ -3383,7 +3611,8 @@
     "material": "",
     "minimumLevel": "8",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MINOR ILLUSION": {
     "name": "Minor Illusion",
@@ -3397,7 +3626,8 @@
     "material": "a bit of fleece",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MIRAGE ARCANE": {
     "name": "Mirage Arcane",
@@ -3411,7 +3641,8 @@
     "material": "",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MIRROR IMAGE": {
     "name": "Mirror Image",
@@ -3425,7 +3656,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MISLEAD": {
     "name": "Mislead",
@@ -3439,7 +3671,8 @@
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MISTY STEP": {
     "name": "Misty Step",
@@ -3453,7 +3686,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MODIFY MEMORY": {
     "name": "Modify Memory",
@@ -3467,7 +3701,8 @@
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MOONBEAM": {
     "name": "Moonbeam",
@@ -3481,7 +3716,8 @@
     "material": "several seeds of any moonseed plant and a piece of opalescent feldspar",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MORDENKAINEN'S FAITHFUL HOUND": {
     "name": "Mordenkainen's Faithful Hound",
@@ -3495,7 +3731,8 @@
     "material": "a tiny silver whistle, a piece of bone, and a thread",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MORDENKAINEN'S MAGNIFICENT MANSION": {
     "name": "Mordenkainen's Magnificent Mansion",
@@ -3509,7 +3746,8 @@
     "material": "a miniature portal carved from ivory, a small piece of polished marble, and a tiny silver spoon, each item worth at least S gp",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MORDENKAINEN'S PRIVATE SANCTUM": {
     "name": "Mordenkainen's Private Sanctum",
@@ -3523,7 +3761,8 @@
     "material": "a thin sheet of lead, a piece of opaque glass, a wad of cotton or cloth, and powdered chrysolite",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "MORDENKAINEN'S SWORD": {
     "name": "Mordenkainen's Sword",
@@ -3537,7 +3776,8 @@
     "material": "a miniature platinum sword with a grip and pommel of copper and zinc, worth 2S0 gp",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "MOVE EARTH": {
     "name": "Move Earth",
@@ -3551,11 +3791,12 @@
     "material": "an iron blade and a small bag containing a mixture of soils--clay, loam, and sand",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "NONDETECTION": {
     "name": "Nondetection",
-    "description": "For the duration, you hide a target that you touch from divination magic. The target can be a willing creature or a place or an object no larger than 10 feet in any dimension. The target can’t be targeted by any divination magic or perceived through magical scrying sensors.",
+    "description": "For the duration, you hide a target that you touch from divination magic. The target can be a willing creature or a place or an object no larger than 10 feet in any dimension. The target can\u2019t be targeted by any divination magic or perceived through magical scrying sensors.",
     "school": "abjuration",
     "castTime": "1 action",
     "range": "Touch",
@@ -3565,7 +3806,8 @@
     "material": "A pinch of diamond dust worth 25 gp sprinkled over the target, which the spell consumes",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "NYSTUL'S MAGIC AURA": {
     "name": "Nystul's Magic Aura",
@@ -3579,7 +3821,8 @@
     "material": "a small square of silk",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "OTILUKE'S FREEZING SPHERE": {
     "name": "Otiluke's Freezing Sphere",
@@ -3593,7 +3836,8 @@
     "material": "a small crystal sphere",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "OTILUKE'S RESILIENT SPHERE": {
     "name": "Otiluke's Resilient Sphere",
@@ -3607,7 +3851,8 @@
     "material": "a hemispherical piece of clear crystal and a matching hemispherical piece of gum arabic",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "OTTO'S IRRESISTIBLE DANCE": {
     "name": "Otto's Irresistible Dance",
@@ -3621,7 +3866,8 @@
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "PASS WITHOUT TRACE": {
     "name": "Pass Without Trace",
@@ -3635,7 +3881,8 @@
     "material": "ashes from a burned leaf of mistletoe and a sprig of spruce",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "PASSWALL": {
     "name": "Passwall",
@@ -3649,7 +3896,8 @@
     "material": "a pinch of sesame seeds",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "PHANTASMAL FORCE": {
     "name": "Phantasmal Force",
@@ -3663,7 +3911,8 @@
     "material": "a bit of fleece",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "PHANTASMAL KILLER": {
     "name": "Phantasmal Killer",
@@ -3677,7 +3926,8 @@
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "PHANTOM STEED": {
     "name": "Phantom Steed",
@@ -3691,7 +3941,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "PLANAR ALLY": {
     "name": "Planar Ally",
@@ -3705,7 +3956,8 @@
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "PLANAR BINDING": {
     "name": "Planar Binding",
@@ -3719,7 +3971,8 @@
     "material": "a jewel worth at least 1,000 gp, which the spell consumes",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "PLANE SHIFT": {
     "name": "Plane Shift",
@@ -3733,7 +3986,8 @@
     "material": "a forked, metal rod worth at least 2S0 gp, attuned to a particular plane of existence",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "PLANT GROWTH": {
     "name": "Plant Growth",
@@ -3747,7 +4001,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "POISON SPRAY": {
     "name": "Poison Spray",
@@ -3761,7 +4016,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "POLYMORPH": {
     "name": "Polymorph",
@@ -3775,7 +4031,8 @@
     "material": "a caterpillar cocoon",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "POWER WORD HEAL": {
     "name": "Power Word Heal",
@@ -3789,7 +4046,8 @@
     "material": "",
     "minimumLevel": "9",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "POWER WORD KILL": {
     "name": "Power Word Kill",
@@ -3803,7 +4061,8 @@
     "material": "",
     "minimumLevel": "9",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "POWER WORD STUN": {
     "name": "Power Word Stun",
@@ -3817,7 +4076,8 @@
     "material": "",
     "minimumLevel": "8",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "PRAYER OF HEALING": {
     "name": "Prayer Of Healing",
@@ -3831,7 +4091,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "PRESTIDIGITATION": {
     "name": "Prestidigitation",
@@ -3845,7 +4106,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "PRISMATIC SPRAY": {
     "name": "Prismatic Spray",
@@ -3859,7 +4121,8 @@
     "material": "",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "PRISMATIC WALL": {
     "name": "Prismatic Wall",
@@ -3873,7 +4136,8 @@
     "material": "",
     "minimumLevel": "9",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "PRODUCE FLAME": {
     "name": "Produce Flame",
@@ -3887,7 +4151,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "PROGRAMMED ILLUSION": {
     "name": "Programmed Illusion",
@@ -3901,7 +4166,8 @@
     "material": "a bit of fleece and jade dust worth at least 2S gp",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "PROJECT IMAGE": {
     "name": "Project Image",
@@ -3915,7 +4181,8 @@
     "material": "a small replica of you made from materials worth at least S gp",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "PROTECTION FROM ENERGY": {
     "name": "Protection From Energy",
@@ -3929,7 +4196,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "PROTECTION FROM EVIL AND GOOD": {
     "name": "Protection From Evil And Good",
@@ -3943,7 +4211,8 @@
     "material": "holy water or powdered silver and iron, which the spell consumes",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "PROTECTION FROM POISON": {
     "name": "Protection From Poison",
@@ -3957,7 +4226,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "PURIFY FOOD AND DRINK": {
     "name": "Purify Food And Drink",
@@ -3971,7 +4241,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "PYROTECHNICS": {
     "name": "Pyrotechnics",
@@ -3985,7 +4256,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "EEPC"
   },
   "RAISE DEAD": {
     "name": "Raise Dead",
@@ -3999,7 +4271,8 @@
     "material": "a diamond worth at least S00 gp, which the spell consumes",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "RARY'S TELEPATHIC BOND": {
     "name": "Rary's Telepathic Bond",
@@ -4013,7 +4286,8 @@
     "material": "pieces of eggshell from two different kinds of creatures",
     "minimumLevel": "5",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "RAY OF ENFEEBLEMENT": {
     "name": "Ray Of Enfeeblement",
@@ -4027,7 +4301,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "RAY OF FROST": {
     "name": "Ray Of Frost",
@@ -4041,7 +4316,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "RAY OF SICKNESS": {
     "name": "Ray Of Sickness",
@@ -4055,7 +4331,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "REGENERATE": {
     "name": "Regenerate",
@@ -4069,7 +4346,8 @@
     "material": "a prayer wheel and holy water",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "REINCARNATE": {
     "name": "Reincarnate",
@@ -4083,7 +4361,8 @@
     "material": "rare oils and unguents worth at least 1,000 gp, which the spell consumes",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "REMOVE CURSE": {
     "name": "Remove Curse",
@@ -4097,7 +4376,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "RESISTANCE": {
     "name": "Resistance",
@@ -4111,7 +4391,8 @@
     "material": "a miniature cloak",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "RESURRECTION": {
     "name": "Resurrection",
@@ -4125,7 +4406,8 @@
     "material": "a diamond worth at least 1,000 gp, which the spell consumes",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "REVERSE GRAVITY": {
     "name": "Reverse Gravity",
@@ -4139,7 +4421,8 @@
     "material": "a lodestone and iron filings",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "REVIVIFY": {
     "name": "Revivify",
@@ -4153,7 +4436,8 @@
     "material": "diamonds worth 300 gp, which the spell consumes",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ROPE TRICK": {
     "name": "Rope Trick",
@@ -4167,7 +4451,8 @@
     "material": "powdered corn extract and a twisted loop of parchment",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SACRED FLAME": {
     "name": "Sacred Flame",
@@ -4181,7 +4466,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SANCTUARY": {
     "name": "Sanctuary",
@@ -4195,7 +4481,8 @@
     "material": "a small silver mirror",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SCORCHING RAY": {
     "name": "Scorching Ray",
@@ -4209,7 +4496,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "SCRYING": {
     "name": "Scrying",
@@ -4223,7 +4511,8 @@
     "material": "a focus worth at least 1,000 gp. such as a crystal ball, a silver mirror, or a font filled with holy water",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SEARING SMITE": {
     "name": "Searing Smite",
@@ -4237,7 +4526,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SEE INVISIBILITY": {
     "name": "See Invisibility",
@@ -4251,7 +4541,8 @@
     "material": "a pinch of tale and a small sprinkling of powdered silver",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SEEMING": {
     "name": "Seeming",
@@ -4265,7 +4556,8 @@
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SENDING": {
     "name": "Sending",
@@ -4279,7 +4571,8 @@
     "material": "a short piece of fine copper wire",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SEQUESTER": {
     "name": "Sequester",
@@ -4293,7 +4586,8 @@
     "material": "a powder composed of diamond, emerald, ruby, and sapphire dust worth at least S,000 gp, which the spell consumes",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SHAPECHANGE": {
     "name": "Shapechange",
@@ -4307,11 +4601,12 @@
     "material": "a jade circlet worth at least 1,S00 gp, which you must place on your head before you cast the spell",
     "minimumLevel": "9",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SHAPE WATER": {
     "name": "Shape Water",
-    "description": "You choose an area of water that you can see within range and that fits within a 5-foot cube. You manipulate it in one of the following ways:\n• You instantaneously move or otherwise change the flow of the water as you direct, up to 5 feet in any direction. This movement doesn’t have enough force to cause damage. \n • You cause the water to form into simple shapes and animate at your direction. This change lasts for 1 hour. \n • You change the water’s color or opacity. The water must be changed in the same way throughout. This change lasts for 1 hour. \n • You freeze the water, provided that there are no creatures in it. The water unfreezes in 1 hour. If you cast this spell multiple times, you can have no more than two of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action.",
+    "description": "You choose an area of water that you can see within range and that fits within a 5-foot cube. You manipulate it in one of the following ways:\n\u2022 You instantaneously move or otherwise change the flow of the water as you direct, up to 5 feet in any direction. This movement doesn\u2019t have enough force to cause damage. \n \u2022 You cause the water to form into simple shapes and animate at your direction. This change lasts for 1 hour. \n \u2022 You change the water\u2019s color or opacity. The water must be changed in the same way throughout. This change lasts for 1 hour. \n \u2022 You freeze the water, provided that there are no creatures in it. The water unfreezes in 1 hour. If you cast this spell multiple times, you can have no more than two of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action.",
     "school": "transmutation",
     "castTime": "1 action",
     "range": "30 feet",
@@ -4321,7 +4616,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "EEPC"
   },
   "SHATTER": {
     "name": "Shatter",
@@ -4335,7 +4631,8 @@
     "material": "a chip of mica",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SHIELD": {
     "name": "Shield",
@@ -4349,7 +4646,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SHIELD OF FAITH": {
     "name": "Shield Of Faith",
@@ -4363,7 +4661,8 @@
     "material": "a small parchment with a bit of holy text written on it",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SHILLELAGH": {
     "name": "Shillelagh",
@@ -4377,7 +4676,8 @@
     "material": "mistletoe, a shamrock leaf, and a club or quarterstaff",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SHOCKING GRASP": {
     "name": "Shocking Grasp",
@@ -4391,7 +4691,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "SILENCE": {
     "name": "Silence",
@@ -4405,7 +4706,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SILENT IMAGE": {
     "name": "Silent Image",
@@ -4419,7 +4721,8 @@
     "material": "a bit of fleece",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SIMULACRUM": {
     "name": "Simulacrum",
@@ -4433,7 +4736,8 @@
     "material": "snow or ice in quantities sufficient to made a life-size copy of the duplicated creature; some hair, fingernail clippings, or other piece of that creature's body placed inside the snow or ice; and powdered ruby worth 1,S00 gp, sprinkled over the duplicate and consumed by the spell",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SKILL EMPOWERMENT": {
     "name": "Skill Empowerment",
@@ -4447,7 +4751,8 @@
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "XGTE"
   },
   "SKYWRITE": {
     "name": "Skywrite",
@@ -4461,7 +4766,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "EEPC"
   },
   "SLEEP": {
     "name": "Sleep",
@@ -4475,7 +4781,8 @@
     "material": "a pinch of fine sand, rose petals, or a cricket",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SLEET STORM": {
     "name": "Sleet Storm",
@@ -4489,7 +4796,8 @@
     "material": "a pinch of dust and a few drops of water",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SLOW": {
     "name": "Slow",
@@ -4503,7 +4811,8 @@
     "material": "a drop of molasses",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SNARE": {
     "name": "Snare",
@@ -4517,7 +4826,8 @@
     "material": "25 feet of rope, which the spell consumes",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "XGTE"
   },
   "SPARE THE DYING": {
     "name": "Spare The Dying",
@@ -4531,7 +4841,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SPEAK WITH ANIMALS": {
     "name": "Speak With Animals",
@@ -4545,7 +4856,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SPEAK WITH DEAD": {
     "name": "Speak With Dead",
@@ -4559,7 +4871,8 @@
     "material": "burning incense",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SPEAK WITH PLANTS": {
     "name": "Speak With Plants",
@@ -4573,7 +4886,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SPIDER CLIMB": {
     "name": "Spider Climb",
@@ -4587,7 +4901,8 @@
     "material": "a drop of bitumen and a spider",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SPIKE GROWTH": {
     "name": "Spike Growth",
@@ -4601,7 +4916,8 @@
     "material": "seven sharp thorns or seven small twigs, each sharpened to a point",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SPIRIT GUARDIANS": {
     "name": "Spirit Guardians",
@@ -4615,7 +4931,8 @@
     "material": "a holy symbol",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SPIRITUAL WEAPON": {
     "name": "Spiritual Weapon",
@@ -4629,7 +4946,8 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "STAGGERING SMITE": {
     "name": "Staggering Smite",
@@ -4643,7 +4961,8 @@
     "material": "",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "STINKING CLOUD": {
     "name": "Stinking Cloud",
@@ -4657,7 +4976,8 @@
     "material": "a rotten egg or several skunk cabbage leaves",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "STONE SHAPE": {
     "name": "Stone Shape",
@@ -4671,7 +4991,8 @@
     "material": "soft clay, which must be worked into roughly the desired shape of the stone object",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "STONESKIN": {
     "name": "Stoneskin",
@@ -4685,7 +5006,8 @@
     "material": "diamond dust worth 100 gp, which the spell consumes",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "STORM OF VENGEANCE": {
     "name": "Storm Of Vengeance",
@@ -4699,7 +5021,8 @@
     "material": "",
     "minimumLevel": "9",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SUGGESTION": {
     "name": "Suggestion",
@@ -4713,7 +5036,8 @@
     "material": "a snake's tongue and either a bit of honeycomb or a drop of sweet oil",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SUMMON CONSTRUCT": {
     "name": "Summon Construct",
@@ -4723,11 +5047,12 @@
     "range": "90 feet",
     "concentration": true,
     "duration": "up to 1 hour",
-    "components": ["V", "S","M"],
+    "components": ["V", "S", "M"],
     "material": "an ornate stone and metal lockbox worth at least 400 gp",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "TCOE"
   },
   "SUNBEAM": {
     "name": "Sunbeam",
@@ -4741,7 +5066,8 @@
     "material": "a magnifying glass",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SUNBURST": {
     "name": "Sunburst",
@@ -4755,7 +5081,8 @@
     "material": "fire and a piece of sunstone",
     "minimumLevel": "8",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SWIFT QUIVER": {
     "name": "Swift Quiver",
@@ -4769,7 +5096,8 @@
     "material": "a quiver containing at least one piece of ammunition",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "SWORD BURST": {
     "name": "Sword Burst",
@@ -4783,7 +5111,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "SCAG"
   },
   "SYMBOL": {
     "name": "Symbol",
@@ -4797,7 +5126,8 @@
     "material": "mercury, phosphorus, and powdered diamond and opal with a total value of at least 1,000 gp, which the spell consumes",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "TASHA'S CAUSTIC BREW": {
     "name": "Tasha's Caustic Brew",
@@ -4807,11 +5137,12 @@
     "range": "Self (30-foot line)",
     "concentration": true,
     "duration": "up to 1 minute",
-    "components": ["V", "S","M"],
+    "components": ["V", "S", "M"],
     "material": "a bit of rotten food",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "TCOE"
   },
   "TASHA'S HIDEOUS LAUGHTER": {
     "name": "Tasha's Hideous Laughter",
@@ -4825,7 +5156,8 @@
     "material": "tiny tarts and a feather that is waved in the air",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "TELEKINESIS": {
     "name": "Telekinesis",
@@ -4839,7 +5171,8 @@
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "TELEPATHY": {
     "name": "Telepathy",
@@ -4853,7 +5186,8 @@
     "material": "a pair of linked silver rings",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "TELEPORT": {
     "name": "Teleport",
@@ -4867,7 +5201,8 @@
     "material": "",
     "minimumLevel": "7",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "TELEPORTATION CIRCLE": {
     "name": "Teleportation Circle",
@@ -4881,7 +5216,8 @@
     "material": "rare chalks and inks infused with precious gems with S0 gp, which the spell consumes",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "TENSER'S FLOATING DISK": {
     "name": "Tenser's Floating Disk",
@@ -4895,7 +5231,8 @@
     "material": "a drop of mercury",
     "minimumLevel": "1",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "THAUMATURGY": {
     "name": "Thaumaturgy",
@@ -4909,7 +5246,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "THORN WHIP": {
     "name": "Thorn Whip",
@@ -4923,7 +5261,8 @@
     "material": "the stem of a plant with thorns",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "THUNDERCLAP": {
     "name": "Thunderclap",
@@ -4937,7 +5276,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "EEPC"
   },
   "THUNDEROUS SMITE": {
     "name": "Thunderous Smite",
@@ -4951,7 +5291,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "THUNDERWAVE": {
     "name": "Thunderwave",
@@ -4965,7 +5306,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "TIME STOP": {
     "name": "Time Stop",
@@ -4979,7 +5321,8 @@
     "material": "",
     "minimumLevel": "9",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "TINY SERVANT": {
     "name": "Tiny Servant",
@@ -4993,7 +5336,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "XGTE"
   },
   "TONGUES": {
     "name": "Tongues",
@@ -5007,7 +5351,8 @@
     "material": "a small clay model of a ziggurat",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "TRANSMUTE ROCK": {
     "name": "Transmute Rock",
@@ -5021,7 +5366,8 @@
     "material": "clay and water",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "EEPC"
   },
   "TRANSPORT VIA PLANTS": {
     "name": "Transport Via Plants",
@@ -5035,7 +5381,8 @@
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "TREE STRIDE": {
     "name": "Tree Stride",
@@ -5049,7 +5396,8 @@
     "material": "",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "TRUE POLYMORPH": {
     "name": "True Polymorph",
@@ -5063,7 +5411,8 @@
     "material": "a drop of mercury, a dollop of gum arabic, and a wisp of smoke",
     "minimumLevel": "9",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "TRUE RESURRECTION": {
     "name": "True Resurrection",
@@ -5077,7 +5426,8 @@
     "material": "a sprinkle of holy water and diamonds worth at least 2S,000 gp, which the spell consumes",
     "minimumLevel": "9",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "TRUE SEEING": {
     "name": "True Seeing",
@@ -5091,7 +5441,8 @@
     "material": "an ointment for the eyes that costs 2S gp; is made from mushroom powder, saffron, and fat; and is consumed by the spell",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "TRUE STRIKE": {
     "name": "True Strike",
@@ -5105,7 +5456,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "TSUNAMI": {
     "name": "Tsunami",
@@ -5119,7 +5471,8 @@
     "material": "",
     "minimumLevel": "8",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "UNSEEN SERVANT": {
     "name": "Unseen Servant",
@@ -5133,7 +5486,8 @@
     "material": "a piece of string and a bit of wood",
     "minimumLevel": "1",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "VAMPIRIC TOUCH": {
     "name": "Vampiric Touch",
@@ -5147,7 +5501,8 @@
     "material": "",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "VICIOUS MOCKERY": {
     "name": "Vicious Mockery",
@@ -5161,7 +5516,8 @@
     "material": "",
     "minimumLevel": "0",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "WALL OF FIRE": {
     "name": "Wall Of Fire",
@@ -5175,7 +5531,8 @@
     "material": "a small piece of phosphorus",
     "minimumLevel": "4",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "WALL OF FORCE": {
     "name": "Wall Of Force",
@@ -5189,7 +5546,8 @@
     "material": "a pinch of powder made by crushing a clear gemstone",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "WALL OF ICE": {
     "name": "Wall Of Ice",
@@ -5203,7 +5561,8 @@
     "material": "a small piece of quartz",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "WALL OF STONE": {
     "name": "Wall Of Stone",
@@ -5217,7 +5576,8 @@
     "material": "a smal! block of granite",
     "minimumLevel": "5",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "WALL OF THORNS": {
     "name": "Wall Of Thorns",
@@ -5231,7 +5591,8 @@
     "material": "a handful of thorns",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "WARDING BOND": {
     "name": "Warding Bond",
@@ -5245,7 +5606,8 @@
     "material": "a pair of platinum rings worth at least S0 gp each, which you and the target must wear for the duration",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "WATER BREATHING": {
     "name": "Water Breathing",
@@ -5259,7 +5621,8 @@
     "material": "a short reed or piece of straw",
     "minimumLevel": "3",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "WATER WALK": {
     "name": "Water Walk",
@@ -5273,11 +5636,12 @@
     "material": "a piece of cork",
     "minimumLevel": "3",
     "ritual": true,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "WEB": {
     "name": "Web",
-    "description": "You conjure a mass of thick, sticky webbing at a point of your choice within range. The webs fill a 20-foot cube from that point for the duration. The webs are difficult terrain and lightly obscure their area.\nIf the webs aren’t anchored between two solid masses (such as walls or trees) or layered across a floor, wall, or ceiling, the conjured web collapses on itself, and the spell ends at the start of your next turn. Webs layered over a flat surface have a depth of 5 feet.\nEach creature that starts its turn in the webs or that enters them during its turn must make a Dexterity saving throw. On a failed save, the creature is restrained as long as it remains in the webs or until it breaks free.\nA creature restrained by the webs can use its action to make a Strength check against your spell save DC. If it succeeds, it is no longer restrained.\nThe webs are flammable. Any 5-foot cube of webs exposed to fire burns away in 1 round, dealing 2d4 fire damage to any creature that starts its turn in the fire.",
+    "description": "You conjure a mass of thick, sticky webbing at a point of your choice within range. The webs fill a 20-foot cube from that point for the duration. The webs are difficult terrain and lightly obscure their area.\nIf the webs aren\u2019t anchored between two solid masses (such as walls or trees) or layered across a floor, wall, or ceiling, the conjured web collapses on itself, and the spell ends at the start of your next turn. Webs layered over a flat surface have a depth of 5 feet.\nEach creature that starts its turn in the webs or that enters them during its turn must make a Dexterity saving throw. On a failed save, the creature is restrained as long as it remains in the webs or until it breaks free.\nA creature restrained by the webs can use its action to make a Strength check against your spell save DC. If it succeeds, it is no longer restrained.\nThe webs are flammable. Any 5-foot cube of webs exposed to fire burns away in 1 round, dealing 2d4 fire damage to any creature that starts its turn in the fire.",
     "school": "conjuration",
     "castTime": "1 action",
     "range": "60 feet",
@@ -5287,11 +5651,12 @@
     "material": "a bit of spiderweb",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "WEIRD": {
     "name": "Weird",
-    "description": "Drawing on the deepest fears of a group of creatures, you create illusory creatures in their minds, visible only to them. Each creature in a 30-foot-radius sphere centered on a point of your choice within range must make a Wisdom saving throw. On a failed save, a creature becomes frightened for the duration. The illusion calls on the creature’s deepest fears, manifesting its worst nightmares as an implacable threat. At the end of each of the frightened creature’s turns, it must succeed on a Wisdom saving throw or take 4d10 psychic damage. On a successful save, the spell ends for that creature.",
+    "description": "Drawing on the deepest fears of a group of creatures, you create illusory creatures in their minds, visible only to them. Each creature in a 30-foot-radius sphere centered on a point of your choice within range must make a Wisdom saving throw. On a failed save, a creature becomes frightened for the duration. The illusion calls on the creature\u2019s deepest fears, manifesting its worst nightmares as an implacable threat. At the end of each of the frightened creature\u2019s turns, it must succeed on a Wisdom saving throw or take 4d10 psychic damage. On a successful save, the spell ends for that creature.",
     "school": "",
     "castTime": "1 action",
     "range": "120 feet",
@@ -5301,7 +5666,8 @@
     "material": "",
     "minimumLevel": "9",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "WIND WALK": {
     "name": "Wind Walk",
@@ -5315,7 +5681,8 @@
     "material": "fire and holy water",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "WIND WALL": {
     "name": "Wind Wall",
@@ -5329,7 +5696,8 @@
     "material": "a tiny fan and a feather of exotic origin",
     "minimumLevel": "3",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "WISH": {
     "name": "Wish",
@@ -5343,7 +5711,8 @@
     "material": "",
     "minimumLevel": "9",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "WITCH BOLT": {
     "name": "Witch Bolt",
@@ -5357,7 +5726,8 @@
     "material": "a twig from a tree that has been struck by lightning",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": true
+    "spellAttack": true,
+    "sourcebook": "PHB"
   },
   "WORD OF RECALL": {
     "name": "Word Of Recall",
@@ -5371,7 +5741,8 @@
     "material": "",
     "minimumLevel": "6",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "WRATHFUL SMITE": {
     "name": "Wrathful Smite",
@@ -5385,7 +5756,8 @@
     "material": "",
     "minimumLevel": "1",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   },
   "ZONE OF TRUTH": {
     "name": "Zone Of Truth",
@@ -5399,6 +5771,7 @@
     "material": "",
     "minimumLevel": "2",
     "ritual": false,
-    "spellAttack": false
+    "spellAttack": false,
+    "sourcebook": "PHB"
   }
 }

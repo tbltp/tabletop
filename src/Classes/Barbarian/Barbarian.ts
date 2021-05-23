@@ -68,22 +68,9 @@ export class Barbarian extends PlayerClass {
   }
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
-    const rage: ResourceTrait = {
-      title: "Rage",
-      description:
-        "Number of times you can go into a Rage.  Bonus applies to attack damage while in a rage.",
-      resourceMax: { value: 2 },
-    };
-    const rageDamage: ScalingTrait = {
-      title: "Rage",
-      description:
-        "Amount of damage added to an attack while you're in a Rage.",
-      bonus: 2,
-    };
-    pc.pcHelper.addResourceTraits(rage);
-    pc.pcHelper.addScalingTraits(rageDamage);
 
     if(!PlayerClass.multiClassCheck(pc, "Unarmored Defense")){
+      this.pushBarbarianFeatures(pc, 1);
       pc.armorClasses.push({
         name: "Unarmored Defense",
         base: 10,
@@ -94,7 +81,8 @@ export class Barbarian extends PlayerClass {
         bonus: { value: 0 },
       });
     }
-    this.pushBarbarianFeatures(pc, 1);
+
+    PlayerClass.addEffectsToClassFeature(pc, "Rage", {resourceMax: {value: 2}}, {bonus: 2});
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
@@ -102,9 +90,7 @@ export class Barbarian extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    
     this.subclass = new BarbarianSubclass(params.subclassParams);
-    
     this.subclassDriver(pc, "3", params);
     pc.pcHelper.findResourceTraitByName("Rage").resourceMax.value++;
   }
@@ -118,7 +104,7 @@ export class Barbarian extends PlayerClass {
     pc.speeds.push(
       {
         name: "Fast Movement",
-        base: pc.speeds["Base Speed"].base,
+        base: pc.speeds.find(spd => spd.name === "Base Speed").base,
         bonus: {value: 10}
       }
     )
@@ -134,7 +120,7 @@ export class Barbarian extends PlayerClass {
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
     this.subclassDriver(pc, "6", params);
-    pc.pcHelper.findResourceTraitByName("Rage").resourceMax.value++;
+    pc.pcHelper.findFeatureTraitByName("Rage").resource.resourceMax.value++;
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
@@ -152,7 +138,7 @@ export class Barbarian extends PlayerClass {
       dice: "1dx",
     };
     pc.pcHelper.addScalingTraits(brutalCritical);
-    pc.pcHelper.findScalingTraitByName("Rage Damage").bonus = 3;
+    pc.pcHelper.findFeatureTraitByName("Rage").scaling.bonus = 3;
     this.pushBarbarianFeatures(pc, 9);
   }
 
@@ -183,7 +169,7 @@ export class Barbarian extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.findScalingTraitByName("Rage Damage").bonus = 4;
+    pc.pcHelper.findFeatureTraitByName("Rage").scaling.bonus = 3;
     this.subclassDriver(pc, "16", params);
   }
 

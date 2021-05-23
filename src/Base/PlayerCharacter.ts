@@ -33,22 +33,7 @@ export class PlayerCharacter extends BaseCharacter {
     { name: "Base Speed", base: {value: 0}, bonus: { value: 0 } },
   ];
 
-  spellcasting?: {
-    title: string,
-    preparedSpells?: {
-      level: { value: number };
-      modifier: { value: number };
-    },
-    spellSave: {
-      base: number;
-      proficiency: { value: number };
-      modifier: { value: number };
-    },
-    spellAttack: {
-      proficiency: { value: number };
-      modifier: { value: number };
-    }
-  }[]
+  spellcasting?: PCSpellcastingAbility[];
 
   notes: Note[] = [];
 
@@ -84,4 +69,22 @@ export interface Note {
   title: string;
   description: string;
   date: string;
+}
+
+export interface PCSpellcastingAbility {
+  title: string,
+  preparedSpells?: {
+    level: { value: number };
+    modifier: { value: number };
+  },
+  spellSave: {
+    base: number;
+    proficiency: { value: number };
+    modifier: { value: number };
+  },
+  spellAttack: {
+    proficiency: { value: number };
+    modifier: { value: number };
+  }
+  spellSlots: ResourceTrait[]; // Figure out how to stick spell slots in here uwu owo
 }

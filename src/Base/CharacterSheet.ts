@@ -58,6 +58,9 @@ export class CharacterSheet {
 
     //level up proficiency according to total level
     this.character.proficiency.levelUp(tLevel);
+
+    // hit die (don't add between level 0 and level 1)
+    cLevel > 1 ? this.character.hitDie[this.playerClasses[levelingClass].hitDie]++ : null
     
     //level up race according to total level
     if(this.race.abilitiesAtLevels[tLevel.toString()]) {
@@ -90,7 +93,7 @@ export class CharacterSheet {
     this.applySpellSlotsAtLevelUp();
   }
 
-  applySpellSlotsAtLevelUp(){
+  private applySpellSlotsAtLevelUp(){
     
     if(Object.keys(this.levels).length == 1) { // IF NOT MULTICLASSING...
 

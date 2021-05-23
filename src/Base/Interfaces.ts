@@ -57,18 +57,18 @@ export interface Trait {
   readonly title: string;
   description: string;
   choices?: string[];
+  resource?: ResourceTrait;
+  scaling?: ScalingTrait;
   spellAdded?: string; //TODO: turn this into an array
 }
 
-export interface ResourceTrait extends Trait {
+export interface ResourceTrait {
   /**Spell slots are just special resource traits with no additional properties */
   resourceMax?: { value: number };
   proficiency?: boolean;
-  bonus?: number;
-  dice?: string;
 }
 
-export interface ScalingTrait extends Trait {
+export interface ScalingTrait {
   bonus?: number;
   dice?: string;
   challengeRating?: number;

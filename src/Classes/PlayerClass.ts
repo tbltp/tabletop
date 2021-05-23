@@ -1,5 +1,5 @@
 import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { Trait, EquipmentPack, AttachedFeature } from "../Base/Interfaces";
+import { Trait, EquipmentPack, AttachedFeature, ResourceTrait, ScalingTrait } from "../Base/Interfaces";
 import * as Spells from "../../Assets/Spells.json";
 import * as Languages from "../../Assets/Languages.json";
 import * as Gear from "../../Assets/Gear.json";
@@ -212,6 +212,11 @@ export abstract class PlayerClass {
     }
   }
 
+  public static addEffectsToClassFeature(pc: PlayerCharacter, feature: string, resource?: ResourceTrait, scaling?: ScalingTrait){
+    if(resource) {pc.pcHelper.findFeatureTraitByName(feature).resource = resource}
+    if(scaling) {pc.pcHelper.findFeatureTraitByName(feature).scaling = scaling}
+  }
+
   public static pushCustomizedClassFeature(
     pc: PlayerCharacter,
     level: number,
@@ -286,8 +291,8 @@ export abstract class PlayerClass {
   public static multiClassCheck(pc: PlayerCharacter, trait: string){
     
     let riskTraits = {
-      "Channel Divinity": pc.pcHelper.findResourceTraitByName("Channel Divinity") === null ? true : false,
-      "Unarmored Defense": pc.pcHelper.findFeatureTraitByName("Unarmored Defense") === null ? true : false
+      "Channel Divinity": pc.pcHelper.findResourceTraitByName("Channel Divinity") === null ? false : true,
+      "Unarmored Defense": pc.pcHelper.findFeatureTraitByName("Unarmored Defense") === null ? false : true
     }
     if (riskTraits[trait]) { return true; }
 
