@@ -29,40 +29,47 @@ export class PlayerCharacterHelper {
      * 
      * findFeatures() ==> Searches for feature on a custom lambda passed as a param (used for features that can be replaced.)
      */
-
-    private findTraitByName(traitType: string, name: string): Trait | null {
-      //accepts title casing or all caps
-      const results = this.pc.traits[traitType].filter(
-        (trait) => trait.title.toUpperCase() === name.toUpperCase());
-      return results.length === 1 ? results[0] : null;
-    }
-
-    findFeatureTraitByName(name: string): Trait {
-      return this.findTraitByName("features", name);
-    }
-  
-    findResourceTraitByName(name: string): ResourceTrait {
-      return this.findTraitByName("resources", name) as ResourceTrait;
-    }
-  
-    findScalingTraitByName(name: string): ScalingTrait {
-      return this.findTraitByName("scalingEffects", name) as ScalingTrait;
-    }
     
+    //idk if this means anything anymore
     private addTraits(type: string, ...traits: Trait[]) {
       this.pc.traits[type].push(...traits);
+    }
+
+    private nameMatch(name: string, traits: Trait[]): Trait | null {
+      //accepts any casing
+      const nameCaps = name.toUpperCase();
+      const result = traits.find(
+        t => t.title.toUpperCase() === nameCaps
+      );
+      return result ? result : null
+    }
+
+    private getResourceTraits(): Trait[] {
+      return this.pc.traits.features.filter(
+        t => t.resource != null
+      );
+    }
+
+    private getScalingTraits(): Trait[] {
+      return this.pc.traits.features.filter(
+        t => t.scaling != null
+      );
+    }
+
+    findFeatureTraitByName(name: string): Trait | null {
+      return this.nameMatch(name, this.pc.traits.features);
+    }
+
+    findResourceTraitByName(name: string): Trait | null {
+      return this.nameMatch(name, this.getResourceTraits());
+    }
+
+    findScalingTraitByName(name: string): Trait | null {
+      return this.nameMatch(name, this.getScalingTraits())
     }
     
     addFeatures(...features: Trait[]): void {
       this.addTraits("features", ...features);
-    }
-
-    addResourceTraits(...resTraits: ResourceTrait[]): void {
-      this.addTraits("resources", ...resTraits);
-    }
-  
-    addScalingTraits(...scalTraits: ScalingTrait[]): void {
-      this.addTraits("scalingEffects", ...scalTraits);
     }
 
     removeFeatures(...oldFeatures: string[]): void {

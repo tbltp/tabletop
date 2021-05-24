@@ -222,18 +222,14 @@ export abstract class BaseCharacter {
     armorProficiencies: Set<string>;
     weaponProficiencies: Set<string>;
     toolProficiencies: Set<string>;
-    languages: Trait[];
+    languages: Set<Trait>;
     features: Trait[];
-    resources: ResourceTrait[];
-    scalingEffects: ScalingTrait[];
   } = {
     armorProficiencies: new Set(),
     weaponProficiencies: new Set(),
     toolProficiencies: new Set(),
-    languages: [],
-    features: [],
-    resources: [],
-    scalingEffects: [],
+    languages: new Set(),
+    features: []
   };
   
   // Known Spells
