@@ -1,7 +1,7 @@
 import { join } from "path";
 import { ResourceTrait } from "../../../../Base/Interfaces";
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
-import { LevelingParams } from "../../../../Classes/PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../../Classes/PlayerClass";
 import * as MonsterSlayerArchetypeDict from "./MonsterSlayer.json"
 
 export class MonsterSlayer {
@@ -15,15 +15,11 @@ export class MonsterSlayer {
   }
 
   static monsterSlayer3(pc: PlayerCharacter, params: LevelingParams) {
-    pc.pcHelper.addFeatures(MonsterSlayer.getFeature("3", "HUNTER'S SENSE"));
-    const hunterSense: ResourceTrait = {
-      title: "Hunter's Sense",
-      description: "The number of times you may use Hunter's Sense",
-      resourceMax: (pc.abilityScores.wisdom.modifier.value>=1) ? pc.abilityScores.wisdom.modifier : {value: 1}
-    }
-    pc.pcHelper.addResourceTraits(hunterSense);
-    pc.pcHelper.addFeatures(MonsterSlayer.getFeature("3", "SLAYER'S PREY"));
+    pc.pcHelper.addFeatures(MonsterSlayer.getFeature("3", "HUNTER'S SENSE"), MonsterSlayer.getFeature("3", "SLAYER'S PREY"));
     MonsterSlayer.getSpell(pc,"3");
+
+    const hunterSense: ResourceTrait = { resourceMax: (pc.abilityScores.wisdom.modifier.value>=1) ? pc.abilityScores.wisdom.modifier : {value: 1} }
+    pc.pcHelper.addEffectsToClassFeature("Hunter's Sense",{resource: hunterSense})
   }
 
   static monsterSlayer5(pc: PlayerCharacter, params: LevelingParams) {

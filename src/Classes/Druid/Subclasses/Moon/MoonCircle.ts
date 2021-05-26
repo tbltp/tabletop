@@ -11,15 +11,13 @@ export class MoonCircle {
   }
 
   static upWildShape(pc: PlayerCharacter){
-    const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName("Wild Shape");
-    wildShapeScale.challengeRating+=1;
+            pc.pcHelper.findFeatureTraitByName("Wild Shape").scaling.challengeRating++;
+
   }
 
   static moon2(pc: PlayerCharacter, params: LevelingParams) {
-    pc.pcHelper.addFeatures(MoonCircle.getFeature("2", "COMBAT WILD SHAPE"));
-    pc.pcHelper.addFeatures(MoonCircle.getFeature("2", "CIRCLE FORMS"));
-    const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName("Wild Shape");
-    wildShapeScale.challengeRating=1;
+    pc.pcHelper.addFeatures(MoonCircle.getFeature("2", "COMBAT WILD SHAPE"), MoonCircle.getFeature("2", "CIRCLE FORMS"));
+    pc.pcHelper.findFeatureTraitByName("Wild Shape").scaling.challengeRating = 1;
   }
   
   static moon6(pc: PlayerCharacter, params: LevelingParams) {

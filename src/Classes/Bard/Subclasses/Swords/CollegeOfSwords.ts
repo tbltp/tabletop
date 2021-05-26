@@ -9,24 +9,14 @@ export class CollegeOfSwords {
   }
 
   static swords3(pc: PlayerCharacter, params: LevelingParams) {
-    pc.pcHelper.addFeatures(CollegeOfSwords.getFeature("3", "BONUS PROFICIENCY"));
-    pc.traits.armorProficiencies.add("Medium");
-    pc.traits.weaponProficiencies.add("Scimitar");
-    pc.pcHelper.addFeatures(CollegeOfSwords.getFeature("3", "FIGHTING STYLE"));
-    if(params.fightingStyles) {
-      PlayerClass.addFightingStyle(pc,params.fightingStyles[0]);
-    }
-    pc.pcHelper.addFeatures(CollegeOfSwords.getFeature("3", "BLADE FLOURISH"));
+    pc.pcHelper.addFeatures(CollegeOfSwords.getFeature("3", "BONUS PROFICIENCY"), CollegeOfSwords.getFeature("3", "FIGHTING STYLE"), CollegeOfSwords.getFeature("3", "BLADE FLOURISH"));
+    params.fightingStyles ?? PlayerClass.addFightingStyle(pc,params.fightingStyles[0]);
   }
 
   static swords6(pc: PlayerCharacter, params: LevelingParams) {
-    CollegeOfSwords.getFeature("6", "EXTRA ATTACK");
-    if(!pc.pcHelper.findResourceTraitByName("Extra Attack")) {
-      pc.pcHelper.addResourceTraits({
-        title: "Extra Attack",
-        description: "Number of Extra Attacks you can make.",
-        resourceMax: { value: 1 },
-      });
+    if(!pc.pcHelper.findFeatureTraitByName("Extra Attack")) {
+      pc.pcHelper.addFeatures(CollegeOfSwords.getFeature("6", "EXTRA ATTACK"));
+      pc.pcHelper.addEffectsToClassFeature("Extra Attack", {scaling: {uses: 1}})
     }
   }
 

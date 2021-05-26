@@ -1,11 +1,8 @@
 import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
-import { ResourceTrait } from "../../Base/Interfaces";
-import * as SpellList from "../../../Assets/SpellList.json";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import * as RangerClassTraits from "./Ranger.json";
 import { RangerSubclass } from "./Subclasses/RangerSubclass";
-import { SpellSlotFactory } from "../SpellSlotFactory";
 
 export class Ranger extends PlayerClass {
  constructor(params: ClassCreationParams) {
@@ -85,6 +82,7 @@ export class Ranger extends PlayerClass {
       "FAVORED ENEMY", 
       [params.favoredEnemy]
     );
+
     PlayerClass.pushCustomizedClassFeature(
       pc,
       1,
@@ -103,10 +101,10 @@ export class Ranger extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    this.handleRangerSpellSelections(pc, params);
+    this.pushRangerFeatures(pc, 3);
     this.subclass = new RangerSubclass(params.subclassParams);
     this.subclassDriver(pc, "3", params);
-    this.pushRangerFeatures(pc, 3);
+    this.handleRangerSpellSelections(pc, params);
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
@@ -115,32 +113,30 @@ export class Ranger extends PlayerClass {
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
-    this.handleRangerSpellSelections(pc, params);
     this.pushRangerFeatures(pc, 5);
-    if(!pc.pcHelper.findResourceTraitByName("Extra Attack")){
-      pc.pcHelper.addResourceTraits({
-        title: "Extra Attack",
-        description: "Number of Extra Attacks you can make.",
-        resourceMax: { value: 1 },
-      });
-    }
     this.subclassDriver(pc, "5", params);
+    this.handleRangerSpellSelections(pc, params);
+    if(!pc.pcHelper.findFeatureTraitByName("Extra Attack")){
+      pc.pcHelper.addEffectsToClassFeature("Extra Attack", {scaling: {uses: 1}})
+    }
   }
 
   level6(pc: PlayerCharacter, params: RangerLevelingParams): void {
+    this.pushRangerFeatures(pc, 6);
+    this.subclassDriver(pc, "6", params);
+    
     pc.pcHelper.findFeatureTraitByName("Favored Enemy").choices.push(
       params.favoredEnemy
     );
+    
     pc.pcHelper.findFeatureTraitByName("Natural Explorer").choices.push(
       params.favoredTerrain
     );
-    this.pushRangerFeatures(pc, 6);
-    this.subclassDriver(pc, "6", params);
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
-    this.handleRangerSpellSelections(pc, params);
     this.subclassDriver(pc, "7", params);
+    this.handleRangerSpellSelections(pc, params);
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
@@ -149,21 +145,21 @@ export class Ranger extends PlayerClass {
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
-    this.handleRangerSpellSelections(pc, params);
     this.subclassDriver(pc, "9", params);
+    this.handleRangerSpellSelections(pc, params);
   }
 
   level10(pc: PlayerCharacter, params: RangerLevelingParams): void {
     this.pushRangerFeatures(pc, 10);
+    this.subclassDriver(pc, "10", params);
     pc.pcHelper.findFeatureTraitByName("Natural Explorer").choices.push(
       params.favoredTerrain
     );
-    this.subclassDriver(pc, "10", params);
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
-    this.handleRangerSpellSelections(pc, params);
     this.subclassDriver(pc, "11", params);
+    this.handleRangerSpellSelections(pc, params);
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
@@ -171,21 +167,21 @@ export class Ranger extends PlayerClass {
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
-    this.handleRangerSpellSelections(pc, params);
     this.subclassDriver(pc, "13", params);
+    this.handleRangerSpellSelections(pc, params);
   }
 
   level14(pc: PlayerCharacter, params: RangerLevelingParams): void {
+    this.pushRangerFeatures(pc, 14);
+    this.subclassDriver(pc, "14", params);
     pc.pcHelper.findFeatureTraitByName("Favored Enemy").choices.push(
       params.favoredEnemy
     );
-    this.pushRangerFeatures(pc, 14);
-    this.subclassDriver(pc, "14", params);
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
-    this.handleRangerSpellSelections(pc, params);
     this.subclassDriver(pc, "15", params);
+    this.handleRangerSpellSelections(pc, params);
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
@@ -193,8 +189,8 @@ export class Ranger extends PlayerClass {
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
-    this.handleRangerSpellSelections(pc, params);
     this.subclassDriver(pc, "17", params);
+    this.handleRangerSpellSelections(pc, params);
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {
@@ -203,8 +199,8 @@ export class Ranger extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
-    this.handleRangerSpellSelections(pc, params);
     this.subclassDriver(pc, "19", params);
+    this.handleRangerSpellSelections(pc, params);
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {

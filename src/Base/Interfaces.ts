@@ -73,6 +73,7 @@ export interface ScalingTrait {
   dice?: string;
   challengeRating?: number;
   points?: number;
+  uses?: number;
 }
 
 export interface ISpell {

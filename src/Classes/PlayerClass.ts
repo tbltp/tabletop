@@ -1,11 +1,11 @@
 import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { Trait, EquipmentPack, AttachedFeature, ResourceTrait, ScalingTrait } from "../Base/Interfaces";
-import * as Spells from "../../Assets/Spells.json";
+import * as SpellList from "../../Assets/SpellList.json";
+import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
 import * as Languages from "../../Assets/Languages.json";
 import * as Gear from "../../Assets/Gear.json";
 import * as ToolKits from "../../Assets/Tools.json";
 import * as FightingStyle from "../../Assets/FightingStyles.json";
-import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
 import * as Armor from "../../Assets/Armor.json";
 import * as Weapons from "../../Assets/Weapons.json";
 import { Inventory } from "../Base/Equipment/Inventory";
@@ -69,7 +69,7 @@ export abstract class PlayerClass {
 
   protected addLanguages(pc: PlayerCharacter): void {
     for (let language of this.languages) {
-      pc.traits.languages.push(Languages[language]);
+      pc.traits.languages.add(Languages[language]);
     }
   }
 
@@ -212,9 +212,9 @@ export abstract class PlayerClass {
     }
   }
 
-  public static addEffectsToClassFeature(pc: PlayerCharacter, feature: string, resource?: ResourceTrait, scaling?: ScalingTrait){
-    if(resource) {pc.pcHelper.findFeatureTraitByName(feature).resource = resource}
-    if(scaling) {pc.pcHelper.findFeatureTraitByName(feature).scaling = scaling}
+  public static addEffectsToClassFeature(pc: PlayerCharacter, feature: string, effect: {resource?: ResourceTrait, scaling?: ScalingTrait}){
+    if(effect.resource) {pc.pcHelper.findFeatureTraitByName(feature).resource = effect.resource }
+    if(effect.scaling) {pc.pcHelper.findFeatureTraitByName(feature).scaling = effect.scaling }
   }
 
   public static pushCustomizedClassFeature(
@@ -263,8 +263,12 @@ export abstract class PlayerClass {
     }
 
     pc.spellcasting
-      ? pc.spellcasting.push(spellcasting)
-      : (pc.spellcasting = [spellcasting]);
+      ? pc.spellcasting.abilities.push(spellcasting)
+      : (pc.spellcasting = {spellSlots: [], abilities: [spellcasting]});
+  }
+
+  addPreparationSpells(pc: PlayerCharacter, className: string, level: string){ 
+    pc.pcHelper.addSpells(SpellList[className][level], SpellcastingAbility[className]);
   }
 
   subclassDriver(pc: PlayerCharacter, level: string, params: LevelingParams){
@@ -291,7 +295,7 @@ export abstract class PlayerClass {
   public static multiClassCheck(pc: PlayerCharacter, trait: string){
     
     let riskTraits = {
-      "Channel Divinity": pc.pcHelper.findResourceTraitByName("Channel Divinity") === null ? false : true,
+      "Channel Divinity": pc.pcHelper.findFeatureTraitByName("Channel Divinity") === null ? false : true,
       "Unarmored Defense": pc.pcHelper.findFeatureTraitByName("Unarmored Defense") === null ? false : true
     }
     if (riskTraits[trait]) { return true; }

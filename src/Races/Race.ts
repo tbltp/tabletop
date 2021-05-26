@@ -44,7 +44,7 @@ export abstract class Race {
 
   addLanguages(pc: PlayerCharacter): void {
     for (let language of this.languages) {
-      pc.traits.languages.push(language);
+      pc.traits.languages.add(language);
     }
   }
 

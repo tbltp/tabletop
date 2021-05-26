@@ -10,8 +10,8 @@
     }
   }, 
   "5": {
-    "DESTROY UNDEAD": {
-      "title": "Destroy Undead", 
+    "CHANNEL: DIVINITY: DESTROY UNDEAD": {
+      "title": "Channel Divinity: Destroy Undead", 
       "description": "When an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed if its challenge rating is at or below a certain threshold, as shown in the Destroy Undead table."
     }
   }, 

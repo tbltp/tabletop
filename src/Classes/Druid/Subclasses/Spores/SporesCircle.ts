@@ -1,6 +1,6 @@
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
 import { ScalingTrait } from "../../../../Base/Interfaces";
-import { LevelingParams } from "../../../../Classes/PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../../Classes/PlayerClass";
 import * as SporesCircleDict from "./Spores.json";
 
 
@@ -15,28 +15,16 @@ export class SporesCircle
     }
 
     static upSymbioticEntity(pc: PlayerCharacter){
-        const symbioticHP: ScalingTrait = pc.pcHelper.findScalingTraitByName("Symbiotic Entity");
-        symbioticHP.bonus+=4;
+        pc.pcHelper.findFeatureTraitByName("Symbiotic Entity").scaling.bonus += 4;
     }
 
     static spores2(pc: PlayerCharacter, params: LevelingParams) {
+        pc.pcHelper.addFeatures(SporesCircle.getFeature("2", "HALO OF SPORES"), SporesCircle.getFeature("2", "SYMBIOTIC ENTITY"));
         SporesCircle.getSpells(pc,"2");
-        const haloDamage: ScalingTrait = {
-            title: "Halo of Spores",
-            description: "Damage dice for Halo of Spores",
-            dice: "1d4"
-        }
-        pc.pcHelper.addScalingTraits(haloDamage);
-        pc.pcHelper.addFeatures(SporesCircle.getFeature("2", "HALO OF SPORES"));
-        const symbioticHP: ScalingTrait = {
-            title: "Symbiotic Entity",
-            description: "The amount of temporary hit points granted by Symbiotic Entity",
-            bonus: 8
-        }
-        pc.pcHelper.addScalingTraits(symbioticHP)
-        pc.pcHelper.addFeatures(SporesCircle.getFeature("2", "SYMBIOTIC ENTITY"));
-        const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName("Wild Shape");
-        wildShapeScale.challengeRating = 0.25;
+        pc.pcHelper.addEffectsToClassFeature("Halo of Spores", {scaling: {dice: "1d4"}})
+        pc.pcHelper.addEffectsToClassFeature("Symbiotic Entity", {scaling: {bonus: 8}})
+        pc.pcHelper.findFeatureTraitByName("Wild Shape").scaling.challengeRating = 0.25;
+
     }
       
     static spores3(pc: PlayerCharacter,params: LevelingParams){
@@ -46,8 +34,7 @@ export class SporesCircle
     }
 
     static spores4(pc: PlayerCharacter, params: LevelingParams){
-        const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName("Wild Shape");
-        wildShapeScale.challengeRating = 0.5;
+        pc.pcHelper.findFeatureTraitByName("Wild Shape").scaling.challengeRating = 0.5;
         SporesCircle.upSymbioticEntity(pc);
     }
 
@@ -59,8 +46,7 @@ export class SporesCircle
     static spores6(pc: PlayerCharacter, params: LevelingParams) {
         pc.pcHelper.addFeatures(SporesCircle.getFeature("6", "FUNGAL INFESTATION"));
         SporesCircle.upSymbioticEntity(pc);
-        const haloDamage: ScalingTrait = pc.pcHelper.findScalingTraitByName("Halo of Spores");
-        haloDamage.dice = "1d6";
+        pc.pcHelper.findFeatureTraitByName("Halo of Spores").scaling.dice = "1d6";
     }
     
     static spores7(pc: PlayerCharacter,params: LevelingParams){
@@ -69,8 +55,7 @@ export class SporesCircle
     }
 
     static spores8(pc: PlayerCharacter, params: LevelingParams){
-        const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName("Wild Shape");
-        wildShapeScale.challengeRating = 1;
+        pc.pcHelper.findFeatureTraitByName("Wild Shape").scaling.challengeRating = 1;
         SporesCircle.upSymbioticEntity(pc);
     }
 
@@ -81,17 +66,14 @@ export class SporesCircle
 
     static spores10(pc: PlayerCharacter, params: LevelingParams) {
         pc.pcHelper.addFeatures(SporesCircle.getFeature("10", "SPREADING SPORES"));
+        pc.pcHelper.findFeatureTraitByName("Halo of Spores").scaling.dice = "1d8";
         SporesCircle.upSymbioticEntity(pc);
-        const haloDamage: ScalingTrait = pc.pcHelper.findScalingTraitByName("Halo of Spores");
-        haloDamage.dice = "1d8";
     }
 
     static spores14(pc: PlayerCharacter, params: LevelingParams) {
         pc.pcHelper.addFeatures(SporesCircle.getFeature("14", "FUNGAL BODY"));
-        const symbioticHP: ScalingTrait = pc.pcHelper.findScalingTraitByName("Symbiotic Entity");
-        symbioticHP.bonus = 56;
-        const haloDamage: ScalingTrait = pc.pcHelper.findScalingTraitByName("Halo of Spores");
-        haloDamage.dice = "1d10";
+        pc.pcHelper.findFeatureTraitByName("Symbiotic Entity").scaling.bonus = 56;
+        pc.pcHelper.findFeatureTraitByName("Halo of Spores").scaling.dice = "1d10";
     }
 
     static spells = {

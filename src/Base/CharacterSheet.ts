@@ -3,7 +3,7 @@ import { PlayerClass, LevelingParams } from "../Classes/PlayerClass";
 import { PlayerCharacter } from "./PlayerCharacter";
 import { Background } from "../Backgrounds/Background";
 import { Feat } from "../Feats/Feat";
-import { SpellSlotFactory } from "../Classes/SpellSlotFactory";
+import { SpellSlotFactory } from "./SpellSlotFactory";
 import { featDict } from "../Utilities/ConstructorDefinitions";
 
 

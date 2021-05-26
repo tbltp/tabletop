@@ -10,10 +10,9 @@ export class DrunkenMaster {
   }
   
   static drunkenMaster3(pc: PlayerCharacter, params: LevelingParams) {
-    pc.pcHelper.addFeatures(DrunkenMaster.getFeature("3", "BONUS PROFICIENCIES"));
+    pc.pcHelper.addFeatures(DrunkenMaster.getFeature("3", "BONUS PROFICIENCIES"), DrunkenMaster.getFeature("3", "DRUNKEN TECHNIQUE"));
     pc.skills["performance"].proficient = true;
     pc.traits.toolProficiencies.add("BREWER'S SUPPLIES");
-    pc.pcHelper.addFeatures(DrunkenMaster.getFeature("3", "DRUNKEN TECHNIQUE"));
   }
 
   static drunkenMaster6(pc: PlayerCharacter, params: LevelingParams) {

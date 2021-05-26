@@ -15,12 +15,12 @@ export class GraveDomain {
   }
 
   static grave1(pc: PlayerCharacter, params: LevelingParams) {
-    GraveDomain.getSpells(pc,"1");
     pc.pcHelper.addFeatures(
       GraveDomain.getFeature("1", "CIRCLE OF MORTALITY"),
       GraveDomain.getFeature("1", "EYES OF THE GRAVE")
     );
-    }
+    GraveDomain.getSpells(pc,"1");  
+  }
   
   static grave2(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(

@@ -1,6 +1,6 @@
 import { ScalingTrait } from "Base/Interfaces";
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { LevelingParams } from "../../../PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as LifeDomainDict from "./Life.json";
 
 
@@ -15,12 +15,12 @@ export class LifeDomain {
   }
 
   static life1(pc: PlayerCharacter, params: LevelingParams) {
-      LifeDomain.getSpells(pc,"1");
-      pc.traits.armorProficiencies.add("Heavy");
-      pc.pcHelper.addFeatures(
-        LifeDomain.getFeature("1", "DISCIPLE OF LIFE"),
-        LifeDomain.getFeature("1", "BONUS PROFICIENCY")
-      );
+    pc.pcHelper.addFeatures(
+      LifeDomain.getFeature("1", "DISCIPLE OF LIFE"),
+      LifeDomain.getFeature("1", "BONUS PROFICIENCY")
+    );  
+    LifeDomain.getSpells(pc,"1");
+    pc.traits.armorProficiencies.add("Heavy");  
   }
 
   static life2(pc: PlayerCharacter, params: LevelingParams) {
@@ -46,13 +46,8 @@ export class LifeDomain {
   }
 
   static life8(pc: PlayerCharacter, params: LevelingParams) {
-    const divineStrike: ScalingTrait = {
-      title: "Divine Strike",
-      description: "Dice used for Divine Strike (radiant damage).",
-      dice: "1d8",
-    };
-    pc.pcHelper.addScalingTraits(divineStrike);
     pc.pcHelper.addFeatures(LifeDomain.getFeature("8", "DIVINE STRIKE"));
+    pc.pcHelper.addEffectsToClassFeature("Divine Strike", {scaling: {dice: "1d8"}})
   }
 
   static life9(pc: PlayerCharacter, params: LevelingParams) {
@@ -60,8 +55,7 @@ export class LifeDomain {
   }
 
   static life14(pc:PlayerCharacter,params:LevelingParams) {
-    const divineStrike: ScalingTrait = pc.pcHelper.findScalingTraitByName("Divine Strike");
-    divineStrike.dice = "2d8";
+    pc.pcHelper.findFeatureTraitByName("Divine Strike").scaling.dice = "2d8";
   }
 
   static life17(pc: PlayerCharacter, params: LevelingParams) {

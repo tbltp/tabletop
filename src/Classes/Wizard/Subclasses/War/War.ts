@@ -1,6 +1,6 @@
 import { ResourceTrait, ScalingTrait } from "../../../../Base/Interfaces";
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
-import { LevelingParams } from "../../../../Classes/PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../../Classes/PlayerClass";
 import * as WarSchoolDict from "./War.json"
 
 export class War {
@@ -10,8 +10,7 @@ export class War {
     }
 
     static upSurge(pc: PlayerCharacter) {
-        const powerSurge: ScalingTrait = pc.pcHelper.findScalingTraitByName("Power Surge");
-        powerSurge.bonus++;
+        pc.pcHelper.findFeatureTraitByName("Power Surge").scaling.bonus++;
     }
 
     static war2(pc: PlayerCharacter, params: LevelingParams): void {
@@ -21,18 +20,11 @@ export class War {
     
     static war6(pc: PlayerCharacter, params: LevelingParams): void {
         pc.pcHelper.addFeatures(War.getFeature("6", "POWER SURGE"));
-        const powerDmg: ScalingTrait = {
-            title: "Power Surge",
-            description: "Bonus force damage from Power Surge",
-            bonus: 3
+        const powerSurge = {
+            resource: {resourceMax: (pc.abilityScores.intelligence.modifier.value >= 1) ? pc.abilityScores.intelligence.modifier : {value: 1}},
+            scaling: {bonus: 3}
         }
-        const powerUse: ResourceTrait = {
-            title: "Power Surge",
-            description: "Maximum number of Power Surges you may store",
-            resourceMax: (pc.abilityScores.intelligence.modifier.value >= 1) ? pc.abilityScores.intelligence.modifier : {value: 1}
-        }
-        pc.pcHelper.addScalingTraits(powerDmg);
-        pc.pcHelper.addResourceTraits(powerUse);
+        pc.pcHelper.addEffectsToClassFeature("Power Surge", powerSurge)
     }
 
     static war10(pc: PlayerCharacter, params: LevelingParams): void {
@@ -44,5 +36,4 @@ export class War {
         pc.pcHelper.addFeatures(War.getFeature( "14", "DEFLECTING SHROUD"));
         War.upSurge(pc);
     }
-
 }

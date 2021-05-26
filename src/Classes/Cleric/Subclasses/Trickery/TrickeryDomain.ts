@@ -1,6 +1,6 @@
 import { ScalingTrait } from "Base/Interfaces";
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { LevelingParams } from "../../../PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as TrickeryDomainDict from "./Trickery.json";
 
 export class TrickeryDomain {
@@ -14,10 +14,10 @@ export class TrickeryDomain {
   }
 
   static trickery1(pc: PlayerCharacter, params: LevelingParams) {
-    TrickeryDomain.getSpells(pc,"1");
-    pc.pcHelper.addFeatures(
+     pc.pcHelper.addFeatures(
       TrickeryDomain.getFeature("1", "BLESSING OF THE TRICKSTER")
     );
+    TrickeryDomain.getSpells(pc,"1");
   }
 
   static trickery2(pc: PlayerCharacter, params: LevelingParams) {
@@ -51,15 +51,10 @@ export class TrickeryDomain {
   }
 
   static trickery8(pc: PlayerCharacter, params: LevelingParams) {
-    const divineStrike: ScalingTrait = {
-      title: "Divine Strike",
-      description: "Dice used for Divine Strike (poison damage).",
-      dice: "1d8",
-    };
-    pc.pcHelper.addScalingTraits(divineStrike);
     pc.pcHelper.addFeatures(
       TrickeryDomain.getFeature("8", "DIVINE STRIKE")
     );
+    pc.pcHelper.addEffectsToClassFeature("Divine Strike", {scaling: {dice: "1d8"}})
   }
 
   static trickery9(pc: PlayerCharacter, params: LevelingParams) {
@@ -67,8 +62,7 @@ export class TrickeryDomain {
   }
 
   static trickery14(pc:PlayerCharacter,params:LevelingParams) {
-    const divineStrike: ScalingTrait = pc.pcHelper.findScalingTraitByName("Divine Strike");
-    divineStrike.dice = "2d8";
+    pc.pcHelper.findFeatureTraitByName("Divine Strike").scaling.dice = "2d8";
   }
 
   static trickery17(pc: PlayerCharacter, params: LevelingParams) {

@@ -1,6 +1,6 @@
 import { ResourceTrait, ScalingTrait } from "Base/Interfaces";
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { LevelingParams } from "../../../PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as TempestDomainDict from "./Tempest.json";
 
 export class TempestDomain {
@@ -14,21 +14,17 @@ export class TempestDomain {
   }
 
   static tempest1(pc: PlayerCharacter, params: LevelingParams) {
-    TempestDomain.getSpells(pc,"1");
-
-    const wrathOfTheStorm: ResourceTrait = {
-      title: "Wrath of the Storm",
-      description:
-        "Number of times you can use Wrath of the Storm per long rest.",
-      resourceMax: (pc.abilityScores.wisdom.modifier.value >= 1) ? pc.abilityScores.wisdom.modifier : {value: 1}
-    };
-    pc.pcHelper.addResourceTraits(wrathOfTheStorm);
-    pc.traits.armorProficiencies.add("Heavy");
-    pc.traits.weaponProficiencies.add("Martial");
     pc.pcHelper.addFeatures(
       TempestDomain.getFeature("1", "WRATH OF THE STORM"),
       TempestDomain.getFeature( "1", "BONUS PROFICIENCY")
     );
+    TempestDomain.getSpells(pc,"1");
+
+    const wrathOfTheStorm: ResourceTrait = { resourceMax: (pc.abilityScores.wisdom.modifier.value >= 1) ? pc.abilityScores.wisdom.modifier : {value: 1} };
+    pc.pcHelper.addEffectsToClassFeature("Wrath of the Storm", {resource: wrathOfTheStorm});
+    
+    pc.traits.armorProficiencies.add("Heavy");
+    pc.traits.weaponProficiencies.add("Martial");
   }
 
   static tempest2(pc: PlayerCharacter, params: LevelingParams) {
@@ -59,13 +55,8 @@ export class TempestDomain {
   }
 
   static tempest8(pc: PlayerCharacter, params: LevelingParams) {
-    const divineStrike: ScalingTrait = {
-      title: "Divine Strike",
-      description: "Dice used for Divine Strike (thunder damage).",
-      dice: "1d8",
-    };
-    pc.pcHelper.addScalingTraits(divineStrike);
     pc.pcHelper.addFeatures(TempestDomain.getFeature("8", "DIVINE STRIKE"));
+    pc.pcHelper.addEffectsToClassFeature("Divine Strike", {scaling: {dice: "1d8"}})
   }
 
   static tempest9(pc: PlayerCharacter, params: LevelingParams) {
@@ -73,8 +64,7 @@ export class TempestDomain {
   }
 
   static tempest14(pc:PlayerCharacter,params:LevelingParams) {
-    const divineStrike: ScalingTrait = pc.pcHelper.findScalingTraitByName("Divine Strike");
-    divineStrike.dice = "2d8";
+   pc.pcHelper.findFeatureTraitByName("Divine Strike").scaling.dice = "2d8";
   }
 
   static tempest17(pc: PlayerCharacter, params: LevelingParams) {

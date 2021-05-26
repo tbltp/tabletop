@@ -23,5 +23,4 @@ export class Transmutation {
     static transmutation14(pc: PlayerCharacter, params: LevelingParams): void {
         pc.pcHelper.addFeatures(Transmutation.getFeature( "14", "MASTER TRANSMUTER"))
     }
-
 }

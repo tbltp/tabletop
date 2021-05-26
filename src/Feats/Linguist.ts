@@ -10,7 +10,7 @@ export class Linguist extends Feat {
     public apply(pc: PlayerCharacter) {
       pc.abilityScores["intelligence"].update(1);
       for (let lang of this.languages) {
-        pc.traits.languages.push(Languages[lang]);
+        pc.traits.languages.add(Languages[lang]);
       }
       super.apply(pc, [...this.languages])
     }

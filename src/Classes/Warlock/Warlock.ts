@@ -3,11 +3,9 @@ import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import {
   AttachedFeature,
   ResourceTrait,
-  Spell,
   Trait,
 } from "../../Base/Interfaces";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
-import * as Spells from "../../../Assets/Spells.json";
 import * as PactBoon from "./PactBoon.json";
 import * as WarlockClassTraits from "./Warlock.json";
 import * as Invocations from "./EldritchInvocations.json";
@@ -133,34 +131,27 @@ export class Warlock extends PlayerClass {
   }
 
   level1(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    this.handleWarlockSpellSelections(pc, params);
-    const pactMagic: PactMagicSlots = {
-      title: "Pact Magic",
-      description: "Number of spell slots you have for Warlock spells.",
-      resourceMax: { value: 1 },
-      level: 1,
-    };
-    pc.pcHelper.addResourceTraits(pactMagic);
     this.subclass = new WarlockSubclass(params.subclassParams);
-    this.subclassDriver(pc, "1", params);
-
+    this.subclassDriver(pc, "1", params)
     this.addSpellcasting(pc, "WARLOCK");
+    this.handleWarlockSpellSelections(pc, params);
+
+    const pactMagicSlots: PactMagicSlots = {resourceMax: {value: 1}, level: 1};
+    pc.pcHelper.addEffectsToClassFeature("Pact Magic", {resource: pactMagicSlots})
   }
 
   level2(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    pc.pcHelper.findResourceTraitByName("Pact Magic").resourceMax.value++;
     this.handleInvocationSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Pact Magic").resource.resourceMax.value++;
   }
 
   level3(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    let pactMagicSlots: PactMagicSlots = pc.pcHelper.findResourceTraitByName(
-      "Pact Magic"
-    ) as PactMagicSlots;
+    this.handleInvocationSelections(pc, params);
+    let pactMagicSlots: PactMagicSlots = pc.pcHelper.findFeatureTraitByName("Pact Magic").resource as PactMagicSlots;
     pactMagicSlots.level++;
     this.pactBoonHandler(pc, params.pactBoon);
-    this.handleInvocationSelections(pc, params);
   }
 
   level4(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -169,26 +160,22 @@ export class Warlock extends PlayerClass {
 
   level5(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    let pactMagicSlots: PactMagicSlots = pc.pcHelper.findResourceTraitByName(
-      "Pact Magic"
-    ) as PactMagicSlots;
-    pactMagicSlots.level++;
     this.handleInvocationSelections(pc, params);
+    let pactMagicSlots: PactMagicSlots = pc.pcHelper.findFeatureTraitByName("Pact Magic").resource as PactMagicSlots;
+    pactMagicSlots.level++;
   }
 
   level6(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    this.handleWarlockSpellSelections(pc, params);
     this.subclassDriver(pc, "6", params);
+    this.handleWarlockSpellSelections(pc, params);
     this.handleInvocationSelections(pc, params);
   }
 
   level7(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    let pactMagicSlots: PactMagicSlots = pc.pcHelper.findResourceTraitByName(
-      "Pact Magic"
-    ) as PactMagicSlots;
-    pactMagicSlots.level++;
     this.handleInvocationSelections(pc, params);
+    let pactMagicSlots: PactMagicSlots = pc.pcHelper.findFeatureTraitByName("Pact Magic").resource as PactMagicSlots;
+    pactMagicSlots.level++;
   }
 
   level8(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -198,22 +185,18 @@ export class Warlock extends PlayerClass {
 
   level9(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    let pactMagicSlots: PactMagicSlots = pc.pcHelper.findResourceTraitByName(
-      "Pact Magic"
-    ) as PactMagicSlots;
-    pactMagicSlots.level++;
     this.handleInvocationSelections(pc, params);
+    let pactMagicSlots: PactMagicSlots = pc.pcHelper.findFeatureTraitByName("Pact Magic").resource as PactMagicSlots;
+    pactMagicSlots.level++;
   }
 
   level10(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    this.handleWarlockSpellSelections(pc, params);
     this.subclassDriver(pc, "10", params);
+    this.handleWarlockSpellSelections(pc, params);
     this.handleInvocationSelections(pc, params);
   }
 
   level11(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    this.handleWarlockSpellSelections(pc, params);
-    pc.pcHelper.findResourceTraitByName("Pact Magic").resourceMax.value++;
     PlayerClass.pushCustomizedClassFeature(
       pc,
       11,
@@ -221,7 +204,10 @@ export class Warlock extends PlayerClass {
       "MYSTIC ARCANUM",
       [params.mysticArcanum]
     );
+
+    this.handleWarlockSpellSelections(pc, params);
     this.handleInvocationSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Pact Magic").resource.resourceMax.value++;
   }
 
   level12(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -230,10 +216,10 @@ export class Warlock extends PlayerClass {
 
   level13(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
+    this.handleInvocationSelections(pc, params);
     pc.pcHelper
       .findFeatureTraitByName("MYSTIC ARCANUM")
       .choices.push(params.mysticArcanum);
-      this.handleInvocationSelections(pc, params);
   }
 
   level14(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -243,10 +229,10 @@ export class Warlock extends PlayerClass {
 
   level15(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
+    this.handleInvocationSelections(pc, params);
     pc.pcHelper
       .findFeatureTraitByName("MYSTIC ARCANUM")
       .choices.push(params.mysticArcanum);
-    this.handleInvocationSelections(pc, params);
   }
 
   level16(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -255,11 +241,11 @@ export class Warlock extends PlayerClass {
 
   level17(pc: PlayerCharacter, params: WarlockLevelingParams): void {
     this.handleWarlockSpellSelections(pc, params);
-    pc.pcHelper.findResourceTraitByName("Pact Magic").resourceMax.value++;
+    pc.pcHelper.findFeatureTraitByName("Pact Magic").resource.resourceMax.value++;
+    this.handleInvocationSelections(pc, params);
     pc.pcHelper
       .findFeatureTraitByName("MYSTIC ARCANUM")
       .choices.push(params.mysticArcanum);
-    this.handleInvocationSelections(pc, params);
   }
 
   level18(pc: PlayerCharacter, params: WarlockLevelingParams): void {

@@ -26,19 +26,19 @@ export class ArcaneArcher {
     pc.pcHelper.addFeatures(ArcaneArcher.getFeature("3", "ARCANE ARCHER LORE"));
     pc.pcHelper.addFeatures(ArcaneArcher.getFeature("3", "ARCANE SHOT"));
     const dmgShot: ScalingTrait = {
-      title: "Arcane Shot (Damage)",
-      description: "Damage inflicted for Beguiling, Bursting, Enfeebling, Grasping, and Shadow Arrow.",
+      //title: "Arcane Shot (Damage)",
+      //description: "Damage inflicted for Beguiling, Bursting, Enfeebling, Grasping, and Shadow Arrow.",
       dice: "2d6"
     }
     const saveShot: ScalingTrait = {
-      title: "Arcane Shot (Save)",
-      description: "Damage inflicted for Piercing, Seeking, (and Banishing Arrow @ lvl18)",
+      //title: "Arcane Shot (Save)",
+      //description: "Damage inflicted for Piercing, Seeking, (and Banishing Arrow @ lvl18)",
       dice: "1d6"
     }
     pc.pcHelper.addSpells(params.subclassParams.spellSelections.add,"intelligence");
     pc.skills[params.subclassParams.skillProficiencies[0]].proficient = true;
-    pc.pcHelper.addScalingTraits(dmgShot);
-    pc.pcHelper.addScalingTraits(saveShot);
+    //pc.pcHelper.addScalingTraits(dmgShot);
+    //pc.pcHelper.addScalingTraits(saveShot);
     pc.pcHelper.addFeatures(...(params.subclassParams as FighterSubclassParams).arcaneShots.map(s => ArcaneArcher.getArcaneShot(s)) );
   }
 
@@ -59,10 +59,10 @@ export class ArcaneArcher {
 
   static arcaneArcher18(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(...(params.subclassParams as FighterSubclassParams).arcaneShots.map(s => ArcaneArcher.getArcaneShot(s)) );
-    const dmgShot: ScalingTrait = pc.pcHelper.findScalingTraitByName("Arcane Shot (Damage)");
-    dmgShot.dice = "4d6";
-    const saveShot: ScalingTrait = pc.pcHelper.findScalingTraitByName("Arcane Shot (Save)");
-    dmgShot.dice = "2d6";
+    // const dmgShot: ScalingTrait = pc.pcHelper.findScalingTraitByName("Arcane Shot (Damage)");
+    // dmgShot.dice = "4d6";
+    // const saveShot: ScalingTrait = pc.pcHelper.findScalingTraitByName("Arcane Shot (Save)");
+    // dmgShot.dice = "2d6";
   }
 
   static shots = {

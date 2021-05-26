@@ -23,5 +23,4 @@ export class Necromancy {
     static necromancy14(pc: PlayerCharacter, params: LevelingParams): void {
         pc.pcHelper.addFeatures(Necromancy.getFeature("14", "COMMAND UNDEAD"))
     }
-
 }

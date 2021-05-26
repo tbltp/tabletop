@@ -11,40 +11,30 @@ export class Cavalier {
   }
 
   static upMark(pc: PlayerCharacter) {
-    const unwaveringMark: ScalingTrait = pc.pcHelper.findScalingTraitByName("Unwavering Mark");
-    unwaveringMark.bonus+=1;
+    pc.pcHelper.findFeatureTraitByName("Unwavering Mark").scaling.bonus++;
   }
 
   static cavalier3(pc: PlayerCharacter, params: LevelingParams) {
-    pc.pcHelper.addFeatures(Cavalier.getFeature("3", "BONUS PROFICIENCY"));
+    pc.pcHelper.addFeatures(Cavalier.getFeature("3", "BONUS PROFICIENCY"), Cavalier.getFeature("3", "BORN TO THE SADDLE"), Cavalier.getFeature("3", "UNWAVERING MARK"));
+    
+    const unwaveringMark = {
+      resource: { resourceMax: (pc.abilityScores.strength.modifier.value>=1) ? pc.abilityScores.strength.modifier : {value: 1}},
+      scaling: {bonus: 1}
+    }
+    pc.pcHelper.addEffectsToClassFeature("Unwavering Mark", unwaveringMark)
+
     params.subclassParams.skillProficiencies.length > 0 ?
     pc.skills[params.subclassParams.skillProficiencies[0]].proficient = true :
-    pc.traits.languages.push(Languages[params.subclassParams.languages[0]]);
-    pc.pcHelper.addFeatures(Cavalier.getFeature("3", "BORN TO THE SADDLE"));
-    pc.pcHelper.addFeatures(Cavalier.getFeature("3", "UNWAVERING MARK"));
-    const unwaveringMark: ResourceTrait = {
-      title: "Unwavering Mark",
-      description: "Number of times you may use Unwavering Mark",
-      resourceMax: (pc.abilityScores.strength.modifier.value>=1) ? pc.abilityScores.strength.modifier : {value: 1}
-    }
-    const unwaveringDmg: ScalingTrait = {
-      title: "Unwavering Mark",
-      description: "Damage bonus for Unwavering Mark",
-      bonus: 1
-    }
-    pc.pcHelper.addScalingTraits(unwaveringDmg);
-    pc.pcHelper.addResourceTraits(unwaveringMark);
+    pc.traits.languages.add(Languages[params.subclassParams.languages[0]]);
   }
 
   static cavalier7(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Cavalier.getFeature("7", "WARDING MANEUVER"));
-    const wardingManeuver: ResourceTrait = {
-      title: "Warding Maneuver",
-      description: "Number of times you may use Warding Maneuver",
-      dice: "1d8",
-      resourceMax: (pc.abilityScores.constitution.modifier.value>=1) ? pc.abilityScores.constitution.modifier : {value: 1}
+    const wardingManeuver = {
+      resource: {resourceMax: (pc.abilityScores.constitution.modifier.value>=1) ? pc.abilityScores.constitution.modifier : {value: 1}},
+      scaling: {dice: "1d8"}
     }
-    pc.pcHelper.addResourceTraits(wardingManeuver);
+    pc.pcHelper.addEffectsToClassFeature("Warding Maneuver", wardingManeuver)
   }
 
   static cavalier10(pc: PlayerCharacter, params: LevelingParams) {

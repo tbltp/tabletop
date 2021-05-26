@@ -1,7 +1,5 @@
 import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
-import { ResourceTrait, ScalingTrait } from "../../Base/Interfaces";
-import * as SpellList from "../../../Assets/SpellList.json";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import * as DruidClassTraits from "./Druid.json";
 import { DruidSubclass } from "./Subclasses/DruidSubclass";
@@ -72,122 +70,65 @@ export class Druid extends PlayerClass {
     this.pushClassFeatures(pc, level, DruidClassTraits);
   }
 
-  private handleDruidSpellSelections(
-    pc: PlayerCharacter,
-    params: LevelingParams
-  ) {
-    this.handleSpellSelections(pc, params, SpellcastingAbility["DRUID"]);
+  private handleDruidSpellSelections(pc: PlayerCharacter, params?: LevelingParams, level?: string, ){
+    level ?? this.addPreparationSpells(pc, "DRUID", level);
+    params ?? this.handleSpellSelections(pc, params, SpellcastingAbility["DRUID"]);
   }
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.addSpells(
-      [...params.spellSelections.add, ...SpellList["Druid"][1]],
-      SpellcastingAbility["DRUID"]
-    );
     this.pushDruidFeatures(pc, 1); 
     this.addSpellcasting(pc, "DRUID");
+    this.handleDruidSpellSelections(pc, params, "1")
+    
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
-    // druid circle  
-    // wild shape
-    const wildShapeRes: ResourceTrait = {
-      title: "Wild Shape",
-      description: "Number of times you can Wild Shape",
-      resourceMax: { value: 2 },
-    };
-    const wildShapeScale: ScalingTrait = {
-      title: "Wild Shape",
-      description:
-        "Max challenge rating of beasts you can Wild Shape into (No flying or swimming speed).",
-      challengeRating: 0.25,
-    };
-    pc.pcHelper.addResourceTraits(wildShapeRes);
-    pc.pcHelper.addScalingTraits(wildShapeScale);
-  
-    this.subclass = new DruidSubclass(params.subclassParams);
-  
-    this.subclassDriver(pc, "2", params);    
     this.pushDruidFeatures(pc, 2);
+    pc.pcHelper.addEffectsToClassFeature("Wild Shape", {scaling: {challengeRating: 0}});  // SPECIAL EXCEPTION TO STYLE GUIDE: Wild Shape is modified on Subclass Level.
+    this.subclass = new DruidSubclass(params.subclassParams);
+    this.subclassDriver(pc, "2", params);        
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    // Terrain spells
     this.subclassDriver(pc, "3", params); 
-    pc.pcHelper.addSpells(
-      [...SpellList["Druid"][2]],
-      SpellcastingAbility["DRUID"]
-    );   
+    this.handleDruidSpellSelections(pc, null, "2");   
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
-    this.handleDruidSpellSelections(pc, params);
-    // wild shape
-    const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName(
-      "Wild Shape"
-    );
-    wildShapeScale.description =
-      "Max challenge rating of beasts you can Wild Shape into (No flying speed).";
-
     this.subclassDriver(pc, "4", params);
+    this.handleDruidSpellSelections(pc, params);
   }
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.addSpells(
-      [...SpellList["Druid"][3]],
-      SpellcastingAbility["DRUID"]
-    );
-    
-    // terrain spells
     this.subclassDriver(pc, "5", params);    
-
+    this.handleDruidSpellSelections(pc, null, "3")
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
-    // druid circle
     this.subclassDriver(pc, "6", params);    
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
-    // terrain spells
     this.subclassDriver(pc, "7", params);    
-    pc.pcHelper.addSpells(
-      [...SpellList["Druid"][4]],
-      SpellcastingAbility["DRUID"]
-    );
+    this.handleDruidSpellSelections(pc, null, "4")
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
-    // wild shape
-    const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName(
-      "Wild Shape"
-    );
-    wildShapeScale.description =
-      "Max challenge rating of beasts you can Wild Shape into.";
-
     this.subclassDriver(pc, "8", params);
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
-    // terrain spells
     this.subclassDriver(pc, "9", params);    
-    pc.pcHelper.addSpells(
-      [...SpellList["Druid"][5]],
-      SpellcastingAbility["DRUID"]
-    );
+    this.handleDruidSpellSelections(pc, null, "5")
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
-    // druid circle
     this.subclassDriver(pc, "10", params);    
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.addSpells(
-      [...SpellList["Druid"][6]],
-      SpellcastingAbility["DRUID"]
-    );
     this.subclassDriver(pc, "11", params); 
+    this.handleDruidSpellSelections(pc, null, "6")
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
@@ -195,24 +136,17 @@ export class Druid extends PlayerClass {
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.addSpells(
-      [...SpellList["Druid"][7]],
-      SpellcastingAbility["DRUID"]
-    );
-    this.subclassDriver(pc, "13", params); 
+    this.subclassDriver(pc, "13", params);
+    this.handleDruidSpellSelections(pc, null, "7")
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
-    // druid circle
     this.subclassDriver(pc, "14", params);    
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.addSpells(
-      [...SpellList["Druid"][8]],
-      SpellcastingAbility["DRUID"]
-    );
-    this.subclassDriver(pc, "15", params); 
+    this.subclassDriver(pc, "15", params);
+    this.handleDruidSpellSelections(pc, null, "8")
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
@@ -220,11 +154,8 @@ export class Druid extends PlayerClass {
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.addSpells(
-      [...SpellList["Druid"][9]],
-      SpellcastingAbility["DRUID"]
-    );
-    this.subclassDriver(pc, "17", params); 
+    this.subclassDriver(pc, "17", params);
+    this.handleDruidSpellSelections(pc, null, "9")
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {
@@ -236,10 +167,9 @@ export class Druid extends PlayerClass {
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
-    // archdruid
-    pc.pcHelper.findResourceTraitByName("Wild Shape").resourceMax.value = Infinity;
     this.pushDruidFeatures(pc, 20);
-    this.subclassDriver(pc, "20", params); 
+    this.subclassDriver(pc, "20", params);
+    pc.pcHelper.findFeatureTraitByName("Wild Shape").resource.resourceMax.value = Infinity;
   }
 }
 

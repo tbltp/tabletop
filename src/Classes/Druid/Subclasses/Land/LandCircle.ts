@@ -17,8 +17,7 @@ export class LandCircle {
   
   static land2(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(LandCircle.getFeature("2", "NATURAL RECOVERY"));
-    const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName("Wild Shape");
-    wildShapeScale.challengeRating = 0.25;
+    pc.pcHelper.findFeatureTraitByName("Wild Shape").scaling.challengeRating = 0.25;
   }
   
   static land3(pc: PlayerCharacter, params: LevelingParams) {
@@ -27,8 +26,8 @@ export class LandCircle {
   }
 
   static land4(pc: PlayerCharacter, params: LevelingParams){
-    const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName("Wild Shape");
-    wildShapeScale.challengeRating = 0.5;
+    pc.pcHelper.findFeatureTraitByName("Wild Shape").scaling.challengeRating = 0.5;
+
   }
 
   static land5(pc: PlayerCharacter, params: LevelingParams){
@@ -44,8 +43,7 @@ export class LandCircle {
   }
 
   static land8(pc: PlayerCharacter, params: LevelingParams){
-    const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName("Wild Shape");
-    wildShapeScale.challengeRating = 1;
+    pc.pcHelper.findFeatureTraitByName("Wild Shape").scaling.challengeRating = 1;
   }
 
   static land9(pc: PlayerCharacter, params: LevelingParams){

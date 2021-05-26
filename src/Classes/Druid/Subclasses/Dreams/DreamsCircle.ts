@@ -1,6 +1,6 @@
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
 import { ResourceTrait, ScalingTrait } from "../../../../Base/Interfaces";
-import { LevelingParams } from "../../../PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as DreamsCircleDict from "./Dreams.json";
 
 
@@ -11,26 +11,18 @@ export class DreamsCircle
     }
 
     static upBalm(pc: PlayerCharacter) {
-        const balmDice: ResourceTrait = pc.pcHelper.findResourceTraitByName("Balm of the Summer Court");
-        balmDice.resourceMax.value+=1;
+        pc.pcHelper.findFeatureTraitByName("Balm of the Summer Court").resource.resourceMax.value++;
     }
 
     static dreams2(pc: PlayerCharacter, params: LevelingParams) {
         pc.pcHelper.addFeatures(DreamsCircle.getFeature("2", "BALM OF THE SUMMER COURT"));
-        const balmDice: ResourceTrait = {
-            title: "Balm of the Summer Court",
-            description: "Number of times you may use Balm of the Summer Court",
-            dice: "1d6",
-            resourceMax: { value: 2 }
-        }
-        pc.pcHelper.addResourceTraits(balmDice);
-        const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName("Wild Shape");
-        wildShapeScale.challengeRating = 0.25;
+        const balmOfTheSummerCourt = {resource: {resourceMax: {value: 2}}, scaling: {dice: "1d6"}}
+        pc.pcHelper.addEffectsToClassFeature("Balm of the Summer Court", balmOfTheSummerCourt)
+        pc.pcHelper.findFeatureTraitByName("Wild Shape").scaling.challengeRating = 0.25;
     }
       
     static dreams4(pc: PlayerCharacter, params: LevelingParams){
-        const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName("Wild Shape");
-        wildShapeScale.challengeRating = 0.5;
+        pc.pcHelper.findFeatureTraitByName("Wild Shape").scaling.challengeRating = 0.5;
         DreamsCircle.upBalm(pc);
     }
 
@@ -40,8 +32,7 @@ export class DreamsCircle
     }
     
     static dreams8(pc: PlayerCharacter, params: LevelingParams){
-        const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName("Wild Shape");
-        wildShapeScale.challengeRating = 1;
+        pc.pcHelper.findFeatureTraitByName("Wild Shape").scaling.challengeRating = 1;
         DreamsCircle.upBalm(pc);
     }
 

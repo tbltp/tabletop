@@ -59,17 +59,14 @@ export class PlayerCharacterHelper {
     findFeatureTraitByName(name: string): Trait | null {
       return this.nameMatch(name, this.pc.traits.features);
     }
-
-    findResourceTraitByName(name: string): Trait | null {
-      return this.nameMatch(name, this.getResourceTraits());
-    }
-
-    findScalingTraitByName(name: string): Trait | null {
-      return this.nameMatch(name, this.getScalingTraits())
-    }
     
     addFeatures(...features: Trait[]): void {
       this.addTraits("features", ...features);
+    }
+
+    addEffectsToClassFeature(feature: string, effect: {resource?: ResourceTrait, scaling?: ScalingTrait}){
+      if(effect.resource) {this.findFeatureTraitByName(feature).resource = effect.resource }
+      if(effect.scaling) {this.findFeatureTraitByName(feature).scaling = effect.scaling }
     }
 
     removeFeatures(...oldFeatures: string[]): void {

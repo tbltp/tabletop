@@ -24,5 +24,4 @@ export class Evocation {
     static evocation14(pc: PlayerCharacter, params: LevelingParams): void {
         pc.pcHelper.addFeatures(Evocation.getFeature("14", "OVERCHANNEL"))
     }
-
 }

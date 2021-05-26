@@ -23,5 +23,4 @@ export class Abjuration {
     static abjuration14(pc: PlayerCharacter, params: LevelingParams): void {
         pc.pcHelper.addFeatures(Abjuration.getFeature("14", "SPELL RESISTANCE"))
     }
-
 }

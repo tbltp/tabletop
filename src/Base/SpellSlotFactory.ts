@@ -1,7 +1,7 @@
-import { ResourceTrait } from "../Base/Interfaces";
-import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { CharacterSheet } from "../Base/CharacterSheet";
-import { PlayerClass } from "./PlayerClass";
+import { ResourceTrait } from "./Interfaces";
+import { PlayerCharacter } from "./PlayerCharacter";
+import { CharacterSheet } from "./CharacterSheet";
+import { PlayerClass } from "../Classes/PlayerClass";
 
 export class SpellSlotFactory {
   private static levelStringDict: { [key: string]: string } = {
@@ -86,12 +86,12 @@ export class SpellSlotFactory {
   private static generateSpellSlots(level: number, max: number): ResourceTrait {
     const slotLevelString: string = SpellSlotFactory.getLevelString(level);
     return {
-      title:
-        slotLevelString.charAt(0).toUpperCase() +
-        slotLevelString.slice(1) +
-        " Level Spell Slots",
-      description:
-        "Number of " + slotLevelString + " level spells you can cast",
+      //title:
+      //  slotLevelString.charAt(0).toUpperCase() +
+      //  slotLevelString.slice(1) +
+      //  " Level Spell Slots",
+      //description:
+      //  "Number of " + slotLevelString + " level spells you can cast",
       resourceMax: { value: max },
     };
   }
@@ -105,7 +105,7 @@ export class SpellSlotFactory {
       slotLevelString.charAt(0).toUpperCase() +
       slotLevelString.slice(1) +
       " Level Spell Slots";
-    return pc.pcHelper.findResourceTraitByName(resourceTitle);
+    return {resourceMax: {value: 0}} //pc.pcHelper.findResourceTraitByName(resourceTitle);
   }
 
   public static applyClassSpellSlotsAtLevel(
@@ -139,7 +139,7 @@ export class SpellSlotFactory {
             i + 1,
             slotMax
           );
-          pc.pcHelper.addResourceTraits(slot);
+         //pc.pcHelper.addResourceTraits(slot);
         } else {
           existingSlot.resourceMax.value = slotMax;
         }

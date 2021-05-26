@@ -4,7 +4,6 @@ import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import * as SorcererClassTraits from "./Sorcerer.json";
 import * as Metamagic from "../../../Assets/Metamagic.json";
 import { SorcererSubclass } from "./Subclasses/SorcererSubclass";
-import { SpellSlotFactory } from "../SpellSlotFactory";
 
 export class Sorcerer extends PlayerClass {
   constructor(params: ClassCreationParams) {
@@ -85,136 +84,128 @@ export class Sorcerer extends PlayerClass {
 
   level1(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     // spell replacements can happen at any level
-    this.handleSorcererSpellSelections(pc, params);
-    this.addSpellcasting(pc, "SORCERER");
     this.subclass = new SorcererSubclass(params.subclassParams)
     this.subclassDriver(pc, "1", params);
-
+    this.addSpellcasting(pc, "SORCERER");
+    this.handleSorcererSpellSelections(pc, params);
   }
 
   level2(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.addResourceTraits({
-      title: "Sorcery Points",
-      description: "Number of Sorcery Points you have.",
-      resourceMax: { value: 2 },
-    });
-
     this.subclassDriver(pc, "2", params);
-
+    this.handleSorcererSpellSelections(pc, params);
+    pc.pcHelper.addEffectsToClassFeature("Font of Magic", {resource: {resourceMax: {value: 2}}})
   }
 
   level3(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
-    this.addMetaMagic(pc, params.metaMagic);
     this.subclassDriver(pc, "3", params);
-
+    this.handleSorcererSpellSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;
+    this.addMetaMagic(pc, params.metaMagic);
   }
 
   level4(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.subclassDriver(pc, "4", params);
+    this.handleSorcererSpellSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;
   }
 
   level5(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.subclassDriver(pc, "5", params);
+    this.handleSorcererSpellSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;
   }
 
   level6(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.handleSorcererSpellSelections(pc, params);
     this.subclassDriver(pc, "6", params);
-    pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
+    this.handleSorcererSpellSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;
   }
 
   level7(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.subclassDriver(pc, "7", params);
+    this.handleSorcererSpellSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;
   }
 
   level8(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.subclassDriver(pc, "8", params);
+    this.handleSorcererSpellSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;
   }
 
   level9(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.subclassDriver(pc, "9", params);
+    this.handleSorcererSpellSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;
   }
 
   level10(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
-    this.addMetaMagic(pc, params.metaMagic);
     this.subclassDriver(pc, "10", params);
+    this.handleSorcererSpellSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;
+    this.addMetaMagic(pc, params.metaMagic);
   }
 
   level11(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.subclassDriver(pc, "11", params);
+    this.handleSorcererSpellSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;
   }
 
   level12(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.subclassDriver(pc, "12", params);
+    this.handleSorcererSpellSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;
   }
 
   level13(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.subclassDriver(pc, "13", params);
+    this.handleSorcererSpellSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;
   }
 
   level14(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.handleSorcererSpellSelections(pc, params);
     this.subclassDriver(pc, "14", params);
-    pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
+    this.handleSorcererSpellSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;
   }
 
   level15(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.subclassDriver(pc, "15", params);
+    this.handleSorcererSpellSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;
   }
 
   level16(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.subclassDriver(pc, "16", params);
+    this.handleSorcererSpellSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;
   }
 
   level17(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
-    this.addMetaMagic(pc, params.metaMagic);
     this.subclassDriver(pc, "17", params);
+    this.handleSorcererSpellSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;
+    this.addMetaMagic(pc, params.metaMagic);
   }
 
   level18(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.handleSorcererSpellSelections(pc, params);
     this.subclassDriver(pc, "18", params);
-    pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
+    this.handleSorcererSpellSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;
   }
 
   level19(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.subclassDriver(pc, "19", params);
+    this.handleSorcererSpellSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;
   }
 
   level20(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.findResourceTraitByName("Sorcery Points").resourceMax.value++;
     this.pushSorcererFeatures(pc, 20);
     this.subclassDriver(pc, "20", params);
+    this.handleSorcererSpellSelections(pc, params);
+    pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;
   }
 }
 

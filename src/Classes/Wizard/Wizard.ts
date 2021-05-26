@@ -77,19 +77,19 @@ export class Wizard extends PlayerClass {
   }
 
   level1(pc: PlayerCharacter, params: WizardLevelingParams): void {
-    this.handleWizardSpellSelections(pc, params);
     this.pushWizardFeatures(pc, 1);
+    this.addSpellcasting(pc, "WIZARD");
+    this.handleWizardSpellSelections(pc, params);
     // PlayerClass.pushCustomizedClassFeature(pc, 1, WizardClassTraits, "SPELLBOOK", params.spellBookSpells)
     const spellbook: Trait = pc.pcHelper.findFeatureTraitByName("Spellbook");
     spellbook.choices = params.spellBookSpells;
-    this.addSpellcasting(pc, "WIZARD");
 
   }
 
   level2(pc: PlayerCharacter, params: WizardLevelingParams): void {
-    this.handleWizardSpellSelections(pc, params);
     this.subclass = new WizardSubclass(params.subclassParams);
     this.subclassDriver(pc, "2", params);
+    this.handleWizardSpellSelections(pc, params);
   }
 
   level3(pc: PlayerCharacter, params: WizardLevelingParams): void {
@@ -105,8 +105,8 @@ export class Wizard extends PlayerClass {
   }
 
   level6(pc: PlayerCharacter, params: WizardLevelingParams): void {
-    this.handleWizardSpellSelections(pc, params);
     this.subclassDriver(pc, "6", params);
+    this.handleWizardSpellSelections(pc, params);
   }
 
   level7(pc: PlayerCharacter, params: WizardLevelingParams): void {
@@ -114,8 +114,8 @@ export class Wizard extends PlayerClass {
   }
 
   level8(pc: PlayerCharacter, params: WizardLevelingParams): void {
-    this.handleWizardSpellSelections(pc, params);
     this.subclassDriver(pc, "8", params);
+    this.handleWizardSpellSelections(pc, params);
   }
 
   level9(pc: PlayerCharacter, params: WizardLevelingParams): void {
@@ -123,8 +123,8 @@ export class Wizard extends PlayerClass {
   }
 
   level10(pc: PlayerCharacter, params: WizardLevelingParams): void {
-    this.handleWizardSpellSelections(pc, params);
     this.subclassDriver(pc, "10", params);
+    this.handleWizardSpellSelections(pc, params);
   }
 
   level11(pc: PlayerCharacter, params: WizardLevelingParams): void {
@@ -140,8 +140,8 @@ export class Wizard extends PlayerClass {
   }
 
   level14(pc: PlayerCharacter, params: WizardLevelingParams): void {
-    this.handleWizardSpellSelections(pc, params);
     this.subclassDriver(pc, "14", params);
+    this.handleWizardSpellSelections(pc, params);
   }
 
   level15(pc: PlayerCharacter, params: WizardLevelingParams): void {
@@ -149,8 +149,8 @@ export class Wizard extends PlayerClass {
   }
 
   level16(pc: PlayerCharacter, params: WizardLevelingParams): void {
-    this.handleWizardSpellSelections(pc, params);
     this.subclassDriver(pc, "16", params);
+    this.handleWizardSpellSelections(pc, params);
   }
 
   level17(pc: PlayerCharacter, params: WizardLevelingParams): void {
@@ -158,9 +158,9 @@ export class Wizard extends PlayerClass {
   }
 
   level18(pc: PlayerCharacter, params: WizardLevelingParams): void {
-    this.handleWizardSpellSelections(pc, params);
-    this.subclassDriver(pc, "18", params);
     this.pushWizardFeatures(pc, 18);
+    this.subclassDriver(pc, "18", params);
+    this.handleWizardSpellSelections(pc, params);
   }
 
   level19(pc: PlayerCharacter, params: WizardLevelingParams): void {
@@ -168,9 +168,9 @@ export class Wizard extends PlayerClass {
   }
 
   level20(pc: PlayerCharacter, params: WizardLevelingParams): void {
-    this.handleWizardSpellSelections(pc, params);
-    this.subclassDriver(pc, "20", params);
     PlayerClass.pushCustomizedClassFeature(pc, 20, WizardClassTraits, "SIGNATURE SPELLS", params.signatureSpells);
+    this.subclassDriver(pc, "20", params);
+    this.handleWizardSpellSelections(pc, params);
   }
 }
 

@@ -1,10 +1,10 @@
 import { ScalingTrait } from "Base/Interfaces";
 import { BarbarianSubclassParams } from "../BarbarianSubclass";
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
-import { LevelingParams } from "../../../PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as StormHeraldDict from "./StormHerald.json";
 
-export class StormHerald {
+export class StormHerald {  // NOTE: Talk to Johnny about how this works and how the modification (probably) breaks it.
 
   static getFeature(level: string, featureName: string) {
       return StormHeraldDict["features"][level][featureName];
@@ -16,7 +16,7 @@ export class StormHerald {
   }
 
   static improveAura(pc: PlayerCharacter, params: LevelingParams, level: string) {
-    const auraScale: ScalingTrait = pc.pcHelper.findScalingTraitByName("Storm Aura");
+    const auraScale: ScalingTrait = pc.pcHelper.findFeatureTraitByName("Storm Aura").scaling;
     if(auraScale.bonus) {
       auraScale.bonus++;
     }
@@ -28,35 +28,32 @@ export class StormHerald {
   static stormHerald3(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(StormHerald.getFeature("3", "STORM AURA"));
     StormHerald.getAuraEffect(pc,params,"3");
-    const auraScale: ScalingTrait = {
-      title: "Storm Aura",
-      description: ""
-    }
+    
+    const auraScale: ScalingTrait = {}
     if( (params.subclassParams as BarbarianSubclassParams).stormAura == "DESERT") {
-      auraScale.description = "How much damage your Desert Aura does.",
       auraScale.bonus = 2;
     }
     else if((params.subclassParams as BarbarianSubclassParams).stormAura == "SEA") {
-      auraScale.description = "How much damage your Sea Aura does.",
       auraScale.dice = "1d6";
     }
     else {
-      auraScale.description = "How many temporary hit points your Tundra Aura provides.",
       auraScale.bonus = 2;
     }
-    pc.pcHelper.addScalingTraits(auraScale);
+    pc.pcHelper.addEffectsToClassFeature("Storm Aura", {scaling: auraScale});
   }
+  
   static stormHerald5(pc: PlayerCharacter, params: LevelingParams) {
-    StormHerald.improveAura(pc,params,"5");
+    StormHerald.improveAura(pc, params, "5");
   }
+  
   static stormHerald6(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(StormHerald.getFeature("6", "STORM SOUL"));
-    StormHerald.getAuraEffect(pc,params,"6");
+    StormHerald.getAuraEffect(pc, params, "6");
   }
 
   static stormHerald10(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(StormHerald.getFeature("10", "SHIELDING STORM"));
-    StormHerald.improveAura(pc,params,"10");
+    StormHerald.improveAura(pc, params, "10");
   }
 
   static stormHerald14(pc: PlayerCharacter, params: LevelingParams) {

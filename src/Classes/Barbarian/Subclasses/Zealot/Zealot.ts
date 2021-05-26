@@ -1,6 +1,6 @@
 import { ScalingTrait } from "Base/Interfaces";
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
-import { LevelingParams } from "../../../PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as ZealotDict from "./Zealot.json";
 
 export class Zealot {
@@ -10,19 +10,12 @@ export class Zealot {
   }
 
   static upFury(pc: PlayerCharacter) {
-    const furyDamage: ScalingTrait = pc.pcHelper.findScalingTraitByName("Divine Fury");
-    furyDamage.bonus+=1;
+    pc.pcHelper.findFeatureTraitByName("Divine Fury").scaling.bonus++;
   }
 
   static zealot3(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Zealot.getFeature("3", "DIVINE FURY"));
-    const furyDamage: ScalingTrait = {
-      title: "Divine Fury",
-      description: "Bonus damage from Divine Fury",
-      dice: "1d6",
-      bonus: 1
-    }
-    pc.pcHelper.addScalingTraits(furyDamage);
+    pc.pcHelper.addEffectsToClassFeature("Divine Fury", {scaling: {dice: "1d6", bonus: 1}});
     pc.pcHelper.addFeatures(Zealot.getFeature("3", "WARRIOR OF THE GODS"));
   }
 

@@ -1,6 +1,6 @@
 import { ResourceTrait } from "Base/Interfaces";
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { LevelingParams } from "../../../PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as LightDomainDict from "./Light.json";
 
 export class LightDomain {
@@ -14,19 +14,15 @@ export class LightDomain {
   }
 
   static light1(pc: PlayerCharacter, params: LevelingParams) {
-    LightDomain.getSpells(pc,"1");
-
-    const wardingFlare: ResourceTrait = {
-      title: "Warding Flare",
-      description: "Number of times you can use Warding Flare per long rest.",
-      resourceMax: (pc.abilityScores.wisdom.modifier.value >= 1) ? pc.abilityScores.wisdom.modifier : {value: 1}
-    }
-    
-    pc.pcHelper.addResourceTraits(wardingFlare);
     pc.pcHelper.addFeatures(
       LightDomain.getFeature("1", "WARDING FLARE"),
       LightDomain.getFeature("1", "BONUS CANTRIP")
     );
+    LightDomain.getSpells(pc,"1");
+
+    const wardingFlare: ResourceTrait = { resourceMax: (pc.abilityScores.wisdom.modifier.value >= 1) ? pc.abilityScores.wisdom.modifier : {value: 1} }
+    pc.pcHelper.addEffectsToClassFeature("Warding Flare", {resource: wardingFlare})
+    
   }
 
   static light2(pc: PlayerCharacter, params: LevelingParams) {

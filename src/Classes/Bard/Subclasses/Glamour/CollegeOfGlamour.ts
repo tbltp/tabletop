@@ -1,7 +1,6 @@
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
-import { LevelingParams } from "../../../PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as CollegeOfGlamourDict from "./CollegeOfGlamour.json";
-import { ScalingTrait, Trait } from "../../../../Base/Interfaces";
 
 export class CollegeOfGlamour {
     
@@ -10,18 +9,12 @@ export class CollegeOfGlamour {
   }
 
   static upMantle(pc: PlayerCharacter) {
-    const mantleHP = pc.pcHelper.findScalingTraitByName("Mantle of Inspiration");
-    mantleHP.bonus+=3;
+    pc.pcHelper.findFeatureTraitByName("Mantle of Inspiration").scaling.bonus += 3;
   }
+  
   static glamour3(pc: PlayerCharacter, params: LevelingParams) {
-    pc.pcHelper.addFeatures(CollegeOfGlamour.getFeature("3", "MANTLE OF INSPIRATION"));
-    const mantleHP: ScalingTrait = {
-      title: "Mantle of Inspiration",
-      description: "Temporary HP granted from Mantle of Inspiration",
-      bonus: 5
-    }
-    pc.pcHelper.addScalingTraits(mantleHP);
-    pc.pcHelper.addFeatures(CollegeOfGlamour.getFeature("3", "ENTHRALLING PERFORMANCE"));
+    pc.pcHelper.addFeatures(CollegeOfGlamour.getFeature("3", "MANTLE OF INSPIRATION"), CollegeOfGlamour.getFeature("3", "ENTHRALLING PERFORMANCE"));
+    pc.pcHelper.addEffectsToClassFeature("Mantle of Inspiration", {scaling: {bonus: 5}});
   }
 
   static glamour6(pc: PlayerCharacter, params: LevelingParams) {

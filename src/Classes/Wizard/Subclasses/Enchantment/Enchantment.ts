@@ -23,5 +23,4 @@ export class Enchantment {
     static enchantment14(pc: PlayerCharacter, params: LevelingParams): void {
         pc.pcHelper.addFeatures(Enchantment.getFeature("14", "ALTER MEMORIES"))
     }
-
 }

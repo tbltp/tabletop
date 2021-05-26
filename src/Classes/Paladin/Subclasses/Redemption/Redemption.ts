@@ -1,6 +1,6 @@
 import { ScalingTrait } from "../../../../Base/Interfaces";
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
-import { LevelingParams } from "../../../../Classes/PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../../Classes/PlayerClass";
 import * as RedemptionOathDict from "./OathOfRedemption.json"
 
 
@@ -14,8 +14,7 @@ export class Redemption {
   }
   
   static upSpirit(pc: PlayerCharacter) {
-    const spiritHP: ScalingTrait = pc.pcHelper.findScalingTraitByName("Protective Spirit");
-    spiritHP.bonus++;
+    pc.pcHelper.findFeatureTraitByName("Protective Spirit").scaling.bonus++;
   }
   static redemption3(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(
@@ -43,13 +42,7 @@ export class Redemption {
 
   static redemption15(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Redemption.getFeature("15", "PROTECTIVE SPIRIT"));
-    const spiritHP: ScalingTrait = {
-      title: "Protective Spirit",
-      description: "The amount of hit points recovered with Protective Spirit",
-      dice: "1d6",
-      bonus: 7
-    }
-    pc.pcHelper.addScalingTraits(spiritHP);
+    pc.pcHelper.addEffectsToClassFeature("Protective Spirit", {scaling: {dice: "1d6", bonus: 7}})
   }
 
   static redemption17(pc: PlayerCharacter, params: LevelingParams) {
