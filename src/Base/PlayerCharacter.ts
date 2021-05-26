@@ -1,6 +1,5 @@
-import { BaseCharacter, BaseAbility } from "./BaseCharacter";
-import { ResourceTrait, Spell, Trait, ScalingTrait, AttachedFeature } from "./Interfaces";
-import * as Spells from "../../Assets/Spells.json";
+import { BaseCharacter } from "./BaseCharacter";
+import { AttachedFeature, SpellSlot } from "./Interfaces";
 import { PlayerCharacterHelper } from "./PlayerCharacterHelper";
 
 export class PlayerCharacter extends BaseCharacter {
@@ -33,7 +32,7 @@ export class PlayerCharacter extends BaseCharacter {
     { name: "Base Speed", base: {value: 0}, bonus: { value: 0 } },
   ];
 
-  spellcasting?: {spellSlots: string[], abilities: PCSpellcastingAbility[]};
+  spellcasting?: {spellSlots: SpellSlot[], abilities: PCSpellcastingAbility[]};
 
   notes: Note[] = [];
 

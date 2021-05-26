@@ -63,7 +63,6 @@ export interface Trait {
 }
 
 export interface ResourceTrait {
-  /**Spell slots are just special resource traits with no additional properties */
   resourceMax?: { value: number };
   proficiency?: boolean;
 }
@@ -74,6 +73,10 @@ export interface ScalingTrait {
   challengeRating?: number;
   points?: number;
   uses?: number;
+}
+
+export interface SpellSlot extends ResourceTrait {
+  level: number;
 }
 
 export interface ISpell {
