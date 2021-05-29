@@ -1,9 +1,8 @@
 import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
-import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
-import * as FightingStyle from "../../../Assets/FightingStyles.json";
 import * as PaladinClassTraits from "./Paladin.json";
 import { PaladinSubclass } from "./Subclasses/PaladinSubclass";
+import * as FightingStyle from "../../../Assets/FightingStyles.json";
 
 export class Paladin extends PlayerClass {
   constructor(params: ClassCreationParams) {
@@ -78,8 +77,8 @@ export class Paladin extends PlayerClass {
     params?: LevelingParams,
     level?: string
   ) {
-    level ?? this.addPreparationSpells(pc, "PALADIN", level)
-    params ?? this.handleSpellSelections(pc, params, SpellcastingAbility["PALADIN"]);
+    level ? this.addPreparationSpells(pc, "PALADIN", level) : null;
+    params ? this.handleSpellSelections(pc, params, "PALADIN") : null;
   }
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {

@@ -73,7 +73,7 @@ export class Wizard extends PlayerClass {
     pc: PlayerCharacter,
     params: WizardLevelingParams
   ) {
-    this.handleSpellSelections(pc, params, SpellcastingAbility["WIZARD"]);
+    this.handleSpellSelections(pc, params, "WIZARD");
   }
 
   level1(pc: PlayerCharacter, params: WizardLevelingParams): void {

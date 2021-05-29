@@ -72,7 +72,7 @@ export class Bard extends PlayerClass {
     pc: PlayerCharacter,
     params: LevelingParams
   ) {
-    this.handleSpellSelections(pc, params, SpellcastingAbility["BARD"]);
+    this.handleSpellSelections(pc, params, "BARD");
   }
 
   private handleMagicalSecretsSelection(pc, params){

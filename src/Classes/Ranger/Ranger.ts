@@ -1,6 +1,5 @@
 import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
-import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import * as RangerClassTraits from "./Ranger.json";
 import { RangerSubclass } from "./Subclasses/RangerSubclass";
 
@@ -71,7 +70,7 @@ export class Ranger extends PlayerClass {
     pc: PlayerCharacter,
     params: LevelingParams
   ): void {
-    this.handleSpellSelections(pc, params, SpellcastingAbility["RANGER"]);
+    this.handleSpellSelections(pc, params, "RANGER");
   }
 
   level1(pc: PlayerCharacter, params: RangerLevelingParams): void {

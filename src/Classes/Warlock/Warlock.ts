@@ -5,7 +5,6 @@ import {
   ResourceTrait,
   Trait,
 } from "../../Base/Interfaces";
-import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import * as PactBoon from "./PactBoon.json";
 import * as WarlockClassTraits from "./Warlock.json";
 import * as Invocations from "./EldritchInvocations.json";
@@ -95,7 +94,7 @@ export class Warlock extends PlayerClass {
     pc: PlayerCharacter,
     params: WarlockLevelingParams
   ): void {
-    this.handleSpellSelections(pc, params, SpellcastingAbility["WARLOCK"]);
+    this.handleSpellSelections(pc, params, "WARLOCK");
   }
 
   private pactBoonHandler(

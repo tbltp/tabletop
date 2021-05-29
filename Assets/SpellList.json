@@ -1,5 +1,5 @@
 {
-  "Wizard": {
+  "WIZARD": {
     "0": [
       "BLADE WARD",
       "DANCING LIGHTS",
@@ -238,7 +238,7 @@
       "WEIRD"
     ]
   },
-  "Sorcerer": {
+  "SORCERER": {
     "0": [
       "BLADE WARD",
       "DANCING LIGHTS",
@@ -383,7 +383,7 @@
     ],
     "9": ["POWER WORD KILL", "GATE", "METEOR SWARM", "TIME STOP", "WISH"]
   },
-  "Warlock": {
+  "WARLOCK": {
     "0": [
       "BLADE WARD",
       "FRIENDS",
@@ -470,7 +470,7 @@
       "IMPRISONMENT"
     ]
   },
-  "Druid": {
+  "DRUID": {
     "0": [
       "MENDING",
       "GUIDANCE",
@@ -597,7 +597,7 @@
     ],
     "9": ["FORESIGHT", "SHAPECHANGE", "STORM OF VENGEANCE", "TRUE RESURRECTION"]
   },
-  "Paladin": {
+  "PALADIN": {
     "0": [],
     "1": [
       "HEROISM",
@@ -659,7 +659,7 @@
     "8": [],
     "9": []
   },
-  "Bard": {
+  "BARD": {
     "0": [
       "BLADE WARD",
       "DANCING LIGHTS",
@@ -796,7 +796,7 @@
     ],
     "9": ["POWER WORD KILL", "FORESIGHT", "TRUE POLYMORPH", "POWER WORD HEAL"]
   },
-  "Ranger": {
+  "RANGER": {
     "0": [],
     "1": [
       "ANIMAL FRIENDSHIP",
@@ -859,7 +859,7 @@
     "8": [],
     "9": []
   },
-  "Cleric": {
+  "CLERIC": {
     "0": [
       "MENDING",
       "LIGHT",
@@ -977,7 +977,7 @@
     "8": ["ANTIMAGIC FIELD", "CONTROL WEATHER", "EARTHQUAKE", "HOLY AURA"],
     "9": ["ASTRAL PROJECTION", "GATE", "MASS HEAL", "TRUE RESURRECTION"]
   },
-  "Artificer": {
+  "ARTIFICER": {
     "0": [
       "ACID SPLASH",
       "BOOMING BLADE",

@@ -1,6 +1,5 @@
 import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
-import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import * as DruidClassTraits from "./Druid.json";
 import { DruidSubclass } from "./Subclasses/DruidSubclass";
 
@@ -71,8 +70,8 @@ export class Druid extends PlayerClass {
   }
 
   private handleDruidSpellSelections(pc: PlayerCharacter, params?: LevelingParams, level?: string, ){
-    level ?? this.addPreparationSpells(pc, "DRUID", level);
-    params ?? this.handleSpellSelections(pc, params, SpellcastingAbility["DRUID"]);
+    level ? this.addPreparationSpells(pc, "DRUID", level) : null;
+    params ? this.handleSpellSelections(pc, params, "DRUID") : null;
   }
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {

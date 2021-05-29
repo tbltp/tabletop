@@ -199,22 +199,17 @@ export abstract class PlayerClass {
   protected handleSpellSelections(
     pc: PlayerCharacter,
     params: LevelingParams,
-    ability: string,
+    className: string,
     src?: AttachedFeature
   ) {
     if(params.spellSelections) {
       if (params.spellSelections.add) {
-        pc.pcHelper.addSpells(params.spellSelections.add, ability, src);
+        pc.pcHelper.addSpells(params.spellSelections.add, SpellcastingAbility[className], src);
       }
       if (params.spellSelections.remove) {
         pc.pcHelper.removeSpells(params.spellSelections.remove);
       }
     }
-  }
-
-  public static addEffectsToClassFeature(pc: PlayerCharacter, feature: string, effect: {resource?: ResourceTrait, scaling?: ScalingTrait}){
-    if(effect.resource) {pc.pcHelper.findFeatureTraitByName(feature).resource = effect.resource }
-    if(effect.scaling) {pc.pcHelper.findFeatureTraitByName(feature).scaling = effect.scaling }
   }
 
   public static pushCustomizedClassFeature(

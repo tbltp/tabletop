@@ -2,7 +2,6 @@ import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import * as ClericClassTraits from "./Cleric.json";
 import { ClericSubclass } from "./Subclasses/ClericSubclass";
-import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 
 export class Cleric extends PlayerClass {
   constructor(params: ClassCreationParams) {
@@ -70,8 +69,8 @@ export class Cleric extends PlayerClass {
   }
 
   private handleClericSpellSelections(pc: PlayerCharacter, params?: LevelingParams, level?: string, ){
-    level ?? this.addPreparationSpells(pc, "CLERIC", level);
-    params ?? this.handleSpellSelections(pc, params, SpellcastingAbility["CLERIC"]);
+    level ? this.addPreparationSpells(pc, "CLERIC", level): null;
+    params ? this.handleSpellSelections(pc, params, "CLERIC"): null;
   }
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {

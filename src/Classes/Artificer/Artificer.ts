@@ -71,8 +71,8 @@ export class Artificer extends PlayerClass {
   }
 
   private handleArtificerSpellSelections(pc: PlayerCharacter, params?: ArtificerLevelingParams, level?: string, ){
-    level ?? this.addPreparationSpells(pc, "ARTIFICER", level);
-    params ?? this.handleSpellSelections(pc, params, "intelligence");
+    level ? this.addPreparationSpells(pc, "ARTIFICER", level) : null;
+    params ? this.handleSpellSelections(pc, params, "ARTIFICER"): null;
   }
 
   private handleInfusionSelections(
