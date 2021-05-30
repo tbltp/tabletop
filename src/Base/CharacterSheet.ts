@@ -12,8 +12,9 @@ class SheetClasses {
 }
 
 export class CharacterSheet {
-  
-  constructor(name: string, pc: PlayerCharacter, race: Race, playerClass: PlayerClass, background: Background, DS?: boolean){
+
+  //temp
+  constructor(name: string, pc: PlayerCharacter, race: Race, playerClass: PlayerClass, background: Background, DS?: boolean) {
     this.name = name;
     this.character = pc;
     this.race = race;
@@ -29,6 +30,31 @@ export class CharacterSheet {
     }
 
   }
+  
+  /*
+  constructor(name: string) {
+    this.name = name;
+    this.character = null;
+    this.race = null;
+    this.background = null;
+  }
+
+  fillSheet(pc: PlayerCharacter, race: Race, playerClass: PlayerClass, background: Background, DS?: boolean) {
+    this.character = pc;
+    this.race = race;
+    this.background = background;
+    
+    this.playerClasses[playerClass.name] = playerClass;
+    this.levels[playerClass.name] = playerClass["level"];
+
+    if(!DS) {
+      this.race.apply(this.character);
+      playerClass.apply(this.character);
+      this.background.apply(this.character);
+    }
+
+  }
+  */
   
   name: string;
   character: PlayerCharacter;

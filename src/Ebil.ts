@@ -1,3 +1,4 @@
+/*
 import { CharacterSheet } from "./Base/CharacterSheet";
 import { PlayerCharacter } from "./Base/PlayerCharacter";
 import { Tiefling } from "./Races/Tiefling/Tiefling";
@@ -22,3 +23,4 @@ sheet.levelUp("Cleric", 8, {spellSelections: {add: ["SACRED FLAME", "SPARE THE D
 sheet.levelUp("Cleric", 6, {})
 
 Jsonify.dumpToJSON(sheet, "Ebil")
+*/
