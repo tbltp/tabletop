@@ -7,7 +7,7 @@ export class Mobile extends Feat {
   }
 
   public apply(pc: PlayerCharacter) {
-    pc.speed.value += 10;
+    pc.speeds["Base Speed"].base.value += 10;
     super.apply(pc);
   }
 }

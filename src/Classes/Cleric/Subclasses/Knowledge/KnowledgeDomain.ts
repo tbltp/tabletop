@@ -14,16 +14,6 @@ export class KnowledgeDomain {
   }
 
   static knowledge1(pc: PlayerCharacter, params: LevelingParams) {;
-    KnowledgeDomain.getSpells(pc,"1");
-    // Languages
-    pc.traits.languages.push(
-      ...params.subclassParams.languages.map(l => Languages[l])
-    ); 
-    for (const skill of params.subclassParams.skillProficiencies) {
-      // Skill Proficiencies / Expertise
-      pc.skills[skill].proficient = true;
-      pc.skills[skill].expertise = true;
-    }
     pc.pcHelper.addFeatures({
       ...KnowledgeDomain.getFeature("1", "BLESSINGS OF KNOWLEDGE"),
       choices: [
@@ -31,11 +21,21 @@ export class KnowledgeDomain {
         ...params.proficiencySelection,
       ],
     });
+    KnowledgeDomain.getSpells(pc,"1");
+    
+    // Languages
+    params.subclassParams.languages.map(l => pc.traits.languages.add(Languages[l]))
+
+    // Skill Proficiencies / Expertise
+    for (const skill of params.subclassParams.skillProficiencies) {
+      pc.skills[skill].proficient = true;
+      pc.skills[skill].expertise = true;
+    }
   }
 
   static knowledge2(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(
-        KnowledgeDomain.getFeature(
+      KnowledgeDomain.getFeature(
         "2",
         "THE KNOWLEDGE OF THE AGES"
       )
@@ -71,10 +71,6 @@ export class KnowledgeDomain {
 
   static knowledge9(pc: PlayerCharacter, params: LevelingParams) {
     KnowledgeDomain.getSpells(pc,"9");
-  }
-
-  static knowledge14(pc: PlayerCharacter, params: LevelingParams) {
-    pc.pcHelper.findScalingTraitByName("Divine Strike").dice = "2d8";
   }
 
   static knowledge17(pc: PlayerCharacter, params: LevelingParams) {

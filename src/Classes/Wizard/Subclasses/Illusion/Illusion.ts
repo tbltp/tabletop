@@ -23,5 +23,4 @@ export class Illusion {
     static illusion14(pc: PlayerCharacter, params: LevelingParams): void {
         pc.pcHelper.addFeatures(Illusion.getFeature("14", "ILLUSORY REALITY"))
     }
-
 }

@@ -44,7 +44,7 @@ export abstract class Race {
 
   addLanguages(pc: PlayerCharacter): void {
     for (let language of this.languages) {
-      pc.traits.languages.push(language);
+      pc.traits.languages.add(language);
     }
   }
 
@@ -86,7 +86,7 @@ export abstract class Race {
     this.addWeaponProficiencies(pc);
     this.addArmorProficiencies(pc);
     this.addToolProficiencies(pc);
-    pc.speed.value = this.speed;
+    pc.speeds.find(spd => spd.name === "Base Speed").base.value = this.speed;
     pc.size = this.size;
   }
 }

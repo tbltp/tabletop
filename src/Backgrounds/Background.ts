@@ -39,7 +39,7 @@ export abstract class Background {
       pc.skills[skill].proficient = true;
     }
     for (const language of this.languages) {
-      pc.traits.languages.push(Languages[language]);
+      pc.traits.languages.add(Languages[language]);
     }
     for (const toolProficiency of this.toolProficiencies) {
       pc.traits.toolProficiencies.add(toolProficiency);

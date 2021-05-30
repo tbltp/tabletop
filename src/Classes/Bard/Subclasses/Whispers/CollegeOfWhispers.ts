@@ -10,19 +10,12 @@ export class CollegeOfWhispers {
   }
 
   static whispers3(pc: PlayerCharacter, params: LevelingParams) {
-    pc.pcHelper.addFeatures(CollegeOfWhispers.getFeature("3", "PSYCHIC BLADES"));
-    const psychicDmg: ScalingTrait = {
-      title: "Psychic Blades",
-      description: "The damage you deal with Psychic Blades",
-      dice: "2d6"
-    }
-    pc.pcHelper.addScalingTraits(psychicDmg);
-    pc.pcHelper.addFeatures(CollegeOfWhispers.getFeature("3", "WORDS OF TERROR"));
+    pc.pcHelper.addFeatures(CollegeOfWhispers.getFeature("3", "PSYCHIC BLADES"), CollegeOfWhispers.getFeature("3", "WORDS OF TERROR"));
+    pc.pcHelper.addEffectsToFeature("Psychic Blades", {scaling: {dice: "2d6"}})
   }
 
   static whispers5(pc: PlayerCharacter,params: LevelingParams) {
-    const psychicDmg: ScalingTrait = pc.pcHelper.findScalingTraitByName("Psychic Blades");
-    psychicDmg.dice = "3d6";
+    pc.pcHelper.findFeatureTraitByName("Psychic Blades").scaling.dice = "3d6";
   }
 
   static whispers6(pc: PlayerCharacter, params: LevelingParams) {
@@ -30,8 +23,7 @@ export class CollegeOfWhispers {
   }
 
   static whispers10(pc: PlayerCharacter,params: LevelingParams) {
-    const psychicDmg: ScalingTrait = pc.pcHelper.findScalingTraitByName("Psychic Blades");
-    psychicDmg.dice = "5d6";
+    pc.pcHelper.findFeatureTraitByName("Psychic Blades").scaling.dice = "5d6";
   }
 
   static whispers14(pc: PlayerCharacter, params: LevelingParams) {
@@ -39,7 +31,6 @@ export class CollegeOfWhispers {
   }  
 
   static whispers15(pc: PlayerCharacter,params: LevelingParams) {
-    const psychicDmg: ScalingTrait = pc.pcHelper.findScalingTraitByName("Psychic Blades");
-    psychicDmg.dice = "8d6";
+    pc.pcHelper.findFeatureTraitByName("Psychic Blades").scaling.dice = "8d6";
   }
 }

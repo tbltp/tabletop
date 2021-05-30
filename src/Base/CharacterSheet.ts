@@ -3,7 +3,7 @@ import { PlayerClass, LevelingParams } from "../Classes/PlayerClass";
 import { PlayerCharacter } from "./PlayerCharacter";
 import { Background } from "../Backgrounds/Background";
 import { Feat } from "../Feats/Feat";
-import { SpellSlotFactory } from "../Classes/SpellSlotFactory";
+import { SpellSlotFactory } from "./SpellSlotFactory";
 import { featDict } from "../Utilities/ConstructorDefinitions";
 
 
@@ -12,8 +12,9 @@ class SheetClasses {
 }
 
 export class CharacterSheet {
-  
-  constructor(name: string, pc: PlayerCharacter, race: Race, playerClass: PlayerClass, background: Background, DS?: boolean){
+
+  //temp
+  constructor(name: string, pc: PlayerCharacter, race: Race, playerClass: PlayerClass, background: Background, DS?: boolean) {
     this.name = name;
     this.character = pc;
     this.race = race;
@@ -29,6 +30,31 @@ export class CharacterSheet {
     }
 
   }
+  
+  /*
+  constructor(name: string) {
+    this.name = name;
+    this.character = null;
+    this.race = null;
+    this.background = null;
+  }
+
+  fillSheet(pc: PlayerCharacter, race: Race, playerClass: PlayerClass, background: Background, DS?: boolean) {
+    this.character = pc;
+    this.race = race;
+    this.background = background;
+    
+    this.playerClasses[playerClass.name] = playerClass;
+    this.levels[playerClass.name] = playerClass["level"];
+
+    if(!DS) {
+      this.race.apply(this.character);
+      playerClass.apply(this.character);
+      this.background.apply(this.character);
+    }
+
+  }
+  */
   
   name: string;
   character: PlayerCharacter;
@@ -50,7 +76,7 @@ export class CharacterSheet {
   }
 
   levelUp(levelingClass: string, hpAdd: number, params: LevelingParams): void {
-    const tLevel = ++this.character.level.totalLevel;
+    const tLevel = ++this.character.level;
     const cLevel = ++this.playerClasses[levelingClass].level.value;
 
     //hp
@@ -58,6 +84,9 @@ export class CharacterSheet {
 
     //level up proficiency according to total level
     this.character.proficiency.levelUp(tLevel);
+
+    // hit die (don't add between level 0 and level 1)
+    cLevel > 1 ? this.character.hitDie[this.playerClasses[levelingClass].hitDie]++ : null
     
     //level up race according to total level
     if(this.race.abilitiesAtLevels[tLevel.toString()]) {
@@ -77,12 +106,12 @@ export class CharacterSheet {
     );
 
     //get feat or ability score improvement according to class level
-    if(params.featParams.name != "") {
+    if(params.featParams && params.featParams.name != "") {
       const newFeat: Feat = new featDict[params.featParams.name](params.featParams);    
       this.feats.push(newFeat);
       newFeat.apply(this.character);
     } 
-    if(params.abilityScoreImprovement.abilities.length > 0) {
+    if(params.abilityScoreImprovement && params.abilityScoreImprovement.abilities.length > 0) {
       this.character.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     }
     
@@ -90,7 +119,7 @@ export class CharacterSheet {
     this.applySpellSlotsAtLevelUp();
   }
 
-  applySpellSlotsAtLevelUp(){
+  private applySpellSlotsAtLevelUp(){
     
     if(Object.keys(this.levels).length == 1) { // IF NOT MULTICLASSING...
 
@@ -98,12 +127,12 @@ export class CharacterSheet {
 
       // Are they in a Spellcasting Subclass (i.e. Arcane Trickster / Eldritch Knight)? Run Tertiary.
       if(this.playerClasses[playerClass].subclass && SpellSlotFactory.spellcastingSubclasses[this.playerClasses[playerClass].subclass.name]) { 
-        SpellSlotFactory.applyClassSpellSlotsAtLevel(this.character, "TERTIARY", this.character.level.totalLevel);
+        SpellSlotFactory.applyClassSpellSlotsAtLevel(this.character, "TERTIARY", this.character.level);
       }  
       
       // Otherwise add spell slots as they need.
       else {
-        SpellSlotFactory.applyClassSpellSlotsAtLevel(this.character, SpellSlotFactory.spellcastingClassRanks[playerClass], this.character.level.totalLevel);
+        SpellSlotFactory.applyClassSpellSlotsAtLevel(this.character, SpellSlotFactory.spellcastingClassRanks[playerClass], this.character.level);
       }
     }
     

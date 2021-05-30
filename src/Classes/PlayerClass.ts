@@ -1,14 +1,14 @@
 import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { Trait, EquipmentPack, AttachedFeature } from "../Base/Interfaces";
-import * as Spells from "../../Assets/Spells.json";
+import { Trait, EquipmentPack, AttachedFeature, ResourceTrait, ScalingTrait } from "../Base/Interfaces";
+import * as SpellList from "../../Assets/SpellList.json";
+import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
 import * as Languages from "../../Assets/Languages.json";
 import * as Gear from "../../Assets/Gear.json";
 import * as ToolKits from "../../Assets/Tools.json";
 import * as FightingStyle from "../../Assets/FightingStyles.json";
-import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
 import * as Armor from "../../Assets/Armor.json";
 import * as Weapons from "../../Assets/Weapons.json";
-import { Inventory } from "../Base/Inventory";
+import { Inventory } from "../Base/Equipment/Inventory";
 import { Subclass, SubclassParams } from "./Subclass";
 import { Feat, FeatParams } from "../Feats/Feat";
 
@@ -69,7 +69,7 @@ export abstract class PlayerClass {
 
   protected addLanguages(pc: PlayerCharacter): void {
     for (let language of this.languages) {
-      pc.traits.languages.push(Languages[language]);
+      pc.traits.languages.add(Languages[language]);
     }
   }
 
@@ -173,7 +173,7 @@ export abstract class PlayerClass {
     this.addToolkits(pc);
     this.addSavingThrowProficiencies(pc);
 
-    pc.hitDie = this.hitDie;
+    pc.hitDie[this.hitDie] ? pc.hitDie[this.hitDie]++ : pc.hitDie[this.hitDie] = 1;
 
     pc.baseStats.hpMax.base = this.hpBase;
   }
@@ -190,7 +190,6 @@ export abstract class PlayerClass {
     }
 
     for (let key in classTraits[level]) {
-    
       let feature: Trait = classTraits[level][key]
       if(Object.keys(riskTraits).includes(feature["title"]) && riskTraits[feature["title"]]) { continue; }
       pc.pcHelper.addFeatures(feature);
@@ -200,31 +199,17 @@ export abstract class PlayerClass {
   protected handleSpellSelections(
     pc: PlayerCharacter,
     params: LevelingParams,
-    ability: string,
+    className: string,
     src?: AttachedFeature
   ) {
     if(params.spellSelections) {
       if (params.spellSelections.add) {
-        pc.pcHelper.addSpells(params.spellSelections.add, ability, src);
+        pc.pcHelper.addSpells(params.spellSelections.add, SpellcastingAbility[className], src);
       }
       if (params.spellSelections.remove) {
         pc.pcHelper.removeSpells(params.spellSelections.remove);
       }
     }
-  }
-
-  public static pushCustomizedClassFeature(
-    pc: PlayerCharacter,
-    level: number,
-    classTraits: object,
-    feature: string,
-    choices: string[]
-  ) {
-    const customFeature: Trait = {
-      ...classTraits[level][feature],
-      choices: choices,
-    };
-    pc.pcHelper.addFeatures(customFeature);
   }
 
   addSpellcasting(pc: PlayerCharacter, className: string){
@@ -259,8 +244,12 @@ export abstract class PlayerClass {
     }
 
     pc.spellcasting
-      ? pc.spellcasting.push(spellcasting)
-      : (pc.spellcasting = [spellcasting]);
+      ? pc.spellcasting.abilities.push(spellcasting)
+      : (pc.spellcasting = {spellSlots: [], abilities: [spellcasting]});
+  }
+
+  addPreparationSpells(pc: PlayerCharacter, className: string, level: string){ 
+    pc.pcHelper.addSpells(SpellList[className][level], SpellcastingAbility[className]);
   }
 
   subclassDriver(pc: PlayerCharacter, level: string, params: LevelingParams){
@@ -287,8 +276,8 @@ export abstract class PlayerClass {
   public static multiClassCheck(pc: PlayerCharacter, trait: string){
     
     let riskTraits = {
-      "Channel Divinity": pc.pcHelper.findResourceTraitByName("Channel Divinity") === null ? true : false,
-      "Unarmored Defense": pc.pcHelper.findFeatureTraitByName("Unarmored Defense") === null ? true : false
+      "Channel Divinity": pc.pcHelper.findFeatureTraitByName("Channel Divinity") === null ? false : true,
+      "Unarmored Defense": pc.pcHelper.findFeatureTraitByName("Unarmored Defense") === null ? false : true
     }
     if (riskTraits[trait]) { return true; }
 
@@ -310,7 +299,6 @@ export interface ClassCreationParams {
   druidicFocus?: string
 }
 export interface LevelingParams {
-  isNoInput: boolean;
   abilityScoreImprovement?: {
     abilities: string[];
     value: string;

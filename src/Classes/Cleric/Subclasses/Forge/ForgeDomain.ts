@@ -1,6 +1,6 @@
 import { ScalingTrait } from "Base/Interfaces";
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { LevelingParams } from "../../../PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as ForgeDomainDict from "./Forge.json";
 
 
@@ -15,14 +15,14 @@ export class ForgeDomain {
   }
 
   static forge1(pc: PlayerCharacter, params: LevelingParams) {
-    ForgeDomain.getSpells(pc,"1");
-    pc.traits.armorProficiencies.add("Heavy");
-    pc.traits.toolProficiencies.add("Smithing Tools");
     pc.pcHelper.addFeatures(
       ForgeDomain.getFeature("1", "BLESSING OF THE FORGE"),
       ForgeDomain.getFeature("1", "BONUS PROFICIENCY")
     );
-    }
+    ForgeDomain.getSpells(pc,"1");
+    pc.traits.armorProficiencies.add("Heavy");
+    pc.traits.toolProficiencies.add("Smithing Tools"); 
+  }
   
   static forge2(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(
@@ -47,13 +47,8 @@ export class ForgeDomain {
   }
 
   static forge8(pc: PlayerCharacter, params: LevelingParams) {
-    const divineStrike: ScalingTrait = {
-      title: "Divine Strike",
-      description: "Dice used for Divine Strike (fire damage).",
-      dice: "1d8",
-    };
-    pc.pcHelper.addScalingTraits(divineStrike);
     pc.pcHelper.addFeatures(ForgeDomain.getFeature("8", "DIVINE STRIKE"));
+    pc.pcHelper.addEffectsToFeature("Divine Strike", {scaling: {dice: "1d8"}})
   }
 
   static forge9(pc: PlayerCharacter, params: LevelingParams) {
@@ -61,8 +56,7 @@ export class ForgeDomain {
   }
 
   static forge14(pc:PlayerCharacter,params:LevelingParams) {
-    const divineStrike: ScalingTrait = pc.pcHelper.findScalingTraitByName("Divine Strike");
-    divineStrike.dice = "2d8";
+    pc.pcHelper.findFeatureTraitByName("Divine Strike").scaling.dice = "2d8";
   }
 
   static forge17(pc: PlayerCharacter, params: LevelingParams) {

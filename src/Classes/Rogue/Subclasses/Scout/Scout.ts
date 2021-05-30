@@ -9,8 +9,11 @@ export class Scout {
   }
 
   static Scout3(pc: PlayerCharacter, params: LevelingParams) {
-    pc.pcHelper.addFeatures(Scout.getFeature("3", "SKIRMISHER"), 
-    Scout.getFeature("3", "SURVIVALIST"));
+    pc.pcHelper.addFeatures(
+      Scout.getFeature("3", "SKIRMISHER"), 
+      Scout.getFeature("3", "SURVIVALIST")
+    );
+    
     pc.skills["nature"].proficient = true;
     pc.skills["nature"].expertise = true;
     pc.skills["survival"].proficient = true;
@@ -28,5 +31,4 @@ export class Scout {
   static Scout17(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Scout.getFeature("17", "SUDDEN STRIKE"));
   }
-    
 }

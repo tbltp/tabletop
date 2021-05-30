@@ -1,5 +1,5 @@
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
-import { LevelingParams } from "../../../../Classes/PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../../Classes/PlayerClass";
 import * as ConquestOathDict from "./OathOfConquest.json"
 import {ScalingTrait} from "../../../../Base/Interfaces"
 
@@ -14,8 +14,7 @@ export class Conquest {
   }
   
   static improveAura(pc: PlayerCharacter,params: LevelingParams){
-    const auraDmg: ScalingTrait = pc.pcHelper.findScalingTraitByName("Aura of Conquest");
-    auraDmg.bonus++;
+    pc.pcHelper.findFeatureTraitByName("Aura of Conquest").scaling.bonus++;
   }
 
   static conquest3(pc: PlayerCharacter, params: LevelingParams) {
@@ -32,12 +31,7 @@ export class Conquest {
 
   static conquest7(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Conquest.getFeature("7", "AURA OF CONQUEST"));
-    const auraDmg: ScalingTrait = {
-      title: "Aura of Conquest",
-      description: "The amount of damage a frightened creature takes within your aura",
-      bonus: 3
-    }
-    pc.pcHelper.addScalingTraits(auraDmg);
+    pc.pcHelper.addEffectsToFeature("Aura of Conquest", {scaling: {bonus: 3}})
   }
 
   static conquest9(pc: PlayerCharacter, params: LevelingParams) {
@@ -58,7 +52,7 @@ export class Conquest {
 
   static conquest20(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Conquest.getFeature("20", "INVINCIBLE CONQUEROR"));
-    Conquest.improveAura(pc,params);
+    Conquest.improveAura(pc, params);
   }
 
   static oathSpells = {

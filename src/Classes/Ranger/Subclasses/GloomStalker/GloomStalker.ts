@@ -14,8 +14,7 @@ export class GloomStalker {
   }
 
   static gloomStalker3(pc: PlayerCharacter, params: LevelingParams) {
-    pc.pcHelper.addFeatures(GloomStalker.getFeature("3","DREAD AMBUSHER"));
-    pc.pcHelper.addFeatures(GloomStalker.getFeature("3","UMBRAL SIGHT"));
+    pc.pcHelper.addFeatures(GloomStalker.getFeature("3","DREAD AMBUSHER"), GloomStalker.getFeature("3","UMBRAL SIGHT"));
     GloomStalker.getSpell(pc,"3");
   }
 

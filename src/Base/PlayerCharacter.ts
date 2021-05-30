@@ -1,6 +1,5 @@
-import { BaseCharacter, BaseAbility } from "./BaseCharacter";
-import { ResourceTrait, Spell, Trait, ScalingTrait, AttachedFeature } from "./Interfaces";
-import * as Spells from "../../Assets/Spells.json";
+import { BaseCharacter } from "./BaseCharacter";
+import { AttachedFeature, SpellSlot } from "./Interfaces";
 import { PlayerCharacterHelper } from "./PlayerCharacterHelper";
 
 export class PlayerCharacter extends BaseCharacter {
@@ -15,7 +14,7 @@ export class PlayerCharacter extends BaseCharacter {
     super(str, dex, con, int, wis, cha);
   }
 
-  hitDie: string;
+  hitDie: {[key: string]: number} = {};
   fightingStyles?: string[];
 
   attacks: PCAttack[] = [];
@@ -23,32 +22,17 @@ export class PlayerCharacter extends BaseCharacter {
   armorClasses: PCArmorClass[] = [
     {
       name: "Base",
-      base: this.baseStats.baseArmorClass.base,
-      modifier: [this.baseStats.baseArmorClass.modifier],
-      bonus: this.baseStats.baseArmorClass.bonus,
+      base: 10,
+      modifier: [this.abilityScores["dexterity"].modifier],
+      bonus: {value: 0},
     },
   ];
 
   speeds: PCSpeed[] = [
-    { name: "Base Speed", base: this.speed, bonus: { value: 0 } },
+    { name: "Base Speed", base: {value: 0}, bonus: { value: 0 } },
   ];
 
-  spellcasting?: {
-    title: string,
-    preparedSpells?: {
-      level: { value: number };
-      modifier: { value: number };
-    },
-    spellSave: {
-      base: number;
-      proficiency: { value: number };
-      modifier: { value: number };
-    },
-    spellAttack: {
-      proficiency: { value: number };
-      modifier: { value: number };
-    }
-  }[]
+  spellcasting?: {spellSlots: SpellSlot[], abilities: PCSpellcastingAbility[]};
 
   notes: Note[] = [];
 
@@ -84,4 +68,21 @@ export interface Note {
   title: string;
   description: string;
   date: string;
+}
+
+export interface PCSpellcastingAbility {
+  title: string,
+  preparedSpells?: {
+    level: { value: number };
+    modifier: { value: number };
+  },
+  spellSave: {
+    base: number;
+    proficiency: { value: number };
+    modifier: { value: number };
+  },
+  spellAttack: {
+    proficiency: { value: number };
+    modifier: { value: number };
+  }
 }

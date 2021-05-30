@@ -1,6 +1,6 @@
 import { ResourceTrait, ScalingTrait } from "Base/Interfaces";
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { LevelingParams } from "../../../PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as NatureDomainDict from "./Nature.json";
 
 export class NatureDomain {
@@ -14,10 +14,6 @@ export class NatureDomain {
   }
 
   static nature1(pc: PlayerCharacter, params: LevelingParams) {
-    pc.pcHelper.addSpells(
-      [...params.subclassParams.spellSelections.add],"wisdom");
-    NatureDomain.getSpells(pc,"1");
-    pc.traits.armorProficiencies.add("Heavy");
     pc.pcHelper.addFeatures(
       {
         ...NatureDomain.getFeature("1", "ACOLYTE OF NATURE"),
@@ -25,6 +21,10 @@ export class NatureDomain {
       },
       NatureDomain.getFeature("1", "BONUS PROFICIENCY")
     );
+    pc.pcHelper.addSpells(
+      [...params.subclassParams.spellSelections.add],"wisdom");
+    NatureDomain.getSpells(pc,"1");
+    pc.traits.armorProficiencies.add("Heavy");
   }
 
   static nature2(pc: PlayerCharacter, params: LevelingParams) {
@@ -55,14 +55,8 @@ export class NatureDomain {
   }
 
   static nature8(pc: PlayerCharacter, params: LevelingParams) {
-    const divineStrike: ScalingTrait = {
-      title: "Divine Strike",
-      description:
-        "Dice used for Divine Strike (cold, fire, or lightning damage).",
-      dice: "1d8",
-    };
-    pc.pcHelper.addScalingTraits(divineStrike);
     pc.pcHelper.addFeatures(NatureDomain.getFeature("8", "DIVINE STRIKE"));
+    pc.pcHelper.addEffectsToFeature("Divine Strike", {scaling: {dice: "1d8"}})
   }
 
   static nature9(pc: PlayerCharacter, params: LevelingParams) {
@@ -70,8 +64,7 @@ export class NatureDomain {
   }
 
   static nature14(pc:PlayerCharacter,params:LevelingParams) {
-    const divineStrike: ScalingTrait = pc.pcHelper.findScalingTraitByName("Divine Strike");
-    divineStrike.dice = "2d8";
+    pc.pcHelper.findFeatureTraitByName("Divine Strike").scaling.dice = "2d8";
   }
 
   static nature17(pc: PlayerCharacter, params: LevelingParams) {

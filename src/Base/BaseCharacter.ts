@@ -24,16 +24,11 @@ export abstract class BaseCharacter {
       charisma: new BaseAbility("Cha", cha),
     };
 
-    this.proficiency = new BaseProficiency(this.level.totalLevel);
+    this.proficiency = new BaseProficiency(this.level);
 
     this.baseStats = {
       initiativeBonus: {
         base: 0,
-        modifier: this.abilityScores["dexterity"].modifier,
-        bonus: { value: 0 },
-      },
-      baseArmorClass: {
-        base: 10,
         modifier: this.abilityScores["dexterity"].modifier,
         bonus: { value: 0 },
       },
@@ -191,7 +186,7 @@ export abstract class BaseCharacter {
 
   // Base Stats
   proficiency: BaseProficiency;
-  level: { totalLevel: number } = { totalLevel: 0 };
+  level = 0;
   baseStats: {
     [key: string]: {
       base: number;
@@ -199,7 +194,6 @@ export abstract class BaseCharacter {
       bonus: { value: number };
     };
   };
-  speed: { value: number } = { value: 0 };
   size: string;
 
   // Base Ability Scores
@@ -228,18 +222,14 @@ export abstract class BaseCharacter {
     armorProficiencies: Set<string>;
     weaponProficiencies: Set<string>;
     toolProficiencies: Set<string>;
-    languages: Trait[];
+    languages: Set<Trait>;
     features: Trait[];
-    resources: ResourceTrait[];
-    scalingEffects: ScalingTrait[];
   } = {
     armorProficiencies: new Set(),
     weaponProficiencies: new Set(),
     toolProficiencies: new Set(),
-    languages: [],
-    features: [],
-    resources: [],
-    scalingEffects: [],
+    languages: new Set(),
+    features: []
   };
   
   // Known Spells

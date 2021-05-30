@@ -1,21 +1,11 @@
-import { PlayerCharacter, PCArmorClass, PCAttack } from "./PlayerCharacter";
-import * as Gear from "../../Assets/Gear.json";
-import * as Tools from "../../Assets/Tools.json";
-import { Armor, Weapon, EquipmentPack } from "./Interfaces";
+import { EquipmentPack } from "../Interfaces";
+import * as Gear from "../../../Assets/Gear.json";
+import * as Tools from "../../../Assets/Tools.json";
 
-export class Inventory {
-  static equipmentPacks: { [key: string]: () => EquipmentPack } = {
-    BURGLAR: Inventory.burglar,
-    DIPLOMAT: Inventory.diplomat,
-    DUNGEONEER: Inventory.dungeoneer,
-    ENTERTAINER: Inventory.entertainer,
-    EXPLORER: Inventory.explorer,
-    PRIEST: Inventory.priest,
-    SCHOLAR: Inventory.scholar,
-    NONE: Inventory.none,
-  };
-
+export class EquipmentPackHelper {
+    
   static burglar(): EquipmentPack {
+    
     const backpack = Gear["BACKPACK"];
     const ballBearings = Gear["BALL BEARINGS (BAG OF 1000)"];
     const bell = Gear["BELL"];
@@ -56,6 +46,7 @@ export class Inventory {
       ],
     };
   }
+
   static diplomat(): EquipmentPack {
     const chest = Gear["CHEST"];
     const fineClothes = Gear["CLOTHES, FINE"];
@@ -91,6 +82,7 @@ export class Inventory {
       ],
     };
   }
+
   static dungeoneer(): EquipmentPack {
     const backpack = Gear["BACKPACK"];
     const crowbar = Gear["CROWBAR"];
@@ -118,6 +110,7 @@ export class Inventory {
       ],
     };
   }
+
   static entertainer(): EquipmentPack {
     const backpack = Gear["BACKPACK"];
     const bedroll = Gear["BEDROLL"];
@@ -211,90 +204,5 @@ export class Inventory {
   static none(): EquipmentPack {
     return { gear: [] };
   }
-
-  static acFromArmorType: {
-    [key: string]: (pc: PlayerCharacter, armor: Armor) => PCArmorClass;
-  } = {
-    Light: Inventory.lightArmor,
-    Medium: Inventory.mediumArmor,
-    Heavy: Inventory.heavyArmor,
-    Shield: Inventory.lightArmor,
-  };
-
-  static lightArmor(pc: PlayerCharacter, armor: Armor): PCArmorClass {
-    armor.AC.modifier = pc.abilityScores.dexterity.modifier;
-    return {
-      name: armor.name,
-      base: armor.AC.base,
-      modifier: [armor.AC.modifier],
-      bonus: armor.AC.bonus,
-    };
-  }
-
-  static mediumArmor(pc: PlayerCharacter, armor: Armor): PCArmorClass {
-    armor.AC.modifier =
-      pc.abilityScores.dexterity.modifier.value > 2
-        ? { value: 2 }
-        : pc.abilityScores.dexterity.modifier;
-
-    return {
-      name: armor.name,
-      base: armor.AC.base,
-      modifier: [armor.AC.modifier],
-      bonus: armor.AC.bonus,
-    };
-  }
-
-  static heavyArmor(pc: PlayerCharacter, armor: Armor): PCArmorClass {
-    return {
-      name: armor.name,
-      base: armor.AC.base,
-      modifier: [{value: 0}],
-      bonus: armor.AC.bonus,
-    };
-  }
-
-  // Add Shield
-
-  static buildAttack(pc: PlayerCharacter, weapon: Weapon): PCAttack {
-    const proficiencies = pc.traits.weaponProficiencies;
-    const weaponType = weapon.weaponType.split(" ");
-
-    let proficient: boolean = false;
-    let ability: string;
-
-    if (
-      proficiencies.has(weaponType[0]) ||
-      proficiencies.has(weaponType[1]) ||
-      proficiencies.has(weapon.name)
-    ) {
-      proficient = true;
-    }
-
-    if (weapon.properties.indexOf("Finesse") != -1) {
-      ability =
-        pc.abilityScores.strength.score > pc.abilityScores.dexterity.score
-          ? "strength"
-          : "dexterity";
-    } else if (weaponType[1] == "Melee") {
-      ability = "strength";
-    } else if (weaponType[1] == "Ranged") {
-      ability = "dexterity";
-    }
-
-    let weaponAttack = {
-      name: weapon.name,
-      attackBonus: {
-        ability: pc.abilityScores[ability].modifier,
-        proficient: proficient,
-        itemBonus: { value: 0 },
-      },
-      dice: weapon.damage,
-      damageType: weapon.damageType,
-      damageBonus: pc.abilityScores[ability].modifier,
-    };
-
-    return weaponAttack;
-  }
+    
 }
-

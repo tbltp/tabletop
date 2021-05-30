@@ -34,7 +34,7 @@ export class Tough extends Feat {
     }
   
     apply(pc: PlayerCharacter) {
-      pc.baseStats["hpMax"].bonus.value += 2 * pc.level.totalLevel;
+      pc.baseStats["hpMax"].bonus.value += 2 * pc.level;
       super.apply(pc);
     }
   }

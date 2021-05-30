@@ -23,5 +23,4 @@ export class Divination {
     static divination14(pc: PlayerCharacter, params: LevelingParams): void {
         pc.pcHelper.addFeatures(Divination.getFeature("14", "GREATER PORTENT"))
     }
-
 }

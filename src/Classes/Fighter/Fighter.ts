@@ -1,7 +1,5 @@
 import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
-import { ResourceTrait } from "../../Base/Interfaces";
-import * as FightingStyles from "../../../Assets/FightingStyles.json";
 import * as FighterClassTraits from "./Fighter.json";
 import { FighterSubclass } from "./Subclasses/FighterSubclass";
 
@@ -71,29 +69,17 @@ export class Fighter extends PlayerClass {
   }
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
-    //fighting style
-    PlayerClass.addFightingStyle(pc, params.fightingStyles[0]);
-    //second wind
-    pc.pcHelper.addResourceTraits({
-      title: "Second Wind",
-      description: "Number of times you can Second Wind.",
-      resourceMax: { value: 1 },
-    });
     this.pushFighterFeatures(pc, 1);
+    PlayerClass.addFightingStyle(pc, params.fightingStyles[0]);
+    pc.pcHelper.addEffectsToFeature("Second Wind", {resource: {resourceMax: {value: 1}}})
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
-    //action surge
-    pc.pcHelper.addResourceTraits({
-      title: "Action Surge",
-      description: "Number of times you can Action Surge.",
-      resourceMax: { value: 1 },
-    });
     this.pushFighterFeatures(pc, 2);
+    pc.pcHelper.addEffectsToFeature("Action Surge", {resource: {resourceMax: {value: 1}}})
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    //martial archetype
     this.subclass = new FighterSubclass(params.subclassParams);
     this.subclassDriver(pc, "3", params);    
   }
@@ -105,18 +91,14 @@ export class Fighter extends PlayerClass {
   level5(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushFighterFeatures(pc, 5);
     //check for extra attack already
-    if(!pc.pcHelper.findResourceTraitByName("Extra Attack")){
-      pc.pcHelper.addResourceTraits({
-        title: "Extra Attack",
-        description: "Number of Extra Attacks you can make.",
-        resourceMax: { value: 1 },
-      });
+    if(!pc.pcHelper.findFeatureTraitByName("Extra Attack")){
+     pc.pcHelper.addEffectsToFeature("Extra Attack", {scaling: {uses: 1}})
     }
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "6", params);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
@@ -128,11 +110,7 @@ export class Fighter extends PlayerClass {
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.addResourceTraits({
-      title: "Indomitable",
-      description: "Number of times you can use the Indomitable trait.",
-      resourceMax: { value: 1 },
-    });
+    pc.pcHelper.addEffectsToFeature("Indomitable", {resource: {resourceMax: { value: 1 }}})
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
@@ -140,8 +118,8 @@ export class Fighter extends PlayerClass {
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.findResourceTraitByName("Extra Attack").resourceMax.value++;
     this.subclassDriver(pc, "11", params);
+    pc.pcHelper.findFeatureTraitByName("Extra Attack").scaling.uses++;
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
@@ -149,13 +127,13 @@ export class Fighter extends PlayerClass {
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.findResourceTraitByName("Indomitable").resourceMax.value++;
     this.subclassDriver(pc, "13", params);
+    pc.pcHelper.findFeatureTraitByName("Indomitable").resource.resourceMax.value++;
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "14", params);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
@@ -167,8 +145,8 @@ export class Fighter extends PlayerClass {
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.findResourceTraitByName("Action Surge").resourceMax.value++;
-    pc.pcHelper.findResourceTraitByName("Indomitable").resourceMax.value++;
+    pc.pcHelper.findFeatureTraitByName("Action Surge").resource.resourceMax.value++;
+    pc.pcHelper.findFeatureTraitByName("Indomitable").resource.resourceMax.value++;
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {
@@ -180,8 +158,8 @@ export class Fighter extends PlayerClass {
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.findResourceTraitByName("Extra Attack").resourceMax.value++;
     this.subclassDriver(pc, "20", params);
+    pc.pcHelper.findFeatureTraitByName("Extra Attack").scaling.uses++;
   }
 }
 

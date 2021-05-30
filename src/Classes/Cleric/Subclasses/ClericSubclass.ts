@@ -26,7 +26,6 @@ export class ClericSubclass extends Subclass {
         "7": KnowledgeDomain.knowledge7,
         "8": KnowledgeDomain.knowledge8,
         "9": KnowledgeDomain.knowledge9,
-        "14": KnowledgeDomain.knowledge14,
         "17": KnowledgeDomain.knowledge17
       },
       LIFE: {

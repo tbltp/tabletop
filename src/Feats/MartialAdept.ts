@@ -12,14 +12,12 @@ export class MartialAdept extends Feat {
   
     apply(pc: PlayerCharacter) {
       
-      const superiorityDice: ResourceTrait = {
-        title: "Superiority Dice: Martial Adept",
-        description: "Number of superiority dice you can use for maneuvers",
-        resourceMax: { value: 1 },
-        dice: "d6",
+      const superiorityDice = {
+        resource: {resourceMax: { value: 1 }},
+        scaling: {dice: "d6"},
       };
       
-      pc.pcHelper.addResourceTraits(superiorityDice);
+      pc.pcHelper.addEffectsToFeature("Martial Adept", superiorityDice);
       
       const maneuvers: Trait[] = this.maneuvers.map(m => Maneuvers[m]);
       pc.pcHelper.addFeatures(...maneuvers);

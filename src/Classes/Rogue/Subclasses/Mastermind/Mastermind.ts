@@ -11,12 +11,15 @@ export class Mastermind {
   }
 
   static mastermind3(pc: PlayerCharacter, params: LevelingParams) {
-    pc.pcHelper.addFeatures(Mastermind.getFeature("3", "MASTER OF INTRIGUE"), 
-    Mastermind.getFeature("3", "MASTER OF TACTICS"));
+    pc.pcHelper.addFeatures(
+      Mastermind.getFeature("3", "MASTER OF INTRIGUE"), 
+      Mastermind.getFeature("3", "MASTER OF TACTICS")
+    );
+    
     pc.traits.toolProficiencies.add("Forgery Kit");
     pc.traits.toolProficiencies.add("Disguise Kit");
     pc.traits.toolProficiencies.add((params.subclassParams as RogueSubclassParams).gamingSet[0]);
-    pc.traits.languages.push(...params.subclassParams.languages.map(l => Languages[l]));
+    params.subclassParams.languages.map(l => pc.traits.languages.add(Languages[l]));
   }
   
   static mastermind9(pc: PlayerCharacter, params: LevelingParams) {

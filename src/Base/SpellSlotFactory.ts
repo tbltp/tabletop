@@ -1,7 +1,5 @@
-import { ResourceTrait } from "../Base/Interfaces";
-import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { CharacterSheet } from "../Base/CharacterSheet";
-import { PlayerClass } from "./PlayerClass";
+import { SpellSlot } from "./Interfaces";
+import { PlayerCharacter } from "./PlayerCharacter";
 
 export class SpellSlotFactory {
   private static levelStringDict: { [key: string]: string } = {
@@ -83,15 +81,10 @@ export class SpellSlotFactory {
     return SpellSlotFactory.levelStringDict[String(level)];
   }
 
-  private static generateSpellSlots(level: number, max: number): ResourceTrait {
+  private static generateSpellSlots(level: number, max: number): SpellSlot {
     const slotLevelString: string = SpellSlotFactory.getLevelString(level);
     return {
-      title:
-        slotLevelString.charAt(0).toUpperCase() +
-        slotLevelString.slice(1) +
-        " Level Spell Slots",
-      description:
-        "Number of " + slotLevelString + " level spells you can cast",
+      level: level,
       resourceMax: { value: max },
     };
   }
@@ -99,13 +92,8 @@ export class SpellSlotFactory {
   private static findPlayerSpellSlots(
     pc: PlayerCharacter,
     level: number
-  ): ResourceTrait {
-    const slotLevelString: string = SpellSlotFactory.getLevelString(level);
-    const resourceTitle: string =
-      slotLevelString.charAt(0).toUpperCase() +
-      slotLevelString.slice(1) +
-      " Level Spell Slots";
-    return pc.pcHelper.findResourceTraitByName(resourceTitle);
+  ): SpellSlot {
+      return pc.spellcasting.spellSlots.find(slot => slot.level === level)
   }
 
   public static applyClassSpellSlotsAtLevel(
@@ -130,16 +118,16 @@ export class SpellSlotFactory {
 
       if (slotMax == 0) break;
       else {
-        const existingSlot: ResourceTrait | null = this.findPlayerSpellSlots(
+        const existingSlot: SpellSlot | null = this.findPlayerSpellSlots(
           pc,
           slotLevel
         );
         if (!existingSlot) {
-          const slot: ResourceTrait = SpellSlotFactory.generateSpellSlots(
+          const slot: SpellSlot = SpellSlotFactory.generateSpellSlots(
             i + 1,
             slotMax
           );
-          pc.pcHelper.addResourceTraits(slot);
+         pc.spellcasting.spellSlots.push(slot)
         } else {
           existingSlot.resourceMax.value = slotMax;
         }

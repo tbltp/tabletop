@@ -11,27 +11,15 @@ export class Samurai {
   }
 
   static upSpirit(pc: PlayerCharacter) {
-    const fightingSpirit: ScalingTrait = pc.pcHelper.findScalingTraitByName("Fighting Spirit");
-    fightingSpirit.bonus+=5;
+    pc.pcHelper.findFeatureTraitByName("Fighting Spirit").scaling.bonus+=5;
   }
   static samurai3(pc: PlayerCharacter, params: LevelingParams) {
-    pc.pcHelper.addFeatures(Samurai.getFeature("3", "BONUS PROFICIENCY"));
-    params.subclassParams.skillProficiencies.length > 0 ?
+    pc.pcHelper.addFeatures(Samurai.getFeature("3", "BONUS PROFICIENCY"), Samurai.getFeature("3", "FIGHTING SPIRIT"));
+    pc.pcHelper.addEffectsToFeature("Fighting Spirit", {resource: {resourceMax: {value: 3}}, scaling: {bonus: 5}})
+    
+    params.subclassParams.skillProficiencies.length > 0 ?    
     pc.skills[params.subclassParams.skillProficiencies[0]].proficient = true :
-    pc.traits.languages.push(Languages[params.subclassParams.languages[0]]);
-    pc.pcHelper.addFeatures(Samurai.getFeature("3", "FIGHTING SPIRIT"));
-    const fightingSpirit: ResourceTrait = {
-      title: "Fighting Spirit",
-      description: "Maximum number of times you may use Fighting Spirit.",
-      resourceMax: {value: 3}
-    }
-    const fightingHP: ScalingTrait = {
-      title: "Fighting Spirit",
-      description: "Amount of temporary hit points you receive from Fighting Spirit",
-      bonus: 5
-    }
-    pc.pcHelper.addScalingTraits(fightingHP);
-    pc.pcHelper.addResourceTraits(fightingSpirit);
+    pc.traits.languages.add(Languages[params.subclassParams.languages[0]]);
   }
 
   static samurai7(pc: PlayerCharacter, params: LevelingParams) {

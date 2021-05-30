@@ -1,7 +1,6 @@
 import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { Trait } from "../../Base/Interfaces";
-import * as SpellList from "../../../Assets/SpellList.json";
 import * as RogueClassTraits from "./Rogue.json";
 import { RogueSubclass } from "./Subclasses/RogueSubclass";
 
@@ -72,19 +71,17 @@ export class Rogue extends PlayerClass {
   }
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
+    this.pushRogueFeatures(pc, 1);
+    pc.pcHelper.addEffectsToFeature("Sneak Attack", {scaling: {dice: "1d6"}})
+    
     // Expertise
+    const expert: Trait = pc.pcHelper.findFeatureTraitByName("Expertise");
+    expert.choices = params.proficiencySelection;
+
     for (const proficiency of params.proficiencySelection) {
       pc.skills[proficiency].expertise = true;
     }
-    // Sneak Attack
-    pc.pcHelper.addScalingTraits({
-      title: "Sneak Attack",
-      description: "Dice used for Sneak Attack",
-      dice: "1d6",
-    });
-    this.pushRogueFeatures(pc, 1);
-    const expert: Trait = pc.pcHelper.findFeatureTraitByName("Expertise");
-    expert.choices = params.proficiencySelection;
+    
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
@@ -94,8 +91,7 @@ export class Rogue extends PlayerClass {
   level3(pc: PlayerCharacter, params: LevelingParams): void {
     this.subclass = new RogueSubclass(params.subclassParams);
     this.subclassDriver(pc, "3", params);    
-
-    pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "2d6";
+    pc.pcHelper.findFeatureTraitByName("Sneak Attack").scaling.dice = "2d6";
   }
 
   level4(pc: PlayerCharacter, params: LevelingParams): void {
@@ -104,7 +100,7 @@ export class Rogue extends PlayerClass {
 
   level5(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushRogueFeatures(pc, 5);
-    pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "3d6";
+    pc.pcHelper.findFeatureTraitByName("Sneak Attack").scaling.dice = "3d6";
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
@@ -117,8 +113,8 @@ export class Rogue extends PlayerClass {
 
   level7(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushRogueFeatures(pc, 7);
-    pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "4d6";
     this.subclassDriver(pc, "7", params);
+    pc.pcHelper.findFeatureTraitByName("Sneak Attack").scaling.dice = "4d6";
   }
 
   level8(pc: PlayerCharacter, params: LevelingParams): void {
@@ -126,27 +122,27 @@ export class Rogue extends PlayerClass {
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "5d6";
     this.subclassDriver(pc, "9", params);    
+    pc.pcHelper.findFeatureTraitByName("Sneak Attack").scaling.dice = "5d6";
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
     this.subclassDriver(pc, "10", params);
+    pc.pcHelper.improveAbilityScores(params.abilityScoreImprovement);
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushRogueFeatures(pc, 11);
-    pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "6d6";
     this.subclassDriver(pc, "11", params);
+    pc.pcHelper.findFeatureTraitByName("Sneak Attack").scaling.dice = "6d6";
   }
 
   level12(pc: PlayerCharacter, params: LevelingParams): void {
   }
 
   level13(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "7d6";
     this.subclassDriver(pc, "13", params);    
+    pc.pcHelper.findFeatureTraitByName("Sneak Attack").scaling.dice = "7d6";
   }
 
   level14(pc: PlayerCharacter, params: LevelingParams): void {
@@ -156,9 +152,9 @@ export class Rogue extends PlayerClass {
 
   level15(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushRogueFeatures(pc, 15);
+    pc.pcHelper.findFeatureTraitByName("Sneak Attack").scaling.dice = "8d6";
     // Slippery Mind
     pc.abilityScores.wisdom.savingThrowProficiency = true;
-    pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "8d6";
   }
 
   level16(pc: PlayerCharacter, params: LevelingParams): void {
@@ -166,8 +162,8 @@ export class Rogue extends PlayerClass {
   }
 
   level17(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "9d6";
-    this.subclassDriver(pc, "17", params);    
+    this.subclassDriver(pc, "17", params);
+    pc.pcHelper.findFeatureTraitByName("Sneak Attack").scaling.dice = "9d6";
   }
 
   level18(pc: PlayerCharacter, params: LevelingParams): void {
@@ -175,8 +171,8 @@ export class Rogue extends PlayerClass {
   }
 
   level19(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.findScalingTraitByName("Sneak Attack").dice = "10d6";
     this.subclassDriver(pc, "19", params);
+    pc.pcHelper.findFeatureTraitByName("Sneak Attack").scaling.dice = "10d6";
   }
 
   level20(pc: PlayerCharacter, params: LevelingParams): void {

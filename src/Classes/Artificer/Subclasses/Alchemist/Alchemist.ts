@@ -1,5 +1,5 @@
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
-import { LevelingParams } from "../../../PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as AlchemistDict from "./Alchemist.json";
 
 export class Alchemist {
@@ -13,14 +13,10 @@ export class Alchemist {
   }
 
   static alchemist3(pc: PlayerCharacter, params: LevelingParams) {
-    pc.traits.toolProficiencies.add(params.subclassParams.toolProficiencies[0]);
     pc.pcHelper.addFeatures(Alchemist.getFeature("3", "EXPERIMENTAL ELIXIR"));
-    pc.pcHelper.addResourceTraits({
-        title: "Experimental Elixirs",
-        description: "Number of experimental elixirs you can make per long rest.",
-        resourceMax: {value: 1}
-    })
     Alchemist.addAlchemistSpells(pc, "3");
+    pc.pcHelper.addEffectsToFeature("Experimental Elixir", {resource: {resourceMax: {value: 1 } } })
+    pc.traits.toolProficiencies.add(params.subclassParams.toolProficiencies[0]);
   }
 
   static alchemist5(pc: PlayerCharacter, params: LevelingParams) {
@@ -29,7 +25,7 @@ export class Alchemist {
   }
   
   static alchemist6(pc: PlayerCharacter, params: LevelingParams) {
-    pc.pcHelper.findResourceTraitByName("Experimental Elixirs").resourceMax.value++;
+    pc.pcHelper.findFeatureTraitByName("Experimental Elixir").resource.resourceMax.value++;
   }
   
   static alchemist9(pc: PlayerCharacter, params: LevelingParams) {
@@ -43,7 +39,7 @@ export class Alchemist {
 
   static alchemist15(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Alchemist.getFeature("15", "CHEMICAL MASTERY"));
-    pc.pcHelper.findResourceTraitByName("Experimental Elixirs").resourceMax.value++;
+    pc.pcHelper.findFeatureTraitByName("Experimental Elixir").resource.resourceMax.value++;
   }
 
   static alchemist17(pc: PlayerCharacter, params: LevelingParams) {

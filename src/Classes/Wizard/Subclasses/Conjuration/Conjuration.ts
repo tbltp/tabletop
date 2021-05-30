@@ -23,5 +23,4 @@ export class Conjuration {
     static conjuration14(pc: PlayerCharacter, params: LevelingParams): void {
         pc.pcHelper.addFeatures(Conjuration.getFeature("14", "DURABLE SUMMONS"))
     }
-
 }

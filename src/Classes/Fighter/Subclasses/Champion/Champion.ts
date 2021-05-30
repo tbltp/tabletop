@@ -26,7 +26,6 @@ export class Champion {
         pc.abilityScores.constitution.halfProficiency = true;
 
         pc.baseStats.initiativeBonus.bonus = pc.proficiency.halfBonus;
-
       }
     
       static champion10(pc: PlayerCharacter, params: LevelingParams) {

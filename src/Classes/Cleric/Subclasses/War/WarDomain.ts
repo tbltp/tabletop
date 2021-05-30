@@ -1,6 +1,6 @@
 import { ResourceTrait, ScalingTrait } from "Base/Interfaces";
 import { PlayerCharacter } from "Base/PlayerCharacter";
-import { LevelingParams } from "../../../PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as WarDomainDict from "./War.json";
 
 export class WarDomain {
@@ -14,20 +14,17 @@ export class WarDomain {
   }
 
   static war1(pc: PlayerCharacter, params: LevelingParams) {
+    pc.pcHelper.addFeatures(
+      WarDomain.getFeature("1", "WAR PRIEST"),
+      WarDomain.getFeature("1", "BONUS PROFICIENCIES")
+    );
     WarDomain.getSpells(pc,"1");
 
-    const warPriest: ResourceTrait = {
-      title: "War Priest",
-      description: "Number of times you can use War Priest per long rest.",
-      resourceMax: (pc.abilityScores.wisdom.modifier.value >= 1) ? pc.abilityScores.wisdom.modifier : {value: 1}
-    };
-    pc.pcHelper.addResourceTraits(warPriest);
+    const warPriest: ResourceTrait = { resourceMax: (pc.abilityScores.wisdom.modifier.value >= 1) ? pc.abilityScores.wisdom.modifier : {value: 1} };
+    pc.pcHelper.addEffectsToFeature("War Priest", {resource: warPriest})
+
     pc.traits.weaponProficiencies.add("Martial");
     pc.traits.armorProficiencies.add("Heavy");
-    pc.pcHelper.addFeatures(
-        WarDomain.getFeature("1", "WAR PRIEST"),
-        WarDomain.getFeature("1", "BONUS PROFICIENCIES")
-    );
   }
 
   static war2(pc: PlayerCharacter, params: LevelingParams) {
@@ -58,13 +55,8 @@ export class WarDomain {
   }
 
   static war8(pc: PlayerCharacter, params: LevelingParams) {
-    const divineStrike: ScalingTrait = {
-      title: "Divine Strike",
-      description: "Dice used for Divine Strike (extra weapon damage).",
-      dice: "1d8",
-    };
-    pc.pcHelper.addScalingTraits(divineStrike);
     pc.pcHelper.addFeatures(WarDomain.getFeature("8", "DIVINE STRIKE"));
+    pc.pcHelper.addEffectsToFeature("Divine Strike", {scaling: {dice: "1d8"}})
   }
 
   static war9(pc: PlayerCharacter, params: LevelingParams) {
@@ -72,8 +64,7 @@ export class WarDomain {
   }
 
   static war14(pc:PlayerCharacter,params:LevelingParams) {
-    const divineStrike: ScalingTrait = pc.pcHelper.findScalingTraitByName("Divine Strike");
-    divineStrike.dice = "2d8";
+    pc.pcHelper.findFeatureTraitByName("Divine Strike").scaling.dice = "2d8";
   }
 
   static war17(pc: PlayerCharacter, params: LevelingParams) {

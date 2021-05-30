@@ -1,6 +1,6 @@
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
 import { ResourceTrait, ScalingTrait } from "../../../../Base/Interfaces";
-import { LevelingParams } from "../../../PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as ShepherdCircleDict from "./Shepherd.json";
 
 
@@ -11,33 +11,22 @@ export class ShepherdCircle
     }
 
     static upGuardian(pc: PlayerCharacter) {
-        const guardianSpirit: ScalingTrait = pc.pcHelper.findScalingTraitByName("Guardian Spirit");
-        guardianSpirit.bonus+=1;
+        pc.pcHelper.findFeatureTraitByName("Guardian Spirit").scaling.bonus++;
         ShepherdCircle.upSpirit(pc);
     }
 
     static upSpirit(pc: PlayerCharacter) {
-        const spirit: ScalingTrait = pc.pcHelper.findScalingTraitByName("Spirit Totem");
-        spirit.bonus+=1;
+        pc.pcHelper.findFeatureTraitByName("Spirit Totem").scaling.bonus++;
     }
 
     static shepherd2(pc: PlayerCharacter, params: LevelingParams) {
-        pc.pcHelper.addFeatures(ShepherdCircle.getFeature("2", "SPEECH OF THE WOODS"));
-        pc.pcHelper.addFeatures(ShepherdCircle.getFeature("2", "SPIRIT TOTEM"));
-        const spirit: ScalingTrait = {
-            title: "Spirit Totem",
-            description: "Extra HP granted to  creatures for Bear and Unicorn Spirit",
-            bonus: 2,
-            points: 5
-        }
-        pc.pcHelper.addScalingTraits(spirit);
-        const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName("Wild Shape");
-        wildShapeScale.challengeRating = 0.25;
+        pc.pcHelper.addFeatures(ShepherdCircle.getFeature("2", "SPEECH OF THE WOODS"), ShepherdCircle.getFeature("2", "SPIRIT TOTEM"));
+        pc.pcHelper.addEffectsToFeature("Spirit Totem", {scaling: {bonus: 2, points: 5}})
+        pc.pcHelper.findFeatureTraitByName("Wild Shape").scaling.challengeRating = 0.25;
     }
       
     static shepherd4(pc: PlayerCharacter, params: LevelingParams){
-        const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName("Wild Shape");
-        wildShapeScale.challengeRating = 0.5;
+        pc.pcHelper.findFeatureTraitByName("Wild Shape").scaling.challengeRating = 0.5;
         ShepherdCircle.upSpirit(pc);
     }
 
@@ -47,19 +36,13 @@ export class ShepherdCircle
     }
     
     static shepherd8(pc: PlayerCharacter, params: LevelingParams){
-        const wildShapeScale: ScalingTrait = pc.pcHelper.findScalingTraitByName("Wild Shape");
-        wildShapeScale.challengeRating = 1;
+        pc.pcHelper.findFeatureTraitByName("Wild Shape").scaling.challengeRating = 1;
         ShepherdCircle.upSpirit(pc);
     }
 
     static shepherd10(pc: PlayerCharacter, params: LevelingParams) {
         pc.pcHelper.addFeatures(ShepherdCircle.getFeature("10", "GUARDIAN SPIRIT"));
-        const guardianSpirit: ScalingTrait = {
-            title:"Guardian Spirit",
-            description: "Amount of HP your summons regain in Guardian Spirit Aura",
-            bonus: 5
-        }
-        pc.pcHelper.addScalingTraits(guardianSpirit);
+        pc.pcHelper.addEffectsToFeature("Guardian Spirit", {scaling: {bonus: 5}})
         ShepherdCircle.upSpirit(pc);
     }
 

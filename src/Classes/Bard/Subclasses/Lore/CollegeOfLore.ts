@@ -19,8 +19,8 @@ export class CollegeOfLore {
       ...CollegeOfLore.getFeature("6", "ADDITIONAL MAGICAL SECRETS"),
       choices: params.subclassParams.spellSelections.add,
     };
-    pc.pcHelper.addSpells(params.subclassParams.spellSelections.add, "charisma");
     pc.pcHelper.addFeatures(lore6Trait);
+    pc.pcHelper.addSpells(params.subclassParams.spellSelections.add, "charisma");
   }
 
   static lore14(pc: PlayerCharacter, params: LevelingParams) {

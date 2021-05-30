@@ -1,5 +1,5 @@
 import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
-import { LevelingParams } from "../../../PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as BattleSmithDict from "./BattleSmith.json";
 
 export class BattleSmith {
@@ -13,13 +13,13 @@ export class BattleSmith {
   }
 
   static battleSmith3(pc: PlayerCharacter, params: LevelingParams) {
-    pc.traits.toolProficiencies.add(params.subclassParams.toolProficiencies[0]);
     pc.pcHelper.addFeatures(
         BattleSmith.getFeature("3", "BATTLE READY"),
         BattleSmith.getFeature("3", "STEEL DEFENDER"),
     );
-    pc.traits.weaponProficiencies.add("Martial");
     BattleSmith.addBattleSmithSpells(pc, "3");
+    pc.traits.toolProficiencies.add(params.subclassParams.toolProficiencies[0]);
+    pc.traits.weaponProficiencies.add("Martial");
   }
 
   static battleSmith5(pc: PlayerCharacter, params: LevelingParams) {
@@ -29,12 +29,8 @@ export class BattleSmith {
   
   static battleSmith9(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(BattleSmith.getFeature("9", "ARCANE JOLT"));
-    pc.pcHelper.addResourceTraits({
-        title: "Arcane Jolt",
-        description: "Number of times you can use your Arcane Jolt effect per long rest.",
-        resourceMax: pc.abilityScores.intelligence.modifier
-    })
     BattleSmith.addBattleSmithSpells(pc, "9");
+    pc.pcHelper.addEffectsToFeature("Arcane Jolt", { resource: { resourceMax: pc.abilityScores.intelligence.modifier } })
   }
 
   static battleSmith13(pc: PlayerCharacter, params: LevelingParams) {

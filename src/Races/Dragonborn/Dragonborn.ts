@@ -43,23 +43,19 @@ export class Dragonborn extends Race {
   };
 
   level1(pc: PlayerCharacter) {
-    pc.traits.scalingEffects.push({
-      title: "Breath Weapon Damage",
-      description: "Damage die for Dragonborn Breath Weapon.",
-      dice: "2d6"
-    })
+    pc.pcHelper.addEffectsToFeature("Breath Weapon", {scaling: {dice: "2d6"}})
   }
 
   level6(pc: PlayerCharacter) {
-    pc.pcHelper.findScalingTraitByName("Breath Weapon Damage").dice = "3d6"
+    pc.pcHelper.findFeatureTraitByName("Breath Weapon Damage").scaling.dice = "3d6"
   }
 
   level11(pc: PlayerCharacter) {
-    pc.pcHelper.findScalingTraitByName("Breath Weapon Damage").dice = "4d6"
+    pc.pcHelper.findFeatureTraitByName("Breath Weapon Damage").scaling.dice = "4d6"
   }
 
   level16(pc: PlayerCharacter) {
-    pc.pcHelper.findScalingTraitByName("Breath Weapon Damage").dice = "5d6"
+    pc.pcHelper.findFeatureTraitByName("Breath Weapon Damage").scaling.dice = "5d6"
   }
 
   draconicAncestry: {};

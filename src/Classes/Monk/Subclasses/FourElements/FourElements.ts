@@ -2,7 +2,7 @@ import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
 import * as FourElementsDict from "./WayOfTheFourElements.json"
 import * as ElementalDisciplines from "./ElementalDisciplines.json"
 import { ISpell, Spell, Trait } from "Base/Interfaces";
-import { LevelingParams } from "../../../PlayerClass";
+import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import { MonkSubclassParams } from "../MonkSubclass";
 
 export class FourElements {
@@ -12,26 +12,16 @@ export class FourElements {
     }
     
     static fourElements3(pc: PlayerCharacter, params: LevelingParams) {
-        // New elemental discipline learned, plus Elemental Attunement discipline.
-    
-
         pc.pcHelper.addFeatures(
             FourElements.getFeature("3", "DISCIPLE OF THE ELEMENTS"),
             ElementalDisciplines["ELEMENTAL ATTUNEMENT"]
         );
-
         FourElements.handleDisciplineSelections(pc, params);
-    
-        
-        pc.pcHelper.addScalingTraits({
-            title: "Elemental Discipline Max Level",
-            description: "Maximum number of Max Level you can spend to cast a spell with the Way of the Four Elements.",
-            points: 2
-        });
+        pc.pcHelper.addEffectsToFeature("Disciple of the Elements", {scaling: {points: 2}})
     }
   
     static fourElements5(pc: PlayerCharacter, params: LevelingParams) {
-        pc.pcHelper.findScalingTraitByName("Elemental Discipline Max Level").points++;
+        pc.pcHelper.findFeatureTraitByName("Elemental Discipline Max Level").scaling.points++;
     }
 
     static fourElements6(pc: PlayerCharacter, params: LevelingParams) {
@@ -39,7 +29,7 @@ export class FourElements {
     }
 
     static fourElements9(pc: PlayerCharacter, params: LevelingParams) {
-        pc.pcHelper.findScalingTraitByName("Elemental Discipline Max Level").points++;
+        pc.pcHelper.findFeatureTraitByName("Elemental Discipline Max Level").scaling.points++;
     }
   
     static fourElements11(pc: PlayerCharacter, params: LevelingParams) {
@@ -48,12 +38,12 @@ export class FourElements {
 
     static fourElements13(pc: PlayerCharacter, params: LevelingParams) {
         FourElements.handleDisciplineSelections(pc, params);        
-        pc.pcHelper.findScalingTraitByName("Elemental Discipline Max Level").points++;
+        pc.pcHelper.findFeatureTraitByName("Elemental Discipline Max Level").scaling.points++;
     }
   
     static fourElements17(pc: PlayerCharacter, params: LevelingParams) {
         FourElements.handleDisciplineSelections(pc, params);
-        pc.pcHelper.findScalingTraitByName("Elemental Discipline Max Level").points++;
+        pc.pcHelper.findFeatureTraitByName("Elemental Discipline Max Level").scaling.points++;
     }
 
     static handleDisciplineSelections(
