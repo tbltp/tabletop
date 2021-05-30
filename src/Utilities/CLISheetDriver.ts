@@ -1,3 +1,4 @@
+/** DEPRECATED - refer to front-end */
 import {
   ClassCreationParams,
   LevelingParams,

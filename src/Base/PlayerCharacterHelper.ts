@@ -44,18 +44,6 @@ export class PlayerCharacterHelper {
       return result ? result : null
     }
 
-    private getResourceTraits(): Trait[] {
-      return this.pc.traits.features.filter(
-        t => t.resource != null
-      );
-    }
-
-    private getScalingTraits(): Trait[] {
-      return this.pc.traits.features.filter(
-        t => t.scaling != null
-      );
-    }
-
     findFeatureTraitByName(name: string): Trait | null {
       return this.nameMatch(name, this.pc.traits.features);
     }
