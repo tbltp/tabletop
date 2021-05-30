@@ -17,7 +17,7 @@ export class MartialAdept extends Feat {
         scaling: {dice: "d6"},
       };
       
-      pc.pcHelper.addEffectsToClassFeature("Martial Adept", superiorityDice);
+      pc.pcHelper.addEffectsToFeature("Martial Adept", superiorityDice);
       
       const maneuvers: Trait[] = this.maneuvers.map(m => Maneuvers[m]);
       pc.pcHelper.addFeatures(...maneuvers);

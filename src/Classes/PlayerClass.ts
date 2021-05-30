@@ -212,20 +212,6 @@ export abstract class PlayerClass {
     }
   }
 
-  public static pushCustomizedClassFeature(
-    pc: PlayerCharacter,
-    level: number,
-    classTraits: object,
-    feature: string,
-    choices: string[]
-  ) {
-    const customFeature: Trait = {
-      ...classTraits[level][feature],
-      choices: choices,
-    };
-    pc.pcHelper.addFeatures(customFeature);
-  }
-
   addSpellcasting(pc: PlayerCharacter, className: string){
     
     const preparedSpells = {

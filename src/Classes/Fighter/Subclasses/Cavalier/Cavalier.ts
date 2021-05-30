@@ -21,7 +21,7 @@ export class Cavalier {
       resource: { resourceMax: (pc.abilityScores.strength.modifier.value>=1) ? pc.abilityScores.strength.modifier : {value: 1}},
       scaling: {bonus: 1}
     }
-    pc.pcHelper.addEffectsToClassFeature("Unwavering Mark", unwaveringMark)
+    pc.pcHelper.addEffectsToFeature("Unwavering Mark", unwaveringMark)
 
     params.subclassParams.skillProficiencies.length > 0 ?
     pc.skills[params.subclassParams.skillProficiencies[0]].proficient = true :
@@ -34,7 +34,7 @@ export class Cavalier {
       resource: {resourceMax: (pc.abilityScores.constitution.modifier.value>=1) ? pc.abilityScores.constitution.modifier : {value: 1}},
       scaling: {dice: "1d8"}
     }
-    pc.pcHelper.addEffectsToClassFeature("Warding Maneuver", wardingManeuver)
+    pc.pcHelper.addEffectsToFeature("Warding Maneuver", wardingManeuver)
   }
 
   static cavalier10(pc: PlayerCharacter, params: LevelingParams) {

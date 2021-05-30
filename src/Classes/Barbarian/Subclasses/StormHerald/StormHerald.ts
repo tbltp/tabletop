@@ -39,7 +39,7 @@ export class StormHerald {  // NOTE: Talk to Johnny about how this works and how
     else {
       auraScale.bonus = 2;
     }
-    pc.pcHelper.addEffectsToClassFeature("Storm Aura", {scaling: auraScale});
+    pc.pcHelper.addEffectsToFeature("Storm Aura", {scaling: auraScale});
   }
   
   static stormHerald5(pc: PlayerCharacter, params: LevelingParams) {

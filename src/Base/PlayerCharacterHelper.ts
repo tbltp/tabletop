@@ -64,9 +64,13 @@ export class PlayerCharacterHelper {
       this.addTraits("features", ...features);
     }
 
-    addEffectsToClassFeature(feature: string, effect: {resource?: ResourceTrait, scaling?: ScalingTrait}){
+    addEffectsToFeature(feature: string, effect: {resource?: ResourceTrait, scaling?: ScalingTrait}){
       if(effect.resource) {this.findFeatureTraitByName(feature).resource = effect.resource }
       if(effect.scaling) {this.findFeatureTraitByName(feature).scaling = effect.scaling }
+    }
+
+    customizeFeature(feature: string, choices: string[]){
+      this.findFeatureTraitByName(feature).choices = choices
     }
 
     removeFeatures(...oldFeatures: string[]): void {

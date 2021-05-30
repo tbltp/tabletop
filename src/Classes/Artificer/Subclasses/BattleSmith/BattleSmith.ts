@@ -30,7 +30,7 @@ export class BattleSmith {
   static battleSmith9(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(BattleSmith.getFeature("9", "ARCANE JOLT"));
     BattleSmith.addBattleSmithSpells(pc, "9");
-    pc.pcHelper.addEffectsToClassFeature("Arcane Jolt", { resource: { resourceMax: pc.abilityScores.intelligence.modifier } })
+    pc.pcHelper.addEffectsToFeature("Arcane Jolt", { resource: { resourceMax: pc.abilityScores.intelligence.modifier } })
   }
 
   static battleSmith13(pc: PlayerCharacter, params: LevelingParams) {

@@ -25,7 +25,7 @@ export class ArcaneArcher {
     pc.pcHelper.addFeatures(...ArcaneArcher.getArrow(pc, params), ArcaneArcher.getFeature("3", "ARCANE ARCHER LORE"), ArcaneArcher.getFeature("3", "ARCANE SHOT"));
     pc.pcHelper.addSpells(params.subclassParams.spellSelections.add,"intelligence");
     const arcaneShot: ScalingShotTrait = {dice: "2d6", saveDice: "1d6"}
-    pc.pcHelper.addEffectsToClassFeature("ARCANE SHOT", {scaling: arcaneShot})
+    pc.pcHelper.addEffectsToFeature("ARCANE SHOT", {scaling: arcaneShot})
   }
 
   static arcaneArcher7(pc: PlayerCharacter, params: LevelingParams) {

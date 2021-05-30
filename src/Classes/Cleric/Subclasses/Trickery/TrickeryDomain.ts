@@ -54,7 +54,7 @@ export class TrickeryDomain {
     pc.pcHelper.addFeatures(
       TrickeryDomain.getFeature("8", "DIVINE STRIKE")
     );
-    pc.pcHelper.addEffectsToClassFeature("Divine Strike", {scaling: {dice: "1d8"}})
+    pc.pcHelper.addEffectsToFeature("Divine Strike", {scaling: {dice: "1d8"}})
   }
 
   static trickery9(pc: PlayerCharacter, params: LevelingParams) {

@@ -15,7 +15,7 @@ export class Zealot {
 
   static zealot3(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Zealot.getFeature("3", "DIVINE FURY"));
-    pc.pcHelper.addEffectsToClassFeature("Divine Fury", {scaling: {dice: "1d6", bonus: 1}});
+    pc.pcHelper.addEffectsToFeature("Divine Fury", {scaling: {dice: "1d6", bonus: 1}});
     pc.pcHelper.addFeatures(Zealot.getFeature("3", "WARRIOR OF THE GODS"));
   }
 

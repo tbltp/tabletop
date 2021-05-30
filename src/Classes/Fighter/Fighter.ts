@@ -71,12 +71,12 @@ export class Fighter extends PlayerClass {
   level1(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushFighterFeatures(pc, 1);
     PlayerClass.addFightingStyle(pc, params.fightingStyles[0]);
-    pc.pcHelper.addEffectsToClassFeature("Second Wind", {resource: {resourceMax: {value: 1}}})
+    pc.pcHelper.addEffectsToFeature("Second Wind", {resource: {resourceMax: {value: 1}}})
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushFighterFeatures(pc, 2);
-    pc.pcHelper.addEffectsToClassFeature("Action Surge", {resource: {resourceMax: {value: 1}}})
+    pc.pcHelper.addEffectsToFeature("Action Surge", {resource: {resourceMax: {value: 1}}})
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
@@ -92,7 +92,7 @@ export class Fighter extends PlayerClass {
     this.pushFighterFeatures(pc, 5);
     //check for extra attack already
     if(!pc.pcHelper.findFeatureTraitByName("Extra Attack")){
-     pc.pcHelper.addEffectsToClassFeature("Extra Attack", {scaling: {uses: 1}})
+     pc.pcHelper.addEffectsToFeature("Extra Attack", {scaling: {uses: 1}})
     }
   }
 
@@ -110,7 +110,7 @@ export class Fighter extends PlayerClass {
   }
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
-    pc.pcHelper.addEffectsToClassFeature("Indomitable", {resource: {resourceMax: { value: 1 }}})
+    pc.pcHelper.addEffectsToFeature("Indomitable", {resource: {resourceMax: { value: 1 }}})
   }
 
   level10(pc: PlayerCharacter, params: LevelingParams): void {

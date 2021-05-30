@@ -56,7 +56,7 @@ export class NatureDomain {
 
   static nature8(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(NatureDomain.getFeature("8", "DIVINE STRIKE"));
-    pc.pcHelper.addEffectsToClassFeature("Divine Strike", {scaling: {dice: "1d8"}})
+    pc.pcHelper.addEffectsToFeature("Divine Strike", {scaling: {dice: "1d8"}})
   }
 
   static nature9(pc: PlayerCharacter, params: LevelingParams) {

@@ -81,8 +81,8 @@ export class Wizard extends PlayerClass {
     this.addSpellcasting(pc, "WIZARD");
     this.handleWizardSpellSelections(pc, params);
     // PlayerClass.pushCustomizedClassFeature(pc, 1, WizardClassTraits, "SPELLBOOK", params.spellBookSpells)
-    const spellbook: Trait = pc.pcHelper.findFeatureTraitByName("Spellbook");
-    spellbook.choices = params.spellBookSpells;
+    // const spellbook: Trait = pc.pcHelper.findFeatureTraitByName("Spellbook");
+    // spellbook.choices = params.spellBookSpells;
 
   }
 
@@ -168,7 +168,8 @@ export class Wizard extends PlayerClass {
   }
 
   level20(pc: PlayerCharacter, params: WizardLevelingParams): void {
-    PlayerClass.pushCustomizedClassFeature(pc, 20, WizardClassTraits, "SIGNATURE SPELLS", params.signatureSpells);
+    this.pushWizardFeatures(pc, 20)
+    pc.pcHelper.customizeFeature("Signature Spells", params.signatureSpells)
     this.subclassDriver(pc, "20", params);
     this.handleWizardSpellSelections(pc, params);
   }

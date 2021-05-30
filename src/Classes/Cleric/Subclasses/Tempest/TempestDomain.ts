@@ -21,7 +21,7 @@ export class TempestDomain {
     TempestDomain.getSpells(pc,"1");
 
     const wrathOfTheStorm: ResourceTrait = { resourceMax: (pc.abilityScores.wisdom.modifier.value >= 1) ? pc.abilityScores.wisdom.modifier : {value: 1} };
-    pc.pcHelper.addEffectsToClassFeature("Wrath of the Storm", {resource: wrathOfTheStorm});
+    pc.pcHelper.addEffectsToFeature("Wrath of the Storm", {resource: wrathOfTheStorm});
     
     pc.traits.armorProficiencies.add("Heavy");
     pc.traits.weaponProficiencies.add("Martial");
@@ -56,7 +56,7 @@ export class TempestDomain {
 
   static tempest8(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(TempestDomain.getFeature("8", "DIVINE STRIKE"));
-    pc.pcHelper.addEffectsToClassFeature("Divine Strike", {scaling: {dice: "1d8"}})
+    pc.pcHelper.addEffectsToFeature("Divine Strike", {scaling: {dice: "1d8"}})
   }
 
   static tempest9(pc: PlayerCharacter, params: LevelingParams) {

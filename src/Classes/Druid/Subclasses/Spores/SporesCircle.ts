@@ -21,8 +21,8 @@ export class SporesCircle
     static spores2(pc: PlayerCharacter, params: LevelingParams) {
         pc.pcHelper.addFeatures(SporesCircle.getFeature("2", "HALO OF SPORES"), SporesCircle.getFeature("2", "SYMBIOTIC ENTITY"));
         SporesCircle.getSpells(pc,"2");
-        pc.pcHelper.addEffectsToClassFeature("Halo of Spores", {scaling: {dice: "1d4"}})
-        pc.pcHelper.addEffectsToClassFeature("Symbiotic Entity", {scaling: {bonus: 8}})
+        pc.pcHelper.addEffectsToFeature("Halo of Spores", {scaling: {dice: "1d4"}})
+        pc.pcHelper.addEffectsToFeature("Symbiotic Entity", {scaling: {bonus: 8}})
         pc.pcHelper.findFeatureTraitByName("Wild Shape").scaling.challengeRating = 0.25;
 
     }

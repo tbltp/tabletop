@@ -11,7 +11,7 @@ export class CollegeOfWhispers {
 
   static whispers3(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(CollegeOfWhispers.getFeature("3", "PSYCHIC BLADES"), CollegeOfWhispers.getFeature("3", "WORDS OF TERROR"));
-    pc.pcHelper.addEffectsToClassFeature("Psychic Blades", {scaling: {dice: "2d6"}})
+    pc.pcHelper.addEffectsToFeature("Psychic Blades", {scaling: {dice: "2d6"}})
   }
 
   static whispers5(pc: PlayerCharacter,params: LevelingParams) {

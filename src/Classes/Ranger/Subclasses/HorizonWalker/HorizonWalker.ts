@@ -15,7 +15,7 @@ export class HorizonWalker {
   static horizonWalker3(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(HorizonWalker.getFeature("3", "DETECT PORTAL"), HorizonWalker.getFeature("3", "PLANAR WARRIOR"));
     HorizonWalker.getSpell(pc,"3");
-    pc.pcHelper.addEffectsToClassFeature("Planar Warrior", {scaling: {dice: "1d8"}})
+    pc.pcHelper.addEffectsToFeature("Planar Warrior", {scaling: {dice: "1d8"}})
   }
 
   static horizonWalker5(pc: PlayerCharacter, params: LevelingParams) {

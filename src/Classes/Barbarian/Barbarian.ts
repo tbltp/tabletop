@@ -81,7 +81,7 @@ export class Barbarian extends PlayerClass {
       });
     }
 
-    pc.pcHelper.addEffectsToClassFeature("Rage", {resource: {resourceMax: {value: 2}}, scaling: {bonus: 2}});
+    pc.pcHelper.addEffectsToFeature("Rage", {resource: {resourceMax: {value: 2}}, scaling: {bonus: 2}});
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
@@ -111,7 +111,7 @@ export class Barbarian extends PlayerClass {
     )
 
     if(!pc.pcHelper.findFeatureTraitByName("Extra Attack").scaling) {
-      pc.pcHelper.addEffectsToClassFeature("Extra Attack", {scaling: {uses: 1} } );
+      pc.pcHelper.addEffectsToFeature("Extra Attack", {scaling: {uses: 1} } );
     }
   }
 
@@ -130,7 +130,7 @@ export class Barbarian extends PlayerClass {
 
   level9(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushBarbarianFeatures(pc, 9);
-    pc.pcHelper.addEffectsToClassFeature("Brutal Critical", {scaling: {dice: "1dx"} } )
+    pc.pcHelper.addEffectsToFeature("Brutal Critical", {scaling: {dice: "1dx"} } )
     pc.pcHelper.findFeatureTraitByName("Rage").scaling.bonus = 3;
   }
 

@@ -81,12 +81,12 @@ export class Monk extends PlayerClass {
         bonus: { value: 0 },
       });
     }
-    pc.pcHelper.addEffectsToClassFeature("Martial Arts", {scaling: {dice: "1d4"}})
+    pc.pcHelper.addEffectsToFeature("Martial Arts", {scaling: {dice: "1d4"}})
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushMonkFeatures(pc, 2);
-    pc.pcHelper.addEffectsToClassFeature("Ki", {resource: {resourceMax: {value: 2}}})
+    pc.pcHelper.addEffectsToFeature("Ki", {resource: {resourceMax: {value: 2}}})
     
     pc.speeds.push({
       name: "Unarmored Movement",
@@ -112,7 +112,7 @@ export class Monk extends PlayerClass {
     this.pushMonkFeatures(pc, 5);
     this.subclassDriver(pc, "5", params);
     if(!pc.pcHelper.findFeatureTraitByName("Extra Attack")){
-      pc.pcHelper.addEffectsToClassFeature("Extra Attack", {scaling: {uses: 1}})
+      pc.pcHelper.addEffectsToFeature("Extra Attack", {scaling: {uses: 1}})
     }
     pc.pcHelper.findFeatureTraitByName("Ki").resource.resourceMax.value++;
     pc.pcHelper.findFeatureTraitByName("Martial Arts").scaling.dice = "1d6";

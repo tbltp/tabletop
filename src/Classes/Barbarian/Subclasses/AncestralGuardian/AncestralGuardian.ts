@@ -15,7 +15,7 @@ export class AncestralGuardian {
 
   static ancestralGuardian6(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(AncestralGuardian.getFeature("6", "SPIRIT SHIELD"));
-    pc.pcHelper.addEffectsToClassFeature("Spirit Shield", {scaling: {dice: "2d6"}})
+    pc.pcHelper.addEffectsToFeature("Spirit Shield", {scaling: {dice: "2d6"}})
   }
 
   static ancestralGuardian10(pc: PlayerCharacter, params: LevelingParams) {

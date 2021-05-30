@@ -100,7 +100,7 @@ export class Paladin extends PlayerClass {
     this.subclassDriver(pc, "3", params);
 
     if(PlayerClass.multiClassCheck(pc, "Channel Divinity")){
-      pc.pcHelper.addEffectsToClassFeature("Channel Divinity", {resource: {resourceMax: {value: 1}}})
+      pc.pcHelper.addEffectsToFeature("Channel Divinity", {resource: {resourceMax: {value: 1}}})
     }
     
     this.upgradeLayOnHands(pc);
@@ -118,7 +118,7 @@ export class Paladin extends PlayerClass {
     this.handlePaladinSpellSelections(pc, null, "2")
     
     if(!pc.pcHelper.findFeatureTraitByName("Extra Attack")){
-      pc.pcHelper.addEffectsToClassFeature("Extra Attack", {scaling: {uses: 1}})
+      pc.pcHelper.addEffectsToFeature("Extra Attack", {scaling: {uses: 1}})
     }
     
     this.upgradeLayOnHands(pc);

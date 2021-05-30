@@ -48,7 +48,7 @@ export class ForgeDomain {
 
   static forge8(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(ForgeDomain.getFeature("8", "DIVINE STRIKE"));
-    pc.pcHelper.addEffectsToClassFeature("Divine Strike", {scaling: {dice: "1d8"}})
+    pc.pcHelper.addEffectsToFeature("Divine Strike", {scaling: {dice: "1d8"}})
   }
 
   static forge9(pc: PlayerCharacter, params: LevelingParams) {

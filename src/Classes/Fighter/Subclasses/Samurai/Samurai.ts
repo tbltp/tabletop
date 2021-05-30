@@ -15,7 +15,7 @@ export class Samurai {
   }
   static samurai3(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Samurai.getFeature("3", "BONUS PROFICIENCY"), Samurai.getFeature("3", "FIGHTING SPIRIT"));
-    pc.pcHelper.addEffectsToClassFeature("Fighting Spirit", {resource: {resourceMax: {value: 3}}, scaling: {bonus: 5}})
+    pc.pcHelper.addEffectsToFeature("Fighting Spirit", {resource: {resourceMax: {value: 3}}, scaling: {bonus: 5}})
     
     params.subclassParams.skillProficiencies.length > 0 ?    
     pc.skills[params.subclassParams.skillProficiencies[0]].proficient = true :

@@ -31,7 +31,7 @@ export class Conquest {
 
   static conquest7(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Conquest.getFeature("7", "AURA OF CONQUEST"));
-    pc.pcHelper.addEffectsToClassFeature("Aura of Conquest", {scaling: {bonus: 3}})
+    pc.pcHelper.addEffectsToFeature("Aura of Conquest", {scaling: {bonus: 3}})
   }
 
   static conquest9(pc: PlayerCharacter, params: LevelingParams) {

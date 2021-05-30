@@ -33,12 +33,12 @@ export class StormSorcery {
 
   static stormSorcery6(pc: PlayerCharacter, params: LevelingParams) {      
     pc.pcHelper.addFeatures(StormSorcery.getFeature("6", "STORM GUIDE"), StormSorcery.getFeature("6", "HEART OF THE STORM"));
-    pc.pcHelper.addEffectsToClassFeature("Heart of the Storm", {scaling: {bonus: 3}})
+    pc.pcHelper.addEffectsToFeature("Heart of the Storm", {scaling: {bonus: 3}})
   }
 
   static stormSorcery14(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(StormSorcery.getFeature("14", "STORM'S FURY"));
-    pc.pcHelper.addEffectsToClassFeature("Storm's Fury", {scaling: {bonus: 14}})
+    pc.pcHelper.addEffectsToFeature("Storm's Fury", {scaling: {bonus: 14}})
     StormSorcery.upHeart(pc);
   }
 

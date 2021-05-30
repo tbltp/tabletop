@@ -43,7 +43,7 @@ export class Dragonborn extends Race {
   };
 
   level1(pc: PlayerCharacter) {
-    pc.pcHelper.addEffectsToClassFeature("Breath Weapon", {scaling: {dice: "2d6"}})
+    pc.pcHelper.addEffectsToFeature("Breath Weapon", {scaling: {dice: "2d6"}})
   }
 
   level6(pc: PlayerCharacter) {

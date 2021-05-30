@@ -18,7 +18,7 @@ export class BattleMaster {
     BattleMaster.handleManeuverSelections(pc, params);
     
     const combatSuperiority = {resource: { resourceMax: { value: 4 } }, scaling: {dice: "d8"} }
-    pc.pcHelper.addEffectsToClassFeature("Combat Superiority", combatSuperiority);
+    pc.pcHelper.addEffectsToFeature("Combat Superiority", combatSuperiority);
 
     pc.traits.toolProficiencies.add(params.subclassParams.toolProficiencies[0]);   
   }

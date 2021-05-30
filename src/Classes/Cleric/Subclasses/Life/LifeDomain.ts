@@ -47,7 +47,7 @@ export class LifeDomain {
 
   static life8(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(LifeDomain.getFeature("8", "DIVINE STRIKE"));
-    pc.pcHelper.addEffectsToClassFeature("Divine Strike", {scaling: {dice: "1d8"}})
+    pc.pcHelper.addEffectsToFeature("Divine Strike", {scaling: {dice: "1d8"}})
   }
 
   static life9(pc: PlayerCharacter, params: LevelingParams) {

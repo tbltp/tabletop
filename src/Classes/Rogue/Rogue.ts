@@ -72,7 +72,7 @@ export class Rogue extends PlayerClass {
 
   level1(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushRogueFeatures(pc, 1);
-    pc.pcHelper.addEffectsToClassFeature("Sneak Attack", {scaling: {dice: "1d6"}})
+    pc.pcHelper.addEffectsToFeature("Sneak Attack", {scaling: {dice: "1d6"}})
     
     // Expertise
     const expert: Trait = pc.pcHelper.findFeatureTraitByName("Expertise");

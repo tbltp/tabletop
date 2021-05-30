@@ -92,7 +92,7 @@ export class Sorcerer extends PlayerClass {
   level2(pc: PlayerCharacter, params: SorcererLevelingParams): void {
     this.subclassDriver(pc, "2", params);
     this.handleSorcererSpellSelections(pc, params);
-    pc.pcHelper.addEffectsToClassFeature("Font of Magic", {resource: {resourceMax: {value: 2}}})
+    pc.pcHelper.addEffectsToFeature("Font of Magic", {resource: {resourceMax: {value: 2}}})
   }
 
   level3(pc: PlayerCharacter, params: SorcererLevelingParams): void {

@@ -21,7 +21,7 @@ export class LightDomain {
     LightDomain.getSpells(pc,"1");
 
     const wardingFlare: ResourceTrait = { resourceMax: (pc.abilityScores.wisdom.modifier.value >= 1) ? pc.abilityScores.wisdom.modifier : {value: 1} }
-    pc.pcHelper.addEffectsToClassFeature("Warding Flare", {resource: wardingFlare})
+    pc.pcHelper.addEffectsToFeature("Warding Flare", {resource: wardingFlare})
     
   }
 

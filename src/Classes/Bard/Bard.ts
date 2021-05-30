@@ -86,14 +86,14 @@ export class Bard extends PlayerClass {
     this.pushBardFeatures(pc, 1);
     this.addSpellcasting(pc, "BARD");
     this.handleBardSpellSelections(pc, params);
-    pc.pcHelper.addEffectsToClassFeature("Bardic Inspiration", {resource: {resourceMax: pc.abilityScores.charisma.modifier}, scaling: {dice: "1d6"}})
+    pc.pcHelper.addEffectsToFeature("Bardic Inspiration", {resource: {resourceMax: pc.abilityScores.charisma.modifier}, scaling: {dice: "1d6"}})
     
   }
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushBardFeatures(pc, 2);
     this.handleBardSpellSelections(pc, params);
-    pc.pcHelper.addEffectsToClassFeature("Song of Rest", {scaling: {dice: "1d6"}})
+    pc.pcHelper.addEffectsToFeature("Song of Rest", {scaling: {dice: "1d6"}})
     
     for (let skill of Object.keys(pc.skills)) { // Jack of All Trades
       if (!pc.skills[skill].proficient) {
@@ -103,13 +103,8 @@ export class Bard extends PlayerClass {
   }
 
   level3(pc: PlayerCharacter, params: LevelingParams): void {
-    PlayerClass.pushCustomizedClassFeature(
-      pc,
-      3,
-      BardClassTraits,
-      "EXPERTISE",
-      params.proficiencySelection
-    );
+    this.pushBardFeatures(pc, 3)
+    pc.pcHelper.customizeFeature("Expertise", params.proficiencySelection)
     this.subclass = new BardSubclass(params.subclassParams);
     this.subclassDriver(pc, "3", params);
     this.handleBardSpellSelections(pc, params);
@@ -150,13 +145,8 @@ export class Bard extends PlayerClass {
   }
 
   level10(pc: PlayerCharacter, params: BardLevelingParams): void {
-    PlayerClass.pushCustomizedClassFeature(
-      pc,
-      10,
-      BardClassTraits,
-      "MAGICAL SECRETS",
-      params.magicalSecretsSpellSelection
-    );
+    this.pushBardFeatures(pc, 10)
+    pc.pcHelper.customizeFeature("Magical Secrets", params.magicalSecretsSpellSelection)
     this.subclassDriver(pc, "10", params);
     this.handleBardSpellSelections(pc, params);
     this.handleMagicalSecretsSelection(pc, params);

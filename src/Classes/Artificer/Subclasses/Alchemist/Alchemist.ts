@@ -15,7 +15,7 @@ export class Alchemist {
   static alchemist3(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Alchemist.getFeature("3", "EXPERIMENTAL ELIXIR"));
     Alchemist.addAlchemistSpells(pc, "3");
-    pc.pcHelper.addEffectsToClassFeature("Experimental Elixir", {resource: {resourceMax: {value: 1 } } })
+    pc.pcHelper.addEffectsToFeature("Experimental Elixir", {resource: {resourceMax: {value: 1 } } })
     pc.traits.toolProficiencies.add(params.subclassParams.toolProficiencies[0]);
   }
 

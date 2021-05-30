@@ -17,7 +17,7 @@ export class FourElements {
             ElementalDisciplines["ELEMENTAL ATTUNEMENT"]
         );
         FourElements.handleDisciplineSelections(pc, params);
-        pc.pcHelper.addEffectsToClassFeature("Disciple of the Elements", {scaling: {points: 2}})
+        pc.pcHelper.addEffectsToFeature("Disciple of the Elements", {scaling: {points: 2}})
     }
   
     static fourElements5(pc: PlayerCharacter, params: LevelingParams) {

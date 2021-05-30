@@ -17,7 +17,7 @@ export class DreamsCircle
     static dreams2(pc: PlayerCharacter, params: LevelingParams) {
         pc.pcHelper.addFeatures(DreamsCircle.getFeature("2", "BALM OF THE SUMMER COURT"));
         const balmOfTheSummerCourt = {resource: {resourceMax: {value: 2}}, scaling: {dice: "1d6"}}
-        pc.pcHelper.addEffectsToClassFeature("Balm of the Summer Court", balmOfTheSummerCourt)
+        pc.pcHelper.addEffectsToFeature("Balm of the Summer Court", balmOfTheSummerCourt)
         pc.pcHelper.findFeatureTraitByName("Wild Shape").scaling.challengeRating = 0.25;
     }
       

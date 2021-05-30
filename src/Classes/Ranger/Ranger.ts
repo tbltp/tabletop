@@ -74,22 +74,9 @@ export class Ranger extends PlayerClass {
   }
 
   level1(pc: PlayerCharacter, params: RangerLevelingParams): void {
-    PlayerClass.pushCustomizedClassFeature(
-      pc, 
-      1, 
-      RangerClassTraits, 
-      "FAVORED ENEMY", 
-      [params.favoredEnemy]
-    );
-
-    PlayerClass.pushCustomizedClassFeature(
-      pc,
-      1,
-      RangerClassTraits,
-      "NATURAL EXPLORER",
-      [params.favoredTerrain]
-    );
-
+    this.pushRangerFeatures(pc, 1)
+    pc.pcHelper.customizeFeature("Favored Enemy", [params.favoredEnemy])
+    pc.pcHelper.customizeFeature("Natural Explorer", [params.favoredTerrain])
     this.addSpellcasting(pc, "RANGER");
 
   }
@@ -116,7 +103,7 @@ export class Ranger extends PlayerClass {
     this.subclassDriver(pc, "5", params);
     this.handleRangerSpellSelections(pc, params);
     if(!pc.pcHelper.findFeatureTraitByName("Extra Attack")){
-      pc.pcHelper.addEffectsToClassFeature("Extra Attack", {scaling: {uses: 1}})
+      pc.pcHelper.addEffectsToFeature("Extra Attack", {scaling: {uses: 1}})
     }
   }
 

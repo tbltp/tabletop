@@ -19,7 +19,7 @@ export class MonsterSlayer {
     MonsterSlayer.getSpell(pc,"3");
 
     const hunterSense: ResourceTrait = { resourceMax: (pc.abilityScores.wisdom.modifier.value>=1) ? pc.abilityScores.wisdom.modifier : {value: 1} }
-    pc.pcHelper.addEffectsToClassFeature("Hunter's Sense",{resource: hunterSense})
+    pc.pcHelper.addEffectsToFeature("Hunter's Sense",{resource: hunterSense})
   }
 
   static monsterSlayer5(pc: PlayerCharacter, params: LevelingParams) {

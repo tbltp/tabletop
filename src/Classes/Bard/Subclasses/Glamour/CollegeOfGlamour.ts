@@ -14,7 +14,7 @@ export class CollegeOfGlamour {
   
   static glamour3(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(CollegeOfGlamour.getFeature("3", "MANTLE OF INSPIRATION"), CollegeOfGlamour.getFeature("3", "ENTHRALLING PERFORMANCE"));
-    pc.pcHelper.addEffectsToClassFeature("Mantle of Inspiration", {scaling: {bonus: 5}});
+    pc.pcHelper.addEffectsToFeature("Mantle of Inspiration", {scaling: {bonus: 5}});
   }
 
   static glamour6(pc: PlayerCharacter, params: LevelingParams) {

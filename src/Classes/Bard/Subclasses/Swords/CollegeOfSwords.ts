@@ -16,7 +16,7 @@ export class CollegeOfSwords {
   static swords6(pc: PlayerCharacter, params: LevelingParams) {
     if(!pc.pcHelper.findFeatureTraitByName("Extra Attack")) {
       pc.pcHelper.addFeatures(CollegeOfSwords.getFeature("6", "EXTRA ATTACK"));
-      pc.pcHelper.addEffectsToClassFeature("Extra Attack", {scaling: {uses: 1}})
+      pc.pcHelper.addEffectsToFeature("Extra Attack", {scaling: {uses: 1}})
     }
   }
 

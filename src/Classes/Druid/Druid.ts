@@ -83,7 +83,7 @@ export class Druid extends PlayerClass {
 
   level2(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushDruidFeatures(pc, 2);
-    pc.pcHelper.addEffectsToClassFeature("Wild Shape", {scaling: {challengeRating: 0}});  // SPECIAL EXCEPTION TO STYLE GUIDE: Wild Shape is modified on Subclass Level.
+    pc.pcHelper.addEffectsToFeature("Wild Shape", {scaling: {challengeRating: 0}});  // SPECIAL EXCEPTION TO STYLE GUIDE: Wild Shape is modified on Subclass Level.
     this.subclass = new DruidSubclass(params.subclassParams);
     this.subclassDriver(pc, "2", params);        
   }

@@ -42,7 +42,7 @@ export class Redemption {
 
   static redemption15(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Redemption.getFeature("15", "PROTECTIVE SPIRIT"));
-    pc.pcHelper.addEffectsToClassFeature("Protective Spirit", {scaling: {dice: "1d6", bonus: 7}})
+    pc.pcHelper.addEffectsToFeature("Protective Spirit", {scaling: {dice: "1d6", bonus: 7}})
   }
 
   static redemption17(pc: PlayerCharacter, params: LevelingParams) {

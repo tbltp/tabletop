@@ -24,7 +24,7 @@ export class War {
             resource: {resourceMax: (pc.abilityScores.intelligence.modifier.value >= 1) ? pc.abilityScores.intelligence.modifier : {value: 1}},
             scaling: {bonus: 3}
         }
-        pc.pcHelper.addEffectsToClassFeature("Power Surge", powerSurge)
+        pc.pcHelper.addEffectsToFeature("Power Surge", powerSurge)
     }
 
     static war10(pc: PlayerCharacter, params: LevelingParams): void {

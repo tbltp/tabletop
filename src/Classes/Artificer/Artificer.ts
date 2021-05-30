@@ -98,7 +98,7 @@ export class Artificer extends PlayerClass {
   level2(pc: PlayerCharacter, params: ArtificerLevelingParams): void {
     this.pushArtificerFeatures(pc, 2);
     this.handleInfusionSelections(pc, params);
-    pc.pcHelper.addEffectsToClassFeature("Infuse Items", {resource: {resourceMax: {value: 2}}});
+    pc.pcHelper.addEffectsToFeature("Infuse Items", {resource: {resourceMax: {value: 2}}});
   }
 
   level3(pc: PlayerCharacter, params: ArtificerLevelingParams): void {

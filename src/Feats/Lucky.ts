@@ -9,6 +9,6 @@ export class Lucky extends Feat {
     
   public apply(pc: PlayerCharacter) {
     super.apply(pc);
-    pc.pcHelper.addEffectsToClassFeature("Lucky", {resource: {resourceMax: {value: 3}}})
+    pc.pcHelper.addEffectsToFeature("Lucky", {resource: {resourceMax: {value: 3}}})
   }
 }

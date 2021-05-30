@@ -86,7 +86,7 @@ export class Cleric extends PlayerClass {
 
     // channel divinity multiclass check against paladin
      if(PlayerClass.multiClassCheck(pc, "Channel Divinity")){
-       pc.pcHelper.addEffectsToClassFeature("Channel Divinity", {resource: {resourceMax: {value: 1}}})
+       pc.pcHelper.addEffectsToFeature("Channel Divinity", {resource: {resourceMax: {value: 1}}})
     }    
   }
 
@@ -103,7 +103,7 @@ export class Cleric extends PlayerClass {
     this.pushClericFeatures(pc, 5);
     this.subclassDriver(pc, "5", params);
     this.handleClericSpellSelections(pc, null, "3")
-    pc.pcHelper.addEffectsToClassFeature("Channel Divinity: Destroy Undead", {scaling: {challengeRating: 0.5}})
+    pc.pcHelper.addEffectsToFeature("Channel Divinity: Destroy Undead", {scaling: {challengeRating: 0.5}})
   }
 
   level6(pc: PlayerCharacter, params: LevelingParams): void {
@@ -129,7 +129,7 @@ export class Cleric extends PlayerClass {
   level10(pc: PlayerCharacter, params: LevelingParams): void {
     this.pushClericFeatures(pc, 10);
     this.handleClericSpellSelections(pc, params);
-    pc.pcHelper.addEffectsToClassFeature("Divine Intervention", {resource: {resourceMax: {value: 1}}})
+    pc.pcHelper.addEffectsToFeature("Divine Intervention", {resource: {resourceMax: {value: 1}}})
   }
 
   level11(pc: PlayerCharacter, params: LevelingParams): void {

@@ -24,7 +24,7 @@ export class Inquisitive {
   static inquisitive13(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Inquisitive.getFeature("13", "UNERRING EYE"));
     const unerringEye: ResourceTrait = { resourceMax: (pc.abilityScores.wisdom.modifier.value>=1) ? pc.abilityScores.wisdom.modifier : {value: 1} }
-    pc.pcHelper.addEffectsToClassFeature("Unerring Eye", {resource: unerringEye})
+    pc.pcHelper.addEffectsToFeature("Unerring Eye", {resource: unerringEye})
   }
 
   static inquisitive17(pc: PlayerCharacter, params: LevelingParams) {

@@ -136,7 +136,7 @@ export class Warlock extends PlayerClass {
     this.handleWarlockSpellSelections(pc, params);
 
     const pactMagicSlots: PactMagicSlots = {resourceMax: {value: 1}, level: 1};
-    pc.pcHelper.addEffectsToClassFeature("Pact Magic", {resource: pactMagicSlots})
+    pc.pcHelper.addEffectsToFeature("Pact Magic", {resource: pactMagicSlots})
   }
 
   level2(pc: PlayerCharacter, params: WarlockLevelingParams): void {
@@ -196,14 +196,8 @@ export class Warlock extends PlayerClass {
   }
 
   level11(pc: PlayerCharacter, params: WarlockLevelingParams): void {
-    PlayerClass.pushCustomizedClassFeature(
-      pc,
-      11,
-      WarlockClassTraits,
-      "MYSTIC ARCANUM",
-      [params.mysticArcanum]
-    );
-
+    this.pushWarlockFeatures(pc, 11);
+    pc.pcHelper.customizeFeature("Mystic Arcanum", [params.mysticArcanum])
     this.handleWarlockSpellSelections(pc, params);
     this.handleInvocationSelections(pc, params);
     pc.pcHelper.findFeatureTraitByName("Pact Magic").resource.resourceMax.value++;

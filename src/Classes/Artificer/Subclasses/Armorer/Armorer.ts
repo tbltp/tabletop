@@ -25,7 +25,7 @@ export class Armorer {
   static armorer5(pc: PlayerCharacter, params: LevelingParams) {
     if(!pc.pcHelper.findFeatureTraitByName("Extra Attack")) {
       pc.pcHelper.addFeatures(Armorer.getFeature("5", "EXTRA ATTACK"));
-      pc.pcHelper.addEffectsToClassFeature("Extra Attack", {scaling: {uses: 1}})
+      pc.pcHelper.addEffectsToFeature("Extra Attack", {scaling: {uses: 1}})
     }
     Armorer.addArmorerSpells(pc, "5");
   }
@@ -42,7 +42,7 @@ export class Armorer {
 
   static armorer15(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Armorer.getFeature("15", "PERFECTED ARMOR"));
-    pc.pcHelper.addEffectsToClassFeature("Perfected Armor", { resource: { resourceMax: pc.proficiency.baseBonus } } );
+    pc.pcHelper.addEffectsToFeature("Perfected Armor", { resource: { resourceMax: pc.proficiency.baseBonus } } );
   }
 
   static armorer17(pc: PlayerCharacter, params: LevelingParams) {

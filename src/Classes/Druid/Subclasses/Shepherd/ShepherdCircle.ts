@@ -21,7 +21,7 @@ export class ShepherdCircle
 
     static shepherd2(pc: PlayerCharacter, params: LevelingParams) {
         pc.pcHelper.addFeatures(ShepherdCircle.getFeature("2", "SPEECH OF THE WOODS"), ShepherdCircle.getFeature("2", "SPIRIT TOTEM"));
-        pc.pcHelper.addEffectsToClassFeature("Spirit Totem", {scaling: {bonus: 2, points: 5}})
+        pc.pcHelper.addEffectsToFeature("Spirit Totem", {scaling: {bonus: 2, points: 5}})
         pc.pcHelper.findFeatureTraitByName("Wild Shape").scaling.challengeRating = 0.25;
     }
       
@@ -42,7 +42,7 @@ export class ShepherdCircle
 
     static shepherd10(pc: PlayerCharacter, params: LevelingParams) {
         pc.pcHelper.addFeatures(ShepherdCircle.getFeature("10", "GUARDIAN SPIRIT"));
-        pc.pcHelper.addEffectsToClassFeature("Guardian Spirit", {scaling: {bonus: 5}})
+        pc.pcHelper.addEffectsToFeature("Guardian Spirit", {scaling: {bonus: 5}})
         ShepherdCircle.upSpirit(pc);
     }
 
