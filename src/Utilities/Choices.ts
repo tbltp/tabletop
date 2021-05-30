@@ -44,6 +44,7 @@ export class PlayerFactory {
 
     storeEmptyStage(property: string, choice: string): void {
        const reference: [string, ChoiceSpec][] = Object.entries(this.propertyRailroad[property][choice]);
+       this.choiceDocs[property] = {}
        for(let ref of reference) {
             ref[1].choose > 1 ? this.choiceDocs[property][ref[0]] = [] : this.choiceDocs[property][ref[0]] = "" 
        }
