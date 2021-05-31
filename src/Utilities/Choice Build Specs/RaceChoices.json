@@ -48,10 +48,10 @@
             "alias": "Wizard Cantrip",
             "choose": 1,
             "method": "getSpellList",
-            "args": [
-                "Wizard",
-                "0"
-            ],
+            "args": {
+                "list": "WIZARD",
+                "level": "0"
+            },
             "required": true
         },
         "language": {
