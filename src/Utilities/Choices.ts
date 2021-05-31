@@ -8,6 +8,8 @@ import { Race } from "../Races/Race";
 import { Background } from "../Backgrounds/Background";
 import { PlayerClass } from "../Classes/PlayerClass";
 
+import * as SpellList from "../../Assets/SpellList.json"
+
 
 export class PlayerFactory {
 
@@ -47,7 +49,7 @@ export class PlayerFactory {
             this.choiceDocs[property] = {}
             return
         }
-        
+
         const reference: [string, ChoiceSpec][] = Object.entries(this.propertyRailroad[property][choice]);
         this.choiceDocs[property] = {}
         for(let ref of reference) {
@@ -74,9 +76,15 @@ export class PlayerFactory {
     }
 
     renderChoiceSpecs(property: string, choice: string, level?: number): [string, ChoiceSpec][] {
-        return level != null ? 
+        const choices: [string, ChoiceSpec][] = level != null ? 
             Object.entries(this.propertyRailroad[property][choice][`${level}`]) : 
             Object.entries(this.propertyRailroad[property][choice]);
+        
+        return choices.map(c => 
+            c[1].method ? 
+                [c[0], {...c[1], from: ChoiceEvaluator.fns[c[1].method](c[1].args)}] : 
+                c 
+        )
     }
 
 
@@ -94,6 +102,31 @@ export class PlayerFactory {
         */
     }
 
+}
+
+class ChoiceEvaluator {
+    static fns = {
+        getSpellList: ChoiceEvaluator.getSpellList
+    }
+
+    static getSpellList(spec: ChoiceArgs) {
+        //up to specified level
+        if (+spec.level > 0) {
+            let spellList = new Set<string>();
+            for (let i = 1; i <= +spec.level; i++) {
+                SpellList[spec.list][i].map((spell) => spellList.add(spell));
+            }
+            return [...spellList.values()];
+        } else {
+            return SpellList[spec.list][spec.level];
+        }
+    }
+}
+
+interface ChoiceArgs {
+    list?: string,
+    level?: string,
+    pc?: string
 }
 
 export interface ChoiceSpec {
