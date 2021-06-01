@@ -35,7 +35,10 @@ export class PlayerFactory {
         abilityScores: {str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0},
         RACE: {},
         BACKGROUND: {},
-        CLASS: {}
+        CLASS: {
+            "0": {},
+            "1": {}
+        }
     }
 
 
@@ -46,7 +49,9 @@ export class PlayerFactory {
 
     storeEmptyStage(property: string, choice: string): void {
         if(choice === "") {
-            this.choiceDocs[property] = {}
+            property === "CLASS" ?
+            this.choiceDocs[property] = {"0": {}, "1": {}} :
+            this.choiceDocs[property] = {} 
             return
         }
 
@@ -76,7 +81,7 @@ export class PlayerFactory {
     }
 
     renderChoiceSpecs(property: string, choice: string, level?: number): [string, ChoiceSpec][] {
-        const choices: [string, ChoiceSpec][] = level != null ? 
+        const choices: [string, ChoiceSpec][] = level !== null ? 
             Object.entries(this.propertyRailroad[property][choice][`${level}`]) : 
             Object.entries(this.propertyRailroad[property][choice]);
         
@@ -140,3 +145,6 @@ export interface ChoiceSpec {
     and?: ChoiceSpec[];
     needs?: string;
 }
+
+const pf = new PlayerFactory()
+pf.renderChoiceSpecs("CLASS", "Barbarian", 0)
