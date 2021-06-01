@@ -81,9 +81,15 @@ export class PlayerFactory {
     }
 
     renderChoiceSpecs(property: string, choice: string, level?: number): [string, ChoiceSpec][] {
-        const choices: [string, ChoiceSpec][] = level !== null ? 
-            Object.entries(this.propertyRailroad[property][choice][`${level}`]) : 
-            Object.entries(this.propertyRailroad[property][choice]);
+        let choices: [string, ChoiceSpec][] = []
+        
+        if(level != null) {
+            choices = this.propertyRailroad[property][choice][`${level}`] ? 
+                Object.entries(this.propertyRailroad[property][choice][`${level}`]) :
+                []
+        } 
+        else { choices = Object.entries(this.propertyRailroad[property][choice]) }
+           
         
         return choices.map(c => 
             c[1].method ? 
@@ -145,6 +151,3 @@ export interface ChoiceSpec {
     and?: ChoiceSpec[];
     needs?: string;
 }
-
-const pf = new PlayerFactory()
-pf.renderChoiceSpecs("CLASS", "Barbarian", 0)
