@@ -47,20 +47,30 @@ export class PlayerFactory {
         this.playerCharacter = null;
     }
 
-    storeEmptyStage(property: string, choice: string): void {
+    storeEmptyStage(property: string, choice: string, level?: string): void {
         if(choice === "") {
             property === "CLASS" ?
             this.choiceDocs[property] = {"0": {}, "1": {}} :
             this.choiceDocs[property] = {} 
             return
         }
+        
+        this.choiceDocs[property]["title"] = choice 
 
-        const reference: [string, ChoiceSpec][] = Object.entries(this.propertyRailroad[property][choice]);
-        this.choiceDocs[property] = {}
-        for(let ref of reference) {
-            ref[1].choose > 1 ? this.choiceDocs[property][ref[0]] = [] : this.choiceDocs[property][ref[0]] = "" 
+        if(level != null){
+            const reference: [string, ChoiceSpec][] = Object.entries(this.propertyRailroad[property][choice][level]);
+            this.choiceDocs[property] = {}
+            for(let ref of reference) {
+                ref[1].choose > 1 ? this.choiceDocs[property][ref[0]] = [] : this.choiceDocs[property][level][ref[0]] = "" 
+            }
         }
-        this.choiceDocs[property]["title"] = choice
+        else {
+            const reference: [string, ChoiceSpec][] = Object.entries(this.propertyRailroad[property][choice]);
+            this.choiceDocs[property] = {}
+            for(let ref of reference) {
+                ref[1].choose > 1 ? this.choiceDocs[property][ref[0]] = [] : this.choiceDocs[property][ref[0]] = "" 
+            }
+        }
     }
 
     setAbilityScore(name: string, score: number): void {
@@ -80,12 +90,12 @@ export class PlayerFactory {
         };
     }
 
-    renderChoiceSpecs(property: string, choice: string, level?: number): [string, ChoiceSpec][] {
+    renderChoiceSpecs(property: string, choice: string, level?: string): [string, ChoiceSpec][] {
         let choices: [string, ChoiceSpec][] = []
         
         if(level != null) {
-            choices = this.propertyRailroad[property][choice][`${level}`] ? 
-                Object.entries(this.propertyRailroad[property][choice][`${level}`]) :
+            choices = this.propertyRailroad[property][choice][level] ? 
+                Object.entries(this.propertyRailroad[property][choice][level]) :
                 []
         } 
         else { choices = Object.entries(this.propertyRailroad[property][choice]) }
