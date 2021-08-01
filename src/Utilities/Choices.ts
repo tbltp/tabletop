@@ -1,6 +1,6 @@
 import * as RaceChoices from "./Choice Build Specs/RaceChoices.json";
 import * as BackgroundChoices from "./Choice Build Specs/BackgroundChoices.json";
-import * as ClassChoices from "./Choice Build Specs/ClassChoices.json";
+import * as ClassChoices from "./Choice Build Specs/ClassCreationChoices.json";
 import * as SubclassChoices from "./Choice Build Specs/SubClassChoices.json";
 import { CharacterSheet } from "../Base/CharacterSheet";
 import { PlayerCharacter } from "../Base/PlayerCharacter";
@@ -31,7 +31,7 @@ export class PlayerFactory {
     
 
     //staging object
-    protected choiceDocs = {
+    choiceDocs = {
         abilityScores: {str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0},
         RACE: {},
         BACKGROUND: {},
@@ -59,9 +59,13 @@ export class PlayerFactory {
 
         if(level != null){
             const reference: [string, ChoiceSpec][] = Object.entries(this.propertyRailroad[property][choice][level]);
-            this.choiceDocs[property] = {}
+            this.choiceDocs[property] = {"0": {}, "1": {}}
             for(let ref of reference) {
-                ref[1].choose > 1 ? this.choiceDocs[property][ref[0]] = [] : this.choiceDocs[property][level][ref[0]] = "" 
+                if(ref[1].nested){
+                    this.choiceDocs[property][level][ref[0]] = []
+                    continue
+                }
+                ref[1].choose > 1 ? this.choiceDocs[property][level][ref[0]] = [] : this.choiceDocs[property][level][ref[0]] = "" 
             }
         }
         else {
@@ -160,4 +164,10 @@ export interface ChoiceSpec {
     or?: ChoiceSpec[];
     and?: ChoiceSpec[];
     needs?: string;
+    nested?: boolean;
 }
+
+const pf = new PlayerFactory()
+pf.storeEmptyStage("CLASS", "Barbarian", "0")
+console.log(pf.choiceDocs)
+
