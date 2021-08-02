@@ -677,8 +677,9 @@
   },
   "Bard": {
     "1": {
-      "spellSelections": {
-        "add": [
+      "spellSelections.add": {
+        "subfield": true,
+        "nested": [
           {
             "alias": "Cantrips",
             "args": { "list": "BARD", "level": "0" },
@@ -722,31 +723,29 @@
         ],
         "choose": 3
       },
-      "weapons": [
-        {
-          "alias": "Martial Weapon",
-          "required": true,
-          "from": [
-            "RAPIER",
-            "LONGSWORD",
-            "CLUB",
-            "CROSSBOW, LIGHT",
-            "DART",
-            "DAGGER",
-            "GREATCLUB",
-            "HANDAXE",
-            "JAVELIN",
-            "LIGHT HAMMER",
-            "MACE",
-            "QUARTERSTAFF",
-            "SHORTBOW",
-            "SICKLE",
-            "SLING",
-            "SPEAR"
-          ],
-          "choose": 1
-        }
-      ],
+      "weapons": {
+        "alias": "Martial Weapon",
+        "required": true,
+        "from": [
+          "RAPIER",
+          "LONGSWORD",
+          "CLUB",
+          "CROSSBOW, LIGHT",
+          "DART",
+          "DAGGER",
+          "GREATCLUB",
+          "HANDAXE",
+          "JAVELIN",
+          "LIGHT HAMMER",
+          "MACE",
+          "QUARTERSTAFF",
+          "SHORTBOW",
+          "SICKLE",
+          "SLING",
+          "SPEAR"
+        ],
+        "choose": 1
+      },
       "toolProficiencies": {
         "alias": "Musical Instrument Proficiencies",
         "required": true,
@@ -924,8 +923,7 @@
         "choose": 2
       },
       "weapons": {
-      "nested": true,
-      "selections":  [
+        "nested":  [
           {
             "alias": "Martial Weapon",
             "required": true,
