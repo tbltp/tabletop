@@ -182,20 +182,20 @@
                         "alias": "Cantrips",
                         "choose": 2,
                         "method": "getSpellList",
-                        "args": [
-                            "Bard", 
-                            "0"
-                        ],
+                        "args": {
+                            "list": "BARD", 
+                            "level": "0"
+                        },
                         "required": true
                     },
                     {
                         "alias": "New Spells (Up to Level 1)",
                         "choose": 4,
                         "method": "getSpellList",
-                        "args": [
-                            "Bard",
-                            "1"
-                        ],
+                        "args": {
+                            "list": "BARD", 
+                            "level": "1"
+                        },
                         "required": true
                     }
                 ]
@@ -208,20 +208,20 @@
                         "alias": "New Spell (Up to Level 1)",
                         "choose": 1,
                         "method": "getSpellList",
-                        "args": [
-                            "Bard",
-                            "1"
-                        ],
+                        "args": {
+                            "list": "BARD", 
+                            "level": "1"
+                        },
                         "required": true
                     },
                     {
                         "alias": "Replacement Spell",
                         "choose": 1, 
                         "method": "getSpellList",
-                        "args": [
-                            "Bard",
-                            "1"
-                        ],
+                        "args": {
+                            "list": "BARD", 
+                            "level": "1"
+                        },
                         "required": false,
                         "linked": {
                             "element": "spellSelections.remove"
@@ -259,20 +259,20 @@
                         "alias": "New Spell (Up to Level 2)",
                         "choose": 1,
                         "method": "getSpellList",
-                        "args": [
-                            "Bard",
-                            "2"
-                        ],
+                        "args": {
+                            "list": "BARD", 
+                            "level": "2"
+                        },
                         "required": true
                     },
                     {
                         "alias": "Replacement Spell",
                         "choose": 1, 
                         "method": "getSpellList",
-                        "args": [
-                            "Bard",
-                            "2"
-                        ],
+                        "args": {
+                            "list": "BARD", 
+                            "level": "2"
+                        },
                         "required": false,
                         "linked": {
                             "element": "spellSelections.remove"
