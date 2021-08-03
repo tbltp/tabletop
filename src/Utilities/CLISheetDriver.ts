@@ -528,6 +528,8 @@ export class CLISheetDriver {
   }
 }
 
+CLISheetDriver.createCharacter();
+
 /*
 function testSubclasses() {
   const pc: PlayerCharacter = new PlayerCharacter(14, 14, 14, 14, 14, 14);
