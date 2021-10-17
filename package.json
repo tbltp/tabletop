@@ -1,6 +1,6 @@
 {
   "name": "@tabletop/tabletop5e",
-  "version": "0.4.19",
+  "version": "0.4.20",
   "description": "WotC don't look please - Ali",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
