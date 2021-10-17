@@ -3,15 +3,15 @@ import {
   ClassCreationParams,
   LevelingParams,
   PlayerClass,
-} from "../Classes/PlayerClass";
-import { SubclassParams } from "../Classes/Subclass";
-import { bgDict, classDict, raceDict } from "./ConstructorDefinitions";
+} from "../../Classes/PlayerClass";
+import { SubclassParams } from "../../Classes/Subclass";
+import { bgDict, classDict, raceDict } from "../ConstructorDefinitions";
 import { Choices, ChoiceSpec } from "./ChoicesOld";
-import { CharacterSheet } from "../Base/CharacterSheet";
-import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { Jsonify } from "./Jsonify";
-import { Race, RaceParams } from "../Races/Race";
-import { Background, BackgroundParams } from "../Backgrounds/Background";
+import { CharacterSheet } from "../../Base/CharacterSheet";
+import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { Jsonify } from "../Jsonify";
+import { Race, RaceParams } from "../../Races/Race";
+import { Background, BackgroundParams } from "../../Backgrounds/Background";
 import { FeatParams } from "Feats/Feat";
 var prompt = require("prompt-sync")({ sigint: true });
 

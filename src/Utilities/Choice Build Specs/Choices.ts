@@ -1,14 +1,13 @@
-import * as RaceChoices from "./Choice Build Specs/RaceChoices.json";
-import * as BackgroundChoices from "./Choice Build Specs/BackgroundChoices.json";
-import * as ClassChoices from "./Choice Build Specs/ClassCreationChoices.json";
-import * as SubclassChoices from "./Choice Build Specs/SubClassChoices.json";
-import { CharacterSheet } from "../Base/CharacterSheet";
-import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { Race } from "../Races/Race";
-import { Background } from "../Backgrounds/Background";
-import { PlayerClass } from "../Classes/PlayerClass";
+import { ClassChoices } from "./Class/ClassChoices";
+import { RaceChoices } from "./Race/RaceChoices";
+import { BackgroundChoices } from "./Background/BackgroundChoices";
+import { CharacterSheet } from "../../Base/CharacterSheet";
+import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { Race } from "../../Races/Race";
+import { Background } from "../../Backgrounds/Background";
+import { PlayerClass } from "../../Classes/PlayerClass";
 
-import * as SpellList from "../../Assets/SpellList.json"
+import * as SpellList from "../../../Assets/SpellList.json"
 
 
 export class PlayerFactory {
@@ -17,7 +16,6 @@ export class PlayerFactory {
         "RACE": RaceChoices,
         "BACKGROUND": BackgroundChoices,
         "CLASS": ClassChoices,
-        "SUBCLASS": SubclassChoices
     }
 
 
@@ -52,7 +50,7 @@ export class PlayerFactory {
     }
 
     setProp(property: string, feature: string, choice: string[] | string, level?: string){
-        level ? this.choiceDocs[property][feature][level] = choice : this.choiceDocs[property][feature] = choice
+        level != null ? this.choiceDocs[property][level][feature] = choice : this.choiceDocs[property][feature] = choice
     }
 
     renderPropertyChoices(property: string): ChoiceSpec {
@@ -201,6 +199,8 @@ export interface ChoiceSpec {
 }
 
 const pf = new PlayerFactory()
-console.log(pf.renderChoiceSpecs("CLASS", "Bard", "0"))
-console.log(pf.renderChoiceSpecs("CLASS", "Bard", "1"))
+
+pf.storeEmptyStage("CLASS", "Bard", "0")
+pf.storeEmptyStage("CLASS", "Bard", "1")
+console.log(pf.choiceDocs)
 

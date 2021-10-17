@@ -1,0 +1,12 @@
+{
+    "toolProficiency": {
+        "alias": "Toolkit Proficiency",
+        "choose": 1,
+        "from": [
+            "Brewer's supplies",
+            "Smith's tools",
+            "Mason's tools"
+        ],
+        "required": true
+    }
+}

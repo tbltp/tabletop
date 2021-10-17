@@ -1,0 +1,916 @@
+{
+    "0": {
+        "skillProficiencies": {
+            "alias": "Skill Proficiencies",
+            "choose": 2,
+            "from": [
+                "arcana",
+                "deception",
+                "history",
+                "intimidation",
+                "investigation",
+                "nature",
+                "religion"
+            ],
+            "required": true
+        },
+        "weapons": [
+            {
+                "alias": "Primary Weapon",
+                "choose": 1,
+                "from": [
+                    "CROSSBOW, LIGHT",
+                    "CLUB",
+                    "DAGGER",
+                    "GREATCLUB",
+                    "HANDAXE",
+                    "JAVELIN",
+                    "LIGHT HAMMER",
+                    "MACE",
+                    "QUARTERSTAFF",
+                    "SICKLE",
+                    "SPEAR",
+                    "DART",
+                    "SHORTBOW",
+                    "SLING"
+                ],
+                "required": true
+            }
+        ],
+        "equipmentPack": {
+            "alias": "Pack",
+            "choose": 1,
+            "from": [
+                "DUNGEONEER",
+                "SCHOLAR"
+            ],
+            "required": true
+        },
+        "arcaneFocus": {
+            "alias": "Arcane Focus",
+            "choose": 1,
+            "from": [
+                "COMPONENT POUCH",
+                "CRYSTAL",
+                "ORB",
+                "ROD",
+                "STAFF",
+                "WAND"
+            ],
+            "required": true
+        }
+    },
+    "1": {
+        "subclassSelection": {
+            "alias": "Otherwordly Patron",
+            "choose": 1,
+            "from": [
+                "ARCHFEY",
+                "FIEND",
+                "GREAT OLD ONE"
+            ],
+            "option": true,
+            "required": true
+        },
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "Cantrips",
+                    "choose": 2,
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "2"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "New Spells (Up to Level 1)",
+                    "choose": 2,
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "1"
+                    ],
+                    "required": true
+                }
+            ]
+        }
+    },
+    "2": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 1)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "1"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "1"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        },
+        "invocations": {
+            "add": [
+                {
+                    "alias": "New Eldritch Invocations",
+                    "choose": 2,
+                    "method": "getEldritchInvocations",
+                    "required": true
+                }
+            ]
+        }
+    },
+    "3": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 2)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "2"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "2"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        },
+        "pactBoon": {
+            "boon": {
+                "alias": "Pact Boon",
+                "choose": 1,
+                "from": [
+                    "BLADE",
+                    "CHAIN",
+                    "TOME"
+                ],
+                "option": true,
+                "required": true
+            }
+        }
+    },
+    "4": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "Cantrip",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "0"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "New Spell (Up to Level 2)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "2"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "2"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        },
+        "pactBoon": {
+            "boon": {
+                "alias": "Pact Boon",
+                "choose": 1,
+                "from": [
+                    "BLADE",
+                    "CHAIN",
+                    "TOME"
+                ],
+                "option": true,
+                "required": true
+          }
+        }
+    },
+    "5": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 3)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "3"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "3"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        },
+        "invocations": {
+            "add": [
+                {
+                    "alias": "New Eldritch Invocation",
+                    "choose": 1,
+                    "method": "getEldritchInvocations",
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Invocation",
+                    "choose": 1, 
+                    "method": "getEldritchInvocations",
+                    "required": false,
+                    "linked": {
+                        "element": "invocations.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Invocation Removal",
+                "choose": 1,
+                "method": "getKnownInvocations",
+                "required": false,
+                "linked": {
+                    "element": "invocations.add",
+                    "index": 1
+                }
+
+            }
+        }
+    },
+    "6": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 3)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "3"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "3"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }
+    },
+    "7": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 4)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "4"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "4"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        },
+        "invocations": {
+            "add": [
+                {
+                    "alias": "New Eldritch Invocation",
+                    "choose": 1,
+                    "method": "getEldritchInvocations",
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Invocation",
+                    "choose": 1, 
+                    "method": "getEldritchInvocations",
+                    "required": false,
+                    "linked": {
+                        "element": "invocations.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Invocation Removal",
+                "choose": 1,
+                "method": "getKnownInvocations",
+                "required": false,
+                "linked": {
+                    "element": "invocations.add",
+                    "index": 1
+                }
+
+            }
+        }
+    },
+    "8": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 4)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "4"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "4"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }
+    },
+    "9": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 5)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "5"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "5"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        },
+        "invocations": {
+            "add": [
+                {
+                    "alias": "New Eldritch Invocation",
+                    "choose": 1,
+                    "method": "getEldritchInvocations",
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Invocation",
+                    "choose": 1, 
+                    "method": "getEldritchInvocations",
+                    "required": false,
+                    "linked": {
+                        "element": "invocations.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Invocation Removal",
+                "choose": 1,
+                "method": "getKnownInvocations",
+                "required": false,
+                "linked": {
+                    "element": "invocations.add",
+                    "index": 1
+                }
+
+            }
+        }
+    },
+    "10": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "Cantrip",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "0"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "5"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }
+    },
+    "11": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 5)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "5"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "5"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        },
+        "mysticArcanum": {
+            "alias": "Mystic Arcanum",
+            "choose": 1,
+            "method": "getSpellList",
+            "args": [
+                "Warlock",
+                "6"
+            ],
+            "required": true
+        }
+    },
+    "12": {
+        "invocations": {
+            "add": [
+                {
+                    "alias": "New Eldritch Invocation",
+                    "choose": 1,
+                    "method": "getEldritchInvocations",
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Invocation",
+                    "choose": 1, 
+                    "method": "getEldritchInvocations",
+                    "required": false,
+                    "linked": {
+                        "element": "invocations.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Invocation Removal",
+                "choose": 1,
+                "method": "getKnownInvocations",
+                "required": false,
+                "linked": {
+                    "element": "invocations.add",
+                    "index": 1
+                }
+
+            }
+        }
+    },
+    "13": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 5)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "5"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "5"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        },
+        "mysticArcanum": {
+            "alias": "Mystic Arcanum",
+            "choose": 1,
+            "method": "getSpellList",
+            "args": [
+                "Warlock",
+                "7"
+            ],
+            "required": true
+        }   
+    },
+    "15": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 5)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "5"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "5"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        },
+        "mysticArcanum": {
+            "alias": "Mystic Arcanum",
+            "choose": 1,
+            "method": "getSpellList",
+            "args": [
+                "Warlock",
+                "8"
+            ],
+            "required": true
+        },
+        "invocations": {
+            "add": [
+                {
+                    "alias": "New Eldritch Invocation",
+                    "choose": 1,
+                    "method": "getEldritchInvocations",
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Invocation",
+                    "choose": 1, 
+                    "method": "getEldritchInvocations",
+                    "required": false,
+                    "linked": {
+                        "element": "invocations.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Invocation Removal",
+                "choose": 1,
+                "method": "getKnownInvocations",
+                "required": false,
+                "linked": {
+                    "element": "invocations.add",
+                    "index": 1
+                }
+
+            }
+        }   
+    },
+    "17": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 5)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "5"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "5"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }            
+    },
+    "18": {
+        "invocations": {
+            "add": [
+                {
+                    "alias": "New Eldritch Invocation",
+                    "choose": 1,
+                    "method": "getEldritchInvocations",
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Invocation",
+                    "choose": 1, 
+                    "method": "getEldritchInvocations",
+                    "required": false,
+                    "linked": {
+                        "element": "invocations.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Invocation Removal",
+                "choose": 1,
+                "method": "getKnownInvocations",
+                "required": false,
+                "linked": {
+                    "element": "invocations.add",
+                    "index": 1
+                }
+
+            }
+        }
+    },  
+    "19": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 5)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "5"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Warlock",
+                        "5"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        },
+        "mysticArcanum": {
+            "alias": "Mystic Arcanum",
+            "choose": 1,
+            "method": "getSpellList",
+            "args": [
+                "Warlock",
+                "9"
+            ],
+            "required": true
+        }
+    }
+}

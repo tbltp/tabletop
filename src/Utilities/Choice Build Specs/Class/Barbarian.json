@@ -1,0 +1,80 @@
+{
+    "0": {
+        "skillProficiencies": {
+            "alias": "Skill Proficiencies",
+            "choose": 2,
+            "from": [
+               "animal handling",
+               "athletics",
+               "intimidation",
+               "nature",
+               "perception",
+               "survival" 
+            ],
+            "required": true
+        },
+        "weapons": [
+            {
+                "alias": "Martial Weapon",
+                "choose": 1,
+                "from": [
+                    "GREATAXE",
+                    "BATTLEAXE",
+                    "FLAIL",
+                    "GLAIVE",
+                    "GREATSWORD",
+                    "HALBERD",
+                    "LANCE",
+                    "LONGSWORD",
+                    "MAUL",
+                    "MORNINGSTAR",
+                    "PIKE",
+                    "RAPIER",
+                    "SCIMITAR",
+                    "SHORTSWORD",
+                    "TRIDENT",
+                    "WAR PICK",
+                    "WARHAMMER",
+                    "WHIP"
+                ],
+                "required": true
+            },
+            {
+                "alias": "Simple Weapon",
+                "choose": 1,
+                "from": [
+                    "HANDAXE X2",
+                    "CLUB",
+                    "CROSSBOW, LIGHT",
+                    "DART",
+                    "DAGGER",
+                    "GREATCLUB",
+                    "JAVELIN",
+                    "LIGHT HAMMER",
+                    "MACE",
+                    "QUARTERSTAFF",
+                    "SHORTBOW",
+                    "SICKLE",
+                    "SLING",
+                    "SPEAR"
+                ],
+                "required": true
+            }
+        ]
+    },
+    "3": {
+        "subclassSelection": {
+            "alias": "Primal Path",
+            "choose": 1,
+            "from": [
+                "ANCESTRAL GUARDIAN",
+                "BERSERKER",
+                "STORM HERALD",
+                "TOTEM WARRIOR",
+                "ZEALOT"
+            ],
+            "option": true,
+            "required": true
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "toolProficiencies": {
+        "alias": "Musical Instrument Proficiency",
+        "choose": 1,
+        "from": [
+            "Bagpipes",
+            "Drum",
+            "Dulcimer",
+            "Flute",
+            "Horn",
+            "Lute",
+            "Lyre",
+            "Pan Flute",
+            "Shawm",
+            "Viol"
+        ],
+        "required": true
+    }, 
+    "instrument": {
+        "alias": "Musical Instrument",
+        "choose": 1,
+        "from": [
+            "BAGPIPES",
+            "DRUM",
+            "DULCIMER",
+            "FLUTE",
+            "HORN",
+            "LUTE",
+            "LYRE",
+            "PAN FLUTE",
+            "SHAWM",
+            "VIOL"
+        ],
+        "required": true
+    }
+}

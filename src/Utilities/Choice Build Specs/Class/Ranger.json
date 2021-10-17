@@ -1,0 +1,477 @@
+{
+    "0": {
+        "skillProficiencies": {
+            "alias": "Skill Proficiencies",
+            "choose": 3,
+            "from": [
+                "athletics",
+                "animal handling",
+                "insight",
+                "investigation",
+                "nature",
+                "perception",
+                "stealth",
+                "survival"
+            ],
+            "required": true
+        },   
+        "or": [
+            {
+                "alias": "Melee Weapons",
+                "choose": 1,
+                "categories": {
+                    "weapons": {
+                        "alias": "Melee Weapons",
+                        "choose": 2,
+                        "from": [
+                            "CLUB",
+                            "DAGGER",
+                            "GREATCLUB",
+                            "HANDAXE",
+                            "JAVELIN",
+                            "LIGHT HAMMER",
+                            "MACE",
+                            "QUARTERSTAFF",
+                            "SICKLE",
+                            "SPEAR"
+                        ],
+                        "required": true
+                    },
+                    "weapons_": {
+                        "alias": "Double Shortswords", 
+                        "choose": 1,
+                        "from": [
+                            "SHORTSWORD X2"
+                        ],
+                        "required": true
+                    }
+                },
+                "required": true
+            }
+        ],
+        "armor": [
+            {
+                "alias": "Armor",
+                "choose": 1,
+                "from": [
+                    "SCALE MAIL",
+                    "LEATHER"
+                ],
+                "required": true
+            }
+        ],
+        "equipmentPack": {
+            "alias": "Pack",
+            "choose": 1,
+            "from": [
+                "DUNGEONEER",
+                "EXPLORER"
+            ],
+            "required": true
+        }
+    },
+    "1": {
+        "favoredEnemy": {
+            "alias": "Favored Enemy",
+            "choose": 1,
+            "custom": true,
+            "required": true
+        },
+        "favoredTerrain": {
+            "alias": "Favored Terrain",
+            "choose": 1,
+            "custom": true,
+            "required": true
+        }
+    },
+    "2": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spells (Up to Level 1)",
+                    "choose": 2,
+                    "method": "getSpellList",
+                    "args": [
+                        "Ranger",
+                        "1"
+                    ],
+                    "required": true
+                }
+            ]
+        },
+        "fightingStyles": {
+            "alias": "Fighting Style",
+            "choose": 1,
+            "from": [
+                "ARCHERY",
+                "DEFENSE",
+                "DUELING",
+                "TWO-WEAPON FIGHTING"
+            ]
+        }
+    },
+    "3": {
+        "subclassSelection": {
+            "alias": "Ranger Archetype",
+            "choose": 1,
+            "from": [
+                "BEASTMASTER",
+                "GLOOMSTALKER",
+                "HORIZONWALKER",
+                "HUNTER",
+                "MONSTERSLAYER"
+            ],
+            "option": true,
+            "required": true
+        },
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 1)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Ranger",
+                        "1"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Ranger",
+                        "1"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }
+    },
+    "5": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 2)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Ranger",
+                        "2"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Ranger",
+                        "2"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }
+    },
+    "7": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 2)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Ranger",
+                        "2"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Ranger",
+                        "2"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }
+    },
+    "9": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 3)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Ranger",
+                        "3"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Ranger",
+                        "3"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }   
+    },
+    "11": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 3)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Ranger",
+                        "3"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Ranger",
+                        "3"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }   
+    },
+    "13": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 4)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Ranger",
+                        "4"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Ranger",
+                        "4"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }   
+    },
+    "15": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 4)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Ranger",
+                        "4"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Ranger",
+                        "4"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }   
+    },
+    "17": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 5)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Ranger",
+                        "5"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Ranger",
+                        "5"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }   
+    },
+    "19": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 5)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Ranger",
+                        "5"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Ranger",
+                        "5"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }   
+    }
+}

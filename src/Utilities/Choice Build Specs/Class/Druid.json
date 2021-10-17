@@ -1,0 +1,151 @@
+{
+    "0": {
+        "skillProficiencies": {
+            "alias": "Skill Proficiencies",
+            "choose": 2,
+            "from": [
+                "arcana",
+                "animal handling",
+                "insight",
+                "medicine",
+                "nature",
+                "perception",
+                "religion",
+                "survival"
+            ],
+            "required": true
+        },
+        "or": [
+            {
+                "alias": "Druid Weapons and Armor",
+                "choose": 1,
+                "categories": {
+                    "weapons": {
+                        "alias": "Melee Weapons",
+                        "choose": 1,
+                        "from": [
+                            "CROSSBOW, LIGHT",
+                            "CLUB",
+                            "DART",
+                            "DAGGER",
+                            "GREATCLUB",
+                            "HANDAXE",
+                            "JAVELIN",
+                            "LIGHT HAMMER",
+                            "MACE",
+                            "QUARTERSTAFF",
+                            "SHORTBOW",
+                            "SICKLE",
+                            "SLING",
+                            "SPEAR"
+                        ],
+                        "required": true
+                    },
+                    "armor": {
+                        "alias": "Shield", 
+                        "choose": 1,
+                        "from": [
+                            "SHIELD"
+                        ],
+                        "required": true
+                    }
+                },
+                "required": true
+            }
+        ],
+        "weapons": [
+            {                
+                "alias": "Melee Weapon",
+                "choose": 1,
+                "from": [
+                    "SCIMITAR",
+                    "CLUB",
+                    "DAGGER",
+                    "GREATCLUB",
+                    "HANDAXE",
+                    "JAVELIN",
+                    "LIGHT HAMMER",
+                    "MACE",
+                    "QUARTERSTAFF",
+                    "SICKLE",
+                    "SPEAR"
+                ],
+                "required": true
+            }
+        ],
+        "druidicFocus": {
+            "alias": "Druidic Focus",
+            "choose": 1,
+            "from": [
+                "SPRIG OF MISTLETOE",
+                "TOTEM",
+                "WOODEN STAFF",
+                "YEW WAND"
+            ],
+            "required": true
+        }
+    },
+    "1": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "Cantrip",
+                    "choose": 2,
+                    "method": "getSpellList",
+                    "args": [
+                        "Druid", 
+                        "0"
+                    ],
+                    "required": true
+                }
+            ]
+        }
+    },
+    "2": {
+        "subclassSelection": {
+            "alias": "Druidic Circle",
+            "choose": 1,
+            "from": [
+                "DREAMS",
+                "LAND",
+                "MOON",
+                "SHEPHERD",
+                "SPORES"
+            ],
+            "option": true,
+            "required": true
+        }
+    },
+    "4": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "Cantrip",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Druid", 
+                        "0"
+                    ],
+                    "required": true
+                }
+            ]
+        }
+    },
+    "10": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "Cantrip",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Druid", 
+                        "0"
+                    ],
+                    "required": true
+                }
+            ]
+        }
+    }
+}

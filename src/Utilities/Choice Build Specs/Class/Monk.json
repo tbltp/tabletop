@@ -1,0 +1,99 @@
+{
+    "0": {
+        "skillProficiencies": {
+            "alias": "Skill Proficiencies",
+            "choose": 2,
+            "from": [
+                "acrobatics",
+                "athletics",
+                "history",
+                "insight",
+                "religion",
+                "stealth"
+            ],
+            "required": true
+        },
+        "toolProficiencies": {
+            "alias": "Tool Proficiency",
+            "choose": 1, 
+            "from": [
+                "Alchemist's supplies",
+                "Brewer's supplies",
+                "Calligrapher's supplies",
+                "Carpenter's tools",
+                "Cartographer's tools",
+                "Cobbler's tools",
+                "Cook's utensils",
+                "Glassblower's tools",
+                "Jeweler's tools",
+                "Leatherworker's tools",
+                "Mason's tools",
+                "Painter's tools",
+                "Potter's tools",
+                "Smith's tools",
+                "Tinker's tools",
+                "Weaver's tools",
+                "Woodcarver's tools",
+                "Bagpipes",
+                "Drum",
+                "Dulcimer",
+                "Flute",
+                "Horn",
+                "Lute",
+                "Lyre",
+                "Pan Flute",
+                "Shawm",
+                "Viol"
+            ]                
+        },
+        "weapons": [
+            {
+                "alias": "Weapon",
+                "choose": 1,
+                "from": [
+                    "SHORTSWORD",
+                    "CROSSBOW, LIGHT",
+                    "CLUB",
+                    "DART",
+                    "DAGGER",
+                    "GREATCLUB",
+                    "HANDAXE",
+                    "JAVELIN",
+                    "LIGHT HAMMER",
+                    "MACE",
+                    "QUARTERSTAFF",
+                    "SHORTBOW",
+                    "SICKLE",
+                    "SLING",
+                    "SPEAR"
+                ],
+                "required": true
+            }
+        ],
+        "equipmentPack": {
+            "alias": "Pack",
+            "choose": 1, 
+            "from": [
+                "DUNGEONEER",
+                "EXPLORER"
+            ],
+            "require": true
+        }
+    },
+    "1": {
+    },
+    "3": {
+        "subclassSelection": {
+            "alias": "Monastic Tradition",
+            "choose": 1,
+            "from": [
+                "DRUNKEN MASTER",
+                "FOUR ELEMENTS",
+                "OPEN HAND", 
+                "SHADOW"
+            ],
+            "option": true,
+            "required": true
+        }
+    }
+}
