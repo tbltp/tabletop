@@ -1,0 +1,153 @@
+{
+    "0": {
+        "skillProficiencies": {
+            "alias": "Skill Proficiencies",
+            "choose": 2,
+            "from": [
+                "athletics",
+                "insight",
+                "intimidation",
+                "medicine",
+                "persuasion",
+                "religion"
+            ],
+            "required": true
+        },
+        "weapons": [
+            {
+                "alias": "First Martial Weapon",
+                "choose": 1,
+                "from": [
+                    "GREATAXE",
+                    "BATTLEAXE",
+                    "FLAIL",
+                    "GLAIVE",
+                    "GREATSWORD",
+                    "HALBERD",
+                    "LANCE",
+                    "LONGSWORD",
+                    "MAUL",
+                    "MORNINGSTAR",
+                    "PIKE",
+                    "RAPIER",
+                    "SCIMITAR",
+                    "SHORTSWORD",
+                    "TRIDENT",
+                    "WAR PICK",
+                    "WARHAMMER",
+                    "WHIP"
+                ],
+                "required": true                    
+            },
+            {
+                "alias": "Simple Weapon",
+                "choose": 1,
+                "from": [
+                    "JAVELIN X5",
+                    "CLUB",
+                    "CROSSBOW, LIGHT",
+                    "DART",
+                    "DAGGER",
+                    "GREATCLUB",
+                    "HANDAXE",
+                    "LIGHT HAMMER",
+                    "MACE",
+                    "QUARTERSTAFF",
+                    "SHORTBOW",
+                    "SICKLE",
+                    "SLING",
+                    "SPEAR"
+                ],
+                "required": true
+            }
+        ],
+        "or": [
+            {
+                "alias": "Off-hand",
+                "choose": 1,
+                "categories": {
+                    "weapons": {
+                        "alias": "Additional Martial Weapon",
+                        "choose": 1,
+                        "from": [
+                            "GREATAXE",
+                            "BATTLEAXE",
+                            "FLAIL",
+                            "GLAIVE",
+                            "GREATSWORD",
+                            "HALBERD",
+                            "LANCE",
+                            "LONGSWORD",
+                            "MAUL",
+                            "MORNINGSTAR",
+                            "PIKE",
+                            "RAPIER",
+                            "SCIMITAR",
+                            "SHORTSWORD",
+                            "TRIDENT",
+                            "WAR PICK",
+                            "WARHAMMER",
+                            "WHIP"
+                        ],
+                        "required": true
+                    },
+                    "armor": {
+                        "alias": "Shield", 
+                        "choose": 1,
+                        "from": [
+                            "SHIELD"
+                        ],
+                        "required": true
+                    }
+                },
+                "required": true
+            }
+        ],
+        "equipmentPack": {
+            "alias": "Pack",
+            "choose": 1,
+            "from": [
+                "PRIEST",
+                "EXPLORER"
+            ],
+            "required": true
+        },
+        "holySymbol": {
+            "alias": "Holy Symbol",
+            "choose": 1,
+            "from": [
+                "AMULET",
+                "EMBLEM",
+                "RELIQUARY"
+            ],
+            "required": true
+        }
+    },
+    "2": {
+        "fightingStyles": {
+            "alias": "Fighting Style",
+            "choose": 1,
+            "from": [
+                "DEFENSE",
+                "DUELING",
+                "GREAT WEAPON FIGHTING",
+                "PROTECTION"
+            ],
+            "required": true
+        }
+    },
+    "3": {
+        "subclassSelection": {
+            "alias": "Paladin Oath",
+            "choose": 1,
+            "from": [
+                "ANCIENTS",
+                "DEVOTION",
+                "REDEMPTION",
+                "VENGEANCE"
+            ],
+            "option": false,
+            "required": true
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "languages": {
+        "alias": "Language",
+        "choose": 1,
+        "from": [
+            "Celestial",
+            "Common",
+            "Deep Speech",
+            "Draconic",
+            "Dwarvish",
+            "Elvish",
+            "Gnomish",
+            "Goblin",
+            "Halfling",
+            "Infernal",
+            "Orc",
+            "Primordial",
+            "Sylvan",
+            "Undercommon"
+        ],
+        "required": true
+    },
+    "instrument": {
+        "alias": "Musical Instrument Proficiency",
+        "choose": 1,
+        "from": [
+            "BAGPIPES",
+            "DRUM",
+            "DULCIMER",
+            "FLUTE",
+            "HORN",
+            "LUTE",
+            "LYRE",
+            "PAN FLUTE",
+            "SHAWM",
+            "VIOL"
+        ],
+        "required": true
+    }
+}

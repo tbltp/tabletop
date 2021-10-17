@@ -1,0 +1,84 @@
+{
+    "0": {
+        "skillProficiencies": {
+            "alias": "Skill Proficiencies",
+            "choose": 4,
+            "from": [
+                "acrobatics",
+                "athletics",
+                "deception",
+                "insight",
+                "intimidation",
+                "investigation",
+                "perception",
+                "performance",
+                "persuasion",
+                "sleight of hand",
+                "stealth"
+            ],
+            "required": true
+        },
+        "weapons": [
+            {
+                "alias": "Primary Weapon",
+                "choose": 1,
+                "from": [
+                    "RAPIER",
+                    "SHORTSWORD"
+                ],
+                "required": true
+            },
+            {
+                "alias": "Secondary Weapon",
+                "choose": 1,
+                "from": [
+                    "SHORTBOW",
+                    "SHORTSWORD"
+                ],
+                "required": true
+            }
+        ],
+        "equipmentPack": {
+            "alias": "Pack",
+            "choose": 1,
+            "from": [
+                "BURGLAR",
+                "DUNGEONEER",
+                "EXPLORER"
+            ],
+            "required": true
+        }
+    },
+    "1": {
+        "proficiencySelection": {
+            "alias": "Expertise",
+            "choose": 2,
+            "method": "getSkillProficiencies",
+            "required": true
+        }
+    },
+    "3": {
+        "subclassSelection": {
+            "alias": "Roguish Archetype",
+            "choose": 1,
+            "from": [
+                "ARCANE TRICKSTER",
+                "ASSASSIN",
+                "INQUISITIVE",
+                "MASTERMIND",
+                "SCOUT",
+                "THIEF"
+            ],
+            "option": true,
+            "required": true
+        }
+    },
+    "6": {
+        "proficiencySelection": {
+            "alias": "Expertise",
+            "choose": 2,
+            "method": "getSkillProficiencies",
+            "required": true
+        }
+    }
+}

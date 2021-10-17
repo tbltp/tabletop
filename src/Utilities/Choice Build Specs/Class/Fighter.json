@@ -1,0 +1,177 @@
+{
+
+    "0": {
+        "skillProficiencies": {
+            "alias": "Skill Proficiencies",
+            "choose": 2,
+            "from": [
+                "acrobatics",
+                "animal handling",
+                "athletics",
+                "history",
+                "insight",
+                "intimidation",
+                "perception",
+                "survival"
+            ],
+            "required": true
+        },
+        "weapons": [
+            {
+                "alias": "Primary Martial Weapon",
+                "choose": 1,
+                "from": [
+                    "GREATAXE",
+                    "BATTLEAXE",
+                    "FLAIL",
+                    "GLAIVE",
+                    "GREATSWORD",
+                    "HALBERD",
+                    "LANCE",
+                    "LONGSWORD",
+                    "MAUL",
+                    "MORNINGSTAR",
+                    "PIKE",
+                    "RAPIER",
+                    "SCIMITAR",
+                    "SHORTSWORD",
+                    "TRIDENT",
+                    "WAR PICK",
+                    "WARHAMMER",
+                    "WHIP"
+                ],
+                "required": true                    
+            },
+            {
+                "alias": "Stashed Weapon",
+                "choose": 1,
+                "from": [
+                    "CROSSBOW, LIGHT",
+                    "HANDAXE X2"
+                ],
+                "required": true
+            }
+        ],
+        "or": [
+            {
+                "alias": "Off-hand",
+                "choose": 1,
+                "categories": {
+                    "weapons": {
+                        "alias": "Additional Martial Weapon",
+                        "choose": 1,
+                        "from": [
+                            "GREATAXE",
+                            "BATTLEAXE",
+                            "FLAIL",
+                            "GLAIVE",
+                            "GREATSWORD",
+                            "HALBERD",
+                            "LANCE",
+                            "LONGSWORD",
+                            "MAUL",
+                            "MORNINGSTAR",
+                            "PIKE",
+                            "RAPIER",
+                            "SCIMITAR",
+                            "SHORTSWORD",
+                            "TRIDENT",
+                            "WAR PICK",
+                            "WARHAMMER",
+                            "WHIP"
+                        ],
+                        "required": true
+                    },
+                    "armor": {
+                        "alias": "Shield", 
+                        "choose": 1,
+                        "from": [
+                            "SHIELD"
+                        ],
+                        "required": true
+                    }
+                },
+                "required": true
+            }, 
+            {
+                "alias": "Armor choices",
+                "choose": 1,
+                "categories": {
+                    "armor": {
+                        "alias": "Chain Mail",
+                        "choose": 1,
+                        "from": [
+                            "CHAIN MAIL"
+                        ],
+                        "required": true
+                    },
+                    "and": [
+                        {
+                            "alias": "Leather Armor and Longbow",
+                            "categories": {
+                                "armor": {
+                                    "alias": "Leather Armor",
+                                    "choose": 1,
+                                    "from": [
+                                        "LEATHER"
+                                    ],
+                                    "required": true
+                                },
+                                "weapons": {
+                                    "alias": "Longbow",
+                                    "choose": 1,
+                                    "from": [
+                                        "LONGBOW"
+                                    ],
+                                    "required": true
+                                }
+                            },
+                            "required": true
+                        }
+                    ]  
+                },
+                "required": true
+            }
+        ],
+        "equipmentPack": {
+            "alias": "Pack",
+            "choose": 1,
+            "from": [
+                "DUNGEONEER",
+                "EXPLORER"
+            ],
+            "required": true
+        }
+    },
+    "1": {
+        "fightingStyles": {
+            "alias": "Fighting Style",
+            "choose": 1,
+            "from": [
+                "ARCHERY",
+                "DEFENSE",
+                "DUELING",
+                "GREAT WEAPON FIGHTING",
+                "PROTECTION",
+                "TWO-WEAPON FIGHTING"
+            ], 
+            "required": true
+        }
+    },
+    "3": {
+        "subclassSelection": {
+            "alias": "Martial Archetype",
+            "choose": 1,
+            "from": [
+                "ARCANE ARCHER",
+                "BATTLE MASTER",
+                "CAVALIER",
+                "CHAMPION",
+                "ELDRITCH KNIGHT",
+                "SAMURAI"
+            ],
+            "option": true,
+            "required": true
+        }
+    }
+}

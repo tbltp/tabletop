@@ -1,0 +1,137 @@
+{
+    "0": {
+        "skillProficiencies": {
+            "alias": "Skill Proficiencies",
+            "choose": 2,
+            "from": [
+                "history",
+                "insight",
+                "medicine",
+                "persuasion",
+                "religion"
+            ],
+            "required": true
+        },
+        "weapons": [
+            {
+                "alias": "Primary Weapon",
+                "choose": 1,
+                "method": "getAvailableClericWeapons",
+                "required": true
+            },
+            {                
+                "alias": "Secondary Weapon",
+                "choose": 1,
+                "from": [
+                    "CROSSBOW, LIGHT",
+                    "CLUB",
+                    "DART",
+                    "DAGGER",
+                    "GREATCLUB",
+                    "HANDAXE",
+                    "JAVELIN",
+                    "LIGHT HAMMER",
+                    "MACE",
+                    "QUARTERSTAFF",
+                    "SHORTBOW",
+                    "SICKLE",
+                    "SLING",
+                    "SPEAR"
+                ],
+                "required": true
+            }
+        ],
+        "armor": [
+            {
+                "alias": "Armor",
+                "choose": 1,
+                "method": "getAvailableClericArmor",
+                "required": true
+            }
+        ],
+        "equipmentPack": {
+            "alias": "Pack",
+            "choose": 1,
+            "from": [
+                "PRIEST",
+                "EXPLORER"
+            ],
+            "required": true
+        },
+        "holySymbol": {
+            "alias": "Holy Symbol",
+            "choose": 1,
+            "from": [
+                "AMULET",
+                "EMBLEM",
+                "RELIQUARY"
+            ],
+            "required": true
+        }
+    },
+    "1": {
+        "subclassSelection": {
+            "alias": "Cleric Domain",
+            "choose": 1,
+            "from": [
+                "FORGE",
+                "GRAVE",
+                "KNOWLEDGE",
+                "LIFE",
+                "LIGHT",
+                "NATURE",
+                "TEMPEST",
+                "TRICKERY",
+                "WAR"
+            ],
+            "option": true,
+            "required": true
+        },
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "Cantrips",
+                    "choose": 3,
+                    "method": "getSpellList",
+                    "args": [
+                        "Cleric", 
+                        "0"
+                    ],
+                    "required": true
+                }
+            ]
+        }
+    },
+    "4": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "Cantrip",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Cleric", 
+                        "0"
+                    ],
+                    "required": true
+                }
+            ]
+        }
+    },
+    "10": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "Cantrip",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Cleric", 
+                        "0"
+                    ],
+                    "required": true
+                }
+            ]
+        }
+    }
+}

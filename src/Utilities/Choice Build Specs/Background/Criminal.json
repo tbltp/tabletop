@@ -1,0 +1,13 @@
+{
+    "gamingSet": {
+        "alias": "Gaming Set Proficiency",
+        "choose": 1,
+        "from": [
+            "Playing card set",
+            "Dragonchess set",
+            "Dice set",
+            "Three-dragon ante set"
+        ],
+        "required": true
+    }
+}

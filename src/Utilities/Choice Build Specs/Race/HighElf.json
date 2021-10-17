@@ -1,0 +1,33 @@
+{
+    "cantrip":  {
+        "alias": "Wizard Cantrip",
+        "choose": 1,
+        "method": "getSpellList",
+        "args": {
+            "list": "WIZARD",
+            "level": "0"
+        },
+        "required": true
+    },
+    "language": {
+        "alias": "Language",
+        "choose": 1,
+        "from": [
+            "Celestial",
+            "Common",
+            "Deep Speech",
+            "Draconic",
+            "Dwarvish",
+            "Elvish",
+            "Gnomish",
+            "Goblin",
+            "Halfling",
+            "Infernal",
+            "Orc",
+            "Primordial",
+            "Sylvan",
+            "Undercommon"
+        ],
+        "required": true
+    }
+}

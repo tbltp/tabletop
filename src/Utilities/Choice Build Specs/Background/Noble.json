@@ -1,0 +1,34 @@
+{
+        "languages": {
+            "alias": "Language",
+            "choose": 1,
+            "from": [
+                "Celestial",
+                "Common",
+                "Deep Speech",
+                "Draconic",
+                "Dwarvish",
+                "Elvish",
+                "Gnomish",
+                "Goblin",
+                "Halfling",
+                "Infernal",
+                "Orc",
+                "Primordial",
+                "Sylvan",
+                "Undercommon"
+            ],
+            "required": true
+        },
+        "gamingSet": {
+            "alias": "Gaming Set Proficiency",
+            "choose": 1,
+            "from": [
+                "PLAYING CARD SET",
+                "DRAGONCHESS SET",
+                "DICE SET",
+                "THREE-DRAGON ANTE SET"
+            ],
+            "required": true
+        }
+    }

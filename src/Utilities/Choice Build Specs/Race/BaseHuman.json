@@ -1,0 +1,23 @@
+{
+    "language": {
+        "alias": "Language",        
+        "choose": 1,
+        "from": [
+            "Celestial",
+            "Common",
+            "Deep Speech",
+            "Draconic",
+            "Dwarvish",
+            "Elvish",
+            "Gnomish",
+            "Goblin",
+            "Halfling",
+            "Infernal",
+            "Orc",
+            "Primordial",
+            "Sylvan",
+            "Undercommon"
+        ],
+        "required": true
+    }
+}

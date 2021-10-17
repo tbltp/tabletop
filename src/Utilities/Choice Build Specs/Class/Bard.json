@@ -1,0 +1,779 @@
+{
+    "0": {
+        "skillProficiencies": {
+            "alias": "Skill Proficiencies",
+            "choose": 3,
+            "from": [
+                "acrobatics",
+                "animal handling",
+                "arcana",
+                "athletics",
+                "deception",
+                "history",
+                "insight",
+                "intimidation",
+                "investigation",
+                "medicine",
+                "nature",
+                "perception",
+                "performance",
+                "persuasion",
+                "religion",
+                "sleight of hand",
+                "stealth",
+                "survival"
+            ],
+            "required": true
+        },
+        "toolProficiencies": {
+            "alias": "Musical Instrument Proficiencies",
+            "choose": 3,
+            "from": [
+                "Bagpipes",
+                "Drum",
+                "Dulcimer",
+                "Flute",
+                "Horn",
+                "Lute",
+                "Lyre",
+                "Pan Flute",
+                "Shawm",
+                "Viol"
+            ],
+            "required": true
+        },
+        "weapons": [
+            {
+                "alias": "Martial Weapon",
+                "choose": 1,
+                "from": [
+                    "RAPIER",
+                    "LONGSWORD",
+                    "CLUB",
+                    "CROSSBOW, LIGHT",
+                    "DART",
+                    "DAGGER",
+                    "GREATCLUB",
+                    "HANDAXE",
+                    "JAVELIN",
+                    "LIGHT HAMMER",
+                    "MACE",
+                    "QUARTERSTAFF",
+                    "SHORTBOW",
+                    "SICKLE",
+                    "SLING",
+                    "SPEAR"
+                ],
+                "required": true
+            }
+        ],
+        "instrument": {
+            "alias": "Musical Instrument",
+            "choose": 1,
+            "from": [
+                "LUTE",
+                "BAGPIPES",
+                "DRUM",
+                "DULCIMER",
+                "FLUTE",
+                "HORN",
+                "LYRE",
+                "PAN FLUTE",
+                "SHAWM",
+                "VIOL"
+            ],
+            "required": true
+        },
+        "equipmentPack": {
+            "alias": "Pack",
+            "choose": 1,
+            "from": [
+                "DIPLOMAT",
+                "ENTERTAINER"
+            ],
+            "required": true
+        }
+    },
+    "1": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "Cantrips",
+                    "choose": 2,
+                    "method": "getSpellList",
+                    "args": {
+                        "list": "BARD", 
+                        "level": "0"
+                    },
+                    "required": true
+                },
+                {
+                    "alias": "New Spells (Up to Level 1)",
+                    "choose": 4,
+                    "method": "getSpellList",
+                    "args": {
+                        "list": "BARD", 
+                        "level": "1"
+                    },
+                    "required": true
+                }
+            ]
+        }
+    },
+    "2": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 1)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": {
+                        "list": "BARD", 
+                        "level": "1"
+                    },
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": {
+                        "list": "BARD", 
+                        "level": "1"
+                    },
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }
+    },
+    "3": {
+        "subclassSelection": {
+            "alias": "Bard College",
+            "choose": 1,
+            "from": [
+                "GLAMOUR",
+                "LORE",
+                "SWORDS",
+                "VALOR",
+                "WHISPERS"
+            ],
+            "required": true
+        },
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 2)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": {
+                        "list": "BARD", 
+                        "level": "2"
+                    },
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": {
+                        "list": "BARD", 
+                        "level": "2"
+                    },
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        },
+        "proficiencySelection": {
+            "alias": "Expertise",
+            "choose": 2,
+            "method": "getSkillProficiencies",
+            "required": true
+        }
+    },
+    "4": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Cantrip",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "0"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "New Spell (Up to Level 2)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "2"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "2"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }
+    },
+    "5": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 3)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "3"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "3"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }
+    },
+    "6": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 3)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "3"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "3"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }
+    },
+    "7": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 4)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "4"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "4"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }
+    },
+    "8": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 4)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "4"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "4"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }
+    },
+    "9": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 5)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "5"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "5"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }
+    },
+    "10": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Cantrip",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "0"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "New Spell (Up to Level 5)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "5"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "5"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        },
+        "proficiencySelection": {
+            "alias": "Expertise",
+            "choose": 2,
+            "method": "getSkillProficiencies",
+            "required": true
+        },
+        "magicalSecretsSpellSelection": {
+            "alias": "Magical Secrets Spells",
+            "choose": 2,
+            "method": "getSpellListAll",
+            "args": [
+                5
+            ],
+            "required": true
+        }
+    },
+    "11": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 6)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "6"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "6"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }
+    },
+    "13": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spell (Up to Level 7)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "7"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "7"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }
+    },
+    "14": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spells (Up to Level 7)",
+                    "choose": 2,
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "7"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "7"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        },
+        "magicalSecretsSpellSelection": {
+            "alias": "Magical Secrets Spells",
+            "choose": 2,
+            "method": "getSpellListAll",
+            "args": [
+                "7"
+            ],
+            "required": true
+        }
+    },
+    "15": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spells (Up to Level 8)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "8"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "8"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }
+    },
+    "17": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spells (Up to Level 9)",
+                    "choose": 1,
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "9"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "9"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        }
+    },
+    "18": {
+        "spellSelections": {
+            "add": [
+                {
+                    "alias": "New Spells (Up to Level 9)",
+                    "choose": 2,
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "9"
+                    ],
+                    "required": true
+                },
+                {
+                    "alias": "Replacement Spell",
+                    "choose": 1, 
+                    "method": "getSpellList",
+                    "args": [
+                        "Bard",
+                        "9"
+                    ],
+                    "required": false,
+                    "linked": {
+                        "element": "spellSelections.remove"
+                    }
+                }
+            ],
+            "remove": {
+                "alias": "Spell Removal",
+                "choose": 1,
+                "method": "getKnownSpells",
+                "required": false,
+                "linked": {
+                    "element": "spellSelections.add",
+                    "index": 1
+                }
+            }
+        },
+        "magicalSecretsSpellSelection": {
+            "alias": "Magical Secrets Spells",
+            "choose": 2,
+            "method": "getSpellListAll",
+            "args": [
+                "9"
+            ],
+            "required": true
+        }
+    }
+}

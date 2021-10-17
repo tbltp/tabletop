@@ -1,0 +1,19 @@
+{
+    "draconicAncestry": {
+        "alias": "Draconic Ancestry",
+        "choose": 1,
+        "from": [
+            "Black",
+            "Blue",
+            "Brass",
+            "Bronze",
+            "Copper",
+            "Gold",
+            "Green",
+            "Red",
+            "Silver",
+            "White"
+        ],
+        "required": true
+    }
+}
