@@ -10,4 +10,4 @@ output*
 IGNORE/*
 Test.json
 
-src/Utilities/delete
+delete/
