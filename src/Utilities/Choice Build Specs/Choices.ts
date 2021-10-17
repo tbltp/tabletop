@@ -1,14 +1,13 @@
-import { ClassChoices } from "./Class/ClassChoices";
-import { RaceChoices } from "./Race/RaceChoices";
-import { BackgroundChoices } from "./Background/BackgroundChoices";
-import { CharacterSheet } from "../../Base/CharacterSheet";
-import { PlayerCharacter } from "../../Base/PlayerCharacter";
-import { Race } from "../../Races/Race";
-import { Background } from "../../Backgrounds/Background";
-import { PlayerClass } from "../../Classes/PlayerClass";
-
 import * as SpellList from "../../../Assets/SpellList.json"
 
+import { Background } from "../../Backgrounds/Background";
+import { BackgroundChoices } from "./Background/BackgroundChoices";
+import { CharacterSheet } from "../../Base/CharacterSheet";
+import { ClassChoices } from "./Class/ClassChoices";
+import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { PlayerClass } from "../../Classes/PlayerClass";
+import { Race } from "../../Races/Race";
+import { RaceChoices } from "./Race/RaceChoices";
 
 export class PlayerFactory {
 
@@ -87,6 +86,7 @@ export class PlayerFactory {
     }
 
     storeEmptyClassStage(property: string, choice: string, level: string): void {
+        console.log(property, choice, level)
         const reference: [string, ChoiceSpec][] = Object.entries(this.propertyRailroad[property][choice][level]);
         this.choiceDocs[property][level] = {}
         
