@@ -1,0 +1,235 @@
+{
+    "Dragonborn": {
+        "draconicAncestry": {
+            "alias": "Draconic Ancestry",
+            "choose": 1,
+            "from": [
+                "Black",
+                "Blue",
+                "Brass",
+                "Bronze",
+                "Copper",
+                "Gold",
+                "Green",
+                "Red",
+                "Silver",
+                "White"
+            ],
+            "required": true
+        }
+    },
+    "Hill Dwarf": {
+        "toolProficiency": {
+            "alias": "Toolkit Proficiency",
+            "choose": 1,
+            "from": [
+                "Brewer's supplies",
+                "Smith's tools",
+                "Mason's tools"
+            ],
+            "required": true
+        }
+    },
+    "Mountain Dwarf": {
+        "toolProficiency": {
+            "alias": "Toolkit Proficiency",
+            "choose": 1,
+            "from": [
+                "Brewer's supplies",
+                "Smith's tools",
+                "Mason's tools"
+            ],
+            "required": true
+        }
+    },
+    "Dark Elf": {},
+    "High Elf": {
+        "cantrip":  {
+            "alias": "Wizard Cantrip",
+            "choose": 1,
+            "method": "getSpellList",
+            "args": {
+                "list": "WIZARD",
+                "level": "0"
+            },
+            "required": true
+        },
+        "language": {
+            "alias": "Language",
+            "choose": 1,
+            "from": [
+                "Celestial",
+                "Common",
+                "Deep Speech",
+                "Draconic",
+                "Dwarvish",
+                "Elvish",
+                "Gnomish",
+                "Goblin",
+                "Halfling",
+                "Infernal",
+                "Orc",
+                "Primordial",
+                "Sylvan",
+                "Undercommon"
+            ],
+            "required": true
+        }
+    },
+    "Wood Elf": {},
+    "Air Genasi": {},
+    "Earth Genasi": {},
+    "Fire Genasi": {},
+    "Water Genasi": {},
+    "Forest Gnome": {},
+    "Mountain Gnome": {},
+    "Half Elf": {
+        "abilityScores": {
+            "alias": "Ability Scores",
+            "choose": 2,
+            "from": [
+                "strength",
+                "dexterity",
+                "constitution",
+                "intelligence",
+                "wisdom", 
+                "charisma"
+            ],
+            "required": true
+        },
+        "skillProficiencies":  {
+            "alias": "Skill Proficiencies",
+            "choose": 2,
+            "from": [
+                "acrobatics",
+                "animal handling",
+                "arcana",
+                "athletics",
+                "deception",
+                "history",
+                "insight",
+                "intimidation",
+                "investigation",
+                "medicine",
+                "nature",
+                "perception",
+                "performance",
+                "persuasion",
+                "religion",
+                "sleight of hand",
+                "stealth",
+                "survival"
+            ],
+            "required": true
+        },
+        "language": {
+            "alias": "Language",
+            "choose": 1,
+            "from": [
+                "Celestial",
+                "Common",
+                "Deep Speech",
+                "Draconic",
+                "Dwarvish",
+                "Elvish",
+                "Gnomish",
+                "Goblin",
+                "Halfling",
+                "Infernal",
+                "Orc",
+                "Primordial",
+                "Sylvan",
+                "Undercommon"
+            ],
+            "required": true
+        }
+    },
+    "Half Orc": {},
+    "Lightfoot Halfling": {},
+    "Stout Halfling": {},
+    "Base Human": {
+        "language": {
+            "alias": "Language",        
+            "choose": 1,
+            "from": [
+                "Celestial",
+                "Common",
+                "Deep Speech",
+                "Draconic",
+                "Dwarvish",
+                "Elvish",
+                "Gnomish",
+                "Goblin",
+                "Halfling",
+                "Infernal",
+                "Orc",
+                "Primordial",
+                "Sylvan",
+                "Undercommon"
+            ],
+            "required": true
+        }
+    },
+    "Variant Human": {
+        "language": {
+            "alias": "Language",        
+            "choose": 1,
+            "from": [
+                "Celestial",
+                "Common",
+                "Deep Speech",
+                "Draconic",
+                "Dwarvish",
+                "Elvish",
+                "Gnomish",
+                "Goblin",
+                "Halfling",
+                "Infernal",
+                "Orc",
+                "Primordial",
+                "Sylvan",
+                "Undercommon"
+            ],
+            "required": true
+        },
+        "abilityScores": {
+            "alias": "Ability Scores",
+            "choose": 2,
+            "from": [
+                "strength",
+                "dexterity",
+                "constitution",
+                "intelligence",
+                "wisdom", 
+                "charisma"
+            ],
+            "required": true
+        },
+        "skillProficiencies":  {
+            "alias": "Skill Proficiencies",
+            "choose": 2,
+            "from": [
+                "acrobatics",
+                "animal handling",
+                "arcana",
+                "athletics",
+                "deception",
+                "history",
+                "insight",
+                "intimidation",
+                "investigation",
+                "medicine",
+                "nature",
+                "perception",
+                "performance",
+                "persuasion",
+                "religion",
+                "sleight of hand",
+                "stealth",
+                "survival"
+            ],
+            "required": true
+        }
+    },
+    "Tiefling": {}
+}
