@@ -9,3 +9,5 @@ output*
 *.py
 IGNORE/*
 Test.json
+
+src/Utilities/delete
