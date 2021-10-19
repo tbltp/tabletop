@@ -86,7 +86,8 @@ export class PlayerFactory {
     }
 
     storeEmptyClassStage(property: string, choice: string, level: string): void {
-        console.log(property, choice, level)
+        if(!this.propertyRailroad[property][choice][level]){ return }
+        
         const reference: [string, ChoiceSpec][] = Object.entries(this.propertyRailroad[property][choice][level]);
         this.choiceDocs[property][level] = {}
         
