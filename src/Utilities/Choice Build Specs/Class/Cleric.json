@@ -94,7 +94,7 @@
                     "choose": 3,
                     "method": "getSpellList",
                     "args": [
-                        "Cleric", 
+                        "CLERIC", 
                         "0"
                     ],
                     "required": true
@@ -110,7 +110,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Cleric", 
+                        "CLERIC", 
                         "0"
                     ],
                     "required": true
@@ -126,7 +126,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Cleric", 
+                        "CLERIC", 
                         "0"
                     ],
                     "required": true
