@@ -79,7 +79,7 @@
                     "choose": 2,
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "2"
                     ],
                     "required": true
@@ -89,7 +89,7 @@
                     "choose": 2,
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "1"
                     ],
                     "required": true
@@ -105,7 +105,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "1"
                     ],
                     "required": true
@@ -115,7 +115,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "1"
                     ],
                     "required": false,
@@ -154,7 +154,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "2"
                     ],
                     "required": true
@@ -164,7 +164,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "2"
                     ],
                     "required": false,
@@ -206,7 +206,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "0"
                     ],
                     "required": true
@@ -216,7 +216,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "2"
                     ],
                     "required": true
@@ -226,7 +226,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "2"
                     ],
                     "required": false,
@@ -268,7 +268,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "3"
                     ],
                     "required": true
@@ -278,7 +278,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "3"
                     ],
                     "required": false,
@@ -337,7 +337,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "3"
                     ],
                     "required": true
@@ -347,7 +347,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "3"
                     ],
                     "required": false,
@@ -376,7 +376,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "4"
                     ],
                     "required": true
@@ -386,7 +386,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "4"
                     ],
                     "required": false,
@@ -445,7 +445,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "4"
                     ],
                     "required": true
@@ -455,7 +455,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "4"
                     ],
                     "required": false,
@@ -484,7 +484,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "5"
                     ],
                     "required": true
@@ -494,7 +494,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "5"
                     ],
                     "required": false,
@@ -553,7 +553,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "0"
                     ],
                     "required": true
@@ -563,7 +563,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "5"
                     ],
                     "required": false,
@@ -592,7 +592,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "5"
                     ],
                     "required": true
@@ -602,7 +602,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "5"
                     ],
                     "required": false,
@@ -627,7 +627,7 @@
             "choose": 1,
             "method": "getSpellList",
             "args": [
-                "Warlock",
+                "WARLOCK",
                 "6"
             ],
             "required": true
@@ -673,7 +673,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "5"
                     ],
                     "required": true
@@ -683,7 +683,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "5"
                     ],
                     "required": false,
@@ -708,7 +708,7 @@
             "choose": 1,
             "method": "getSpellList",
             "args": [
-                "Warlock",
+                "WARLOCK",
                 "7"
             ],
             "required": true
@@ -722,7 +722,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "5"
                     ],
                     "required": true
@@ -732,7 +732,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "5"
                     ],
                     "required": false,
@@ -757,7 +757,7 @@
             "choose": 1,
             "method": "getSpellList",
             "args": [
-                "Warlock",
+                "WARLOCK",
                 "8"
             ],
             "required": true
@@ -801,7 +801,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "5"
                     ],
                     "required": true
@@ -811,7 +811,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "5"
                     ],
                     "required": false,
@@ -872,7 +872,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "5"
                     ],
                     "required": true
@@ -882,7 +882,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Warlock",
+                        "WARLOCK",
                         "5"
                     ],
                     "required": false,
@@ -907,7 +907,7 @@
             "choose": 1,
             "method": "getSpellList",
             "args": [
-                "Warlock",
+                "WARLOCK",
                 "9"
             ],
             "required": true

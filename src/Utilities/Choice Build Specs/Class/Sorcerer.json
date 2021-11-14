@@ -80,7 +80,7 @@
                     "choose": 4,
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer", 
+                        "SORCERER", 
                         "0"
                     ],
                     "required": true
@@ -106,7 +106,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "1"
                     ],
                     "required": true
@@ -116,7 +116,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "1"
                     ],
                     "required": false,
@@ -145,7 +145,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "2"
                     ],
                     "required": true
@@ -155,7 +155,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "2"
                     ],
                     "required": false,
@@ -184,7 +184,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "0"
                     ],
                     "required": true
@@ -194,7 +194,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "2"
                     ],
                     "required": true
@@ -204,7 +204,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "2"
                     ],
                     "required": false,
@@ -233,7 +233,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "3"
                     ],
                     "required": true
@@ -243,7 +243,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "3"
                     ],
                     "required": false,
@@ -272,7 +272,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "3"
                     ],
                     "required": true
@@ -282,7 +282,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "3"
                     ],
                     "required": false,
@@ -311,7 +311,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "4"
                     ],
                     "required": true
@@ -321,7 +321,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "4"
                     ],
                     "required": false,
@@ -350,7 +350,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "4"
                     ],
                     "required": true
@@ -360,7 +360,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "4"
                     ],
                     "required": false,
@@ -389,7 +389,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "5"
                     ],
                     "required": true
@@ -399,7 +399,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "5"
                     ],
                     "required": false,
@@ -428,7 +428,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer", 
+                        "SORCERER", 
                         "0"
                     ],
                     "required": true
@@ -438,7 +438,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "5"
                     ],
                     "required": true
@@ -448,7 +448,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "5"
                     ],
                     "required": false,
@@ -477,7 +477,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "6"
                     ],
                     "required": true
@@ -487,7 +487,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "6"
                     ],
                     "required": false,
@@ -516,7 +516,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "7"
                     ],
                     "required": true
@@ -526,7 +526,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "7"
                     ],
                     "required": false,
@@ -555,7 +555,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "8"
                     ],
                     "required": true
@@ -565,7 +565,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "8"
                     ],
                     "required": false,
@@ -594,7 +594,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "9"
                     ],
                     "required": true
@@ -604,7 +604,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Sorcerer",
+                        "SORCERER",
                         "9"
                     ],
                     "required": false,

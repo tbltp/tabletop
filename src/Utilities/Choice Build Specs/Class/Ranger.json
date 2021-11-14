@@ -92,7 +92,7 @@
                     "choose": 2,
                     "method": "getSpellList",
                     "args": [
-                        "Ranger",
+                        "RANGER",
                         "1"
                     ],
                     "required": true
@@ -131,7 +131,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Ranger",
+                        "RANGER",
                         "1"
                     ],
                     "required": true
@@ -141,7 +141,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Ranger",
+                        "RANGER",
                         "1"
                     ],
                     "required": false,
@@ -170,7 +170,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Ranger",
+                        "RANGER",
                         "2"
                     ],
                     "required": true
@@ -180,7 +180,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Ranger",
+                        "RANGER",
                         "2"
                     ],
                     "required": false,
@@ -209,7 +209,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Ranger",
+                        "RANGER",
                         "2"
                     ],
                     "required": true
@@ -219,7 +219,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Ranger",
+                        "RANGER",
                         "2"
                     ],
                     "required": false,
@@ -248,7 +248,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Ranger",
+                        "RANGER",
                         "3"
                     ],
                     "required": true
@@ -258,7 +258,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Ranger",
+                        "RANGER",
                         "3"
                     ],
                     "required": false,
@@ -287,7 +287,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Ranger",
+                        "RANGER",
                         "3"
                     ],
                     "required": true
@@ -297,7 +297,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Ranger",
+                        "RANGER",
                         "3"
                     ],
                     "required": false,
@@ -326,7 +326,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Ranger",
+                        "RANGER",
                         "4"
                     ],
                     "required": true
@@ -336,7 +336,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Ranger",
+                        "RANGER",
                         "4"
                     ],
                     "required": false,
@@ -365,7 +365,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Ranger",
+                        "RANGER",
                         "4"
                     ],
                     "required": true
@@ -375,7 +375,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Ranger",
+                        "RANGER",
                         "4"
                     ],
                     "required": false,
@@ -404,7 +404,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Ranger",
+                        "RANGER",
                         "5"
                     ],
                     "required": true
@@ -414,7 +414,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Ranger",
+                        "RANGER",
                         "5"
                     ],
                     "required": false,
@@ -443,7 +443,7 @@
                     "choose": 1,
                     "method": "getSpellList",
                     "args": [
-                        "Ranger",
+                        "RANGER",
                         "5"
                     ],
                     "required": true
@@ -453,7 +453,7 @@
                     "choose": 1, 
                     "method": "getSpellList",
                     "args": [
-                        "Ranger",
+                        "RANGER",
                         "5"
                     ],
                     "required": false,
