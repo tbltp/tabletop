@@ -72,7 +72,7 @@ export class PlayerFactory {
         this.choiceDocs[property]["title"] = choice 
 
         if(level != null) {
-            this.storeEmptyClassStage(property, choice, level)
+            this.storeEmptyClassStage(choice, level)
             return
         }
 
@@ -85,26 +85,24 @@ export class PlayerFactory {
         
     }
 
-    storeEmptyClassStage(property: string, choice: string, level: string): void {
-        if(!this.propertyRailroad[property][choice][level]){ return }
+    storeEmptyClassStage(choice: string, level: string): void {
+        if(!this.propertyRailroad["CLASS"][choice][level]){ return }
 
-        const reference: [string, ChoiceSpec][] = Object.entries(this.propertyRailroad[property][choice][level]);
-        this.choiceDocs[property][level] = {}
+        this.choiceDocs["CLASS"][level] = {}
+        const reference: [string, ChoiceSpec][] = Object.entries(this.propertyRailroad["CLASS"][choice][level]);
         
-        if(level === "0") {
-            for(let ref of reference) {
-                ["skillProficiencies", "instrumentProficiencies", "weapons", "armor", "toolProficiencies"].includes(ref[0]) ?
-                    this.choiceDocs[property][level][ref[0]] = [] :
-                    this.choiceDocs[property][level][ref[0]] = ""
+        for(let ref of reference) {
+            const key =  ref[0]
+            const val = ref[1]
+
+            if(Array.isArray(val)) {
+                this.choiceDocs["CLASS"][level][key] = []
             }
-        }
-        else {
-            for(let ref of reference) {
-                if(ref[0] === "spellSelections.add") { this.choiceDocs[property][level].spellSelections = {add: []} }
-                else if (ref[0] === "subclassSelection") { continue }
-                else {
-                    ref[1].choose > 1 ? this.choiceDocs[property][ref[0]] = [] : this.choiceDocs[property][ref[0]] = ""
-                }
+            else if(key === "spellSelections") {
+                this.choiceDocs["CLASS"][level][key] = {add: [], remove: []}
+            }
+            else {
+                this.choiceDocs["CLASS"][level][key] = val.choose > 1 ? [] : ""
             }
         }
 
