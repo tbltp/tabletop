@@ -104,7 +104,7 @@ export { Jsonify } from "../src/Utilities/Jsonify";
 
 export { CharacterSheet } from "../src/Base/CharacterSheet";
 
-export { PlayerFactory } from "../src/Utilities/Choice Build Specs/Choices";
+export { PlayerFactory, ChoiceEvaluator } from "../src/Utilities/Choice Build Specs/Choices";
 /*
 export { CLISheetDriver } from "../src/Utilities/CLISheetDriver";
 */

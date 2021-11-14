@@ -161,7 +161,7 @@ export class PlayerFactory {
 
 }
 
-class ChoiceEvaluator {
+export class ChoiceEvaluator {
     static fns = {
         getSpellList: ChoiceEvaluator.getSpellList
     }
