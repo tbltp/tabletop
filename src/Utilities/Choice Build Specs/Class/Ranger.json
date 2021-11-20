@@ -130,20 +130,20 @@
                     "alias": "New Spell (Up to Level 1)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "RANGER",
-                        "1"
-                    ],
+                    "args": {
+                        "list": "RANGER", 
+                        "level": "1"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "RANGER",
-                        "1"
-                    ],
+                    "args": {
+                        "list": "RANGER", 
+                        "level": "1"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -169,20 +169,20 @@
                     "alias": "New Spell (Up to Level 2)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "RANGER",
-                        "2"
-                    ],
+                    "args": {
+                        "list": "RANGER", 
+                        "level": "2"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "RANGER",
-                        "2"
-                    ],
+                    "args": {
+                        "list": "RANGER", 
+                        "level": "2"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -208,20 +208,20 @@
                     "alias": "New Spell (Up to Level 2)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "RANGER",
-                        "2"
-                    ],
+                    "args": {
+                        "list": "RANGER", 
+                        "level": "2"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "RANGER",
-                        "2"
-                    ],
+                    "args": {
+                        "list": "RANGER", 
+                        "level": "2"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -247,20 +247,20 @@
                     "alias": "New Spell (Up to Level 3)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "RANGER",
-                        "3"
-                    ],
+                    "args": {
+                        "list": "RANGER", 
+                        "level": "3"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "RANGER",
-                        "3"
-                    ],
+                    "args": {
+                        "list": "RANGER", 
+                        "level": "3"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -286,20 +286,20 @@
                     "alias": "New Spell (Up to Level 3)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "RANGER",
-                        "3"
-                    ],
+                    "args": {
+                        "list": "RANGER", 
+                        "level": "3"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "RANGER",
-                        "3"
-                    ],
+                    "args": {
+                        "list": "RANGER", 
+                        "level": "3"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -325,20 +325,20 @@
                     "alias": "New Spell (Up to Level 4)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "RANGER",
-                        "4"
-                    ],
+                    "args": {
+                        "list": "RANGER", 
+                        "level": "4"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "RANGER",
-                        "4"
-                    ],
+                    "args": {
+                        "list": "RANGER", 
+                        "level": "4"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -364,20 +364,20 @@
                     "alias": "New Spell (Up to Level 4)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "RANGER",
-                        "4"
-                    ],
+                    "args": {
+                        "list": "RANGER", 
+                        "level": "4"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "RANGER",
-                        "4"
-                    ],
+                    "args": {
+                        "list": "RANGER", 
+                        "level": "4"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -403,20 +403,20 @@
                     "alias": "New Spell (Up to Level 5)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "RANGER",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "RANGER", 
+                        "level": "5"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "RANGER",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "RANGER", 
+                        "level": "5"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -442,20 +442,20 @@
                     "alias": "New Spell (Up to Level 5)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "RANGER",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "RANGER", 
+                        "level": "5"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "RANGER",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "RANGER", 
+                        "level": "5"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"

@@ -79,20 +79,20 @@
                     "alias": "Cantrips",
                     "choose": 4,
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER", 
-                        "0"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "0"
+                    },
                     "required": true
                 },
                 {
                     "alias": "New Spells (Up to Level 1)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "Bard",
-                        "1"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "1"
+                    },
                     "required": true
                 }
             ]
@@ -105,20 +105,20 @@
                     "alias": "New Spell (Up to Level 1)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "1"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "1"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "1"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "1"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -144,20 +144,20 @@
                     "alias": "New Spell (Up to Level 2)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "2"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "2"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "2"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "2"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -183,30 +183,30 @@
                     "alias": "Cantrip",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "0"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "0"
+                    },
                     "required": true
                 },
                 {
                     "alias": "New Spell (Up to Level 2)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "2"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "2"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "2"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "2"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -232,20 +232,20 @@
                     "alias": "New Spell (Up to Level 3)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "3"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "3"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "3"
-                    ],
+                    "args":{
+                        "list": "SORCERER", 
+                        "level": "3"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -271,20 +271,20 @@
                     "alias": "New Spell (Up to Level 3)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "3"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "3"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "3"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "3"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -310,20 +310,20 @@
                     "alias": "New Spell (Up to Level 4)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "4"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "4"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "4"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "4"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -349,20 +349,20 @@
                     "alias": "New Spell (Up to Level 4)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "4"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "4"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "4"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "4"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -388,20 +388,20 @@
                     "alias": "New Spell (Up to Level 5)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "5"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "5"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -427,30 +427,30 @@
                     "alias": "Cantrips",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER", 
-                        "0"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "0"
+                    },
                     "required": true
                 },
                 {
                     "alias": "New Spell (Up to Level 5)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "5"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "5"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -476,20 +476,20 @@
                     "alias": "New Spell (Up to Level 6)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "6"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "6"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "6"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "6"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -515,20 +515,20 @@
                     "alias": "New Spell (Up to Level 7)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "7"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "7"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "7"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "7"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -554,20 +554,20 @@
                     "alias": "New Spell (Up to Level 8)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "8"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "8"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "8"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "8"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -593,20 +593,20 @@
                     "alias": "New Spell (Up to Level 9)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "9"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "9"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "SORCERER",
-                        "9"
-                    ],
+                    "args": {
+                        "list": "SORCERER", 
+                        "level": "9"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"

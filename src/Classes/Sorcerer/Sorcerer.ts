@@ -1,7 +1,9 @@
-import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
-import { PlayerCharacter } from "../../Base/PlayerCharacter";
-import * as SorcererClassTraits from "./Sorcerer.json";
 import * as Metamagic from "../../../Assets/Metamagic.json";
+import * as SorcererClassTraits from "./Sorcerer.json";
+
+import { ClassCreationParams, LevelingParams, PlayerClass } from "../PlayerClass";
+
+import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { SorcererSubclass } from "./Subclasses/SorcererSubclass";
 
 export class Sorcerer extends PlayerClass {
@@ -90,13 +92,14 @@ export class Sorcerer extends PlayerClass {
   }
 
   level2(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+    this.pushSorcererFeatures(pc, 2)
     this.subclassDriver(pc, "2", params);
     this.handleSorcererSpellSelections(pc, params);
     pc.pcHelper.addEffectsToFeature("Font of Magic", {resource: {resourceMax: {value: 2}}})
   }
 
   level3(pc: PlayerCharacter, params: SorcererLevelingParams): void {
-    this.subclassDriver(pc, "3", params);
+    this.pushSorcererFeatures(pc, 3)
     this.handleSorcererSpellSelections(pc, params);
     pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;
     this.addMetaMagic(pc, params.metaMagic);
@@ -109,6 +112,7 @@ export class Sorcerer extends PlayerClass {
   }
 
   level5(pc: PlayerCharacter, params: SorcererLevelingParams): void {
+    this.pushSorcererFeatures(pc, 2)
     this.subclassDriver(pc, "5", params);
     this.handleSorcererSpellSelections(pc, params);
     pc.pcHelper.findFeatureTraitByName("Font of Magic").resource.resourceMax.value++;

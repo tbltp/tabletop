@@ -54,20 +54,20 @@
                     "alias": "Cantrips",
                     "choose": 3,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD", 
-                        "0"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "0"
+                    },
                     "required": true
                 },
                 {
                     "alias": "New Spells (Up to Level 1)",
                     "choose": 6,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "1"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "1"
+                    },
                     "required": true
                 }
             ]
@@ -80,10 +80,10 @@
                     "alias": "New Spell (Up to Level 1)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "1"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "1"
+                    },
                     "required": true
                 }
             ]
@@ -112,10 +112,10 @@
                     "alias": "New Spell (Up to Level 2)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "2"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "2"
+                    },
                     "required": true
                 }
             ]
@@ -128,20 +128,20 @@
                     "alias": "Cantrip",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD", 
-                        "0"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "0"
+                    },
                     "required": true
                 },
                 {
                     "alias": "New Spell (Up to Level 2)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "2"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "2"
+                    },
                     "required": true
                 }
             ]
@@ -154,10 +154,10 @@
                     "alias": "New Spell (Up to Level 3)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "3"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "3"
+                    },
                     "required": true
                 }
             ]
@@ -170,10 +170,10 @@
                     "alias": "New Spell (Up to Level 3)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "3"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "3"
+                    },
                     "required": true
                 }
             ]
@@ -186,10 +186,10 @@
                     "alias": "New Spell (Up to Level 4)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "4"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "4"
+                    },
                     "required": true
                 }
             ]
@@ -202,10 +202,10 @@
                     "alias": "New Spell (Up to Level 4)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "4"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "4"
+                    },
                     "required": true
                 }
             ]
@@ -218,10 +218,10 @@
                     "alias": "New Spell (Up to Level 5)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "5"
+                    },
                     "required": true
                 }
             ]
@@ -234,20 +234,20 @@
                     "alias": "Cantrip",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD", 
-                        "0"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "0"
+                    },
                     "required": true
                 },
                 {
                     "alias": "New Spell (Up to Level 5)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "5"
+                    },
                     "required": true
                 }
             ]
@@ -260,10 +260,10 @@
                     "alias": "New Spell (Up to Level 6)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "6"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "6"
+                    },
                     "required": true
                 }
             ]
@@ -276,10 +276,10 @@
                     "alias": "New Spell (Up to Level 6)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "6"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "6"
+                    },
                     "required": true
                 }
             ]
@@ -292,10 +292,10 @@
                     "alias": "New Spell (Up to Level 7)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "7"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "7"
+                    },
                     "required": true
                 }
             ]
@@ -308,10 +308,10 @@
                     "alias": "New Spell (Up to Level 7)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "7"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "7"
+                    },
                     "required": true
                 }
             ]
@@ -324,10 +324,10 @@
                     "alias": "New Spell (Up to Level 8)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "8"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "8"
+                    },
                     "required": true
                 }
             ]
@@ -340,10 +340,10 @@
                     "alias": "New Spell (Up to Level 8)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "8"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "8"
+                    },
                     "required": true
                 }
             ]
@@ -356,10 +356,10 @@
                     "alias": "New Spell (Up to Level 9)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "9"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "9"
+                    },
                     "required": true
                 }
             ]
@@ -372,10 +372,10 @@
                     "alias": "New Spell (Up to Level 9)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "9"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "9"
+                    },
                     "required": true
                 }
             ]
@@ -408,10 +408,10 @@
                     "alias": "New Spell (Up to Level 9)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "9"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "9"
+                    },
                     "required": true
                 }
             ]
@@ -424,10 +424,10 @@
                     "alias": "New Spell (Up to Level 9)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WIZARD",
-                        "9"
-                    ],
+                    "args": {
+                        "list": "WIZARD", 
+                        "level": "9"
+                    },
                     "required": true
                 }
             ]

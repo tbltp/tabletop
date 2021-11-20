@@ -92,10 +92,10 @@
                     "alias": "Cantrip",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "DRUID", 
-                        "0"
-                    ],
+                    "args": {
+                        "list": "DRUID", 
+                        "level": "0"
+                    },
                     "required": true
                 }
             ]
@@ -123,10 +123,10 @@
                     "alias": "Cantrip",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "DRUID", 
-                        "0"
-                    ],
+                    "args": {
+                        "list": "DRUID", 
+                        "level": "0"
+                    },
                     "required": true
                 }
             ]
@@ -139,10 +139,10 @@
                     "alias": "Cantrip",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "DRUID", 
-                        "0"
-                    ],
+                    "args": {
+                        "list": "DRUID", 
+                        "level": "0"
+                    },
                     "required": true
                 }
             ]
