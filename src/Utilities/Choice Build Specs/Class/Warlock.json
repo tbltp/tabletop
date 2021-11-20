@@ -78,20 +78,20 @@
                     "alias": "Cantrips",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "2"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "0"
+                    },
                     "required": true
                 },
                 {
                     "alias": "New Spells (Up to Level 1)",
                     "choose": 2,
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "1"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "1"
+                    },
                     "required": true
                 }
             ]
@@ -104,20 +104,20 @@
                     "alias": "New Spell (Up to Level 1)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "1"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "1"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "1"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "1"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -153,20 +153,20 @@
                     "alias": "New Spell (Up to Level 2)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "2"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "2"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "2"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "2"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -205,30 +205,30 @@
                     "alias": "Cantrip",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "0"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "0"
+                    },
                     "required": true
                 },
                 {
                     "alias": "New Spell (Up to Level 2)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "2"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "2"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "2"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "2"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -267,20 +267,20 @@
                     "alias": "New Spell (Up to Level 3)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "3"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "3"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "3"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "3"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -336,20 +336,20 @@
                     "alias": "New Spell (Up to Level 3)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "3"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "3"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "3"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "3"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -375,20 +375,20 @@
                     "alias": "New Spell (Up to Level 4)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "4"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "4"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "4"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "4"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -444,20 +444,20 @@
                     "alias": "New Spell (Up to Level 4)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "4"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "4"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "4"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "4"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -483,20 +483,20 @@
                     "alias": "New Spell (Up to Level 5)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "5"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "5"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -552,20 +552,20 @@
                     "alias": "Cantrip",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "0"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "0"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "5"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -591,20 +591,20 @@
                     "alias": "New Spell (Up to Level 5)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "5"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "5"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -626,10 +626,10 @@
             "alias": "Mystic Arcanum",
             "choose": 1,
             "method": "getSpellList",
-            "args": [
-                "WARLOCK",
-                "6"
-            ],
+            "args": {
+                "list": "WARLOCK", 
+                "level": "6"
+            },
             "required": true
         }
     },
@@ -672,20 +672,20 @@
                     "alias": "New Spell (Up to Level 5)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "5"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "5"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -707,10 +707,10 @@
             "alias": "Mystic Arcanum",
             "choose": 1,
             "method": "getSpellList",
-            "args": [
-                "WARLOCK",
-                "7"
-            ],
+            "args": {
+                "list": "WARLOCK", 
+                "level": "7"
+            },
             "required": true
         }   
     },
@@ -721,20 +721,20 @@
                     "alias": "New Spell (Up to Level 5)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "5"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "5"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -756,10 +756,10 @@
             "alias": "Mystic Arcanum",
             "choose": 1,
             "method": "getSpellList",
-            "args": [
-                "WARLOCK",
-                "8"
-            ],
+            "args": {
+                "list": "WARLOCK", 
+                "level": "8"
+            },
             "required": true
         },
         "invocations": {
@@ -800,20 +800,20 @@
                     "alias": "New Spell (Up to Level 5)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "5"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "5"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -871,20 +871,20 @@
                     "alias": "New Spell (Up to Level 5)",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "5"
+                    },
                     "required": true
                 },
                 {
                     "alias": "Replacement Spell",
                     "choose": 1, 
                     "method": "getSpellList",
-                    "args": [
-                        "WARLOCK",
-                        "5"
-                    ],
+                    "args": {
+                        "list": "WARLOCK", 
+                        "level": "5"
+                    },
                     "required": false,
                     "linked": {
                         "element": "spellSelections.remove"
@@ -906,10 +906,10 @@
             "alias": "Mystic Arcanum",
             "choose": 1,
             "method": "getSpellList",
-            "args": [
-                "WARLOCK",
-                "9"
-            ],
+            "args": {
+                "list": "WARLOCK", 
+                "level": "9"
+            },
             "required": true
         }
     }

@@ -93,10 +93,10 @@
                     "alias": "Cantrips",
                     "choose": 3,
                     "method": "getSpellList",
-                    "args": [
-                        "CLERIC", 
-                        "0"
-                    ],
+                    "args": {
+                        "list": "CLERIC", 
+                        "level": "0"
+                    },
                     "required": true
                 }
             ]
@@ -109,10 +109,10 @@
                     "alias": "Cantrip",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "CLERIC", 
-                        "0"
-                    ],
+                    "args": {
+                        "list": "CLERIC", 
+                        "level": "0"
+                    },
                     "required": true
                 }
             ]
@@ -125,10 +125,10 @@
                     "alias": "Cantrip",
                     "choose": 1,
                     "method": "getSpellList",
-                    "args": [
-                        "CLERIC", 
-                        "0"
-                    ],
+                    "args": {
+                        "list": "CLERIC", 
+                        "level": "0"
+                    },
                     "required": true
                 }
             ]
