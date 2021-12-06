@@ -224,7 +224,5 @@ export interface ChoiceSpec {
     nested?: boolean;
 }
 
-const pf = new PlayerFactory()
-
 
 
