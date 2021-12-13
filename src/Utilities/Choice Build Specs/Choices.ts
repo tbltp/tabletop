@@ -1,5 +1,7 @@
 import * as SpellList from "../../../Assets/SpellList.json"
 
+import { bgDict, classDict, raceDict } from "Utilities/ConstructorDefinitions";
+
 import { Background } from "../../Backgrounds/Background";
 import { BackgroundChoices } from "./Background/BackgroundChoices";
 import { CharacterSheet } from "../../Base/CharacterSheet";
@@ -38,9 +40,7 @@ export class PlayerFactory {
         }
     }
 
-
     constructor() {
-        //this.characterSheet = new CharacterSheet("");
         this.playerCharacter = null;
     }
 
@@ -108,8 +108,6 @@ export class PlayerFactory {
 
     }
 
-
-
     renderChoiceSpecs(property: string, choice: string, level?: string): [string, ChoiceSpec][] {
         
         const choices: [string, ChoiceSpec][] = 
@@ -129,39 +127,63 @@ export class PlayerFactory {
         )
     }
 
-    // renderClassChoiceSpecs(property: string, choice: string, level: string): [string, ChoiceSpec][] {
-
-    //     const choices: [string, ChoiceSpec][] = this.propertyRailroad[property][choice][level] ? 
-    //             Object.entries(this.propertyRailroad[property][choice][level]) :
-    //             []
-        
-    //     return choices.map(c => 
-            
-    //     )
-
-    //     return 
-    // }
-
-
-
+    // Setup Live Render Character
     buildCharacter() {
-        //this.playerCharacter = new PlayerCharacter(this.choiceDocs.abilityScores)
-        /*
-        this.characterSheet.fillSheet(
-            this.playerCharacter,
-            this.race,
-            this.playerClass,
-            this.background, 
-            false
-        );
-        */
+        try {
+            this.playerCharacter = new PlayerCharacter(
+                this.choiceDocs.abilityScores.str,
+                this.choiceDocs.abilityScores.dex,
+                this.choiceDocs.abilityScores.con,
+                this.choiceDocs.abilityScores.int,
+                this.choiceDocs.abilityScores.wis,
+                this.choiceDocs.abilityScores.cha
+            )
+    
+            this.race = new raceDict["user selected"](this.choiceDocs.RACE) 
+            this.background = new bgDict["user selected"](this.choiceDocs.BACKGROUND) 
+            this.playerClass = new classDict["user selected"](this.choiceDocs.CLASS[0]) 
+
+            this.characterSheet = new CharacterSheet(
+                "", 
+                this.playerCharacter,
+                this.race, 
+                this.playerClass,
+                this.background
+            ) 
+        }
+        catch(error) {
+            console.log(error)
+        }
+    }
+
+    private checkCompletion(field: string) {
+        if(field ===  "CLASS"){
+            for(const [key, val] of Object.entries(this.choiceDocs["CLASS"]["0"])) {
+                if(val == undefined) { return false }
+            }
+            
+            for(const [key, val] of Object.entries(this.choiceDocs["CLASS"]["1"])) {
+                if(val == undefined) { return false }
+            }
+        }
+        else {
+            for(const [key, val] of Object.entries(this.choiceDocs[field])) {
+                if(val == undefined) { return false }
+            }
+        }
+
+        return true
     }
 
 }
 
 export class ChoiceEvaluator {
     static fns = {
-        getSpellList: ChoiceEvaluator.getSpellList
+        getSpellList: ChoiceEvaluator.getSpellList,
+        getKnownSpells: ChoiceEvaluator.getKnownSpells,
+        getAvailableClericWeapons: ChoiceEvaluator.getAvailableClericWeapons,
+        getAvailableClericArmor: ChoiceEvaluator.getAvailableClericArmor,
+        getSkillProficiencies: ChoiceEvaluator.getSkillProficiencies
     }
 
     static getSpellList(spec: ChoiceArgs) {
@@ -176,12 +198,33 @@ export class ChoiceEvaluator {
             return SpellList[spec.list][spec.level];
         }
     }
+
+    static getKnownSpells(spec: ChoiceArgs) {
+        return Object.values(spec.pc.spells).slice(1).reduce((entireArray, currentArray) => [...entireArray, ...currentArray], []).map(x => x.name.toUpperCase())
+    }
+
+    static getAvailableClericWeapons(spec: ChoiceArgs) {
+        return spec.pc.traits.weaponProficiencies.has("Warhammer") || spec.pc.traits.weaponProficiencies.has("Martial")
+          ?
+          ["MACE", "WARHAMMER"] :
+          ["MACE"]
+    }
+
+    static getAvailableClericArmor(spec: ChoiceArgs) {
+        return spec.pc.traits.armorProficiencies.has("Heavy") ?
+          ["SCALE MAIL", "LEATHER", "CHAIN MAIL"] :
+          ["SCALE MAIL", "LEATHER"]
+    }
+
+    static getSkillProficiencies(spec: ChoiceArgs) {
+        return Object.entries(spec.pc.skills).filter(skill => skill[1].proficient).map(skill => skill[0])
+    }
 }
 
 interface ChoiceArgs {
     list?: string,
     level?: string,
-    pc?: string
+    pc?: PlayerCharacter
 }
 
 export interface ChoiceSpec {
@@ -197,9 +240,5 @@ export interface ChoiceSpec {
     nested?: boolean;
 }
 
-const pf = new PlayerFactory()
 
-pf.storeEmptyStage("CLASS", "Bard", "0")
-pf.storeEmptyStage("CLASS", "Bard", "1")
-console.log(pf.choiceDocs)
 
