@@ -1,6 +1,6 @@
 import * as SpellList from "../../../Assets/SpellList.json"
 
-import { bgDict, classDict, raceDict } from "Utilities/ConstructorDefinitions";
+import { bgDict, classDict, raceDict } from "../ConstructorDefinitions";
 
 import { Background } from "../../Backgrounds/Background";
 import { BackgroundChoices } from "./Background/BackgroundChoices";
@@ -19,7 +19,6 @@ export class PlayerFactory {
         "CLASS": ClassChoices,
     }
 
-
     public characterSheet: CharacterSheet;
     public name: string;
 
@@ -31,6 +30,7 @@ export class PlayerFactory {
 
     //staging object
     choiceDocs = {
+        topLevelChoices: {RACE: "", BACKGROUND: "", CLASS: ""},
         abilityScores: {str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0},
         RACE: {},
         BACKGROUND: {},
@@ -69,7 +69,7 @@ export class PlayerFactory {
             return
         }
         
-        this.choiceDocs[property]["title"] = choice 
+        this.choiceDocs.topLevelChoices[property] = choice 
 
         if(level != null) {
             this.storeEmptyClassStage(choice, level)
@@ -139,9 +139,9 @@ export class PlayerFactory {
                 this.choiceDocs.abilityScores.cha
             )
     
-            this.race = new raceDict["user selected"](this.choiceDocs.RACE) 
-            this.background = new bgDict["user selected"](this.choiceDocs.BACKGROUND) 
-            this.playerClass = new classDict["user selected"](this.choiceDocs.CLASS[0]) 
+            this.race = new raceDict[this.choiceDocs.topLevelChoices.RACE](this.choiceDocs.RACE) 
+            this.background = new bgDict[this.choiceDocs.topLevelChoices.BACKGROUND](this.choiceDocs.BACKGROUND) 
+            this.playerClass = new classDict[this.choiceDocs.topLevelChoices.CLASS](this.choiceDocs.CLASS[0]) 
 
             this.characterSheet = new CharacterSheet(
                 "", 
