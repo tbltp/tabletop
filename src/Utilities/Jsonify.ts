@@ -1,11 +1,13 @@
-import { CharacterSheet } from "../Base/CharacterSheet";
 import * as fs from "fs";
-import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { Race } from "../Races/Race";
-import { PlayerClass } from "../Classes/PlayerClass";
+
 import { Background, DSBackground } from "../Backgrounds/Background";
+
 import { BarbarianSubclass } from "../Classes/Barbarian/Subclasses/BarbarianSubclass";
+import { CharacterSheet } from "../Base/CharacterSheet";
 import { Deserialize } from './Deserialize';
+import { PlayerCharacter } from "../Base/PlayerCharacter";
+import { PlayerClass } from "../Classes/PlayerClass";
+import { Race } from "../Races/Race";
 
 export class Jsonify {
   static dumpToJSON(sheet: CharacterSheet, filename: string) {
@@ -18,7 +20,7 @@ export class Jsonify {
       if(key == "pcHelper") {
         return value.id;
       }
-      if(["armorProficiencies", "weaponProficiencies", "toolProficiencies"].includes(key)) {
+      if(["languages", "armorProficiencies", "weaponProficiencies", "toolProficiencies"].includes(key)) {
         return [...value];
       }
       return value;
@@ -85,7 +87,7 @@ export class Jsonify {
 
         for(const trait of Object.keys(characterTraits)) {
 
-          if(["armorProficiencies", "weaponProficiencies", "toolProficiencies"].includes(trait)) {
+          if(["languages", "armorProficiencies", "weaponProficiencies", "toolProficiencies"].includes(trait)) {
             //add everything inside that to the appropriate set
             for(const element of characterTraits[trait]) {
               emptyCharacter.traits[trait].add(element);

@@ -1,16 +1,18 @@
-import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { Trait, EquipmentPack, AttachedFeature, ResourceTrait, ScalingTrait } from "../Base/Interfaces";
+import * as Armor from "../../Assets/Armor.json";
+import * as FightingStyle from "../../Assets/FightingStyles.json";
+import * as Gear from "../../Assets/Gear.json";
+import * as Languages from "../../Assets/Languages.json";
 import * as SpellList from "../../Assets/SpellList.json";
 import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
-import * as Languages from "../../Assets/Languages.json";
-import * as Gear from "../../Assets/Gear.json";
 import * as ToolKits from "../../Assets/Tools.json";
-import * as FightingStyle from "../../Assets/FightingStyles.json";
-import * as Armor from "../../Assets/Armor.json";
 import * as Weapons from "../../Assets/Weapons.json";
-import { Inventory } from "../Base/Equipment/Inventory";
-import { Subclass, SubclassParams } from "./Subclass";
+
+import { AttachedFeature, EquipmentPack, ResourceTrait, ScalingTrait, Trait } from "../Base/Interfaces";
 import { Feat, FeatParams } from "../Feats/Feat";
+import { Subclass, SubclassParams } from "./Subclass";
+
+import { Inventory } from "../Base/Equipment/Inventory";
+import { PlayerCharacter } from "../Base/PlayerCharacter";
 
 export abstract class PlayerClass {
   constructor(
@@ -283,6 +285,15 @@ export abstract class PlayerClass {
 
     return false;
   }
+}
+
+// Used only for Live Render Character - each Class has its own props it tracks and subsequently its own DS class based on the original to get overwritten.
+export class DSClass extends PlayerClass {
+  constructor(){
+    super("", [], [], [], [], [], [], [], [], [], "", 0, [])
+  }
+
+  abilitiesAtLevels = {}
 }
 
 export interface ClassCreationParams {
