@@ -6,6 +6,9 @@ import { Background } from "../../Backgrounds/Background";
 import { BackgroundChoices } from "./Background/BackgroundChoices";
 import { CharacterSheet } from "../../Base/CharacterSheet";
 import { ClassChoices } from "./Class/ClassChoices";
+import { DSBackground } from "../../Backgrounds/Background";
+import { DSClass } from "../../Classes/PlayerClass";
+import { DSRace } from "../../Races/Race";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { PlayerClass } from "../../Classes/PlayerClass";
 import { Race } from "../../Races/Race";
@@ -65,7 +68,10 @@ export class PlayerFactory {
         if(choice === "") {
             property === "CLASS" ?
             this.choiceDocs[property] = {"0": {}, "1": {}} :
-            this.choiceDocs[property] = {} 
+            this.choiceDocs[property] = {}
+            
+            this.choiceDocs.topLevelChoices[property] = "" 
+            
             return
         }
         
@@ -127,7 +133,6 @@ export class PlayerFactory {
         )
     }
 
-    // Setup Live Render Character
     buildCharacter() {
         try {
             this.playerCharacter = new PlayerCharacter(
@@ -139,9 +144,13 @@ export class PlayerFactory {
                 this.choiceDocs.abilityScores.cha
             )
     
-            this.race = new raceDict[this.choiceDocs.topLevelChoices.RACE](this.choiceDocs.RACE) 
-            this.background = new bgDict[this.choiceDocs.topLevelChoices.BACKGROUND](this.choiceDocs.BACKGROUND) 
-            this.playerClass = new classDict[this.choiceDocs.topLevelChoices.CLASS](this.choiceDocs.CLASS[0]) 
+            const raceChoices: [string, {}] = [this.choiceDocs.topLevelChoices.RACE, this.choiceDocs.RACE]
+            const classChoices: [string, {}] = [this.choiceDocs.topLevelChoices.CLASS, this.choiceDocs.CLASS]
+            const bgChoices: [string, {}] = [this.choiceDocs.topLevelChoices.BACKGROUND, this.choiceDocs.BACKGROUND]
+
+            this.race = raceChoices[0] ? new raceDict[raceChoices[0]](raceChoices[1]) : new DSRace()
+            this.playerClass = classChoices[0] ? new classDict[classChoices[0]](classChoices[1][0]) : new DSClass()
+            this.background = bgChoices[0] ? new bgDict[bgChoices[0]](bgChoices[1]) : new DSBackground()
 
             this.characterSheet = new CharacterSheet(
                 "", 
@@ -150,6 +159,8 @@ export class PlayerFactory {
                 this.playerClass,
                 this.background
             ) 
+
+            this.characterSheet.levelUp(classChoices[0], 0, classChoices[1][1])
         }
         catch(error) {
             console.log(error)
