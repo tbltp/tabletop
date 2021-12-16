@@ -7,7 +7,8 @@ output*
 *.test.ts
 *.js
 *.py
-IGNORE/*
+src/TEST CHARACTERS/
+IGNORE/
 Test.json
 
 delete/

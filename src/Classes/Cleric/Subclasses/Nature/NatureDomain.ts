@@ -1,7 +1,9 @@
-import { ResourceTrait, ScalingTrait } from "Base/Interfaces";
-import { PlayerCharacter } from "Base/PlayerCharacter";
-import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as NatureDomainDict from "./Nature.json";
+
+import { LevelingParams, PlayerClass } from "../../../PlayerClass";
+import { ResourceTrait, ScalingTrait } from "Base/Interfaces";
+
+import { PlayerCharacter } from "Base/PlayerCharacter";
 
 export class NatureDomain {
     
@@ -31,7 +33,7 @@ export class NatureDomain {
     pc.pcHelper.addFeatures(
         NatureDomain.getFeature(
         "2",
-        "CHANNEL DIVINITY: CHARM ANIMALS AND PLANTS"
+        "CHARM ANIMALS AND PLANTS"
       )
     );
   }

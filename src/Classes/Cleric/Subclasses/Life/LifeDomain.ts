@@ -1,8 +1,9 @@
-import { ScalingTrait } from "Base/Interfaces";
-import { PlayerCharacter } from "Base/PlayerCharacter";
-import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as LifeDomainDict from "./Life.json";
 
+import { LevelingParams, PlayerClass } from "../../../PlayerClass";
+
+import { PlayerCharacter } from "Base/PlayerCharacter";
+import { ScalingTrait } from "Base/Interfaces";
 
 export class LifeDomain {
 
@@ -25,7 +26,7 @@ export class LifeDomain {
 
   static life2(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(
-        LifeDomain.getFeature("2", "CHANNEL DIVINITY: PRESERVE LIFE")
+        LifeDomain.getFeature("2", "PRESERVE LIFE")
     );
   }
 

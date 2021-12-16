@@ -1,7 +1,9 @@
-import { ResourceTrait, ScalingTrait } from "Base/Interfaces";
-import { PlayerCharacter } from "Base/PlayerCharacter";
-import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as WarDomainDict from "./War.json";
+
+import { LevelingParams, PlayerClass } from "../../../PlayerClass";
+import { ResourceTrait, ScalingTrait } from "Base/Interfaces";
+
+import { PlayerCharacter } from "Base/PlayerCharacter";
 
 export class WarDomain {
     
@@ -29,7 +31,7 @@ export class WarDomain {
 
   static war2(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(
-        WarDomain.getFeature("2", "CHANNEL DIVINITY: GUIDED STRIKE")
+        WarDomain.getFeature("2", "GUIDED STRIKE")
     );
   }
 
@@ -45,7 +47,7 @@ export class WarDomain {
     pc.pcHelper.addFeatures(
         WarDomain.getFeature(
         "6",
-        "CHANNEL DIVINITY: WAR GOD'S BLESSING"
+        "WAR GOD'S BLESSING"
       )
     );
   }
