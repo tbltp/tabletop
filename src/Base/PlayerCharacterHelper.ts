@@ -1,6 +1,8 @@
-import { Trait, ResourceTrait, ScalingTrait, Spell, AttachedFeature } from "./Interfaces";
-import { PlayerCharacter } from "./PlayerCharacter";
 import * as Spells from '../../Assets/Spells.json';
+
+import { AttachedFeature, ResourceTrait, ScalingTrait, Spell, Trait } from "./Interfaces";
+
+import { PlayerCharacter } from "./PlayerCharacter";
 
 export class PlayerCharacterHelper {
     constructor(pc: PlayerCharacter){

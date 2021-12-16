@@ -1,7 +1,9 @@
-import { ResourceTrait } from "Base/Interfaces";
-import { PlayerCharacter } from "Base/PlayerCharacter";
-import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as LightDomainDict from "./Light.json";
+
+import { LevelingParams, PlayerClass } from "../../../PlayerClass";
+
+import { PlayerCharacter } from "Base/PlayerCharacter";
+import { ResourceTrait } from "Base/Interfaces";
 
 export class LightDomain {
   
@@ -29,7 +31,7 @@ export class LightDomain {
     pc.pcHelper.addFeatures(
       LightDomain.getFeature(
         "2",
-        "CHANNEL DIVINITY: RADIANCE OF THE DAWN"
+        "RADIANCE OF THE DAWN"
       )
     );
   }
