@@ -1,8 +1,10 @@
-import { Race, RaceParams } from "../Race";
-import { PlayerCharacter } from "../../Base/PlayerCharacter";
-import { ScalingTrait } from "../../Base/Interfaces";
 import * as DraconicAncestry from "../../../Assets/DraconicBloodline.json";
 import * as languages from "../../../Assets/Languages.json";
+
+import { Race, RaceParams } from "../Race";
+
+import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { ScalingTrait } from "../../Base/Interfaces";
 
 export class Dragonborn extends Race {
   constructor(params: RaceParams) {
@@ -18,7 +20,7 @@ export class Dragonborn extends Race {
       [] // Tool Proficiences
     );
 
-    this.draconicAncestry = DraconicAncestry[params.draconicAncestry];
+    this.draconicAncestry = params.draconicAncestry ?  DraconicAncestry[params.draconicAncestry] : {"Dragon": "", "Damage Type": "", "Breath Weapon": ""};
     this.traits.push(
       {
         title: "Draconic Ancestry",

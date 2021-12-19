@@ -101,7 +101,6 @@ export abstract class PlayerClass {
 
   protected addFeatures(pc: PlayerCharacter): void {
     for (let trait of this.features) {
-
       pc.traits.features.push(trait);
     }
   }
@@ -132,13 +131,13 @@ export abstract class PlayerClass {
 
   protected addEquipment(pc: PlayerCharacter): void {
     for (const item of this.equipment) {
+      if(!item) { continue }
       pc.inventory.gear.push(Gear[item]);
     }
   }
 
   protected addEquipmentPack(pc: PlayerCharacter): void {
     if(this.equipmentPack){
-
       const pack: EquipmentPack = Inventory.equipmentPacks[this.equipmentPack]();
 
       if(pack.kit) {
@@ -152,6 +151,7 @@ export abstract class PlayerClass {
 
   protected addToolkits(pc: PlayerCharacter): void {
     for (const tool of this.toolKits) {
+      if(!tool) { continue }
       pc.inventory.toolKits.push(ToolKits[tool]);
     }
   }

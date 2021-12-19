@@ -1,11 +1,12 @@
-import { Elf } from "../Elf";
-import { RaceParams } from "../../Race";
-import { PlayerCharacter } from "../../../Base/PlayerCharacter";
-import * as traits from "../Elf.json";
-import * as languages from "../../../../Assets/Languages.json";
 import * as Spells from "../../../../Assets/Spells.json";
+import * as languages from "../../../../Assets/Languages.json";
+import * as traits from "../Elf.json";
+
 import { ISpell, Spell } from "../../../Base/Interfaces";
 
+import { Elf } from "../Elf";
+import { PlayerCharacter } from "../../../Base/PlayerCharacter";
+import { RaceParams } from "../../Race";
 
 export class HighElf extends Elf {
     constructor(params: RaceParams) {
@@ -36,9 +37,7 @@ export class HighElf extends Elf {
     };
   
     level1(pc: PlayerCharacter) {
-      const ispell: ISpell = Spells[this.cantrip];
-      const spell: Spell = { ...ispell, spellcastingAbility: "Intelligence" };
-      pc.spells["0"].push(spell);
+      pc.pcHelper.addSpells([this.cantrip], "Intelligence")  // Add source.
     }
   
     abilityIncrease(pc: PlayerCharacter): void {
