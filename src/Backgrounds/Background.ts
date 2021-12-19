@@ -1,8 +1,9 @@
+import * as Gear from "../../Assets/Gear.json";
+import * as Languages from "../../Assets/Languages.json";
+import * as ToolKits from "../../Assets/Tools.json";
+
 import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { Trait } from "../Base/Interfaces";
-import * as Languages from "../../Assets/Languages.json";
-import * as Gear from "../../Assets/Gear.json";
-import * as ToolKits from "../../Assets/Tools.json";
 
 export abstract class Background {
   constructor(
@@ -45,9 +46,11 @@ export abstract class Background {
       pc.traits.toolProficiencies.add(toolProficiency);
     }
     for (const item of this.equipment) {
+      if(!item){ continue }
       pc.inventory.gear.push(Gear[item]);
     }
     for (const tool of this.toolKits) {
+      if(!tool){ continue }
       pc.inventory.toolKits.push(ToolKits[tool]);
     }
     for (const trait of this.features) {

@@ -114,7 +114,7 @@ export class PlayerCharacterHelper {
     addSpells(spellList: string[], spellcastingAbility: string, source?: AttachedFeature): void {
       let spells: Spell[] = [];
       for (const selectedSpell of spellList) {
-        //console.log(Spells[selectedSpell] ? `${selectedSpell} +1`: `${selectedSpell} - FIX` )
+        if(!selectedSpell) {continue}
         spells.push({
           ...Spells[selectedSpell],
           spellcastingAbility: spellcastingAbility,

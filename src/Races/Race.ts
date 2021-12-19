@@ -1,6 +1,6 @@
-import { Trait } from "../Base/Interfaces";
-import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { Feat } from "../Feats/Feat";
+import { PlayerCharacter } from "../Base/PlayerCharacter";
+import { Trait } from "../Base/Interfaces";
 
 export abstract class Race {
   constructor(
@@ -44,6 +44,7 @@ export abstract class Race {
 
   addLanguages(pc: PlayerCharacter): void {
     for (let language of this.languages) {
+      if(!language) { continue }
       pc.traits.languages.add(language);
     }
   }
@@ -68,12 +69,14 @@ export abstract class Race {
 
   addToolProficiencies(pc: PlayerCharacter): void {
     for (let tool of this.toolProficiencies) {
+      if(!tool) { continue }
       pc.traits.toolProficiencies.add(tool);
     }
   }
 
   addFeats(pc: PlayerCharacter): void {
     for (let feat of this.feats) {
+      if(!feat) { continue }
       //feat.apply(pc);
     }
   }
