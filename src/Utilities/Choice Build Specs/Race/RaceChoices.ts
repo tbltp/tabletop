@@ -1,9 +1,9 @@
+import * as BaseHumanChoices from './BaseHuman.json'
 import * as DragonbornChoices from './Dragonborn.json'
+import * as HalfElfChoices from './HalfElf.json'
+import * as HighElfChoices from './HighElf.json'
 import * as HillDwarfChoices from './HillDwarf.json'
 import * as MountainDwarfChoices from './MountainDwarf.json'
-import * as HighElfChoices from './HighElf.json'
-import * as HalfElfChoices from './HalfElf.json'
-import * as BaseHumanChoices from './BaseHuman.json'
 import * as VariantHumanChoices from './VariantHuman.json'
 
 const NONE = {}
@@ -19,7 +19,7 @@ export const RaceChoices = {
     "Fire Genasi": NONE,
     "Earth Genasi": NONE,
     "Water Genasi": NONE,
-    "Foreset Gnome": NONE,
+    "Forest Gnome": NONE,
     "Mountain Gnome": NONE,
     "Half Elf": HalfElfChoices,
     "Half Orc": NONE,
