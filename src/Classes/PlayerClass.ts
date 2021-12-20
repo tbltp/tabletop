@@ -293,7 +293,9 @@ export class DSClass extends PlayerClass {
     super("", [], [], [], [], [], [], [], [], [], "", 0, [])
   }
 
-  abilitiesAtLevels = {}
+  abilitiesAtLevels = {
+    "1": (pc: PlayerCharacter, params: LevelingParams) => { return }
+  }
 }
 
 export interface ClassCreationParams {

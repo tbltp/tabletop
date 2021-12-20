@@ -115,22 +115,17 @@ export class PlayerFactory {
     }
 
     renderChoiceSpecs(property: string, choice: string, level?: string): [string, ChoiceSpec][] {
-        
-        const choices: [string, ChoiceSpec][] = 
-        level != null ?
-            (
-                this.propertyRailroad[property][choice][level] ?
-                    Object.entries(this.propertyRailroad[property][choice][level]) :
-                    [] 
-            ) :
-            Object.entries(this.propertyRailroad[property][choice])
-           
-        
-        return choices.map(c => 
-            c[1].method ? 
-                [c[0], {...c[1], from: ChoiceEvaluator.fns[c[1].method](c[1].args)}] : 
-                c 
-        )
+        let choices;
+
+        if (level !== undefined) {
+            choices = (this.propertyRailroad[property][choice][level] ?
+                Object.entries(this.propertyRailroad[property][choice][level]) :
+                []);
+        } else {
+            choices =  Object.entries(this.propertyRailroad[property][choice]);
+        }
+
+        return choices;
     }
 
     buildCharacter() {
