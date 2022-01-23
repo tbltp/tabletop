@@ -9,6 +9,7 @@ import { ClassChoices } from "./Class/ClassChoices";
 import { DSBackground } from "../../Backgrounds/Background";
 import { DSClass } from "../../Classes/PlayerClass";
 import { DSRace } from "../../Races/Race";
+import { Jsonify } from "index";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { PlayerClass } from "../../Classes/PlayerClass";
 import { Race } from "../../Races/Race";
@@ -162,7 +163,7 @@ export class PlayerFactory {
         }
     }
 
-    private checkCompletion(field: string) {
+    checkCharacterValidity(field: string) {
         if(field ===  "CLASS"){
             for(const [key, val] of Object.entries(this.choiceDocs["CLASS"]["0"])) {
                 if(val == undefined) { return false }
@@ -179,6 +180,10 @@ export class PlayerFactory {
         }
 
         return true
+    }
+
+    jsonifyCharacter(){
+        return Jsonify.dumpToJSON(this.characterSheet)
     }
 
 }
