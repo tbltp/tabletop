@@ -10,21 +10,23 @@ import { PlayerClass } from "../Classes/PlayerClass";
 import { Race } from "../Races/Race";
 
 export class Jsonify {
-  static dumpToJSON(sheet: CharacterSheet, filename: string) {
-    fs.writeFileSync(`./${filename}.json`, JSON.stringify(sheet, 
-    
-    (key, value) => {
-      if(value === undefined) {
-        return null;
-      }
-      if(key == "pcHelper") {
-        return value.id;
-      }
-      if(["languages", "armorProficiencies", "weaponProficiencies", "toolProficiencies"].includes(key)) {
-        return [...value];
-      }
-      return value;
-    }));
+  static dumpToJSON(sheet: CharacterSheet){
+    return JSON.stringify(sheet, 
+      (key, value) => {
+        if(value === undefined) {
+          return null;
+        }
+        if(key == "pcHelper") {
+          return value.id;
+        }
+        if(["languages", "armorProficiencies", "weaponProficiencies", "toolProficiencies"].includes(key)) {
+          return [...value];
+        }
+        return value;
+      });
+  }
+  static dumpToJSONFile(sheet: CharacterSheet, filename: string) {
+    fs.writeFileSync(`./${filename}.json`, Jsonify.dumpToJSON(sheet));
     console.log("File has been created");
     return;
   }
