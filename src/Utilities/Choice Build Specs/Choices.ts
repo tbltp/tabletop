@@ -9,7 +9,7 @@ import { ClassChoices } from "./Class/ClassChoices";
 import { DSBackground } from "../../Backgrounds/Background";
 import { DSClass } from "../../Classes/PlayerClass";
 import { DSRace } from "../../Races/Race";
-import { Jsonify } from "index";
+import { Jsonify } from "../Jsonify";
 import { PlayerCharacter } from "../../Base/PlayerCharacter";
 import { PlayerClass } from "../../Classes/PlayerClass";
 import { Race } from "../../Races/Race";
