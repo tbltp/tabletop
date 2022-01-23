@@ -44,7 +44,7 @@ export class PlayerFactory {
     }
 
     constructor() {
-        this.playerCharacter = null;
+        this.playerCharacter = new PlayerCharacter(0, 0, 0, 0, 0, 0);
     }
 
     setAbilityScore(name: string, score: number): void {
