@@ -1,11 +1,12 @@
-import { Race } from "../Races/Race";
-import { PlayerClass, LevelingParams } from "../Classes/PlayerClass";
-import { PlayerCharacter } from "./PlayerCharacter";
+import { LevelingParams, PlayerClass } from "../Classes/PlayerClass";
+
 import { Background } from "../Backgrounds/Background";
 import { Feat } from "../Feats/Feat";
+import { PlayerCharacter } from "./PlayerCharacter";
+import { Race } from "../Races/Race";
 import { SpellSlotFactory } from "./SpellSlotFactory";
+import { VariantHuman } from "Races/Human/Subrace/VariantHuman";
 import { featDict } from "../Utilities/ConstructorDefinitions";
-
 
 class SheetClasses {
   [key: string]: PlayerClass
@@ -24,9 +25,20 @@ export class CharacterSheet {
     this.levels[playerClass.name] = playerClass["level"];
 
     if(!DS) {
+      
       this.race.apply(this.character);
       playerClass.apply(this.character);
       this.background.apply(this.character);
+
+      if(this.race.name === "Variant Human") {
+        const varHuman = this.race as VariantHuman
+        const featParams = varHuman.chosenFeat
+        
+        const feat = new featDict[featParams.name](featParams.params)
+        this.feats.push(feat)
+        feat.apply(pc)
+      }
+
     }
 
   }
