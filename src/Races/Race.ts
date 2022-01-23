@@ -1,4 +1,5 @@
-import { Feat } from "../Feats/Feat";
+import { Feat, FeatParams } from "../Feats/Feat";
+
 import { PlayerCharacter } from "../Base/PlayerCharacter";
 import { Trait } from "../Base/Interfaces";
 
@@ -34,7 +35,6 @@ export abstract class Race {
   weaponProficiencies: string[];
   armorProficiencies: string[];
   toolProficiencies: string[];
-  feats: Feat[];
 
   abstract abilitiesAtLevels: { [key: string]: (pc: PlayerCharacter) => void };
 
@@ -74,13 +74,6 @@ export abstract class Race {
     }
   }
 
-  addFeats(pc: PlayerCharacter): void {
-    for (let feat of this.feats) {
-      if(!feat) { continue }
-      //feat.apply(pc);
-    }
-  }
-
   apply(pc: PlayerCharacter): void {
     this.abilityIncrease(pc);
     this.proficiencies(pc);
@@ -113,5 +106,8 @@ export interface  RaceParams {
   skillProficiencies?: string[];
   language?: string;
   cantrip?: string;
-  feat?: string
+  feat?: {
+    name: string;
+    featParams?: FeatParams;
+  }
 }
