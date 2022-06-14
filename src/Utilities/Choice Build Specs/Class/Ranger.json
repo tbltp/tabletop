@@ -75,12 +75,14 @@
             "alias": "Favored Enemy",
             "choose": 1,
             "custom": true,
+            "from": [],
             "required": true
         },
         "favoredTerrain": {
             "alias": "Favored Terrain",
             "choose": 1,
             "custom": true,
+            "from": [],
             "required": true
         }
     },
