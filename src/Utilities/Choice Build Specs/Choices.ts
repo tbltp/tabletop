@@ -146,8 +146,7 @@ export class PlayerFactory {
                 this.choiceDocs.abilityScores.int,
                 this.choiceDocs.abilityScores.wis,
                 this.choiceDocs.abilityScores.cha
-            )
-
+            );
             const raceChoices: [string, {}] = [this.choiceDocs.topLevelChoices.RACE, this.choiceDocs.RACE]
             const classChoices: [string, {}] = [this.choiceDocs.topLevelChoices.CLASS, this.choiceDocs.CLASS]
             const bgChoices: [string, {}] = [this.choiceDocs.topLevelChoices.BACKGROUND, this.choiceDocs.BACKGROUND]
@@ -163,11 +162,12 @@ export class PlayerFactory {
                 this.playerClass,
                 this.background
             )
-
-            this.characterSheet.levelUp(classChoices[0], 0, classChoices[1][1])
+            if(classChoices[0]) {
+                this.characterSheet.levelUp(classChoices[0], 0, classChoices[1][1]);
+            }
         }
         catch (error) {
-            console.log(error)
+            throw(error);
         }
     }
 
@@ -256,4 +256,3 @@ export interface ChoiceSpec {
     needs?: string;
     nested?: boolean;
 }
-
