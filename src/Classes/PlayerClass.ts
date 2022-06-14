@@ -106,19 +106,27 @@ export abstract class PlayerClass {
   }
 
   protected addWeapons(pc: PlayerCharacter): void {
-    for (const weapon of this.weapons) {
-      pc.inventory.weapons.push(Weapons[weapon]);
+    for (const w of this.weapons) {
+      //temp fix
+      if(w == '') {
+        continue;
+      }
+      pc.inventory.weapons.push(Weapons[w]);
       if (
-        pc.attacks.filter((attack) => attack.name == Weapons[weapon].name)
+        pc.attacks.filter((attack) => attack.name == Weapons[w].name)
           .length == 0
       ) {
-        pc.attacks.push(Inventory.buildAttack(pc, Weapons[weapon]));
+        pc.attacks.push(Inventory.buildAttack(pc, Weapons[w]));
       }
     }
   }
 
   protected addArmor(pc: PlayerCharacter): void {
     for (const a of this.armor) {
+      //temp fix
+      if(a == '') {
+        continue;
+      }
       const AC = Inventory.acFromArmorType[Armor[a].armorType](pc, Armor[a])
       let armor  = Armor[a];
       armor.AC = AC;
