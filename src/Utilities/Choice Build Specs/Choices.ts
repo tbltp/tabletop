@@ -30,12 +30,12 @@ export class PlayerFactory {
     private race: Race;
     private background: Background;
     private playerClass: PlayerClass;
-    
+
 
     //staging object
     choiceDocs = {
-        topLevelChoices: {RACE: "", BACKGROUND: "", CLASS: ""},
-        abilityScores: {str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0},
+        topLevelChoices: { RACE: "", BACKGROUND: "", CLASS: "" },
+        abilityScores: { str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0 },
         RACE: {},
         BACKGROUND: {},
         CLASS: {
@@ -52,7 +52,7 @@ export class PlayerFactory {
         this.choiceDocs.abilityScores[name] = score;
     }
 
-    setProp(property: string, feature: string, choice: string[] | string, level?: string){
+    setProp(property: string, feature: string, choice: string[] | string, level?: string) {
         level != null ? this.choiceDocs[property][level][feature] = choice : this.choiceDocs[property][feature] = choice
     }
 
@@ -66,47 +66,55 @@ export class PlayerFactory {
     }
 
     storeEmptyStage(property: string, choice: string, level?: string): void {
-        if(choice === "") {
+        if (choice === "") {
             property === "CLASS" ?
-            this.choiceDocs[property] = {"0": {}, "1": {}} :
-            this.choiceDocs[property] = {}
-            
-            this.choiceDocs.topLevelChoices[property] = "" 
-            
+                this.choiceDocs[property] = { "0": {}, "1": {} } :
+                this.choiceDocs[property] = {}
+
+            this.choiceDocs.topLevelChoices[property] = ""
+
             return
         }
-        
-        this.choiceDocs.topLevelChoices[property] = choice 
 
-        if(level != null) {
+        this.choiceDocs.topLevelChoices[property] = choice
+
+        if (level != null) {
             this.storeEmptyClassStage(choice, level)
             return
         }
 
         const reference: [string, ChoiceSpec][] = Object.entries(this.propertyRailroad[property][choice]);
         this.choiceDocs[property] = {}
-        
-        for(let ref of reference) {
-            ref[1].choose > 1 ? this.choiceDocs[property][ref[0]] = [] : this.choiceDocs[property][ref[0]] = "" 
+
+        for (let ref of reference) {
+            ref[1].choose > 1 ? this.choiceDocs[property][ref[0]] = [] : this.choiceDocs[property][ref[0]] = ""
         }
-        
+
     }
 
     storeEmptyClassStage(choice: string, level: string): void {
-        if(!this.propertyRailroad["CLASS"][choice][level]){ return }
+        if (!this.propertyRailroad["CLASS"][choice][level]) { return }
 
         this.choiceDocs["CLASS"][level] = {}
         const reference: [string, ChoiceSpec][] = Object.entries(this.propertyRailroad["CLASS"][choice][level]);
-        
-        for(let ref of reference) {
-            const key =  ref[0]
+
+        for (let ref of reference) {
+            const key = ref[0]
             const val = ref[1]
 
-            if(Array.isArray(val)) {
+            if (Array.isArray(val)) {
+                if (key === "or") {
+                    val.map(
+                        (orObj) => Object.keys(orObj.categories).map(
+                            (key) => this.choiceDocs["CLASS"][level][key] = []
+                        )
+                    );
+                    continue;
+                }
                 this.choiceDocs["CLASS"][level][key] = []
             }
-            else if(key === "spellSelections") {
-                this.choiceDocs["CLASS"][level][key] = {add: [], remove: []}
+            else if (key === "spellSelections") {
+                this.choiceDocs["CLASS"][level][key] = { add: [], remove: [] }
             }
             else {
                 this.choiceDocs["CLASS"][level][key] = val.choose > 1 ? [] : ""
@@ -123,7 +131,7 @@ export class PlayerFactory {
                 Object.entries(this.propertyRailroad[property][choice][level]) :
                 []);
         } else {
-            choices =  Object.entries(this.propertyRailroad[property][choice]);
+            choices = Object.entries(this.propertyRailroad[property][choice]);
         }
 
         return choices;
@@ -139,7 +147,7 @@ export class PlayerFactory {
                 this.choiceDocs.abilityScores.wis,
                 this.choiceDocs.abilityScores.cha
             )
-    
+
             const raceChoices: [string, {}] = [this.choiceDocs.topLevelChoices.RACE, this.choiceDocs.RACE]
             const classChoices: [string, {}] = [this.choiceDocs.topLevelChoices.CLASS, this.choiceDocs.CLASS]
             const bgChoices: [string, {}] = [this.choiceDocs.topLevelChoices.BACKGROUND, this.choiceDocs.BACKGROUND]
@@ -149,40 +157,40 @@ export class PlayerFactory {
             this.background = bgChoices[0] ? new bgDict[bgChoices[0]](bgChoices[1]) : new DSBackground()
 
             this.characterSheet = new CharacterSheet(
-                "", 
+                "",
                 this.playerCharacter,
-                this.race, 
+                this.race,
                 this.playerClass,
                 this.background
-            ) 
+            )
 
             this.characterSheet.levelUp(classChoices[0], 0, classChoices[1][1])
         }
-        catch(error) {
+        catch (error) {
             console.log(error)
         }
     }
 
     checkCharacterValidity(field: string) {
-        if(field ===  "CLASS"){
-            for(const [key, val] of Object.entries(this.choiceDocs["CLASS"]["0"])) {
-                if(val == undefined) { return false }
+        if (field === "CLASS") {
+            for (const [key, val] of Object.entries(this.choiceDocs["CLASS"]["0"])) {
+                if (val == undefined) { return false }
             }
-            
-            for(const [key, val] of Object.entries(this.choiceDocs["CLASS"]["1"])) {
-                if(val == undefined) { return false }
+
+            for (const [key, val] of Object.entries(this.choiceDocs["CLASS"]["1"])) {
+                if (val == undefined) { return false }
             }
         }
         else {
-            for(const [key, val] of Object.entries(this.choiceDocs[field])) {
-                if(val == undefined) { return false }
+            for (const [key, val] of Object.entries(this.choiceDocs[field])) {
+                if (val == undefined) { return false }
             }
         }
 
         return true
     }
 
-    jsonifyCharacter(){
+    jsonifyCharacter() {
         return Jsonify.dumpToJSON(this.characterSheet)
     }
 
@@ -216,15 +224,15 @@ export class ChoiceEvaluator {
 
     static getAvailableClericWeapons(spec: ChoiceArgs) {
         return spec.pc.traits.weaponProficiencies.has("Warhammer") || spec.pc.traits.weaponProficiencies.has("Martial")
-          ?
-          ["MACE", "WARHAMMER"] :
-          ["MACE"]
+            ?
+            ["MACE", "WARHAMMER"] :
+            ["MACE"]
     }
 
     static getAvailableClericArmor(spec: ChoiceArgs) {
         return spec.pc.traits.armorProficiencies.has("Heavy") ?
-          ["SCALE MAIL", "LEATHER", "CHAIN MAIL"] :
-          ["SCALE MAIL", "LEATHER"]
+            ["SCALE MAIL", "LEATHER", "CHAIN MAIL"] :
+            ["SCALE MAIL", "LEATHER"]
     }
 
     static getSkillProficiencies(spec: ChoiceArgs) {
@@ -245,11 +253,7 @@ export interface ChoiceSpec {
     from?: string[];
     method?: string;
     args?: string[];
-    or?: ChoiceSpec[];
-    and?: ChoiceSpec[];
     needs?: string;
     nested?: boolean;
 }
-
-
 
