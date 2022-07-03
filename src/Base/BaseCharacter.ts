@@ -319,6 +319,55 @@ export class BaseAbility {
   }
 }
 
+export class LevelContainer {
+  constructor() {
+    this._levelDictionary = {};
+    this._maxLevel = 20;
+  }
+
+  private _maxLevel: number;
+  private _levelDictionary: {
+    [className: string]: number
+  }
+
+  set maxLevel(newmax: number) {
+    this._maxLevel = newmax;
+  }
+
+  increaseLevel(className: string): void {
+    if(this.totalLevel < this._maxLevel) {
+      if(this._levelDictionary[className]) {
+        this._levelDictionary[className]++;
+      } else {
+        this._levelDictionary[className] = 1;
+      }
+    } else {
+      throw Error(`Total levels cannot exceed max level ${this._maxLevel}`);
+    }
+  }
+
+  setClassLevel(className: string, newLevel: number): void {
+    const currentLevel = this._levelDictionary[className];
+    this._levelDictionary[className] = newLevel;
+    if(this.totalLevel > this._maxLevel) {
+      this._levelDictionary[className] = currentLevel;
+      throw Error(`Total levels cannot exceed max level ${this._maxLevel}`);
+    }
+  }
+
+  getClassLevel(className: string): number { 
+    if(this._levelDictionary[className]) {
+      return this._levelDictionary[className];
+    }
+    throw ReferenceError(`Class ${className} not found`);
+  }
+
+  get totalLevel(): number {
+    return Object.values(this._levelDictionary).reduce(
+      (s, v) => s + v, 0
+    );
+  }
+}
 
 export class Stat {
   constructor(
