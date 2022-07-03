@@ -313,6 +313,9 @@ export class BaseAbility {
 
   set scoreMax(newmax: number) {
     this._scoreMax = newmax;
+    if(this._score > this._scoreMax) {
+      this._score = this._scoreMax;
+    }
   }
 }
 
