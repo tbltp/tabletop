@@ -1,9 +1,7 @@
 import {
   Inventory,
   Trait,
-  ResourceTrait,
   Spell,
-  ScalingTrait,
 } from "./Interfaces";
 
 export abstract class BaseCharacter {
@@ -16,12 +14,12 @@ export abstract class BaseCharacter {
     cha: number
   ) {
     this.abilityScores = {
-      strength: new BaseAbility("Str", str),
-      dexterity: new BaseAbility("Dex", dex),
-      constitution: new BaseAbility("Con", con),
-      intelligence: new BaseAbility("Int", int),
-      wisdom: new BaseAbility("Wis", wis),
-      charisma: new BaseAbility("Cha", cha),
+      strength: new BaseAbility("strength", "Str", str),
+      dexterity: new BaseAbility("dexterity", "Dex", dex),
+      constitution: new BaseAbility("constituion", "Con", con),
+      intelligence: new BaseAbility("intelligence", "Int", int),
+      wisdom: new BaseAbility("wisdom", "Wis", wis),
+      charisma: new BaseAbility("charisma", "Cha", cha),
     };
 
     this.proficiency = new BaseProficiency(this.level);
@@ -190,7 +188,7 @@ export abstract class BaseCharacter {
   baseStats: {
     [key: string]: {
       base: number;
-      modifier: { value: number };
+      modifier: number ;
       bonus: { value: number };
     };
   };
@@ -225,13 +223,13 @@ export abstract class BaseCharacter {
     languages: Set<Trait>;
     features: Trait[];
   } = {
-    armorProficiencies: new Set(),
-    weaponProficiencies: new Set(),
-    toolProficiencies: new Set(),
-    languages: new Set(),
-    features: []
-  };
-  
+      armorProficiencies: new Set(),
+      weaponProficiencies: new Set(),
+      toolProficiencies: new Set(),
+      languages: new Set(),
+      features: []
+    };
+
   // Known Spells
   spells: {
     "0": Spell[];
@@ -245,67 +243,127 @@ export abstract class BaseCharacter {
     "8": Spell[];
     "9": Spell[];
   } = {
-    "0": [],
-    "1": [],
-    "2": [],
-    "3": [],
-    "4": [],
-    "5": [],
-    "6": [],
-    "7": [],
-    "8": [],
-    "9": [],
-  };
+      "0": [],
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+    };
 
   // Obtain total modifier
   public getSkillTotal(skill: string): number {
     return (
       this.skills[skill].bonus.value * (this.skills[skill].expertise ? 2 : 1) +
-      this.skills[skill].modifier.value
+      this.skills[skill].modifier
     );
   }
 }
 
 export class BaseAbility {
-  constructor(name: string, score: number) {
+  constructor(name: string, abbr: string, score: number) {
+
     this.name = name;
-    this.score = score;
-    this.scoreMax = 20;
-    this.modifier = { value: Math.floor((this.score - 10) / 2) };
+    this.abbr = abbr;
+    this._scoreMax = 20;
+    if (score < 1) {
+      throw TypeError('Starting score cannot be less than 1');
+    }
+    if (score > this._scoreMax) {
+      throw TypeError(`Starting score cannot be greater than maximum of ${this._scoreMax}`)
+    }
+    this._score = score;
   }
 
   name: string;
-  score: number;
-  scoreMax: number;
-  modifier: { value: number };
+  abbr: string;
+  private _score: number;
+  private _scoreMax: number;
+  private _getModifier: () => number = () => (
+    Math.floor(
+      (this._score - 10) / 2
+    ));
+
   savingThrowProficiency: boolean = false;
   halfProficiency: boolean = false;
 
-  update(bonus: number) {
-    this.score =
-      this.score + bonus > this.scoreMax ? this.scoreMax : this.score + bonus;
-    this.modifier.value = Math.floor((this.score - 10) / 2);
+  increaseScore(bonus: number): void {
+    if(this._score + bonus > this._scoreMax) {
+      this._score = this._scoreMax;
+      return;
+    }
+    if(this._score + bonus < 1) {
+      this._score = 1;
+      return;
+    }
+    this._score = this._score + bonus;
   }
+
+  get score(): number {
+    return this._score;
+  }
+
+  get modifier(): number {
+    return this._getModifier();
+  }
+
+  set scoreMax(newmax: number) {
+    this._scoreMax = newmax;
+  }
+}
+
+
+export class Stat {
+  constructor(
+    name: string,
+    abbr: string,
+    base: number,
+    ability: BaseAbility
+  ) {
+    this.name = name;
+    this.abbr = abbr;
+    this._base = base;
+    this._ability = ability;
+  }
+  name: string;
+  abbr: string;
+  private _base: number;
+  private _ability: BaseAbility;
+  private _bonus: number = 0;
 }
 
 export class BaseProficiency {
   constructor(level: number) {
-    this.baseBonus = { value: Math.floor((level + 7) / 4) };
-    this.halfBonus = { value: Math.floor(this.baseBonus.value / 2) };
+    this._level = level;
   }
 
-  baseBonus: { value: number };
-  halfBonus: { value: number };
+  private _level: number;
+  private _levelFunction: (levelsToAdd: number) => void = (levelsToAdd: number) => {
+    this._level += levelsToAdd;
+  };
+  private _calculateBonus: () => number = () => (
+     Math.floor((this._level +7) / 4)
+  );
 
-  levelUp(level: number) {
-    this.baseBonus.value = Math.floor((level + 7) / 4);
-    this.halfBonus.value = Math.floor(this.baseBonus.value / 2);
+  get bonus(): number {
+    return this._calculateBonus();
+  }
+  get halfBonus(): number {
+    return Math.floor(this._calculateBonus() / 2);
+  }
+
+  levelUp(levelsToAdd: number): void {
+    this._levelFunction(levelsToAdd);
   }
 }
 
 interface Skill {
   readonly ability: string;
-  modifier: { value: number };
+  modifier:  number;
   proficient: boolean;
   expertise: boolean;
   bonus: { value: number };

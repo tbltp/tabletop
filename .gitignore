@@ -4,7 +4,7 @@ node_modules/
 dist/
 output*
 .DS_Store
-*.test.ts
+
 *.js
 *.py
 src/TEST CHARACTERS/
