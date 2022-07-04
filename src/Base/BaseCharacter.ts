@@ -23,18 +23,14 @@ export abstract class BaseCharacter {
     };
 
     this.levels = new LevelContainer();
-
     this.proficiency = new BaseProficiency(this.levels);
+    this.health = new HealthContainer(this.abilityScores['constitution']);
 
+    
     this.baseStats = {
       initiativeBonus: {
         base: 0,
         modifier: this.abilityScores["dexterity"].modifier,
-        bonus: { value: 0 },
-      },
-      hpMax: {
-        base: undefined,
-        modifier: this.abilityScores["constitution"].modifier,
         bonus: { value: 0 },
       },
       passivePerception: {
@@ -184,27 +180,21 @@ export abstract class BaseCharacter {
     };
   }
 
+ // Base Ability Scores
+ abilityScores: {
+  [key: string]: BaseAbility;
+};
+
   // Base Stats
   proficiency: BaseProficiency;
   levels: LevelContainer;
+  health: HealthContainer;
   baseStats: {
-    [key: string]: {
-      base: number;
-      modifier: number ;
-      bonus: { value: number };
-    };
+    [key: string]: object;
   };
   size: string;
 
-  // Base Ability Scores
-  abilityScores: {
-    strength: BaseAbility;
-    dexterity: BaseAbility;
-    constitution: BaseAbility;
-    intelligence: BaseAbility;
-    wisdom: BaseAbility;
-    charisma: BaseAbility;
-  };
+ 
   // Adventuring Gear, Weapons, Armor
   inventory: Inventory = {
     weapons: [],
@@ -393,6 +383,37 @@ export class BaseProficiency {
   }
 }
 
+export class HealthContainer {
+  constructor(ability: BaseAbility) {
+    this._extraBonus = 0;
+    this._ability = ability;
+    this._increaseHistory = [];
+  }
+
+  private _ability: BaseAbility;
+  private _extraBonus: number;
+  private _increaseHistory: number[];
+
+  set extraBonus(value: number) {
+    this._extraBonus = value;
+  }
+  
+  get healthMax(): number {
+    return this._increaseHistory.reduce(
+      (s, v) => {
+        const res = v + this._ability.modifier + this._extraBonus;
+        return res > 0 ? s + res : s + 1; 
+      }, 0
+    );
+  }
+
+  increaseHealthMax(increase: number): void {
+    this._increaseHistory.push(increase);
+  }
+}
+
+
+/*
 export class Stat {
   constructor(
     name: string,
@@ -404,13 +425,17 @@ export class Stat {
     this.abbr = abbr;
     this._base = base;
     this._ability = ability;
+    this._extraBonus = 0;
   }
   name: string;
   abbr: string;
   private _base: number;
   private _ability: BaseAbility;
-  private _bonus: number = 0;
+  private _extraBonus: number;
+
+  get 
 }
+*/
 
 
 

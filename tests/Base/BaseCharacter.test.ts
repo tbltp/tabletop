@@ -1,8 +1,8 @@
-import { pbkdf2 } from "crypto";
 import {
   BaseAbility,
   LevelContainer,
   BaseProficiency,
+  HealthContainer,
 } from "../../src/Base/BaseCharacter";
 
 describe("BaseAbility", () => {
@@ -174,3 +174,36 @@ describe("BaseProficiency", () => {
     expect(bp.bonus).toEqual(5);
   })
 });
+
+describe("HealthContainer", () => {
+    let ba: BaseAbility;
+    let hc: HealthContainer;
+  
+    beforeEach(() => {
+      ba = new BaseAbility("Example", "Ex", 12);
+      //modifier = 1
+      hc = new HealthContainer(ba);
+    });
+  
+    it('initializes with 0', () => {
+        expect(hc.healthMax).toEqual(0);
+    });
+    it('applies the linked ability modifier for each max health increase', () => {
+        hc.increaseHealthMax(5);
+        hc.increaseHealthMax(7);
+        expect(hc.healthMax).toEqual(14);
+    });
+    it('applies a minimum health increase of 1, regardless of ability modifier', () => {
+        ba.increaseScore(-5); //mod -2
+        hc.increaseHealthMax(1);
+        hc.increaseHealthMax(2);
+        expect(hc.healthMax).toEqual(2);
+    });
+    it('can apply an extra bonus on top of the ability modifier', () => {
+        hc.extraBonus = 2;
+        hc.increaseHealthMax(4);
+        hc.increaseHealthMax(6);
+        expect(hc.healthMax).toEqual(16);
+    });
+});
+  
