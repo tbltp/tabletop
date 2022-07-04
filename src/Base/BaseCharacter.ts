@@ -22,7 +22,9 @@ export abstract class BaseCharacter {
       charisma: new BaseAbility("charisma", "Cha", cha),
     };
 
-    this.proficiency = new BaseProficiency(this.level);
+    this.levels = new LevelContainer();
+
+    this.proficiency = new BaseProficiency(this.levels);
 
     this.baseStats = {
       initiativeBonus: {
@@ -184,7 +186,7 @@ export abstract class BaseCharacter {
 
   // Base Stats
   proficiency: BaseProficiency;
-  level = 0;
+  levels: LevelContainer;
   baseStats: {
     [key: string]: {
       base: number;
@@ -369,6 +371,28 @@ export class LevelContainer {
   }
 }
 
+export class BaseProficiency {
+  constructor(level: LevelContainer) {
+    this._level = level;
+    this._extraBonus = 0;
+  }
+
+  private _level: LevelContainer;
+  private _extraBonus: number;
+  
+  private _calculateLevelBonus: () => number = () => (
+    Math.floor((this._level.totalLevel + 7) / 4)
+  );
+
+  set extraBonus(value: number) {
+    this._extraBonus = value;
+  }
+
+  get bonus(): number {
+    return this._calculateLevelBonus() + this._extraBonus;
+  }
+}
+
 export class Stat {
   constructor(
     name: string,
@@ -388,30 +412,7 @@ export class Stat {
   private _bonus: number = 0;
 }
 
-export class BaseProficiency {
-  constructor(level: number) {
-    this._level = level;
-  }
 
-  private _level: number;
-  private _levelFunction: (levelsToAdd: number) => void = (levelsToAdd: number) => {
-    this._level += levelsToAdd;
-  };
-  private _calculateBonus: () => number = () => (
-     Math.floor((this._level +7) / 4)
-  );
-
-  get bonus(): number {
-    return this._calculateBonus();
-  }
-  get halfBonus(): number {
-    return Math.floor(this._calculateBonus() / 2);
-  }
-
-  levelUp(levelsToAdd: number): void {
-    this._levelFunction(levelsToAdd);
-  }
-}
 
 interface Skill {
   readonly ability: string;

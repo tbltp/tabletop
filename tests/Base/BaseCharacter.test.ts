@@ -1,4 +1,9 @@
-import { BaseAbility, LevelContainer } from "../../src/Base/BaseCharacter";
+import { pbkdf2 } from "crypto";
+import {
+  BaseAbility,
+  LevelContainer,
+  BaseProficiency,
+} from "../../src/Base/BaseCharacter";
 
 describe("BaseAbility", () => {
   it.each([
@@ -22,13 +27,10 @@ describe("BaseAbility", () => {
       score: 15,
       mod: 2,
     },
-  ])(
-    "has a modifier of $mod when its score is $score",
-    ({ score, mod }) => {
-      const baseAb = new BaseAbility("Example", "Ex", score);
-      expect(baseAb.modifier).toEqual(mod);
-    }
-  );
+  ])("has a modifier of $mod when its score is $score", ({ score, mod }) => {
+    const baseAb = new BaseAbility("Example", "Ex", score);
+    expect(baseAb.modifier).toEqual(mod);
+  });
   it.each([
     {
       score: 15,
@@ -123,7 +125,52 @@ describe("LevelContainer", () => {
       lc.increaseLevel("paladin");
     }).toThrow("Total levels cannot exceed max level 20");
     expect(() => {
-        lc.setClassLevel("warlock", 1);
+      lc.setClassLevel("warlock", 1);
     }).toThrow("Total levels cannot exceed max level 20");
   });
+});
+
+describe("BaseProficiency", () => {
+  let lc: LevelContainer;
+  let bp: BaseProficiency;
+
+  beforeEach(() => {
+    lc = new LevelContainer();
+    bp = new BaseProficiency(lc);
+  });
+
+  it.each([
+    {
+        level: 1,
+        bonus:2
+    },
+    {
+        level: 2,
+        bonus: 2
+    },
+    {
+        level: 5, 
+        bonus: 3
+    },
+    {
+        level: 10,
+        bonus: 4
+    },
+    {
+        level: 15,
+        bonus: 5
+    }, 
+    {
+        level: 20, 
+        bonus: 6
+    }
+  ])("applies a bonus of $bonus at level $level", ({level, bonus}) => {
+    lc.setClassLevel("exampleClass", level);
+    expect(bp.bonus).toEqual(bonus);
+  });
+  it("can apply an additional bonus", () => {
+    bp.extraBonus = 2;
+    lc.setClassLevel("exampleClass", 5);
+    expect(bp.bonus).toEqual(5);
+  })
 });
