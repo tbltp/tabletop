@@ -1,5 +1,5 @@
 import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
-import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../Character/PlayerCharacter";
 import * as Languages from "../../../Assets/Languages.json";
 import * as MonkClassTraits from "./Monk.json";
 import { MonkSubclass } from "./Subclasses/MonkSubclass";

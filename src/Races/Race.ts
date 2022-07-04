@@ -1,7 +1,7 @@
 import { Feat, FeatParams } from "../Feats/Feat";
 
-import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { Trait } from "../Base/Interfaces";
+import { PlayerCharacter } from "../Character/PlayerCharacter";
+import { Trait } from "../Character/Interfaces";
 
 export abstract class Race {
   constructor(
@@ -83,7 +83,7 @@ export abstract class Race {
     this.addArmorProficiencies(pc);
     this.addToolProficiencies(pc);
     pc.speeds.find(spd => spd.name === "Base Speed").base.value = this.speed;
-    pc.size = this.size;
+    pc.charSize = this.size;
   }
 }
 

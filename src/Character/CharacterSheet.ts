@@ -95,7 +95,7 @@ export class CharacterSheet {
     this.character.baseStats.hpMax.bonus.value += hpAdd;
 
     //level up proficiency according to total level
-    this.character.proficiency.levelUp(tLevel);
+    this.character.charProficiency.levelUp(tLevel);
 
     // hit die (don't add between level 0 and level 1)
     cLevel > 1 ? this.character.hitDie[this.playerClasses[levelingClass].hitDie]++ : null

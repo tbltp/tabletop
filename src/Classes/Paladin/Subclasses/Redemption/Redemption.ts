@@ -1,5 +1,5 @@
-import { ScalingTrait } from "../../../../Base/Interfaces";
-import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { ScalingTrait } from "../../../../Character/Interfaces";
+import { PlayerCharacter } from "../../../../Character/PlayerCharacter";
 import { LevelingParams, PlayerClass } from "../../../../Classes/PlayerClass";
 import * as RedemptionOathDict from "./OathOfRedemption.json"
 

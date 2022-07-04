@@ -1,6 +1,6 @@
 import { Subclass, SubclassParams } from "../../Subclass";
 import { LevelingParams } from "Classes/PlayerClass";
-import { PlayerCharacter } from "../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../Character/PlayerCharacter";
 
 import { Alchemist } from './Alchemist/Alchemist';
 import { Armorer } from './Armorer/Armorer';

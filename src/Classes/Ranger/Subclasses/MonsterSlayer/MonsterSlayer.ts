@@ -1,6 +1,6 @@
 import { join } from "path";
-import { ResourceTrait } from "../../../../Base/Interfaces";
-import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { ResourceTrait } from "../../../../Character/Interfaces";
+import { PlayerCharacter } from "../../../../Character/PlayerCharacter";
 import { LevelingParams, PlayerClass } from "../../../../Classes/PlayerClass";
 import * as MonsterSlayerArchetypeDict from "./MonsterSlayer.json"
 

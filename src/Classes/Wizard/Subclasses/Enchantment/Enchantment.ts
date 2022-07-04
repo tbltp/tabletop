@@ -1,4 +1,4 @@
-import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../../Character/PlayerCharacter";
 import { LevelingParams } from "../../../../Classes/PlayerClass";
 import * as EnchantmentSchoolDict from "./Enchantment.json"
 

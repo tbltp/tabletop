@@ -1,4 +1,4 @@
-import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../../Character/PlayerCharacter";
 import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as ArmorerDict from "./Armorer.json";
 
@@ -42,7 +42,7 @@ export class Armorer {
 
   static armorer15(pc: PlayerCharacter, params: LevelingParams) {
     pc.pcHelper.addFeatures(Armorer.getFeature("15", "PERFECTED ARMOR"));
-    pc.pcHelper.addEffectsToFeature("Perfected Armor", { resource: { resourceMax: pc.proficiency.baseBonus } } );
+    pc.pcHelper.addEffectsToFeature("Perfected Armor", { resource: { resourceMax: pc.charProficiency.baseBonus } } );
   }
 
   static armorer17(pc: PlayerCharacter, params: LevelingParams) {

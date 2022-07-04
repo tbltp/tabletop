@@ -2,8 +2,8 @@ import * as LightDomainDict from "./Light.json";
 
 import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 
-import { PlayerCharacter } from "Base/PlayerCharacter";
-import { ResourceTrait } from "Base/Interfaces";
+import { PlayerCharacter } from "Character/PlayerCharacter";
+import { ResourceTrait } from "Character/Interfaces";
 
 export class LightDomain {
   

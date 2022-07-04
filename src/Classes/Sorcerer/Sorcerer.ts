@@ -3,7 +3,7 @@ import * as SorcererClassTraits from "./Sorcerer.json";
 
 import { ClassCreationParams, LevelingParams, PlayerClass } from "../PlayerClass";
 
-import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../Character/PlayerCharacter";
 import { SorcererSubclass } from "./Subclasses/SorcererSubclass";
 
 export class Sorcerer extends PlayerClass {

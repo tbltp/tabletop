@@ -4,13 +4,13 @@ import { bgDict, classDict, raceDict } from "../ConstructorDefinitions";
 
 import { Background } from "../../Backgrounds/Background";
 import { BackgroundChoices } from "./Background/BackgroundChoices";
-import { CharacterSheet } from "../../Base/CharacterSheet";
+import { CharacterSheet } from "../../Character/CharacterSheet";
 import { ClassChoices } from "./Class/ClassChoices";
 import { DSBackground } from "../../Backgrounds/Background";
 import { DSClass } from "../../Classes/PlayerClass";
 import { DSRace } from "../../Races/Race";
 import { Jsonify } from "../Jsonify";
-import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../Character/PlayerCharacter";
 import { PlayerClass } from "../../Classes/PlayerClass";
 import { Race } from "../../Races/Race";
 import { RaceChoices } from "./Race/RaceChoices";

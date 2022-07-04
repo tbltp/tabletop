@@ -1,9 +1,9 @@
-import { PlayerCharacter } from "../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../Character/PlayerCharacter";
 import { Genasi } from "../Genasi";
 import * as Traits from "../Genasi.json";
-import { Trait } from "../../../Base/Interfaces";
+import { Trait } from "../../../Character/Interfaces";
 import * as Spells from "../../../../Assets/Spells.json";
-import { ISpell } from "../../../Base/Interfaces";
+import { ISpell } from "../../../Character/Interfaces";
 
 export class FireGenasi extends Genasi {
     constructor() {

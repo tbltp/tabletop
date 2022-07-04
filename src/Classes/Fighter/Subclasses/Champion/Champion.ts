@@ -1,4 +1,4 @@
-import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../../Character/PlayerCharacter";
 import { LevelingParams, PlayerClass } from "../../../../Classes/PlayerClass";
 import * as ChampionArchetype from "./Champion.json"
 
@@ -17,7 +17,7 @@ export class Champion {
 
         for (let skill of Object.keys(pc.skills)) {
           if (!pc.skills[skill].proficient && ["strength", "dexterity"].includes(pc.skills[skill].ability)) {
-            pc.skills[skill].bonus = pc.proficiency.halfBonus;
+            pc.skills[skill].bonus = pc.charProficiency.halfBonus;
           }
         }
 
@@ -25,7 +25,7 @@ export class Champion {
         pc.abilityScores.dexterity.halfProficiency = true;
         pc.abilityScores.constitution.halfProficiency = true;
 
-        pc.baseStats.initiativeBonus.bonus = pc.proficiency.halfBonus;
+        pc.baseStats.initiativeBonus.bonus = pc.charProficiency.halfBonus;
       }
     
       static champion10(pc: PlayerCharacter, params: LevelingParams) {

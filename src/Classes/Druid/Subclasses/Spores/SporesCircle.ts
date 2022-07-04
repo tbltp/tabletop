@@ -1,5 +1,5 @@
-import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
-import { ScalingTrait } from "../../../../Base/Interfaces";
+import { PlayerCharacter } from "../../../../Character/PlayerCharacter";
+import { ScalingTrait } from "../../../../Character/Interfaces";
 import { LevelingParams, PlayerClass } from "../../../../Classes/PlayerClass";
 import * as SporesCircleDict from "./Spores.json";
 

@@ -1,5 +1,5 @@
-import { ResourceTrait, ScalingTrait } from "Base/Interfaces";
-import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { ResourceTrait, ScalingTrait } from "Character/Interfaces";
+import { PlayerCharacter } from "../../../../Character/PlayerCharacter";
 import { LevelingParams, PlayerClass } from "../../../../Classes/PlayerClass";
 import * as SamuraiArchetype from "./Samurai.json"
 import * as Languages from "../../../../../Assets/Languages.json";

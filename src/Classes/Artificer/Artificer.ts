@@ -1,8 +1,8 @@
 import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
-import { Trait } from "../../Base/Interfaces";
+import { Trait } from "../../Character/Interfaces";
 import * as ArtificerClassTraits from "./Artificer.json"
 import * as Infusions from "./Infusions.json"
-import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../Character/PlayerCharacter";
 import { ArtificerSubclass } from "./Subclasses/ArtificerSubclass";
 
 export class Artificer extends PlayerClass {

@@ -1,5 +1,5 @@
 import { Race, RaceParams } from "../Race";
-import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../Character/PlayerCharacter";
 import * as traits from "./HalfElf.json";
 import * as languages from "../../../Assets/Languages.json";
 

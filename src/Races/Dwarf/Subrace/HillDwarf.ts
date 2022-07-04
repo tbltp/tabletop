@@ -1,7 +1,7 @@
 import { Dwarf } from "../Dwarf";
 import { RaceParams } from "../../Race";
 import * as traits from "../Dwarf.json";
-import { PlayerCharacter } from "../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../Character/PlayerCharacter";
 
 export class HillDwarf extends Dwarf {
     constructor(params: RaceParams) {

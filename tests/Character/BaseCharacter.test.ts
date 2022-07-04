@@ -3,7 +3,7 @@ import {
   LevelContainer,
   BaseProficiency,
   HealthContainer,
-} from "../../src/Base/BaseCharacter";
+} from "../../src/Character/BaseCharacter";
 
 describe("BaseAbility", () => {
   it.each([
@@ -180,30 +180,36 @@ describe("HealthContainer", () => {
     let hc: HealthContainer;
   
     beforeEach(() => {
-      ba = new BaseAbility("Example", "Ex", 12);
-      //modifier = 1
+      ba = new BaseAbility("Example", "Ex", 12); //mod +1
       hc = new HealthContainer(ba);
     });
   
     it('initializes with 0', () => {
-        expect(hc.healthMax).toEqual(0);
+        expect(hc.hitPointMax).toEqual(0);
     });
     it('applies the linked ability modifier for each max health increase', () => {
-        hc.increaseHealthMax(5);
-        hc.increaseHealthMax(7);
-        expect(hc.healthMax).toEqual(14);
+        hc.increaseHPMax(5);
+        hc.increaseHPMax(7);
+        expect(hc.hitPointMax).toEqual(14);
     });
     it('applies a minimum health increase of 1, regardless of ability modifier', () => {
         ba.increaseScore(-5); //mod -2
-        hc.increaseHealthMax(1);
-        hc.increaseHealthMax(2);
-        expect(hc.healthMax).toEqual(2);
+        hc.increaseHPMax(1);
+        hc.increaseHPMax(2);
+        expect(hc.hitPointMax).toEqual(2);
     });
     it('can apply an extra bonus on top of the ability modifier', () => {
         hc.extraBonus = 2;
-        hc.increaseHealthMax(4);
-        hc.increaseHealthMax(6);
-        expect(hc.healthMax).toEqual(16);
+        hc.increaseHPMax(4);
+        hc.increaseHPMax(6);
+        expect(hc.hitPointMax).toEqual(16);
+    });
+    it('responds to a changing ability modifier', () => {
+        hc.increaseHPMax(2);
+        hc.increaseHPMax(5);
+        expect(hc.hitPointMax).toEqual(9);
+        ba.increaseScore(4); // mod +3
+        expect(hc.hitPointMax).toEqual(13);
     });
 });
   

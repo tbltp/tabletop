@@ -1,4 +1,4 @@
-import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../../Character/PlayerCharacter";
 import { LevelingParams } from "../../../../Classes/PlayerClass";
 import * as ArcaneTricksterArchetypeDict from "./ArcaneTrickster.json"
 
@@ -12,13 +12,13 @@ export class ArcaneTrickster {
     pc.pcHelper.addFeatures(ArcaneTrickster.getFeature("3", "MAGE HAND LEGERDEMAIN"));
 
     const spellAttack = {
-      proficiency: pc.proficiency.baseBonus,
+      proficiency: pc.charProficiency.baseBonus,
       modifier: pc.abilityScores["intelligence"].modifier
     }
 
     const spellSave = {
       base: 8,
-      proficiency: pc.proficiency.baseBonus,
+      proficiency: pc.charProficiency.baseBonus,
       modifier: pc.abilityScores["intelligence"].modifier
     }
 

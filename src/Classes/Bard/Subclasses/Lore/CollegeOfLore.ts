@@ -1,7 +1,7 @@
-import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../../Character/PlayerCharacter";
 import { LevelingParams } from "../../../PlayerClass";
 import * as CollegeOfLoreDict from "./CollegeOfLore.json";
-import { Trait } from "../../../../Base/Interfaces";
+import { Trait } from "../../../../Character/Interfaces";
 
 export class CollegeOfLore {
     

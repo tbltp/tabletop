@@ -102,7 +102,7 @@ export { PlayerCharacter } from "../src/Base/PlayerCharacter";
 export { Jsonify } from "../src/Utilities/Jsonify";
 
 
-export { CharacterSheet } from "../src/Base/CharacterSheet";
+export { CharacterSheet } from "./Character/CharacterSheet";
 
 export { PlayerFactory, ChoiceEvaluator } from "../src/Utilities/Choice Build Specs/Choices";
 /*

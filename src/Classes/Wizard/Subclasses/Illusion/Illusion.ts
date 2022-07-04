@@ -1,7 +1,7 @@
 import * as IllusionSchoolDict from "./Illusion.json"
 
 import { LevelingParams } from "../../../../Classes/PlayerClass";
-import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../../Character/PlayerCharacter";
 
 export class Illusion {
 

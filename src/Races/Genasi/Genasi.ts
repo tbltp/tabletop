@@ -1,8 +1,8 @@
 import { Race } from "../Race";
-import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../Character/PlayerCharacter";
 import * as Traits from "./Genasi.json";
 import * as languages from "../../../Assets/Languages.json";
-import { Trait } from "../../Base/Interfaces";
+import { Trait } from "../../Character/Interfaces";
 
 export abstract class Genasi extends Race {
   constructor(name: string, racialTraits: Trait[]) {

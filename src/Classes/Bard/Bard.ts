@@ -1,5 +1,5 @@
 import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
-import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../Character/PlayerCharacter";
 import { BardSubclass } from "./Subclasses/BardSubclass";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import * as BardClassTraits from "./Bard.json";
@@ -97,7 +97,7 @@ export class Bard extends PlayerClass {
     
     for (let skill of Object.keys(pc.skills)) { // Jack of All Trades
       if (!pc.skills[skill].proficient) {
-        pc.skills[skill].bonus = pc.proficiency.halfBonus;
+        pc.skills[skill].bonus = pc.charProficiency.halfBonus;
       }
     }
   }

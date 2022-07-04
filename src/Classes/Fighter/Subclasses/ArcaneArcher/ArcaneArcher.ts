@@ -1,5 +1,5 @@
-import { ScalingTrait } from "../../../../Base/Interfaces";
-import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { ScalingTrait } from "../../../../Character/Interfaces";
+import { PlayerCharacter } from "../../../../Character/PlayerCharacter";
 import { LevelingParams } from "../../../../Classes/PlayerClass";
 import { FighterSubclassParams } from "../FighterSubclass";
 import * as ArcaneArcherArchetype from "./ArcaneArcher.json"

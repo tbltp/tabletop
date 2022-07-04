@@ -1,5 +1,5 @@
-import { ScalingTrait } from "Base/Interfaces";
-import { PlayerCharacter } from "Base/PlayerCharacter";
+import { ScalingTrait } from "Character/Interfaces";
+import { PlayerCharacter } from "Character/PlayerCharacter";
 import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as ForgeDomainDict from "./Forge.json";
 

@@ -1,4 +1,4 @@
-import { PlayerCharacter } from "../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../Character/PlayerCharacter";
 import * as Traits from "../Genasi.json";
 import { Genasi } from "../Genasi";
 

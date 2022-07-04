@@ -1,5 +1,5 @@
 import * as Languages from "../../../../../Assets/Languages.json";
-import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../../Character/PlayerCharacter";
 import { LevelingParams } from "../../../../Classes/PlayerClass";
 import { RogueSubclassParams } from "../RogueSubclass";
 import * as MastermindArchetypeDict from "./Mastermind.json"

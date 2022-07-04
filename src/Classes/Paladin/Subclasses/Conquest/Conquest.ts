@@ -1,7 +1,7 @@
-import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../../Character/PlayerCharacter";
 import { LevelingParams, PlayerClass } from "../../../../Classes/PlayerClass";
 import * as ConquestOathDict from "./OathOfConquest.json"
-import {ScalingTrait} from "../../../../Base/Interfaces"
+import {ScalingTrait} from "../../../../Character/Interfaces"
 
 export class Conquest {
   

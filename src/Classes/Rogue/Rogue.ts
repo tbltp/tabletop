@@ -1,6 +1,6 @@
 import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
-import { PlayerCharacter } from "../../Base/PlayerCharacter";
-import { Trait } from "../../Base/Interfaces";
+import { PlayerCharacter } from "../../Character/PlayerCharacter";
+import { Trait } from "../../Character/Interfaces";
 import * as RogueClassTraits from "./Rogue.json";
 import { RogueSubclass } from "./Subclasses/RogueSubclass";
 

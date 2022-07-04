@@ -1,8 +1,8 @@
-import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../../Character/PlayerCharacter";
 import { LevelingParams, PlayerClass } from "../../../../Classes/PlayerClass";
 import * as StormSorceryArchetypeDict from "./StormSorcery.json"
 import * as Languages from "../../../../../Assets/Languages.json";
-import { ScalingTrait } from "../../../../Base/Interfaces";
+import { ScalingTrait } from "../../../../Character/Interfaces";
 
 export class StormSorcery {
   

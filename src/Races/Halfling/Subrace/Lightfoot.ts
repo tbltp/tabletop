@@ -1,4 +1,4 @@
-import { PlayerCharacter } from "../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../Character/PlayerCharacter";
 import { Halfling } from "../Halfling";
 import * as traits from "../Halfling.json";
 
