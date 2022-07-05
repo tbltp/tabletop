@@ -9,4 +9,7 @@
     "declaration": true
   },
   "exclude": ["tests", "dist", "IGNORE"],
+  "typeAcquisition": {
+    "include": ["jest"]
+  }
 }

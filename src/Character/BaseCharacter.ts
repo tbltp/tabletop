@@ -1,34 +1,27 @@
-import { runInThisContext } from "vm";
-import { PlayerCharacter } from './PlayerCharacter';
-import {
-  Inventory,
-  Trait,
-  Spell,
-} from "./Interfaces";
-
+import { IAbilityScore, ILevelContainer, IProficiency } from "./Interfaces";
 
 export abstract class BaseCharacter {
   constructor() {
     this.charSize = "";
     this.charType = CharacterType.NPC;
     this.charLevels = new LevelContainer();
-    this.charProficiency = new BaseProficiency(this.charLevels);
+    this.charProficiency = new Proficiency(this.charLevels);
     this.charAbilityScores = {};
     this.charSkills = {};
 
-    const dummyAbilty = new BaseAbility("", "", 1);
+    const dummyAbilty = new AbilityScore("", "", 1);
     this.charHealth = new HealthContainer(dummyAbilty);
   }
 
  // Base Ability Scores
   protected charAbilityScores: {
-    [key: string]: BaseAbility;
+    [key: string]: AbilityScore;
   };
   // Base Stats
   protected charSize: string;
   protected charType: CharacterType;
   protected charLevels: LevelContainer;
-  protected charProficiency: BaseProficiency;
+  protected charProficiency: Proficiency;
   protected charHealth: HealthContainer;
   // Passives
 
@@ -54,12 +47,7 @@ export abstract class BaseCharacter {
 
 }
 
-export enum CharacterType {
-  NPC,
-  PC,
-}
-
-export class BaseAbility {
+export class AbilityScore implements IAbilityScore {
   constructor(name: string, abbr: string, score: number) {
 
     this.name = name;
@@ -114,7 +102,7 @@ export class BaseAbility {
   }
 }
 
-export class LevelContainer {
+export class LevelContainer implements ILevelContainer {
   constructor() {
     this._levelDictionary = {};
     this._maxLevel = 20;
@@ -164,13 +152,13 @@ export class LevelContainer {
   }
 }
 
-export class BaseProficiency {
-  constructor(level: LevelContainer) {
+export class Proficiency implements IProficiency {
+  constructor(level: ILevelContainer) {
     this._level = level;
     this._extraBonus = 0;
   }
 
-  private _level: LevelContainer;
+  private _level: ILevelContainer;
   private _extraBonus: number;
   
   private _calculateLevelBonus: () => number = () => (
@@ -187,13 +175,13 @@ export class BaseProficiency {
 }
 
 export class HealthContainer {
-  constructor(ability: BaseAbility) {
+  constructor(ability: IAbilityScore) {
     this._extraBonus = 0;
     this._ability = ability;
     this._increaseHistory = [];
   }
 
-  private _ability: BaseAbility;
+  private _ability: IAbilityScore;
   private _extraBonus: number;
   private _increaseHistory: number[];
 
@@ -215,13 +203,55 @@ export class HealthContainer {
   }
 }
 
+export class Skill {
+  constructor(name: string, abbr: string, ability: IAbilityScore, proficiency: IProficiency) {
+    this.name = name;
+    this.abbr = abbr;
+    this._ability = ability;
+    this._proficiency = proficiency;
+    this._skillProficiency = SkillProficiency.NONE;
+    this._extraBonus = 0;
+  }
+  name: string;
+  abbr: string;
+  private _ability: IAbilityScore;
+  private _proficiency: IProficiency;
+  private _skillProficiency: SkillProficiency;
+  private _extraBonus: number;
 
+  set skillProficiency(proficiency: SkillProficiency) {
+    this._skillProficiency = proficiency;
+  }
 
+  set extraBonus(value: number) {
+    this._extraBonus = value;
+  }
 
+  get bonus(): number {
+    return this._ability.modifier + (
+      this._proficiency.bonus * this._skillProficiency
+    ) + this._extraBonus;
+  }
+}
+
+/*
 interface Skill {
   readonly ability: string;
   modifier:  number;
   proficient: boolean;
   expertise: boolean;
   bonus: { value: number };
+}
+*/
+
+export enum CharacterType {
+  NPC,
+  PC,
+}
+
+export enum SkillProficiency {
+  NONE = 0,
+  HALF = 0.5,
+  FULL = 1,
+  DOUBLE = 2,
 }

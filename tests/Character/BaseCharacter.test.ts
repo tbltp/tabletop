@@ -1,11 +1,18 @@
 import {
-  BaseAbility,
+  IAbilityScore,
+  ILevelContainer,
+  IProficiency,
+} from "../../src/Character/Interfaces";
+import { SkillProficiency } from "../../src/Character/BaseCharacter";
+import {
+  AbilityScore,
   LevelContainer,
-  BaseProficiency,
+  Proficiency,
   HealthContainer,
+  Skill,
 } from "../../src/Character/BaseCharacter";
 
-describe("BaseAbility", () => {
+describe("AbilityScore", () => {
   it.each([
     {
       score: 1,
@@ -28,7 +35,7 @@ describe("BaseAbility", () => {
       mod: 2,
     },
   ])("has a modifier of $mod when its score is $score", ({ score, mod }) => {
-    const baseAb = new BaseAbility("Example", "Ex", score);
+    const baseAb = new AbilityScore("Example", "Ex", score);
     expect(baseAb.modifier).toEqual(mod);
   });
   it.each([
@@ -53,14 +60,14 @@ describe("BaseAbility", () => {
   ])(
     "changes its score from $score to $endScore after receiving a bonus of $bonus",
     ({ score, bonus, endScore, mod }) => {
-      const ability = new BaseAbility("Example", "Ex", score);
+      const ability = new AbilityScore("Example", "Ex", score);
       ability.increaseScore(bonus);
       expect(ability.score).toEqual(endScore);
       expect(ability.modifier).toEqual(mod);
     }
   );
   it("can increase its maximum score limit", () => {
-    const ability = new BaseAbility("Example", "Ex", 19);
+    const ability = new AbilityScore("Example", "Ex", 19);
     expect(ability.score).toEqual(19);
     expect(ability.modifier).toEqual(4);
     ability.scoreMax = 23;
@@ -69,7 +76,7 @@ describe("BaseAbility", () => {
     expect(ability.modifier).toEqual(6);
   });
   it("can decrease its maximum score limit", () => {
-    const ability = new BaseAbility("Example", "Ex", 19);
+    const ability = new AbilityScore("Example", "Ex", 19);
     expect(ability.score).toEqual(19);
     expect(ability.modifier).toEqual(4);
     ability.scoreMax = 10;
@@ -78,12 +85,12 @@ describe("BaseAbility", () => {
   });
   it("throws a error when attempting to create a score that's too low", () => {
     expect(() => {
-      new BaseAbility("Example", "Ex", -1);
+      new AbilityScore("Example", "Ex", -1);
     }).toThrow("Starting score cannot be less than 1");
   });
   it("throws a error when attempting to create a score that's too high", () => {
     expect(() => {
-      new BaseAbility("Example", "Ex", 21);
+      new AbilityScore("Example", "Ex", 21);
     }).toThrow("Starting score cannot be greater than maximum of 20");
   });
 });
@@ -130,86 +137,132 @@ describe("LevelContainer", () => {
   });
 });
 
-describe("BaseProficiency", () => {
-  let lc: LevelContainer;
-  let bp: BaseProficiency;
+describe("Proficiency", () => {
+  let lc: ILevelContainer;
+  let bp: Proficiency;
 
   beforeEach(() => {
-    lc = new LevelContainer();
-    bp = new BaseProficiency(lc);
+    lc = {
+      totalLevel: 0,
+    };
+    bp = new Proficiency(lc);
   });
 
   it.each([
     {
-        level: 1,
-        bonus:2
+      level: 1,
+      bonus: 2,
     },
     {
-        level: 2,
-        bonus: 2
+      level: 2,
+      bonus: 2,
     },
     {
-        level: 5, 
-        bonus: 3
+      level: 5,
+      bonus: 3,
     },
     {
-        level: 10,
-        bonus: 4
+      level: 10,
+      bonus: 4,
     },
     {
-        level: 15,
-        bonus: 5
-    }, 
+      level: 15,
+      bonus: 5,
+    },
     {
-        level: 20, 
-        bonus: 6
-    }
-  ])("applies a bonus of $bonus at level $level", ({level, bonus}) => {
-    lc.setClassLevel("exampleClass", level);
+      level: 20,
+      bonus: 6,
+    },
+  ])("applies a bonus of $bonus at level $level", ({ level, bonus }) => {
+    lc.totalLevel = level;
     expect(bp.bonus).toEqual(bonus);
   });
   it("can apply an additional bonus", () => {
+    lc.totalLevel = 5;
+    expect(bp.bonus).toEqual(3);
     bp.extraBonus = 2;
-    lc.setClassLevel("exampleClass", 5);
     expect(bp.bonus).toEqual(5);
-  })
+  });
 });
 
 describe("HealthContainer", () => {
-    let ba: BaseAbility;
-    let hc: HealthContainer;
-  
-    beforeEach(() => {
-      ba = new BaseAbility("Example", "Ex", 12); //mod +1
-      hc = new HealthContainer(ba);
-    });
-  
-    it('initializes with 0', () => {
-        expect(hc.hitPointMax).toEqual(0);
-    });
-    it('applies the linked ability modifier for each max health increase', () => {
-        hc.increaseHPMax(5);
-        hc.increaseHPMax(7);
-        expect(hc.hitPointMax).toEqual(14);
-    });
-    it('applies a minimum health increase of 1, regardless of ability modifier', () => {
-        ba.increaseScore(-5); //mod -2
-        hc.increaseHPMax(1);
-        hc.increaseHPMax(2);
-        expect(hc.hitPointMax).toEqual(2);
-    });
-    it('can apply an extra bonus on top of the ability modifier', () => {
-        hc.extraBonus = 2;
-        hc.increaseHPMax(4);
-        hc.increaseHPMax(6);
-        expect(hc.hitPointMax).toEqual(16);
-    });
-    it('responds to a changing ability modifier', () => {
-        hc.increaseHPMax(2);
-        hc.increaseHPMax(5);
-        expect(hc.hitPointMax).toEqual(9);
-        ba.increaseScore(4); // mod +3
-        expect(hc.hitPointMax).toEqual(13);
-    });
+  let ba: IAbilityScore;
+  let hc: HealthContainer;
+
+  beforeEach(() => {
+    ba = {
+      modifier: 0,
+    };
+    hc = new HealthContainer(ba);
+  });
+
+  it("initializes with 0", () => {
+    expect(hc.hitPointMax).toEqual(0);
+  });
+  it("applies the linked ability modifier for each max health increase", () => {
+    ba.modifier = 1;
+    hc.increaseHPMax(5);
+    hc.increaseHPMax(7);
+    expect(hc.hitPointMax).toEqual(14);
+  });
+  it("applies a minimum health increase of 1, regardless of ability modifier", () => {
+    ba.modifier = -2;
+    hc.increaseHPMax(1);
+    hc.increaseHPMax(2);
+    expect(hc.hitPointMax).toEqual(2);
+  });
+  it("can apply an extra bonus on top of the ability modifier for each max health increase", () => {
+    ba.modifier = 2;
+    hc.extraBonus = 2;
+    hc.increaseHPMax(4);
+    hc.increaseHPMax(6);
+    expect(hc.hitPointMax).toEqual(18);
+  });
+  it("responds to a changing ability modifier", () => {
+    ba.modifier = 1;
+    hc.increaseHPMax(2);
+    hc.increaseHPMax(5);
+    expect(hc.hitPointMax).toEqual(9);
+    ba.modifier = 3;
+    expect(hc.hitPointMax).toEqual(13);
+  });
 });
-  
+
+describe("Skills", () => {
+  let ab: IAbilityScore;
+  let pf: IProficiency;
+  let sk: Skill;
+  beforeEach(() => {
+    ab = {
+      modifier: 0,
+    };
+    pf = {
+      bonus: 2,
+    };
+    sk = new Skill("Hunting", "Hnt", ab, pf);
+  });
+  it.each([
+    {
+      skill: SkillProficiency.NONE,
+      bonus: 0,
+    },
+    {
+      skill: SkillProficiency.HALF,
+      bonus: 1,
+    },
+    {
+      skill: SkillProficiency.FULL,
+      bonus: 2,
+    },
+    {
+      skill: SkillProficiency.DOUBLE,
+      bonus: 4,
+    },
+  ])(
+    "Has a total bonus of $bonus when proficiency bonus 2 is applied with $skill multiplier",
+    ({ skill, bonus }) => {
+      sk.skillProficiency = skill;
+      expect(sk.bonus).toEqual(bonus);
+    }
+  );
+});
