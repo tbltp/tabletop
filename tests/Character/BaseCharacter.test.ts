@@ -2,8 +2,9 @@ import {
   IAbilityScore,
   ILevelContainer,
   IProficiency,
+  ISkill,
 } from "../../src/Character/Interfaces";
-import { SkillProficiency } from "../../src/Character/BaseCharacter";
+import { BaseCharacter, SkillProficiency, PassiveSkill } from '../../src/Character/BaseCharacter';
 import {
   AbilityScore,
   LevelContainer,
@@ -122,9 +123,7 @@ describe("LevelContainer", () => {
     expect(lc.getClassLevel("gunslinger")).toEqual(10);
   });
   it("throws an error when accessing a non-existent class", () => {
-    expect(() => {
-      lc.getClassLevel("fighter");
-    }).toThrow("Class fighter not found");
+    expect(lc.getClassLevel("fighter")).toBeUndefined();
   });
   it("throws an error when levels are increased beyond the maximum", () => {
     lc.setClassLevel("paladin", 20);
@@ -186,44 +185,47 @@ describe("Proficiency", () => {
 });
 
 describe("HealthContainer", () => {
-  let ba: IAbilityScore;
+  let ab: IAbilityScore;
   let hc: HealthContainer;
 
   beforeEach(() => {
-    ba = {
+    ab = {
+      name: "Excellence",
+      abbr: "Exc", 
+      score: 10,
       modifier: 0,
     };
-    hc = new HealthContainer(ba);
+    hc = new HealthContainer(ab);
   });
 
   it("initializes with 0", () => {
     expect(hc.hitPointMax).toEqual(0);
   });
   it("applies the linked ability modifier for each max health increase", () => {
-    ba.modifier = 1;
+    ab.modifier = 1;
     hc.increaseHPMax(5);
     hc.increaseHPMax(7);
     expect(hc.hitPointMax).toEqual(14);
   });
   it("applies a minimum health increase of 1, regardless of ability modifier", () => {
-    ba.modifier = -2;
+    ab.modifier = -2;
     hc.increaseHPMax(1);
     hc.increaseHPMax(2);
     expect(hc.hitPointMax).toEqual(2);
   });
   it("can apply an extra bonus on top of the ability modifier for each max health increase", () => {
-    ba.modifier = 2;
+    ab.modifier = 2;
     hc.extraBonus = 2;
     hc.increaseHPMax(4);
     hc.increaseHPMax(6);
     expect(hc.hitPointMax).toEqual(18);
   });
   it("responds to a changing ability modifier", () => {
-    ba.modifier = 1;
+    ab.modifier = 1;
     hc.increaseHPMax(2);
     hc.increaseHPMax(5);
     expect(hc.hitPointMax).toEqual(9);
-    ba.modifier = 3;
+    ab.modifier = 3;
     expect(hc.hitPointMax).toEqual(13);
   });
 });
@@ -234,12 +236,15 @@ describe("Skills", () => {
   let sk: Skill;
   beforeEach(() => {
     ab = {
+      name: "Tenacity", 
+      abbr: "Ten", 
+      score: 10,
       modifier: 0,
     };
     pf = {
       bonus: 2,
     };
-    sk = new Skill("Hunting", "Hnt", ab, pf);
+    sk = new Skill("Hunting", ab, pf);
   });
   it.each([
     {
@@ -259,10 +264,34 @@ describe("Skills", () => {
       bonus: 4,
     },
   ])(
-    "Has a total bonus of $bonus when proficiency bonus 2 is applied with $skill multiplier",
+    "has a total bonus of $bonus when proficiency bonus 2 is applied with $skill multiplier",
     ({ skill, bonus }) => {
       sk.skillProficiency = skill;
       expect(sk.bonus).toEqual(bonus);
     }
   );
+  it("can apply an extra bonus independent of proficiency", () => {
+    ab = {
+      name: "Sensibility",
+      abbr: "Sen",
+      score: 16,
+      modifier: 3,
+    };
+    sk = new Skill("Hunting", ab, pf);
+    sk.skillProficiency = SkillProficiency.NONE;
+    sk.extraBonus = 2;
+    expect(sk.bonus).toEqual(5);
+  });
+});
+describe("PassiveSkills", () => {
+  it('Creates a passive value based on the linked skill', () => {
+    const sk: ISkill = {
+      name: "Acrobatics", 
+      bonus: 2
+    }
+    const ps = new PassiveSkill("Passive Acrobatics", 10, sk);
+    expect(ps.passiveValue).toEqual(12);
+    sk.bonus = 4;
+    expect(ps.passiveValue).toEqual(14);
+  })
 });

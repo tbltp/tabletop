@@ -1,4 +1,9 @@
-import { IAbilityScore, ILevelContainer, IProficiency } from "./Interfaces";
+import {
+  IAbilityScore,
+  ILevelContainer,
+  IProficiency,
+  ISkill,
+} from "./Interfaces";
 
 export abstract class BaseCharacter {
   constructor() {
@@ -9,11 +14,11 @@ export abstract class BaseCharacter {
     this.charAbilityScores = {};
     this.charSkills = {};
 
-    const dummyAbilty = new AbilityScore("", "", 1);
+    const dummyAbilty = { name: "", abbr: "", score: 0, modifier: 0 };
     this.charHealth = new HealthContainer(dummyAbilty);
   }
 
- // Base Ability Scores
+  // Base Ability Scores
   protected charAbilityScores: {
     [key: string]: AbilityScore;
   };
@@ -23,15 +28,17 @@ export abstract class BaseCharacter {
   protected charLevels: LevelContainer;
   protected charProficiency: Proficiency;
   protected charHealth: HealthContainer;
-  // Passives
 
   // Skill
   protected charSkills: { [key: string]: Skill };
- 
+
+  // Passives
+  protected passiveSkills: { [key: string]: PassiveSkill };
+
   // Inventory
 
   // Features (Class Features, Racial Traits, Feats)
-  
+
   // Known Spells
 
   // Spell Slots
@@ -45,19 +52,27 @@ export abstract class BaseCharacter {
     return this.charSize;
   }
 
+  //Exposed Methods
+  findSkill(skillName: string): Skill | undefined {
+    if (skillName in this.charSkills) {
+      return this.charSkills[skillName];
+    }
+    return undefined;
+  }
 }
 
 export class AbilityScore implements IAbilityScore {
   constructor(name: string, abbr: string, score: number) {
-
     this.name = name;
     this.abbr = abbr;
     this._scoreMax = 20;
     if (score < 1) {
-      throw TypeError('Starting score cannot be less than 1');
+      throw TypeError("Starting score cannot be less than 1");
     }
     if (score > this._scoreMax) {
-      throw TypeError(`Starting score cannot be greater than maximum of ${this._scoreMax}`)
+      throw TypeError(
+        `Starting score cannot be greater than maximum of ${this._scoreMax}`
+      );
     }
     this._score = score;
   }
@@ -66,20 +81,17 @@ export class AbilityScore implements IAbilityScore {
   abbr: string;
   private _score: number;
   private _scoreMax: number;
-  private _getModifier: () => number = () => (
-    Math.floor(
-      (this._score - 10) / 2
-    ));
+  private _getModifier: () => number = () => Math.floor((this._score - 10) / 2);
 
   savingThrowProficiency: boolean = false;
   halfProficiency: boolean = false;
 
   increaseScore(bonus: number): void {
-    if(this._score + bonus > this._scoreMax) {
+    if (this._score + bonus > this._scoreMax) {
       this._score = this._scoreMax;
       return;
     }
-    if(this._score + bonus < 1) {
+    if (this._score + bonus < 1) {
       this._score = 1;
       return;
     }
@@ -96,7 +108,7 @@ export class AbilityScore implements IAbilityScore {
 
   set scoreMax(newmax: number) {
     this._scoreMax = newmax;
-    if(this._score > this._scoreMax) {
+    if (this._score > this._scoreMax) {
       this._score = this._scoreMax;
     }
   }
@@ -110,16 +122,16 @@ export class LevelContainer implements ILevelContainer {
 
   private _maxLevel: number;
   private _levelDictionary: {
-    [className: string]: number
-  }
+    [className: string]: number;
+  };
 
   set maxLevel(newmax: number) {
     this._maxLevel = newmax;
   }
 
   increaseLevel(className: string): void {
-    if(this.totalLevel < this._maxLevel) {
-      if(this._levelDictionary[className]) {
+    if (this.totalLevel < this._maxLevel) {
+      if (this._levelDictionary[className]) {
         this._levelDictionary[className]++;
       } else {
         this._levelDictionary[className] = 1;
@@ -132,23 +144,21 @@ export class LevelContainer implements ILevelContainer {
   setClassLevel(className: string, newLevel: number): void {
     const currentLevel = this._levelDictionary[className];
     this._levelDictionary[className] = newLevel;
-    if(this.totalLevel > this._maxLevel) {
+    if (this.totalLevel > this._maxLevel) {
       this._levelDictionary[className] = currentLevel;
       throw Error(`Total levels cannot exceed max level ${this._maxLevel}`);
     }
   }
 
-  getClassLevel(className: string): number { 
-    if(this._levelDictionary[className]) {
+  getClassLevel(className: string): number {
+    if (this._levelDictionary[className]) {
       return this._levelDictionary[className];
     }
-    throw ReferenceError(`Class ${className} not found`);
+    return undefined;
   }
 
   get totalLevel(): number {
-    return Object.values(this._levelDictionary).reduce(
-      (s, v) => s + v, 0
-    );
+    return Object.values(this._levelDictionary).reduce((s, v) => s + v, 0);
   }
 }
 
@@ -160,10 +170,9 @@ export class Proficiency implements IProficiency {
 
   private _level: ILevelContainer;
   private _extraBonus: number;
-  
-  private _calculateLevelBonus: () => number = () => (
-    Math.floor((this._level.totalLevel + 7) / 4)
-  );
+
+  private _calculateLevelBonus: () => number = () =>
+    Math.floor((this._level.totalLevel + 7) / 4);
 
   set extraBonus(value: number) {
     this._extraBonus = value;
@@ -188,14 +197,12 @@ export class HealthContainer {
   set extraBonus(value: number) {
     this._extraBonus = value;
   }
-  
+
   get hitPointMax(): number {
-    return this._increaseHistory.reduce(
-      (s, v) => {
-        const res = v + this._ability.modifier + this._extraBonus;
-        return res > 0 ? s + res : s + 1; 
-      }, 0
-    );
+    return this._increaseHistory.reduce((s, v) => {
+      const res = v + this._ability.modifier + this._extraBonus;
+      return res > 0 ? s + res : s + 1;
+    }, 0);
   }
 
   increaseHPMax(increase: number): void {
@@ -203,17 +210,19 @@ export class HealthContainer {
   }
 }
 
-export class Skill {
-  constructor(name: string, abbr: string, ability: IAbilityScore, proficiency: IProficiency) {
+export class Skill implements ISkill {
+  constructor(
+    name: string,
+    ability: IAbilityScore,
+    proficiency: IProficiency
+  ) {
     this.name = name;
-    this.abbr = abbr;
     this._ability = ability;
     this._proficiency = proficiency;
     this._skillProficiency = SkillProficiency.NONE;
     this._extraBonus = 0;
   }
   name: string;
-  abbr: string;
   private _ability: IAbilityScore;
   private _proficiency: IProficiency;
   private _skillProficiency: SkillProficiency;
@@ -228,21 +237,33 @@ export class Skill {
   }
 
   get bonus(): number {
-    return this._ability.modifier + (
-      this._proficiency.bonus * this._skillProficiency
-    ) + this._extraBonus;
+    return (
+      this._ability.modifier +
+      this._proficiency.bonus * this._skillProficiency +
+      this._extraBonus
+    );
   }
 }
 
-/*
-interface Skill {
-  readonly ability: string;
-  modifier:  number;
-  proficient: boolean;
-  expertise: boolean;
-  bonus: { value: number };
+export class PassiveSkill {
+  constructor(
+    name: string,
+    base: number,
+    skill: ISkill,
+  ) {
+    this.name = name;
+    this._base = base;
+    this._skill = skill;
+  }
+
+  name: string;
+  private _base: number;
+  private _skill: ISkill;
+
+  get passiveValue(): number {
+    return this._base + this._skill.bonus;
+  }
 }
-*/
 
 export enum CharacterType {
   NPC,

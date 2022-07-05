@@ -3,6 +3,9 @@ export interface ILevelContainer {
 }
 
 export interface IAbilityScore {
+  name: string;
+  abbr: string;
+  score: number;
   modifier: number;
 }
 
@@ -10,6 +13,10 @@ export interface IProficiency {
   bonus: number;
 }
 
+export interface ISkill {
+  name: string;
+  bonus: number;
+}
 
 export interface Inventory {
   weapons: Weapon[];
