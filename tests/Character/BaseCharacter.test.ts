@@ -195,33 +195,37 @@ describe("HealthContainer", () => {
       score: 10,
       modifier: 0,
     };
-    hc = new HealthContainer(ab);
+    hc = new HealthContainer();
   });
 
-  it("initializes with 0", () => {
+  it("initializes with a 0 hit point max", () => {
     expect(hc.hitPointMax).toEqual(0);
   });
-  it("applies the linked ability modifier for each max health increase", () => {
+  it("uses the linked ability score modifier to calculate a max health increase", () => {
     ab.modifier = 1;
+    hc.linkedAbility = ab;
     hc.increaseHPMax(5);
     hc.increaseHPMax(7);
     expect(hc.hitPointMax).toEqual(14);
   });
   it("applies a minimum health increase of 1, regardless of ability modifier", () => {
     ab.modifier = -2;
+    hc.linkedAbility = ab;
     hc.increaseHPMax(1);
     hc.increaseHPMax(2);
     expect(hc.hitPointMax).toEqual(2);
   });
   it("can apply an extra bonus on top of the ability modifier for each max health increase", () => {
     ab.modifier = 2;
+    hc.linkedAbility = ab;
     hc.extraBonus = 2;
     hc.increaseHPMax(4);
     hc.increaseHPMax(6);
     expect(hc.hitPointMax).toEqual(18);
   });
-  it("responds to a changing ability modifier", () => {
+  it("retroactively applies a changing ability modifier", () => {
     ab.modifier = 1;
+    hc.linkedAbility = ab;
     hc.increaseHPMax(2);
     hc.increaseHPMax(5);
     expect(hc.hitPointMax).toEqual(9);

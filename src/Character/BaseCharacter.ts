@@ -1,3 +1,4 @@
+import { searchInDictionary } from "../Utilities/General";
 import {
   IAbilityScore,
   ILevelContainer,
@@ -13,9 +14,7 @@ export abstract class BaseCharacter {
     this.charProficiency = new Proficiency(this.charLevels);
     this.charAbilityScores = {};
     this.charSkills = {};
-
-    const dummyAbilty = { name: "", abbr: "", score: 0, modifier: 0 };
-    this.charHealth = new HealthContainer(dummyAbilty);
+    this.charHealth = new HealthContainer();
   }
 
   // Base Ability Scores
@@ -53,11 +52,16 @@ export abstract class BaseCharacter {
   }
 
   //Exposed Methods
+  findAbilityScore(ability: string): AbilityScore | undefined {
+    return searchInDictionary(ability, this.charAbilityScores);
+  }
+
   findSkill(skillName: string): Skill | undefined {
-    if (skillName in this.charSkills) {
-      return this.charSkills[skillName];
-    }
-    return undefined;
+    return searchInDictionary(skillName, this.charSkills);
+  }
+
+  findPassive(passiveName: string): PassiveSkill | undefined { 
+    return searchInDictionary(passiveName, this.passiveSkills);
   }
 }
 
@@ -184,15 +188,24 @@ export class Proficiency implements IProficiency {
 }
 
 export class HealthContainer {
-  constructor(ability: IAbilityScore) {
+  constructor() {
     this._extraBonus = 0;
-    this._ability = ability;
     this._increaseHistory = [];
+    this._ability = {
+      name: "",
+      abbr: "",
+      score: 0,
+      modifier: 0,
+    }
   }
 
   private _ability: IAbilityScore;
   private _extraBonus: number;
   private _increaseHistory: number[];
+
+  set linkedAbility(ability: IAbilityScore) {
+    this._ability = ability;
+  }
 
   set extraBonus(value: number) {
     this._extraBonus = value;
