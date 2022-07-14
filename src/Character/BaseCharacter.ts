@@ -1,4 +1,5 @@
 import { searchInDictionary } from "../Utilities/General";
+import { AbilityData } from '../Factories/Interfaces';
 import {
   IAbilityScore,
   ILevelContainer,
@@ -62,6 +63,19 @@ export abstract class BaseCharacter {
 
   findPassive(passiveName: string): PassiveSkill | undefined { 
     return searchInDictionary(passiveName, this.passiveSkills);
+  }
+
+  //Descriptor Methods
+  listAbilityScores(): string[] {
+    return Object.keys(this.charAbilityScores);
+  }
+
+  //Data loading methods
+  setScores(scores: {[key: string]: AbilityData}): void {
+    for(let sc of Object.values(scores)) {
+      const { name, abbreviation, score } = sc;
+      this.charAbilityScores[name] = new AbilityScore(name, abbreviation, score);
+    }
   }
 }
 

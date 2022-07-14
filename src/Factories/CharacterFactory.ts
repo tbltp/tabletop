@@ -5,7 +5,54 @@ import { PlayerCharacter, NonPlayerCharacter } from '../Character/CharacterClass
 
 
 export class CharacterFactory {
-    public static createCharacter(data: BaseCharacterData): BaseCharacter {
+
+
+    
+
+
+    public static createNewCharacter(size: string, type: CharacterType): BaseCharacter {
+
+        const baseData: BaseCharacterData = {
+            size: size,
+            type: type,
+            abilityScores: {
+                "strength": {
+                    name: "strength", 
+                    abbreviation: "str", 
+                    score: 1
+                },
+                "dexterity": {
+                    name: "dexterity",
+                    abbreviation: "dex", 
+                    score: 1
+                },
+                "constitution": {
+                    name: "constitution",
+                    abbreviation: "con",
+                    score: 1
+                },
+                "intelligence": {
+                    name: "intelligence",
+                    abbreviation: "int",
+                    score: 1
+                },
+                "wisdom": {
+                    name: "wisdom",
+                    abbreviation: "wis",
+                    score: 1
+                },
+                "charisma": {
+                    name: "charisma",
+                    abbreviation: "cha",
+                    score: 1
+                },
+            }
+        }
+
+        return CharacterFactory.loadCharacterFromData(baseData);
+    }
+
+    private static loadCharacterFromData(data: BaseCharacterData): BaseCharacter {
         switch(data.type) {
             case CharacterType.PC:
                 return new PlayerCharacter(data);
@@ -13,4 +60,4 @@ export class CharacterFactory {
                 return new NonPlayerCharacter(data);
         }
     }
-}
+}   
