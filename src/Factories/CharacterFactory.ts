@@ -1,63 +1,74 @@
 import { BaseCharacter, CharacterType } from "../Character/BaseCharacter";
-import { BaseCharacterData } from './Interfaces';
-import { PlayerCharacter, NonPlayerCharacter } from '../Character/CharacterClasses';
-
-
+import { BaseCharacterData } from "./Interfaces";
+import {
+    PlayerCharacter,
+    NonPlayerCharacter,
+} from "../Character/CharacterClasses";
 
 export class CharacterFactory {
-
-
-    
-
-
-    public static createNewCharacter(size: string, type: CharacterType): BaseCharacter {
-
+    /*
+    Responsible for creating a new character object
+    */
+    public static createNewCharacter(
+        size: string,
+        type: CharacterType
+    ): BaseCharacter {
+        /*
+        Creates a new character from scratch
+        */
         const baseData: BaseCharacterData = {
             size: size,
             type: type,
             abilityScores: {
-                "strength": {
-                    name: "strength", 
-                    abbreviation: "str", 
-                    score: 1
+                strength: {
+                    name: "strength",
+                    abbreviation: "str",
+                    score: 1,
                 },
-                "dexterity": {
+                dexterity: {
                     name: "dexterity",
-                    abbreviation: "dex", 
-                    score: 1
+                    abbreviation: "dex",
+                    score: 1,
                 },
-                "constitution": {
+                constitution: {
                     name: "constitution",
                     abbreviation: "con",
-                    score: 1
+                    score: 1,
                 },
-                "intelligence": {
+                intelligence: {
                     name: "intelligence",
                     abbreviation: "int",
-                    score: 1
+                    score: 1,
                 },
-                "wisdom": {
+                wisdom: {
                     name: "wisdom",
                     abbreviation: "wis",
-                    score: 1
+                    score: 1,
                 },
-                "charisma": {
+                charisma: {
                     name: "charisma",
                     abbreviation: "cha",
-                    score: 1
+                    score: 1,
                 },
-            }
-        }
+            },
+        };
 
         return CharacterFactory.loadCharacterFromData(baseData);
     }
 
-    private static loadCharacterFromData(data: BaseCharacterData): BaseCharacter {
-        switch(data.type) {
+    public static loadCharacterFromData(
+        data: BaseCharacterData
+    ): BaseCharacter | undefined {
+        /*
+        Loads a character using deserialized data
+        */
+        switch (data.type) {
             case CharacterType.PC:
                 return new PlayerCharacter(data);
             case CharacterType.NPC:
                 return new NonPlayerCharacter(data);
+            default:
+                return undefined;
         }
     }
-}   
+}

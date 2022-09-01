@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "fs": "0.0.1-security",
+    "path-validation": "^0.2.3",
     "prompt-sync": "^4.2.0"
   },
   "scripts": {
