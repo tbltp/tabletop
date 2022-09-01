@@ -1,5 +1,6 @@
-import { BaseCharacter, CharacterType } from "../Character/BaseCharacter";
+import { BaseCharacter, CharacterType, CharacterSize } from '../Character/BaseCharacter';
 import { BaseCharacterData } from "./Interfaces";
+import { BaseCharacterRules } from './BaseCharacterRules';
 import {
     PlayerCharacter,
     NonPlayerCharacter,
@@ -7,12 +8,39 @@ import {
 
 export class CharacterFactory {
     /*
-    Responsible for creating a new character object
+    Responsible for creating a new character object.  
+    This factory holds state information:
+        - The rules to apply to the character: 
+            + Race
+            + Class(es)
+            + Background
+        - The character data itself
+            + Abilities
+            + Levels
+            + Equipment
+            + etc etc
     */
-    public static createNewCharacter(
-        size: string,
+    constructor() {
+        this._character = null;
+        this._charRuleSet = null;
+    }
+
+    private _character: BaseCharacter;
+    private _charRuleSet: BaseCharacterRules;
+
+    get character(): BaseCharacter {
+        return this._character;
+    }
+
+
+
+
+
+
+    public createNewCharacter(
+        size: CharacterSize,
         type: CharacterType
-    ): BaseCharacter {
+    ): void {
         /*
         Creates a new character from scratch
         */
@@ -52,21 +80,22 @@ export class CharacterFactory {
                 },
             },
         };
-
-        return CharacterFactory.loadCharacterFromData(baseData);
+        this.loadCharacterFromData(baseData);
     }
 
-    public static loadCharacterFromData(
+    public loadCharacterFromData(
         data: BaseCharacterData
-    ): BaseCharacter | undefined {
+    ): void {
         /*
         Loads a character using deserialized data
         */
         switch (data.type) {
             case CharacterType.PC:
-                return new PlayerCharacter(data);
+                this._character = new PlayerCharacter(data);
+                break;
             case CharacterType.NPC:
-                return new NonPlayerCharacter(data);
+                this._character = new NonPlayerCharacter(data);
+                break;
             default:
                 return undefined;
         }

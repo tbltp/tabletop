@@ -1,34 +1,38 @@
-import { CharacterType, AbilityScore } from "../../src/Character/BaseCharacter";
-import { BaseCharacterData } from "../../src/Factories/Interfaces";
-import { CharacterFactory } from "../../src/Factories/CharacterFactory";
+import { CharacterType, AbilityScore, CharacterSize } from "../../src/Character/BaseCharacter";
+import { CharacterFactory } from '../../src/Factories/CharacterFactory';
 import {
     NonPlayerCharacter,
     PlayerCharacter,
 } from "../../src/Character/CharacterClasses";
 describe("CharacterFactory", () => {
-    beforeEach(() => {});
+    let cf: CharacterFactory;
+
+    beforeEach(() => {
+        cf = new CharacterFactory();
+    });
 
     it("Creates a PlayerCharacter", () => {
-        const character = CharacterFactory.createNewCharacter(
-            "small",
+        cf.createNewCharacter(
+            CharacterSize.SMALL,
             CharacterType.PC
         );
-        expect(character instanceof PlayerCharacter);
+        expect(cf.character instanceof PlayerCharacter);
     });
 
     it("Creates a NonPlayercharacter", () => {
-        const character = CharacterFactory.createNewCharacter(
-            "small",
+        cf.createNewCharacter(
+            CharacterSize.SMALL,
             CharacterType.NPC
         );
-        expect(character instanceof NonPlayerCharacter);
+        expect(cf.character instanceof NonPlayerCharacter);
     });
 
     it("Creates a Character with default BaseCharacter attributes", () => {
-        const character = CharacterFactory.createNewCharacter(
-            "small",
+        cf.createNewCharacter(
+            CharacterSize.SMALL,
             CharacterType.PC
         );
+        const character: PlayerCharacter = cf.character;
         const scoreNames = character.listAbilityScores();
         expect(scoreNames).toHaveLength(6);
         expect(scoreNames).toEqual(

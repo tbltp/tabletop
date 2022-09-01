@@ -1,10 +1,10 @@
-import { CharacterType } from "../Character/BaseCharacter";
+import { CharacterType, CharacterSize } from '../Character/BaseCharacter';
 
 export interface SheetData {
     characterData: BaseCharacterData;
 }
 export interface BaseCharacterData {
-    size: string;
+    size: CharacterSize;
     type: CharacterType;
     abilityScores: {
         [ability: string]: AbilityData;

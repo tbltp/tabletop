@@ -1,5 +1,5 @@
 import { BaseCharacterData } from "../../src/Factories/Interfaces";
-import { CharacterType } from "../../src/Character/BaseCharacter";
+import { CharacterSize, CharacterType } from "../../src/Character/BaseCharacter";
 import {
     PlayerCharacter,
     NonPlayerCharacter,
@@ -10,7 +10,7 @@ describe("PlayerCharacter", () => {
     let character: PlayerCharacter;
     beforeEach(() => {
         data = {
-            size: "fakesize",
+            size: CharacterSize.DIMINUITIVE,
             type: CharacterType.NPC,
             abilityScores: {},
         };
@@ -27,7 +27,7 @@ describe("NonPlayerCharacter", () => {
     let character: NonPlayerCharacter;
     beforeEach(() => {
         data = {
-            size: "fakesize",
+            size: CharacterSize.DIMINUITIVE,
             type: CharacterType.NPC,
             abilityScores: {},
         };

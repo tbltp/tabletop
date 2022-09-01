@@ -15,13 +15,14 @@ export class SheetFactory {
     private _requiredFields: string[] = [];
 
     public deserializeFile(path: string): BaseCharacter {
+        const cfactory: CharacterFactory = new CharacterFactory();
         this._pullSheetDataFromPath(path);
         const bcdata: BaseCharacterData = searchInDictionary(
             "characterData",
             this._sheetData
         );
-        const character = CharacterFactory.loadCharacterFromData(bcdata);
-        return character;
+        cfactory.loadCharacterFromData(bcdata);
+        return cfactory.character;
     }
 
     private _pullSheetDataFromPath(path: string): void {
