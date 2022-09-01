@@ -1,8 +1,8 @@
-import { PlayerCharacter } from "../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../Character/PlayerCharacter";
 import { Genasi } from "../Genasi";
 import * as Traits from "../Genasi.json";
 import * as Spells from "../../../../Assets/Spells.json";
-import { ISpell } from "../../../Base/Interfaces";
+import { ISpell } from "../../../Character/Interfaces";
 
 export class WaterGenasi extends Genasi {
     constructor() {

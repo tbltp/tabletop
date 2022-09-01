@@ -3,8 +3,8 @@ import * as languages from "../../../Assets/Languages.json";
 
 import { Race, RaceParams } from "../Race";
 
-import { PlayerCharacter } from "../../Base/PlayerCharacter";
-import { ScalingTrait } from "../../Base/Interfaces";
+import { PlayerCharacter } from "../../Character/PlayerCharacter";
+import { ScalingTrait } from "../../Character/Interfaces";
 
 export class Dragonborn extends Race {
   constructor(params: RaceParams) {

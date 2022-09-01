@@ -1,5 +1,5 @@
-import { Trait } from "Base/Interfaces";
-import { PlayerCharacter } from "Base/PlayerCharacter";
+import { Trait } from "Character/Interfaces";
+import { PlayerCharacter } from "Character/PlayerCharacter";
 import { Feat, FeatParams } from "./Feat";
 
 export class ElementalAdept extends Feat {

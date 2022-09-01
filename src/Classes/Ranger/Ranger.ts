@@ -1,5 +1,5 @@
 import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
-import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../Character/PlayerCharacter";
 import * as RangerClassTraits from "./Ranger.json";
 import { RangerSubclass } from "./Subclasses/RangerSubclass";
 

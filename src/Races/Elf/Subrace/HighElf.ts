@@ -2,10 +2,10 @@ import * as Spells from "../../../../Assets/Spells.json";
 import * as languages from "../../../../Assets/Languages.json";
 import * as traits from "../Elf.json";
 
-import { ISpell, Spell } from "../../../Base/Interfaces";
+import { ISpell, Spell } from "../../../Character/Interfaces";
 
 import { Elf } from "../Elf";
-import { PlayerCharacter } from "../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../Character/PlayerCharacter";
 import { RaceParams } from "../../Race";
 
 export class HighElf extends Elf {

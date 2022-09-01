@@ -1,4 +1,4 @@
-import { PlayerCharacter } from "Base/PlayerCharacter";
+import { PlayerCharacter } from "Character/PlayerCharacter";
 import { PlayerClass } from "Classes/PlayerClass";
 import { Feat, FeatParams } from "./Feat";
 

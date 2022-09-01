@@ -1,9 +1,9 @@
 import { Race } from "../Race";
-import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../Character/PlayerCharacter";
 import * as traits from "./Gnome.json";
 import * as languages from "../../../Assets/Languages.json";
 import * as Spells from "../../../Assets/Spells.json";
-import { ISpell, Spell } from "../../Base/Interfaces";
+import { ISpell, Spell } from "../../Character/Interfaces";
 
 export abstract class Gnome extends Race {
   constructor(name: string) {

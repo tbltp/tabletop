@@ -1,5 +1,5 @@
 import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
-import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../Character/PlayerCharacter";
 import * as PaladinClassTraits from "./Paladin.json";
 import { PaladinSubclass } from "./Subclasses/PaladinSubclass";
 import * as FightingStyle from "../../../Assets/FightingStyles.json";

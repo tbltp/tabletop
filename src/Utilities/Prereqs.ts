@@ -1,4 +1,4 @@
-import { PlayerCharacter } from "../Base/PlayerCharacter"
+import { PlayerCharacter } from "../Character/PlayerCharacter"
 
 export class Prereqs{
     static prereqChecks = {

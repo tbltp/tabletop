@@ -1,4 +1,4 @@
-import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../../Character/PlayerCharacter";
 import { LevelingParams } from "../../../PlayerClass";
 import { BarbarianSubclassParams } from "../BarbarianSubclass";
 import * as TotemWarriorDict from "./TotemWarrior.json";

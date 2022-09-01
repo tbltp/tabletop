@@ -1,10 +1,10 @@
 import { PlayerClass, LevelingParams, ClassCreationParams  } from "../PlayerClass";
-import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../Character/PlayerCharacter";
 import {
   AttachedFeature,
   ResourceTrait,
   Trait,
-} from "../../Base/Interfaces";
+} from "../../Character/Interfaces";
 import * as PactBoon from "./PactBoon.json";
 import * as WarlockClassTraits from "./Warlock.json";
 import * as Invocations from "./EldritchInvocations.json";

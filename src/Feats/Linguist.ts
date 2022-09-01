@@ -1,4 +1,4 @@
-import { PlayerCharacter } from "Base/PlayerCharacter";
+import { PlayerCharacter } from "Character/PlayerCharacter";
 import { Feat, FeatParams } from "./Feat";
 import * as Languages from "../../Assets/Languages.json";
 

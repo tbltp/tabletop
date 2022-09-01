@@ -7,12 +7,12 @@ import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
 import * as ToolKits from "../../Assets/Tools.json";
 import * as Weapons from "../../Assets/Weapons.json";
 
-import { AttachedFeature, EquipmentPack, ResourceTrait, ScalingTrait, Trait } from "../Base/Interfaces";
+import { AttachedFeature, EquipmentPack, ResourceTrait, ScalingTrait, Trait } from "../Character/Interfaces";
 import { Feat, FeatParams } from "../Feats/Feat";
 import { Subclass, SubclassParams } from "./Subclass";
 
-import { Inventory } from "../Base/Equipment/Inventory";
-import { PlayerCharacter } from "../Base/PlayerCharacter";
+import { Inventory } from "../Character/Equipment/Inventory";
+import { PlayerCharacter } from "../Character/PlayerCharacter";
 
 export abstract class PlayerClass {
   constructor(
@@ -230,13 +230,13 @@ export abstract class PlayerClass {
     }
     
     const spellAttack = {
-      proficiency: pc.proficiency.baseBonus,
+      proficiency: pc.charProficiency.baseBonus,
       modifier: pc.abilityScores[SpellcastingAbility[className]].modifier
     }
 
     const spellSave = {
       base: 8,
-      proficiency: pc.proficiency.baseBonus,
+      proficiency: pc.charProficiency.baseBonus,
       modifier: pc.abilityScores[SpellcastingAbility[className]].modifier
     }
 

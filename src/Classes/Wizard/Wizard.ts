@@ -1,9 +1,9 @@
 import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
-import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../Character/PlayerCharacter";
 import * as SpellcastingAbility from "../../../Assets/SpellcastingAbility.json";
 import * as WizardClassTraits from './Wizard.json';
 import { WizardSubclass } from "./Subclasses/WizardSubclass";
-import { Trait } from "Base/Interfaces";
+import { Trait } from "Character/Interfaces";
 
 export class Wizard extends PlayerClass {
   constructor(params: ClassCreationParams) {

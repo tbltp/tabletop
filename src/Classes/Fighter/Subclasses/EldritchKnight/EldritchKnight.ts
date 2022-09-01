@@ -1,4 +1,4 @@
-import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../../Character/PlayerCharacter";
 import { LevelingParams } from "../../../../Classes/PlayerClass";
 import * as EldritchKnightArchetype from "./EldritchKnight.json"
 
@@ -12,13 +12,13 @@ export class EldritchKnight {
     pc.pcHelper.addFeatures(EldritchKnight.getFeature( "3", "WEAPON BOND"))
 
     const spellAttack = {
-      proficiency: pc.proficiency.baseBonus,
+      proficiency: pc.charProficiency.baseBonus,
       modifier: pc.abilityScores["intelligence"].modifier
     }
 
     const spellSave = {
       base: 8,
-      proficiency: pc.proficiency.baseBonus,
+      proficiency: pc.charProficiency.baseBonus,
       modifier: pc.abilityScores["intelligence"].modifier
     }
 

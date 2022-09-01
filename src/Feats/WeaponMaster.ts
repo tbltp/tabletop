@@ -1,4 +1,4 @@
-import { PlayerCharacter } from "Base/PlayerCharacter";
+import { PlayerCharacter } from "Character/PlayerCharacter";
 import { Feat, FeatParams } from "./Feat";
 
 export class WeaponMaster extends Feat {

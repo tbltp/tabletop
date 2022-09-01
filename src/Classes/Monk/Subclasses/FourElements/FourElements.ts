@@ -1,7 +1,7 @@
-import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../../Character/PlayerCharacter";
 import * as FourElementsDict from "./WayOfTheFourElements.json"
 import * as ElementalDisciplines from "./ElementalDisciplines.json"
-import { ISpell, Spell, Trait } from "Base/Interfaces";
+import { ISpell, Spell, Trait } from "Character/Interfaces";
 import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import { MonkSubclassParams } from "../MonkSubclass";
 

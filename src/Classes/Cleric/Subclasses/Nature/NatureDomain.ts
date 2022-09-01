@@ -1,9 +1,9 @@
 import * as NatureDomainDict from "./Nature.json";
 
 import { LevelingParams, PlayerClass } from "../../../PlayerClass";
-import { ResourceTrait, ScalingTrait } from "Base/Interfaces";
+import { ResourceTrait, ScalingTrait } from "Character/Interfaces";
 
-import { PlayerCharacter } from "Base/PlayerCharacter";
+import { PlayerCharacter } from "Character/PlayerCharacter";
 
 export class NatureDomain {
     

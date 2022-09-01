@@ -1,5 +1,5 @@
 import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
-import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../Character/PlayerCharacter";
 import * as ClericClassTraits from "./Cleric.json";
 import { ClericSubclass } from "./Subclasses/ClericSubclass";
 

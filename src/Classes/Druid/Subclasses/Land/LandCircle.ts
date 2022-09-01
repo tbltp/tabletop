@@ -1,5 +1,5 @@
-import { ScalingTrait } from "../../../../Base/Interfaces";
-import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { ScalingTrait } from "../../../../Character/Interfaces";
+import { PlayerCharacter } from "../../../../Character/PlayerCharacter";
 import { LevelingParams } from "../../../../Classes/PlayerClass";
 import { DruidSubclassParams } from "../DruidSubclass";
 import * as LandCircleDict from "./Land.json";

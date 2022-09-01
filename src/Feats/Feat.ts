@@ -1,5 +1,5 @@
-import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { Trait } from "../Base/Interfaces";
+import { PlayerCharacter } from "../Character/PlayerCharacter";
+import { Trait } from "../Character/Interfaces";
 import * as Feats from "./Feats.json";
 
 export abstract class Feat {

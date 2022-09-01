@@ -1,5 +1,5 @@
-import { ResourceTrait, Trait } from "../Base/Interfaces";
-import { PlayerCharacter } from "../Base/PlayerCharacter";
+import { ResourceTrait, Trait } from "../Character/Interfaces";
+import { PlayerCharacter } from "../Character/PlayerCharacter";
 import * as Maneuvers from "../Classes/Fighter/Subclasses/BattleMaster/Maneuvers.json";
 
 import { Feat, FeatParams } from "./Feat";

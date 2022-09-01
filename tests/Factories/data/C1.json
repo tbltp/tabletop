@@ -1,0 +1,38 @@
+{
+  "character": {
+    "size": "medium",
+    "type": "PC",
+    "abilityScores": {
+      "strength": {
+        "name": "strength",
+        "abbreviation": "str",
+        "score": 12
+      },
+      "dexterity": {
+        "name": "dexterity",
+        "abbreviation": "dex",
+        "score": 3
+      },
+      "constitution": {
+        "name": "constitution",
+        "abbreviation": "con",
+        "score": 5
+      },
+      "intelligence": {
+        "name": "intelligence",
+        "abbreviation": "int",
+        "score": 12
+      },
+      "wisdom": {
+        "name": "wisdom",
+        "abbreviation": "wis",
+        "score": 11
+      },
+      "charisma": {
+        "name": "charisma",
+        "abbreviation": "cha",
+        "score": 15
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
-import { ResourceTrait, Spell, SpellSlot } from "../Base/Interfaces";
-import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { CharacterSheet } from "../Base/CharacterSheet";
+import { ResourceTrait, Spell, SpellSlot } from "../Character/Interfaces";
+import { PlayerCharacter } from "../Character/PlayerCharacter";
+import { CharacterSheet } from "../Character/CharacterSheet";
 import { PlayerClass } from "./PlayerClass";
 
 export class SpellSlotFactory {

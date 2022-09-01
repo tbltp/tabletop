@@ -2,8 +2,8 @@ import * as LifeDomainDict from "./Life.json";
 
 import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 
-import { PlayerCharacter } from "Base/PlayerCharacter";
-import { ScalingTrait } from "Base/Interfaces";
+import { PlayerCharacter } from "Character/PlayerCharacter";
+import { ScalingTrait } from "Character/Interfaces";
 
 export class LifeDomain {
 

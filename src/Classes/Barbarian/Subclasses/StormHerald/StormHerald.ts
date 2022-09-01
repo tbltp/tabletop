@@ -1,6 +1,6 @@
-import { ScalingTrait } from "Base/Interfaces";
+import { ScalingTrait } from "Character/Interfaces";
 import { BarbarianSubclassParams } from "../BarbarianSubclass";
-import { PlayerCharacter } from "../../../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../../../Character/PlayerCharacter";
 import { LevelingParams, PlayerClass } from "../../../PlayerClass";
 import * as StormHeraldDict from "./StormHerald.json";
 

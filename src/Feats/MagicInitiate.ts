@@ -1,4 +1,4 @@
-import { PlayerCharacter } from "Base/PlayerCharacter";
+import { PlayerCharacter } from "Character/PlayerCharacter";
 import { Feat, FeatParams } from "./Feat";
 import * as SpellcastingAbility from "../../Assets/SpellcastingAbility.json";
 

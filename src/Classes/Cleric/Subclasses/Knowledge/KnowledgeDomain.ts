@@ -1,4 +1,4 @@
-import { PlayerCharacter } from "Base/PlayerCharacter";
+import { PlayerCharacter } from "Character/PlayerCharacter";
 import { LevelingParams } from "../../../PlayerClass";
 import * as KnowledgeDomainDict from "./Knowledge.json";
 import * as Languages from "../../../../../Assets/Languages.json";

@@ -3,9 +3,9 @@ import * as fs from "fs";
 import { Background, DSBackground } from "../Backgrounds/Background";
 
 import { BarbarianSubclass } from "../Classes/Barbarian/Subclasses/BarbarianSubclass";
-import { CharacterSheet } from "../Base/CharacterSheet";
+import { CharacterSheet } from "../Character/CharacterSheet";
 import { Deserialize } from './Deserialize';
-import { PlayerCharacter } from "../Base/PlayerCharacter";
+import { PlayerCharacter } from "../Character/PlayerCharacter";
 import { PlayerClass } from "../Classes/PlayerClass";
 import { Race } from "../Races/Race";
 
@@ -102,8 +102,8 @@ export class Jsonify {
       }
 
       if(property === "proficiency"){
-        emptyCharacter.proficiency.baseBonus = jsonSheet['character']['proficiency']['baseBonus']['value'];
-        emptyCharacter.proficiency.halfBonus = jsonSheet['character']['proficiency']['halfBonus']['value'];
+        emptyCharacter.charProficiency.baseBonus = jsonSheet['character']['proficiency']['baseBonus']['value'];
+        emptyCharacter.charProficiency.halfBonus = jsonSheet['character']['proficiency']['halfBonus']['value'];
       }
 
       if(["abilityScores", "pcHelper", "traits"].includes(property)) {

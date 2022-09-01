@@ -2,8 +2,8 @@ import * as Gear from "../../Assets/Gear.json";
 import * as Languages from "../../Assets/Languages.json";
 import * as ToolKits from "../../Assets/Tools.json";
 
-import { PlayerCharacter } from "../Base/PlayerCharacter";
-import { Trait } from "../Base/Interfaces";
+import { PlayerCharacter } from "../Character/PlayerCharacter";
+import { Trait } from "../Character/Interfaces";
 
 export abstract class Background {
   constructor(

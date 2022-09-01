@@ -1,6 +1,6 @@
 import { PlayerClass, LevelingParams, ClassCreationParams } from "../PlayerClass";
 import * as BarbarianClassTraits from "./Barbarian.json"
-import { PlayerCharacter } from "../../Base/PlayerCharacter";
+import { PlayerCharacter } from "../../Character/PlayerCharacter";
 import { BarbarianSubclass } from "./Subclasses/BarbarianSubclass";
 
 export class Barbarian extends PlayerClass {
