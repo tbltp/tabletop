@@ -1,0 +1,11 @@
+{   
+    "rules": {
+        "allowedAbilities": [
+            "strength",
+            "dexterity",
+            "constitution",
+            "intelligence"
+        ],
+        "linkedHealthAbility": "intelligence"
+    }
+}

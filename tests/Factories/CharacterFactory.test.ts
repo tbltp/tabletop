@@ -9,6 +9,14 @@ describe("CharacterFactory", () => {
 
     beforeEach(() => {
         cf = new CharacterFactory();
+        cf.charRuleSet = {
+            allowedAbilities: [
+                "strength",
+                "constitution",
+                "flexibility",
+            ],
+            linkedHealthAbility: "constitution",
+        };
     });
 
     it("Creates a PlayerCharacter", () => {
@@ -27,25 +35,22 @@ describe("CharacterFactory", () => {
         expect(cf.character instanceof NonPlayerCharacter);
     });
 
-    it("Creates a Character with default BaseCharacter attributes", () => {
+    it("Creates a Character according to set rules", () => {
         cf.createNewCharacter(
             CharacterSize.SMALL,
             CharacterType.PC
         );
         const character: PlayerCharacter = cf.character;
         const scoreNames = character.listAbilityScores();
-        expect(scoreNames).toHaveLength(6);
+        expect(scoreNames).toHaveLength(3);
         expect(scoreNames).toEqual(
             expect.arrayContaining([
                 "strength",
-                "dexterity",
                 "constitution",
-                "intelligence",
-                "wisdom",
-                "charisma",
+                "flexibility",
             ])
         );
-        expect(character.findAbilityScore("banana")).toBeUndefined();
+        expect(character.findAbilityScore("intelligence")).toBeUndefined();
         const strength = character.findAbilityScore("strength");
         expect(strength).toBeDefined();
         const confirmedStr = strength as AbilityScore;

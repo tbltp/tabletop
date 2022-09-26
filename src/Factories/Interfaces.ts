@@ -2,6 +2,7 @@ import { CharacterType, CharacterSize } from '../Character/BaseCharacter';
 
 export interface SheetData {
     characterData: BaseCharacterData;
+    rulesData: BaseCharacterRules;
 }
 export interface BaseCharacterData {
     size: CharacterSize;
@@ -9,6 +10,11 @@ export interface BaseCharacterData {
     abilityScores: {
         [ability: string]: AbilityData;
     };
+}
+
+export interface BaseCharacterRules {
+    allowedAbilities: string[];
+    linkedHealthAbility: string;
 }
 export interface AbilityData {
     name: string;

@@ -1,6 +1,10 @@
-import { BaseCharacter, CharacterType, CharacterSize } from '../Character/BaseCharacter';
-import { BaseCharacterData } from "./Interfaces";
-import { BaseCharacterRules } from './BaseCharacterRules';
+import {
+    BaseCharacter,
+    CharacterType,
+    CharacterSize,
+} from "../Character/BaseCharacter";
+import { BaseCharacterData, BaseCharacterRules } from './Interfaces';
+import { RuledCharacter } from '../Character/CharacterClasses';
 import {
     PlayerCharacter,
     NonPlayerCharacter,
@@ -25,79 +29,43 @@ export class CharacterFactory {
         this._charRuleSet = null;
     }
 
-    private _character: BaseCharacter;
+    private _character: RuledCharacter;
     private _charRuleSet: BaseCharacterRules;
 
-    get character(): BaseCharacter {
+    get character(): RuledCharacter {
         return this._character;
     }
 
-
-
-
-
-
-    public createNewCharacter(
-        size: CharacterSize,
-        type: CharacterType
-    ): void {
-        /*
-        Creates a new character from scratch
-        */
-        const baseData: BaseCharacterData = {
-            size: size,
-            type: type,
-            abilityScores: {
-                strength: {
-                    name: "strength",
-                    abbreviation: "str",
-                    score: 1,
-                },
-                dexterity: {
-                    name: "dexterity",
-                    abbreviation: "dex",
-                    score: 1,
-                },
-                constitution: {
-                    name: "constitution",
-                    abbreviation: "con",
-                    score: 1,
-                },
-                intelligence: {
-                    name: "intelligence",
-                    abbreviation: "int",
-                    score: 1,
-                },
-                wisdom: {
-                    name: "wisdom",
-                    abbreviation: "wis",
-                    score: 1,
-                },
-                charisma: {
-                    name: "charisma",
-                    abbreviation: "cha",
-                    score: 1,
-                },
-            },
-        };
-        this.loadCharacterFromData(baseData);
+    set charRuleSet(rules: BaseCharacterRules) {
+        this._charRuleSet = rules;
     }
 
-    public loadCharacterFromData(
-        data: BaseCharacterData
-    ): void {
+    public loadCharacterFromData(data: BaseCharacterData): void {
         /*
-        Loads a character using deserialized data
+        Loads a character using non-serialized data.  
         */
         switch (data.type) {
             case CharacterType.PC:
-                this._character = new PlayerCharacter(data);
+                this._character = new PlayerCharacter(data, this._charRuleSet);
                 break;
             case CharacterType.NPC:
-                this._character = new NonPlayerCharacter(data);
+                this._character = new NonPlayerCharacter(data, this._charRuleSet);
                 break;
             default:
                 return undefined;
         }
+    }
+
+    public createNewCharacter(size: CharacterSize, type: CharacterType): void {
+        /*
+        Creates a new character from scratch, using the inputs and the stored rules.
+        The resulting base data will contain defaults to be modified later. 
+        */
+        const baseData: BaseCharacterData = {
+            size: size,
+            type: type,
+            abilityScores: {}
+        }
+        this.loadCharacterFromData(baseData);
     }
 }
