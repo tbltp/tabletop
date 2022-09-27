@@ -15,13 +15,8 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
-
-      - name: Install modules
-        run: npm ci
-        
-      - name: ESLint Plus
-        uses: bradennapier/eslint-plus-action@v3
+      
+      - name: Eslint Reviewdog 
+        uses: reviewdog/action-eslint@v1.16.1
         with:
-          extensions: .ts,.tsx
-
-
+          reporter: github-pr-review 
