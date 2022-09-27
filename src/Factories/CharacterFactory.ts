@@ -1,5 +1,10 @@
-import { BaseCharacter, CharacterType } from "../Character/BaseCharacter";
-import { BaseCharacterData } from "./Interfaces";
+import {
+    BaseCharacter,
+    CharacterType,
+    CharacterSize,
+} from "../Character/BaseCharacter";
+import { BaseCharacterData, BaseCharacterRules } from './Interfaces';
+import { RuledCharacter } from '../Character/CharacterClasses';
 import {
     PlayerCharacter,
     NonPlayerCharacter,
@@ -7,68 +12,60 @@ import {
 
 export class CharacterFactory {
     /*
-    Responsible for creating a new character object
+    Responsible for creating a new character object.  
+    This factory holds state information:
+        - The rules to apply to the character: 
+            + Race
+            + Class(es)
+            + Background
+        - The character data itself
+            + Abilities
+            + Levels
+            + Equipment
+            + etc etc
     */
-    public static createNewCharacter(
-        size: string,
-        type: CharacterType
-    ): BaseCharacter {
+    constructor() {
+        this._character = null;
+        this._charRuleSet = null;
+    }
+
+    private _character: RuledCharacter;
+    private _charRuleSet: BaseCharacterRules;
+
+    get character(): RuledCharacter {
+        return this._character;
+    }
+
+    set charRuleSet(rules: BaseCharacterRules) {
+        this._charRuleSet = rules;
+    }
+
+    public loadCharacterFromData(data: BaseCharacterData): void {
         /*
-        Creates a new character from scratch
+        Loads a character using non-serialized data.  
+        */
+        switch (data.type) {
+            case CharacterType.PC:
+                this._character = new PlayerCharacter(data, this._charRuleSet);
+                break;
+            case CharacterType.NPC:
+                this._character = new NonPlayerCharacter(data, this._charRuleSet);
+                break;
+            default:
+                return undefined;
+        }
+    }
+
+    public createNewCharacter(size: CharacterSize, type: CharacterType): void {
+        /*
+        Creates a new character from scratch, using the inputs and the stored rules.
+        The resulting base data will contain defaults to be modified later. 
         */
         const baseData: BaseCharacterData = {
             size: size,
             type: type,
-            abilityScores: {
-                strength: {
-                    name: "strength",
-                    abbreviation: "str",
-                    score: 1,
-                },
-                dexterity: {
-                    name: "dexterity",
-                    abbreviation: "dex",
-                    score: 1,
-                },
-                constitution: {
-                    name: "constitution",
-                    abbreviation: "con",
-                    score: 1,
-                },
-                intelligence: {
-                    name: "intelligence",
-                    abbreviation: "int",
-                    score: 1,
-                },
-                wisdom: {
-                    name: "wisdom",
-                    abbreviation: "wis",
-                    score: 1,
-                },
-                charisma: {
-                    name: "charisma",
-                    abbreviation: "cha",
-                    score: 1,
-                },
-            },
-        };
-
-        return CharacterFactory.loadCharacterFromData(baseData);
-    }
-
-    public static loadCharacterFromData(
-        data: BaseCharacterData
-    ): BaseCharacter | undefined {
-        /*
-        Loads a character using deserialized data
-        */
-        switch (data.type) {
-            case CharacterType.PC:
-                return new PlayerCharacter(data);
-            case CharacterType.NPC:
-                return new NonPlayerCharacter(data);
-            default:
-                return undefined;
+            abilityScores: {}
         }
+        this.loadCharacterFromData(baseData);
     }
 }

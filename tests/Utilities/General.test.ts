@@ -1,4 +1,4 @@
-import { searchInDictionary } from "../../src/Utilities/General";
+import { isEqualIgnoreCase, searchInDictionary } from "../../src/Utilities/General";
 
 describe("searchInDictionary", () => {
     it.each([
@@ -43,4 +43,22 @@ describe("searchInDictionary", () => {
         };
         expect(searchInDictionary("flea", dict)).toEqual(undefined);
     });
+});
+describe("isEqualIgnoreCase", () => {
+    it.each([
+        {
+            key1: "foo",
+            key2: "FOO",
+            result: true,
+        },
+        {
+            key1: "foo",
+            key2: "bar",
+            result: false,
+        },
+    ])(
+        `returns $result if key1 is "$key1" and key2 is "$key2"`, ({key1, key2, result}) => {
+            expect(isEqualIgnoreCase(key1, key2)).toEqual(result);
+        }
+    )
 });

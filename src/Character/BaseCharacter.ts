@@ -12,7 +12,7 @@ export abstract class BaseCharacter {
      * Abstract class representing any DnD character
      */
     constructor() {
-        this.charSize = "";
+        this.charSize = CharacterSize.MEDIUM;
         this.charType = CharacterType.NPC;
         this.charLevels = new LevelContainer();
         this.charProficiency = new Proficiency(this.charLevels);
@@ -26,7 +26,7 @@ export abstract class BaseCharacter {
         [key: string]: AbilityScore;
     };
     // Base Stats
-    protected charSize: string;
+    protected charSize: CharacterSize;
     protected charType: CharacterType;
     protected charLevels: LevelContainer;
     protected charProficiency: Proficiency;
@@ -51,8 +51,12 @@ export abstract class BaseCharacter {
         return this.charType;
     }
 
-    get size(): string {
+    get size(): CharacterSize {
         return this.charSize;
+    }
+    
+    set size(s: CharacterSize) {
+        this.charSize = s;
     }
 
     //Exposed Methods
@@ -374,6 +378,18 @@ export class PassiveSkill {
 export enum CharacterType {
     NPC = "NPC",
     PC = "PC",
+}
+
+export enum CharacterSize {
+    FINE = "fine",
+    DIMINUITIVE = "diminuitive",
+    TINY = "tiny",
+    SMALL = "small",
+    MEDIUM = "medium",
+    LARGE = "large",
+    HUGE = "huge",
+    GARGANTUAN = "gargantuan",
+    COLOSSAL = "colossal",
 }
 
 export enum SkillProficiency {
