@@ -22,7 +22,6 @@ jobs:
       - name: ESLint Plus
         uses: bradennapier/eslint-plus-action@v3
         with:
-          extensions:
-            - .ts
-            - .tsx
+          extensions: [".ts", ".tsx"]
+
 
