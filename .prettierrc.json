@@ -1,0 +1,45 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@TresTres 
+typescript-eslint
+/
+typescript-eslint
+Public
+Code
+Issues
+339
+Pull requests
+31
+Actions
+Projects
+Security
+Insights
+typescript-eslint/.prettierrc.json
+@bradzacher
+bradzacher chore: bump all dependencies (#4042)
+…
+Latest commit f418f48 on Oct 22, 2021
+ History
+ 1 contributor
+15 lines (15 sloc)  309 Bytes
+
+{
+  "arrowParens": "avoid",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "bracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "useTabs": false,
+}   
