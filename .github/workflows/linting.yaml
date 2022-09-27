@@ -9,16 +9,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
 
-    - name: Install modules
-      run: npm ci
-      
-    - name: ESLint changed
-      uses: tj-actions/eslint-changed-files@v16.0.0
-      with:
-        config_path: ".eslintrc.json"
-        extra_args: "--max-warnings=0"
-        file_extensions: |
-          **/*.ts
-          **/*.tsx
+      - name: Checkout
+        uses: actions/checkout@v3
+          with:
+            ref: ${{ github.head_ref }}
+            fetch-depth: 0
+
+      - name: Install modules
+        run: npm ci
+        
+      - name: ESLint changed
+        uses: tj-actions/eslint-changed-files@v16.0.0
+        with:
+          config_path: ".eslintrc.json"
+          extra_args: "--max-warnings=0"
+          file_extensions: |
+            **/*.ts
+            **/*.tsx
