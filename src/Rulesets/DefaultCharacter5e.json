@@ -1,13 +1,13 @@
-{   
-    "rules": {
-        "allowedAbilities": [
-            "strength",
-            "dexterity",
-            "constitution",
-            "intelligence",
-            "wisdom",
-            "charisma"
-        ],
-        "linkedHealthAbility": "constitution"
-    }
+{
+  "rules": {
+    "allowedAbilities": [
+      "strength",
+      "dexterity",
+      "constitution",
+      "intelligence",
+      "wisdom",
+      "charisma"
+    ],
+    "linkedHealthAbility": "constitution"
+  }
 }
