@@ -1,0 +1,26 @@
+name: testing
+
+on:
+  pull_request:
+    branches: 
+      - main
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+
+    steps:
+    
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Install
+        run: npm install --save-dev
+
+      - name: Jest 
+        run: npx jest --verbose tests/
+
+
