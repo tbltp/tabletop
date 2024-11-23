@@ -2,6 +2,7 @@ import * as Gear from "../../Assets/Gear.json";
 import * as Languages from "../../Assets/Languages.json";
 import * as ToolKits from "../../Assets/Tools.json";
 
+import { SkillProficiency } from "../Character/BaseCharacter";
 import { PlayerCharacter } from "../Character/PlayerCharacter";
 import { Trait } from "../Character/Interfaces";
 
@@ -37,7 +38,8 @@ export abstract class Background {
 
   apply(pc: PlayerCharacter): void {
     for (const skill of this.skillProficiencies) {
-      pc.skills[skill].proficient = true;
+      //pc.skills[skill].proficient = true;
+      pc.findSkill(skill).skillProficiency = SkillProficiency.FULL; // ALFONSO TODO: is this right? How to know which proficiency type it is
     }
     for (const language of this.languages) {
       pc.traits.languages.add(Languages[language]);
@@ -47,11 +49,13 @@ export abstract class Background {
     }
     for (const item of this.equipment) {
       if(!item){ continue }
-      pc.inventory.gear.push(Gear[item]);
+      //pc.inventory.gear.push(Gear[item]);
+      pc.addGear(Gear[item]);
     }
     for (const tool of this.toolKits) {
       if(!tool){ continue }
-      pc.inventory.toolKits.push(ToolKits[tool]);
+      //pc.inventory.toolKits.push(ToolKits[tool]);
+      pc.addTool(ToolKits[tool]);
     }
     for (const trait of this.features) {
       pc.traits.features.push(trait);

@@ -5,6 +5,7 @@ import {
     ILevelContainer,
     IProficiency,
     ISkill,
+    Inventory
 } from "./Interfaces";
 
 export abstract class BaseCharacter {
@@ -39,6 +40,7 @@ export abstract class BaseCharacter {
     protected passiveSkills: { [key: string]: PassiveSkill };
 
     // Inventory
+    protected inventory: Inventory;
 
     // Features (Class Features, Racial Traits, Feats)
 
@@ -66,6 +68,14 @@ export abstract class BaseCharacter {
 
     findPassive(passiveName: string): PassiveSkill | undefined {
         return searchInDictionary(passiveName, this.passiveSkills);
+    }
+
+    addTool(tool) {
+        this.inventory.toolKits.push(tool);
+    }
+
+    addGear(gear) {
+        this.inventory.gear.push(gear);
     }
 
     //Descriptor Methods
